@@ -18,7 +18,7 @@ export default function Home() {
 					{/*	muted*/}
 					{/*/>*/}
 
-					<div className='inline-block flex flex-col items-start gap-0'>
+					<div className='flex flex-col items-start gap-0'>
 						<h1 className='text-2xl font-bold first-letter:text-red-500 text-gray-900'>La taverne des
 							aventuriers</h1>
 						<p className='text-gray-700'>Votre bar à jeux Nantais favoris !</p>
@@ -51,7 +51,7 @@ export default function Home() {
 					</div>
 
 					<div>
-						<img/>
+						{/*<img/>*/}
 						<div>
 							<h2>D'où vient notre renom ?</h2>
 							<p>Lorem ipsum</p>
