@@ -11,7 +11,16 @@ export default function Home() {
 
 			<main className='w-full h-full flex flex-col items-center gap-8 pt-20 sm:items-start'>
 				<div className='w-full flex flex-col items-center gap-16'>
-					<div className='flex flex-col w-screen h-screen items-start gap-16 bg-gray-400'>
+					<div className='flex flex-col w-screen h-screen items-start gap-16 '>
+						<iframe
+							className='mask absolute left-0 top-0 h-full w-full object-cover object-center mix-difference animate-video -z-10 block bg-slate-900 opacity-75'
+							title="vimeo-player"
+							src="https://player.vimeo.com/video/1047186186?h=29d6bef0e2&background=1&autoplay=1&loop=0"
+							width="1920" height="1080" frameBorder="0" data-ready="true" allow="autoplay"
+							allowFullScreen>
+						</iframe>
+
+
 						{/*<video*/}
 						{/*	className='w-full flex flex-col items-center gap-16'*/}
 						{/*	src="/assets/videos/AnimationCarte.mp4"*/}
