@@ -1,27 +1,33 @@
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
 	return (
-		<nav className='bg-gray-700 text-white'>
-			<div className='container mx-auto flex items-center justify-between px-4 py-3'>
-				<Link href='#' className='text-xl font-bold'>
-					Logo
+		<nav>
+			<div className='bg-gray-700 mx-auto flex items-center justify-between px-4 py-3 max-w-5xl w-full'>
+				<Link href='#'>
+					<Image src="/assets/LTDA_Logo.png" alt="LTDA Logo" width={50} height={50} />
 				</Link>
 
 				<ul className='flex space-x-6'>
 					<li>
 						<Link href='#' className='hover:underline'>
-							Home
+							Qui Sommes-nous
 						</Link>
 					</li>
 					<li>
 						<Link href='#' className='hover:underline'>
-							About
+							Carte
 						</Link>
 					</li>
 					<li>
 						<Link href='#' className='hover:underline'>
-							Services
+							Ludothèque
+						</Link>
+					</li>
+					<li>
+						<Link href='#' className='hover:underline'>
+							Evènements
 						</Link>
 					</li>
 					<li>
@@ -32,7 +38,7 @@ const Navbar = () => {
 				</ul>
 			</div>
 		</nav>
-	)
-}
+	);
+};
 
-export default Navbar
+export default Navbar;
