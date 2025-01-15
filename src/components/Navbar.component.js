@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Navbar = () => {
 	return (
 		<nav>
-			<div className='bg-gray-700 mx-auto flex items-center justify-between px-4 py-3 max-w-5xl w-full'>
+			<div className='bg-gray-700 mx-auto flex items-center justify-between px-4 py-3 max-w-5xl w-full rounded-lg'>
 				<Link href='#'>
 					<Image src="/assets/LTDA_Logo.png" alt="LTDA Logo" width={50} height={50} />
 				</Link>
