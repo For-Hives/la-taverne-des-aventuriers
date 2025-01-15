@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Reservation_Card = () => {
     return (
-        <div className='bg-gray-700 py-5 max-w-7xl mx-auto p-10 rounded-lg'>
+        <div className='bg-gray-700 py-5 w-3/4 mx-auto p-10 rounded-lg gap-20'>
             <div className='items-left'>
                 <h1 className="text-left">Comment Réserver ?</h1>
                 <p>

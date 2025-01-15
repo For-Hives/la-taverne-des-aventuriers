@@ -13,6 +13,12 @@ export default {
 				background: 'var(--background)',
 				foreground: 'var(--foreground)',
 			},
+			backgroundImage: {
+				'lp-card1-bg': "url('/assets/images/vinbiere.png')",
+				'lp-card2-bg': "url('/assets/images/vinbiere.png')",
+				'lp-card3-bg': "url('/assets/images/vinbiere.png')",
+				// 'lp-hero-bg': "url('/assets/videos/AnimationCarte.mp4')",
+			}
 		},
 	},
 } satisfies Config
