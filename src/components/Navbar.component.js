@@ -1,31 +1,33 @@
+import Link from 'next/link'
+
 const Navbar = () => {
 	return (
 		<nav className='bg-gray-700 text-white'>
 			<div className='container mx-auto flex items-center justify-between px-4 py-3'>
-				<a href='#' className='text-xl font-bold'>
+				<Link href='#' className='text-xl font-bold'>
 					Logo
-				</a>
+				</Link>
 
 				<ul className='flex space-x-6'>
 					<li>
-						<a href='#' className='hover:underline'>
+						<Link href='#' className='hover:underline'>
 							Home
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href='#' className='hover:underline'>
+						<Link href='#' className='hover:underline'>
 							About
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href='#' className='hover:underline'>
+						<Link href='#' className='hover:underline'>
 							Services
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href='#' className='hover:underline'>
+						<Link href='#' className='hover:underline'>
 							Contact
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</div>
