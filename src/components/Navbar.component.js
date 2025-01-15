@@ -11,27 +11,27 @@ const Navbar = () => {
 
 				<ul className='flex space-x-6'>
 					<li>
-						<Link href='#' className='hover:underline'>
+						<Link href='/who_are_we' className='hover:underline'>
 							Qui Sommes-nous
 						</Link>
 					</li>
 					<li>
-						<Link href='#' className='hover:underline'>
+						<Link href='/menu' className='hover:underline'>
 							Carte
 						</Link>
 					</li>
 					<li>
-						<Link href='#' className='hover:underline'>
+						<Link href='/gamelibrary' className='hover:underline'>
 							Ludothèque
 						</Link>
 					</li>
 					<li>
-						<Link href='#' className='hover:underline'>
+						<Link href='/events' className='hover:underline'>
 							Evènements
 						</Link>
 					</li>
 					<li>
-						<Link href='#' className='hover:underline'>
+						<Link href='/contacts' className='hover:underline'>
 							Contact
 						</Link>
 					</li>
