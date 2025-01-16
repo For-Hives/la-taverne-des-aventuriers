@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import BackgroundVideoLP from "@/components/lp_Background_Video";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faChevronRight, faWineBottle} from "@fortawesome/free-solid-svg-icons";
+import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
 
 
 // Landing Page
