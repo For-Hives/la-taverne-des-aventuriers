@@ -19,9 +19,9 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
-				'lp-card1-bg': "url('/assets/images/vinbiere.png')",
-				'lp-card2-bg': "url('/assets/images/vinbiere.png')",
-				'lp-card3-bg': "url('/assets/images/vinbiere.png')",
+				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
+				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
+				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
 				// 'lp-hero-bg': "url('/assets/videos/AnimationCarte.mp4')",
 			},
 
@@ -36,7 +36,8 @@ export default {
 			},
 			fontFamily: {
 				cardinal: ['"Cardinal"', 'sans-serif'],
-				kcobraletra: ['"KC Obra Letra"', 'sans-serif'],
+				obraletra: ['var(--kc-obra-letra)'],
+				obraletraBold: ['var(--kc-obra-letra-bold)'],
 			},
 		},
 	},
