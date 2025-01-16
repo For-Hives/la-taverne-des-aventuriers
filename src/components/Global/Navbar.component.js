@@ -7,7 +7,7 @@ const Navbar = () => {
 			<div className='mx-auto flex w-full max-w-5xl items-center justify-evenly rounded bg-title-300 px-4 py-3'>
 				<ul className='flex items-center gap-16 space-x-6 font-kcobraletra text-sm text-title-200'>
 					<li>
-						<Link href='/'>
+						<Link href='/public'>
 							<Image
 								src='/assets/LTDA_Logo.png'
 								alt='LTDA Logo'

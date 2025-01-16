@@ -1,8 +1,6 @@
 import Link from 'next/link'
-// import Image from 'next/image';
-// import Navbar from "./Navbar.component";
 
-const Reservation_Card = () => {
+const ReservationCardComponent = () => {
 	return (
 		<div className='mx-auto w-3/4 gap-20 rounded-lg bg-gray-700 p-10 py-5'>
 			<div className='items-left'>
@@ -24,4 +22,4 @@ const Reservation_Card = () => {
 		</div>
 	)
 }
-export default Reservation_Card
+export default ReservationCardComponent
