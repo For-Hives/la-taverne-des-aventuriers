@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 import BackgroundVideoLP from "@/components/lp_Background_Video";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faChevronRight, faWineBottle} from "@fortawesome/free-solid-svg-icons";
 
 
 // Landing Page
@@ -20,7 +22,7 @@ export default function Home() {
 			<Navbar/>
 
 			{/*Main part*/}
-			<main className='w-full h-full flex flex-col items-center gap-8 pt-20 sm:items-start'>
+			<main className='absolute left-0 top-0 w-full h-full flex flex-col items-center gap-8 pt-20 sm:items-start'>
 				{/*Hero + cards*/}
 				<div className='w-full flex flex-col items-center gap-16'>
 					{/*Hero section*/}
@@ -30,24 +32,39 @@ export default function Home() {
 						<BackgroundVideoLP/>
 
 						{/*Text And CTA button div*/}
-						<div className='flex flex-col items-start gap-0'>
-							{/*Hero Title*/}
-							<h1 className='text-2xl font-bold first-letter:text-red-500 text-gray-900'>La taverne des
-								aventuriers</h1>
-							{/*Description*/}
-							<p className='text-gray-700'>Votre bar à jeux Nantais favoris !</p>
+						<div className='left-0 bottom-0 flex flex-col items-start gap-10'>
 
-							{/*Button div*/}
-							<div className='flex flex-wrap items-start gap-2'>
-								{/*Button 1*/}
-								<button className='text-gray-700 bg-amber-400'>
-									test
-								</button>
-								{/*Button 2*/}
-								<button className='text-gray-700 bg-amber-400'>
-									test
-								</button>
+							{/*Hero Title*/}
+							<div>
+								<h1 className='font-cardinal text-8xl font-bold text-title-200'>La taverne des</h1>
+								<h2 className='font-cardinal text-8xl font-bold first-letter:text-title-100 text-title-200'>Aventuriers</h2>
 							</div>
+
+							<div className='flex flex-col items-start gap-9'>
+								{/*Description*/}
+								<div className='flex items-center gap-1'>
+									<p className='text-2xl font-kcobraletra text-title-200'>Votre bar à </p>
+									<p className='text-2xl font-kcobraletra text-title-100'>Jeux Nantais</p>
+									<p className='text-2xl font-kcobraletra text-title-200'>favoris !</p>
+								</div>
+
+
+								{/*Button div*/}
+								<div className='flex flex-wrap items-start gap-6'>
+									{/*Button 1*/}
+									<button className='flex items-center gap-4 p-2 font-kcobraletra text-xl text-title-300 bg-title-200 rounded'>
+										Servez-vous
+										<FontAwesomeIcon icon={faChevronRight} className='text-title-300'/>
+									</button>
+
+									{/*Button 2*/}
+									<button
+										className='font-kcobraletra p-1 text-xl text-title-200 border-3 border-solid border-title-200 rounded '>
+										Découvrez nos Jeux
+									</button>
+								</div>
+							</div>
+
 						</div>
 					</div>
 
@@ -166,11 +183,9 @@ export default function Home() {
 				{/*Reservation CTA Card (Imported from Components)*/}
 				<Reservation_Card/>
 
+				{/*Footer (Imported from Components)*/}
+				<Footer/>
 			</main>
-
-			{/*Footer (Imported from Components)*/}
-			<Footer/>
-
 		</div>
 	);
 }
