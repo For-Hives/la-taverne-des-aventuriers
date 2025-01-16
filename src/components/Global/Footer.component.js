@@ -1,8 +1,6 @@
 import Link from 'next/link'
-// import Image from 'next/image';
-// import Reservation_Card from "./Reservation_Card";
 
-const Footer = () => {
+const FooterComponent = () => {
 	return (
 		<div className='flex w-full items-center justify-center bg-gray-700 text-white'>
 			<div className='flex w-full max-w-2xl flex-col items-center justify-center p-4'>
@@ -34,4 +32,4 @@ const Footer = () => {
 	)
 }
 
-export default Footer
+export default FooterComponent
