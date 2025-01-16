@@ -3,6 +3,19 @@ import '@/app/globals.css'
 import type { Metadata } from 'next'
 
 import { Geist, Geist_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
+
+const ObraLetra = localFont({
+	display: 'swap',
+	src: '../../public/assets/Fonts/KCObraLetra/KCObraLetraRegular.ttf',
+	variable: '--kc-obra-letra',
+})
+
+const ObraLetraBold = localFont({
+	display: 'swap',
+	src: '../../public/assets/Fonts/KCObraLetra/KCObraLetraBold.ttf',
+	variable: '--kc-obra-letra-bold',
+})
 
 const geistSans = Geist({
 	subsets: ['latin'],
@@ -27,7 +40,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				{children}
 			</body>
