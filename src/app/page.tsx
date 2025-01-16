@@ -172,7 +172,7 @@ export default function Home() {
 						{/*Text*/}
 						<div className='w-1/2'>
 							{/*title*/}
-							<h2>D'où vient notre renom ?</h2>
+							<h2>{`D'où vient notre renom ?`}</h2>
 							{/*Description*/}
 							<p>Lorem ipsum</p>
 							{/*Link*/}

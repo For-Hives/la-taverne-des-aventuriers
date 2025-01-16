@@ -1,14 +1,19 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Navbar = () => {
 	return (
 		<nav>
-			<div className='bg-title-300 mx-auto flex items-center justify-evenly px-4 py-3 max-w-5xl w-full rounded'>
-				<ul className='flex space-x-6  gap-16 text-title-200 font-kcobraletra text-sm items-center'>
+			<div className='mx-auto flex w-full max-w-5xl items-center justify-evenly rounded bg-title-300 px-4 py-3'>
+				<ul className='flex items-center gap-16 space-x-6 font-kcobraletra text-sm text-title-200'>
 					<li>
 						<Link href='/'>
-							<Image src="/assets/LTDA_Logo.png" alt="LTDA Logo" width={50} height={50} />
+							<Image
+								src='/assets/LTDA_Logo.png'
+								alt='LTDA Logo'
+								width={50}
+								height={50}
+							/>
 						</Link>
 					</li>
 					<li>
@@ -39,7 +44,7 @@ const Navbar = () => {
 				</ul>
 			</div>
 		</nav>
-	);
-};
+	)
+}
 
-export default Navbar;
+export default Navbar
