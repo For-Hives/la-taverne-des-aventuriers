@@ -10,6 +10,7 @@
 		"lint:fix": "next lint --fix",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
+		"tsc": "npx tsc --noEmit --watch",
 		"prepare": "husky install",
 		"test": "echo \"No tests specified\""
 	},
