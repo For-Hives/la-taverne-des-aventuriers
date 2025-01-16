@@ -1,0 +1,23 @@
+{
+	"extends": ["next/core-web-vitals", "next/typescript"],
+	"plugins": ["perfectionist"],
+	"rules": {
+		"no-console": [
+			"error",
+			{
+				"allow": ["warn", "error", "info"]
+			}
+		],
+		"perfectionist/sort-enums": "error",
+		"perfectionist/sort-imports": ["error"],
+		"perfectionist/sort-objects": "error",
+		"perfectionist/sort-variable-declarations": "error"
+	},
+	"settings": {
+		"perfectionist": {
+			"partitionByComment": false,
+			"partitionByNewLine": false,
+			"type": "alphabetical"
+		}
+	}
+}
