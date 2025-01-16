@@ -8,10 +8,29 @@ export default {
 	],
 	plugins: [],
 	theme: {
+		borderWidth: {
+			DEFAULT: '1px',
+			'0': '0',
+			'2': '2px',
+			'3': '3px',
+			'4': '4px',
+			'6': '6px',
+			'8': '8px',
+		},
 		extend: {
+			fontFamily: {
+				cardinal: ['"Cardinal"', "sans-serif"],
+				kcobraletra: ['"KC Obra Letra"', "sans-serif"]
+			},
+
 			colors: {
 				background: 'var(--background)',
 				foreground: 'var(--foreground)',
+				'title':{
+					100: '#8D2026',
+					200: '#582615',
+					300: '#FFFCEE'
+				}
 			},
 			backgroundImage: {
 				'lp-card1-bg': "url('/assets/images/vinbiere.png')",

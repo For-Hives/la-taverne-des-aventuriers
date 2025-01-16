@@ -40,10 +40,7 @@ const BackgroundVideoLP = () => {
     }, []);
 
     return (
-        // Video Div
-        <div className="relative w-screen h-screen">
-
-            {/*Vimeo Iframe*/}
+            // Vimeo Iframe
             <iframe
                 // indicating the video
                 ref={firstVideoRef}
@@ -59,7 +56,6 @@ const BackgroundVideoLP = () => {
                 // Allowing Fullscreen mode
                 allowFullScreen
             ></iframe>
-        </div>
     );
 };
 
