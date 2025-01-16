@@ -43,5 +43,4 @@ next-env.d.ts
 .idea
 yarn.lock
 pnpm-lock.yaml
-.eslintrc.json
 *.txt
