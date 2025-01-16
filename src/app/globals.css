@@ -26,3 +26,14 @@ body, html {
 	padding: 0;
 	box-sizing: border-box;
 }
+
+@layer utilities {
+	.mask-custom {
+		mask-image: url('../../public/assets/images/overlay_white_inverted_002.png');
+		-webkit-mask-image: url('../../public/assets/images/overlay_white_inverted_002.png');
+		mask-repeat: no-repeat;
+		mask-size: cover;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: cover;
+	}
+}
