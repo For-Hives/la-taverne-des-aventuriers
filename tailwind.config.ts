@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss'
 
 export default {
 	content: [
-		'./src/who_are_we/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/WhoAreWe/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
@@ -23,6 +23,7 @@ export default {
 				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
 				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
 				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
+				whoareweimage: "url('/assets/images/elements/WhoAreWeElements/t3.png')",
 				// 'lp-hero-bg': "url('/assets/videos/AnimationCarte.mp4')",
 			},
 

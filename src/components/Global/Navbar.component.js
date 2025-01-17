@@ -5,9 +5,9 @@ const Navbar = () => {
 	return (
 		<nav className='fixed top-2 z-50 w-full'>
 			<div className='mx-auto flex w-full max-w-5xl items-center justify-evenly rounded bg-title-300 px-4 py-3'>
-				<ul className='font-obraletra flex items-center gap-16 space-x-6 text-sm text-title-200'>
+				<ul className='flex items-center gap-16 space-x-6 font-obraletra text-sm text-title-200'>
 					<li>
-						<Link href='/public'>
+						<Link href='/'>
 							<Image
 								src='/assets/images/LTDALogo.png'
 								alt='LTDA Logo'
@@ -17,7 +17,7 @@ const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href='/who_are_we' className='hover:underline'>
+						<Link href='/WhoAreWe' className='hover:underline'>
 							Qui Sommes-nous
 						</Link>
 					</li>
