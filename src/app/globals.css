@@ -36,4 +36,13 @@ body, html {
 		-webkit-mask-repeat: no-repeat;
 		-webkit-mask-size: cover;
 	}
+
+	.maskFooter {
+		mask-image: url('../../public/assets/images/MaskFooter.png');
+		-webkit-mask-image: url('../../public/assets/images/MaskFooter.png');
+		mask-repeat: no-repeat;
+		mask-size: cover;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: cover;
+	}
 }

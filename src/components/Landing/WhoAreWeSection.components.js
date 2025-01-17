@@ -17,7 +17,7 @@ const WhoAreWeSection = () => {
 			</div>
 
 			{/*Text*/}
-			<div className='font-obraletra flex w-2/3 flex-col items-start justify-center gap-9 p-4 text-title-200'>
+			<div className='flex w-2/3 flex-col items-start justify-center gap-9 p-4 font-obraletra text-title-200'>
 				{/*title*/}
 				<h2>{`D'où vient notre renom ?`}</h2>
 

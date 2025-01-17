@@ -19,6 +19,7 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
+				FooterImage: "url('/assets/images/MaskFooter.png')",
 				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
 				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
 				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
@@ -27,6 +28,9 @@ export default {
 
 			colors: {
 				background: 'var(--background)',
+				cardBG: {
+					100: '#F2EFE2',
+				},
 				foreground: 'var(--foreground)',
 				title: {
 					100: '#8D2026',

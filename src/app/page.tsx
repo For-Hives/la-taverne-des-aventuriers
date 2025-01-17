@@ -15,12 +15,12 @@ import Navbar from '../components/Global/Navbar.component.js'
 export default function Home() {
 	return (
 		// Page
-		<div className='relative h-auto w-screen items-center justify-center'>
+		<div className='relative h-auto w-full items-center justify-center'>
 			{/*Navbar import*/}
 			<Navbar />
 
 			{/*Main part*/}
-			<main className='absolute left-0 top-0 flex h-full w-full flex-col items-center gap-8 pt-20 sm:items-start'>
+			<main className='absolute left-0 top-0 flex h-full w-full flex-col items-center gap-96 pt-20 sm:items-start'>
 				{/*Hero + cards*/}
 				<div className='flex w-full flex-col items-center gap-96'>
 					{/*Hero section*/}
