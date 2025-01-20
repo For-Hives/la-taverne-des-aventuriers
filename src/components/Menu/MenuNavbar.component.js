@@ -1,0 +1,69 @@
+import { ChevronDownIcon } from '@heroicons/react/16/solid'
+
+const tabs = [
+	{ current: false, href: '#', name: 'Cocktails' },
+	{ current: false, href: '#', name: 'Mocktails' },
+	{ current: true, href: '#', name: 'Shooters' },
+	{ current: false, href: '#', name: 'Short / Long Drinks' },
+	{ current: false, href: '#', name: 'Bièrres et Vins' },
+	{ current: false, href: '#', name: 'Planche' },
+	{ current: false, href: '#', name: 'Softs et Boissons Chaudes' },
+]
+
+function classNames(...classes) {
+	return classes.filter(Boolean).join(' ')
+}
+
+export default function Example() {
+	return (
+		<div className='p-16'>
+			<div className='grid grid-cols-1 sm:hidden'>
+				{/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
+				<select
+					defaultValue={tabs.find(tab => tab.current).name}
+					aria-label='Select a tab'
+					className='bg-title-400 col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pl-3 pr-8 text-base text-title-200 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600'
+				>
+					{tabs.map(tab => (
+						<option key={tab.name}>{tab.name}</option>
+					))}
+				</select>
+				<ChevronDownIcon
+					aria-hidden='true'
+					className='pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-title-200'
+				/>
+			</div>
+			<div className='hidden sm:block'>
+				<nav
+					aria-label='Tabs'
+					className='divide-title-500 isolate flex divide-x rounded-lg shadow'
+				>
+					{tabs.map((tab, tabIdx) => (
+						<a
+							key={tab.name}
+							href={tab.href}
+							aria-current={tab.current ? 'page' : undefined}
+							className={classNames(
+								tab.current
+									? 'text-title-200'
+									: 'text-title-200 hover:text-title-200',
+								tabIdx === 0 ? 'rounded-l-lg' : '',
+								tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '',
+								'bg-title-400 group relative min-w-0 flex-1 overflow-hidden px-4 py-4 text-center text-sm font-medium hover:bg-title-300 focus:z-10'
+							)}
+						>
+							<span>{tab.name}</span>
+							<span
+								aria-hidden='true'
+								className={classNames(
+									tab.current ? 'bg-title-200' : 'bg-transparent',
+									'absolute inset-x-0 bottom-0 h-0.5'
+								)}
+							/>
+						</a>
+					))}
+				</nav>
+			</div>
+		</div>
+	)
+}
