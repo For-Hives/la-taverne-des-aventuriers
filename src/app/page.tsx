@@ -1,15 +1,11 @@
-// Client side (for 'UseState, UseRef,...' effects if needed
-'use client'
-
 // imports
 import FooterComponent from '@/components/Global/Footer.component'
+import Navbar from '@/components/Global/Navbar.component.js'
 import ReservationCardComponent from '@/components/Global/ReservationCard.component'
 import EventsComponent from '@/components/Landing/Events.component'
 import HeroTextComponent from '@/components/Landing/HeroText.component'
 import BackgroundVideoLP from '@/components/Landing/LpBackgroundVideo.component'
 import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
-
-import Navbar from '../components/Global/Navbar.component.js'
 
 // Landing Page
 export default function Home() {
