@@ -23,6 +23,7 @@ export default {
 				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
 				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
 				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
+				menuBGImage: "url('/assets/images/elements/MenuElements/BGImage.png')",
 				whoareweimage: "url('/assets/images/elements/ContactElements/t3.png')",
 				// 'lp-hero-bg': "url('/assets/videos/AnimationCarte.mp4')",
 			},
@@ -37,6 +38,8 @@ export default {
 					100: '#8D2026',
 					200: '#582615',
 					300: '#FFFCEE',
+					400: '#f2edd3',
+					500: 'rgba(88,38,21,0.32)',
 				},
 			},
 			fontFamily: {
