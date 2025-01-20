@@ -1,3 +1,27 @@
-export default function Page() {
-    return (<p>Contacts Page</p>);
+import ContactElements from '@/components/Contact/ContactElementsSection.component'
+import HowToContact from '@/components/Contact/HowToContact.component'
+import MapSection from '@/components/Contact/MapSection.component'
+import FooterComponent from '@/components/Global/Footer.component'
+
+import Navbar from '../../components/Global/Navbar.component.js'
+
+export default function WhoAreWe() {
+	return (
+		<div className='relative flex h-screen w-screen flex-col items-center gap-96'>
+			{/* Navbar */}
+			<Navbar />
+
+			{/* Image de fond */}
+			<div className='mask-custom absolute bottom-0 left-0 h-[125%] w-full -translate-y-[55%] transform bg-whoareweimage opacity-75'></div>
+
+			{/* Contenu principal avec espacement */}
+			<div className='relative mt-[256px] flex flex-col items-center gap-[256px]'>
+				<HowToContact />
+				<ContactElements />
+				<MapSection />
+			</div>
+
+			<FooterComponent />
+		</div>
+	)
 }
