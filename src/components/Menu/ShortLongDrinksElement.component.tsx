@@ -1,5 +1,4 @@
 import CocktailDivComponent from '@/components/Menu/CocktailDiv.component'
-import CocktailDivInvertedComponent from '@/components/Menu/CocktailDivInverted.component'
 
 const ShortLongDrinksElement = () => {
 	return (
@@ -9,13 +8,13 @@ const ShortLongDrinksElement = () => {
 			</h2>
 			<div className='flex flex-col justify-center gap-28'>
 				<CocktailDivComponent />
-				<CocktailDivInvertedComponent />
+				<CocktailDivComponent isInverted={true} />
 				<CocktailDivComponent />
-				<CocktailDivInvertedComponent />
+				<CocktailDivComponent isInverted={true} />
 				<CocktailDivComponent />
-				<CocktailDivInvertedComponent />
+				<CocktailDivComponent isInverted={true} />
 				<CocktailDivComponent />
-				<CocktailDivInvertedComponent />
+				<CocktailDivComponent isInverted={true} />
 			</div>
 		</div>
 	)

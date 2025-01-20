@@ -56,11 +56,11 @@ const BeerWineElement = () => {
 								Bière Bouteille : (6 €)
 							</h2>
 							<p className='flex flex-col font-cardinal text-3xl text-title-200 first-letter:text-title-100'>
-								<span>Linderman's Pecheresse (25cl) 1.2%</span>
+								<span>{`Linderman's Pecheresse (25cl) 1.2%`}</span>
 								<span>kwak (33cl) 8.4%</span>
 								<span>Mystic (kreik) (25cl) 3.2%</span>
 								<span>La Blonde Bouffay (33cl) 6%</span>
-								<span>L'Ambre Bouffay (33cl) 6.5%</span>
+								<span>{`L'Ambre Bouffay (33cl) 6.5%`}</span>
 							</p>
 						</div>
 					</div>
@@ -77,10 +77,10 @@ const BeerWineElement = () => {
 								Blanc
 							</h2>
 							<p className='flex flex-col font-cardinal text-3xl text-title-200'>
-								<span>AOP Muscadet Drouet "Domaine Drouet Frères"</span>
+								<span>{`AOP Muscadet Drouet 'Domaine Drouet Frères'`}</span>
 								<span>
-									IGP "Cote de Gascogne" Moustache Pour tous "Domaine du
-									Plaimont"
+									{`IGP "Cote de Gascogne" Moustache Pour tous "Domaine du
+									Plaimont"`}
 								</span>
 							</p>
 						</div>
@@ -116,7 +116,7 @@ const BeerWineElement = () => {
 								Rosé
 							</h2>
 							<p className='flex flex-col font-cardinal text-3xl text-title-200'>
-								<span>AOP Muscadet Drouet "Domaine Drouet Frères"</span>
+								<span>{`AOP Muscadet Drouet 'Domaine Drouet Frères'`}</span>
 							</p>
 						</div>
 					</div>
