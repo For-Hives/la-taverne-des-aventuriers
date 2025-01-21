@@ -49,8 +49,11 @@ export default async function EventsComponent() {
 						</div>
 
 						{/* Description */}
-						{eventsElement.eventCard1Description}
-
+						<div
+							dangerouslySetInnerHTML={{
+								__html: eventsElement.eventCard1Description,
+							}}
+						/>
 						<div>
 							{/* Link */}
 							<Link
