@@ -45,12 +45,9 @@ export default function Example() {
 							href={tab.href}
 							aria-current={tab.current ? 'page' : undefined}
 							className={classNames(
-								tab.current
-									? 'text-title-200'
-									: 'text-title-200 hover:text-title-200',
 								tabIdx === 0 ? 'rounded-l-lg' : '',
 								tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '',
-								'group relative min-w-0 flex-1 overflow-hidden bg-title-400 px-4 py-4 text-center text-sm font-medium hover:bg-title-300 focus:z-10'
+								'group relative min-w-0 flex-1 overflow-hidden bg-title-400 px-4 py-4 text-center text-sm font-medium text-title-200 hover:bg-title-300 focus:z-10'
 							)}
 						>
 							<span>{tab.name}</span>

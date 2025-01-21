@@ -1,44 +1,22 @@
-'use client'
 import { getReservationCardData } from '@/app/actions/GetReservationCardService'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
-const ReservationCardComponent = () => {
-	const [ReservationData, setReservationData] = useState({
-		buttonLabel: '',
-		buttonUrl: '',
-		description: '',
-		gamesUrl: '',
-		image: '',
-		title: '',
-	})
-	const [error] = useState(null)
-
-	useEffect(() => {
-		async function fetchReservationData() {
-			try {
-				const data = await getReservationCardData()
-				const ReservationData = data[0]
-
-				setReservationData({
-					buttonLabel: ReservationData.button_label || 'Boutton Indisponible',
-					buttonUrl: ReservationData.button_url,
-					description:
-						ReservationData?.description || 'Description Indisponible',
-					gamesUrl: ReservationData?.games_url,
-					image: ReservationData?.image,
-					title: ReservationData?.Title || 'Titre Indisponible',
-				})
-			} catch (err) {
-				console.error('Erreur lors de la récupération des données :', err)
-			}
-		}
-		fetchReservationData()
-	}, [])
-
-	if (error) {
-		return <div className='text-red-500'>{error}</div>
+export default async function ReservationCardComponent() {
+	const data = await getReservationCardData()
+	/**
+	 * Formats reservation card data into a structured object
+	 * @param {ReservationCardData} data - The raw reservation card data
+	 * @returns {ReservationData} Formatted reservation card object
+	 */
+	const ReservationData = {
+		buttonLabel: data.button_label,
+		buttonUrl: data.button_url,
+		description: textToSpanColored(data.description),
+		gamesUrl: data.games_url,
+		image: data.image,
+		title: textToSpanColored(data.Title),
 	}
 
 	return (
@@ -47,7 +25,13 @@ const ReservationCardComponent = () => {
 				<h1 className='text-left font-cardinal text-2xl first-letter:text-title-100'>
 					{ReservationData.title}
 				</h1>
-				<p>{ReservationData.description}</p>
+
+				<div
+					dangerouslySetInnerHTML={{
+						__html: ReservationData.description,
+					}}
+				></div>
+
 				<Link
 					href={ReservationData.gamesUrl}
 					className='text-title-200 hover:underline'
@@ -67,7 +51,6 @@ const ReservationCardComponent = () => {
 			</div>
 
 			<div className='flex w-1/3 items-center justify-center'>
-				{/*{ReservationData.image}*/}
 				<Image
 					src='/assets/images/elements/ReservationCardIllustration.png'
 					alt='LTDA Logo'
@@ -78,4 +61,3 @@ const ReservationCardComponent = () => {
 		</div>
 	)
 }
-export default ReservationCardComponent
