@@ -1,5 +1,5 @@
 import FooterComponent from '@/components/Global/Footer.component'
-import Navbar from '@/components/Global/Navbar.component.js'
+import Navbar from '@/components/Global/Navbar.component'
 import BeerWineElement from '@/components/Menu/BeerWineElements.component'
 import CocktailElement from '@/components/Menu/CocktailElement.component'
 import MenuNavbar from '@/components/Menu/MenuNavbar.component'

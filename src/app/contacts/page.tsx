@@ -3,7 +3,7 @@ import HowToContact from '@/components/Contact/HowToContact.component'
 import MapSection from '@/components/Contact/MapSection.component'
 import ReservationComponent from '@/components/Contact/Reservation.component'
 import FooterComponent from '@/components/Global/Footer.component'
-import Navbar from '@/components/Global/Navbar.component.js'
+import Navbar from '@/components/Global/Navbar.component'
 
 export default function WhoAreWe() {
 	return (

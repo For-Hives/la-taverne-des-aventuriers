@@ -25,14 +25,7 @@ const MapSection = () => {
 					</Link>
 				</button>
 			</div>
-			<div className='w-2/3'>
-				<Image
-					src='/assets/images/elements/ContactElements/maps.png'
-					alt='LTDA Logo'
-					width={1920}
-					height={1080}
-				/>
-			</div>
+			<div className='w-2/3'>.tsx</div>
 		</div>
 	)
 }
