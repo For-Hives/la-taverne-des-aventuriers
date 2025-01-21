@@ -21,7 +21,7 @@ const BackgroundVideoLP = () => {
 		const loopStart = 4 // Last three seconds of the video
 
 		// Listener for the event 'durationchange' to obtain the video duration
-		firstPlayer.on('durationchange', data => {
+		firstPlayer.on('durationchange', (data: { duration: number }) => {
 			// Assigning the video duration time to a variable
 			videoDuration = data.duration
 		})

@@ -47,10 +47,10 @@ export async function getFooterData(): Promise<FooterData> {
 
 	try {
 		// Fetch data from PocketBase
-		console.log('Fetching footer data from PocketBase...')
-		const result = await pb.collection('footer').getList(1, 60) // Get first 20 items
+		// console.log('Fetching footer data from PocketBase...')
+		const result = await pb.collection('footer').getList(1, 60) // Get first 60 items
 
-		console.log('Successfully retrieved footer data')
+		// console.log('Successfully retrieved footer data')
 		return result.items[0] as FooterData
 	} catch (error) {
 		console.error('Error while fetching footer data from PocketBase:', error)

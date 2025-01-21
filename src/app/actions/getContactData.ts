@@ -51,10 +51,10 @@ export async function getContactData(): Promise<ContactPageData> {
 
 	try {
 		// Fetch data from PocketBase
-		console.log('Fetching contact data from PocketBase...')
-		const result = await pb.collection('contact_page').getList(1, 60) // Get first 20 items
+		// console.log('Fetching contact data from PocketBase...')
+		const result = await pb.collection('contact_page').getList(1, 60) // Get first 60 items
 
-		console.log('Successfully retrieved contact data')
+		// console.log('Successfully retrieved contact data')
 		return result.items[0] as ContactPageData
 	} catch (error) {
 		console.error('Error while fetching contact data from PocketBase:', error)

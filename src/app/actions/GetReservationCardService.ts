@@ -39,10 +39,10 @@ export async function getReservationCardData(): Promise<ReservationCardData> {
 
 	try {
 		// Fetch data from PocketBase
-		console.log('Fetching reservation card data from PocketBase...')
+		// console.log('Fetching reservation card data from PocketBase...')
 		const result = await pb.collection('reservation_card').getList(1, 20) // Get first 20 items
 
-		console.log('Successfully retrieved reservation card data')
+		// console.log('Successfully retrieved reservation card data')
 		return result.items[0] as ReservationCardData
 	} catch (error) {
 		console.error('Error while fetching data from PocketBase:', error)
