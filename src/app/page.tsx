@@ -1,8 +1,11 @@
+import FooterComponent from '@/components/Global/Footer.component'
 // imports
 import Navbar from '@/components/Global/Navbar.component'
+import ReservationCardComponent from '@/components/Global/ReservationCard.component'
 import EventsComponent from '@/components/Landing/Events.component'
 import HeroTextComponent from '@/components/Landing/HeroText.component'
 import BackgroundVideoLP from '@/components/Landing/LpBackgroundVideo.component'
+import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
 
 // Landing Page
 export default function Home() {
@@ -29,14 +32,14 @@ export default function Home() {
 					<EventsComponent />
 
 					{/*Who are We Section*/}
-					{/*<WhoAreWeSection />*/}
+					<WhoAreWeSection />
 				</div>
 
 				{/*Reservation CTA Card (Imported from Components)*/}
-				{/*<ReservationCardComponent />*/}
+				<ReservationCardComponent />
 
 				{/*FooterComponent (Imported from Components)*/}
-				{/*<FooterComponent />*/}
+				<FooterComponent />
 			</main>
 		</div>
 	)

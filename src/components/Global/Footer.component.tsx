@@ -1,10 +1,37 @@
+import { getFooterData } from '@/app/actions/GetFooterService'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const FooterComponent = () => {
+export default async function FooterComponent() {
+	const data = await getFooterData()
+
+	const FooterData = {
+		barTitle: data.bar_title,
+		contactTitle: data.contact_title,
+		contactUrl: data.contact_url,
+		copyright: data.copyright,
+		descriptionTitle: data.description_title,
+		descriptionUrl: data.description_url,
+		eventsTitle: data.events_title,
+		eventsUrl: data.events_url,
+		facebookUrl: data.facebook_url,
+		gameLibraryTitle: data.game_library_title,
+		gameLibraryUrl: data.game_library_url,
+		image1: data.image1,
+		image2: data.image2,
+		instagramUrl: data.instagram_url,
+		menuLinkTitle: data.menu_link_title,
+		menuUrl: data.menu_url,
+		reservationLinkTitle: data.reservation_link_url,
+		reservationUrl: data.reservation_url,
+		socialsTitle: data.socials_title,
+		supportTitle: data.support_title,
+		twitterUrl: data.twitter_url,
+	}
+
 	return (
 		<div
-			className='bg-FooterImage relative flex w-screen items-center justify-center bg-cover bg-center text-white'
+			className='relative flex w-screen items-center justify-center bg-FooterImage bg-cover bg-center text-white'
 			style={{ aspectRatio: '2653 / 1000' }}
 		>
 			<div className='absolute bottom-0 left-0 flex items-center justify-center mix-blend-color-burn'>
@@ -17,39 +44,45 @@ const FooterComponent = () => {
 			</div>
 
 			{/* Text */}
-			<div className='relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-24 p-4 text-center text-base'>
+			<div className='relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-24 p-4 text-center font-obraletra text-base text-title-200'>
 				<div className='flex w-full flex-wrap items-start justify-around gap-8'>
 					{/* First Column */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-						<h2 className='text-xl font-bold'>Le Bar :</h2>
-						<Link className='hover:underline' href='#'>
-							Carte
+						<h2 className='font-cardinal text-xl text-title-200 first-letter:text-title-100'>
+							{FooterData.barTitle}
+						</h2>
+						<Link className='hover:underline' href={FooterData.menuUrl}>
+							{FooterData.menuLinkTitle}
 						</Link>
-						<Link className='hover:underline' href='#'>
-							Qui sommes-nous
+						<Link className='hover:underline' href={FooterData.descriptionUrl}>
+							{FooterData.descriptionTitle}
 						</Link>
-						<Link className='hover:underline' href='#'>
-							Évènements
+						<Link className='hover:underline' href={FooterData.eventsUrl}>
+							{FooterData.eventsTitle}
 						</Link>
-						<Link className='hover:underline' href='#'>
-							Ludothèque
+						<Link className='hover:underline' href={FooterData.gameLibraryUrl}>
+							{FooterData.gameLibraryTitle}
 						</Link>
 					</div>
 
 					{/* Second Column */}
-					<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-						<h2 className='text-xl font-bold'>Support :</h2>
-						<Link className='hover:underline' href='#'>
-							Contact
+					<div className='flex w-full max-w-xs flex-col items-center justify-center font-obraletra text-base text-title-200'>
+						<h2 className='font-cardinal text-xl text-title-200 first-letter:text-title-100'>
+							{FooterData.supportTitle}
+						</h2>
+						<Link className='hover:underline' href={FooterData.contactUrl}>
+							{FooterData.contactTitle}
 						</Link>
-						<Link className='hover:underline' href='#'>
-							Réservations
+						<Link className='hover:underline' href={FooterData.reservationUrl}>
+							{FooterData.reservationLinkTitle}
 						</Link>
 					</div>
 
 					{/* Third Column */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-						<h2 className='text-xl font-bold'>Réseaux Sociaux :</h2>
+						<h2 className='font-cardinal text-xl text-title-200 first-letter:text-title-100'>
+							{FooterData.socialsTitle}
+						</h2>
 						<div className='flex space-x-4'>
 							<div>Social 1</div>
 							<div>Social 2</div>
@@ -59,9 +92,7 @@ const FooterComponent = () => {
 				</div>
 
 				<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-					<p className='mt-4 text-sm'>
-						© 2025 Copyright, Tous droits réservés.
-					</p>
+					<p className='mt-4 text-sm'>{FooterData.copyright}</p>
 				</div>
 			</div>
 
@@ -76,5 +107,3 @@ const FooterComponent = () => {
 		</div>
 	)
 }
-
-export default FooterComponent

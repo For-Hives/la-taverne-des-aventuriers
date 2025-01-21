@@ -38,6 +38,7 @@ export default {
 					300: '#FFFCEE',
 					400: '#f2edd3',
 					500: 'rgba(88,38,21,0.32)',
+					600: '#f2efe2',
 				},
 			},
 			fontFamily: {
@@ -45,6 +46,9 @@ export default {
 				obraletra: ['var(--kc-obra-letra)'],
 				obraletraBold: ['var(--kc-obra-letra-bold)'],
 			},
+		},
+		screens: {
+			'100': '100px',
 		},
 	},
 } satisfies Config

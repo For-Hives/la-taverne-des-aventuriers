@@ -1,4 +1,5 @@
 import { getLandingData } from '@/app/actions/GetLandingService'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
@@ -6,35 +7,41 @@ import Link from 'next/link'
 export default async function EventsComponent() {
 	const data = await getLandingData()
 	const eventsElement = {
-		eventCard1ButtonLabel: data.event_card1_button_label,
-		eventCard1ButtonUrl: data.event_card1_button_url,
-		eventCard1Date: data.event_card1_date,
-		eventCard1Description: data.event_card1_description,
-		eventCard1Title: data.event_card1_title,
-		eventCard2ButtonLabel: data.event_card2_button_label,
-		eventCard2ButtonUrl: data.event_card2_button_url,
-		eventCard2Date: data.event_card2_date,
-		eventCard2Description: data.event_card2_description,
-		eventCard2Title: data.event_card2_title,
-		eventCard3ButtonLabel: data.event_card2_button_label,
-		eventCard3ButtonUrl: data.event_card2_button_url,
-		eventCard3Date: data.event_card2_date,
-		eventCard3Description: data.event_card2_description,
-		eventCard3Title: data.event_card2_title,
-		eventsTitle: data.events_title,
+		event_card1_button_label: data.event_card1_button_label,
+		event_card1_button_url: data.event_card1_button_url,
+		event_card1_date: data.event_card1_date,
+		event_card1_description: textToSpanColored(data.event_card1_description),
+		event_card1_image: data.event_card1_image,
+		event_card1_title: textToSpanColored(data.event_card1_title),
+
+		event_card2_button_label: data.event_card2_button_label,
+		event_card2_button_url: data.event_card2_button_url,
+		event_card2_date: data.event_card2_date,
+		event_card2_description: textToSpanColored(data.event_card2_description),
+		event_card2_image: data.event_card2_image,
+		event_card2_title: textToSpanColored(data.event_card2_title),
+
+		event_card3_button_label: data.event_card3_button_label,
+		event_card3_button_url: data.event_card3_button_url,
+		event_card3_date: data.event_card3_date,
+		event_card3_description: textToSpanColored(data.event_card3_description),
+		event_card3_image: data.event_card3_image,
+		event_card3_title: textToSpanColored(data.event_card3_title),
+
+		events_title: textToSpanColored(data.events_title),
 	}
 
 	return (
 		<div className='rounded- flex h-screen w-3/4 flex-col items-start gap-9'>
 			{/*Title*/}
 			<h1 className='font-obraletraBold text-xl text-title-200'>
-				{eventsElement.eventsTitle}
+				{eventsElement.events_title}
 			</h1>
 
 			{/*Layout Event cards Div*/}
-			<div className='flex h-full w-full items-start gap-2'>
+			<div className='flex h-full w-full items-center gap-2 sm:max-lg:flex-col'>
 				{/*Fist Card Div (One Half of the max-width) + Background image "bg-lp-card1-bg bg-cover bg-center"*/}
-				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card1-bg bg-cover bg-center font-obraletra text-title-300'>
+				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card1-bg bg-cover bg-center font-obraletra text-title-300 sm:max-lg:w-full'>
 					{/* Overlay Gradient */}
 					<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 					{/* Text */}
@@ -42,28 +49,28 @@ export default async function EventsComponent() {
 						<div className='items-left flex flex-col justify-start'>
 							{/* Title */}
 							<h2 className='font-obraletraBold text-2xl'>
-								{eventsElement.eventCard1Title}
+								{eventsElement.event_card1_title}
 							</h2>
 							{/* Date */}
-							<h3 className='text-base'>{eventsElement.eventCard1Date}</h3>
+							<h3 className='text-base'>{eventsElement.event_card1_date}</h3>
 						</div>
 
-						{/* Description */}
 						<div
 							dangerouslySetInnerHTML={{
-								__html: eventsElement.eventCard1Description,
+								__html: eventsElement.event_card1_description,
 							}}
-						/>
+						></div>
+
 						<div>
 							{/* Link */}
 							<Link
-								href={eventsElement.eventCard1ButtonUrl}
+								href={eventsElement.event_card1_button_url}
 								className='flex items-center gap-3 underline'
 							>
-								<span>{eventsElement.eventCard1ButtonLabel}</span>
+								<span>{eventsElement.event_card1_button_label}</span>
 								<FontAwesomeIcon
 									icon={faChevronRight}
-									className='h-3 w-3 text-title-300'
+									className='h-4 w-4 text-title-300'
 								/>
 							</Link>
 						</div>
@@ -71,7 +78,7 @@ export default async function EventsComponent() {
 				</div>
 
 				{/*Second Half Event Cards */}
-				<div className='flex h-full w-1/2 flex-col items-start gap-2 text-title-300'>
+				<div className='flex h-full w-1/2 flex-col items-start gap-2 text-title-300 sm:max-lg:w-full'>
 					{/*Second Card*/}
 					<div className='w-ful relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card2-bg bg-cover bg-center font-obraletra text-title-300'>
 						{/* Overlay Gradient */}
@@ -81,23 +88,26 @@ export default async function EventsComponent() {
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
 							{/* Title */}
 							<h2 className='font-obraletraBold text-2xl'>
-								{eventsElement.eventCard2Title}
+								{eventsElement.event_card2_title}
 							</h2>
 							{/* Date */}
-							<h3 className='text-base'>{eventsElement.eventCard2Date}</h3>
-							{/* Description */}
-							<p className='text-sm'>{eventsElement.eventCard2Description}</p>
+							<h3 className='text-base'>{eventsElement.event_card2_date}</h3>
+							<div
+								dangerouslySetInnerHTML={{
+									__html: eventsElement.event_card2_description,
+								}}
+							></div>
 
 							<div>
 								{/* Link */}
 								<Link
-									href={eventsElement.eventCard2ButtonUrl}
+									href={eventsElement.event_card2_button_url}
 									className='flex items-center gap-3 underline'
 								>
-									<span>{eventsElement.eventCard2ButtonLabel}</span>
+									<span>{eventsElement.event_card2_button_label}</span>
 									<FontAwesomeIcon
 										icon={faChevronRight}
-										className='h-3 w-3 text-title-300'
+										className='h-4 w-4 text-title-300'
 									/>
 								</Link>
 							</div>
@@ -105,7 +115,7 @@ export default async function EventsComponent() {
 					</div>
 
 					{/*Third Card Div*/}
-					<div className='w-ful relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card3-bg bg-cover bg-center font-obraletra text-title-300'>
+					<div className='100:max-lg:w-full relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card3-bg bg-cover bg-center font-obraletra text-title-300'>
 						{/* Overlay Gradient */}
 						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 
@@ -113,22 +123,26 @@ export default async function EventsComponent() {
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
 							{/* Title */}
 							<h2 className='font-obraletraBold text-2xl'>
-								{eventsElement.eventCard3Title}
+								{eventsElement.event_card3_title}
 							</h2>
 							{/* Date */}
-							<h3 className='text-base'>{eventsElement.eventCard3Date}</h3>
+							<h3 className='text-base'>{eventsElement.event_card3_date}</h3>
 							{/* Description */}
-							<p className='text-sm'>{eventsElement.eventCard3Description}</p>
+							<div
+								dangerouslySetInnerHTML={{
+									__html: eventsElement.event_card3_description,
+								}}
+							></div>
 							<div>
 								{/* Link */}
 								<Link
-									href={eventsElement.eventCard3ButtonUrl}
+									href={eventsElement.event_card3_button_url}
 									className='flex items-center gap-3 underline'
 								>
-									<span>{eventsElement.eventCard3ButtonLabel}</span>
+									<span>{eventsElement.event_card3_button_label}</span>
 									<FontAwesomeIcon
 										icon={faChevronRight}
-										className='h-3 w-3 text-title-300'
+										className='h-4 w-4 text-title-300'
 									/>
 								</Link>
 							</div>
