@@ -1,6 +1,10 @@
 // todo: fixs ts errrors
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 
+function classNames(...classes: string[]) {
+	return classes.filter(Boolean).join(' ')
+}
+
 const tabs = [
 	{ current: false, href: '#', name: 'Cocktails' },
 	{ current: false, href: '#', name: 'Mocktails' },
@@ -11,17 +15,15 @@ const tabs = [
 	{ current: false, href: '#', name: 'Softs et Boissons Chaudes' },
 ]
 
-function classNames(...classes) {
-	return classes.filter(Boolean).join(' ')
-}
-
 export default function Example() {
+	const tabFound = tabs.find(tab => tab.current)?.name
+
 	return (
 		<div className='p-16'>
 			<div className='grid grid-cols-1 sm:hidden'>
 				{/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
 				<select
-					defaultValue={tabs.find(tab => tab.current).name}
+					defaultValue={tabFound}
 					aria-label='Select a tab'
 					className='col-start-1 row-start-1 w-full appearance-none rounded-md bg-title-400 py-2 pl-3 pr-8 text-base text-title-200 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600'
 				>
