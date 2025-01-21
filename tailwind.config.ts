@@ -2,7 +2,6 @@ import type { Config } from 'tailwindcss'
 
 export default {
 	content: [
-		'./src/Contact/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
@@ -27,7 +26,6 @@ export default {
 				whoareweimage: "url('/assets/images/elements/ContactElements/t3.png')",
 				// 'lp-hero-bg': "url('/assets/videos/AnimationCarte.mp4')",
 			},
-
 			colors: {
 				background: 'var(--background)',
 				cardBG: {

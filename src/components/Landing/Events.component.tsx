@@ -60,7 +60,7 @@ export default async function EventsComponent() {
 								<span>{eventsElement.eventCard1ButtonLabel}</span>
 								<FontAwesomeIcon
 									icon={faChevronRight}
-									className='text-title-300'
+									className='h-3 w-3 text-title-300'
 								/>
 							</Link>
 						</div>
@@ -94,7 +94,7 @@ export default async function EventsComponent() {
 									<span>{eventsElement.eventCard2ButtonLabel}</span>
 									<FontAwesomeIcon
 										icon={faChevronRight}
-										className='text-title-300'
+										className='h-3 w-3 text-title-300'
 									/>
 								</Link>
 							</div>
@@ -125,7 +125,7 @@ export default async function EventsComponent() {
 									<span>{eventsElement.eventCard3ButtonLabel}</span>
 									<FontAwesomeIcon
 										icon={faChevronRight}
-										className='text-title-300'
+										className='h-3 w-3 text-title-300'
 									/>
 								</Link>
 							</div>
