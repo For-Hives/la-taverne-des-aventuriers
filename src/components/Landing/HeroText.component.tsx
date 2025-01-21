@@ -1,4 +1,5 @@
 import { getLandingData } from '@/app/actions/GetLandingService'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
@@ -7,25 +8,27 @@ import Link from 'next/link'
 export default async function HeroTextComponent() {
 	const data = await getLandingData()
 	const heroData = {
-		heroDescription: data.hero_description,
+		heroDescription: textToSpanColored(data.hero_description),
 		heroLeftButtonLabel: data.hero_left_button_label,
 		heroLeftButtonUrl: data.hero_left_button_url,
 		heroRightButtonLabel: data.hero_right_button_label,
 		heroRightButtonUrl: data.hero_right_button_url,
-		heroTitle: data.hero_title,
+		heroTitle: textToSpanColored(data.hero_title),
 	}
 
 	return (
 		<div className='bottom-0 left-0 flex flex-col items-start gap-10 p-52'>
 			{/*Hero Title*/}
-			<h1 className='flex w-2/3 flex-col gap-2 font-cardinal text-8xl font-bold text-title-200 first-letter:text-title-100'>
-				{heroData.heroTitle}
+			<h1 className='flex w-2/3 flex-col gap-2 font-cardinal text-8xl font-bold text-title-200'>
+				<span dangerouslySetInnerHTML={{ __html: heroData.heroTitle }} />
 			</h1>
 
 			<div className='flex flex-col items-start gap-9'>
 				{/*Description*/}
 				<p className='flex items-center gap-1 font-obraletra text-2xl text-title-200'>
-					{heroData.heroDescription}
+					<span
+						dangerouslySetInnerHTML={{ __html: heroData.heroDescription }}
+					/>
 				</p>
 
 				{/*Button div*/}
