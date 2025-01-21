@@ -1,73 +1,27 @@
-'use client'
-
-import { getData } from '@/app/actions/GetLandingService'
+import { getLandingData } from '@/app/actions/GetLandingService'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
-const EventsComponent = () => {
-	const [eventsElement, setEventsElement] = useState({
-		eventCard1ButtonLabel: '',
-		eventCard1ButtonUrl: '',
-		eventCard1Date: '',
-		eventCard1Description: '',
-		eventCard1Title: '',
-		eventCard2ButtonLabel: '',
-		eventCard2ButtonUrl: '',
-		eventCard2Date: '',
-		eventCard2Description: '',
-		eventCard2Title: '',
-		eventCard3ButtonLabel: '',
-		eventCard3ButtonUrl: '',
-		eventCard3Date: '',
-		eventCard3Description: '',
-		eventCard3Title: '',
-		eventsTitle: '',
-	})
-	const [error] = useState(null)
-
-	useEffect(() => {
-		async function fetchEventsElement() {
-			try {
-				const data = await getData()
-				const eventsElement = data[0]
-				setEventsElement({
-					eventCard1ButtonLabel:
-						eventsElement?.event_card1_button_label || 'Button Indiponible',
-					eventCard1ButtonUrl: eventsElement?.event_card1_button_url,
-					eventCard1Date: eventsElement?.event_card1_date || 'date Indiponible',
-					eventCard1Description:
-						eventsElement?.event_card1_description || 'Texte Indiponible',
-					eventCard1Title:
-						eventsElement?.event_card1_title || 'Texte Indiponible',
-					eventCard2ButtonLabel:
-						eventsElement?.event_card2_button_label || 'Button Indiponible',
-					eventCard2ButtonUrl: eventsElement?.event_card2_button_url,
-					eventCard2Date: eventsElement?.event_card2_date || 'date Indiponible',
-					eventCard2Description:
-						eventsElement?.event_card2_description || 'Texte Indiponible',
-					eventCard2Title:
-						eventsElement?.event_card2_title || 'Titre indisponible',
-					eventCard3ButtonLabel:
-						eventsElement?.event_card2_button_label || 'Button Indiponible',
-					eventCard3ButtonUrl: eventsElement?.event_card2_button_url,
-					eventCard3Date: eventsElement?.event_card2_date || 'date Indiponible',
-					eventCard3Description:
-						eventsElement?.event_card2_description || 'Texte Indiponible',
-					eventCard3Title:
-						eventsElement?.event_card2_title || 'Titre indisponible',
-					eventsTitle: eventsElement?.events_title || 'Titre indisponible',
-				})
-			} catch (err) {
-				console.error('Erreur lors de la récupération des données :', err)
-			}
-		}
-		fetchEventsElement()
-	}, [])
-
-	if (error) {
-		return <div className='text-red-500'>{error}</div>
+export default async function EventsComponent() {
+	const data = await getLandingData()
+	const eventsElement = {
+		eventCard1ButtonLabel: data.event_card1_button_label,
+		eventCard1ButtonUrl: data.event_card1_button_url,
+		eventCard1Date: data.event_card1_date,
+		eventCard1Description: data.event_card1_description,
+		eventCard1Title: data.event_card1_title,
+		eventCard2ButtonLabel: data.event_card2_button_label,
+		eventCard2ButtonUrl: data.event_card2_button_url,
+		eventCard2Date: data.event_card2_date,
+		eventCard2Description: data.event_card2_description,
+		eventCard2Title: data.event_card2_title,
+		eventCard3ButtonLabel: data.event_card2_button_label,
+		eventCard3ButtonUrl: data.event_card2_button_url,
+		eventCard3Date: data.event_card2_date,
+		eventCard3Description: data.event_card2_description,
+		eventCard3Title: data.event_card2_title,
+		eventsTitle: data.events_title,
 	}
 
 	return (
@@ -182,5 +136,3 @@ const EventsComponent = () => {
 		</div>
 	)
 }
-
-export default EventsComponent

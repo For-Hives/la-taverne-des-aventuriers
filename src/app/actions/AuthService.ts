@@ -1,3 +1,4 @@
+import 'server-only'
 import PocketBase from 'pocketbase'
 
 /**

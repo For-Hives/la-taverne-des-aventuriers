@@ -1,6 +1,6 @@
 'use client'
 
-import { getData } from '@/app/actions/GetLandingService'
+import { getLandingData } from '@/app/actions/GetLandingService'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
@@ -19,7 +19,7 @@ const WhoAreWeSection = () => {
 	useEffect(() => {
 		async function fetchElement() {
 			try {
-				const data = await getData()
+				const data = await getLandingData()
 				const Element = data[0]
 				setElement({
 					descriptionButtonLabel:
@@ -66,7 +66,10 @@ const WhoAreWeSection = () => {
 						className='flex items-center gap-3 underline'
 					>
 						<span>{Element.descriptionButtonLabel}</span>
-						<FontAwesomeIcon icon={faChevronRight} className='text-title-200' />
+						<FontAwesomeIcon
+							icon={faChevronRight}
+							className='h-4 w-4 text-title-200'
+						/>
 					</Link>
 				</div>
 			</div>
