@@ -7,7 +7,7 @@ COPY ./public ./public
 COPY ./package*.json .
 COPY ./src ./src
 COPY ./next* .
-COPY ./next.config.js .
+COPY ./next.config.ts .
 
 ARG PB_SERVER_URL
 ARG PB_USER_EMAIL
