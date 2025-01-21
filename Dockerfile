@@ -8,7 +8,6 @@ COPY package*.json ./
 COPY ./src ./src
 COPY ./public ./public
 COPY ./next.config.ts ./
-COPY ./next.config.js ./
 COPY ./tsconfig.json ./
 
 # Définition des arguments pour le build
