@@ -18,7 +18,7 @@ ENV PB_SERVER_URL=$PB_SERVER_URL \
     NEXT_PUBLIC_PB_USER_EMAIL=$PB_USER_EMAIL \
     PB_USER_PASSWORD=$PB_USER_PASSWORD \
     NEXT_PUBLIC_PB_USER_PASSWORD=$PB_USER_PASSWORD \
-    NEXT_SHARP_PATH=./node_modules/sharp \
+    NEXT_SHARP_PATH=./node_modules/sharp
 
 RUN npm ci
 RUN if [ -n "$PB_SERVER_URL" ] && [ -n "$PB_USER_EMAIL" ] && [ -n "$PB_USER_PASSWORD" ]; then \
