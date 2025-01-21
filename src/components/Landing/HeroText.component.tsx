@@ -1,47 +1,18 @@
-'use client'
-import { getData } from '@/app/actions/GetLandingService'
+import { getLandingData } from '@/app/actions/GetLandingService'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
-const HeroTextComponent = () => {
-	const [heroData, setHeroData] = useState({
-		heroDescription: '',
-		heroLeftButtonLabel: '',
-		heroLeftButtonUrl: '',
-		heroRightButtonLabel: '',
-		heroRightButtonUrl: '',
-		heroTitle: '',
-	})
-	const [error] = useState(null)
-
-	useEffect(() => {
-		async function fetchHeroData() {
-			try {
-				const data = await getData()
-				const heroElement = data[0]
-
-				setHeroData({
-					heroDescription:
-						heroElement?.hero_description || 'Description indisponible',
-					heroLeftButtonLabel:
-						heroElement?.hero_left_button_label || 'boutton indisponible',
-					heroLeftButtonUrl: heroElement?.hero_left_button_url,
-					heroRightButtonLabel:
-						heroElement?.hero_right_button_label || 'boutton indisponible',
-					heroRightButtonUrl: heroElement?.hero_right_button_url,
-					heroTitle: heroElement?.hero_title || 'Titre indisponible',
-				})
-			} catch (err) {
-				console.error('Erreur lors de la récupération des données :', err)
-			}
-		}
-		fetchHeroData()
-	}, [])
-
-	if (error) {
-		return <div className='text-red-500'>{error}</div>
+// eslint-disable-next-line @next/next/no-async-client-component
+export default async function HeroTextComponent() {
+	const data = await getLandingData()
+	const heroData = {
+		heroDescription: data.hero_description,
+		heroLeftButtonLabel: data.hero_left_button_label,
+		heroLeftButtonUrl: data.hero_left_button_url,
+		heroRightButtonLabel: data.hero_right_button_label,
+		heroRightButtonUrl: data.hero_right_button_url,
+		heroTitle: data.hero_title,
 	}
 
 	return (
@@ -60,29 +31,26 @@ const HeroTextComponent = () => {
 				{/*Button div*/}
 				<div className='flex flex-wrap items-start gap-6'>
 					{/*Button 1*/}
-					<button className='flex items-center gap-4 rounded bg-title-200 p-2 font-obraletra text-xl text-title-300'>
-						<Link href={heroData.heroLeftButtonUrl} className='hover:underline'>
-							{heroData.heroLeftButtonLabel}
-							<FontAwesomeIcon
-								icon={faChevronRight}
-								className='text-title-300'
-							/>
-						</Link>
-					</button>
+					<Link
+						href={heroData.heroLeftButtonUrl}
+						className='flex h-10 items-center gap-4 rounded bg-title-200 p-2 font-obraletra text-xl text-title-300 hover:underline'
+					>
+						{heroData.heroLeftButtonLabel}
+						<FontAwesomeIcon
+							icon={faChevronRight}
+							className='h-4 w-4 text-title-300'
+						/>
+					</Link>
 
 					{/*Button 2*/}
-					<button className='rounded border-3 border-solid border-title-200 p-1 font-obraletra text-xl text-title-200'>
-						<Link
-							href={heroData.heroRightButtonUrl}
-							className='hover:underline'
-						>
-							{heroData.heroRightButtonLabel}
-						</Link>
-					</button>
+					<Link
+						href={heroData.heroRightButtonUrl}
+						className='h-10 rounded border-3 border-solid border-title-200 p-1 font-obraletra text-xl text-title-200 hover:underline'
+					>
+						{heroData.heroRightButtonLabel}
+					</Link>
 				</div>
 			</div>
 		</div>
 	)
 }
-
-export default HeroTextComponent

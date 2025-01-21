@@ -1,5 +1,5 @@
 'use client'
-import { getData } from '@/app/actions/GetReservationCardService'
+import { getReservationCardData } from '@/app/actions/GetReservationCardService'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -18,7 +18,7 @@ const ReservationCardComponent = () => {
 	useEffect(() => {
 		async function fetchReservationData() {
 			try {
-				const data = await getData()
+				const data = await getReservationCardData()
 				const ReservationData = data[0]
 
 				setReservationData({

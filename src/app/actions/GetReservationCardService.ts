@@ -2,7 +2,7 @@
 
 import { authWithPocketBase } from '@/app/actions/AuthService'
 
-export async function getData() {
+export async function getReservationCardData() {
 	const pb = await authWithPocketBase()
 	if (!pb) {
 		throw new Error('Failed to connect to PocketBase [Landing Service]')
