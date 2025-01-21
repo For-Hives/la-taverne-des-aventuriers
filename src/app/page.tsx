@@ -1,6 +1,6 @@
 // imports
 import FooterComponent from '@/components/Global/Footer.component'
-import Navbar from '@/components/Global/Navbar.component.js'
+import Navbar from '@/components/Global/Navbar.component'
 import ReservationCardComponent from '@/components/Global/ReservationCard.component'
 import EventsComponent from '@/components/Landing/Events.component'
 import HeroTextComponent from '@/components/Landing/HeroText.component'
