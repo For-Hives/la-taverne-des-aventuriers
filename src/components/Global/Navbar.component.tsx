@@ -37,6 +37,11 @@ const Navbar = () => {
 						</Link>
 					</li>
 					<li>
+						<Link href='/reservation' className='hover:underline'>
+							Réservation
+						</Link>
+					</li>
+					<li>
 						<Link href='/contacts' className='hover:underline'>
 							Contact
 						</Link>

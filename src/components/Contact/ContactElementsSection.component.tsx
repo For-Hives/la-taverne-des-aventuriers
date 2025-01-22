@@ -1,25 +1,45 @@
+import { getContactData } from '@/app/actions/getContactData'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 
-const ContactElements = () => {
+export default async function ContactElements() {
+	const data = await getContactData()
+
+	const ContactData = {
+		contact_email_title: data.contact_email_title,
+		contact_socials_title: data.contact_socials_title,
+		email: data.email,
+		schedules_exceptional: data.schedules_exceptional,
+		schedules_friday: data.schedules_friday,
+		schedules_monday: data.schedules_monday,
+		schedules_saturday: data.schedules_saturday,
+		schedules_sunday: data.schedules_sunday,
+		schedules_thursday: data.schedules_thursday,
+		schedules_title: data.schedules_title,
+		schedules_tuesday: data.schedules_tuesday,
+		schedules_wednesday: data.schedules_wednesday,
+	}
+
 	return (
 		<div className='flex w-3/4 items-center justify-center gap-8 p-8 max-xl:flex-col'>
 			<div className='grid w-1/2 max-w-6xl grid-cols-1 gap-8 max-xl:w-full xl:grid-cols-2'>
 				{/* Bloc Horaires */}
 				<div className='flex flex-col items-start gap-6 rounded-lg border border-title-200 bg-title-600 p-6 font-obraletra shadow'>
-					<h1 className='text-2xl font-bold text-title-200'>Horaires :</h1>
+					<h1 className='font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
+						{ContactData.schedules_title}
+					</h1>
 					<p className='text-title-200'>
-						<span className='block'>
-							Exceptionnel: le 1 mai, nous sommes ouvert
+						<span className='block font-obraletraBold'>
+							{ContactData.schedules_exceptional}
 						</span>
-						<span className='block'>Lundi: 18:00–00:00</span>
-						<span className='block'>Mardi: Fermé </span>
-						<span className='block'>Mercredi: 15:00–00:00</span>
-						<span className='block'>Jeudi: 18:00–00:00 </span>
-						<span className='block'>Vendredi: 18:00–01:00 </span>
-						<span className='block'>Samedi: 15:00–01:00 </span>
-						<span className='block'>Dimanche: 15:00–00:00</span>
+						<span className='block'>{ContactData.schedules_monday}</span>
+						<span className='block'>{ContactData.schedules_tuesday}</span>
+						<span className='block'>{ContactData.schedules_wednesday}</span>
+						<span className='block'>{ContactData.schedules_thursday}</span>
+						<span className='block'>{ContactData.schedules_friday}</span>
+						<span className='block'>{ContactData.schedules_saturday}</span>
+						<span className='block'>{ContactData.schedules_sunday}</span>
 					</p>
 				</div>
 
@@ -27,8 +47,8 @@ const ContactElements = () => {
 				<div className='flex flex-col gap-6 font-obraletra'>
 					{/* Bloc Contact */}
 					<div className='flex flex-col items-center gap-4 rounded-lg border border-title-200 bg-title-600 p-6 shadow'>
-						<h2 className='w-full text-2xl font-bold text-title-200'>
-							Contact
+						<h2 className='w-full font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
+							{ContactData.contact_socials_title}
 						</h2>
 						<div className='flex items-center justify-evenly gap-10'>
 							{/* Icone Facebook */}
@@ -60,10 +80,10 @@ const ContactElements = () => {
 					{/* Bloc Email */}
 					<div className='relative flex flex-col gap-6 font-obraletra'>
 						<div className='flex flex-col items-start gap-4 rounded-lg border border-title-200 bg-title-600 p-6 shadow'>
-							<h2 className='text-2xl font-bold text-title-200'>Email</h2>
-							<p className='text-title-200'>
-								latavernedesaventuriers44@gmail.com
-							</p>
+							<h2 className='font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
+								{ContactData.contact_email_title}
+							</h2>
+							<p className='text-title-200'>{ContactData.email}</p>
 						</div>
 						{/* Ajout de l'image positionnée en bas à droite */}
 						<div className='relative'>
@@ -87,7 +107,6 @@ const ContactElements = () => {
 					width={150}
 					height={150}
 				/>
-
 				<Image
 					src='/assets/images/elements/ContactElements/dragon.png'
 					alt='LTDA Logo'
@@ -99,5 +118,3 @@ const ContactElements = () => {
 		</div>
 	)
 }
-
-export default ContactElements

@@ -35,6 +35,7 @@ export default async function WhoAreWeSection() {
 
 				{/*Description*/}
 				<div
+					className='w-full'
 					dangerouslySetInnerHTML={{
 						__html: Element.description_text,
 					}}

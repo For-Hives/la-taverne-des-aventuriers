@@ -20,6 +20,7 @@ export interface ContactPageData {
 	schedules_friday: string
 	schedules_saturday: string
 	schedules_sunday: string
+	schedules_exceptional: string
 	contact_email_title: string
 	email: string
 	contact_socials_title: string

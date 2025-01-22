@@ -39,9 +39,9 @@ export default async function EventsComponent() {
 			</h1>
 
 			{/*Layout Event cards Div*/}
-			<div className='flex h-full w-full items-center gap-2 sm:max-lg:flex-col'>
+			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
 				{/*Fist Card Div (One Half of the max-width) + Background image "bg-lp-card1-bg bg-cover bg-center"*/}
-				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card1-bg bg-cover bg-center font-obraletra text-title-300 sm:max-lg:w-full'>
+				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card1-bg bg-cover bg-center font-obraletra text-title-300 max-lg:w-full'>
 					{/* Overlay Gradient */}
 					<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 					{/* Text */}
@@ -78,7 +78,7 @@ export default async function EventsComponent() {
 				</div>
 
 				{/*Second Half Event Cards */}
-				<div className='flex h-full w-1/2 flex-col items-start gap-2 text-title-300 sm:max-lg:w-full'>
+				<div className='flex h-full w-1/2 flex-col items-start gap-2 text-title-300 max-lg:w-full'>
 					{/*Second Card*/}
 					<div className='w-ful relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card2-bg bg-cover bg-center font-obraletra text-title-300'>
 						{/* Overlay Gradient */}
@@ -115,7 +115,7 @@ export default async function EventsComponent() {
 					</div>
 
 					{/*Third Card Div*/}
-					<div className='100:max-lg:w-full relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card3-bg bg-cover bg-center font-obraletra text-title-300'>
+					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card3-bg bg-cover bg-center font-obraletra text-title-300 max-lg:w-full'>
 						{/* Overlay Gradient */}
 						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 
