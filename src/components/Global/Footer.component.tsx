@@ -44,11 +44,11 @@ export default async function FooterComponent() {
 			</div>
 
 			{/* Text */}
-			<div className='relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-24 p-4 text-center font-obraletra text-base text-title-200'>
+			<div className='relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-24 p-4 text-left font-obraletra text-base text-title-200'>
 				<div className='flex w-full flex-wrap items-start justify-around gap-8'>
 					{/* First Column */}
-					<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-						<h2 className='font-cardinal text-xl text-title-200 first-letter:text-title-100'>
+					<div className='flex w-full max-w-xs flex-col items-center justify-center text-base'>
+						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100'>
 							{FooterData.barTitle}
 						</h2>
 						<Link className='hover:underline' href={FooterData.menuUrl}>
@@ -67,7 +67,7 @@ export default async function FooterComponent() {
 
 					{/* Second Column */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center font-obraletra text-base text-title-200'>
-						<h2 className='font-cardinal text-xl text-title-200 first-letter:text-title-100'>
+						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100'>
 							{FooterData.supportTitle}
 						</h2>
 						<Link className='hover:underline' href={FooterData.contactUrl}>
@@ -80,7 +80,7 @@ export default async function FooterComponent() {
 
 					{/* Third Column */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-						<h2 className='font-cardinal text-xl text-title-200 first-letter:text-title-100'>
+						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100'>
 							{FooterData.socialsTitle}
 						</h2>
 						<div className='flex space-x-4'>
