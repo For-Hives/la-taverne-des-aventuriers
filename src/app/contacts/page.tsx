@@ -5,7 +5,7 @@ import ReservationComponent from '@/components/Contact/Reservation.component'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 
-export default function WhoAreWe() {
+export default function Contact() {
 	return (
 		<div className='relative flex h-screen w-screen flex-col items-center gap-96'>
 			{/* Navbar */}
