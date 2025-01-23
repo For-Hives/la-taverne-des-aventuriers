@@ -40,7 +40,7 @@ export default async function ReservationElementComponent() {
 				</div>
 
 				<div className='flex h-3/4 gap-3'>
-					<div className='flex h-full w-full items-start justify-start gap-3 max-md:flex-col xl:w-1/3 xl:flex-col'>
+					<div className='flex w-full items-start justify-start gap-3 max-md:flex-col xl:w-1/3 xl:flex-col'>
 						{/* Second Card */}
 						<div className='flex h-auto flex-col justify-start gap-3 rounded border border-title-200 bg-title-600 p-5 max-xl:h-full max-xl:w-1/2 max-md:w-full 2xl:h-auto'>
 							<h2 className='font-cardinal text-3xl first-letter:text-title-100'>
