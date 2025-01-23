@@ -1,55 +1,73 @@
+import { getWhoAreWePageData } from '@/app/actions/getWhoAreWeService'
 import Image from 'next/image'
 
 export default async function ReservationElementComponent() {
+	const data = await getWhoAreWePageData()
+
+	const WhoAreWeData = {
+		description_card_1: data.description_card_1,
+		description_card_2: data.description_card_2,
+		description_card_3: data.description_card_3,
+		description_card_4: data.description_card_4,
+		description_card_5: data.description_card_5,
+		information_title: data.information_title,
+		our_history_title: data.our_history_title,
+		our_services_title: data.our_services_title,
+		team_title: data.team_title,
+		who_are_we_title: data.who_are_we_title,
+	}
+
 	return (
-		<div className='flex w-4/5 font-obraletra text-base text-title-200'>
-			<div className='flex h-full w-3/4 flex-col'>
-				<div className='flex flex-col items-start justify-center rounded border border-title-200'>
-					<h1>Qui Sommes-nous ?</h1>
-					<p>
-						Bienvenue à la Taverne des Aventuriers, votre bar à jeux au cœur de
-						Nantes ! Située à Nantes, notre taverne est un véritable refuge pour
-						les amateurs de jeux de société, de jeux de rôle et d'heroic
-						fantasy. Un lieu convivial où se réunissent joueurs débutants et
-						expérimentés autour d'une bonne bière et de jeux passionnants."
-					</p>
+		<div className='flex h-full w-4/5 gap-3 font-obraletra text-base text-title-200 max-xl:flex-col xl:h-screen'>
+			{/* first part of the Cards */}
+			<div className='flex h-full w-full flex-col gap-3 2xl:w-3/4'>
+				{/* First Card */}
+				<div className='bg-waw-card1-bg relative flex h-1/4 items-center justify-start rounded border border-title-200 bg-cover'>
+					{/* white Gradient */}
+					<div className='absolute inset-0 rounded bg-gradient-to-r from-title-600/100 via-title-600/100 to-title-600/20'></div>
+
+					{/* Text */}
+					<div className='relative z-10 flex w-full flex-col gap-3 p-5 xl:w-2/3'>
+						<h1 className='font-cardinal text-3xl first-letter:text-title-100'>
+							{WhoAreWeData.who_are_we_title}
+						</h1>
+						<div
+							dangerouslySetInnerHTML={{
+								__html: WhoAreWeData.description_card_1,
+							}}
+						></div>
+					</div>
 				</div>
 
-				<div className='flex'>
-					<div className='flex w-1/3 flex-col items-start justify-center'>
-						<div className='rounded border border-title-200'>
-							<h2>Notre Histoire</h2>
-							<p>
-								<span>
-									Née de la passion de Samuel, joueur invétéré et amateur de
-									fantasy, la Taverne des Aventuriers a ouvert ses portes en
-									2024 à Nantes.
-								</span>
-								<span>
-									Notre mission : créer un lieu unique où se mêlent l'ambiance
-									chaleureuse d'un pub médiéval et le plaisir du jeu.
-								</span>
-								<span>
-									Notre taverne a été pensée pour être : - Un lieu accueillant
-									pour tous les joueurs - Un espace de découverte ludique - Un
-									point de rencontre pour la communauté - Une pause enchantée
-									dans votre quotidien
-								</span>
-							</p>
+				<div className='flex h-3/4 gap-3'>
+					<div className='flex h-full w-full items-start justify-start gap-3 max-md:flex-col xl:w-1/3 xl:flex-col'>
+						{/* Second Card */}
+						<div className='flex h-auto flex-col justify-start gap-3 rounded border border-title-200 bg-title-600 p-5 max-xl:h-full max-xl:w-1/2 max-md:w-full 2xl:h-auto'>
+							<h2 className='font-cardinal text-3xl first-letter:text-title-100'>
+								{WhoAreWeData.our_history_title}
+							</h2>
+							<div
+								dangerouslySetInnerHTML={{
+									__html: WhoAreWeData.description_card_2,
+								}}
+							></div>
 						</div>
-						<div className='rounded border border-title-200'>
-							<h2>Notre Histoire</h2>
-							<p className='flex flex-col gap-6'>
-								<span>🎲 Notre Ludothèque :</span>
-								<span>
-									- Plus de 90 jeux de société - Tables de jeux de rôle - Jeux
-									d'ambiance et party games - Grands classiques et nouveautés
-								</span>
-							</p>
+
+						{/* third Card */}
+						<div className='flex h-1/2 w-full flex-col justify-start gap-3 rounded border border-title-200 bg-title-600 p-5 max-xl:h-full max-xl:w-1/2 max-md:w-full'>
+							<h2 className='font-cardinal text-3xl first-letter:text-title-100'>
+								{WhoAreWeData.our_services_title}
+							</h2>
+							<div
+								dangerouslySetInnerHTML={{
+									__html: WhoAreWeData.description_card_3,
+								}}
+							></div>
 						</div>
 					</div>
 
-					<div className='flex w-2/3 items-center justify-center rounded border border-title-200'>
+					{/* Logo Card */}
+					<div className='flex h-full w-2/3 items-center justify-center rounded border border-title-200 bg-title-600 max-xl:hidden'>
 						<Image
 							src='/assets/images/LTDALogo.png'
 							alt='LTDA Logo'
@@ -60,40 +78,34 @@ export default async function ReservationElementComponent() {
 				</div>
 			</div>
 
-			<div className='flex w-1/4 flex-col'>
-				<div className='flex flex-col items-start justify-center rounded border border-title-200'>
-					<h2>L'équipe</h2>
-					<p className='flex flex-col gap-6'>
-						<span>👑 Les Maîtres des Lieux Samuel</span>
-						<span>
-							🎲 Nos Maîtres du Jeu Une équipe passionnée pour vous conseiller
-							et animer vos parties
-						</span>
-						<span>
-							🍺 L'Équipe du Bar Des experts en breuvages et mets délicieux
-						</span>
-					</p>
+			{/* Second Part Of Cards */}
+			<div className='flex h-full w-1/4 flex-col gap-3 max-xl:w-full'>
+				{/* First Card */}
+				<div className='flex h-2/5 flex-col items-start justify-start gap-3 rounded border border-title-200 bg-title-600 p-5'>
+					<h2 className='font-cardinal text-3xl first-letter:text-title-100'>
+						{WhoAreWeData.team_title}
+					</h2>
+					<div
+						dangerouslySetInnerHTML={{
+							__html: WhoAreWeData.description_card_4,
+						}}
+					></div>
 				</div>
 
-				<div className='flex h-full flex-col items-start justify-center rounded border border-title-200'>
-					<h2>Informations pratiques</h2>
-					<p className='flex flex-col gap-6'>
-						<span>📍 Nous Trouver : 13 rue Kergévan, 44000 Nantess</span>
-						<span>
-							📅 Nos Horaires : Lundi : 18:00-00:00 Mardi : Fermé Mercredi :
-							15:00-00:00 Jeudi : 18:00-00:00 Vendredi : 18:00-01:00 Samedi :
-							15:00-01:00 Dimanche : 15:00-00:00 Note : Exceptionnel: le 1 mai,
-							nous sommes ouvert
-						</span>
-						<span>
-							📞 Nous Contacter : latavernedesaventuriers@mail.com Facebook :
-							[lien] Instagram : [lien] Twitter/X : [lien]
-						</span>
-						<span>
-							📝 Réservations : - Pour les groupes - Pour les événements - Pour
-							les tables de jeu de rôle
-						</span>
-					</p>
+				{/* Second Card */}
+				<div className='bg-waw-card2-bg relative flex h-3/5 w-full flex-col items-start justify-start gap-3 rounded border border-title-200 bg-title-600 bg-white/80 bg-cover p-5 max-2xl:h-full'>
+					{/* Gradient */}
+					<div className='absolute inset-0 z-0 rounded bg-gradient-to-r from-title-600/100 via-title-600/100 to-title-600/30 xl:bg-gradient-to-b'></div>
+
+					<h2 className='z-10 font-cardinal text-3xl first-letter:text-title-100'>
+						{WhoAreWeData.information_title}
+					</h2>
+					<div
+						className='z-30'
+						dangerouslySetInnerHTML={{
+							__html: WhoAreWeData.description_card_5,
+						}}
+					></div>
 				</div>
 			</div>
 		</div>

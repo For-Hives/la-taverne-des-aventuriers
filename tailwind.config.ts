@@ -23,8 +23,11 @@ export default {
 				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
 				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
 				menuBGImage: "url('/assets/images/elements/MenuElements/BGImage.png')",
+				'waw-card1-bg':
+					"url('/assets/images/elements/WhoAreWeElement/planche1.png')",
+				'waw-card2-bg':
+					"url('/assets/images/elements/WhoAreWeElement/Barman.png')",
 				whoareweimage: "url('/assets/images/elements/ContactElements/t3.png')",
-				// 'lp-hero-bg': "url('/assets/videos/AnimationCarte.mp4')",
 			},
 			colors: {
 				background: 'var(--background)',
