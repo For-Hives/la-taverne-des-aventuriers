@@ -27,12 +27,12 @@ export default function Page() {
 				<div className='flex flex-col items-center gap-40'>
 					<CocktailElement />
 					<MocktailElement />
-					<ShooterElement />
-					<ShortLongDrinksElement />
-					<BeerWineElement />
-					<TravelersPleasureElement />
-					<PlanchElement />
-					<SoftsAndHotElement />
+					{/*<ShooterElement />*/}
+					{/*<ShortLongDrinksElement />*/}
+					{/*<BeerWineElement />*/}
+					{/*<TravelersPleasureElement />*/}
+					{/*<PlanchElement />*/}
+					{/*<SoftsAndHotElement />*/}
 				</div>
 			</div>
 

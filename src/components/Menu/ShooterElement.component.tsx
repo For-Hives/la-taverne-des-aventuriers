@@ -7,9 +7,9 @@ const ShooterElement = () => {
 				Shooters
 			</h2>
 			<div className='flex flex-col justify-center gap-28'>
-				<CocktailDivComponent />
-				<CocktailDivComponent isInverted={true} />
-				<CocktailDivComponent />
+				<CocktailDivComponent order={0} />
+				<CocktailDivComponent order={0} isInverted={true} />
+				<CocktailDivComponent order={0} />
 			</div>
 		</div>
 	)

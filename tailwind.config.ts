@@ -18,7 +18,7 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
-				'bg-first-image': "url('/assets/images/elements/background.png')",
+				'bg-first-image': "url('/assets/images/elements/background2.png')",
 				FooterImage: "url('/assets/images/MaskFooter.png')",
 				'gl-card1-bg':
 					"url('/assets/images/elements/GameLibraryElements/BG1.png')",

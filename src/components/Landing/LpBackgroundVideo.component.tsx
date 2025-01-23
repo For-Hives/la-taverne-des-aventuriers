@@ -42,12 +42,13 @@ const BackgroundVideoLP = () => {
 	}, [])
 
 	return (
-		// Vimeo Iframe
+		//todo : regarder comment faire la transi entre image et video
+
 		<iframe
 			// indicating the video
 			ref={firstVideoRef}
 			// Styles
-			className='mask-custom mix-difference animate-video bg-bg-first-image absolute left-0 top-0 -z-10 block object-cover object-center opacity-75'
+			className='mask-custom mix-difference animate-video bg-bg-first-image absolute left-0 top-0 -z-10 block object-cover object-center opacity-75 transition'
 			// Url + set Video to Background, allow autoplay and disable the full video loop
 			src='https://player.vimeo.com/video/1047422333?h=3ee0913fe6&background=1&autoplay=1&loop=0'
 			// title

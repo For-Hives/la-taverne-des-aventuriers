@@ -1,5 +1,7 @@
 import CocktailDivComponent from '@/components/Menu/CocktailDiv.component'
 
+const collectionName = 'Mocktails'
+
 const MocktailElement = () => {
 	return (
 		<div className='flex w-3/4 flex-col items-center justify-center gap-20'>
@@ -7,9 +9,13 @@ const MocktailElement = () => {
 				Mocktails
 			</h2>
 			<div className='flex flex-col justify-center gap-28'>
-				<CocktailDivComponent />
-				<CocktailDivComponent isInverted={true} />
-				<CocktailDivComponent />
+				<CocktailDivComponent order={0} collection={collectionName} />
+				<CocktailDivComponent
+					order={0}
+					collection={collectionName}
+					isInverted={true}
+				/>
+				<CocktailDivComponent order={0} collection={collectionName} />
 			</div>
 		</div>
 	)
