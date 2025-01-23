@@ -19,6 +19,12 @@ export default {
 		extend: {
 			backgroundImage: {
 				FooterImage: "url('/assets/images/MaskFooter.png')",
+				'gl-card1-bg':
+					"url('/assets/images/elements/GameLibraryElements/BG1.png')",
+				'gl-card2-bg':
+					"url('/assets/images/elements/GameLibraryElements/BG2.png')",
+				'gl-card3-bg':
+					"url('/assets/images/elements/GameLibraryElements/BG3.png')",
 				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
 				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
 				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",

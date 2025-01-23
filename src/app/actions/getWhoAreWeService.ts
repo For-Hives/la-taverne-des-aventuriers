@@ -2,9 +2,9 @@
 import { authWithPocketBase } from '@/app/actions/AuthService'
 
 export interface WhoAreWePageData {
-	// collectionId: string
-	// collectionName: string
-	// id: string
+	collectionId: string
+	collectionName: string
+	id: string
 	who_are_we_title: string
 	description_card_1: string
 	our_history_title: string
@@ -15,8 +15,8 @@ export interface WhoAreWePageData {
 	description_card_4: string
 	information_title: string
 	description_card_5: string
-	// created: string
-	// updated: string
+	created: string
+	updated: string
 }
 
 /**
