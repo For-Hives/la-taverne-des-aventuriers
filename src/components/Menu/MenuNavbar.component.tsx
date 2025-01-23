@@ -4,7 +4,7 @@ function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ')
 }
 
-const tabs = [
+export const tabs = [
 	{ current: false, href: '#', name: 'Cocktails' },
 	{ current: false, href: '#', name: 'Mocktails' },
 	{ current: true, href: '#', name: 'Shooters' },
