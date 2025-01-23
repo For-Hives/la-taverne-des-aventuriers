@@ -3,12 +3,14 @@ import GLHeroComponent from '@/components/GameLibrary/GLHero.component'
 import MyLudoComponent from '@/components/GameLibrary/MyLudo.component'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
+import MobileNavbar from '@/components/Global/NavbarMobile.component'
 
 export default function Page() {
 	return (
 		<div className='flex h-screen w-screen flex-col items-center'>
 			{/* Navbar */}
 			<Navbar />
+			<MobileNavbar />
 
 			<GLHeroComponent />
 

@@ -1,4 +1,3 @@
-// todo: fixs ts errrors
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 
 function classNames(...classes: string[]) {
@@ -20,7 +19,7 @@ export default function Example() {
 
 	return (
 		<div className='p-16'>
-			<div className='grid grid-cols-1 sm:hidden'>
+			<div className='grid grid-cols-1 md:hidden'>
 				{/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
 				<select
 					defaultValue={tabFound}
@@ -36,7 +35,7 @@ export default function Example() {
 					className='pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-title-200'
 				/>
 			</div>
-			<div className='hidden sm:block'>
+			<div className='hidden md:block'>
 				<nav
 					aria-label='Tabs'
 					className='isolate flex divide-x divide-title-500 rounded-lg shadow'

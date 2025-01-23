@@ -1,5 +1,6 @@
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
+import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import BeerWineElement from '@/components/Menu/BeerWineElements.component'
 import CocktailElement from '@/components/Menu/CocktailElement.component'
 import MenuHeroComponent from '@/components/Menu/MenuHero.component'
@@ -16,6 +17,7 @@ export default function Page() {
 		<div className='flex h-screen w-screen flex-col items-center'>
 			{/* Navbar */}
 			<Navbar />
+			<MobileNavbar />
 
 			<MenuHeroComponent />
 

@@ -1,11 +1,13 @@
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
+import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import ReservationElementComponent from '@/components/Reservation/ReservationElementsSection'
 
 export default function Page() {
 	return (
 		<div className='flex flex-col items-center'>
 			<Navbar />
+			<MobileNavbar />
 
 			<div className='mask-custom absolute bottom-0 left-0 h-[125%] w-full -translate-y-[55%] transform bg-whoareweimage opacity-75'></div>
 

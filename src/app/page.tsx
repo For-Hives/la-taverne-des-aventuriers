@@ -1,6 +1,7 @@
 import FooterComponent from '@/components/Global/Footer.component'
 // imports
 import Navbar from '@/components/Global/Navbar.component'
+import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import ReservationCardComponent from '@/components/Global/ReservationCard.component'
 import EventsComponent from '@/components/Landing/Events.component'
 import HeroTextComponent from '@/components/Landing/HeroText.component'
@@ -14,6 +15,7 @@ export default function Home() {
 		<div className='relative h-auto w-full items-center justify-center'>
 			{/*Navbar import*/}
 			<Navbar />
+			<MobileNavbar />
 
 			{/*Main part*/}
 			<main className='absolute left-0 top-0 flex h-full w-full flex-col items-center gap-96 pt-20 sm:items-start'>
