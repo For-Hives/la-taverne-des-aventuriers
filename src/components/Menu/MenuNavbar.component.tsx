@@ -5,6 +5,7 @@ function classNames(...classes: string[]) {
 }
 
 export const tabs = [
+	{ current: false, href: '#', name: 'Tout' },
 	{ current: false, href: '#', name: 'Cocktails' },
 	{ current: false, href: '#', name: 'Mocktails' },
 	{ current: true, href: '#', name: 'Shooters' },

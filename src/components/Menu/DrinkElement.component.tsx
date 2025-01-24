@@ -1,10 +1,10 @@
 import { getDrinkList } from '@/app/actions/getDrinksService'
-import CocktailDivComponent from '@/components/Menu/CocktailDiv.component'
+import DrinkDivComponent from '@/components/Menu/DrinkDiv.component'
 
 export default async function DrinkElement({
 	collection_name,
 }: {
-	collection_name: string
+	readonly collection_name: string
 }) {
 	const data = await getDrinkList(collection_name)
 
@@ -14,16 +14,13 @@ export default async function DrinkElement({
 				{collection_name}
 			</h2>
 			<div className='flex flex-col justify-center gap-28'>
-				{data.items.map((drink, index) => {
-					return (
-						<CocktailDivComponent
-							key={index}
-							order={index}
-							isInverted={index % 2 !== 0}
-							collection={drink.collectionName}
-						/>
-					)
-				})}
+				{data.items.map((drink, index) => (
+					<DrinkDivComponent
+						key={index}
+						drink={drink}
+						isInverted={index % 2 !== 0}
+					/>
+				))}
 			</div>
 		</div>
 	)

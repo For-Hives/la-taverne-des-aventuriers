@@ -1,11 +1,21 @@
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
+import BeerWineElement from '@/components/Menu/BeerWineElements.component'
 import DrinkElement from '@/components/Menu/DrinkElement.component'
 import MenuHeroComponent from '@/components/Menu/MenuHero.component'
 import MenuNavbar from '@/components/Menu/MenuNavbar.component'
+import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
+import TravelersPleasureElement from '@/components/Menu/TravelersPleasureElement.component'
 
-const listDrinkCollection = ['Cocktails', 'Mocktails']
+const listDrinkCollection = [
+	'Cocktails',
+	'Mocktails',
+	'Shooters',
+	'Short_long_drinks',
+	'Boards',
+]
+
 export default function Page() {
 	return (
 		<div className='flex h-screen w-screen flex-col items-center'>
@@ -23,12 +33,9 @@ export default function Page() {
 						<DrinkElement collection_name={drink} key={index} />
 					))}
 
-					{/*<ShooterElement />*/}
-					{/*<ShortLongDrinksElement />*/}
-					{/*<BeerWineElement />*/}
-					{/*<TravelersPleasureElement />*/}
-					{/*<PlanchElement />*/}
-					{/*<SoftsAndHotElement />*/}
+					<BeerWineElement />
+					<TravelersPleasureElement />
+					<SoftsAndHotElement />
 				</div>
 			</div>
 
