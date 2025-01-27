@@ -23,116 +23,84 @@ export default async function GameComponent() {
 	}
 
 	return (
-		<div className='rounded- flex h-screen w-3/4 flex-col items-start gap-9'>
-			{/*Title*/}
+		<div className='rounded- flex h-screen w-3/4 flex-col items-start gap-9 max-lg:w-full'>
+			{/* Title */}
 			<h2 className='font-obraletraBold text-xl text-title-200'>
 				{GameLibraryData.Card_Title}
 			</h2>
 
-			{/*Layout Event cards Div*/}
+			{/* Layout Event Cards Div */}
 			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
-				{/*Fist Card Div (One Half of the max-width) + Background image "bg-lp-card1-bg bg-cover bg-center"*/}
-				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card1-bg bg-cover bg-center font-obraletra text-title-300 max-lg:w-full'>
+				{/* First Card */}
+				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card1-bg bg-cover bg-center font-obraletra text-title-300 max-lg:w-4/5'>
 					{/* Overlay Gradient */}
 					<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 					{/* Text */}
 					<div className='z-10 flex flex-col justify-start gap-9 p-12'>
-						<div className='items-left flex flex-col justify-start'>
-							{/* Title */}
-							<h2 className='font-obraletraBold text-2xl'>
-								{GameLibraryData.card1_title}
-							</h2>
-						</div>
-
+						<h2 className='font-obraletraBold text-2xl'>
+							{GameLibraryData.card1_title}
+						</h2>
 						<div
 							dangerouslySetInnerHTML={{
 								__html: GameLibraryData.card1_description,
 							}}
 						></div>
-
-						<div>
-							{/* Link */}
-							<Link
-								href={GameLibraryData.card1_button_url}
-								className='flex items-center gap-3 underline'
-							>
-								<span>{GameLibraryData.card1_button_label}</span>
-								<FontAwesomeIcon
-									icon={faChevronRight}
-									className='h-4 w-4 text-title-300'
-								/>
-							</Link>
-						</div>
+						<Link
+							href={GameLibraryData.card1_button_url}
+							className='flex items-center gap-3 underline'
+						>
+							<span>{GameLibraryData.card1_button_label}</span>
+							<FontAwesomeIcon
+								icon={faChevronRight}
+								className='h-4 w-4 text-title-300'
+							/>
+						</Link>
 					</div>
 				</div>
 
-				{/*Second Half Event Cards */}
-				<div className='flex h-full w-1/2 flex-col items-start gap-2 text-title-300 max-lg:w-full'>
-					{/*Second Card*/}
-					<div className='w-ful relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card2-bg bg-cover bg-center font-obraletra text-title-300'>
-						{/* Overlay Gradient */}
+				{/* Second Half */}
+				<div className='flex h-full w-1/2 flex-col items-center gap-2 text-title-300 max-lg:w-full'>
+					{/* Second Card */}
+					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card2-bg bg-cover bg-center max-lg:w-4/5'>
 						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
-
-						{/* Text */}
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
-							{/* Title */}
 							<h2 className='font-obraletraBold text-2xl'>
 								{GameLibraryData.card2_title}
 							</h2>
-
 							<div
 								dangerouslySetInnerHTML={{
 									__html: GameLibraryData.card2_description,
 								}}
 							></div>
-
-							<div>
-								{/* Link */}
-								<Link
-									href={GameLibraryData.card2_button_url}
-									className='flex items-center gap-3 underline'
-								>
-									<span>{GameLibraryData.card2_button_label}</span>
-									<FontAwesomeIcon
-										icon={faChevronRight}
-										className='h-4 w-4 text-title-300'
-									/>
-								</Link>
-							</div>
+							<Link
+								href={GameLibraryData.card2_button_url}
+								className='flex items-center gap-3 underline'
+							>
+								<span>{GameLibraryData.card2_button_label}</span>
+								<FontAwesomeIcon icon={faChevronRight} className='h-4 w-4' />
+							</Link>
 						</div>
 					</div>
 
-					{/*Third Card Div*/}
-					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card3-bg bg-cover bg-center font-obraletra text-title-300 max-lg:w-full'>
-						{/* Overlay Gradient */}
+					{/* Third Card */}
+					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card3-bg bg-cover bg-center max-lg:w-4/5'>
 						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
-
-						{/* Text */}
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
-							{/* Title */}
 							<h2 className='font-obraletraBold text-2xl'>
 								{GameLibraryData.card3_title}
 							</h2>
-
-							{/* Description */}
 							<div
 								dangerouslySetInnerHTML={{
 									__html: GameLibraryData.card3_description,
 								}}
 							></div>
-							<div>
-								{/* Link */}
-								<Link
-									href={GameLibraryData.card3_button_url}
-									className='flex items-center gap-3 underline'
-								>
-									<span>{GameLibraryData.card3_button_label}</span>
-									<FontAwesomeIcon
-										icon={faChevronRight}
-										className='h-4 w-4 text-title-300'
-									/>
-								</Link>
-							</div>
+							<Link
+								href={GameLibraryData.card3_button_url}
+								className='flex items-center gap-3 underline'
+							>
+								<span>{GameLibraryData.card3_button_label}</span>
+								<FontAwesomeIcon icon={faChevronRight} className='h-4 w-4' />
+							</Link>
 						</div>
 					</div>
 				</div>

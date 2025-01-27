@@ -12,9 +12,9 @@ export default async function MyLudoComponent() {
 	}
 
 	return (
-		<div className='relative w-3/4'>
-			<div className='absolute z-30 flex w-full flex-col items-start justify-center gap-12'>
-				<h2 className='font-obraletraBold text-xl text-title-200'>
+		<div className='w-full py-8 sm:w-3/4 sm:py-16'>
+			<div className='flex w-full flex-col items-start justify-center gap-8 sm:gap-12'>
+				<h2 className='font-obraletraBold text-xl text-title-200 sm:text-2xl'>
 					{GameLibraryData.myludo_component_title}
 				</h2>
 
@@ -22,14 +22,14 @@ export default async function MyLudoComponent() {
 					<Image
 						src='/assets/images/elements/GameLibraryElements/MyLudoImage.png'
 						alt='LTDA Logo'
-						className='w-full'
+						className='h-auto w-full'
 						width={1920}
 						height={1080}
 					/>
 					<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 
 					<Link
-						className='absolute bottom-5 left-10 text-center font-obraletra text-xl text-title-300 hover:underline'
+						className='absolute bottom-5 left-10 text-center font-obraletra text-xl text-title-300 hover:underline sm:text-2xl'
 						href={GameLibraryData.myludo_component_url}
 					>
 						{GameLibraryData.myludo_component_label}
