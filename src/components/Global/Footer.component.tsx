@@ -34,21 +34,23 @@ export default async function FooterComponent() {
 			className='relative flex w-screen items-center justify-center bg-FooterImage bg-cover bg-center text-white'
 			style={{ aspectRatio: '2653 / 1000' }}
 		>
+			{/* Image gauche */}
 			<div className='absolute bottom-0 left-0 flex items-center justify-center mix-blend-color-burn'>
 				<Image
 					src='/assets/images/elements/cristals/rock1.png'
 					alt='LTDA Logo'
+					className='w-full max-sm:hidden max-sm:w-36 md:w-48 xl:w-2/4'
 					width={400}
 					height={400}
 				/>
 			</div>
 
-			{/* Text */}
-			<div className='relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-24 p-4 text-left font-obraletra text-base text-title-200'>
-				<div className='flex w-full flex-wrap items-start justify-around gap-8'>
-					{/* First Column */}
-					<div className='flex w-full max-w-xs flex-col items-center justify-center text-base'>
-						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100'>
+			{/* Contenu principal */}
+			<div className='relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-12 p-10 text-left font-obraletra text-base text-title-200 max-sm:gap-6 md:gap-8'>
+				<div className='flex w-full flex-wrap items-start justify-around gap-8 sm:gap-4 md:gap-6'>
+					{/* Première colonne */}
+					<div className='flex w-full max-w-xs flex-col items-center justify-center text-base max-md:text-sm'>
+						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100 sm:text-xl'>
 							{FooterData.barTitle}
 						</h2>
 						<Link className='hover:underline' href={FooterData.menuUrl}>
@@ -65,9 +67,9 @@ export default async function FooterComponent() {
 						</Link>
 					</div>
 
-					{/* Second Column */}
-					<div className='flex w-full max-w-xs flex-col items-center justify-center font-obraletra text-base text-title-200'>
-						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100'>
+					{/* Deuxième colonne */}
+					<div className='flex w-full max-w-xs flex-col items-center justify-center font-obraletra text-base text-title-200 max-md:text-sm'>
+						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100 sm:text-xl'>
 							{FooterData.supportTitle}
 						</h2>
 						<Link className='hover:underline' href={FooterData.contactUrl}>
@@ -78,12 +80,12 @@ export default async function FooterComponent() {
 						</Link>
 					</div>
 
-					{/* Third Column */}
+					{/* Troisième colonne */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100'>
+						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100 sm:text-xl'>
 							{FooterData.socialsTitle}
 						</h2>
-						<div className='flex space-x-4'>
+						<div className='flex space-x-4 max-md:text-sm md:space-x-2'>
 							<div>Social 1</div>
 							<div>Social 2</div>
 							<div>Social 3</div>
@@ -91,15 +93,18 @@ export default async function FooterComponent() {
 					</div>
 				</div>
 
+				{/* Copyright */}
 				<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-					<p className='mt-4 text-sm'>{FooterData.copyright}</p>
+					<p className='mt-4 text-sm max-md:text-sm'>{FooterData.copyright}</p>
 				</div>
 			</div>
 
+			{/* Image droite */}
 			<div className='absolute bottom-0 right-0 flex items-center justify-center mix-blend-color-burn'>
 				<Image
 					src='/assets/images/elements/cristals/rock2.png'
 					alt='LTDA Logo'
+					className='w-full max-sm:hidden max-sm:w-28 md:w-40 xl:w-2/4'
 					width={300}
 					height={300}
 				/>
