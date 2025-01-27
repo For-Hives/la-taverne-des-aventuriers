@@ -15,33 +15,46 @@ export default async function MapSection() {
 	}
 
 	return (
-		<div className='flex w-full items-center gap-8 font-obraletra text-title-200'>
-			<div className='flex w-1/3 flex-col items-start gap-16 p-16'>
-				<h1 className='font-cardinal text-6xl first-letter:text-title-100'>
+		<div className='flex w-full flex-col items-center gap-8 p-8 font-obraletra text-title-200 lg:flex-row lg:p-16'>
+			{/* Text Section */}
+			<div className='flex w-full flex-col items-start gap-8 lg:w-1/3'>
+				<h1 className='font-cardinal text-4xl first-letter:text-title-100 lg:text-6xl'>
 					{ContactData.adress_title}
 				</h1>
-				<p className='w-2/3 text-5xl'>{ContactData.address}</p>
-				<button className='flex w-1/3 items-center justify-center rounded bg-title-200 p-1 font-cardinal text-xl'>
-					<Link
-						target='_blank'
-						href={ContactData.button_url}
-						className='flex items-center gap-3 text-xl text-title-300'
-					>
-						{ContactData.button_label}
-						<FontAwesomeIcon
-							icon={faChevronRight}
-							className='h-4 text-title-300'
-						/>
-					</Link>
-				</button>
+				<p className='text-xl lg:text-3xl'>{ContactData.address}</p>
+				<Link
+					target='_blank'
+					href={ContactData.button_url}
+					className='flex items-center justify-center gap-3 rounded bg-title-200 p-3 font-cardinal text-lg text-title-300 transition hover:bg-title-300 lg:text-xl'
+				>
+					{ContactData.button_label}
+					<FontAwesomeIcon icon={faChevronRight} className='h-4 lg:h-5' />
+				</Link>
 			</div>
-			<div className='w-2/3'>
-				<Image
-					src='/assets/images/elements/HowtoContact.png'
-					alt='LTDA Logo'
-					width={300}
-					height={300}
-				/>
+
+			{/* Image Section */}
+			<div className='relative w-full lg:w-2/3'>
+				{/* Image for small screens */}
+				<div className='block lg:hidden'>
+					<Image
+						src='/assets/images/map2.png'
+						alt='Map for small screens'
+						width={1920}
+						height={1080}
+						className='h-auto w-full rounded-lg shadow-md'
+					/>
+				</div>
+
+				{/* Image for large screens */}
+				<div className='hidden lg:block'>
+					<Image
+						src='/assets/images/map.png'
+						alt='Map for large screens'
+						width={1920}
+						height={1080}
+						className='h-auto w-full rounded-lg shadow-md'
+					/>
+				</div>
 			</div>
 		</div>
 	)

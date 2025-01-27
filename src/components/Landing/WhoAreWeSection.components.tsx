@@ -17,35 +17,38 @@ export default async function WhoAreWeSection() {
 	}
 
 	return (
-		<div className='flex w-3/4 items-center justify-center gap-16 rounded'>
-			<div className='flex w-1/3 items-center justify-center'>
-				{/*Image*/}
+		<div className='flex w-3/4 flex-col items-center justify-center gap-8 rounded lg:flex-row'>
+			<div className='flex w-full items-center justify-center lg:w-1/3'>
+				{/* Image */}
 				<Image
 					src='/assets/images/elements/ImageLPReservations.png'
 					alt='Vinbieres'
 					width={300}
 					height={300}
+					className='h-auto max-w-full max-sm:w-1/2'
 				/>
 			</div>
 
-			{/*Text*/}
-			<div className='flex w-2/3 flex-col items-start justify-center gap-9 p-4 font-obraletra text-title-200'>
-				{/*title*/}
-				<h2>{Element.description_title}</h2>
+			{/* Text */}
+			<div className='flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base text-title-200 max-lg:text-xs lg:w-2/3 lg:items-start'>
+				{/* Title */}
+				<h2 className='text-center lg:text-left'>
+					{Element.description_title}
+				</h2>
 
-				{/*Description*/}
+				{/* Description */}
 				<div
-					className='w-full'
+					className='w-full text-center text-base max-lg:text-xs lg:text-left'
 					dangerouslySetInnerHTML={{
 						__html: Element.description_text,
 					}}
 				></div>
 
 				{/* Link */}
-				<div>
+				<div className='text-center lg:text-left'>
 					<Link
 						href={Element.description_button_url}
-						className='flex items-center gap-3 underline'
+						className='flex items-center justify-center gap-3 text-base underline max-lg:text-xs lg:justify-start'
 					>
 						<span>{Element.description_button_label}</span>
 						<FontAwesomeIcon

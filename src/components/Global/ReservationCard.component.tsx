@@ -5,11 +5,7 @@ import Link from 'next/link'
 
 export default async function ReservationCardComponent() {
 	const data = await getReservationCardData()
-	/**
-	 * Formats reservation card data into a structured object
-	 * @param {ReservationCardData} data - The raw reservation card data
-	 * @returns {ReservationData} Formatted reservation card object
-	 */
+
 	const ReservationData = {
 		buttonLabel: data.button_label,
 		buttonUrl: data.button_url,
@@ -20,9 +16,10 @@ export default async function ReservationCardComponent() {
 	}
 
 	return (
-		<div className='mx-auto flex w-3/4 items-center gap-20 rounded bg-cardBG-100 p-10 py-5'>
-			<div className='items-left flex w-2/3 flex-col gap-9 p-8 font-obraletra text-base text-title-200'>
-				<h1 className='text-left font-cardinal text-2xl first-letter:text-title-100'>
+		<div className='mx-auto flex w-full max-w-6xl flex-col items-center gap-8 rounded bg-cardBG-100 p-4 sm:flex-row sm:gap-20 sm:p-10'>
+			{/* Text Section */}
+			<div className='flex w-full flex-col gap-6 p-4 font-obraletra text-base text-title-200 sm:w-2/3 sm:gap-9 sm:p-8'>
+				<h1 className='text-left font-cardinal text-xl first-letter:text-title-100 sm:text-2xl'>
 					{ReservationData.title}
 				</h1>
 
@@ -34,15 +31,17 @@ export default async function ReservationCardComponent() {
 
 				<Link
 					href={ReservationData.gamesUrl}
-					className='text-title-200 hover:underline'
+					className='text-xs text-title-200 hover:underline sm:text-base'
 				>
 					{ReservationData.gamesUrl}
 				</Link>
+
+				{/* Button */}
 				<div>
 					<button className='rounded bg-amber-100 p-2'>
 						<Link
 							href={ReservationData.buttonLabel}
-							className='text-title-200 hover:underline'
+							className='text-xs text-title-200 hover:underline sm:text-base'
 						>
 							{ReservationData.buttonLabel}
 						</Link>
@@ -50,12 +49,14 @@ export default async function ReservationCardComponent() {
 				</div>
 			</div>
 
-			<div className='flex w-1/3 items-center justify-center'>
+			{/* Image Section */}
+			<div className='flex w-full items-center justify-center sm:w-1/3'>
 				<Image
 					src='/assets/images/elements/ReservationCardIllustration.png'
 					alt='LTDA Logo'
 					width={300}
 					height={200}
+					className='h-auto max-w-full'
 				/>
 			</div>
 		</div>
