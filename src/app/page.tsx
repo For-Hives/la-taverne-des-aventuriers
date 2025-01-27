@@ -20,9 +20,9 @@ export default function Home() {
 			{/*Main part*/}
 			<main className='absolute left-0 top-0 flex h-full w-full flex-col items-center gap-96 pt-20 sm:items-start'>
 				{/*Hero + cards*/}
-				<div className='flex w-full flex-col items-center gap-96 max-sm:gap-64'>
+				<div className='flex w-full flex-col items-center gap-96'>
 					{/*Hero section*/}
-					<div className='flex h-screen w-screen flex-col items-center justify-center gap-16'>
+					<div className='flex h-screen w-screen flex-col items-start justify-center gap-16'>
 						{/*Background Video (Imported from components)*/}
 						<BackgroundVideoLP />
 
@@ -35,10 +35,10 @@ export default function Home() {
 
 					{/*Who are We Section*/}
 					<WhoAreWeSection />
-
-					{/*Reservation CTA Card (Imported from Components)*/}
-					<ReservationCardComponent />
 				</div>
+
+				{/*Reservation CTA Card (Imported from Components)*/}
+				<ReservationCardComponent />
 
 				{/*FooterComponent (Imported from Components)*/}
 				<FooterComponent />

@@ -391,3 +391,49 @@ export async function getWhoAreWePageData(): Promise<WhoAreWePageData> {
 		throw error
 	}
 }
+
+export interface MenuData {
+	collectionId: string
+	collectionName: string
+	id: string
+	menu_hero_title: string
+	menu_hero_description: string
+	cocktails_title: string
+	mocktails_title: string
+	shooter_title: string
+	short_long_drinks_title: string
+	beer_and_wine_title: string
+	travelers_pleasure_title: string
+	boards_title: string
+	soft_hot_drinks_title: string
+	created: string
+	updated: string
+}
+
+/**
+ * Fetches MenuData from PocketBase
+ * @returns {Promise<MenuData>} Promise resolving to MenuData
+ * @throws {Error} If PocketBase connection fails or data fetch fails
+ */
+export async function getMenuPageData(): Promise<MenuData> {
+	// Initialize PocketBase connection
+	const pb = await authWithPocketBase()
+
+	// Validate PocketBase connection
+	if (!pb) {
+		console.error('PocketBase connection failed')
+		throw new Error('Failed to connect to PocketBase [MenuData Service]')
+	}
+
+	try {
+		// Fetch data from PocketBase
+		// console.log('Fetching MenuData from PocketBase...')
+		const result = await pb.collection('menu_page').getList(1, 60) // Get first 60 items
+
+		// console.log('Successfully retrieved MenuData')
+		return result.items[0] as MenuData
+	} catch (error) {
+		console.error('Error while fetching MenuData from PocketBase:', error)
+		throw error
+	}
+}

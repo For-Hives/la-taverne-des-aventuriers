@@ -35,12 +35,12 @@ export default function BackToTop() {
 		isVisible && (
 			<button
 				onClick={scrollToTop}
-				className='fixed bottom-8 right-8 rounded-full bg-title-700 p-4 text-title-200 shadow-lg transition-all duration-300 ease-in-out hover:bg-title-200 hover:text-title-700'
+				className='fixed bottom-4 right-4 rounded-full bg-title-700 p-2 text-title-200 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-title-200 hover:text-title-700 hover:opacity-100 sm:bottom-6 sm:right-6'
 				aria-label='Retour en haut'
 			>
 				<FontAwesomeIcon
 					icon={faArrowUp}
-					className='h-6 w-6 rounded-full p-2'
+					className='h-4 w-4 rounded-full p-1 sm:h-5 sm:w-5 md:h-6 md:w-6'
 				/>
 			</button>
 		)
