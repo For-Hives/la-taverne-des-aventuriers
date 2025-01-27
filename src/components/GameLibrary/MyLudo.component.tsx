@@ -1,4 +1,4 @@
-import { getGameLibraryPageData } from '@/app/actions/getGameLibraryService'
+import { getGameLibraryPageData } from '@/app/actions/getDatasService'
 import Image from 'next/image'
 import Link from 'next/link'
 

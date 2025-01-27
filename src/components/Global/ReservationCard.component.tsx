@@ -1,4 +1,4 @@
-import { getReservationCardData } from '@/app/actions/GetReservationCardService'
+import { getReservationCardData } from '@/app/actions/getDatasService'
 import { textToSpanColored } from '@/utils/textToSpanColored'
 import Image from 'next/image'
 import Link from 'next/link'

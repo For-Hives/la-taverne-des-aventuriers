@@ -1,4 +1,4 @@
-import { getContactData } from '@/app/actions/getContactData'
+import { getContactData } from '@/app/actions/getDatasService'
 import Image from 'next/image'
 
 export default async function HowToContact() {

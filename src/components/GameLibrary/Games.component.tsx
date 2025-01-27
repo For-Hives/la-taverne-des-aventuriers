@@ -1,4 +1,4 @@
-import { getGameLibraryPageData } from '@/app/actions/getGameLibraryService'
+import { getGameLibraryPageData } from '@/app/actions/getDatasService'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
@@ -32,7 +32,7 @@ export default async function GameComponent() {
 			{/*Layout Event cards Div*/}
 			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
 				{/*Fist Card Div (One Half of the max-width) + Background image "bg-lp-card1-bg bg-cover bg-center"*/}
-				<div className='bg-gl-card1-bg relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-cover bg-center font-obraletra text-title-300 max-lg:w-full'>
+				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card1-bg bg-cover bg-center font-obraletra text-title-300 max-lg:w-full'>
 					{/* Overlay Gradient */}
 					<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 					{/* Text */}
@@ -69,7 +69,7 @@ export default async function GameComponent() {
 				{/*Second Half Event Cards */}
 				<div className='flex h-full w-1/2 flex-col items-start gap-2 text-title-300 max-lg:w-full'>
 					{/*Second Card*/}
-					<div className='w-ful bg-gl-card2-bg relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-cover bg-center font-obraletra text-title-300'>
+					<div className='w-ful relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card2-bg bg-cover bg-center font-obraletra text-title-300'>
 						{/* Overlay Gradient */}
 						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 
@@ -103,7 +103,7 @@ export default async function GameComponent() {
 					</div>
 
 					{/*Third Card Div*/}
-					<div className='bg-gl-card3-bg relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-cover bg-center font-obraletra text-title-300 max-lg:w-full'>
+					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card3-bg bg-cover bg-center font-obraletra text-title-300 max-lg:w-full'>
 						{/* Overlay Gradient */}
 						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 

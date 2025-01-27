@@ -1,4 +1,4 @@
-import { getReservationData } from '@/app/actions/getReservationService'
+import { getReservationData } from '@/app/actions/getDatasService'
 import Image from 'next/image'
 
 export default async function ReservationComponent() {

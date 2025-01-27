@@ -1,4 +1,4 @@
-import { getContactData } from '@/app/actions/getContactData'
+import { getContactData } from '@/app/actions/getDatasService'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'

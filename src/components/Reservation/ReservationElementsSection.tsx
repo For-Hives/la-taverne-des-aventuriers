@@ -1,4 +1,4 @@
-import { getWhoAreWePageData } from '@/app/actions/getWhoAreWeService'
+import { getWhoAreWePageData } from '@/app/actions/getDatasService'
 import Image from 'next/image'
 
 export default async function ReservationElementComponent() {
@@ -22,7 +22,7 @@ export default async function ReservationElementComponent() {
 			{/* first part of the Cards */}
 			<div className='flex h-full w-full flex-col gap-3 2xl:w-3/4'>
 				{/* First Card */}
-				<div className='bg-waw-card1-bg relative flex h-1/4 items-center justify-start rounded border border-title-200 bg-cover'>
+				<div className='relative flex h-1/4 items-center justify-start rounded border border-title-200 bg-waw-card1-bg bg-cover'>
 					{/* white Gradient */}
 					<div className='absolute inset-0 rounded bg-gradient-to-r from-title-600/100 via-title-600/100 to-title-600/20'></div>
 
@@ -93,7 +93,7 @@ export default async function ReservationElementComponent() {
 				</div>
 
 				{/* Second Card */}
-				<div className='bg-waw-card2-bg relative flex h-3/5 w-full flex-col items-start justify-start gap-3 rounded border border-title-200 bg-title-600 bg-white/80 bg-cover p-5 max-2xl:h-full'>
+				<div className='relative flex h-3/5 w-full flex-col items-start justify-start gap-3 rounded border border-title-200 bg-title-600 bg-white/80 bg-waw-card2-bg bg-cover p-5 max-2xl:h-full'>
 					{/* Gradient */}
 					<div className='absolute inset-0 z-0 rounded bg-gradient-to-r from-title-600/100 via-title-600/100 to-title-600/30 xl:bg-gradient-to-b'></div>
 

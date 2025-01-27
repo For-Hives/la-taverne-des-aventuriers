@@ -1,4 +1,4 @@
-import { getDrinkList } from '@/app/actions/getDrinksService'
+import { getDrinkList } from '@/app/actions/getDatasService'
 import DrinkDivComponent from '@/components/Menu/DrinkDiv.component'
 
 interface Drink {
