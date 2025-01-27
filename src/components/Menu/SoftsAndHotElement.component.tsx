@@ -1,16 +1,16 @@
 const SoftsAndHotElement = () => {
 	return (
-		<div className='flex w-3/4 flex-col gap-36'>
-			<h2 className='font-cardinal text-8xl text-title-200 first-letter:text-title-100'>
+		<div className='flex w-full flex-col gap-36 px-4 sm:w-3/4'>
+			<h2 className='font-cardinal text-4xl text-title-200 first-letter:text-title-100 sm:text-6xl lg:text-8xl'>
 				Soft Drink & Boissons Chaudes
 			</h2>
-			<div className='flex w-full items-center justify-center gap-36'>
-				<div className='flex w-1/2 flex-col gap-4'>
-					<h2 className='font-cardinal text-5xl text-title-200 first-letter:text-title-100'>
+			<div className='flex w-full flex-col items-center justify-center gap-16 sm:flex-row sm:gap-36'>
+				<div className='flex w-full flex-col gap-4 sm:w-1/2'>
+					<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
 						Boissons Chaudes
 					</h2>
-					<div className='flex gap-6 font-cardinal text-2xl text-title-200'>
-						<p className='flex flex-col gap-2'>
+					<div className='flex gap-6 font-cardinal text-base text-title-200 max-xl:flex-row max-sm:text-xl'>
+						<p className='flex w-full flex-col gap-2 max-sm:w-1/2'>
 							<span>Café (Florino) [supp crème 1€]</span>
 							<span>Café Moka Noisette</span>
 							<span>Café du moment</span>
@@ -20,7 +20,7 @@ const SoftsAndHotElement = () => {
 							<span>Thé (Noir, Ceylan, Fruits rouges, Vert)</span>
 							<span>Infusion (verveine, menthe, tilleul)</span>
 						</p>
-						<p className='flex flex-col gap-2'>
+						<p className='flex w-full flex-col gap-2 max-sm:w-1/2'>
 							<span>1.8€</span>
 							<span>2.3€</span>
 							<span>2.3€</span>
@@ -32,12 +32,12 @@ const SoftsAndHotElement = () => {
 						</p>
 					</div>
 				</div>
-				<div className='flex w-1/2 flex-col gap-4'>
-					<h2 className='font-cardinal text-5xl text-title-200 first-letter:text-title-100'>
-						Softs Drinks
+				<div className='flex w-full flex-col gap-4 sm:w-1/2'>
+					<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
+						Soft Drinks
 					</h2>
-					<div className='flex gap-6 font-cardinal text-2xl text-title-200'>
-						<p className='flex flex-col gap-2'>
+					<div className='flex gap-6 font-cardinal text-base text-title-200 sm:text-xl'>
+						<p className='flex w-full flex-col gap-2 sm:w-1/2'>
 							<span>Breizh Cola (classique, zero, tonic) 33cl</span>
 							<span>Breizh tea 33cl</span>
 							<span>Limonade 33cl</span>
@@ -46,7 +46,7 @@ const SoftsAndHotElement = () => {
 							<span>Sirop (Giffard) 33cl</span>
 							<span>Diabolo 20cl</span>
 						</p>
-						<p className='flex flex-col gap-2'>
+						<p className='flex w-full flex-col gap-2 max-sm:w-1/2'>
 							<span>4€</span>
 							<span>4€</span>
 							<span>4€</span>

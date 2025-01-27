@@ -13,13 +13,14 @@ export default function DrinkDivComponent({
 	readonly isInverted?: boolean
 }) {
 	return (
-		<div className={`flex flex-col items-center justify-center`}>
+		<div className={`flex flex-col items-center justify-center px-4 sm:px-8`}>
 			<div
-				className={`flex items-center justify-center ${
-					isInverted ? 'flex-row-reverse' : 'flex-row'
+				className={`flex w-full flex-col items-center justify-center sm:flex-row ${
+					isInverted ? 'sm:flex-row-reverse' : 'sm:flex-row'
 				}`}
 			>
-				<div className='w-1/3'>
+				{/* Image Section */}
+				<div className='mb-4 w-full sm:mb-0 sm:w-1/3'>
 					<Image
 						src='/assets/images/Cocktails/Cocktail1.jpg'
 						alt='Drink Image'
@@ -28,11 +29,13 @@ export default function DrinkDivComponent({
 						height={400}
 					/>
 				</div>
-				<div className='flex w-2/3 flex-col gap-9'>
-					<h2 className='font-cardinal text-4xl text-title-200 first-letter:text-title-100'>
+
+				{/* Text Section */}
+				<div className='flex w-full flex-col gap-6 sm:w-2/3 sm:gap-9'>
+					<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
 						{drink.title}
 					</h2>
-					<p className='font-obraletra text-xs text-title-200'>
+					<p className='font-obraletra text-base text-title-200 sm:text-xs'>
 						{drink.description}
 					</p>
 				</div>
