@@ -18,17 +18,17 @@ export default async function ReservationElementComponent() {
 	}
 
 	return (
-		<div className='flex h-full w-4/5 gap-3 font-obraletra text-base text-title-200 max-xl:flex-col xl:h-screen'>
+		<div className='text-customBrown-100 flex h-full w-4/5 gap-3 font-obraletra text-base max-xl:flex-col xl:h-screen'>
 			{/* first part of the Cards */}
 			<div className='flex h-full w-full flex-col gap-3 2xl:w-3/4'>
 				{/* First Card */}
-				<div className='relative flex h-1/4 items-center justify-start rounded border border-title-200 bg-waw-card1-bg bg-cover'>
+				<div className='border-customBrown-100 relative flex h-1/4 items-center justify-start rounded border bg-waw-card1-bg bg-cover'>
 					{/* white Gradient */}
-					<div className='absolute inset-0 rounded bg-gradient-to-r from-title-600/100 via-title-600/100 to-title-600/20'></div>
+					<div className='from-customWhite-300/100 via-customWhite-300/100 to-customWhite-300/20 absolute inset-0 rounded bg-gradient-to-r'></div>
 
 					{/* Text */}
 					<div className='relative z-10 flex w-full flex-col gap-3 p-5 xl:w-2/3'>
-						<h1 className='font-cardinal text-3xl first-letter:text-title-100'>
+						<h1 className='first-letter:text-customRed-100 font-cardinal text-3xl'>
 							{WhoAreWeData.who_are_we_title}
 						</h1>
 						<div
@@ -42,8 +42,8 @@ export default async function ReservationElementComponent() {
 				<div className='flex h-3/4 gap-3'>
 					<div className='flex w-full items-start justify-start gap-3 max-md:flex-col xl:w-1/3 xl:flex-col'>
 						{/* Second Card */}
-						<div className='flex h-auto flex-col justify-start gap-3 rounded border border-title-200 bg-title-600 p-5 max-xl:h-full max-xl:w-1/2 max-md:w-full 2xl:h-auto'>
-							<h2 className='font-cardinal text-3xl first-letter:text-title-100'>
+						<div className='border-customBrown-100 bg-customWhite-300 flex h-auto flex-col justify-start gap-3 rounded border p-5 max-xl:h-full max-xl:w-1/2 max-md:w-full 2xl:h-auto'>
+							<h2 className='first-letter:text-customRed-100 font-cardinal text-3xl'>
 								{WhoAreWeData.our_history_title}
 							</h2>
 							<div
@@ -54,8 +54,8 @@ export default async function ReservationElementComponent() {
 						</div>
 
 						{/* third Card */}
-						<div className='flex h-1/2 w-full flex-col justify-start gap-3 rounded border border-title-200 bg-title-600 p-5 max-xl:h-full max-xl:w-1/2 max-md:w-full'>
-							<h2 className='font-cardinal text-3xl first-letter:text-title-100'>
+						<div className='border-customBrown-100 bg-customWhite-300 flex h-1/2 w-full flex-col justify-start gap-3 rounded border p-5 max-xl:h-full max-xl:w-1/2 max-md:w-full'>
+							<h2 className='first-letter:text-customRed-100 font-cardinal text-3xl'>
 								{WhoAreWeData.our_services_title}
 							</h2>
 							<div
@@ -67,7 +67,7 @@ export default async function ReservationElementComponent() {
 					</div>
 
 					{/* Logo Card */}
-					<div className='flex h-full w-2/3 items-center justify-center rounded border border-title-200 bg-title-600 max-xl:hidden'>
+					<div className='border-customBrown-100 bg-customWhite-300 flex h-full w-2/3 items-center justify-center rounded border max-xl:hidden'>
 						<Image
 							src='/assets/images/LTDALogo.png'
 							alt='LTDA Logo'
@@ -81,8 +81,8 @@ export default async function ReservationElementComponent() {
 			{/* Second Part Of Cards */}
 			<div className='flex h-full w-1/4 flex-col gap-3 max-xl:w-full'>
 				{/* First Card */}
-				<div className='flex h-2/5 flex-col items-start justify-start gap-3 rounded border border-title-200 bg-title-600 p-5'>
-					<h2 className='font-cardinal text-3xl first-letter:text-title-100'>
+				<div className='border-customBrown-100 bg-customWhite-300 flex h-2/5 flex-col items-start justify-start gap-3 rounded border p-5'>
+					<h2 className='first-letter:text-customRed-100 font-cardinal text-3xl'>
 						{WhoAreWeData.team_title}
 					</h2>
 					<div
@@ -93,11 +93,11 @@ export default async function ReservationElementComponent() {
 				</div>
 
 				{/* Second Card */}
-				<div className='relative flex h-3/5 w-full flex-col items-start justify-start gap-3 rounded border border-title-200 bg-title-600 bg-white/80 bg-waw-card2-bg bg-cover p-5 max-2xl:h-full'>
+				<div className='border-customBrown-100 bg-customWhite-300 relative flex h-3/5 w-full flex-col items-start justify-start gap-3 rounded border bg-white/80 bg-waw-card2-bg bg-cover p-5 max-2xl:h-full'>
 					{/* Gradient */}
-					<div className='absolute inset-0 z-0 rounded bg-gradient-to-r from-title-600/100 via-title-600/100 to-title-600/30 xl:bg-gradient-to-b'></div>
+					<div className='from-customWhite-300/100 via-customWhite-300/100 to-customWhite-300/30 absolute inset-0 z-0 rounded bg-gradient-to-r xl:bg-gradient-to-b'></div>
 
-					<h2 className='z-10 font-cardinal text-3xl first-letter:text-title-100'>
+					<h2 className='first-letter:text-customRed-100 z-10 font-cardinal text-3xl'>
 						{WhoAreWeData.information_title}
 					</h2>
 					<div

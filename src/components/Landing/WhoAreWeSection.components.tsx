@@ -30,7 +30,7 @@ export default async function WhoAreWeSection() {
 			</div>
 
 			{/* Text */}
-			<div className='flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base text-title-200 max-lg:text-xs lg:w-2/3 lg:items-start'>
+			<div className='text-customBrown-100 flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base max-lg:text-xs lg:w-2/3 lg:items-start'>
 				{/* Title */}
 				<h2 className='text-center lg:text-left'>
 					{Element.description_title}
@@ -53,7 +53,7 @@ export default async function WhoAreWeSection() {
 						<span>{Element.description_button_label}</span>
 						<FontAwesomeIcon
 							icon={faChevronRight}
-							className='h-4 w-4 text-title-200'
+							className='text-customBrown-100 h-4 w-4'
 						/>
 					</Link>
 				</div>

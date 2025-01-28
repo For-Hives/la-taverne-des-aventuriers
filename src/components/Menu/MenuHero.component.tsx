@@ -19,13 +19,13 @@ export default async function MenuHeroComponent() {
 				{/* Hero text content */}
 				<div className='absolute left-1/2 top-[45vh] z-30 flex w-1/2 -translate-x-1/2 -translate-y-1/2 transform flex-col items-center gap-12'>
 					{/* Hero title */}
-					<h1 className='font-cardinal text-8xl text-title-200 opacity-100 first-letter:text-title-100 max-sm:text-7xl'>
+					<h1 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-8xl opacity-100 max-sm:text-7xl'>
 						{MenuData.menu_hero_title} {/* Displaying the menu hero title */}
 					</h1>
 
 					{/* Hero description */}
 					<div
-						className='text-center font-obraletra text-xl text-title-200 max-sm:text-sm'
+						className='text-customBrown-100 text-center font-obraletra text-xl max-sm:text-sm'
 						dangerouslySetInnerHTML={{
 							__html: MenuData.menu_hero_description, // Injecting the HTML description safely
 						}}

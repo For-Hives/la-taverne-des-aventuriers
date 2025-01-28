@@ -38,16 +38,16 @@ export default function SoftsAndHotElement() {
 
 	return (
 		<div className='flex w-3/4 flex-col gap-36 px-4'>
-			<h2 className='font-cardinal text-4xl text-title-200 first-letter:text-title-100 sm:text-6xl lg:text-8xl'>
+			<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-4xl sm:text-6xl lg:text-8xl'>
 				Soft Drink & Boissons Chaudes
 			</h2>
 			<div className='flex w-full flex-col items-center justify-center gap-16 sm:flex-row sm:gap-36'>
 				{/* hot drinks */}
 				<div className='flex w-1/2 flex-col gap-4 sm:w-1/2'>
-					<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
+					<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-3xl sm:text-4xl'>
 						Boissons Chaudes
 					</h2>
-					<div className='flex gap-6 font-cardinal text-base text-title-200 sm:text-xl'>
+					<div className='text-customBrown-100 flex gap-6 font-cardinal text-base sm:text-xl'>
 						<p className='flex w-1/2 flex-col gap-2 sm:w-1/2'>
 							{hotDrinks.map(drink => (
 								<span key={drink.id}>
@@ -60,10 +60,10 @@ export default function SoftsAndHotElement() {
 
 				{/* Soft Drinks */}
 				<div className='flex w-1/2 flex-col gap-4 sm:w-1/2'>
-					<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
+					<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-3xl sm:text-4xl'>
 						Soft Drinks
 					</h2>
-					<div className='flex gap-6 font-cardinal text-base text-title-200 sm:text-xl'>
+					<div className='text-customBrown-100 flex gap-6 font-cardinal text-base sm:text-xl'>
 						<p className='flex w-1/2 flex-col gap-2 sm:w-1/2'>
 							{softDrinks.map(drink => (
 								<span key={drink.id}>

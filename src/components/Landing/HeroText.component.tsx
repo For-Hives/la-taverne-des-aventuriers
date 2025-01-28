@@ -18,13 +18,13 @@ export default async function HeroTextComponent() {
 	return (
 		<div className='bottom-0 left-0 flex flex-col items-start gap-6 p-6 sm:p-12 md:p-16 lg:p-52'>
 			{/* Hero Title */}
-			<h1 className='flex w-full flex-col gap-2 font-cardinal text-4xl font-bold text-title-200 sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl'>
+			<h1 className='text-customBrown-100 first-letter:text-customRed-100 flex w-full flex-col gap-2 font-cardinal text-4xl font-bold sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl'>
 				<span dangerouslySetInnerHTML={{ __html: heroData.heroTitle }} />
 			</h1>
 
 			<div className='flex flex-col items-start gap-6 sm:gap-8 md:gap-10'>
 				{/* Description */}
-				<p className='flex items-center gap-2 font-obraletra text-lg text-title-200 sm:gap-3 sm:text-xl md:text-2xl'>
+				<p className='text-customBrown-100 flex items-center gap-2 font-obraletra text-lg sm:gap-3 sm:text-xl md:text-2xl'>
 					<span
 						dangerouslySetInnerHTML={{ __html: heroData.heroDescription }}
 					/>
@@ -35,19 +35,19 @@ export default async function HeroTextComponent() {
 					{/* Button 1 */}
 					<Link
 						href={heroData.heroLeftButtonUrl}
-						className='flex h-10 items-center gap-4 rounded bg-title-200 p-2 font-obraletra text-lg text-title-300 hover:underline sm:text-xl'
+						className='bg-customBrown-100 text-customWhite-100 flex h-10 items-center gap-4 rounded p-2 font-obraletra text-lg hover:underline sm:text-xl'
 					>
 						{heroData.heroLeftButtonLabel}
 						<FontAwesomeIcon
 							icon={faChevronRight}
-							className='h-4 w-4 text-title-300'
+							className='text-customWhite-100 h-4 w-4'
 						/>
 					</Link>
 
 					{/* Button 2 */}
 					<Link
 						href={heroData.heroRightButtonUrl}
-						className='h-10 rounded border-3 border-solid border-title-200 p-1 font-obraletra text-lg text-title-200 hover:underline sm:text-xl'
+						className='border-customBrown-100 text-customBrown-100 h-10 rounded border-3 border-solid p-1 font-obraletra text-lg hover:underline sm:text-xl'
 					>
 						{heroData.heroRightButtonLabel}
 					</Link>

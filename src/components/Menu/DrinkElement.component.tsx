@@ -61,7 +61,7 @@ export default async function DrinkElement({
 	return (
 		<div className='flex w-3/4 flex-col items-center justify-center gap-20'>
 			{/* Title of the page, formatted based on the collection name */}
-			<h2 className='font-cardinal text-8xl text-title-200 first-letter:text-title-100 max-sm:text-5xl'>
+			<h2 className='first-letter:text-customRed-100 text-customBrown-100 font-cardinal text-8xl max-sm:text-5xl'>
 				{formatDrinkName(collection_name)}
 			</h2>
 			<div className='flex flex-col justify-center gap-28'>

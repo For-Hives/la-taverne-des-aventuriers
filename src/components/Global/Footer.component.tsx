@@ -48,11 +48,11 @@ export default async function FooterComponent() {
 			</div>
 
 			{/* Main content */}
-			<div className='relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-12 p-10 text-left font-obraletra text-base text-title-200 max-sm:gap-6 md:gap-8'>
+			<div className='text-customBrown-100 relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-12 p-10 text-left font-obraletra text-base max-sm:gap-6 md:gap-8'>
 				<div className='flex w-full flex-wrap items-start justify-around gap-8 sm:gap-4 md:gap-6'>
 					{/* First column */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center text-base max-md:text-sm'>
-						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100 sm:text-xl'>
+						<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-2xl sm:text-xl'>
 							{FooterData.barTitle}
 						</h2>
 						<Link className='hover:underline' href={FooterData.menuUrl}>
@@ -70,8 +70,8 @@ export default async function FooterComponent() {
 					</div>
 
 					{/* Second column */}
-					<div className='flex w-full max-w-xs flex-col items-center justify-center font-obraletra text-base text-title-200 max-md:text-sm'>
-						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100 sm:text-xl'>
+					<div className='text-customBrown-100 flex w-full max-w-xs flex-col items-center justify-center font-obraletra text-base max-md:text-sm'>
+						<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-2xl sm:text-xl'>
 							{FooterData.supportTitle}
 						</h2>
 						<Link className='hover:underline' href={FooterData.contactUrl}>
@@ -84,7 +84,7 @@ export default async function FooterComponent() {
 
 					{/* Third column */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100 sm:text-xl'>
+						<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-2xl sm:text-xl'>
 							{FooterData.socialsTitle}
 						</h2>
 						{/* Social media icons (placeholder for now) */}

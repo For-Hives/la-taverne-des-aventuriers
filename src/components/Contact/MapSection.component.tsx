@@ -17,11 +17,11 @@ export default async function MapSection() {
 	}
 
 	return (
-		<div className='flex w-full flex-col items-center gap-8 p-8 font-obraletra text-title-200 lg:flex-row lg:p-16'>
+		<div className='text-customBrown-100 flex w-full flex-col items-center gap-8 p-8 font-obraletra lg:flex-row lg:p-16'>
 			{/* Text Section */}
 			<div className='flex w-full flex-col items-start gap-8 lg:w-1/3'>
 				{/* Title of the address */}
-				<h1 className='font-cardinal text-4xl first-letter:text-title-100 lg:text-6xl'>
+				<h1 className='first-letter:text-customRed-100 font-cardinal text-4xl lg:text-6xl'>
 					{ContactData.adress_title}
 				</h1>
 				{/* Address */}
@@ -30,7 +30,7 @@ export default async function MapSection() {
 				<Link
 					target='_blank'
 					href={ContactData.button_url}
-					className='flex items-center justify-center gap-3 rounded bg-title-200 p-3 font-cardinal text-lg text-title-300 transition hover:bg-title-300 lg:text-xl'
+					className='bg-customBrown-100 text-customWhite-100 hover:bg-customWhite-100 flex items-center justify-center gap-3 rounded p-3 font-cardinal text-lg transition lg:text-xl'
 				>
 					{ContactData.button_label}
 					{/* Chevron icon for the button */}

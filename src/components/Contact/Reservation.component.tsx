@@ -23,9 +23,9 @@ export default async function ReservationComponent() {
 				/>
 			</div>
 			{/* Right side: Reservation Information */}
-			<div className='flex w-2/3 flex-col items-start justify-center gap-9 text-title-200'>
+			<div className='text-customBrown-100 flex w-2/3 flex-col items-start justify-center gap-9'>
 				{/* How to Title */}
-				<h2 className='font-cardinal text-2xl first-letter:text-title-100'>
+				<h2 className='first-letter:text-customRed-100 font-cardinal text-2xl'>
 					{ReservationData.how_to_title}
 				</h2>
 				{/* Description content */}

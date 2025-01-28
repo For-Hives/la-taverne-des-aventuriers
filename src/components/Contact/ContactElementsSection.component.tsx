@@ -28,11 +28,11 @@ export default async function ContactElements() {
 			{/* Grid Layout for Contact Sections */}
 			<div className='grid w-1/2 max-w-6xl grid-cols-1 gap-8 max-xl:w-full xl:grid-cols-2'>
 				{/* Bloc Horaires (Business Hours) */}
-				<div className='flex flex-col items-start gap-6 rounded-lg border border-title-200 bg-title-600 p-6 font-obraletra shadow'>
-					<h1 className='font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
+				<div className='border-customBrown-100 bg-customWhite-300 flex flex-col items-start gap-6 rounded-lg border p-6 font-obraletra shadow'>
+					<h1 className='text-customBrown-100 font-obraletra text-2xl first-letter:font-obraletraBold'>
 						{ContactData.schedules_title}
 					</h1>
-					<p className='text-title-200 [&>span]:block'>
+					<p className='text-customBrown-100 [&>span]:block'>
 						{/* Exceptional Schedule */}
 						<span className='font-obraletraBold'>
 							{ContactData.schedules_exceptional}
@@ -51,20 +51,20 @@ export default async function ContactElements() {
 				{/* Bloc Contact et Email (Contact and Email) */}
 				<div className='flex flex-col gap-6 font-obraletra'>
 					{/* Bloc Contact (Social Media) */}
-					<div className='flex flex-col items-center gap-4 rounded-lg border border-title-200 bg-title-600 p-6 shadow'>
-						<h2 className='w-full font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
+					<div className='border-customBrown-100 bg-customWhite-300 flex flex-col items-center gap-4 rounded-lg border p-6 shadow'>
+						<h2 className='text-customBrown-100 w-full font-obraletra text-2xl first-letter:font-obraletraBold'>
 							{ContactData.contact_socials_title}
 						</h2>
 						<div className='flex items-center justify-evenly gap-10'>
 							{/* Facebook Icon */}
-							<div className='flex h-12 w-12 items-center justify-center rounded-full bg-title-700'>
+							<div className='bg-customWhite-400 flex h-12 w-12 items-center justify-center rounded-full'>
 								<FontAwesomeIcon
 									icon={faFacebook}
-									className='h-8 w-8 text-title-200'
+									className='text-customBrown-100 h-8 w-8'
 								/>
 							</div>
 							{/* Custom Icon (e.g., logo) */}
-							<div className='flex h-12 w-12 items-center justify-center rounded-full bg-title-700'>
+							<div className='bg-customWhite-400 flex h-12 w-12 items-center justify-center rounded-full'>
 								<Image
 									src='/assets/images/elements/ContactElements/myludo_icon.png'
 									alt='LTDA Logo'
@@ -74,10 +74,10 @@ export default async function ContactElements() {
 								/>
 							</div>
 							{/* Instagram Icon */}
-							<div className='flex h-12 w-12 items-center justify-center rounded-full bg-title-700'>
+							<div className='bg-customWhite-400 flex h-12 w-12 items-center justify-center rounded-full'>
 								<FontAwesomeIcon
 									icon={faInstagram}
-									className='h-8 w-8 text-title-200'
+									className='text-customBrown-100 h-8 w-8'
 								/>
 							</div>
 						</div>
@@ -86,11 +86,11 @@ export default async function ContactElements() {
 					{/* Bloc Email */}
 					<div className='relative flex flex-col gap-6 font-obraletra'>
 						{/* Email Section */}
-						<div className='flex flex-col items-start gap-4 rounded-lg border border-title-200 bg-title-600 p-6 shadow'>
-							<h2 className='font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
+						<div className='border-customBrown-100 bg-customWhite-300 flex flex-col items-start gap-4 rounded-lg border p-6 shadow'>
+							<h2 className='text-customBrown-100 font-obraletra text-2xl first-letter:font-obraletraBold'>
 								{ContactData.contact_email_title}
 							</h2>
-							<p className='text-title-200'>{ContactData.email}</p>
+							<p className='text-customBrown-100'>{ContactData.email}</p>
 						</div>
 						{/* Decorative Image */}
 						<div className='relative'>

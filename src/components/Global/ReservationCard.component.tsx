@@ -18,11 +18,11 @@ export default async function ReservationCardComponent() {
 	}
 
 	return (
-		<div className='mx-auto flex w-full max-w-6xl flex-col items-center gap-8 rounded bg-cardBG-100 p-4 sm:flex-row sm:gap-20 sm:p-10'>
+		<div className='bg-customWhite-500 mx-auto flex w-full max-w-6xl flex-col items-center gap-8 rounded p-4 sm:flex-row sm:gap-20 sm:p-10'>
 			{/* Text Section */}
-			<div className='flex w-full flex-col gap-6 p-4 font-obraletra text-base text-title-200 sm:w-2/3 sm:gap-9 sm:p-8'>
+			<div className='text-customBrown-100 flex w-full flex-col gap-6 p-4 font-obraletra text-base sm:w-2/3 sm:gap-9 sm:p-8'>
 				{/* Title */}
-				<h1 className='text-left font-cardinal text-xl first-letter:text-title-100 sm:text-2xl'>
+				<h1 className='first-letter:text-customRed-100 text-left font-cardinal text-xl sm:text-2xl'>
 					{ReservationData.title}
 				</h1>
 
@@ -36,18 +36,18 @@ export default async function ReservationCardComponent() {
 				{/* Link to the games URL */}
 				<Link
 					href={ReservationData.gamesUrl}
-					className='text-xs text-title-200 hover:underline sm:text-base'
+					className='text-customBrown-100 text-xs hover:underline sm:text-base'
 				>
 					{ReservationData.gamesUrl}
 				</Link>
 
 				{/* Button Section */}
 				<div>
-					<button className='rounded bg-amber-100 p-2'>
+					<button className='bg-customWhite-100 rounded p-2'>
 						{/* Button Link */}
 						<Link
 							href={ReservationData.buttonLabel}
-							className='text-xs text-title-200 hover:underline sm:text-base'
+							className='text-customBrown-100 text-xs hover:underline sm:text-base'
 						>
 							{ReservationData.buttonLabel}
 						</Link>

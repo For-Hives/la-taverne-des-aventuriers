@@ -17,7 +17,7 @@ export default async function MyLudoComponent() {
 		<div className='w-full py-8 sm:w-3/4 sm:py-16'>
 			<div className='flex w-full flex-col items-start justify-center gap-8 sm:gap-12'>
 				{/* Title for the component */}
-				<h2 className='font-obraletraBold text-xl text-title-200 sm:text-2xl'>
+				<h2 className='text-customBrown-100 font-obraletraBold text-xl sm:text-2xl'>
 					{GameLibraryData.myludo_component_title}
 				</h2>
 
@@ -35,7 +35,7 @@ export default async function MyLudoComponent() {
 
 					{/* Link to the game library */}
 					<Link
-						className='absolute bottom-5 left-10 text-center font-obraletra text-xl text-title-300 hover:underline sm:text-2xl'
+						className='text-customWhite-100 absolute bottom-5 left-10 text-center font-obraletra text-xl hover:underline sm:text-2xl'
 						href={GameLibraryData.myludo_component_url}
 					>
 						{GameLibraryData.myludo_component_label}

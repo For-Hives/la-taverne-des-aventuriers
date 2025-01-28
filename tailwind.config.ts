@@ -38,19 +38,22 @@ export default {
 			},
 			colors: {
 				background: 'var(--background)',
-				cardBG: {
-					100: '#F2EFE2',
+
+				customBrown: {
+					100: '#582615',
+					200: 'rgba(88,38,21,0.32)',
+				},
+				customRed: {
+					100: '#8D2026',
+				},
+				customWhite: {
+					100: '#FFFCEE',
+					200: '#f2edd3',
+					300: '#fdfbf6',
+					400: '#ead4bf',
+					500: '#F2EFE2',
 				},
 				foreground: 'var(--foreground)',
-				title: {
-					100: '#8D2026',
-					200: '#582615',
-					300: '#FFFCEE',
-					400: '#f2edd3',
-					500: 'rgba(88,38,21,0.32)',
-					600: '#fdfbf6',
-					700: '#ead4bf',
-				},
 			},
 			fontFamily: {
 				cardinal: ['"Cardinal"', 'sans-serif'],
@@ -60,3 +63,13 @@ export default {
 		},
 	},
 } satisfies Config
+// 100: '#8D2026',
+// 	200: '#582615',
+// 	300: '#FFFCEE',
+// 	400: '#f2edd3',
+// 	500: 'rgba(88,38,21,0.32)',
+// 	600: '#fdfbf6',
+// 	700: '#ead4bf',
+// cardBG: {
+// 	100: '#F2EFE2',
+// },

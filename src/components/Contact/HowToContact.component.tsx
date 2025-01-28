@@ -25,9 +25,9 @@ export default async function HowToContact() {
 			</div>
 
 			{/* Text Section */}
-			<div className='flex w-2/3 flex-col items-start justify-center gap-10 font-obraletra text-base text-title-200'>
+			<div className='text-customBrown-100 flex w-2/3 flex-col items-start justify-center gap-10 font-obraletra text-base'>
 				{/* Title */}
-				<h1 className='items-center justify-center text-center font-cardinal text-2xl first-letter:text-title-100'>
+				<h1 className='first-letter:text-customRed-100 items-center justify-center text-center font-cardinal text-2xl'>
 					{ContactData.howtosection_title}
 				</h1>
 

@@ -27,14 +27,14 @@ export default async function GameComponent() {
 	return (
 		<div className='rounded- flex h-screen w-3/4 flex-col items-start gap-9 max-lg:w-full'>
 			{/* Title Section */}
-			<h2 className='font-obraletraBold text-xl text-title-200'>
+			<h2 className='text-customBrown-100 font-obraletraBold text-xl'>
 				{GameLibraryData.Card_Title}
 			</h2>
 
 			{/* Layout for Event Cards */}
 			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
 				{/* First Card */}
-				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card1-bg bg-cover bg-center font-obraletra text-title-300 max-lg:w-4/5'>
+				<div className='text-customWhite-100 relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card1-bg bg-cover bg-center font-obraletra max-lg:w-4/5'>
 					{/* Overlay Gradient */}
 					<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 					{/* Card Content */}
@@ -55,14 +55,14 @@ export default async function GameComponent() {
 							<span>{GameLibraryData.card1_button_label}</span>
 							<FontAwesomeIcon
 								icon={faChevronRight}
-								className='h-4 w-4 text-title-300'
+								className='text-customWhite-100 h-4 w-4'
 							/>
 						</Link>
 					</div>
 				</div>
 
 				{/* Second Column */}
-				<div className='flex h-full w-1/2 flex-col items-center gap-2 text-title-300 max-lg:w-full'>
+				<div className='text-customWhite-100 flex h-full w-1/2 flex-col items-center gap-2 max-lg:w-full'>
 					{/* Second Card */}
 					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card2-bg bg-cover bg-center max-lg:w-4/5'>
 						{/* Overlay Gradient */}

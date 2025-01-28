@@ -36,16 +36,16 @@ export default function TravelersPleasureElement() {
 
 	return (
 		<div className='flex w-full flex-col items-center justify-center gap-20 px-4'>
-			<h2 className='font-cardinal text-4xl text-title-200 first-letter:text-title-100 sm:text-6xl lg:text-8xl'>
+			<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-4xl sm:text-6xl lg:text-8xl'>
 				Les Plaisirs Du Voyageur
 			</h2>
 			<div className='flex w-full flex-col items-center justify-center gap-10 sm:gap-20 lg:flex-row'>
 				{/* Left Column (Text 1) */}
 				<div className='flex w-full flex-col justify-center gap-14 sm:w-1/3'>
-					<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
+					<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-3xl sm:text-4xl'>
 						{leftText.title}
 					</h2>
-					<p className='font-obraletra text-base text-title-200 sm:text-lg'>
+					<p className='text-customBrown-100 font-obraletra text-base sm:text-lg'>
 						{leftText.description}
 					</p>
 				</div>
@@ -61,10 +61,10 @@ export default function TravelersPleasureElement() {
 
 				{/* Right Column (Text 2) */}
 				<div className='flex w-full flex-col justify-center gap-14 sm:w-1/3'>
-					<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
+					<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-3xl sm:text-4xl'>
 						{rightText.title}
 					</h2>
-					<p className='font-obraletra text-base text-title-200 sm:text-lg'>
+					<p className='text-customBrown-100 font-obraletra text-base sm:text-lg'>
 						{rightText.description}
 					</p>
 				</div>
