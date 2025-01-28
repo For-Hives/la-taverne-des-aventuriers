@@ -18,23 +18,25 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
-				'bg-first-image': "url('/assets/images/elements/background2.png')",
-				FooterImage: "url('/assets/images/MaskFooter.png')",
+				'background-image':
+					"url('/assets/images/elements/ContactElements/t3.png')", //fix
+				FooterImage: "url('/assets/images/MaskFooter.png')", //ok
 				'gl-card1-bg':
-					"url('/assets/images/elements/GameLibraryElements/BG1.png')",
+					"url('/assets/images/elements/GameLibraryElements/BG1.png')", //ok
 				'gl-card2-bg':
-					"url('/assets/images/elements/GameLibraryElements/BG2.png')",
+					"url('/assets/images/elements/GameLibraryElements/BG2.png')", //ok
 				'gl-card3-bg':
-					"url('/assets/images/elements/GameLibraryElements/BG3.png')",
-				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
-				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
-				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
-				menuBGImage: "url('/assets/images/elements/MenuElements/BGImage.png')",
+					"url('/assets/images/elements/GameLibraryElements/BG3.png')", //ok
+				'lp-blured-image': "url('/assets/images/elements/background2.png')", //fix
+				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')", //ok
+				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')", //ok
+				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')", //ok
+				'menu-background-image':
+					"url('/assets/images/elements/MenuElements/BGImage.png')", //fix
 				'waw-card1-bg':
-					"url('/assets/images/elements/WhoAreWeElement/planche1.png')",
+					"url('/assets/images/elements/WhoAreWeElement/planche1.png')", //ok
 				'waw-card2-bg':
-					"url('/assets/images/elements/WhoAreWeElement/Barman.png')",
-				whoareweimage: "url('/assets/images/elements/ContactElements/t3.png')",
+					"url('/assets/images/elements/WhoAreWeElement/Barman.png')", //ok
 			},
 			colors: {
 				background: 'var(--background)',
@@ -63,13 +65,21 @@ export default {
 		},
 	},
 } satisfies Config
-// 100: '#8D2026',
-// 	200: '#582615',
-// 	300: '#FFFCEE',
-// 	400: '#f2edd3',
-// 	500: 'rgba(88,38,21,0.32)',
-// 	600: '#fdfbf6',
-// 	700: '#ead4bf',
-// cardBG: {
-// 	100: '#F2EFE2',
-// },
+
+// 'bg-first-image': "url('/assets/images/elements/background2.png')",
+// 	FooterImage: "url('/assets/images/MaskFooter.png')",
+// 	'gl-card1-bg':
+// "url('/assets/images/elements/GameLibraryElements/BG1.png')",
+// 	'gl-card2-bg':
+// "url('/assets/images/elements/GameLibraryElements/BG2.png')",
+// 	'gl-card3-bg':
+// "url('/assets/images/elements/GameLibraryElements/BG3.png')",
+// 	'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
+// 	'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
+// 	'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
+// 	menuBGImage: "url('/assets/images/elements/MenuElements/BGImage.png')",
+// 	'waw-card1-bg':
+// "url('/assets/images/elements/WhoAreWeElement/planche1.png')",
+// 	'waw-card2-bg':
+// "url('/assets/images/elements/WhoAreWeElement/Barman.png')",
+// 	whoareweimage: "url('/assets/images/elements/ContactElements/t3.png')",

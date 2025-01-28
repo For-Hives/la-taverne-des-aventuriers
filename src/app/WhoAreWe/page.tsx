@@ -12,7 +12,7 @@ export default function Page() {
 			<MobileNavbar />
 
 			{/* Background overlay (mask and image) */}
-			<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-whoareweimage opacity-75'></div>
+			<div className='mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75'></div>
 
 			{/* Main content section with a margin at the top */}
 			<div className='relative mt-64 flex flex-col items-center gap-64'>

@@ -28,7 +28,7 @@ export default async function GLHeroComponent() {
 					></div>
 				</div>
 				{/* Background image with opacity */}
-				<div className='mask-custom h-[115vh] min-h-[115vh] w-[100vw] bg-menuBGImage bg-cover bg-center opacity-75' />
+				<div className='mask-custom bg-menu-background-image h-[115vh] min-h-[115vh] w-[100vw] bg-cover bg-center opacity-75' />
 			</div>
 		</div>
 	)
