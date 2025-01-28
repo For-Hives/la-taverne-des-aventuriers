@@ -65,21 +65,3 @@ export default {
 		},
 	},
 } satisfies Config
-
-// 'bg-first-image': "url('/assets/images/elements/background2.png')",
-// 	FooterImage: "url('/assets/images/MaskFooter.png')",
-// 	'gl-card1-bg':
-// "url('/assets/images/elements/GameLibraryElements/BG1.png')",
-// 	'gl-card2-bg':
-// "url('/assets/images/elements/GameLibraryElements/BG2.png')",
-// 	'gl-card3-bg':
-// "url('/assets/images/elements/GameLibraryElements/BG3.png')",
-// 	'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
-// 	'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
-// 	'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
-// 	menuBGImage: "url('/assets/images/elements/MenuElements/BGImage.png')",
-// 	'waw-card1-bg':
-// "url('/assets/images/elements/WhoAreWeElement/planche1.png')",
-// 	'waw-card2-bg':
-// "url('/assets/images/elements/WhoAreWeElement/Barman.png')",
-// 	whoareweimage: "url('/assets/images/elements/ContactElements/t3.png')",
