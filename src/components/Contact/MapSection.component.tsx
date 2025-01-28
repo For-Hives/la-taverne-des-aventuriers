@@ -1,4 +1,4 @@
-import { getContactData } from '@/app/actions/getDatasService'
+import { getContactData } from '@/app/actions/services/getContactPageData.service'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'

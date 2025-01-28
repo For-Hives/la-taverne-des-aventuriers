@@ -1,4 +1,4 @@
-import { getGameLibraryPageData } from '@/app/actions/getDatasService'
+import { getGameLibraryPageData } from '@/app/actions/services/getGamePageData.service'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'

@@ -1,4 +1,4 @@
-import { getLandingData } from '@/app/actions/getDatasService'
+import { getLandingData } from '@/app/actions/services/getLandingPageData.service'
 import { textToSpanColored } from '@/utils/textToSpanColored'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

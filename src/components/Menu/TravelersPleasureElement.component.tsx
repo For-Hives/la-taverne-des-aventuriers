@@ -2,7 +2,7 @@
 import {
 	TravelersPleasureData,
 	getTravelersPleasureData,
-} from '@/app/actions/getDatasService'
+} from '@/app/actions/services/getDrinkData.service'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 

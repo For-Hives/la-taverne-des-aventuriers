@@ -1,4 +1,4 @@
-import { getMenuPageData } from '@/app/actions/getDatasService' // Import the function to get menu page data
+import { getMenuPageData } from '@/app/actions/services/getMenuData.service' // Import the function to get menu page data
 
 // The MenuHeroComponent component
 export default async function MenuHeroComponent() {

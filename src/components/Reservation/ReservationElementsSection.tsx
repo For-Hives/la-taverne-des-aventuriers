@@ -1,4 +1,4 @@
-import { getWhoAreWePageData } from '@/app/actions/getDatasService'
+import { getWhoAreWePageData } from '@/app/actions/services/getWhoAreWePageData.service'
 import Image from 'next/image'
 
 export default async function ReservationElementComponent() {

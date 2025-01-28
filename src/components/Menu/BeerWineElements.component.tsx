@@ -4,7 +4,7 @@ import {
 	getWineData,
 	BeerData,
 	WineData,
-} from '@/app/actions/getDatasService' // Import services to fetch data
+} from '@/app/actions/services/getDrinkData.service' // Import services to fetch data
 import { useEffect, useState } from 'react'
 
 export default function BeerWineElement() {

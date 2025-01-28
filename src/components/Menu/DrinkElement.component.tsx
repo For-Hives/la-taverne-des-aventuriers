@@ -1,4 +1,4 @@
-import { getDrinkList } from '@/app/actions/getDatasService' // Importing the function to get the list of drinks
+import { getDrinkList } from '@/app/actions/services/getDrinkData.service' // Importing the function to get the list of drinks
 import DrinkDivComponent from '@/components/Menu/DrinkDiv.component' // Importing the DrinkDivComponent
 
 // Defining the Drink interface

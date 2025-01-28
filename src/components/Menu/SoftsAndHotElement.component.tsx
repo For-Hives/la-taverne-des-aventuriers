@@ -4,7 +4,7 @@ import {
 	getHotDrinkData,
 	HotDrinkData,
 	SoftDrinkData,
-} from '@/app/actions/getDatasService'
+} from '@/app/actions/services/getDrinkData.service'
 import React, { useEffect, useState } from 'react'
 
 export default function SoftsAndHotElement() {

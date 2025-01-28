@@ -1,4 +1,4 @@
-import { getFooterData } from '@/app/actions/getDatasService'
+import { getFooterData } from '@/app/actions/services/getFooterData.service'
 import Image from 'next/image'
 import Link from 'next/link'
 

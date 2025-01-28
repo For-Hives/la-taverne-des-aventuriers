@@ -1,4 +1,4 @@
-import { getGameLibraryPageData } from '@/app/actions/getDatasService'
+import { getGameLibraryPageData } from '@/app/actions/services/getGamePageData.service'
 
 export default async function GLHeroComponent() {
 	// Fetch the data for the game library hero section
