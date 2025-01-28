@@ -36,9 +36,11 @@ export interface ContactPageData {
 }
 
 /**
- * Fetches contact data from PocketBase
- * @returns {Promise<ContactPageData>} Promise resolving to contact data
- * @throws {Error} If PocketBase connection fails or data fetch fails
+ * Fetches contact data from PocketBase.
+ * Retrieves information about how-to section, schedules, contact details, and social media links.
+ *
+ * @returns {Promise<ContactPageData>} Promise resolving to the contact page data.
+ * @throws {Error} If PocketBase connection fails or data fetch fails.
  */
 export async function getContactData(): Promise<ContactPageData> {
 	// Initialize PocketBase connection
@@ -47,22 +49,27 @@ export async function getContactData(): Promise<ContactPageData> {
 	// Validate PocketBase connection
 	if (!pb) {
 		console.error('PocketBase connection failed')
-		throw new Error('Failed to connect to PocketBase [contact Service]')
+		throw new Error('Failed to connect to PocketBase [Contact Service]')
 	}
 
 	try {
-		// Fetch data from PocketBase
-		// console.log('Fetching contact data from PocketBase...')
-		const result = await pb.collection('contact_page').getList(1, 60) // Get first 60 items
-
-		// console.log('Successfully retrieved contact data')
+		// Fetch the first 60 items from the 'contact_page' collection
+		const result = await pb.collection('contact_page').getList(1, 60)
 		return result.items[0] as ContactPageData
 	} catch (error) {
+		// Log and throw any errors that occur during the fetch
 		console.error('Error while fetching contact data from PocketBase:', error)
 		throw error
 	}
 }
 
+/**
+ * Fetches specific drink data from PocketBase based on the provided collection.
+ *
+ * @param {string} collection - The name of the collection to fetch drink data from.
+ * @returns {Promise<any>} Promise resolving to the drink data from the specified collection.
+ * @throws {Error} If PocketBase connection fails or data fetch fails.
+ */
 export async function getDrinkList(collection: string) {
 	// Initialize PocketBase connection
 	const pb = await authWithPocketBase()
@@ -70,20 +77,25 @@ export async function getDrinkList(collection: string) {
 	// Validate PocketBase connection
 	if (!pb) {
 		console.error('PocketBase connection failed')
-		throw new Error('Failed to connect to PocketBase [drink Card Service]')
+		throw new Error(
+			`Failed to connect to PocketBase [Drink Service for ${collection}]`
+		)
 	}
 
 	try {
-		// Fetch data from PocketBase
-		// console.log('Fetching specific drink data from PocketBase...');
-		// Get first 20 items
+		// Fetch the first 20 items from the specified collection
 		return await pb.collection(collection).getList(1, 20)
 	} catch (error) {
-		console.error('Error while fetching data from PocketBase:', error)
+		// Log and throw any errors that occur during the fetch
+		console.error('Error while fetching drink data from PocketBase:', error)
 		throw error
 	}
 }
 
+/**
+ * Interface representing the structure of footer data.
+ * Defines the properties for the data fetched from the PocketBase 'footer' collection.
+ */
 export interface FooterData {
 	collectionId: string
 	collectionName: string
@@ -114,9 +126,13 @@ export interface FooterData {
 }
 
 /**
- * Fetches footer data from PocketBase
- * @returns {Promise<FooterData>} Promise resolving to footer data
- * @throws {Error} If PocketBase connection fails or data fetch fails
+ * Fetches footer data from PocketBase.
+ *
+ * This function connects to PocketBase and retrieves data from the 'footer' collection,
+ * returning the data as a `FooterData` object.
+ *
+ * @returns {Promise<FooterData>} Promise resolving to the `FooterData` object for the footer section.
+ * @throws {Error} If PocketBase connection fails or data fetch fails.
  */
 export async function getFooterData(): Promise<FooterData> {
 	// Initialize PocketBase connection
@@ -129,18 +145,22 @@ export async function getFooterData(): Promise<FooterData> {
 	}
 
 	try {
-		// Fetch data from PocketBase
-		// console.log('Fetching footer data from PocketBase...')
-		const result = await pb.collection('footer').getList(1, 60) // Get first 60 items
+		// Fetch the first 60 items from the 'footer' collection
+		const result = await pb.collection('footer').getList(1, 60)
 
-		// console.log('Successfully retrieved footer data')
+		// Return the first item as FooterData
 		return result.items[0] as FooterData
 	} catch (error) {
+		// Log and throw any errors that occur during the fetch
 		console.error('Error while fetching footer data from PocketBase:', error)
 		throw error
 	}
 }
 
+/**
+ * Interface representing the structure of the games page data.
+ * Defines the properties for the data fetched from the PocketBase 'games_pages' collection.
+ */
 export interface GamesPageData {
 	collectionId: string
 	collectionName: string
@@ -168,9 +188,13 @@ export interface GamesPageData {
 }
 
 /**
- * Fetches GameLibrary data from PocketBase
- * @returns {Promise<GamesPageData>} Promise resolving to GameLibrary data
- * @throws {Error} If PocketBase connection fails or data fetch fails
+ * Fetches game library page data from PocketBase.
+ *
+ * This function connects to PocketBase and retrieves data from the 'games_pages' collection,
+ * returning the data as a `GamesPageData` object.
+ *
+ * @returns {Promise<GamesPageData>} Promise resolving to the `GamesPageData` object for the game library page.
+ * @throws {Error} If PocketBase connection fails or data fetch fails.
  */
 export async function getGameLibraryPageData(): Promise<GamesPageData> {
 	// Initialize PocketBase connection
@@ -183,21 +207,25 @@ export async function getGameLibraryPageData(): Promise<GamesPageData> {
 	}
 
 	try {
-		// Fetch data from PocketBase
-		// console.log('Fetching GameLibrary data from PocketBase...')
-		const result = await pb.collection('games_pages').getList(1, 60) // Get first 60 items
+		// Fetch the first 60 items from the 'games_pages' collection
+		const result = await pb.collection('games_pages').getList(1, 60)
 
-		// console.log('Successfully retrieved GameLibrary data')
+		// Return the first item as GamesPageData
 		return result.items[0] as GamesPageData
 	} catch (error) {
+		// Log and throw any errors that occur during the fetch
 		console.error(
-			'Error while fetching GameLibrary data from PocketBase:',
+			'Error while fetching game library data from PocketBase:',
 			error
 		)
 		throw error
 	}
 }
 
+/**
+ * Interface representing the structure of the landing page data.
+ * Defines the properties for the data fetched from the PocketBase 'landing_page' collection.
+ */
 export interface LandingPageData {
 	collectionId: string
 	collectionName: string
@@ -236,22 +264,44 @@ export interface LandingPageData {
 	updated: string
 }
 
+/**
+ * Fetches landing page data from PocketBase.
+ *
+ * This function connects to PocketBase and retrieves the landing page data from the 'landing_page' collection.
+ * It returns the data as a `LandingPageData` object.
+ *
+ * @returns {Promise<LandingPageData>} Promise resolving to the `LandingPageData` object for the landing page.
+ * @throws {Error} If PocketBase connection fails or the data fetch fails.
+ */
 export async function getLandingData(): Promise<LandingPageData> {
+	// Initialize PocketBase connection
 	const pb = await authWithPocketBase()
+
+	// Validate PocketBase connection
 	if (!pb) {
+		console.error('PocketBase connection failed')
 		throw new Error('Failed to connect to PocketBase [Landing Service]')
 	}
+
 	try {
-		const result = await pb.collection('landing_page').getList(1, 20) // Get first 20 items
+		// Fetch the first 20 items from the 'landing_page' collection
+		const result = await pb.collection('landing_page').getList(1, 20)
+
+		// Return the first item as LandingPageData
 		return result.items[0] as LandingPageData
 	} catch (error) {
-		console.error('Error while fetching data from PocketBase', error)
+		// Log and throw any errors that occur during the fetch
+		console.error(
+			'Error while fetching landing page data from PocketBase:',
+			error
+		)
 		throw error
 	}
 }
+
 /**
- * Interface representing the structure of a reservation card
- * @interface ReservationCardData
+ * Interface representing the structure of a reservation card.
+ * Defines the properties for each reservation card fetched from PocketBase.
  */
 export interface ReservationCardData {
 	collectionId: string
@@ -268,9 +318,13 @@ export interface ReservationCardData {
 }
 
 /**
- * Fetches landing page data from PocketBase
- * @returns {Promise<ReservationCardData>} Promise resolving to reservation card data
- * @throws {Error} If PocketBase connection fails or data fetch fails
+ * Fetches reservation card data from PocketBase.
+ *
+ * This function connects to PocketBase, retrieves the first reservation card from the 'reservation_card' collection,
+ * and returns it as a `ReservationCardData` object.
+ *
+ * @returns {Promise<ReservationCardData>} Promise resolving to the `ReservationCardData` object for the reservation card.
+ * @throws {Error} If PocketBase connection fails or the data fetch fails.
  */
 export async function getReservationCardData(): Promise<ReservationCardData> {
 	// Initialize PocketBase connection
@@ -285,21 +339,24 @@ export async function getReservationCardData(): Promise<ReservationCardData> {
 	}
 
 	try {
-		// Fetch data from PocketBase
-		// console.log('Fetching reservation card data from PocketBase...')
-		const result = await pb.collection('reservation_card').getList(1, 20) // Get first 20 items
+		// Fetch the first 20 items from the 'reservation_card' collection
+		const result = await pb.collection('reservation_card').getList(1, 20)
 
-		// console.log('Successfully retrieved reservation card data')
+		// Return the first reservation card as ReservationCardData
 		return result.items[0] as ReservationCardData
 	} catch (error) {
-		console.error('Error while fetching data from PocketBase:', error)
+		// Log and throw any errors that occur during the fetch
+		console.error(
+			'Error while fetching reservation card data from PocketBase:',
+			error
+		)
 		throw error
 	}
 }
 
 /**
- * Interface definition for reservation data structure
- * Defines all properties expected from the PocketBase reservation collection
+ * Interface definition for the reservation data structure.
+ * Defines all properties expected from the PocketBase reservation collection.
  */
 export interface ReservationPageData {
 	collectionId: string
@@ -316,9 +373,13 @@ export interface ReservationPageData {
 }
 
 /**
- * Fetches reservation data from PocketBase
- * @returns {Promise<ReservationPageData>} Promise resolving to reservation data
- * @throws {Error} If PocketBase connection fails or data fetch fails
+ * Fetches reservation data from PocketBase.
+ *
+ * This function connects to PocketBase, retrieves the first item from the 'reservation_page' collection,
+ * and returns it as a `ReservationPageData` object.
+ *
+ * @returns {Promise<ReservationPageData>} Promise resolving to the `ReservationPageData` object for the reservation page.
+ * @throws {Error} If PocketBase connection fails or the data fetch fails.
  */
 export async function getReservationData(): Promise<ReservationPageData> {
 	// Initialize PocketBase connection
@@ -327,17 +388,17 @@ export async function getReservationData(): Promise<ReservationPageData> {
 	// Validate PocketBase connection
 	if (!pb) {
 		console.error('PocketBase connection failed')
-		throw new Error('Failed to connect to PocketBase [reservation Service]')
+		throw new Error('Failed to connect to PocketBase [Reservation Service]')
 	}
 
 	try {
-		// Fetch data from PocketBase
-		// console.log('Fetching reservation data from PocketBase...')
-		const result = await pb.collection('reservation_page').getList(1, 60) // Get first 60 items
+		// Fetch the first item from the 'reservation_page' collection
+		const result = await pb.collection('reservation_page').getList(1, 60) // Retrieve first 60 items (if any)
 
-		// console.log('Successfully retrieved reservation data')
+		// Return the first item as ReservationPageData
 		return result.items[0] as ReservationPageData
 	} catch (error) {
+		// Log and throw any errors that occur during the fetch
 		console.error(
 			'Error while fetching reservation data from PocketBase:',
 			error
@@ -365,9 +426,13 @@ export interface WhoAreWePageData {
 }
 
 /**
- * Fetches whoAreWe data from PocketBase
- * @returns {Promise<WhoAreWePageData>} Promise resolving to whoAreWe data
- * @throws {Error} If PocketBase connection fails or data fetch fails
+ * Fetches the "Who Are We" page data from PocketBase.
+ *
+ * This function connects to PocketBase, retrieves the first item from the 'who_are_we_page' collection,
+ * and returns it as a `WhoAreWePageData` object.
+ *
+ * @returns {Promise<WhoAreWePageData>} Promise resolving to the `WhoAreWePageData` object for the "Who Are We" page.
+ * @throws {Error} If PocketBase connection fails or the data fetch fails.
  */
 export async function getWhoAreWePageData(): Promise<WhoAreWePageData> {
 	// Initialize PocketBase connection
@@ -376,18 +441,18 @@ export async function getWhoAreWePageData(): Promise<WhoAreWePageData> {
 	// Validate PocketBase connection
 	if (!pb) {
 		console.error('PocketBase connection failed')
-		throw new Error('Failed to connect to PocketBase [whoAreWe Service]')
+		throw new Error('Failed to connect to PocketBase [WhoAreWe Service]')
 	}
 
 	try {
-		// Fetch data from PocketBase
-		// console.log('Fetching whoAreWe data from PocketBase...')
-		const result = await pb.collection('who_are_we_page').getList(1, 60) // Get first 60 items
+		// Fetch the first item from the 'who_are_we_page' collection
+		const result = await pb.collection('who_are_we_page').getList(1, 60) // Retrieve first 60 items (if any)
 
-		// console.log('Successfully retrieved whoAreWe data')
+		// Return the first item as WhoAreWePageData
 		return result.items[0] as WhoAreWePageData
 	} catch (error) {
-		console.error('Error while fetching whoAreWe data from PocketBase:', error)
+		// Log and throw any errors that occur during the fetch
+		console.error('Error while fetching WhoAreWe data from PocketBase:', error)
 		throw error
 	}
 }
@@ -411,9 +476,13 @@ export interface MenuData {
 }
 
 /**
- * Fetches MenuData from PocketBase
- * @returns {Promise<MenuData>} Promise resolving to MenuData
- * @throws {Error} If PocketBase connection fails or data fetch fails
+ * Fetches the menu page data from PocketBase.
+ *
+ * This function connects to PocketBase, retrieves the first item from the 'menu_page' collection,
+ * and returns it as a `MenuData` object.
+ *
+ * @returns {Promise<MenuData>} Promise resolving to the `MenuData` object for the menu page.
+ * @throws {Error} If PocketBase connection fails or the data fetch fails.
  */
 export async function getMenuPageData(): Promise<MenuData> {
 	// Initialize PocketBase connection
@@ -426,14 +495,246 @@ export async function getMenuPageData(): Promise<MenuData> {
 	}
 
 	try {
-		// Fetch data from PocketBase
-		// console.log('Fetching MenuData from PocketBase...')
-		const result = await pb.collection('menu_page').getList(1, 60) // Get first 60 items
+		// Fetch the first item from the 'menu_page' collection
+		const result = await pb.collection('menu_page').getList(1, 60) // Retrieve first 60 items (if any)
 
-		// console.log('Successfully retrieved MenuData')
+		// Return the first item as MenuData
 		return result.items[0] as MenuData
 	} catch (error) {
+		// Log and throw any errors that occur during the fetch
 		console.error('Error while fetching MenuData from PocketBase:', error)
+		throw error
+	}
+}
+
+export interface BeerData {
+	collectionId: string
+	collectionName: string
+	id: string
+	title: string
+	description: string
+	volume: number
+	price: number
+	order: number
+	created: string
+	updated: string
+}
+
+/*
+ * Fetches a list of beer data from PocketBase.
+ *
+ * This function connects to PocketBase, retrieves up to 60 items from the 'Beers' collection,
+ * and returns the data as an array of `BeerData`.
+ *
+ * @returns {Promise<BeerData[]>} Promise resolving to an array of `BeerData`
+ * @throws {Error} If PocketBase connection fails or data fetch fails
+ */
+export async function getBeerData(): Promise<BeerData[]> {
+	// Initialize PocketBase connection
+	const pb = await authWithPocketBase()
+
+	// Validate PocketBase connection
+	if (!pb) {
+		console.error('PocketBase connection failed') // Log an error if the connection fails
+		throw new Error('Failed to connect to PocketBase [BeerData Service]') // Throw an error if connection is unsuccessful
+	}
+
+	try {
+		// Fetch up to 60 beers from the 'Beers' collection in PocketBase
+		const result = await pb.collection('Beers').getList(1, 60) // Retrieve up to 60 items
+
+		// Return the fetched data, mapping it to the BeerData interface
+		return result.items.map(beer => ({
+			collectionId: beer.collectionId,
+			collectionName: beer.collectionName,
+			created: beer.created,
+			description: beer.description,
+			id: beer.id,
+			order: beer.order,
+			price: beer.price,
+			title: beer.title,
+			updated: beer.updated,
+			volume: beer.volume,
+		})) // Return the mapped items directly
+	} catch (error) {
+		// Log and throw any errors that occur during the fetch
+		console.error('Error while fetching BeerData from PocketBase:', error)
+		throw error
+	}
+}
+
+export interface TravelersPleasureData {
+	collectionId: string
+	collectionName: string
+	id: string
+	title: string
+	description: string
+	price: number
+	order: number
+	created: string
+	updated: string
+}
+
+/**
+ * Fetches a list of travelers' pleasures from PocketBase.
+ *
+ * This function connects to PocketBase, retrieves up to 60 items from the 'Travelers_pleasures' collection,
+ * and returns the data as an array of `TravelersPleasureData`.
+ *
+ * @returns {Promise<TravelersPleasureData[]>} Promise resolving to an array of `TravelersPleasureData`
+ * @throws {Error} If PocketBase connection fails or data fetch fails
+ */
+export async function getTravelersPleasureData(): Promise<
+	TravelersPleasureData[]
+> {
+	// Initialize PocketBase connection
+	const pb = await authWithPocketBase()
+
+	// Validate PocketBase connection
+	if (!pb) {
+		console.error('PocketBase connection failed')
+		throw new Error(
+			'Failed to connect to PocketBase [TravelersPleasureData Service]'
+		)
+	}
+
+	try {
+		// Fetch up to 60 travelers' pleasures from the PocketBase collection
+		const result = await pb.collection('Travelers_pleasures').getList(1, 60) // Retrieve up to 60 items
+		return result.items as TravelersPleasureData[] // Return the list of travelers' pleasures as an array
+	} catch (error) {
+		// Log and throw any errors that occur during the fetch
+		console.error(
+			'Error while fetching TravelersPleasureData from PocketBase:',
+			error
+		)
+		throw error
+	}
+}
+
+export interface SoftDrinkData {
+	collectionId: string
+	collectionName: string
+	id: string
+	title: string
+	volume: number
+	price: number
+	order: number
+	created: string
+	updated: string
+}
+
+/**
+ * Fetches a list of soft drinks from PocketBase.
+ *
+ * This function connects to PocketBase, retrieves up to 60 soft drinks from the 'Softs_drinks' collection,
+ * and returns the data as an array of `SoftDrinkData`.
+ *
+ * @returns {Promise<SoftDrinkData[]>} Promise resolving to an array of `SoftDrinkData`
+ * @throws {Error} If PocketBase connection fails or data fetch fails
+ */
+export async function getSoftDrinkData(): Promise<SoftDrinkData[]> {
+	// Initialize PocketBase connection
+	const pb = await authWithPocketBase()
+
+	// Validate PocketBase connection
+	if (!pb) {
+		console.error('PocketBase connection failed')
+		throw new Error('Failed to connect to PocketBase [SoftDrinkData Service]')
+	}
+
+	try {
+		// Fetch up to 60 soft drinks from PocketBase collection
+		const result = await pb.collection('Softs_drinks').getList(1, 60) // Retrieve up to 60 soft drinks
+		return result.items as SoftDrinkData[] // Return the list of soft drinks as an array
+	} catch (error) {
+		// Log and throw any errors that occur during the fetch
+		console.error('Error while fetching SoftDrinkData from PocketBase:', error)
+		throw error
+	}
+}
+
+export interface HotDrinkData {
+	collectionId: string
+	collectionName: string
+	id: string
+	title: string
+	price: number
+	order: number
+	created: string
+	updated: string
+}
+
+/**
+ * Fetches a list of hot drinks from PocketBase.
+ *
+ * This function connects to PocketBase, retrieves up to 60 hot drinks from the 'Hot_drinks' collection,
+ * and returns the data as an array of `HotDrinkData`.
+ *
+ * @returns {Promise<HotDrinkData[]>} Promise resolving to an array of `HotDrinkData`
+ * @throws {Error} If PocketBase connection fails or data fetch fails
+ */
+export async function getHotDrinkData(): Promise<HotDrinkData[]> {
+	// Initialize PocketBase connection
+	const pb = await authWithPocketBase()
+
+	// Validate PocketBase connection
+	if (!pb) {
+		console.error('PocketBase connection failed')
+		throw new Error('Failed to connect to PocketBase [HotDrinkData Service]')
+	}
+
+	try {
+		// Fetch up to 60 hot drinks from PocketBase collection
+		const result = await pb.collection('Hot_drinks').getList(1, 60) // Retrieve up to 60 hot drinks
+		return result.items as HotDrinkData[] // Return the list of hot drinks as an array
+	} catch (error) {
+		// Log and throw any errors that occur during the fetch
+		console.error('Error while fetching HotDrinkData from PocketBase:', error)
+		throw error
+	}
+}
+
+export interface WineData {
+	collectionId: string
+	collectionName: string
+	id: string
+	title: string
+	type: string
+	description: string
+	price_glass: number
+	price_bottle: number
+	order: number
+	created: string
+	updated: string
+}
+
+/**
+ * Fetches a list of wine data from PocketBase.
+ *
+ * This function connects to PocketBase, retrieves up to 60 items from the 'Wines' collection,
+ * and returns the data as an array of `WineData`.
+ *
+ * @returns {Promise<WineData[]>} Promise resolving to an array of `WineData`
+ * @throws {Error} If PocketBase connection fails or data fetch fails
+ */
+export async function getWineData(): Promise<WineData[]> {
+	// Initialize PocketBase connection
+	const pb = await authWithPocketBase()
+
+	// Validate PocketBase connection
+	if (!pb) {
+		console.error('PocketBase connection failed')
+		throw new Error('Failed to connect to PocketBase [WineData Service]')
+	}
+
+	try {
+		// Fetch up to 60 wines from the PocketBase collection
+		const result = await pb.collection('Wines').getList(1, 60) // Retrieve up to 60 items
+		return result.items as WineData[] // Return the list of wines as an array
+	} catch (error) {
+		// Log and throw any errors that occur during the fetch
+		console.error('Error while fetching WineData from PocketBase:', error)
 		throw error
 	}
 }

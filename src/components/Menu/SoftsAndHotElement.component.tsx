@@ -1,59 +1,76 @@
-const SoftsAndHotElement = () => {
+'use client'
+import {
+	getSoftDrinkData,
+	getHotDrinkData,
+	HotDrinkData,
+	SoftDrinkData,
+} from '@/app/actions/getDatasService'
+import React, { useEffect, useState } from 'react'
+
+export default function SoftsAndHotElement() {
+	const [softDrinks, setSoftDrinks] = useState<SoftDrinkData[]>([])
+	const [hotDrinks, setHotDrinks] = useState<HotDrinkData[]>([])
+	const [loading, setLoading] = useState<boolean>(true)
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const softData = await getSoftDrinkData()
+				const hotData = await getHotDrinkData()
+
+				setSoftDrinks(softData)
+				setHotDrinks(hotData)
+			} catch (error) {
+				console.error('Error fetching drink data:', error)
+			} finally {
+				setLoading(false)
+			}
+		}
+
+		fetchData().catch(error => {
+			console.error('Error in fetching drinks:', error)
+		})
+	}, [])
+
+	if (loading) {
+		return <div>Loading...</div>
+	}
+
 	return (
-		<div className='flex w-full flex-col gap-36 px-4 sm:w-3/4'>
+		<div className='flex w-3/4 flex-col gap-36 px-4'>
 			<h2 className='font-cardinal text-4xl text-title-200 first-letter:text-title-100 sm:text-6xl lg:text-8xl'>
 				Soft Drink & Boissons Chaudes
 			</h2>
 			<div className='flex w-full flex-col items-center justify-center gap-16 sm:flex-row sm:gap-36'>
-				<div className='flex w-full flex-col gap-4 sm:w-1/2'>
+				{/* hot drinks */}
+				<div className='flex w-1/2 flex-col gap-4 sm:w-1/2'>
 					<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
 						Boissons Chaudes
 					</h2>
-					<div className='flex gap-6 font-cardinal text-base text-title-200 max-xl:flex-row max-sm:text-xl'>
-						<p className='flex w-full flex-col gap-2 max-sm:w-1/2'>
-							<span>Café (Florino) [supp crème 1€]</span>
-							<span>Café Moka Noisette</span>
-							<span>Café du moment</span>
-							<span>Café Allongé</span>
-							<span>Double Expresso</span>
-							<span>Chocolat Chaud [supp Viennois 1€]</span>
-							<span>Thé (Noir, Ceylan, Fruits rouges, Vert)</span>
-							<span>Infusion (verveine, menthe, tilleul)</span>
-						</p>
-						<p className='flex w-full flex-col gap-2 max-sm:w-1/2'>
-							<span>1.8€</span>
-							<span>2.3€</span>
-							<span>2.3€</span>
-							<span>2€</span>
-							<span>3.5€</span>
-							<span>3.5€</span>
-							<span>3.5€</span>
-							<span>3.5€</span>
+					<div className='flex gap-6 font-cardinal text-base text-title-200 sm:text-xl'>
+						<p className='flex w-1/2 flex-col gap-2 sm:w-1/2'>
+							{hotDrinks.map(drink => (
+								<span key={drink.id}>
+									{drink.title} - {drink.price}€
+								</span>
+							))}
 						</p>
 					</div>
 				</div>
-				<div className='flex w-full flex-col gap-4 sm:w-1/2'>
+
+				{/* Soft Drinks */}
+				<div className='flex w-1/2 flex-col gap-4 sm:w-1/2'>
 					<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
 						Soft Drinks
 					</h2>
 					<div className='flex gap-6 font-cardinal text-base text-title-200 sm:text-xl'>
-						<p className='flex w-full flex-col gap-2 sm:w-1/2'>
-							<span>Breizh Cola (classique, zero, tonic) 33cl</span>
-							<span>Breizh tea 33cl</span>
-							<span>Limonade 33cl</span>
-							<span>Charitea mate 33cl</span>
-							<span>Jus de Fruit (Granini) 33cl</span>
-							<span>Sirop (Giffard) 33cl</span>
-							<span>Diabolo 20cl</span>
-						</p>
-						<p className='flex w-full flex-col gap-2 max-sm:w-1/2'>
-							<span>4€</span>
-							<span>4€</span>
-							<span>4€</span>
-							<span>4€</span>
-							<span>4€</span>
-							<span>3€</span>
-							<span>4€</span>
+						<p className='flex w-1/2 flex-col gap-2 sm:w-1/2'>
+							{softDrinks.map(drink => (
+								<span key={drink.id}>
+									{drink.title} {drink.volume ? `(${drink.volume}cl)` : ''}
+									{drink.price}€
+								</span>
+							))}
 						</p>
 					</div>
 				</div>
@@ -61,5 +78,3 @@ const SoftsAndHotElement = () => {
 		</div>
 	)
 }
-
-export default SoftsAndHotElement

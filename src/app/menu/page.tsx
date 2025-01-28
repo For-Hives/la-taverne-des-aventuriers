@@ -10,6 +10,7 @@ import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
 import TravelersPleasureElement from '@/components/Menu/TravelersPleasureElement.component'
 
 export default function Page() {
+	// List of drink categories
 	const listDrinkCollection = [
 		'Cocktails',
 		'Mocktails',
@@ -20,15 +21,18 @@ export default function Page() {
 
 	return (
 		<div className='flex h-screen w-screen flex-col items-center'>
-			{/* Navbar */}
+			{/* Navbar for desktop */}
 			<Navbar />
+			{/* Navbar for mobile */}
 			<MobileNavbar />
 
+			{/* Menu Hero section */}
 			<MenuHeroComponent />
 
 			{/* Menu Section */}
 			<div className='items flex w-full flex-col justify-center py-16'>
 				<MenuNavbar />
+				{/* Drink categories mapped to their corresponding component */}
 				<div className='flex flex-col items-center justify-center gap-40'>
 					{listDrinkCollection.map(drink => (
 						<div
@@ -36,20 +40,24 @@ export default function Page() {
 							key={drink}
 							className='flex w-full justify-center'
 						>
-							{/* Utilisation du nom de collection sans formatage supplémentaire */}
+							{/* Drink category element */}
 							<DrinkElement collection_name={drink} />
 						</div>
 					))}
 
+					{/* Beer and Wine section */}
 					<div id='beer-wine' className='flex justify-center'>
 						<BeerWineElement />
 					</div>
-					<div id='boards' className='flex justify-center'>
+					{/* Travelers' Pleasure section */}
+					<div id='travelers' className='flex justify-center'>
 						<TravelersPleasureElement />
 					</div>
+					{/* Soft drinks and hot drinks section */}
 					<div id='softs-hot-drinks' className='flex justify-center'>
 						<SoftsAndHotElement />
 					</div>
+					{/* Back to top button */}
 					<BackToTop />
 				</div>
 			</div>

@@ -3,8 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function FooterComponent() {
+	// Fetch footer data asynchronously
 	const data = await getFooterData()
 
+	// Create an object to store all the footer data
 	const FooterData = {
 		barTitle: data.bar_title,
 		contactTitle: data.contact_title,
@@ -34,7 +36,7 @@ export default async function FooterComponent() {
 			className='relative flex w-screen items-center justify-center bg-FooterImage bg-cover bg-center text-white'
 			style={{ aspectRatio: '2653 / 1000' }}
 		>
-			{/* Image gauche */}
+			{/* Left image */}
 			<div className='absolute bottom-0 left-0 flex items-center justify-center mix-blend-color-burn'>
 				<Image
 					src='/assets/images/elements/cristals/rock1.png'
@@ -45,10 +47,10 @@ export default async function FooterComponent() {
 				/>
 			</div>
 
-			{/* Contenu principal */}
+			{/* Main content */}
 			<div className='relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-12 p-10 text-left font-obraletra text-base text-title-200 max-sm:gap-6 md:gap-8'>
 				<div className='flex w-full flex-wrap items-start justify-around gap-8 sm:gap-4 md:gap-6'>
-					{/* Première colonne */}
+					{/* First column */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center text-base max-md:text-sm'>
 						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100 sm:text-xl'>
 							{FooterData.barTitle}
@@ -67,7 +69,7 @@ export default async function FooterComponent() {
 						</Link>
 					</div>
 
-					{/* Deuxième colonne */}
+					{/* Second column */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center font-obraletra text-base text-title-200 max-md:text-sm'>
 						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100 sm:text-xl'>
 							{FooterData.supportTitle}
@@ -80,11 +82,12 @@ export default async function FooterComponent() {
 						</Link>
 					</div>
 
-					{/* Troisième colonne */}
+					{/* Third column */}
 					<div className='flex w-full max-w-xs flex-col items-center justify-center'>
 						<h2 className='font-cardinal text-2xl text-title-200 first-letter:text-title-100 sm:text-xl'>
 							{FooterData.socialsTitle}
 						</h2>
+						{/* Social media icons (placeholder for now) */}
 						<div className='flex space-x-4 max-md:text-sm md:space-x-2'>
 							<div>Social 1</div>
 							<div>Social 2</div>
@@ -93,13 +96,13 @@ export default async function FooterComponent() {
 					</div>
 				</div>
 
-				{/* Copyright */}
+				{/* Copyright section */}
 				<div className='flex w-full max-w-xs flex-col items-center justify-center'>
 					<p className='mt-4 text-sm max-md:text-sm'>{FooterData.copyright}</p>
 				</div>
 			</div>
 
-			{/* Image droite */}
+			{/* Right image */}
 			<div className='absolute bottom-0 right-0 flex items-center justify-center mix-blend-color-burn'>
 				<Image
 					src='/assets/images/elements/cristals/rock2.png'

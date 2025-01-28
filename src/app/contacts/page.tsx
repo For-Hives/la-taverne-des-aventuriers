@@ -9,21 +9,27 @@ import MobileNavbar from '@/components/Global/NavbarMobile.component'
 export default function Contact() {
 	return (
 		<div className='relative flex h-screen w-screen flex-col items-center gap-96'>
-			{/* Navbar */}
+			{/* Navbar for desktop */}
 			<Navbar />
+			{/* Navbar for mobile */}
 			<MobileNavbar />
 
-			{/* Image de fond */}
+			{/* Background image with custom mask */}
 			<div className='mask-custom absolute bottom-0 left-0 h-[125%] w-full -translate-y-[55%] transform bg-whoareweimage opacity-75'></div>
 
-			{/* Contenu principal avec espacement */}
+			{/* Main content with spacing between sections */}
 			<div className='relative mt-[256px] flex flex-col items-center gap-[256px]'>
+				{/* How to contact section */}
 				<HowToContact />
+				{/* Contact details section */}
 				<ContactElements />
+				{/* Reservation component */}
 				<ReservationComponent />
+				{/* Map section */}
 				<MapSection />
 			</div>
 
+			{/* Footer */}
 			<FooterComponent />
 		</div>
 	)

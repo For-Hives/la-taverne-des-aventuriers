@@ -2,8 +2,10 @@ import { getContactData } from '@/app/actions/getDatasService'
 import Image from 'next/image'
 
 export default async function HowToContact() {
+	// Fetch the contact data from the API
 	const data = await getContactData()
 
+	// Destructure the relevant fields from the fetched data
 	const ContactData = {
 		howtosection_description: data.howtosection_description,
 		howtosection_image: data.howtosection_image,
@@ -12,6 +14,7 @@ export default async function HowToContact() {
 
 	return (
 		<div className='flex w-3/4 items-center justify-center'>
+			{/* Image Section */}
 			<div className='flex w-1/3 items-center justify-end'>
 				<Image
 					src='/assets/images/elements/HowtoContact.png'
@@ -21,11 +24,14 @@ export default async function HowToContact() {
 				/>
 			</div>
 
+			{/* Text Section */}
 			<div className='flex w-2/3 flex-col items-start justify-center gap-10 font-obraletra text-base text-title-200'>
+				{/* Title */}
 				<h1 className='items-center justify-center text-center font-cardinal text-2xl first-letter:text-title-100'>
 					{ContactData.howtosection_title}
 				</h1>
 
+				{/* Description (with HTML content) */}
 				<div
 					className='flex flex-col items-start gap-3 text-xs'
 					dangerouslySetInnerHTML={{

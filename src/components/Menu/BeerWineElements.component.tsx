@@ -1,158 +1,280 @@
-const BeerWineElement = () => {
+'use client'
+import {
+	getBeerData,
+	getWineData,
+	BeerData,
+	WineData,
+} from '@/app/actions/getDatasService' // Import services to fetch data
+import { useEffect, useState } from 'react'
+
+export default function BeerWineElement() {
+	// State to hold beer and wine data
+	const [beerData, setBeerData] = useState<BeerData[]>([])
+	const [wineData, setWineData] = useState<WineData[]>([])
+
+	// useEffect to fetch data when the component mounts
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				// Fetch beer and wine data
+				const beers = await getBeerData()
+				const wines = await getWineData()
+				// Update state with fetched data
+				setBeerData(beers)
+				setWineData(wines)
+			} catch (error) {
+				// Handle error during data fetching
+				console.error('Error fetching data:', error)
+			}
+		}
+
+		// Call fetchData function
+		fetchData()
+	}, []) // Empty dependency array means this runs once on mount
+
+	// Process beer data
+	const beers: BeerData[] = beerData.map(beer => ({
+		...beer,
+		id: beer.id,
+		volume: Number(beer.volume), // Ensure volume is a number
+	}))
+
+	// Filter beers that are "draft"
+	const draftBeers = beers
+		.filter(beer => beer.description === 'Pression')
+		.reduce(
+			(
+				acc: Array<{
+					id: number
+					title: string
+					prices: Record<string, number>
+				}>,
+				beer
+			) => {
+				// Check if beer with the same title already exists in the array
+				const existingBeer = acc.find(b => b.title === beer.title)
+				if (existingBeer) {
+					// Add price for specific volume
+					existingBeer.prices[beer.volume] = beer.price
+				} else {
+					// Add new beer object to the array
+					acc.push({
+						id: isNaN(Number(beer.id)) ? 0 : Number(beer.id), // Ensure id is a number
+						prices: { [beer.volume]: beer.price }, // Add the price for the given volume
+						title: beer.title,
+					})
+				}
+				return acc
+			},
+			[] // Initialize accumulator as an empty array
+		)
+
+	// Filter beers that are "bottle"
+	const bottleBeers = beers.filter(beer => beer.description === 'Bouteille')
+
+	// Process wine data and group by title
+	const uniqueWines = wineData.reduce((acc: WineData[], wine) => {
+		const existingWine = acc.find(w => w.title === wine.title)
+		if (existingWine) {
+			// Update wine price details
+			existingWine.price_glass = wine.price_glass
+			existingWine.price_bottle = wine.price_bottle
+		} else {
+			// Add new wine object to the array
+			acc.push(wine)
+		}
+		return acc
+	}, []) // Initialize accumulator as an empty array
+
+	// Separate wines by type
+	const redWines = uniqueWines.filter(wine => wine.type === 'Rouge')
+	const whiteWines = uniqueWines.filter(wine => wine.type === 'Blanc')
+	const roseWines = uniqueWines.filter(wine => wine.type === 'Rosé')
+
 	return (
 		<div className='flex w-full flex-col items-center justify-center gap-20 px-4 sm:px-8'>
-			<h2 className='font-cardinal text-6xl text-title-200 first-letter:text-title-100 max-sm:text-6xl'>
-				Bières et Vins
-			</h2>
-			<div className='flex w-full flex-col justify-center gap-28'>
-				{/* Bières Section */}
-				<div className='flex flex-col items-start justify-start gap-6'>
-					<h2 className='font-cardinal text-4xl text-title-200 first-letter:text-title-100 sm:text-6xl'>
-						Bières
-					</h2>
-					<div className='flex w-full flex-col justify-center gap-6 sm:flex-row sm:gap-28'>
-						{/* Bières à la pression */}
-						<div className='flex flex-col justify-center gap-6 sm:w-1/2'>
-							<div className='flex justify-start gap-10 sm:gap-44'>
-								<h3 className='font-cardinal text-2xl text-title-100 sm:text-4xl'>
-									Pression :
-								</h3>
-								<p className='font-obraletra text-lg text-title-200 max-sm:text-xl'>
-									<span>25cl</span>
-									<span>50cl</span>
-								</p>
-							</div>
-							<div className='flex flex-col justify-center gap-2 font-cardinal text-2xl text-title-200 max-sm:text-lg'>
-								<div className='flex gap-10 sm:gap-20'>
-									<h2>La moustache 4.5%</h2>
-									<p className='flex gap-6'>
-										<span>3.2€</span>
-										<span>6€</span>
-									</p>
-								</div>
-								<div className='flex gap-10 sm:gap-20'>
-									<h2>Cidre La Mordrue 6%</h2>
-									<p className='flex gap-6'>
-										<span>4€</span>
-										<span>7.5€</span>
-									</p>
-								</div>
-								<div className='flex gap-10 sm:gap-20'>
-									<h2>Bouffay Blanche 5%</h2>
-									<p className='flex gap-6'>
-										<span>4€</span>
-										<span>7.5€</span>
-									</p>
-								</div>
-								<div className='flex gap-10 sm:gap-24'>
-									<h2>Titan IPA 5.5%</h2>
-									<p className='flex gap-6'>
-										<span>4€</span>
-										<span>7.5€</span>
-									</p>
-								</div>
-							</div>
-						</div>
+			{/* Beer Section */}
+			<div className='flex flex-col justify-center gap-6 sm:w-3/4'>
+				<h3 className='font-cardinal text-2xl text-title-100 sm:text-4xl'>
+					Beers:
+				</h3>
 
-						{/* Bières en bouteille */}
-						<div className='flex flex-col items-start justify-start gap-6 sm:w-1/2'>
-							<h2 className='font-cardinal text-3xl text-title-100 sm:text-4xl'>
-								Bière Bouteille : (6 €)
-							</h2>
-							<p className='flex flex-col font-cardinal text-2xl text-title-200 max-sm:text-lg'>
-								<span>{`Linderman's Pecheresse (25cl) 1.2%`}</span>
-								<span>kwak (33cl) 8.4%</span>
-								<span>Mystic (kreik) (25cl) 3.2%</span>
-								<span>La Blonde Bouffay (33cl) 6%</span>
-								<span>{`L'Ambre Bouffay (33cl) 6.5%`}</span>
-							</p>
+				<div className='grid grid-cols-1 gap-10 sm:grid-cols-2'>
+					{/* Draft Beers */}
+					<div className='flex flex-col gap-4'>
+						<h4 className='font-cardinal text-xl text-title-200 sm:text-2xl'>
+							Draft Beers:
+						</h4>
+						<table className='w-full border-collapse text-left font-obraletra text-title-200'>
+							<thead>
+								<tr>
+									<th className='px-4 py-2'>Beer</th>
+									<th className='px-4 py-2'>25cl</th>
+									<th className='px-4 py-2'>50cl</th>
+								</tr>
+							</thead>
+							<tbody>
+								{draftBeers.length === 0 ? (
+									<tr>
+										<td colSpan={3} className='px-4 py-2 text-center'>
+											No draft beer available.
+										</td>
+									</tr>
+								) : (
+									// Display draft beers
+									draftBeers.map((beer, index) => (
+										<tr key={`${beer.id}-${index}`}>
+											<td className='px-4 py-2'>{beer.title}</td>
+											<td className='px-4 py-2'>
+												{beer.prices['25'] || 'N/A'} €
+											</td>
+											<td className='px-4 py-2'>
+												{beer.prices['50'] || 'N/A'} €
+											</td>
+										</tr>
+									))
+								)}
+							</tbody>
+						</table>
+					</div>
+
+					{/* Bottle Beers */}
+					<div className='flex flex-col gap-4'>
+						<h4 className='font-cardinal text-xl text-title-200 sm:text-2xl'>
+							Bottle Beers:
+						</h4>
+						<div className='flex flex-col gap-2'>
+							{bottleBeers.length === 0 ? (
+								<p className='text-center'>No bottle beer available.</p>
+							) : (
+								// Display bottle beers
+								bottleBeers.map((beer, index) => (
+									<div
+										key={`${beer.id}-${index}`}
+										className='flex items-center justify-between'
+									>
+										<h4 className='font-cardinal text-lg text-title-200'>
+											{beer.title} ({beer.volume})
+										</h4>
+										<p className='text-right font-obraletra text-lg text-title-200'>
+											{beer.price} €
+										</p>
+									</div>
+								))
+							)}
 						</div>
 					</div>
 				</div>
+			</div>
 
-				{/* Vins Section */}
-				<div className='flex w-full flex-col gap-20'>
-					<h2 className='text-end font-cardinal text-4xl text-title-200 first-letter:text-title-100 max-sm:text-start sm:text-6xl'>
-						Vins
-					</h2>
+			{/* Wine Section */}
+			<div className='flex flex-col justify-center gap-6 sm:w-3/4'>
+				<h3 className='font-cardinal text-2xl text-title-100 sm:text-4xl'>
+					Wines:
+				</h3>
 
-					{/* Blanc Section */}
-					<div className='flex w-full flex-col justify-center gap-6 sm:flex-row sm:gap-28'>
-						<div>
-							<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
-								Blanc
-							</h2>
-							<p className='flex flex-col font-cardinal text-2xl text-title-200 max-sm:text-lg'>
-								<span>{`AOP Muscadet Drouet 'Domaine Drouet Frères'`}</span>
-								<span>
-									{`IGP "Cote de Gascogne" Moustache Pour tous "Domaine du
-									Plaimont"`}
-								</span>
-							</p>
-						</div>
-						<div className='flex flex-col justify-center font-cardinal text-2xl text-title-200 max-sm:text-lg'>
-							<h2 className='flex gap-6 sm:gap-14'>
-								<span>Le Verre:</span>
-								<span>La Bouteille :</span>
-							</h2>
-							<p className='flex gap-10 sm:gap-36'>
-								<span>4€</span>
-								<span>18€</span>
-							</p>
-							<p className='flex gap-10 sm:gap-36'>
-								<span>5€</span>
-								<span>22€</span>
-							</p>
-						</div>
-					</div>
+				{/* Red Wines */}
+				<div className='flex flex-col gap-4'>
+					<h4 className='font-cardinal text-xl text-title-200 sm:text-2xl'>
+						Red Wines:
+					</h4>
+					<table className='w-full border-collapse text-left font-obraletra text-title-200'>
+						<thead>
+							<tr>
+								<th className='px-4 py-2'>Wine</th>
+								<th className='px-4 py-2'>Glass</th>
+								<th className='px-4 py-2'>Bottle</th>
+							</tr>
+						</thead>
+						<tbody>
+							{redWines.length === 0 ? (
+								<tr>
+									<td colSpan={3} className='px-4 py-2 text-center'>
+										No red wine available.
+									</td>
+								</tr>
+							) : (
+								// Display red wines
+								redWines.map((wine, index) => (
+									<tr key={`${wine.id}-${index}`}>
+										<td className='px-4 py-2'>{wine.title}</td>
+										<td className='px-4 py-2'>{wine.price_glass} €</td>
+										<td className='px-4 py-2'>{wine.price_bottle} €</td>
+									</tr>
+								))
+							)}
+						</tbody>
+					</table>
+				</div>
 
-					{/* Rosé Section */}
-					<div className='flex w-full flex-col justify-center gap-6 sm:flex-row sm:gap-72'>
-						<div className='flex flex-col justify-center font-cardinal text-2xl text-title-200 max-sm:text-lg'>
-							<h2 className='flex gap-6 sm:gap-14'>
-								<span>Le Verre:</span>
-								<span>La Bouteille :</span>
-							</h2>
-							<p className='flex gap-10 sm:gap-36'>
-								<span>4€</span>
-								<span>18€</span>
-							</p>
-						</div>
-						<div>
-							<h2 className='text-end font-cardinal text-3xl text-title-200 first-letter:text-title-100 max-sm:text-start sm:text-4xl'>
-								Rosé
-							</h2>
-							<p className='flex flex-col font-cardinal text-2xl text-title-200 max-sm:text-lg'>
-								<span>{`AOP Muscadet Drouet 'Domaine Drouet Frères'`}</span>
-							</p>
-						</div>
-					</div>
+				{/* White Wines */}
+				<div className='flex flex-col gap-4'>
+					<h4 className='font-cardinal text-xl text-title-200 sm:text-2xl'>
+						White Wines:
+					</h4>
+					<table className='w-full border-collapse text-left font-obraletra text-title-200'>
+						<thead>
+							<tr>
+								<th className='px-4 py-2'>Wine</th>
+								<th className='px-4 py-2'>Glass</th>
+								<th className='px-4 py-2'>Bottle</th>
+							</tr>
+						</thead>
+						<tbody>
+							{whiteWines.length === 0 ? (
+								<tr>
+									<td colSpan={3} className='px-4 py-2 text-center'>
+										No white wine available.
+									</td>
+								</tr>
+							) : (
+								// Display white wines
+								whiteWines.map((wine, index) => (
+									<tr key={`${wine.id}-${index}`}>
+										<td className='px-4 py-2'>{wine.title}</td>
+										<td className='px-4 py-2'>{wine.price_glass} €</td>
+										<td className='px-4 py-2'>{wine.price_bottle} €</td>
+									</tr>
+								))
+							)}
+						</tbody>
+					</table>
+				</div>
 
-					{/* Rouge Section */}
-					<div className='flex w-full flex-col justify-center gap-6 sm:flex-row sm:gap-72'>
-						<div>
-							<h2 className='font-cardinal text-3xl text-title-200 first-letter:text-title-100 sm:text-4xl'>
-								Rouge
-							</h2>
-							<p className='flex flex-col font-cardinal text-2xl text-title-200 max-sm:text-lg'>
-								<span>IGP Moustache Pour Tous “Domaine Plaimont”</span>
-							</p>
-						</div>
-						<div className='flex flex-col justify-center font-cardinal text-2xl text-title-200 max-sm:text-lg'>
-							<h2 className='flex gap-6 sm:gap-14'>
-								<span>Le Verre:</span>
-								<span>La Bouteille :</span>
-							</h2>
-							<p className='flex gap-10 sm:gap-36'>
-								<span>5€</span>
-								<span>22€</span>
-							</p>
-						</div>
-					</div>
+				{/* Rose Wines */}
+				<div className='flex flex-col gap-4'>
+					<h4 className='font-cardinal text-xl text-title-200 sm:text-2xl'>
+						Rose Wines:
+					</h4>
+					<table className='w-full border-collapse text-left font-obraletra text-title-200'>
+						<thead>
+							<tr>
+								<th className='px-4 py-2'>Wine</th>
+								<th className='px-4 py-2'>Glass</th>
+								<th className='px-4 py-2'>Bottle</th>
+							</tr>
+						</thead>
+						<tbody>
+							{roseWines.length === 0 ? (
+								<tr>
+									<td colSpan={3} className='px-4 py-2 text-center'>
+										No rose wine available.
+									</td>
+								</tr>
+							) : (
+								// Display rose wines
+								roseWines.map((wine, index) => (
+									<tr key={`${wine.id}-${index}`}>
+										<td className='px-4 py-2'>{wine.title}</td>
+										<td className='px-4 py-2'>{wine.price_glass} €</td>
+										<td className='px-4 py-2'>{wine.price_bottle} €</td>
+									</tr>
+								))
+							)}
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
 	)
 }
-
-export default BeerWineElement

@@ -4,8 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 
 export default async function ContactElements() {
+	// Fetch the contact data from the API
 	const data = await getContactData()
 
+	// Extract relevant fields from the fetched data
 	const ContactData = {
 		contact_email_title: data.contact_email_title,
 		contact_socials_title: data.contact_socials_title,
@@ -23,16 +25,19 @@ export default async function ContactElements() {
 
 	return (
 		<div className='flex w-3/4 items-center justify-center gap-8 p-8 max-xl:flex-col'>
+			{/* Grid Layout for Contact Sections */}
 			<div className='grid w-1/2 max-w-6xl grid-cols-1 gap-8 max-xl:w-full xl:grid-cols-2'>
-				{/* Bloc Horaires */}
+				{/* Bloc Horaires (Business Hours) */}
 				<div className='flex flex-col items-start gap-6 rounded-lg border border-title-200 bg-title-600 p-6 font-obraletra shadow'>
 					<h1 className='font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
 						{ContactData.schedules_title}
 					</h1>
 					<p className='text-title-200'>
+						{/* Exceptional Schedule */}
 						<span className='block font-obraletraBold'>
 							{ContactData.schedules_exceptional}
 						</span>
+						{/* Days of the week */}
 						<span className='block'>{ContactData.schedules_monday}</span>
 						<span className='block'>{ContactData.schedules_tuesday}</span>
 						<span className='block'>{ContactData.schedules_wednesday}</span>
@@ -43,21 +48,22 @@ export default async function ContactElements() {
 					</p>
 				</div>
 
-				{/* Bloc Contact et Email */}
+				{/* Bloc Contact et Email (Contact and Email) */}
 				<div className='flex flex-col gap-6 font-obraletra'>
-					{/* Bloc Contact */}
+					{/* Bloc Contact (Social Media) */}
 					<div className='flex flex-col items-center gap-4 rounded-lg border border-title-200 bg-title-600 p-6 shadow'>
 						<h2 className='w-full font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
 							{ContactData.contact_socials_title}
 						</h2>
 						<div className='flex items-center justify-evenly gap-10'>
-							{/* Icone Facebook */}
+							{/* Facebook Icon */}
 							<div className='flex h-12 w-12 items-center justify-center rounded-full bg-title-700'>
 								<FontAwesomeIcon
 									icon={faFacebook}
 									className='h-8 w-8 text-title-200'
 								/>
 							</div>
+							{/* Custom Icon (e.g., logo) */}
 							<div className='flex h-12 w-12 items-center justify-center rounded-full bg-title-700'>
 								<Image
 									src='/assets/images/elements/ContactElements/myludo_icon.png'
@@ -67,7 +73,7 @@ export default async function ContactElements() {
 									height={200}
 								/>
 							</div>
-							{/* Icone Instagram */}
+							{/* Instagram Icon */}
 							<div className='flex h-12 w-12 items-center justify-center rounded-full bg-title-700'>
 								<FontAwesomeIcon
 									icon={faInstagram}
@@ -79,13 +85,14 @@ export default async function ContactElements() {
 
 					{/* Bloc Email */}
 					<div className='relative flex flex-col gap-6 font-obraletra'>
+						{/* Email Section */}
 						<div className='flex flex-col items-start gap-4 rounded-lg border border-title-200 bg-title-600 p-6 shadow'>
 							<h2 className='font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
 								{ContactData.contact_email_title}
 							</h2>
 							<p className='text-title-200'>{ContactData.email}</p>
 						</div>
-						{/* Ajout de l'image positionnée en bas à droite */}
+						{/* Decorative Image */}
 						<div className='relative'>
 							<Image
 								src='/assets/images/elements/ContactElements/petite_bestiole.png'
@@ -99,6 +106,7 @@ export default async function ContactElements() {
 				</div>
 			</div>
 
+			{/* Decorative Images (Dragon, Runes) */}
 			<div className='relative flex w-1/2 justify-end max-xl:w-full max-xl:justify-center'>
 				<Image
 					src='/assets/images/elements/ContactElements/runes.png'

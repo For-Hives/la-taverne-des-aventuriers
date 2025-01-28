@@ -8,18 +8,21 @@ import MobileNavbar from '@/components/Global/NavbarMobile.component'
 export default function Page() {
 	return (
 		<div className='flex min-h-screen flex-col'>
-			{/* Navbar */}
+			{/* Navbar for desktop */}
 			<Navbar />
+			{/* Navbar for mobile */}
 			<MobileNavbar />
 
 			{/* Main Content */}
 			<main className='flex w-full flex-grow flex-col items-center py-8 sm:py-16'>
-				{/* GLHeroComponent */}
+				{/* Hero section for Game Library */}
 				<GLHeroComponent />
 
-				{/* Other Components */}
+				{/* Other components such as game list and My Ludo */}
 				<div className='flex w-full flex-col items-center gap-10 sm:gap-20 md:gap-40'>
+					{/* Display the list of games */}
 					<GameComponent />
+					{/* Display the My Ludo game */}
 					<MyLudoComponent />
 				</div>
 			</main>

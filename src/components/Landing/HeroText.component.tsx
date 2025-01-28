@@ -4,7 +4,6 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 
-// eslint-disable-next-line @next/next/no-async-client-component
 export default async function HeroTextComponent() {
 	const data = await getLandingData()
 	const heroData = {

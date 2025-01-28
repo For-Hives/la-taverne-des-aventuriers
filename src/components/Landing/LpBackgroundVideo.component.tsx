@@ -5,7 +5,7 @@ import Player from '@vimeo/player'
 import React, { useEffect, useRef } from 'react'
 
 // Declare the Video manager
-const BackgroundVideoLP = () => {
+export default function BackgroundVideoLP() {
 	const firstVideoRef = useRef(null)
 
 	useEffect(() => {
@@ -58,6 +58,3 @@ const BackgroundVideoLP = () => {
 		></iframe>
 	)
 }
-
-// export
-export default BackgroundVideoLP

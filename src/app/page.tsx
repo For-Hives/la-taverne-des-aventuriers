@@ -11,36 +11,37 @@ import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
 // Landing Page
 export default function Home() {
 	return (
-		// Page
+		// Page container
 		<div className='relative h-auto w-full items-center justify-center'>
-			{/*Navbar import*/}
+			{/* Navbar import for desktop */}
 			<Navbar />
+			{/* Navbar import for mobile */}
 			<MobileNavbar />
 
-			{/*Main part*/}
+			{/* Main content section */}
 			<main className='absolute left-0 top-0 flex h-full w-full flex-col items-center gap-96 pt-20 sm:items-start'>
-				{/*Hero + cards*/}
+				{/* Hero section and cards */}
 				<div className='flex w-full flex-col items-center gap-96'>
-					{/*Hero section*/}
+					{/* Hero section */}
 					<div className='flex h-screen w-screen flex-col items-start justify-center gap-16'>
-						{/*Background Video (Imported from components)*/}
+						{/* Background video component */}
 						<BackgroundVideoLP />
 
-						{/*Text And CTA button div*/}
+						{/* Text and CTA button */}
 						<HeroTextComponent />
 					</div>
 
-					{/*EventsComponent and Cards Div*/}
+					{/* Events section and Cards */}
 					<EventsComponent />
 
-					{/*Who are We Section*/}
+					{/* Who are we section */}
 					<WhoAreWeSection />
 				</div>
 
-				{/*Reservation CTA Card (Imported from Components)*/}
+				{/* Reservation CTA card */}
 				<ReservationCardComponent />
 
-				{/*FooterComponent (Imported from Components)*/}
+				{/* Footer component */}
 				<FooterComponent />
 			</main>
 		</div>
