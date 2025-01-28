@@ -12,10 +12,10 @@ export default function Page() {
 			<MobileNavbar />
 
 			{/* Background overlay (mask and image) */}
-			<div className='mask-custom absolute bottom-0 left-0 h-[125%] w-full -translate-y-[55%] transform bg-whoareweimage opacity-75'></div>
+			<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-whoareweimage opacity-75'></div>
 
 			{/* Main content section with a margin at the top */}
-			<div className='relative mt-[256px] flex flex-col items-center gap-[256px]'>
+			<div className='relative mt-64 flex flex-col items-center gap-64'>
 				{/* Reservation section */}
 				<ReservationElementComponent />
 				{/* Footer section */}

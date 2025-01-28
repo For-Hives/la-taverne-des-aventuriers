@@ -13,10 +13,10 @@ export default function reservation() {
 			<MobileNavbar />
 
 			{/* Background image overlay */}
-			<div className='mask-custom absolute bottom-0 left-0 h-[125%] w-full -translate-y-[55%] transform bg-whoareweimage opacity-75'></div>
+			<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-whoareweimage opacity-75'></div>
 
 			{/* Main content section with spacing */}
-			<div className='relative mt-[256px] flex flex-col items-center gap-[256px]'>
+			<div className='relative mt-64 flex flex-col items-center gap-64'>
 				{/* Reservation section */}
 				<ReservationComponent />
 				{/* Contact elements section */}
