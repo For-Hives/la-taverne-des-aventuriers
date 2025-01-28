@@ -32,19 +32,19 @@ export default async function ContactElements() {
 					<h1 className='font-obraletra text-2xl text-title-200 first-letter:font-obraletraBold'>
 						{ContactData.schedules_title}
 					</h1>
-					<p className='text-title-200'>
+					<p className='text-title-200 [&>span]:block'>
 						{/* Exceptional Schedule */}
-						<span className='block font-obraletraBold'>
+						<span className='font-obraletraBold'>
 							{ContactData.schedules_exceptional}
 						</span>
 						{/* Days of the week */}
-						<span className='block'>{ContactData.schedules_monday}</span>
-						<span className='block'>{ContactData.schedules_tuesday}</span>
-						<span className='block'>{ContactData.schedules_wednesday}</span>
-						<span className='block'>{ContactData.schedules_thursday}</span>
-						<span className='block'>{ContactData.schedules_friday}</span>
-						<span className='block'>{ContactData.schedules_saturday}</span>
-						<span className='block'>{ContactData.schedules_sunday}</span>
+						<span>{ContactData.schedules_monday}</span>
+						<span>{ContactData.schedules_tuesday}</span>
+						<span>{ContactData.schedules_wednesday}</span>
+						<span>{ContactData.schedules_thursday}</span>
+						<span>{ContactData.schedules_friday}</span>
+						<span>{ContactData.schedules_saturday}</span>
+						<span>{ContactData.schedules_sunday}</span>
 					</p>
 				</div>
 
