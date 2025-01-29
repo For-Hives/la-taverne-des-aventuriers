@@ -4,20 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function ReservationCardComponent() {
-	// Fetch data for the reservation card
 	const data = await getReservationCardData()
-
-	// Structure the data into a usable object
-	// const ReservationData = {
-	// 	buttonLabel: data.button_label,
-	// 	buttonUrl: data.button_url,
-	// 	description: textToSpanColored(data.description),
-	// 	gamesUrl: data.games_url,
-	// 	image: data.image,
-	// 	title: textToSpanColored(data.Title),
-	// }
-
-	console.info(data)
 
 	return (
 		<div className='mx-auto flex w-full max-w-6xl flex-col items-center gap-8 rounded bg-customWhite-500 p-4 sm:flex-row sm:gap-20 sm:p-10'>

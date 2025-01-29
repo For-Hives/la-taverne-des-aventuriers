@@ -1,13 +1,15 @@
-import { getLandingData } from '@/app/actions/services/getLandingPageData.service'
+import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
 import { textToSpanColored } from '@/utils/textToSpanColored'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default async function WhoAreWeSection() {
-	const data = await getLandingData()
-
+export default async function WhoAreWeSection({
+	data,
+}: {
+	data: LandingPageData
+}) {
 	const Element = {
 		description_button_label: data.description_button_label,
 		description_button_url: data.description_button_url,
@@ -30,7 +32,7 @@ export default async function WhoAreWeSection() {
 			</div>
 
 			{/* Text */}
-			<div className='text-customBrown-100 flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base max-lg:text-xs lg:w-2/3 lg:items-start'>
+			<div className='flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 max-lg:text-xs lg:w-2/3 lg:items-start'>
 				{/* Title */}
 				<h2 className='text-center lg:text-left'>
 					{Element.description_title}
@@ -53,7 +55,7 @@ export default async function WhoAreWeSection() {
 						<span>{Element.description_button_label}</span>
 						<FontAwesomeIcon
 							icon={faChevronRight}
-							className='text-customBrown-100 h-4 w-4'
+							className='h-4 w-4 text-customBrown-100'
 						/>
 					</Link>
 				</div>
