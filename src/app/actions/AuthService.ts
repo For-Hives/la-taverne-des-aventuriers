@@ -1,21 +1,21 @@
-import 'server-only' // Indique que ce fichier doit être exécuté côté serveur uniquement
-import PocketBase from 'pocketbase' // Importe la bibliothèque PocketBase pour l'utiliser
+import 'server-only' // Indicates that this file must be executed on the server only
+import PocketBase from 'pocketbase' // Imports the PocketBase library for usage
 
 let instance: PocketBase | null = null
 
 export const authWithPocketBase = async (): Promise<PocketBase | null> => {
-	if (instance && instance?.authStore?.isValid) {
-		return instance
+	if (instance?.authStore?.isValid) {
+		return instance // Returns the existing instance if it is valid
 	}
-	const token = process.env.PB_USER_TOKEN
-	const url = process.env.PB_SERVER_URL
+	const token = process.env.PB_USER_TOKEN // Retrieves the user token from environment variables
+	const url = process.env.PB_SERVER_URL // Retrieves the server URL from environment variables
 
 	if (!token) {
-		return null
+		return null // Returns null if no token is available
 	}
 
-	instance = new PocketBase(url)
-	instance.authStore.save(token, null)
+	instance = new PocketBase(url) // Creates a new PocketBase instance with the server URL
+	instance.authStore.save(token, null) // Saves the token in the authentication store
 
-	return instance
+	return instance // Returns the PocketBase instance
 }

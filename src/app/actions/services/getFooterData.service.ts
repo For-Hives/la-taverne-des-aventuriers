@@ -19,7 +19,7 @@ export interface FooterData {
 	events_url: string
 	contact_title: string
 	contact_url: string
-	reservation_link_url: string
+	reservation_link_label: string
 	reservation_url: string
 	game_library_title: string
 	game_library_url: string

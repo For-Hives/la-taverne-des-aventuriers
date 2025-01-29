@@ -7,17 +7,9 @@ import Link from 'next/link'
 
 export default async function WhoAreWeSection({
 	data,
-}: {
+}: Readonly<{
 	data: LandingPageData
-}) {
-	const Element = {
-		description_button_label: data.description_button_label,
-		description_button_url: data.description_button_url,
-		description_image: data.description_image,
-		description_text: textToSpanColored(data.description_text),
-		description_title: textToSpanColored(data.description_title),
-	}
-
+}>) {
 	return (
 		<div className='flex w-3/4 flex-col items-center justify-center gap-8 rounded lg:flex-row'>
 			<div className='flex w-full items-center justify-center lg:w-1/3'>
@@ -34,25 +26,28 @@ export default async function WhoAreWeSection({
 			{/* Text */}
 			<div className='flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 max-lg:text-xs lg:w-2/3 lg:items-start'>
 				{/* Title */}
-				<h2 className='text-center lg:text-left'>
-					{Element.description_title}
-				</h2>
+				<div
+					className='w-full text-center text-base max-lg:text-xs lg:text-left'
+					dangerouslySetInnerHTML={{
+						__html: textToSpanColored(data.description_title),
+					}}
+				></div>
 
 				{/* Description */}
 				<div
 					className='w-full text-center text-base max-lg:text-xs lg:text-left'
 					dangerouslySetInnerHTML={{
-						__html: Element.description_text,
+						__html: textToSpanColored(data.description_text),
 					}}
 				></div>
 
 				{/* Link */}
 				<div className='text-center lg:text-left'>
 					<Link
-						href={Element.description_button_url}
+						href={data.description_button_url}
 						className='flex items-center justify-center gap-3 text-base underline max-lg:text-xs lg:justify-start'
 					>
-						<span>{Element.description_button_label}</span>
+						<span>{data.description_button_label}</span>
 						<FontAwesomeIcon
 							icon={faChevronRight}
 							className='h-4 w-4 text-customBrown-100'

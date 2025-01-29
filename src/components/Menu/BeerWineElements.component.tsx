@@ -1,10 +1,12 @@
 'use client'
 import {
 	getBeerData,
-	getWineData,
 	BeerData,
+} from '@/app/actions/services/DrinksData/getBeerData.service'
+import {
+	getWineData,
 	WineData,
-} from '@/app/actions/services/getDrinkData.service' // Import services to fetch data
+} from '@/app/actions/services/DrinksData/getWineData.service'
 import { useEffect, useState } from 'react'
 
 export default function BeerWineElement() {
@@ -95,17 +97,17 @@ export default function BeerWineElement() {
 		<div className='flex w-full flex-col items-center justify-center gap-20 px-4 sm:px-8'>
 			{/* Beer Section */}
 			<div className='flex flex-col justify-center gap-6 sm:w-3/4'>
-				<h3 className='text-customRed-100 font-cardinal text-2xl sm:text-4xl'>
+				<h3 className='font-cardinal text-2xl text-customRed-100 sm:text-4xl'>
 					Beers:
 				</h3>
 
 				<div className='grid grid-cols-1 gap-10 sm:grid-cols-2'>
 					{/* Draft Beers */}
 					<div className='flex flex-col gap-4'>
-						<h4 className='text-customBrown-100 font-cardinal text-xl sm:text-2xl'>
+						<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 							Draft Beers:
 						</h4>
-						<table className='text-customBrown-100 w-full border-collapse text-left font-obraletra'>
+						<table className='w-full border-collapse text-left font-obraletra text-customBrown-100'>
 							<thead>
 								<tr>
 									<th className='px-4 py-2'>Beer</th>
@@ -140,7 +142,7 @@ export default function BeerWineElement() {
 
 					{/* Bottle Beers */}
 					<div className='flex flex-col gap-4'>
-						<h4 className='text-customBrown-100 font-cardinal text-xl sm:text-2xl'>
+						<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 							Bottle Beers:
 						</h4>
 						<div className='flex flex-col gap-2'>
@@ -153,10 +155,10 @@ export default function BeerWineElement() {
 										key={`${beer.id}-${index}`}
 										className='flex items-center justify-between'
 									>
-										<h4 className='text-customBrown-100 font-cardinal text-lg'>
+										<h4 className='font-cardinal text-lg text-customBrown-100'>
 											{beer.title} ({beer.volume})
 										</h4>
-										<p className='text-customBrown-100 text-right font-obraletra text-lg'>
+										<p className='text-right font-obraletra text-lg text-customBrown-100'>
 											{beer.price} €
 										</p>
 									</div>
@@ -169,16 +171,16 @@ export default function BeerWineElement() {
 
 			{/* Wine Section */}
 			<div className='flex flex-col justify-center gap-6 sm:w-3/4'>
-				<h3 className='text-customRed-100 font-cardinal text-2xl sm:text-4xl'>
+				<h3 className='font-cardinal text-2xl text-customRed-100 sm:text-4xl'>
 					Wines:
 				</h3>
 
 				{/* Red Wines */}
 				<div className='flex flex-col gap-4'>
-					<h4 className='text-customBrown-100 font-cardinal text-xl sm:text-2xl'>
+					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 						Red Wines:
 					</h4>
-					<table className='text-customBrown-100 w-full border-collapse text-left font-obraletra'>
+					<table className='w-full border-collapse text-left font-obraletra text-customBrown-100'>
 						<thead>
 							<tr>
 								<th className='px-4 py-2'>Wine</th>
@@ -209,10 +211,10 @@ export default function BeerWineElement() {
 
 				{/* White Wines */}
 				<div className='flex flex-col gap-4'>
-					<h4 className='text-customBrown-100 font-cardinal text-xl sm:text-2xl'>
+					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 						White Wines:
 					</h4>
-					<table className='text-customBrown-100 w-full border-collapse text-left font-obraletra'>
+					<table className='w-full border-collapse text-left font-obraletra text-customBrown-100'>
 						<thead>
 							<tr>
 								<th className='px-4 py-2'>Wine</th>
@@ -243,10 +245,10 @@ export default function BeerWineElement() {
 
 				{/* Rose Wines */}
 				<div className='flex flex-col gap-4'>
-					<h4 className='text-customBrown-100 font-cardinal text-xl sm:text-2xl'>
+					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 						Rose Wines:
 					</h4>
-					<table className='text-customBrown-100 w-full border-collapse text-left font-obraletra'>
+					<table className='w-full border-collapse text-left font-obraletra text-customBrown-100'>
 						<thead>
 							<tr>
 								<th className='px-4 py-2'>Wine</th>

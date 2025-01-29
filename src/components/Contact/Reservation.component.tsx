@@ -5,34 +5,28 @@ export default async function ReservationComponent() {
 	// Fetch reservation data
 	const data = await getReservationData()
 
-	// Structure the data into variables for easy access
-	const ReservationData = {
-		description: data.description,
-		how_to_title: data.how_to_title,
-	}
-
 	return (
 		<div className='flex w-3/4 items-center justify-center'>
 			{/* Left side: Image */}
 			<div className='flex w-1/3 items-center justify-center'>
 				<Image
 					src='/assets/images/elements/ContactElements/maison.png'
-					alt='LTDA Logo'
+					alt='House illustration'
 					width={1080}
 					height={720}
 				/>
 			</div>
 			{/* Right side: Reservation Information */}
-			<div className='text-customBrown-100 flex w-2/3 flex-col items-start justify-center gap-9'>
+			<div className='flex w-2/3 flex-col items-start justify-center gap-9 text-customBrown-100'>
 				{/* How to Title */}
-				<h2 className='first-letter:text-customRed-100 font-cardinal text-2xl'>
-					{ReservationData.how_to_title}
+				<h2 className='font-cardinal text-2xl first-letter:text-customRed-100'>
+					{data.how_to_title}
 				</h2>
 				{/* Description content */}
 				<div
 					className='w-full font-obraletra text-base'
 					dangerouslySetInnerHTML={{
-						__html: ReservationData.description,
+						__html: data.description,
 					}}
 				></div>
 			</div>

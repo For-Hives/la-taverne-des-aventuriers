@@ -1,5 +1,6 @@
-import { getDrinkList } from '@/app/actions/services/getDrinkData.service' // Importing the function to get the list of drinks
-import DrinkDivComponent from '@/components/Menu/DrinkDiv.component' // Importing the DrinkDivComponent
+import { getDrinkList } from '@/app/actions/services/DrinksData/getDrinkList.service' // Importing the function to get the list of drinks
+import DrinkDivComponent from '@/components/Menu/DrinkDiv.component'
+import { formatDrinkName } from '@/utils/FormatDrinksName' // Importing the DrinkDivComponent
 
 // Defining the Drink interface
 interface Drink {
@@ -35,16 +36,6 @@ export default async function DrinkElement({
 }: {
 	readonly collection_name: string // The collection name must be a string
 }) {
-	// Function to format the collection name (e.g., replace underscores and capitalize the first letters)
-	const formatDrinkName = (drink: string) => {
-		if (drink === 'Short_long_drinks') {
-			return 'Short / Long Drinks' // Special case for "Short_long_drinks"
-		}
-		return drink
-			.replaceAll('_', ' ') // Replace underscores with spaces
-			.replace(/(?:^|\s)\S/g, match => match.toUpperCase()) // Capitalize the first letter of each word
-	}
-
 	// Fetching the drink list based on the collection name
 	const data = (await getDrinkList(
 		collection_name
@@ -61,7 +52,7 @@ export default async function DrinkElement({
 	return (
 		<div className='flex w-3/4 flex-col items-center justify-center gap-20'>
 			{/* Title of the page, formatted based on the collection name */}
-			<h2 className='first-letter:text-customRed-100 text-customBrown-100 font-cardinal text-8xl max-sm:text-5xl'>
+			<h2 className='font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-5xl'>
 				{formatDrinkName(collection_name)}
 			</h2>
 			<div className='flex flex-col justify-center gap-28'>

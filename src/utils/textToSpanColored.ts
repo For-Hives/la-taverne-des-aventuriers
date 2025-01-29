@@ -1,9 +1,9 @@
-// Fonction pour transformer du texte en ajoutant une balise <span> avec une couleur spécifique
+// Function to transform text by wrapping specific portions with a <span> tag and applying a specific color
 export const textToSpanColored = (text: string) => {
-	// Utilise une expression régulière pour chercher tout texte entouré par des astérisques (*texte*)
-	// Remplace ces occurrences par un élément <span> avec une classe 'text-title-100' qui stylise le texte
+	// Uses a regular expression to find any text surrounded by asterisks (*text*)
+	// Replaces these occurrences with a <span> element that has the 'text-title-100' class for styling
 	return text.replace(
-		/\*([A-Za-z]+)\*/g, // Recherche des mots constitués uniquement de lettres majuscules/minuscules entre des astérisques
-		'<span class="text-customRed-100">$1</span>' // Remplace le texte trouvé par un <span> contenant ce texte avec une classe spécifique
+		/\*([A-Za-z]+)\*/g, // Matches words composed only of uppercase/lowercase letters enclosed by asterisks
+		'<span class="text-customRed-100">$1</span>' // Replaces the matched text with a <span> containing it and a specific class
 	)
 }

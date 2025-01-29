@@ -25,7 +25,7 @@ export default function DrinkDivComponent({
 					{/* Drink image */}
 					<Image
 						src='/assets/images/Cocktails/Cocktail1.jpg' // Path to the image
-						alt='Drink Image' // Alt text for accessibility
+						alt={drink.title} // Alt text for accessibility
 						className='rounded' // Apply rounded corners to the image
 						width={400} // Set width of the image
 						height={400} // Set height of the image
@@ -35,11 +35,11 @@ export default function DrinkDivComponent({
 				{/* Text Section */}
 				<div className='flex w-full flex-col gap-6 sm:w-2/3 sm:gap-9'>
 					{/* Drink title */}
-					<h2 className='text-customBrown-100 first-letter:text-customRed-100 font-cardinal text-3xl sm:text-4xl'>
+					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
 						{drink.title}
 					</h2>
 					{/* Drink description */}
-					<p className='text-customBrown-100 font-obraletra text-base sm:text-xs'>
+					<p className='font-obraletra text-base text-customBrown-100 sm:text-xs'>
 						{drink.description}
 					</p>
 				</div>

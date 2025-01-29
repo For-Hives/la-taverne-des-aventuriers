@@ -49,7 +49,7 @@ export default async function ReservationCardComponent() {
 				{/* Reservation Image */}
 				<Image
 					src='/assets/images/elements/ReservationCardIllustration.png'
-					alt='LTDA Logo'
+					alt='Reservation Card Illustration'
 					width={300}
 					height={200}
 					className='h-auto max-w-full'

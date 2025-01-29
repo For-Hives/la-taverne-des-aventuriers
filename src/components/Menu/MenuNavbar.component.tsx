@@ -45,7 +45,7 @@ export default function MenuNavbar() {
 			<div className='grid grid-cols-1 md:hidden'>
 				<select
 					aria-label='Select a tab' // Accessibility: label for the dropdown
-					className='text-customBrown-100 bg-customWhite-200 col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pl-3 pr-8 text-base outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600'
+					className='col-start-1 row-start-1 w-full appearance-none rounded-md bg-customWhite-200 py-2 pl-3 pr-8 text-base text-customBrown-100 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600'
 					onChange={e => handleTabClick(e.target.value)} // Trigger handleTabClick on change
 					value={currentTab} // Keep the selected tab visible
 				>
@@ -59,7 +59,7 @@ export default function MenuNavbar() {
 				{/* Dropdown arrow icon */}
 				<ChevronDownIcon
 					aria-hidden='true' // Hides the icon from screen readers
-					className='fill-customBrown-100 pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end'
+					className='pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-customBrown-100'
 				/>
 			</div>
 
@@ -67,7 +67,7 @@ export default function MenuNavbar() {
 			<div className='hidden md:block'>
 				<nav
 					aria-label='Tabs' // Accessibility: label for the navigation
-					className='divide-customBrown-200 isolate flex divide-x rounded-lg shadow'
+					className='divide-customBrownTransparent-100 isolate flex divide-x rounded-lg shadow'
 				>
 					{/* Render each tab as a button */}
 					{tabs.map((tab, tabIdx) => (
@@ -78,7 +78,7 @@ export default function MenuNavbar() {
 								// Styling for the tab buttons
 								tabIdx === 0 ? 'rounded-l-lg' : '',
 								tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '',
-								'text-customBrown-100 hover:bg-customWhite-100 bg-customWhite-200 group relative min-w-0 flex-1 overflow-hidden px-4 py-4 text-center text-sm font-medium focus:z-10',
+								'group relative min-w-0 flex-1 overflow-hidden bg-customWhite-200 px-4 py-4 text-center text-sm font-medium text-customBrown-100 hover:bg-customWhite-100 focus:z-10',
 								currentTab === tab.anchor ? 'bg-customWhite-100' : ''
 							)}
 							onClick={() => handleTabClick(tab.anchor)} // Trigger handleTabClick on click

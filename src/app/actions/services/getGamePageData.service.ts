@@ -53,7 +53,7 @@ export async function getGameLibraryPageData(): Promise<GamesPageData> {
 	try {
 		// Fetch the first 60 items from the 'games_pages' collection
 		const result = await pb.collection('games_pages').getList(1, 60)
-
+		console.info(result)
 		// Return the first item as GamesPageData
 		return result.items[0] as GamesPageData
 	} catch (error) {

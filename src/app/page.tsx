@@ -1,6 +1,6 @@
+// imports
 import { getLandingData } from '@/app/actions/services/getLandingPageData.service'
 import FooterComponent from '@/components/Global/Footer.component'
-// imports
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import ReservationCardComponent from '@/components/Global/ReservationCard.component'

@@ -1,31 +1,25 @@
-import { getGameLibraryPageData } from '@/app/actions/services/getGamePageData.service'
+import { GamesPageData } from '@/app/actions/services/getGamePageData.service'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default async function MyLudoComponent() {
-	// Fetch the data for the game library component
-	const data = await getGameLibraryPageData()
-
-	// Structure the fetched data
-	const GameLibraryData = {
-		myludo_component_label: data.myludo_component_label,
-		myludo_component_title: data.myludo_component_title,
-		myludo_component_url: data.myludo_component_url,
-	}
-
+export default async function MyLudoComponent({
+	data,
+}: Readonly<{
+	data: GamesPageData
+}>) {
 	return (
 		<div className='w-full py-8 sm:w-3/4 sm:py-16'>
 			<div className='flex w-full flex-col items-start justify-center gap-8 sm:gap-12'>
 				{/* Title for the component */}
-				<h2 className='text-customBrown-100 font-obraletraBold text-xl sm:text-2xl'>
-					{GameLibraryData.myludo_component_title}
+				<h2 className='font-obraletraBold text-xl text-customBrown-100 sm:text-2xl'>
+					{data.myludo_component_title}
 				</h2>
 
 				<div className='relative flex w-full flex-col items-center justify-center rounded'>
 					{/* Image displaying the game library */}
 					<Image
 						src='/assets/images/elements/GameLibraryElements/MyLudoImage.png'
-						alt='LTDA Logo'
+						alt='MyLudo Logo'
 						className='h-auto w-full'
 						width={1920}
 						height={1080}
@@ -35,10 +29,10 @@ export default async function MyLudoComponent() {
 
 					{/* Link to the game library */}
 					<Link
-						className='text-customWhite-100 absolute bottom-5 left-10 text-center font-obraletra text-xl hover:underline sm:text-2xl'
-						href={GameLibraryData.myludo_component_url}
+						className='absolute bottom-5 left-10 text-center font-obraletra text-xl text-customWhite-100 hover:underline sm:text-2xl'
+						href={data.myludo_component_url}
 					>
-						{GameLibraryData.myludo_component_label}
+						{data.myludo_component_label}
 					</Link>
 				</div>
 			</div>

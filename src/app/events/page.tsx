@@ -1,3 +1,4 @@
+import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 
@@ -8,6 +9,8 @@ export default function Page() {
 			<Navbar />
 			{/* Navbar for mobile */}
 			<MobileNavbar />
+
+			<FooterComponent />
 		</div>
 	)
 }

@@ -43,7 +43,9 @@ export default {
 
 				customBrown: {
 					100: '#582615',
-					200: 'rgba(88,38,21,0.32)',
+				},
+				customBrownTransparent: {
+					100: 'rgba(88,38,21,0.32)',
 				},
 				customRed: {
 					100: '#8D2026',
