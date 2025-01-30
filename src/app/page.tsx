@@ -13,6 +13,8 @@ import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
 export default async function Home() {
 	const dataLanding = await getLandingData()
 
+	console.info(dataLanding)
+
 	return (
 		dataLanding && (
 			// Page container

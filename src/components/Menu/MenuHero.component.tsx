@@ -7,7 +7,6 @@ export default async function MenuHeroComponent() {
 
 	return (
 		<div className={'relative'}>
-			{' '}
 			{/* Container for the hero section */}
 			<div>
 				{/* Hero text content */}

@@ -65,7 +65,6 @@ export async function getLandingData(): Promise<LandingPageData> {
 	try {
 		// Fetch the first 20 items from the 'landing_page' collection
 		const result = await pb.collection('landing_page').getList(1, 20)
-
 		// Return the first item as LandingPageData
 		return result.items[0] as LandingPageData
 	} catch (error) {
