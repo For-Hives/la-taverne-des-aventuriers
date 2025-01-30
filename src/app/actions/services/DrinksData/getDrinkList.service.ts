@@ -1,6 +1,5 @@
 'use server'
 import { authWithPocketBase } from '@/app/actions/AuthService'
-import { pbGetUrl } from '@/utils/pbGetUrl'
 
 /**
  * Fetches specific drink data from PocketBase based on the provided collection.
@@ -24,11 +23,13 @@ export async function getDrinkList(collection: string) {
 	try {
 		// Fetch the first 20 items from the specified collection
 		const data = await pb.collection(collection).getList(1, 20)
+		// todo : add this function if images are necessary
 		data.items.map(item => {
 			if (item.image) {
-				item.image = pbGetUrl(pb, item, item.image)
+				pb.files.getURL(item, item.image)
 			}
 		})
+		return data
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch
 		console.error('Error while fetching drink data from PocketBase:', error)
