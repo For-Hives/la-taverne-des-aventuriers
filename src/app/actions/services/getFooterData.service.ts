@@ -56,7 +56,14 @@ export async function getFooterData(): Promise<FooterData> {
 	try {
 		// Fetch the first 60 items from the 'footer' collection
 		const result = await pb.collection('footer').getList(1, 60)
-
+		result.items.forEach(item => {
+			if (item.image1) {
+				item.image1 = pb.files.getURL(item, item.image1)
+			}
+			if (item.image2) {
+				item.image2 = pb.files.getURL(item, item.image2)
+			}
+		})
 		// Return the first item as FooterData
 		return result.items[0] as FooterData
 	} catch (error) {

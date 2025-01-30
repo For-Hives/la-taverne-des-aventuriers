@@ -65,7 +65,20 @@ export async function getLandingData(): Promise<LandingPageData> {
 	try {
 		// Fetch the first 20 items from the 'landing_page' collection
 		const result = await pb.collection('landing_page').getList(1, 20)
-
+		result.items.forEach(item => {
+			if (item.description_image) {
+				item.description_image = pb.files.getURL(item, item.description_image)
+			}
+			if (item.event_card1_image) {
+				item.event_card1_image = pb.files.getURL(item, item.event_card1_image)
+			}
+			if (item.event_card2_image) {
+				item.event_card2_image = pb.files.getURL(item, item.event_card2_image)
+			}
+			if (item.event_card3_image) {
+				item.event_card3_image = pb.files.getURL(item, item.event_card3_image)
+			}
+		})
 		// Return the first item as LandingPageData
 		return result.items[0] as LandingPageData
 	} catch (error) {

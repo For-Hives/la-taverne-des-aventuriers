@@ -8,6 +8,7 @@ import EventsComponent from '@/components/Landing/Events.component'
 import HeroTextComponent from '@/components/Landing/HeroText.component'
 import BackgroundVideoLP from '@/components/Landing/LpBackgroundVideo.component'
 import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
+import Image from 'next/image'
 
 // Landing Page
 export default async function Home() {
@@ -38,14 +39,13 @@ export default async function Home() {
 						</div>
 						{/* Events section and Cards */}
 						<EventsComponent data={dataLanding} />
-						console.log(dataLanding.event_card1_image);
-						{/*<Image*/}
-						{/*	src={dataLanding.event_card1_image} // Path to the image*/}
-						{/*	alt='test' // Alt text for accessibility*/}
-						{/*	className='rounded' // Apply rounded corners to the image*/}
-						{/*	width={400} // Set width of the image*/}
-						{/*	height={400} // Set height of the image*/}
-						{/*/>*/}
+						<Image
+							src={dataLanding?.event_card1_image} // Path to the image
+							alt='test' // Alt text for accessibility
+							className='rounded' // Apply rounded corners to the image
+							width={400} // Set width of the image
+							height={400} // Set height of the image
+						/>
 						{/* Who are we section */}
 						<WhoAreWeSection data={dataLanding} />
 					</div>
