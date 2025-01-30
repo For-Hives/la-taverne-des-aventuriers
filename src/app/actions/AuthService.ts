@@ -16,6 +16,7 @@ export const authWithPocketBase = async (): Promise<PocketBase | null> => {
 
 	instance = new PocketBase(url) // Creates a new PocketBase instance with the server URL
 	instance.authStore.save(token, null) // Saves the token in the authentication store
+	instance.autoCancellation(false) // Disable auto-cancelation from pocketbase SDK
 
 	return instance // Returns the PocketBase instance
 }
