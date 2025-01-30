@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
 				hostname: '**.andy-cinquin.fr',
 				protocol: 'https',
 			},
+			{
+				hostname: '**.latavernedesaventuriers.fr',
+				protocol: 'https',
+			},
+			{
+				hostname: '**.latavernedesaventuriers.com',
+				protocol: 'https',
+			},
 		],
 	},
 }
