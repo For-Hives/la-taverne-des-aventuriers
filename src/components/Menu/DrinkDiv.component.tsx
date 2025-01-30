@@ -3,6 +3,7 @@ import Image from 'next/image'
 interface Drink {
 	title: string // Title of the drink
 	description: string // Description of the drink
+	image: string
 }
 
 export default function DrinkDivComponent({
@@ -24,7 +25,7 @@ export default function DrinkDivComponent({
 				<div className='mb-4 w-full sm:mb-0 sm:w-1/3'>
 					{/* Drink image */}
 					<Image
-						src='/assets/images/Cocktails/Cocktail1.jpg' // Path to the image
+						src={drink.image} // Path to the image
 						alt={drink.title} // Alt text for accessibility
 						className='rounded' // Apply rounded corners to the image
 						width={400} // Set width of the image
