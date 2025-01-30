@@ -7,7 +7,7 @@ export default async function HowToContact({
 	data: ContactPageData
 }>) {
 	return (
-		<div className='flex w-3/4 items-center justify-center'>
+		<div className='flex w-3/4 items-center justify-center max-sm:flex-col max-sm:gap-8'>
 			{/* Image Section */}
 			<div className='flex w-1/3 items-center justify-end'>
 				<Image
@@ -19,7 +19,7 @@ export default async function HowToContact({
 			</div>
 
 			{/* Text Section */}
-			<div className='flex w-2/3 flex-col items-start justify-center gap-10 font-obraletra text-base text-customBrown-100'>
+			<div className='flex w-2/3 flex-col items-start justify-center gap-10 font-obraletra text-base text-customBrown-100 max-sm:w-full max-sm:items-center'>
 				{/* Title */}
 				<h1 className='items-center justify-center text-center font-cardinal text-2xl first-letter:text-customRed-100'>
 					{data.howtosection_title}

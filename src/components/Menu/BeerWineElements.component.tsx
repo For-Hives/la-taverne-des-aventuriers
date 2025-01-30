@@ -98,19 +98,19 @@ export default function BeerWineElement() {
 			{/* Beer Section */}
 			<div className='flex flex-col justify-center gap-6 sm:w-3/4'>
 				<h3 className='font-cardinal text-2xl text-customRed-100 sm:text-4xl'>
-					Beers:
+					Bières:
 				</h3>
 
 				<div className='grid grid-cols-1 gap-10 sm:grid-cols-2'>
 					{/* Draft Beers */}
 					<div className='flex flex-col gap-4'>
 						<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
-							Draft Beers:
+							Pression:
 						</h4>
 						<table className='w-full border-collapse text-left font-obraletra text-customBrown-100'>
 							<thead>
 								<tr>
-									<th className='px-4 py-2'>Beer</th>
+									<th className='px-4 py-2'>Bière</th>
 									<th className='px-4 py-2'>25cl</th>
 									<th className='px-4 py-2'>50cl</th>
 								</tr>
@@ -119,7 +119,7 @@ export default function BeerWineElement() {
 								{draftBeers.length === 0 ? (
 									<tr>
 										<td colSpan={3} className='px-4 py-2 text-center'>
-											No draft beer available.
+											Aucune Bière pression disponible
 										</td>
 									</tr>
 								) : (
@@ -143,11 +143,13 @@ export default function BeerWineElement() {
 					{/* Bottle Beers */}
 					<div className='flex flex-col gap-4'>
 						<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
-							Bottle Beers:
+							Bouteilles:
 						</h4>
 						<div className='flex flex-col gap-2'>
 							{bottleBeers.length === 0 ? (
-								<p className='text-center'>No bottle beer available.</p>
+								<p className='text-center'>
+									Pas de Bière bouteille disponible.
+								</p>
 							) : (
 								// Display bottle beers
 								bottleBeers.map((beer, index) => (
@@ -172,36 +174,39 @@ export default function BeerWineElement() {
 			{/* Wine Section */}
 			<div className='flex flex-col justify-center gap-6 sm:w-3/4'>
 				<h3 className='font-cardinal text-2xl text-customRed-100 sm:text-4xl'>
-					Wines:
+					Vins:
 				</h3>
 
 				{/* Red Wines */}
 				<div className='flex flex-col gap-4'>
 					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
-						Red Wines:
+						Vins Rouges:
 					</h4>
-					<table className='w-full border-collapse text-left font-obraletra text-customBrown-100'>
+					<table className='w-full table-fixed border-collapse text-left font-obraletra text-customBrown-100'>
 						<thead>
 							<tr>
-								<th className='px-4 py-2'>Wine</th>
-								<th className='px-4 py-2'>Glass</th>
-								<th className='px-4 py-2'>Bottle</th>
+								<th className='w-4/6 px-4 py-2'>Vin</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
 							</tr>
 						</thead>
 						<tbody>
 							{redWines.length === 0 ? (
 								<tr>
 									<td colSpan={3} className='px-4 py-2 text-center'>
-										No red wine available.
+										Aucun Vin rouge disponible.
 									</td>
 								</tr>
 							) : (
-								// Display red wines
 								redWines.map((wine, index) => (
 									<tr key={`${wine.id}-${index}`}>
 										<td className='px-4 py-2'>{wine.title}</td>
-										<td className='px-4 py-2'>{wine.price_glass} €</td>
-										<td className='px-4 py-2'>{wine.price_bottle} €</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_glass} €
+										</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_bottle} €
+										</td>
 									</tr>
 								))
 							)}
@@ -212,30 +217,33 @@ export default function BeerWineElement() {
 				{/* White Wines */}
 				<div className='flex flex-col gap-4'>
 					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
-						White Wines:
+						Vins Blancs:
 					</h4>
-					<table className='w-full border-collapse text-left font-obraletra text-customBrown-100'>
+					<table className='w-full table-fixed border-collapse text-left font-obraletra text-customBrown-100'>
 						<thead>
 							<tr>
-								<th className='px-4 py-2'>Wine</th>
-								<th className='px-4 py-2'>Glass</th>
-								<th className='px-4 py-2'>Bottle</th>
+								<th className='w-4/6 px-4 py-2'>Vins</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
 							</tr>
 						</thead>
 						<tbody>
 							{whiteWines.length === 0 ? (
 								<tr>
 									<td colSpan={3} className='px-4 py-2 text-center'>
-										No white wine available.
+										Aucun Vin blanc disponible.
 									</td>
 								</tr>
 							) : (
-								// Display white wines
 								whiteWines.map((wine, index) => (
 									<tr key={`${wine.id}-${index}`}>
 										<td className='px-4 py-2'>{wine.title}</td>
-										<td className='px-4 py-2'>{wine.price_glass} €</td>
-										<td className='px-4 py-2'>{wine.price_bottle} €</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_glass} €
+										</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_bottle} €
+										</td>
 									</tr>
 								))
 							)}
@@ -246,30 +254,33 @@ export default function BeerWineElement() {
 				{/* Rose Wines */}
 				<div className='flex flex-col gap-4'>
 					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
-						Rose Wines:
+						Vins Rosés:
 					</h4>
-					<table className='w-full border-collapse text-left font-obraletra text-customBrown-100'>
+					<table className='w-full table-fixed border-collapse text-left font-obraletra text-customBrown-100'>
 						<thead>
 							<tr>
-								<th className='px-4 py-2'>Wine</th>
-								<th className='px-4 py-2'>Glass</th>
-								<th className='px-4 py-2'>Bottle</th>
+								<th className='w-4/6 px-4 py-2'>Vin</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
 							</tr>
 						</thead>
 						<tbody>
 							{roseWines.length === 0 ? (
 								<tr>
 									<td colSpan={3} className='px-4 py-2 text-center'>
-										No rose wine available.
+										Pas de Vin Rosé disponible.
 									</td>
 								</tr>
 							) : (
-								// Display rose wines
 								roseWines.map((wine, index) => (
 									<tr key={`${wine.id}-${index}`}>
 										<td className='px-4 py-2'>{wine.title}</td>
-										<td className='px-4 py-2'>{wine.price_glass} €</td>
-										<td className='px-4 py-2'>{wine.price_bottle} €</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_glass} €
+										</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_bottle} €
+										</td>
 									</tr>
 								))
 							)}

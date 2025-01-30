@@ -46,7 +46,7 @@ export default function Page() {
 					))}
 
 					{/* Beer and Wine section */}
-					<div id='beer-wine' className='flex justify-center'>
+					<div id='beer-wine' className='flex justify-center lg:w-3/4'>
 						<BeerWineElement />
 					</div>
 					{/* Travelers' Pleasure section */}

@@ -9,7 +9,7 @@ export default async function TravelersPleasureElement() {
 	const imageSrc = '/assets/images/Cocktails/Cocktail1.jpg'
 
 	return (
-		<div className='flex w-full flex-col items-center justify-center gap-20 px-4'>
+		<div className='flex w-4/5 flex-col items-center justify-center gap-20 px-4'>
 			<h2 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl lg:text-8xl'>
 				Les Plaisirs Du Voyageur
 			</h2>
