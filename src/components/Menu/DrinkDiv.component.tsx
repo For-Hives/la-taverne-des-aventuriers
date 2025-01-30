@@ -3,7 +3,7 @@ import Image from 'next/image'
 interface Drink {
 	title: string // Title of the drink
 	description: string // Description of the drink
-	image: string
+	// image: string
 }
 
 export default function DrinkDivComponent({
@@ -14,7 +14,7 @@ export default function DrinkDivComponent({
 	readonly isInverted?: boolean // Optional prop to reverse layout direction
 }) {
 	return (
-		<div className={`flex flex-col items-center justify-center px-4 sm:px-8`}>
+		<div className='flex w-full flex-col items-center justify-center px-4 sm:px-8'>
 			{/* Container for the drink, with optional layout inversion for small screens */}
 			<div
 				className={`flex w-full flex-col items-center justify-center sm:flex-row ${
@@ -22,25 +22,25 @@ export default function DrinkDivComponent({
 				}`}
 			>
 				{/* Image Section */}
-				<div className='mb-4 w-full sm:mb-0 sm:w-1/3'>
+				<div className='mb-6 w-full sm:mb-0 sm:w-1/3 sm:px-4'>
 					{/* Drink image */}
 					<Image
-						src={drink.image} // Path to the image
+						src='/assets/images/Cocktails/Cocktail1.jpg' // Path to the image
 						alt={drink.title} // Alt text for accessibility
-						className='rounded' // Apply rounded corners to the image
+						className='rounded'
 						width={400} // Set width of the image
 						height={400} // Set height of the image
 					/>
 				</div>
 
 				{/* Text Section */}
-				<div className='flex w-full flex-col gap-6 sm:w-2/3 sm:gap-9'>
+				<div className='w-full sm:w-2/3 sm:px-4'>
 					{/* Drink title */}
 					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
 						{drink.title}
 					</h2>
 					{/* Drink description */}
-					<p className='font-obraletra text-base text-customBrown-100 sm:text-xs'>
+					<p className='font-obraletra text-base text-customBrown-100 sm:text-lg'>
 						{drink.description}
 					</p>
 				</div>

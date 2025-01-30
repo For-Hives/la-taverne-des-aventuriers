@@ -7,7 +7,7 @@ interface Drink {
 	id: string // Unique identifier for the drink
 	title: string // Title of the drink
 	description: string // Description of the drink
-	image: string
+	// image: string
 }
 
 // Defining the RecordModel interface, which represents the structure of a record
@@ -15,7 +15,7 @@ interface RecordModel {
 	id: string // Unique identifier for the record
 	title: string // Title of the record
 	description: string // Description of the record
-	image: string
+	// image: string
 }
 
 // Defining the response structure from the drink API
@@ -28,7 +28,7 @@ const mapRecordToDrink = (record: RecordModel): Drink => {
 	return {
 		description: record.description || 'Default Description', // Provide default description if missing
 		id: record.id, // The id remains the same
-		image: record.image,
+		// image: record.image,
 		title: record.title || 'Default Title', // Provide default title if missing
 	}
 }
@@ -62,7 +62,7 @@ export default async function DrinkElement({
 				{/* Render each drink component */}
 				{drinks.map((drink, index) => (
 					<DrinkDivComponent
-						key={drink.id || drink.title || drink.image} // Use the drink id or title as the key
+						key={drink.id || drink.title} // Use the drink id or title as the key
 						drink={drink} // Pass the drink object as a prop
 						isInverted={index % 2 !== 0} // Invert layout for odd-indexed drinks
 					/>

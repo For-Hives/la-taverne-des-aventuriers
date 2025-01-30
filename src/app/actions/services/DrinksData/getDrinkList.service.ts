@@ -23,12 +23,13 @@ export async function getDrinkList(collection: string) {
 	try {
 		// Fetch the first 20 items from the specified collection
 		const data = await pb.collection(collection).getList(1, 20)
-		// todo : add this function if images are necessary
-		data.items.map(item => {
+		data.items.forEach(item => {
 			if (item.image) {
 				pb.files.getURL(item, item.image)
 			}
 		})
+
+		// console.log(data)
 		return data
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch

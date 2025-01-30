@@ -16,13 +16,14 @@ export default async function Page() {
 				{/* Navbar for mobile */}
 				<MobileNavbar />
 
+				<GLHeroComponent data={dataGameLibrary} />
+
 				{/* Main Content */}
 				<main className='flex w-full flex-grow flex-col items-center py-8 sm:py-16'>
 					{/* Hero section for Game Library */}
-					<GLHeroComponent data={dataGameLibrary} />
 
 					{/* Other components such as game list and My Ludo */}
-					<div className='flex w-full flex-col items-center gap-10 sm:gap-20 md:gap-40'>
+					<div className='flex w-full flex-col items-center gap-40'>
 						{/* Display the list of games */}
 						<GameComponent data={dataGameLibrary} />
 						{/* Display the My Ludo game */}

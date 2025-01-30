@@ -8,7 +8,7 @@ export default async function MyLudoComponent({
 	data: GamesPageData
 }>) {
 	return (
-		<div className='w-full py-8 sm:w-3/4 sm:py-16'>
+		<div className='w-3/4 py-8 sm:w-3/4 sm:py-16'>
 			<div className='flex w-full flex-col items-start justify-center gap-8 sm:gap-12'>
 				{/* Title for the component */}
 				<h2 className='font-obraletraBold text-xl text-customBrown-100 sm:text-2xl'>
