@@ -22,7 +22,7 @@ export default async function HeroTextComponent({
 
 			<div className='flex flex-col items-start gap-6 sm:gap-8 md:gap-10'>
 				{/* Description */}
-				<p className='flex items-center gap-2 font-obraletra text-lg text-customBrown-100 sm:gap-3 sm:text-xl md:text-2xl'>
+				<p className='flex items-center gap-2 font-obraletra text-lg font-bold text-customBrown-100 sm:gap-3 sm:text-xl md:text-2xl'>
 					<span
 						dangerouslySetInnerHTML={{
 							__html: textToSpanColored(data.hero_description),
@@ -35,7 +35,7 @@ export default async function HeroTextComponent({
 					{/* Button 1 */}
 					<Link
 						href={data.hero_left_button_url}
-						className='flex h-10 items-center gap-4 rounded bg-customBrown-100 p-2 font-obraletra text-lg text-customWhite-100 hover:underline sm:text-xl'
+						className='flex h-12 items-center gap-2 rounded border-3 border-customBrown-100 bg-customBrown-100 px-4 font-obraletra text-lg text-customWhite-100 hover:underline sm:text-xl'
 					>
 						{data.hero_left_button_label}
 						<FontAwesomeIcon
@@ -47,7 +47,7 @@ export default async function HeroTextComponent({
 					{/* Button 2 */}
 					<Link
 						href={data.hero_right_button_url}
-						className='h-10 rounded border-3 border-solid border-customBrown-100 p-1 font-obraletra text-lg text-customBrown-100 hover:underline sm:text-xl'
+						className='flex h-12 items-center rounded border-3 border-solid border-customBrown-100 px-4 font-obraletra text-lg text-customBrown-100 hover:underline sm:text-xl'
 					>
 						{data.hero_right_button_label}
 					</Link>
