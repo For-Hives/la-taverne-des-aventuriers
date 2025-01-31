@@ -1,60 +1,60 @@
 'use client'
-
 import Player from '@vimeo/player'
-// Imports
+import { usePathname } from 'next/navigation'
 import React, { useEffect, useRef } from 'react'
 
-// Declare the Video manager
 export default function BackgroundVideoLP() {
-	const firstVideoRef = useRef(null)
+	// Create a reference for the div container where the iframe will be added
+	const videoContainerRef = useRef<HTMLDivElement | null>(null)
+	// Get the current pathname (URL path) of the page
+	const pathname = usePathname() // Retrieves the current path
 
 	useEffect(() => {
-		// Verify if Vimeo iframe exist
-		if (!firstVideoRef.current) return
+		// If the video container is not available, exit early
+		if (!videoContainerRef.current) return
 
-		// assignment of the Iframe to a player (vimeo API)
-		const firstPlayer = new Player(firstVideoRef.current)
-
-		// Variables to set the loop time and Vimeo Video duration
-		let videoDuration = 0
-		const loopStart = 4 // Last three seconds of the video
-
-		// Listener for the event 'durationchange' to obtain the video duration
-		firstPlayer.on('durationchange', (data: { duration: number }) => {
-			// Assigning the video duration time to a variable
-			videoDuration = data.duration
-		})
-
-		// Listener for the event 'ended' to begin the loop right after the video ended
-		firstPlayer.on('ended', () => {
-			// Come back to the ... last seconds of the video to begin a loop
-			firstPlayer.setCurrentTime(videoDuration - loopStart)
-			firstPlayer.play() // Begin the loop
-		})
-
-		// Cleaning
-		return () => {
-			firstPlayer
-				.destroy()
-				.catch(error => console.error('Error Destruction of the player', error))
+		// Remove any existing iframe elements in the container
+		while (videoContainerRef.current.firstChild) {
+			videoContainerRef.current.removeChild(videoContainerRef.current.firstChild)
 		}
-	}, [])
 
-	return (
-		<iframe
-			// indicating the video
-			ref={firstVideoRef}
-			// Styles
-			className='mask-custom mix-difference animate-video bg-lp-blured-image absolute left-0 top-0 -z-10 block object-cover object-center opacity-75 transition'
-			// Url + set Video to Background, allow autoplay and disable the full video loop
-			src='https://player.vimeo.com/video/1047422333?h=3ee0913fe6&background=1&autoplay=1&loop=0'
-			// title
-			title='Animation_Carte_1'
-			// Dimensions of the Frame
-			width='1920'
-			height='1080'
-			// Allowing Fullscreen mode
-			allowFullScreen
-		></iframe>
-	)
+		// Create a new iframe element to embed the Vimeo player
+		const iframe = document.createElement('iframe')
+		iframe.src = 'https://player.vimeo.com/video/1047422333?h=3ee0913fe6&background=1&autoplay=1&loop=0'
+		iframe.title = 'Animation_Carte_1'
+		iframe.width = '1920'
+		iframe.height = '1080'
+		iframe.className =
+			'mask-custom mix-difference animate-video bg-lp-blured-image absolute left-0 top-0 -z-10 block object-cover object-center opacity-75 transition'
+
+		// Append the created iframe to the container reference
+		videoContainerRef.current.appendChild(iframe)
+
+		// Initialize the Vimeo player with the iframe
+		const player = new Player(iframe)
+		let videoDuration = 0
+		const loopStart = 4 // Set the time (in seconds) to loop from
+
+		// When the player has loaded, get the video's total duration
+		player.on('loaded', () => {
+			player.getDuration().then(duration => {
+				videoDuration = duration
+			})
+		})
+
+		// When the video ends, jump to the loop start time and play again
+		player.on('ended', () => {
+			player.setCurrentTime(videoDuration - loopStart).then(() => {
+				player.play()
+			})
+		})
+
+		// Cleanup the player when the component is unmounted or the pathname changes
+		return () => {
+			player.destroy()
+		}
+	}, [pathname]) // This effect runs every time the pathname (URL path) changes
+
+	// Return a div container where the video iframe will be embedded
+	return <div ref={videoContainerRef}></div>
 }
