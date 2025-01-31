@@ -30,7 +30,7 @@ export default async function EventsComponent({
 							</h2>
 							{/* Date */}
 							<h3 className='text-base max-lg:text-xs'>
-								{data.event_card1_date}
+								{new Date(data.event_card1_date).toLocaleDateString('fr-FR')}
 							</h3>
 						</div>
 
@@ -72,7 +72,7 @@ export default async function EventsComponent({
 							</h2>
 							{/* Date */}
 							<h3 className='text-base max-lg:text-xs'>
-								{data.event_card2_date}
+								{new Date(data.event_card2_date).toLocaleDateString('fr-FR')}
 							</h3>
 							<div
 								className='text-base max-lg:text-xs'
@@ -110,7 +110,7 @@ export default async function EventsComponent({
 							</h2>
 							{/* Date */}
 							<h3 className='text-base max-lg:text-xs'>
-								{data.event_card3_date}
+								{new Date(data.event_card3_date).toLocaleDateString('fr-FR')}
 							</h3>
 							{/* Description */}
 							<div
