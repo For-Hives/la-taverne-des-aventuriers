@@ -1,8 +1,8 @@
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default async function EventsComponent({
 	data,
