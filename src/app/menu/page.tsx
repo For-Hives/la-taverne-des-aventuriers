@@ -16,7 +16,7 @@ export default function Page() {
 		'Mocktails',
 		'Shooters',
 		'Short_long_drinks',
-		'Boards',
+		'Planches',
 	]
 
 	return (

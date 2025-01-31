@@ -14,7 +14,7 @@ export const tabs = [
 	{ anchor: 'shooters', current: true, name: 'Shooters' },
 	{ anchor: 'short-long-drinks', current: false, name: 'Short / Long Drinks' },
 	{ anchor: 'beer-wine', current: false, name: 'Bières et Vins' },
-	{ anchor: 'boards', current: false, name: 'Planches' },
+	{ anchor: 'planches', current: false, name: 'Planches' },
 	{ anchor: 'travelers', current: false, name: 'Plaisirs Voyageur' },
 	{
 		anchor: 'softs-hot-drinks',

@@ -2,6 +2,7 @@ import { LandingPageData } from '@/app/actions/services/getLandingPageData.servi
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default async function EventsComponent({
 	data,
@@ -136,6 +137,17 @@ export default async function EventsComponent({
 					</div>
 				</div>
 			</div>
+			<div className='flex w-full items-end justify-end gap-2'>
+				<Image
+					src='/assets/images/elements/fairy.png'
+					alt='Vinbieres'
+					width={100}
+					height={100}
+					className='h-auto max-w-full max-sm:w-1/2'
+				/>
+			</div>
+
+
 		</div>
 	)
 }

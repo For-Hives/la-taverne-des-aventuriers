@@ -17,7 +17,7 @@ export default async function SoftsAndHotElement() {
 					<h2 className='w-full font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
 						Boissons Chaudes
 					</h2>
-					<div className='flex w-full gap-6 font-cardinal text-base text-customBrown-100 sm:text-xl'>
+					<div className='flex w-full gap-6 font-cardoRegular text-base text-customBrown-100 sm:text-xl'>
 						<p className='flex w-full flex-col gap-2'>
 							{Hotdata.map(drink => (
 								<span key={drink.id} className='flex w-full'>
@@ -33,7 +33,7 @@ export default async function SoftsAndHotElement() {
 					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
 						Soft Drinks
 					</h2>
-					<div className='flex w-full gap-6 font-cardinal text-base text-customBrown-100 sm:text-xl'>
+					<div className='flex w-full gap-6 font-cardoRegular text-base text-customBrown-100 sm:text-xl'>
 						<p className='flex w-full flex-col gap-2'>
 							{Softdata.map(drink => (
 								<span key={drink.id}>

@@ -8,7 +8,7 @@ import EventsComponent from '@/components/Landing/Events.component'
 import HeroTextComponent from '@/components/Landing/HeroText.component'
 import BackgroundVideoLP from '@/components/Landing/LpBackgroundVideo.component'
 import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
-import Image from 'next/image'
+
 
 // Landing Page
 export default async function Home() {
@@ -28,7 +28,7 @@ export default async function Home() {
 				{/* Main content section */}
 				<main className='absolute left-0 top-0 flex h-full w-full flex-col items-center gap-96 pt-20 sm:items-start'>
 					{/* Hero section and cards */}
-					<div className='flex w-full flex-col items-center gap-96'>
+					<div className='flex w-full flex-col items-center gap-64'>
 						{/* Hero section */}
 						<div className='flex h-screen w-screen flex-col items-start justify-center gap-16'>
 							{/* Background video component */}
@@ -39,13 +39,14 @@ export default async function Home() {
 						</div>
 						{/* Events section and Cards */}
 						<EventsComponent data={dataLanding} />
-						<Image
-							src={dataLanding?.event_card1_image} // Path to the image
-							alt='test' // Alt text for accessibility
-							className='rounded' // Apply rounded corners to the image
-							width={400} // Set width of the image
-							height={400} // Set height of the image
-						/>
+
+						{/*<Image*/}
+						{/*	src={dataLanding?.event_card1_image} // Path to the image*/}
+						{/*	alt='test' // Alt text for accessibility*/}
+						{/*	className='rounded' // Apply rounded corners to the image*/}
+						{/*	width={400} // Set width of the image*/}
+						{/*	height={400} // Set height of the image*/}
+						{/*/>*/}
 						{/* Who are we section */}
 						<WhoAreWeSection data={dataLanding} />
 					</div>

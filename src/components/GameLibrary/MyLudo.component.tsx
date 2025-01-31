@@ -3,8 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function MyLudoComponent({
-	data,
-}: Readonly<{
+																								data,
+																							}: Readonly<{
 	data: GamesPageData
 }>) {
 	return (
@@ -15,24 +15,30 @@ export default async function MyLudoComponent({
 					{data.myludo_component_title}
 				</h2>
 
-				<div className='relative flex w-full flex-col items-center justify-center rounded'>
-					{/* Image displaying the game library */}
-					<Image
-						src='/assets/images/elements/GameLibraryElements/MyLudoImage.png'
-						alt='MyLudo Logo'
-						className='h-auto w-full'
-						width={1920}
-						height={1080}
-					/>
-					{/* Overlay gradient on top of the image */}
-					<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
-
-					{/* Link to the game library */}
+				<div className='relative flex w-full flex-col items-center justify-center rounded overflow-hidden'>
+					{/* Link to the game library, now also wrapping the image */}
 					<Link
-						className='absolute bottom-5 left-10 text-center font-obraletra text-xl text-customWhite-100 hover:underline sm:text-2xl'
+						className='relative block'
 						href={data.myludo_component_url}
 					>
-						{data.myludo_component_label}
+						{/* Container div for the image and gradient, this will zoom on hover */}
+						<div className='relative w-full h-auto transition-transform duration-300 transform hover:scale-105'>
+							{/* Image displaying the game library */}
+							<Image
+								src='/assets/images/elements/GameLibraryElements/MyLudoImage.png'
+								alt='MyLudo Logo'
+								className='h-auto w-full'
+								width={1920}
+								height={1080}
+							/>
+							{/* Overlay gradient on top of the image */}
+							<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
+						</div>
+
+						{/* Link text */}
+						<span className='absolute bottom-5 left-10 text-center font-obraletra text-xl text-customWhite-100 hover:underline sm:text-2xl'>
+              {data.myludo_component_label}
+            </span>
 					</Link>
 				</div>
 			</div>

@@ -17,6 +17,14 @@ const ObraLetraBold = localFont({
 	variable: '--kc-obra-letra-bold',
 })
 
+const CardoRegular = localFont(
+	{
+		display: 'swap',
+		src: "../../public/assets/Fonts/Cardo/Cardo-regular.ttf",
+		variable: '--cardo-regular',
+	}
+)
+
 const geistSans = Geist({
 	subsets: ['latin'],
 	variable: '--font-geist-sans',
@@ -41,7 +49,7 @@ export default function RootLayout({
 	return (
 		<html lang='fr'>
 			<body
-				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${CardoRegular.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				{children}
 			</body>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Navbar() {
 	return (
 		<nav className='fixed top-2 z-50 flex w-full max-lg:hidden'>
-			<div className='bg-customWhite-100 mx-auto flex w-full max-w-5xl items-center justify-evenly rounded px-4 py-3'>
+			<div className='bg-customWhite-100 mx-auto flex w-full max-w-7xl items-center justify-evenly rounded px-4 py-3'>
 				{/* Navigation links container */}
 				<ul className='text-customBrown-100 flex items-center gap-16 space-x-6 font-obraletra text-sm'>
 					{/* Logo link */}

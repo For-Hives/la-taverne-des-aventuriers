@@ -8,7 +8,8 @@ export default async function MapSection({
 	data,
 }: Readonly<{ data: ContactPageData }>) {
 	return (
-		<div className='flex w-full flex-col items-center gap-8 p-8 font-obraletra text-customBrown-100 lg:flex-row lg:p-16'>
+		<div
+			className='flex w-full flex-col items-center gap-8 p-8 font-obraletra text-customBrown-100 lg:flex-row lg:p-16'>
 			{/* Text Section */}
 			<div className='flex w-full flex-col items-start gap-8 lg:w-1/3'>
 				{/* Title of the address */}
@@ -30,29 +31,30 @@ export default async function MapSection({
 			</div>
 
 			{/* Image Section */}
-			<div className='relative w-full lg:w-2/3'>
-				{/* Image for small screens */}
-				<div className='block lg:hidden'>
+			<div className="relative w-full lg:w-2/3 maskMap">
+				{/* Image pour petits écrans */}
+				<div className="block lg:hidden">
 					<Image
 						src='/assets/images/map2.png'
 						alt='Map for small screens'
 						width={1920}
 						height={1080}
-						className='h-auto w-full rounded-lg shadow-md'
+						className='h-auto w-full rounded-lg shadow-md object-cover'  /* Image remplissant son conteneur */
 					/>
 				</div>
 
-				{/* Image for large screens */}
-				<div className='hidden lg:block'>
+				{/* Image pour grands écrans */}
+				<div className="hidden lg:block">
 					<Image
 						src='/assets/images/map.png'
 						alt='Map for large screens'
 						width={1920}
 						height={1080}
-						className='h-auto w-full rounded-lg shadow-md'
+						className='h-auto w-full rounded-lg shadow-md object-cover'  /* Image remplissant son conteneur */
 					/>
 				</div>
 			</div>
+
 		</div>
 	)
 }
