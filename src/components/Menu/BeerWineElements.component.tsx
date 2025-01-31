@@ -107,7 +107,7 @@ export default function BeerWineElement() {
 						<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 							Pression:
 						</h4>
-						<table className='w-full border-collapse text-left font-obraletra text-customBrown-100'>
+						<table className='w-full border-collapse text-left text-base font-obraletra text-customBrown-100'>
 							<thead>
 								<tr>
 									<th className='px-4 py-2'>Bière</th>
@@ -157,10 +157,10 @@ export default function BeerWineElement() {
 										key={`${beer.id}-${index}`}
 										className='flex items-center justify-between'
 									>
-										<h4 className='font-cardinal text-lg text-customBrown-100'>
+										<h4 className='font-obraletra text-base text-customBrown-100'>
 											{beer.title} ({beer.volume})
 										</h4>
-										<p className='text-right font-obraletra text-lg text-customBrown-100'>
+										<p className='text-right font-obraletra text-base text-customBrown-100'>
 											{beer.price} €
 										</p>
 									</div>

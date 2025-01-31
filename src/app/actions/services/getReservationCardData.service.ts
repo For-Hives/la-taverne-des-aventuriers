@@ -15,6 +15,8 @@ export interface ReservationCardData {
 	games_url: string
 	button_label: string
 	button_url: string
+	button_myludo_label: string
+	button_myludo_url: string
 	created: string
 	updated: string
 }

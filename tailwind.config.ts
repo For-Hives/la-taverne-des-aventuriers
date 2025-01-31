@@ -61,6 +61,7 @@ export default {
 			},
 			fontFamily: {
 				cardinal: ['"Cardinal"', 'sans-serif'],
+				cardoRegular: ['var(--cardo-regular)'],
 				obraletra: ['var(--kc-obra-letra)'],
 				obraletraBold: ['var(--kc-obra-letra-bold)'],
 			},

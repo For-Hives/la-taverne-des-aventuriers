@@ -13,7 +13,7 @@ export default async function ContactElements({
 			{/* Grid Layout for Contact Sections */}
 			<div className='grid w-1/2 max-w-6xl grid-cols-1 gap-8 max-xl:w-full xl:grid-cols-2'>
 				{/* Bloc Horaires (Business Hours) */}
-				<div className='flex flex-col items-start gap-6 rounded-lg border border-customBrown-100 bg-customWhite-300 p-6 font-obraletra shadow'>
+				<div className='flex flex-col items-start gap-6 rounded-lg border-3 border-customBrown-100 bg-customWhite-300 p-6 font-obraletra shadow'>
 					<h1 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
 						{data.schedules_title}
 					</h1>
@@ -36,7 +36,7 @@ export default async function ContactElements({
 				{/* Bloc Contact et Email (Contact and Email) */}
 				<div className='flex flex-col gap-6 font-obraletra'>
 					{/* Bloc Contact (Social Media) */}
-					<div className='flex flex-col items-center gap-4 rounded-lg border border-customBrown-100 bg-customWhite-300 p-6 shadow'>
+					<div className='flex flex-col items-center gap-4 rounded-lg border-3 border-customBrown-100 bg-customWhite-300 p-6 shadow'>
 						<h2 className='w-full font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
 							{data.contact_socials_title}
 						</h2>
@@ -71,7 +71,7 @@ export default async function ContactElements({
 					{/* Bloc Email */}
 					<div className='relative flex flex-col gap-6 font-obraletra'>
 						{/* Email Section */}
-						<div className='flex flex-col items-start gap-4 rounded-lg border border-customBrown-100 bg-customWhite-300 p-6 shadow'>
+						<div className='flex flex-col items-start gap-4 rounded-lg border-3 border-customBrown-100 bg-customWhite-300 p-6 shadow'>
 							<h2 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
 								{data.contact_email_title}
 							</h2>
@@ -82,7 +82,7 @@ export default async function ContactElements({
 							<Image
 								src='/assets/images/elements/ContactElements/petite_bestiole.png'
 								alt='Petite Bestiole'
-								className='absolute bottom-[-3vh] right-0 h-20 w-20 object-contain'
+								className='absolute bottom-[-3vh] -z-20 right-0 h-20 w-20 object-contain'
 								width={80}
 								height={80}
 							/>
