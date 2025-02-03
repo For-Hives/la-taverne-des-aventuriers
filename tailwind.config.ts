@@ -6,6 +6,21 @@ export default {
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	plugins: [],
+	safelist: [
+		'mask-custom',
+		'absolute',
+		'left-1/2',
+		'top-1/2',
+		'-translate-x-1/2',
+		'-translate-y-1/2',
+		'min-w-screen',
+		'min-h-screen',
+		'w-auto',
+		'h-auto',
+		'object-cover',
+		'mix-difference',
+		'opacity-75',
+	],
 	theme: {
 		borderWidth: {
 			'0': '0',

@@ -9,48 +9,41 @@ import HeroTextComponent from '@/components/Landing/HeroText.component'
 import BackgroundVideoLP from '@/components/Landing/LpBackgroundVideo.component'
 import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
 
-
-// Landing Page
 export default async function Home() {
 	const dataLanding = await getLandingData()
 
-	// console.info(dataLanding)
-
 	return (
 		dataLanding && (
-			// Page container
-			<div className='relative h-auto w-full items-center justify-center'>
-				{/* Navbar import for desktop */}
+			<>
+				{/* Navigation */}
 				<Navbar />
-				{/* Navbar import for mobile */}
 				<MobileNavbar />
 
-				{/* Main content section */}
-				<main className='absolute left-0 top-0 flex h-full w-full flex-col items-center gap-96 pt-20 sm:items-start'>
-					{/* Hero section and cards */}
-					<div className='flex w-full flex-col items-center gap-64'>
-						{/* Hero section */}
-						<div className='flex h-screen w-screen flex-col items-start justify-center gap-16'>
-							{/* Background video component */}
-							<BackgroundVideoLP />
+				{/*block to avoid displaying something in this part*/}
+				<div className={'-z-10 h-screen w-screen'}></div>
 
-							{/* Text and CTA button */}
-							<HeroTextComponent data={dataLanding} />
-						</div>
-						{/* Events section and Cards */}
-						<EventsComponent data={dataLanding} />
-
-						{/* Who are we section */}
-						<WhoAreWeSection data={dataLanding} />
+				{/* Video Background Container - Structure exacte comme le projet qui marche */}
+				<div className='mask absolute left-0 top-0 z-10 min-h-screen w-screen'>
+					<div className='mask absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center'>
+						<BackgroundVideoLP />
 					</div>
+					{/* Hero Section */}
+					<div className='z-10 flex h-screen w-screen flex-col items-start justify-center gap-16'>
+						<HeroTextComponent data={dataLanding} />
+					</div>
+				</div>
 
-					{/* Reservation CTA card */}
-					<ReservationCardComponent />
-
-					{/* Footer component */}
-					<FooterComponent />
-				</main>
-			</div>
+				{/* Main Content */}
+				<div className='relative pt-32'>
+					{/* Autres sections */}
+					<div className='flex w-full flex-col items-center gap-96'>
+						<EventsComponent data={dataLanding} />
+						<WhoAreWeSection data={dataLanding} />
+						<ReservationCardComponent />
+						<FooterComponent />
+					</div>
+				</div>
+			</>
 		)
 	)
 }
