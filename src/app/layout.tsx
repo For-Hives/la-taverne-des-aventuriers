@@ -1,5 +1,4 @@
-import '@/app/globals.css'
-
+import '@/app/styles/global.css'
 import type { Metadata } from 'next'
 
 import { Geist, Geist_Mono } from 'next/font/google'
@@ -49,7 +48,10 @@ export default function RootLayout({
 			<body
 				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${CardoRegular.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				{children}
+				<div className='relative min-h-screen w-full'>
+					{/* Main content wrapper */}
+					{children}
+				</div>
 			</body>
 		</html>
 	)
