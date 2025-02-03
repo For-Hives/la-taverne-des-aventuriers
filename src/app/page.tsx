@@ -40,13 +40,6 @@ export default async function Home() {
 						{/* Events section and Cards */}
 						<EventsComponent data={dataLanding} />
 
-						{/*<Image*/}
-						{/*	src={dataLanding?.event_card1_image} // Path to the image*/}
-						{/*	alt='test' // Alt text for accessibility*/}
-						{/*	className='rounded' // Apply rounded corners to the image*/}
-						{/*	width={400} // Set width of the image*/}
-						{/*	height={400} // Set height of the image*/}
-						{/*/>*/}
 						{/* Who are we section */}
 						<WhoAreWeSection data={dataLanding} />
 					</div>
