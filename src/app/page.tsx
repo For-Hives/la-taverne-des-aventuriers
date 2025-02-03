@@ -1,46 +1,7 @@
 import { getLandingData } from '@/app/actions/services/getLandingPageData.service'
-import FooterComponent from '@/components/Global/Footer.component'
-import Navbar from '@/components/Global/Navbar.component'
-import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import ReservationCardComponent from '@/components/Global/ReservationCard.component'
-import EventsComponent from '@/components/Landing/Events.component'
-import HeroTextComponent from '@/components/Landing/HeroText.component'
-import BackgroundVideoLP from '@/components/Landing/LpBackgroundVideo.component'
-import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
+import LandingWrapper from '@/components/Landing/LandingWrapper'
 
 export default async function Home() {
 	const dataLanding = await getLandingData()
-
-	return (
-		dataLanding && (
-			<>
-				{/* Navigation */}
-				<Navbar />
-				<MobileNavbar />
-
-				{/*block to avoid displaying something in this part*/}
-				<div className={'-z-10 h-screen w-screen'}></div>
-
-				<div className='mask absolute left-0 top-0 z-10 min-h-screen w-screen'>
-					<div className='mask absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center'>
-						<BackgroundVideoLP />
-					</div>
-					{/* Hero Section */}
-					<div className='z-10 flex h-screen w-screen flex-col items-start justify-center gap-16'>
-						<HeroTextComponent data={dataLanding} />
-					</div>
-				</div>
-
-				{/* Main Content */}
-				<div className='relative pt-32'>
-					<div className='flex w-full flex-col items-center gap-96'>
-						<EventsComponent data={dataLanding} />
-						<WhoAreWeSection data={dataLanding} />
-						<ReservationCardComponent />
-						<FooterComponent />
-					</div>
-				</div>
-			</>
-		)
-	)
+	return <LandingWrapper data={dataLanding} />
 }
