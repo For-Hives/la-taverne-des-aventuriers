@@ -7,23 +7,21 @@ import localFont from 'next/font/local'
 
 const ObraLetra = localFont({
 	display: 'swap',
-	src: '../../public/assets/Fonts/KCObraLetra/KCObraLetraRegular.ttf',
+	src: './fonts/kc-obra-letra/kc-obra-letra-regular.ttf',
 	variable: '--kc-obra-letra',
 })
 
 const ObraLetraBold = localFont({
 	display: 'swap',
-	src: '../../public/assets/Fonts/KCObraLetra/KCObraLetraBold.ttf',
+	src: './fonts/kc-obra-letra/kc-obra-letra-bold.ttf',
 	variable: '--kc-obra-letra-bold',
 })
 
-const CardoRegular = localFont(
-	{
-		display: 'swap',
-		src: "../../public/assets/Fonts/Cardo/Cardo-regular.ttf",
-		variable: '--cardo-regular',
-	}
-)
+const CardoRegular = localFont({
+	display: 'swap',
+	src: './fonts/cardo/cardo-regular.ttf',
+	variable: '--cardo-regular',
+})
 
 const geistSans = Geist({
 	subsets: ['latin'],
