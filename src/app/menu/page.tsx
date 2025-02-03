@@ -6,9 +6,9 @@ import BeerWineElement from '@/components/Menu/BeerWineElements.component'
 import DrinkElement from '@/components/Menu/DrinkElement.component'
 import MenuHeroComponent from '@/components/Menu/MenuHero.component'
 import MenuNavbar from '@/components/Menu/MenuNavbar.component'
+import MenuNavbarOnScroll from '@/components/Menu/MenuNavbarOnScroll.component'
 import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
 import TravelersPleasureElement from '@/components/Menu/TravelersPleasureElement.component'
-import MenuNavbarOnScroll from '@/components/Menu/MenuNavbarOnScroll.component'
 
 export default function Page() {
 	// List of drink categories
