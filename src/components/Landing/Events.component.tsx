@@ -67,14 +67,17 @@ export default async function EventsComponent({
 
 						{/* Text */}
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
-							{/* Title */}
-							<h2 className='font-obraletraBold text-2xl max-sm:text-base'>
-								{data.event_card2_title}
-							</h2>
-							{/* Date */}
-							<h3 className='text-base max-lg:text-xs'>
-								{new Date(data.event_card2_date).toLocaleDateString('fr-FR')}
-							</h3>
+							<div>
+								{/* Title */}
+								<h2 className='font-obraletraBold text-2xl max-sm:text-base'>
+									{data.event_card2_title}
+								</h2>
+								{/* Date */}
+								<h3 className='text-base max-lg:text-xs'>
+									{new Date(data.event_card2_date).toLocaleDateString('fr-FR')}
+								</h3>
+							</div>
+
 							<div
 								className='text-base max-lg:text-xs'
 								dangerouslySetInnerHTML={{
@@ -105,14 +108,16 @@ export default async function EventsComponent({
 
 						{/* Text */}
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
-							{/* Title */}
-							<h2 className='font-obraletraBold text-2xl'>
-								{data.event_card3_title}
-							</h2>
-							{/* Date */}
-							<h3 className='text-base max-lg:text-xs'>
-								{new Date(data.event_card3_date).toLocaleDateString('fr-FR')}
-							</h3>
+							<div>
+								{/* Title */}
+								<h2 className='font-obraletraBold text-2xl'>
+									{data.event_card3_title}
+								</h2>
+								{/* Date */}
+								<h3 className='text-base max-lg:text-xs'>
+									{new Date(data.event_card3_date).toLocaleDateString('fr-FR')}
+								</h3>
+							</div>
 							{/* Description */}
 							<div
 								className='text-base max-lg:text-xs'

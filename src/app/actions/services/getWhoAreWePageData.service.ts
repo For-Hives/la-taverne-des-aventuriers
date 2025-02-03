@@ -7,6 +7,7 @@ export interface WhoAreWePageData {
 	id: string
 	who_are_we_title: string
 	description_card_1: string
+	image_card1: string
 	our_history_title: string
 	description_card_2: string
 	our_services_title: string
@@ -15,6 +16,7 @@ export interface WhoAreWePageData {
 	description_card_4: string
 	information_title: string
 	description_card_5: string
+	image_card5: string
 	created: string
 	updated: string
 }
@@ -41,7 +43,14 @@ export async function getWhoAreWePageData(): Promise<WhoAreWePageData> {
 	try {
 		// Fetch the first item from the 'who_are_we_page' collection
 		const result = await pb.collection('who_are_we_page').getList(1, 60) // Retrieve first 60 items (if any)
-
+		result.items.forEach(item => {
+			if (item.image_card1) {
+				item.image_card1 = pb.files.getURL(item, item.image_card1)
+			}
+			if (item.image_card5) {
+				item.image_card5 = pb.files.getURL(item, item.image_card5)
+			}
+		})
 		// Return the first item as WhoAreWePageData
 		return result.items[0] as WhoAreWePageData
 	} catch (error) {
