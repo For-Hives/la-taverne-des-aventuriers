@@ -1,71 +1,10 @@
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
-import { textToSpanColored } from '@/utils/textToSpanColored'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Image from 'next/image'
-import Link from 'next/link'
+import { AnimatedWAWSection } from '@/components/Landing/animatedComponents/AnimatedWhoAreWeSection'
 
 export default async function WhoAreWeSection({
 	data,
 }: Readonly<{
 	data: LandingPageData
 }>) {
-	return (
-		<div className='flex w-3/4 flex-col'>
-			<div>
-				<Image
-					src='/assets/images/elements/fairy.png'
-					alt='Vinbieres'
-					width={100}
-					height={100}
-					className='h-auto max-w-full max-sm:w-1/2'
-				/>
-			</div>
-			<div className='flex w-3/4 flex-col items-center justify-center gap-8 rounded lg:flex-row'>
-				<div className='flex w-full items-center justify-center lg:w-1/3'>
-					{/* Image */}
-					<Image
-						src={data?.event_card1_image}
-						alt='Vinbieres'
-						width={300}
-						height={300}
-						className='h-auto max-w-full max-sm:w-1/2'
-					/>
-				</div>
-
-				{/* Text */}
-				<div className='flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 max-lg:text-xs lg:w-2/3 lg:items-start'>
-					{/* Title */}
-					<h2
-						className='w-full text-center text-xl max-lg:text-base lg:text-left'
-						dangerouslySetInnerHTML={{
-							__html: textToSpanColored(data.description_title),
-						}}
-					></h2>
-
-					{/* Description */}
-					<div
-						className='w-full text-center text-base max-lg:text-xs lg:text-left'
-						dangerouslySetInnerHTML={{
-							__html: textToSpanColored(data.description_text),
-						}}
-					></div>
-
-					{/* Link */}
-					<div className='text-center lg:text-left'>
-						<Link
-							href={data.description_button_url}
-							className='flex items-center justify-center gap-3 text-base underline max-lg:text-xs lg:justify-start'
-						>
-							<span>{data.description_button_label}</span>
-							<FontAwesomeIcon
-								icon={faChevronRight}
-								className='h-4 w-4 text-customBrown-100'
-							/>
-						</Link>
-					</div>
-				</div>
-			</div>
-		</div>
-	)
+	return < AnimatedWAWSection data={data} />;
 }
