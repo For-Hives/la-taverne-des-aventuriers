@@ -48,10 +48,7 @@ export default function RootLayout({
 			<body
 				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${CardoRegular.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<div className='relative min-h-screen w-full'>
-					{/* Main content wrapper */}
-					{children}
-				</div>
+				{children}
 			</body>
 		</html>
 	)
