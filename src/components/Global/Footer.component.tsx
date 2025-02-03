@@ -8,15 +8,15 @@ export default async function FooterComponent() {
 
 	return (
 		<div
-			className='relative flex w-screen items-center justify-center bg-FooterImage bg-cover bg-center text-white'
+			className='relative flex w-screen items-center justify-center bg-FooterImage bg-cover bg-center text-white md:overflow-hidden'
 			style={{ aspectRatio: '2653 / 1000' }}
 		>
 			{/* Left image */}
-			<div className='absolute bottom-0 left-0 flex items-center justify-center mix-blend-color-burn'>
+			<div className=' max-md:hidden absolute bottom-0 left-0 max-lg:translate-y-[2rem] max-lg:-translate-x-[2rem] xl:translate-y-[3rem] xl:-translate-x-[9rem] flex items-center justify-center mix-blend-color-burn overflow-hidden'>
 				<Image
 					src='/assets/images/elements/cristals/rock1.png'
 					alt='Rock'
-					className='w-full max-sm:hidden max-sm:w-36 md:w-48 xl:w-2/4'
+					className='w-48  xl:w-2/4'
 					width={400}
 					height={400}
 				/>
@@ -78,11 +78,11 @@ export default async function FooterComponent() {
 			</div>
 
 			{/* Right image */}
-			<div className='absolute bottom-0 right-0 flex items-center justify-center mix-blend-color-burn'>
+			<div className=' max-md:hidden absolute bottom-0 right-0 max-lg:translate-y-[1rem] max-lg:translate-x-[1rem] xl:translate-y-[2rem] xl:translate-x-[7rem] -rotate-6 overflow-hidden flex items-center justify-center mix-blend-color-burn'>
 				<Image
 					src='/assets/images/elements/cristals/rock2.png'
 					alt='Rock'
-					className='w-full max-sm:hidden max-sm:w-28 md:w-40 xl:w-2/4'
+					className='w-40 xl:w-2/4'
 					width={300}
 					height={300}
 				/>

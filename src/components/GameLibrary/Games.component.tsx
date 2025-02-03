@@ -3,9 +3,12 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 
+
 export default async function GameComponent({
 	data,
 }: Readonly<{ data: GamesPageData }>) {
+
+
 	return (
 		<div className='rounded- flex h-screen w-3/4 flex-col items-start gap-9 max-lg:w-full'>
 			{/* Title Section */}
@@ -48,9 +51,8 @@ export default async function GameComponent({
 						{/* Overlay Gradient */}
 						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
-							<h2 className='font-obraletraBold text-2xl'>
-								{data.card2_title}
-							</h2>
+							<h2 className='font-obraletraBold text-2xl'> {data.card2_title}</h2>
+
 							<div
 								dangerouslySetInnerHTML={{
 									__html: data.card2_description,
