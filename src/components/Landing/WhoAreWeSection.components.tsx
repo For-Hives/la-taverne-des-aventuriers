@@ -11,22 +11,21 @@ export default async function WhoAreWeSection({
 	data: LandingPageData
 }>) {
 	return (
-		<div className="flex flex-col w-3/4">
+		<div className='flex w-3/4 flex-col'>
 			<div>
 				<Image
-					src="/assets/images/elements/fairy.png"
-					alt="Vinbieres"
+					src='/assets/images/elements/fairy.png'
+					alt='Vinbieres'
 					width={100}
 					height={100}
-					className="h-auto max-w-full max-sm:w-1/2"
+					className='h-auto max-w-full max-sm:w-1/2'
 				/>
 			</div>
-			<div className="flex w-3/4 flex-col items-center justify-center gap-8 rounded lg:flex-row">
-
-				<div className="flex w-full items-center justify-center lg:w-1/3">
+			<div className='flex w-3/4 flex-col items-center justify-center gap-8 rounded lg:flex-row'>
+				<div className='flex w-full items-center justify-center lg:w-1/3'>
 					{/* Image */}
 					<Image
-						src='/assets/images/elements/dwarf.png'
+						src={data?.event_card1_image}
 						alt='Vinbieres'
 						width={300}
 						height={300}
@@ -35,8 +34,7 @@ export default async function WhoAreWeSection({
 				</div>
 
 				{/* Text */}
-				<div
-					className='flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 max-lg:text-xs lg:w-2/3 lg:items-start'>
+				<div className='flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 max-lg:text-xs lg:w-2/3 lg:items-start'>
 					{/* Title */}
 					<h2
 						className='w-full text-center text-xl max-lg:text-base lg:text-left'
@@ -54,7 +52,7 @@ export default async function WhoAreWeSection({
 					></div>
 
 					{/* Link */}
-					<div className='text-center lg:text-left '>
+					<div className='text-center lg:text-left'>
 						<Link
 							href={data.description_button_url}
 							className='flex items-center justify-center gap-3 text-base underline max-lg:text-xs lg:justify-start'
@@ -69,6 +67,5 @@ export default async function WhoAreWeSection({
 				</div>
 			</div>
 		</div>
-
 	)
 }
