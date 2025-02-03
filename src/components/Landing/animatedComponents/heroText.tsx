@@ -20,7 +20,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 		>
 			{/* Hero Title with fade-in animation */}
 			<motion.h1
-				className='flex w-full flex-col gap-2 font-cardinal text-4xl font-bold text-customBrown-100 first-letter:text-customRed-100 sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl' // Styling for title
+				className='text-with-outline flex w-full flex-col gap-2 font-cardinal text-4xl font-bold text-customBrown-100 first-letter:text-customRed-100 sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl' // Styling for title
 				initial={{ opacity: 0 }} // Initial state: invisible
 				animate={{ opacity: 1 }} // Final state: fully visible
 				transition={{ delay: 0.3, duration: 0.8 }} // Delay and duration for the fade-in animation
@@ -41,7 +41,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 				transition={{ delay: 0.5, duration: 0.8 }} // Delay and duration for the fade-in animation
 			>
 				{/* Description text with color applied */}
-				<p className='flex items-center gap-2 font-obraletra text-lg font-bold text-customBrown-100 sm:gap-3 sm:text-xl md:text-2xl'>
+				<p className='text-with-outline-light flex items-center gap-2 font-obraletra text-lg font-bold text-customBrown-100 sm:gap-3 sm:text-xl md:text-2xl'>
 					<span
 						dangerouslySetInnerHTML={{
 							__html: textToSpanColored(data.hero_description), // Using the function to color the description text
@@ -71,7 +71,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 					>
 						<Link
 							href={data.hero_right_button_url} // URL for the right button
-							className='flex h-12 items-center rounded border-3 border-solid border-customBrown-100 px-4 font-obraletra text-lg text-customBrown-100 hover:underline sm:text-xl'
+							className='text-with-outline-light flex h-12 items-center rounded border-3 border-solid border-customBrown-100 bg-customWhite-100 px-4 font-obraletra text-lg text-customBrown-100 hover:underline sm:text-xl'
 						>
 							{data.hero_right_button_label} {/* Button label */}
 						</Link>

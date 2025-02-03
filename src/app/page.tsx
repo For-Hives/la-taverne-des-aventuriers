@@ -1,4 +1,3 @@
-// imports
 import { getLandingData } from '@/app/actions/services/getLandingPageData.service'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
@@ -22,7 +21,6 @@ export default async function Home() {
 				{/*block to avoid displaying something in this part*/}
 				<div className={'-z-10 h-screen w-screen'}></div>
 
-				{/* Video Background Container - Structure exacte comme le projet qui marche */}
 				<div className='mask absolute left-0 top-0 z-10 min-h-screen w-screen'>
 					<div className='mask absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center'>
 						<BackgroundVideoLP />
@@ -35,7 +33,6 @@ export default async function Home() {
 
 				{/* Main Content */}
 				<div className='relative pt-32'>
-					{/* Autres sections */}
 					<div className='flex w-full flex-col items-center gap-96'>
 						<EventsComponent data={dataLanding} />
 						<WhoAreWeSection data={dataLanding} />

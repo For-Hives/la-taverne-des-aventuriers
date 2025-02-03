@@ -50,7 +50,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Classes utilitaires pour les masques */
 @layer utilities {
     .mask-custom {
         mask-image: url('/assets/images/overlay_white_inverted_002.png');
@@ -115,7 +114,22 @@ html {
     }
 }
 
-/* Styles pour la scrollbar */
+.text-with-outline {
+  text-shadow:
+    -1px -1px 0 rgba(255,255,255,0.3),
+     1px -1px 0 rgba(255,255,255,0.3),
+    -1px  1px 0 rgba(255,255,255,0.3),
+     1px  1px 0 rgba(255,255,255,0.3);
+}
+
+.text-with-outline-light {
+  text-shadow:
+    -0.5px -0.5px 0 rgba(255,255,255,0.3),
+     0.5px -0.5px 0 rgba(255,255,255,0.3),
+    -0.5px  0.5px 0 rgba(255,255,255,0.3),
+     0.5px  0.5px 0 rgba(255,255,255,0.3);
+}
+
 body::-webkit-scrollbar {
     width: var(--sb-size)
 }
