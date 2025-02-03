@@ -8,6 +8,7 @@ import MenuHeroComponent from '@/components/Menu/MenuHero.component'
 import MenuNavbar from '@/components/Menu/MenuNavbar.component'
 import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
 import TravelersPleasureElement from '@/components/Menu/TravelersPleasureElement.component'
+import MenuNavbarOnScroll from '@/components/Menu/MenuNavbarOnScroll.component'
 
 export default function Page() {
 	// List of drink categories
@@ -32,6 +33,7 @@ export default function Page() {
 			{/* Menu Section */}
 			<div className='items flex w-full flex-col justify-center py-16'>
 				<MenuNavbar />
+				<MenuNavbarOnScroll />
 				{/* Drink categories mapped to their corresponding component */}
 				<div className='flex flex-col items-center justify-center gap-40'>
 					{listDrinkCollection.map(drink => (
