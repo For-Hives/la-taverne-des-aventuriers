@@ -13,7 +13,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 	return (
 		// Main wrapper div with motion for fade-in effect and vertical movement
 		<motion.div
-			className='bottom-0 left-0 z-50 flex flex-col items-start gap-6 p-6 sm:p-12 md:p-16 lg:p-52' // Styling for layout and padding
+			className='bottom-0 left-0 z-40 flex flex-col items-start gap-6 p-6 sm:p-12 md:p-16 lg:p-52' // Styling for layout and padding
 			initial={{ opacity: 0, y: 50 }} // Initial state: invisible and shifted vertically
 			animate={{ opacity: 1, y: 0 }} // Final state: fully visible and original position
 			transition={{ duration: 0.8 }} // Transition duration of 0.8 seconds

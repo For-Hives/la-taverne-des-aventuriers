@@ -45,7 +45,7 @@ export default function MenuNavbarOnScroll() {
 
 	return (
 		isVisible && (
-			<nav className='fixed left-4 top-2 z-50 rounded-full bg-customWhite-400 p-2 text-customBrown-100 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:opacity-100 sm:left-6'>
+			<nav className='fixed max-lg:top-20 left-4 top-2 z-50 rounded-full bg-customWhite-400 p-2 text-customBrown-100 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:opacity-100 sm:left-6'>
 				{/* Hamburger icon */}
 				<button
 					onClick={toggleMenu}
