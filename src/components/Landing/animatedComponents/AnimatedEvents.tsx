@@ -10,10 +10,10 @@ import Link from 'next/link'; // Importing Next.js Link component for navigation
 // The AnimatedEvents component takes a prop 'data' of type LandingPageData
 export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 	return (
-		<div className='rounded- flex h-screen w-3/4 flex-col items-start gap-9'>
+		<div className='rounded-lg-lg flex h-screen w-3/4 flex-col items-start gap-9'>
 			{/* Title Section */}
 			<motion.h1
-				className='font-obraletraBold text-xl text-customBrown-100 max-sm:text-base'
+				className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-base'
 				initial={{ opacity: 0 }} // Initial opacity set to 0
 				animate={{ opacity: 1 }} // Animate opacity to 1 (fade-in effect)
 				transition={{ duration: 0.5 }} // Duration of the fade-in is 0.5 seconds
@@ -25,13 +25,13 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
 				{/* First Event Card */}
 				<motion.div
-					className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card1-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:w-full'
+					className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-lp-card1-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:w-full'
 					initial={{ opacity: 0, x: -100 }} // Initial opacity is 0 and position X is -100 (off-screen left)
 					animate={{ opacity: 1, x: 0 }} // Animate opacity to 1 and X to 0 (slide-in effect from the left)
 					transition={{ duration: 0.6 }} // Duration of the animation is 0.6 seconds
 				>
 					{/* Overlay Gradient */}
-					<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
+					<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
 
 					{/* Event Text and Content */}
 					<div className='z-10 flex flex-col justify-start gap-9 p-12'>
@@ -73,13 +73,13 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 
 					{/* Second Event Card */}
 					<motion.div
-						className='w-ful relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card2-bg bg-cover bg-center font-obraletra text-customWhite-100'
+						className='w-ful relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-lp-card2-bg bg-cover bg-center font-obraletra text-customWhite-100'
 						initial={{ opacity: 0, x: 100 }} // Initial opacity is 0 and position X is 100 (off-screen right)
 						animate={{ opacity: 1, x: 0 }} // Animate opacity to 1 and X to 0 (slide-in effect from the right)
 						transition={{ duration: 0.6 }} // Duration of the animation is 0.6 seconds
 					>
 						{/* Overlay Gradient */}
-						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
+						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
 
 						{/* Event Text and Content */}
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
@@ -119,13 +119,13 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 
 					{/* Third Event Card */}
 					<motion.div
-						className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-lp-card3-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:w-full'
+						className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-lp-card3-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:w-full'
 						initial={{ opacity: 0, y: 50 }} // Initial opacity is 0 and position Y is 50 (below the screen)
 						animate={{ opacity: 1, y: 0 }} // Animate opacity to 1 and Y to 0 (slide-up effect)
 						transition={{ duration: 0.6 }} // Duration of the animation is 0.6 seconds
 					>
 						{/* Overlay Gradient */}
-						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
+						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
 
 						{/* Event Text and Content */}
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>

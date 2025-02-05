@@ -19,15 +19,15 @@ export default async function HowToContact({
 			</div>
 
 			{/* Text Section */}
-			<div className='flex w-2/3 flex-col items-start justify-center gap-10 font-obraletra text-base text-customBrown-100 max-sm:w-full max-sm:items-center'>
+			<div className='flex w-2/3 flex-col items-start justify-center gap-9 font-obraletra text-base text-customBrown-100 max-sm:w-full max-sm:items-center'>
 				{/* Title */}
-				<h1 className='items-center justify-center text-center font-cardinal text-2xl first-letter:text-customRed-100'>
+				<h1 className='items-center justify-center text-center font-cardinal text-3xl md:text-4xl first-letter:text-customRed-100'>
 					{data.howtosection_title}
 				</h1>
 
 				{/* Description (with HTML content) */}
 				<div
-					className='flex flex-col items-start gap-3 text-xs'
+					className='flex flex-col font-cardoRegular items-start gap-3 text-base'
 					dangerouslySetInnerHTML={{
 						__html: data.howtosection_description,
 					}}

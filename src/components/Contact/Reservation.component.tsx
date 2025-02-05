@@ -6,42 +6,53 @@ export default async function ReservationComponent() {
 	const data = await getReservationData()
 
 	return (
-		<div className='relative flex w-4/5 items-center justify-center px-2 max-sm:flex-col sm:px-8'>
 
-			{/* Left side: Image */}
-			<div className='mb-6 flex w-full justify-center sm:mb-0 sm:w-1/3'>
-				<Image
-					src='/assets/images/elements/ContactElements/maison.png'
-					alt='House illustration'
-					width={720}
-					height={480}
-					className='rounded w-2/3 max-sm:w-1/2'
-				/>
-			</div>
 
-			{/* Right side: Reservation Information */}
-			<div className='flex w-full flex-col items-start justify-center gap-9 text-customBrown-100 max-sm:w-full max-sm:items-center sm:w-2/3'>
-				{/* How to Title */}
-				<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
-					{data.how_to_title}
-				</h2>
+		<div className="relative flex h-full w-full items-center justify-center overflow-hidden ">
+			<div className="grid h-full w-full grid-cols-3 grid-rows-3 ">
 
-				{/* Description content */}
 				<div
-					className='w-full font-cardo text-base sm:text-lg'
-					dangerouslySetInnerHTML={{
-						__html: data.description,
-					}}
-				/>
+					className="col-span-3 row-span-1  md:col-span-1 md:row-span-2 flex items-center justify-center md:justify-end"
+				>
+						<Image
+							src="/assets/images/elements/ContactElements/maison.png"
+							alt="House illustration"
+							width={720}
+							height={480}
+							className="rounded w-3/4 max-md:w-1/2"
+						/>
+				</div>
 
-				<Image
-					src='/assets/images/elements/bourse.png'
-					alt='House illustration'
-					width={50}
-					height={50}
-					className='absolute top-0 right-0 -translate-x-50 -translate-y-50 rounded w-1/12 max-md:hidden'
-				/>
+				<div
+					className="col-span-3 row-span-1 px-6 md:col-span-2 md:row-span-2 flex items-center justify-center"
+				>
+					<div
+						className='flex w-full flex-col items-start justify-center gap-9 text-customBrown-100 max-md:w-full max-md:items-center md:w-2/3'>
+						{/* How to Title */}
+						<h2 className='font-cardinal text-3xl first-letter:text-customRed-100 md:text-4xl'>
+							{data.how_to_title}
+						</h2>
+
+						{/* Description content */}
+						<div
+							className='w-full *:font-cardoRegular text-base md:text-lg'
+							dangerouslySetInnerHTML={{
+								__html: data.description,
+							}}
+						/>
+
+						<Image
+							src='/assets/images/elements/bourse.png'
+							alt='House illustration'
+							width={50}
+							height={50}
+							className='absolute top-0 right-0 -translate-x-50 -translate-y-50 rounded w-1/12 max-md:hidden'
+						/>
+					</div>
+				</div>
+
 			</div>
 		</div>
-	)
+
+)
 }

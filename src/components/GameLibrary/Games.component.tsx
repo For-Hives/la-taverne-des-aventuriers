@@ -10,7 +10,7 @@ export default async function GameComponent({
 
 
 	return (
-		<div className='rounded- flex h-screen w-3/4 flex-col items-start gap-9 max-lg:w-full'>
+		<div className=' flex h-screen w-3/4 flex-col items-start gap-9 max-lg:w-full'>
 			{/* Title Section */}
 			<h2 className='font-obraletraBold text-xl text-customBrown-100'>
 				{data.Card_Title}
@@ -19,9 +19,9 @@ export default async function GameComponent({
 			{/* Layout for Event Cards */}
 			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
 				{/* First Card */}
-				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card1-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:w-4/5'>
+				<div className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-gl-card1-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:w-4/5'>
 					{/* Overlay Gradient */}
-					<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
+					<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
 					{/* Card Content */}
 					<div className='z-10 flex flex-col justify-start gap-9 p-12'>
 						<h2 className='font-obraletraBold text-2xl'>{data.card1_title}</h2>
@@ -47,9 +47,9 @@ export default async function GameComponent({
 				{/* Second Column */}
 				<div className='flex h-full w-1/2 flex-col items-center gap-2 text-customWhite-100 max-lg:w-full'>
 					{/* Second Card */}
-					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card2-bg bg-cover bg-center max-lg:w-4/5'>
+					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-gl-card2-bg bg-cover bg-center max-lg:w-4/5'>
 						{/* Overlay Gradient */}
-						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
+						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
 							<h2 className='font-obraletraBold text-2xl'> {data.card2_title}</h2>
 
@@ -70,9 +70,9 @@ export default async function GameComponent({
 					</div>
 
 					{/* Third Card */}
-					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded bg-gl-card3-bg bg-cover bg-center max-lg:w-4/5'>
+					<div className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-gl-card3-bg bg-cover bg-center max-lg:w-4/5'>
 						{/* Overlay Gradient */}
-						<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
+						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
 						<div className='z-10 flex flex-col justify-start gap-6 p-12'>
 							<h2 className='font-obraletraBold text-2xl'>
 								{data.card3_title}

@@ -3,38 +3,47 @@ import Image from 'next/image'
 interface Drink {
 	title: string // Title of the drink
 	description: string // Description of the drink
-	// image: string
+	image: string
 }
 
 export default function DrinkDivComponent({
-	drink,
-	isInverted = false, // Boolean to control the layout inversion (default is false)
-}: {
+																						drink,
+																						isInverted = false, // Boolean to control the layout inversion (default is false)
+																					}: {
 	readonly drink: Drink
 	readonly isInverted?: boolean // Optional prop to reverse layout direction
 }) {
+	const hasImage = drink.image && drink.image !== ''
+
 	return (
-		<div className='flex w-full flex-col items-center justify-center px-4 sm:px-8'>
-			{/* Container for the drink, with optional layout inversion for small screens */}
-			<div
-				className={`flex w-full flex-col items-center justify-center sm:flex-row ${
-					isInverted ? 'sm:flex-row-reverse' : 'sm:flex-row'
-				}`}
-			>
+		<div className='w-full px-4 sm:px-8'>
+			{/* Container with grid layout */}
+			<div className={`justify-center items-center grid w-full grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-4`}>
 				{/* Image Section */}
-				<div className='mb-6 w-full sm:mb-0 sm:w-1/3 sm:px-4'>
-					{/* Drink image */}
-					<Image
-						src='/assets/images/Cocktails/Cocktail1.jpg' // Path to the image
-						alt={drink.title} // Alt text for accessibility
-						className='rounded'
-						width={400} // Set width of the image
-						height={400} // Set height of the image
-					/>
-				</div>
+				{hasImage && (
+					<div
+						className={`w-full col-span-1 flex justify-center items-center sm:col-span-1 sm:px-4 ${
+							isInverted ? 'sm:order-2' : 'sm:order-1'
+						}`}
+					>
+						<Image
+							src={drink.image} // Path to the image
+							alt={drink.title} // Alt text for accessibility
+							className='rounded w-1/2'
+							width={400} // Set width of the image
+							height={400} // Set height of the image
+						/>
+					</div>
+				)}
 
 				{/* Text Section */}
-				<div className='w-full sm:w-2/3 sm:px-4'>
+				<div
+					className={`${
+						hasImage ? 'sm:col-span-2' : 'sm:col-span-3' // If there's no image, text takes 3 columns
+					} flex flex-col gap-9 sm:px-4 ${
+						isInverted ? 'sm:order-1' : 'sm:order-2'
+					}`}
+				>
 					{/* Drink title */}
 					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
 						{drink.title}
