@@ -22,7 +22,7 @@ export default async function MapSection({
 				<Link
 					target='_blank'
 					href={data.button_url}
-					className='flex items-center justify-center gap-3 rounded bg-customBrown-100 p-3 font-cardinal text-lg text-customWhite-100 transition hover:bg-customWhite-100 lg:text-xl'
+					className='flex items-center justify-center rounded bg-customBrown-100 py-3 gap-8 font-cardoRegular px-8 text-lg text-customWhite-100 transition hover:bg-customWhite-100 lg:text-xl'
 				>
 					{data.button_label}
 					{/* Chevron icon for the button */}

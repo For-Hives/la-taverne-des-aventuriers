@@ -1,7 +1,7 @@
 'use client'
 
 // Importing necessary components and utilities
-import { LandingPageData } from '@/app/actions/services/getLandingPageData.service' // Importing the type for landing page data
+import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'; // Importing the type for landing page data
 import { textToSpanColored } from '@/utils/textToSpanColored'; // Importing a function to color text
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Importing the chevron icon from FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importing the FontAwesomeIcon component
@@ -13,84 +13,65 @@ import Link from 'next/link'; // Importing the Link component from Next.js
 export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 	return (
 		// Main wrapper div
-		<div className='flex w-3/4 flex-col'>
-			{/* Fade-in animation for the first image */}
+		<div className='grid w-3/4 grid-cols-1 gap-8 md:grid-cols-3'>
+			{/* Image with animation */}
 			<motion.div
-				initial={{ opacity: 0 }} // Initial state: invisible
-				animate={{ opacity: 1 }} // Final state: fully visible
-				transition={{ duration: 0.5 }} // Transition duration of 0.5 seconds
+				className='col-span-1 flex items-center justify-center ' // On md and above, image appears last
+				initial={{ opacity: 0, x: -100 }} // Animation: starts from the left
+				animate={{ opacity: 1, x: 0 }} // Animation: moves to the center
+				transition={{ duration: 0.6 }} // Duration of 0.6 seconds
 			>
 				<Image
-					src='/assets/images/elements/fairy.png' // Image source
-					alt='Vinbieres' // Alt text for the image
-					width={100} // Image width
-					height={100} // Image height
-					className='h-auto max-w-full max-sm:w-1/2' // Image styling
+					src={data?.description_image} // Image source
+					alt='Vinbieres' // Alt text
+					width={300} // Width
+					height={300} // Height
+					className='h-auto max-w-full' // Additional styles
 				/>
 			</motion.div>
 
-			{/* Container for the animated elements */}
-			<div className='flex w-3/4 flex-col items-center justify-center gap-8 rounded lg:flex-row'>
-				{/* Animated image on the left */}
+			{/* Text content with animation */}
+			<motion.div
+				className='col-span-1 flex flex-col justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 md:col-span-2 lg:items-start' // The text takes 2 cells on md and above
+				initial={{ opacity: 0, y: 50 }} // Animation: starts from the bottom
+				animate={{ opacity: 1, y: 0 }} // Animation: moves up to the original position
+				transition={{ delay: 0.2, duration: 0.6 }} // Delay and duration of 0.6 seconds
+			>
+				{/* Title */}
+				<h2
+					className='text-xl lg:text-left' // Title aligned to the left on large screens
+					dangerouslySetInnerHTML={{
+						__html: textToSpanColored(data.description_title), // Function to colorize the title
+					}}
+				></h2>
+
+				{/* Description */}
+				<div
+					className='text-base lg:text-left' // Description aligned to the left on large screens
+					dangerouslySetInnerHTML={{
+						__html: textToSpanColored(data.description_text), // Function to colorize the description
+					}}
+				></div>
+
+				{/* Button */}
 				<motion.div
-					className='flex w-full items-center justify-center lg:w-1/3' // Styling for positioning
-					initial={{ opacity: 0, x: -100 }} // Start off-screen with no opacity
-					animate={{ opacity: 1, x: 0 }} // Animate to visible and centered position
-					transition={{ duration: 0.6 }} // Transition duration of 0.6 seconds
+					className='text-center lg:text-left' // Button aligned to the left on large screens
+					initial={{ opacity: 0 }} // Starts invisible
+					animate={{ opacity: 1 }} // Fades in
+					transition={{ delay: 0.4, duration: 0.5 }} // Delay and duration of 0.5 seconds
 				>
-					<Image
-						src={data?.event_card1_image} // Image source from data prop
-						alt='Vinbieres' // Alt text for the image
-						width={300} // Image width
-						height={300} // Image height
-						className='h-auto max-w-full max-sm:w-1/2' // Image styling
-					/>
-				</motion.div>
-
-				{/* Animated text block */}
-				<motion.div
-					className='flex w-full flex-col items-center justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 max-lg:text-xs lg:w-2/3 lg:items-start' // Styling for text block
-					initial={{ opacity: 0, y: 50 }} // Start with no opacity and shifted vertically
-					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
-					transition={{ delay: 0.2, duration: 0.6 }} // Delayed animation with 0.6s duration
-				>
-					{/* Title with animated effect */}
-					<h2
-						className='w-full text-center text-xl max-lg:text-base lg:text-left' // Styling for title text
-						dangerouslySetInnerHTML={{
-							__html: textToSpanColored(data.description_title), // Using the function to color the title text
-						}}
-					></h2>
-
-					{/* Description with animated effect */}
-					<div
-						className='w-full text-center text-base max-lg:text-xs lg:text-left' // Styling for description text
-						dangerouslySetInnerHTML={{
-							__html: textToSpanColored(data.description_text), // Applying color to description text
-						}}
-					></div>
-
-					{/* Animated button */}
-					<motion.div
-						className='text-center lg:text-left' // Button alignment
-						initial={{ opacity: 0 }} // Start with invisible button
-						animate={{ opacity: 1 }} // Fade in button
-						transition={{ delay: 0.4, duration: 0.5 }} // Delayed animation with 0.5s duration
+					<Link
+						href={data.description_button_url} // Button link
+						className='flex items-center justify-center gap-3 text-base underline lg:justify-start' // Button styles
 					>
-						{/* Link to the URL from the data */}
-						<Link
-							href={data.description_button_url} // URL for the button link
-							className='flex items-center justify-center gap-3 text-base underline max-lg:text-xs lg:justify-start' // Styling for button
-						>
-							<span>{data.description_button_label}</span> {/* Button label */}
-							<FontAwesomeIcon
-								icon={faChevronRight} // Chevron icon for button
-								className='h-4 w-4 text-customBrown-100' // Icon styling
-							/>
-						</Link>
-					</motion.div>
+						<span>{data.description_button_label}</span> {/* Button label */}
+						<FontAwesomeIcon
+							icon={faChevronRight} // Chevron icon
+							className='h-4 w-4 text-customBrown-100' // Icon styles
+						/>
+					</Link>
 				</motion.div>
-			</div>
+			</motion.div>
 		</div>
 	);
 };

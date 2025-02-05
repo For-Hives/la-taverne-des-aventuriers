@@ -15,7 +15,7 @@ export default async function MyLudoComponent({
 					{data.myludo_component_title}
 				</h2>
 
-				<div className='relative flex w-full flex-col items-center justify-center rounded overflow-hidden'>
+				<div className='relative flex w-full flex-col items-center justify-center rounded-lg overflow-hidden'>
 					{/* Link to the game library, now also wrapping the image */}
 					<Link
 						className='relative block'
@@ -32,7 +32,7 @@ export default async function MyLudoComponent({
 								height={1080}
 							/>
 							{/* Overlay gradient on top of the image */}
-							<div className='absolute inset-0 rounded bg-gradient-to-b from-transparent to-black'></div>
+							<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
 						</div>
 
 						{/* Link text */}

@@ -18,13 +18,13 @@ export const AnimatedReservationCard = ({ data }: { data: ReservationCardData })
 		>
 			{/* Text Section */}
 			<motion.div
-				className='flex w-full flex-col gap-6 p-4 font-cardoRegular text-sm text-customBrown-100 sm:w-2/3 sm:gap-9 sm:p-8'
+				className='flex w-full flex-col gap-6 p-4 font-cardoRegular text-sm md:text-base text-customBrown-100 sm:w-2/3 sm:gap-9 sm:p-8'
 				initial={{ opacity: 0, x: -100 }} // Initial position and opacity for slide-in effect
 				animate={{ opacity: 1, x: 0 }} // Final position and opacity for the text
 				transition={{ duration: 0.8 }} // Animation duration
 			>
 				{/* Title of the reservation */}
-				<h2 className='text-left font-cardinal text-xl first-letter:text-customRed-100 sm:text-2xl'>
+				<h2 className='text-left font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
 					{data.Title}
 				</h2>
 

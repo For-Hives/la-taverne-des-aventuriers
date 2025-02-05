@@ -7,7 +7,7 @@ interface Drink {
 	id: string // Unique identifier for the drink
 	title: string // Title of the drink
 	description: string // Description of the drink
-	// image: string
+	image: string
 }
 
 // Defining the RecordModel interface, which represents the structure of a record
@@ -15,7 +15,7 @@ interface RecordModel {
 	id: string // Unique identifier for the record
 	title: string // Title of the record
 	description: string // Description of the record
-	// image: string
+	image: string
 }
 
 // Defining the response structure from the drink API
@@ -28,7 +28,7 @@ const mapRecordToDrink = (record: RecordModel): Drink => {
 	return {
 		description: record.description || 'Default Description', // Provide default description if missing
 		id: record.id, // The id remains the same
-		// image: record.image,
+		image: record.image,
 		title: record.title || 'Default Title', // Provide default title if missing
 	}
 }

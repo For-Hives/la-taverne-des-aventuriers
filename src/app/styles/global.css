@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
     --video-width: 100vw;
     --video-height: 100vh;

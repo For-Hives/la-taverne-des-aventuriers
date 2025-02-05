@@ -4,7 +4,6 @@ import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import BeerWineElement from '@/components/Menu/BeerWineElements.component'
 import DrinkElement from '@/components/Menu/DrinkElement.component'
-import MenuHeroComponent from '@/components/Menu/MenuHero.component'
 import MenuNavbar from '@/components/Menu/MenuNavbar.component'
 import MenuNavbarOnScroll from '@/components/Menu/MenuNavbarOnScroll.component'
 import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
@@ -28,10 +27,12 @@ export default function Page() {
 			<MobileNavbar />
 
 			{/* Menu Hero section */}
-			<MenuHeroComponent />
+			<div
+				className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
 			{/* Menu Section */}
-			<div className='items flex w-full flex-col justify-center py-16'>
+			<div className='flex w-full flex-col justify-center py-16 mt-[30vh]'>
+				{/* This margin-top pushes the content below the Menu Hero section */}
 				<MenuNavbar />
 				<MenuNavbarOnScroll />
 				{/* Drink categories mapped to their corresponding component */}
@@ -69,5 +70,6 @@ export default function Page() {
 				<FooterComponent />
 			</div>
 		</div>
+
 	)
 }
