@@ -85,7 +85,7 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
                             <Image
                                 src='/assets/images/elements/ContactElements/petite_bestiole.png'
                                 alt='Petite Bestiole'
-                                className='absolute bottom-[-3vh] -z-20 right-0 h-20 w-20 object-contain'
+                                className='absolute bottom-[-2rem] -z-20 right-0 h-20 w-20 object-contain'
                                 width={80}
                                 height={80}
                             />
@@ -105,7 +105,7 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
                 <Image
                     src='/assets/images/elements/ContactElements/runes.png'
                     alt='Runes'
-                    className='absolute left-20 top-[-4vh] h-1/4 w-1/4 object-contain'
+                    className='absolute left-20 top-[-4rem] h-1/4 w-1/4 object-contain'
                     width={150}
                     height={150}
                 />
