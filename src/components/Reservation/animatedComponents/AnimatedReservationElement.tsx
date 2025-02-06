@@ -92,6 +92,14 @@ export const AnimatedReservationElement = ({
 						width={520}
 						height={520}
 					/>
+
+					mage
+					src='/assets/images/LTDALogo.png' // Logo image source
+					alt='LTDA Logo' // Alt text for accessibility
+					width={520}
+					height={520}
+					/>
+
 				</motion.div>
 
 				{/* Card 4 - Bottom Left */}
