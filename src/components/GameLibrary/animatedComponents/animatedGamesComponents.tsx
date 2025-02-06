@@ -1,8 +1,8 @@
 'use client'
 
+import { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing data type for game page data
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons' // Importing FontAwesome chevron icon for button arrow
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // FontAwesomeIcon component for rendering icons
-import { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing data type for game page data
 import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
 import Link from 'next/link' // Importing Next.js Link component for navigation
 
