@@ -13,7 +13,7 @@ export const AnimatedReservationComponent = ({ data }: { data: ReservationPageDa
                 <motion.div
                     className="col-span-3 row-span-1 md:col-span-1 md:row-span-2 flex items-center justify-center md:justify-end"
                     initial={{ opacity: 0, x: -100 }} // Start from left with opacity 0
-                    whileInView={{ opacity: 1, x: 0 }} // Fade in and slide to position when in view
+                    animate={{ opacity: 1, x: 0 }} // Fade in and slide to position when in view
                     viewport={{ once: true }} // Trigger only once
                     transition={{ duration: 0.8 }} // Transition duration
                 >
@@ -30,7 +30,7 @@ export const AnimatedReservationComponent = ({ data }: { data: ReservationPageDa
                 <motion.div
                     className="col-span-3 row-span-1 px-6 md:col-span-2 md:row-span-2 flex items-center justify-center"
                     initial={{ opacity: 0, y: 50 }} // Start from below with opacity 0
-                    whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up when in view
+                    animate={{ opacity: 1, y: 0 }} // Fade in and slide up when in view
                     viewport={{ once: true }} // Trigger only once
                     transition={{ delay: 0.2, duration: 1  }} // Delay for sequential animation
                 >
@@ -39,7 +39,7 @@ export const AnimatedReservationComponent = ({ data }: { data: ReservationPageDa
                         <motion.h2
                             className='font-cardinal text-3xl first-letter:text-customRed-100 md:text-4xl'
                             initial={{ opacity: 0, x: -50 }} // Initial left slide with opacity 0
-                            whileInView={{ opacity: 1, x: 0 }} // Fade in and move to normal position when in view
+                            animate={{ opacity: 1, x: 0 }} // Fade in and move to normal position when in view
                             viewport={{ once: true }} // Trigger only once
                             transition={{ duration: 0.6 }}
                         >
@@ -50,7 +50,7 @@ export const AnimatedReservationComponent = ({ data }: { data: ReservationPageDa
                         <motion.div
                             className='w-full font-cardoRegular text-base md:text-lg'
                             initial={{ opacity: 0, y: 30 }} // Start from below
-                            whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
+                            animate={{ opacity: 1, y: 0 }} // Fade in and move up when in view
                             viewport={{ once: true }} // Trigger only once
                             transition={{ delay: 0.4, duration: 0.8  }} // Delay for smooth sequence
                             dangerouslySetInnerHTML={{
@@ -62,7 +62,7 @@ export const AnimatedReservationComponent = ({ data }: { data: ReservationPageDa
                         <motion.div
                             className="absolute top-0 right-0 -translate-x-50 -translate-y-50"
                             initial={{ opacity: 0, scale: 0.8 }} // Start with opacity 0 and smaller size
-                            whileInView={{ opacity: 1, scale: 1 }} // Fade in and scale up when in view
+                            animate={{ opacity: 1, scale: 1 }} // Fade in and scale up when in view
                             viewport={{ once: true }} // Trigger only once
                             transition={{ delay: 0.6, duration: 0.6  }} // Delay for staggered effect
                         >
