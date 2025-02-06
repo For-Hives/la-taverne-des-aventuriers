@@ -20,7 +20,7 @@ export default async function reservation() {
 				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
 				{/* Main content section with spacing */}
-				<div className='relative mt-64 flex flex-col items-center gap-64'>
+				<div className='relative mt-64 flex flex-col items-center gap-36'>
 					{/* Reservation section */}
 					<ReservationComponent />
 					{/* Contact elements section */}
