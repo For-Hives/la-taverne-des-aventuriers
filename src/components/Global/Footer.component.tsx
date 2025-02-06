@@ -8,6 +8,10 @@ export default async function FooterComponent() {
 	// Fetch footer data asynchronously
 	const data = await getFooterData()
 
+	// todo: Récupérer l'année en cours (pour que ca puisse s'auto update) - ajouter developped by ForHives !
+	const date = new Date()
+	const label =  "developped by ForHives ! https://forhives.fr/"
+
 	return (
 		<div
 			className='relative flex w-screen items-end justify-center bg-FooterImage bg-cover bg-center text-white md:overflow-hidden'
@@ -26,9 +30,9 @@ export default async function FooterComponent() {
 
 			{/* Main content */}
 			<div className='relative z-10 flex w-full max-w-7xl flex-col items-center justify-center gap-12 p-10 text-left font-obraletra text-base text-customBrown-100 max-sm:gap-6 xl:gap-36'>
-				<div className='flex w-full flex-wrap items-start justify-center max-sm:flex-col max-sm:gap-9 max-sm:items-center'>
+				<div className='flex w-full max-w-4xl flex-wrap items-start justify-evenly max-sm:flex-col max-sm:items-center max-sm:gap-9'>
 					{/* First column */}
-					<div className='flex w-1/3 max-w-xs flex-col items-center justify-center gap-3 font-obraletra text-base text-customBrown-100 max-lg:text-sm max-sm:w-full'>
+					<div className='flex w-1/3 max-w-xs flex-col items-start justify-center gap-3 font-obraletra text-base text-customBrown-100 max-lg:text-sm max-sm:w-full'>
 						<h2 className='font-cardinal text-2xl text-customBrown-100 first-letter:text-customRed-100 sm:text-3xl'>
 							{data.bar_title}
 						</h2>
@@ -49,7 +53,7 @@ export default async function FooterComponent() {
 					</div>
 
 					{/* Second column */}
-					<div className='flex w-1/3 max-w-xs flex-col items-center justify-center gap-3 font-obraletra text-base text-customBrown-100 max-lg:text-sm max-sm:w-full'>
+					<div className='flex w-1/3 max-w-xs flex-col items-start justify-center gap-3 font-obraletra text-base text-customBrown-100 max-lg:text-sm max-sm:w-full'>
 						<h2 className='font-cardinal text-2xl text-customBrown-100 first-letter:text-customRed-100 sm:text-3xl'>
 							{data.support_title}
 						</h2>
@@ -64,12 +68,12 @@ export default async function FooterComponent() {
 					</div>
 
 					{/* Third column */}
-					<div className='flex w-1/3 max-w-xs flex-col items-center justify-center gap-3 max-sm:w-full'>
+					<div className='flex w-1/3 max-w-xs flex-col items-start justify-center gap-3 max-sm:w-full'>
 						<h2 className='font-cardinal text-2xl text-customBrown-100 first-letter:text-customRed-100 sm:text-3xl'>
 							{data.socials_title}
 						</h2>
 						{/* Social media icons (placeholder for now) */}
-						<div className='flex space-x-4 *:w-full max-md:text-sm md:space-x-2'>
+						<div className='flex w-full items-center justify-start space-x-4 max-md:text-sm md:gap-8'>
 							<Link className='hover:underline' href={data.instagram_url}>
 								<FontAwesomeIcon
 									icon={faInstagram}
@@ -82,13 +86,24 @@ export default async function FooterComponent() {
 									className='h-8 w-8 text-customBrown-100'
 								/>
 							</Link>
+							<Link className='hover:underline' href={data.facebook_url}>
+								<Image
+									src='/assets/images/elements/ContactElements/myludo_icon.png'
+									alt='MyLudo Icon'
+									className='h-8 w-8'
+									width={200}
+									height={200}
+								/>
+							</Link>
 						</div>
 					</div>
 				</div>
 
 				{/* Copyright section */}
 				<div className='flex w-full max-w-xs flex-col items-center justify-center'>
-					<p className='mt-4 text-sm max-md:text-sm'>{data.copyright}</p>
+					<p className='mt-4 text-sm max-md:text-sm'>
+						{date.toDateString()} {label}
+					</p>
 				</div>
 			</div>
 

@@ -40,7 +40,6 @@ export const AnimatedMapSectionComponent = ({ data }: { data: ContactPageData })
                 </motion.p>
                 {/* Button linking to the URL */}
                 <motion.div
-                    className='flex items-center justify-center rounded bg-customBrown-100 py-3 gap-8 font-cardoRegular px-8 text-lg text-customWhite-100 transition hover:bg-customWhite-100 lg:text-xl'
                     initial={{ opacity: 0, y: 30 }} // Start from below
                     whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
                     viewport={{ once: true }}
@@ -48,10 +47,10 @@ export const AnimatedMapSectionComponent = ({ data }: { data: ContactPageData })
                 >
                     <Link
                         target='_blank'
-                        href={data.button_url} // Button URL passed from data
-                        className='flex items-center justify-center'
+                        href={data.button_url}
+                        className='flex items-center justify-center rounded bg-customBrown-100 py-3 gap-8 font-cardoRegular px-8 text-lg text-customWhite-100 transition hover:bg-customWhite-100 lg:text-xl'
                     >
-                        {data.button_label} {/* Display the button label */}
+                        {data.button_label}
                         {/* Chevron icon for the button */}
                         <FontAwesomeIcon icon={faChevronRight} className='h-4 lg:h-5' />
                     </Link>

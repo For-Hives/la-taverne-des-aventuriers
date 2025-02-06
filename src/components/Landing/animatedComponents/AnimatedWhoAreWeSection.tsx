@@ -67,7 +67,7 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 						<span>{data.description_button_label}</span> {/* Button label */}
 						<FontAwesomeIcon
 							icon={faChevronRight} // Chevron icon
-							className='h-4 w-4 text-customBrown-100' // Icon styles
+							className='h-3 w-3 text-customBrown-100' // Icon styles
 						/>
 					</Link>
 				</motion.div>

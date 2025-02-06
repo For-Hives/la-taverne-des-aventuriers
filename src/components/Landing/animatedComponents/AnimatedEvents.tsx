@@ -61,7 +61,7 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 								<span>{data.event_card1_button_label}</span> {/* Button label */}
 								<FontAwesomeIcon
 									icon={faChevronRight} // FontAwesome icon for the arrow
-									className='h-4 w-4 text-base text-customWhite-100 max-lg:text-xs max-sm:h-3 max-sm:w-3'
+									className='h-3 w-3 text-base text-customWhite-100 max-lg:text-xs max-sm:h-3 max-sm:w-3'
 								/>
 							</Link>
 						</div>
@@ -110,7 +110,7 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 									<span>{data.event_card2_button_label}</span> {/* Button label */}
 									<FontAwesomeIcon
 										icon={faChevronRight} // FontAwesome icon for the arrow
-										className='h-4 w-4 text-base text-customWhite-100 max-lg:text-xs max-sm:h-3 max-sm:w-3'
+										className='h-3 w-3 text-base text-customWhite-100 max-lg:text-xs max-sm:h-3 max-sm:w-3'
 									/>
 								</Link>
 							</div>
@@ -156,7 +156,7 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 									<span>{data.event_card3_button_label}</span> {/* Button label */}
 									<FontAwesomeIcon
 										icon={faChevronRight} // FontAwesome icon for the arrow
-										className='h-4 w-4 text-customWhite-100 max-sm:h-3 max-sm:w-3'
+										className='h-3 w-3 text-customWhite-100 max-sm:h-3 max-sm:w-3'
 									/>
 								</Link>
 							</div>
