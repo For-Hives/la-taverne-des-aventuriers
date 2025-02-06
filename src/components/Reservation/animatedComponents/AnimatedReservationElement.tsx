@@ -47,7 +47,7 @@ export const AnimatedReservationElement = ({
 
 				{/* Card 2 - Middle Left */}
 				<motion.div
-					className='col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-1 sm:row-span-4 xl:col-span-2'
+					className='relative col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-1 sm:row-span-4 xl:col-span-2'
 					initial={{ opacity: 0, x: -50 }} // Initial opacity and horizontal position for animation
 					animate={{ opacity: 1, x: 0 }} // Animate to full opacity and original horizontal position
 					transition={{ delay: 0.4, duration: 0.8 }} // Delay and duration for the animation
@@ -60,6 +60,13 @@ export const AnimatedReservationElement = ({
 							dangerouslySetInnerHTML={{ __html: data.description_card_4 }} // Injecting HTML content for description
 						/>
 					</div>
+					<Image
+						className='w-3/6 absolute right-0 bottom-0 translate-x-20 translate-y-20 z-40 max-xl:hidden'
+						src='/assets/images/elements/WhoAreWeElement/dice.png' // Dice image source
+						alt='Dice' // Alt text for accessibility
+						width={520}
+						height={520}
+					/>
 				</motion.div>
 
 				{/* Card 3 - Middle Right */}
@@ -93,11 +100,12 @@ export const AnimatedReservationElement = ({
 						height={520}
 					/>
 
-					mage
-					src='/assets/images/LTDALogo.png' // Logo image source
-					alt='LTDA Logo' // Alt text for accessibility
-					width={520}
-					height={520}
+					<Image
+						className='w-1/6 absolute right-0 bottom-0 translate-x-10 translate-y-24'
+						src='/assets/images/elements/WhoAreWeElement/dice.png' // Dice image source
+						alt='Dice' // Alt text for accessibility
+						width={520}
+						height={520}
 					/>
 
 				</motion.div>
