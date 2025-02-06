@@ -1,13 +1,16 @@
 'use client'
+
+// Importing necessary modules
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // Utility function to combine class names conditionally
 function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(' ') // Filters out falsy values and joins them into a string
+	return classes.filter(Boolean).join(' ')
 }
 
 // Array of tabs with their anchors and current state
+// Each tab represents a section in the menu
 export const tabs = [
 	{ anchor: 'cocktails', current: false, name: 'Cocktails' },
 	{ anchor: 'mocktails', current: false, name: 'Mocktails' },
@@ -24,73 +27,97 @@ export const tabs = [
 ]
 
 export default function MenuNavbar() {
-	// Create state for the selected tab
+	// State to track the current selected tab
 	const [currentTab, setCurrentTab] = useState<string>('cocktails')
+	// State to show/hide navbar based on scroll direction
+	const [showNavbar, setShowNavbar] = useState<boolean>(true)
+	// State to store the last known scroll position
+	const [lastScrollY, setLastScrollY] = useState<number>(0)
 
-	// Handle click on tab
+	// Function to handle tab clicks
+	// Sets the current tab and scrolls smoothly to the corresponding section
 	const handleTabClick = (anchor: string) => {
-		// Update the selected tab
 		setCurrentTab(anchor)
-
-		// Scroll smoothly to the targeted section on the page
 		const target = document.getElementById(anchor)
 		if (target) {
 			target.scrollIntoView({ behavior: 'smooth', block: 'start' })
 		}
 	}
 
+	// Effect to handle scroll behavior
+	// Shows/hides navbar based on the scroll direction
+	useEffect(() => {
+		const handleScroll = () => {
+			const currentScrollY = window.scrollY
+			if (currentScrollY > lastScrollY) {
+				setShowNavbar(false) // Hide navbar when scrolling down
+			} else {
+				setShowNavbar(true) // Show navbar when scrolling up
+			}
+			setLastScrollY(currentScrollY)
+		}
+
+		// Attach scroll event listener
+		window.addEventListener('scroll', handleScroll)
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [lastScrollY])
+
 	return (
-		<div className='p-16'>
+		<div
+			className={classNames(
+				'transition-transform duration-300',
+				showNavbar ? 'translate-y-0' : '-translate-y-full' // Navbar slides in/out based on scroll direction
+			)}
+		>
 			{/* Mobile view */}
-			<div className='grid grid-cols-1 md:hidden'>
+			<div className='grid grid-cols-1 md:hidden p-16'>
 				<select
-					aria-label='Select a tab' // Accessibility: label for the dropdown
+					aria-label='Select a tab' // Accessibility label
 					className='col-start-1 row-start-1 w-full appearance-none rounded-md bg-customWhite-200 py-2 pl-3 pr-8 text-base text-customBrown-100 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600'
-					onChange={e => handleTabClick(e.target.value)} // Trigger handleTabClick on change
-					value={currentTab} // Keep the selected tab visible
+					onChange={e => handleTabClick(e.target.value)}
+					value={currentTab} // Sync current tab with select value
 				>
-					{/* Generate options for each tab */}
+					{/* Render each tab as an option */}
 					{tabs.map(tab => (
 						<option key={tab.name} value={tab.anchor}>
 							{tab.name}
 						</option>
 					))}
 				</select>
-				{/* Dropdown arrow icon */}
+				{/* Icon for dropdown */}
 				<ChevronDownIcon
-					aria-hidden='true' // Hides the icon from screen readers
+					aria-hidden='true'
 					className='pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-customBrown-100'
 				/>
 			</div>
 
 			{/* Desktop view */}
-			<div className='hidden md:block'>
+			<div className='hidden md:block p-16'>
 				<nav
-					aria-label='Tabs' // Accessibility: label for the navigation
+					aria-label='Tabs' // Accessibility label
 					className='divide-customBrownTransparent-100 isolate flex divide-x rounded-lg shadow'
 				>
 					{/* Render each tab as a button */}
 					{tabs.map((tab, tabIdx) => (
 						<button
 							key={tab.name}
-							aria-current={currentTab === tab.anchor ? 'page' : undefined} // Accessibility: indicate which tab is active
+							aria-current={currentTab === tab.anchor ? 'page' : undefined} // Highlight the current tab for accessibility
 							className={classNames(
-								// Styling for the tab buttons
-								tabIdx === 0 ? 'rounded-l-lg' : '',
-								tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '',
+								tabIdx === 0 ? 'rounded-l-lg' : '', // Round left edges for the first tab
+								tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '', // Round right edges for the last tab
 								'group relative min-w-0 flex-1 overflow-hidden bg-customWhite-200 px-4 py-4 text-center text-sm font-medium text-customBrown-100 hover:bg-customWhite-100 focus:z-10',
-								currentTab === tab.anchor ? 'bg-customWhite-100' : ''
+								currentTab === tab.anchor ? 'bg-customWhite-100' : '' // Highlight the current tab
 							)}
-							onClick={() => handleTabClick(tab.anchor)} // Trigger handleTabClick on click
+							onClick={() => handleTabClick(tab.anchor)}
 						>
 							<span>{tab.name}</span>
-							{/* Bottom border indicating the selected tab */}
+							{/* Indicator line for active tab */}
 							<span
 								aria-hidden='true'
 								className={classNames(
 									currentTab === tab.anchor
-										? 'bg-customBrown-100'
-										: 'bg-transparent',
+										? 'bg-customBrown-100' // Active indicator color
+										: 'bg-transparent', // Inactive indicator
 									'absolute inset-x-0 bottom-0 h-0.5'
 								)}
 							/>

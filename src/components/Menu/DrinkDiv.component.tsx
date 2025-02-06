@@ -49,7 +49,7 @@ export default function DrinkDivComponent({
 						{drink.title}
 					</h2>
 					{/* Drink description */}
-					<p className='font-obraletra text-base text-customBrown-100 sm:text-lg'>
+					<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
 						{drink.description}
 					</p>
 				</div>

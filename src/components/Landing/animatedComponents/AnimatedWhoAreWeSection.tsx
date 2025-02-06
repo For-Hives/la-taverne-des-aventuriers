@@ -47,7 +47,7 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 
 				{/* Description */}
 				<div
-					className='text-base lg:text-left' // Description aligned to the left on large screens
+					className='text-base lg:text-left font-cardoRegular' // Description aligned to the left on large screens
 					dangerouslySetInnerHTML={{
 						__html: textToSpanColored(data.description_text), // Function to colorize the description
 					}}

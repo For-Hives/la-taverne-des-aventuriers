@@ -113,7 +113,7 @@ export default function BeerWineElement() {
 						<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 							Pression:
 						</h4>
-						<table className='w-full border-collapse text-left text-base font-obraletra text-customBrown-100'>
+						<table className='w-full border-collapse text-left text-base font-cardoRegular text-customBrown-100'>
 							<thead>
 							<tr>
 								<th className='px-4 py-2'>Bière</th>
@@ -161,12 +161,12 @@ export default function BeerWineElement() {
 								bottleBeers.map((beer, index) => (
 									<div
 										key={`${beer.id}-${index}`}
-										className='flex items-center justify-between'
+										className='flex items-center justify-between font-cardoRegular'
 									>
-										<h4 className='font-obraletra text-base text-customBrown-100'>
+										<h4 className='font-cardoRegular text-base text-customBrown-100'>
 											{beer.title} ({beer.volume})
 										</h4>
-										<p className='text-right font-obraletra text-base text-customBrown-100'>
+										<p className='text-right font-cardoRegular text-base text-customBrown-100'>
 											{beer.price} €
 										</p>
 									</div>
@@ -188,7 +188,7 @@ export default function BeerWineElement() {
 					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 						Vins Rouges:
 					</h4>
-					<table className='w-full table-fixed border-collapse text-left font-obraletra text-customBrown-100'>
+					<table className='w-full table-fixed border-collapse text-left font-cardoRegular text-customBrown-100'>
 						<thead>
 						<tr>
 							<th className='w-4/6 px-4 py-2'>Vin</th>
@@ -225,7 +225,7 @@ export default function BeerWineElement() {
 					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 						Vins Blancs:
 					</h4>
-					<table className='w-full table-fixed border-collapse text-left font-obraletra text-customBrown-100'>
+					<table className='w-full table-fixed border-collapse text-left font-cardoRegular text-customBrown-100'>
 						<thead>
 						<tr>
 							<th className='w-4/6 px-4 py-2'>Vins</th>
@@ -262,7 +262,7 @@ export default function BeerWineElement() {
 					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 						Vins Rosés:
 					</h4>
-					<table className='w-full table-fixed border-collapse text-left font-obraletra text-customBrown-100'>
+					<table className='w-full table-fixed border-collapse text-left font-cardoRegular text-customBrown-100'>
 						<thead>
 						<tr>
 							<th className='w-4/6 px-4 py-2'>Vin</th>

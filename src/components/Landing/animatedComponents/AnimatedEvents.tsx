@@ -25,7 +25,7 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
 				{/* First Event Card */}
 				<motion.div
-					className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-lp-card1-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:w-full'
+					className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-lp-card1-bg bg-cover bg-center font-cardoRegular text-customWhite-100 max-lg:w-full'
 					initial={{ opacity: 0, x: -100 }} // Initial opacity is 0 and position X is -100 (off-screen left)
 					animate={{ opacity: 1, x: 0 }} // Animate opacity to 1 and X to 0 (slide-in effect from the left)
 					transition={{ duration: 0.6 }} // Duration of the animation is 0.6 seconds
@@ -38,7 +38,7 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 						{/* Title and Date Section */}
 						<div className='items-left flex flex-col justify-start'>
 							<h2 className='font-obraletraBold text-2xl'>{data.event_card1_title}</h2> {/* Title of the event card */}
-							<h3 className='text-base max-lg:text-xs'>
+							<h3 className='text-base font-obraletra max-lg:text-xs'>
 								{/* Format the event date */}
 								{new Date(data.event_card1_date).toLocaleDateString('fr-FR')}
 							</h3>
@@ -73,7 +73,7 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 
 					{/* Second Event Card */}
 					<motion.div
-						className='w-ful relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-lp-card2-bg bg-cover bg-center font-obraletra text-customWhite-100'
+						className='w-ful relative flex h-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-lp-card2-bg bg-cover bg-center font-cardoRegular text-customWhite-100'
 						initial={{ opacity: 0, x: 100 }} // Initial opacity is 0 and position X is 100 (off-screen right)
 						animate={{ opacity: 1, x: 0 }} // Animate opacity to 1 and X to 0 (slide-in effect from the right)
 						transition={{ duration: 0.6 }} // Duration of the animation is 0.6 seconds
@@ -87,7 +87,7 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 								<h2 className='font-obraletraBold text-2xl max-sm:text-base'>
 									{data.event_card2_title} {/* Title of the second event card */}
 								</h2>
-								<h3 className='text-base max-lg:text-xs'>
+								<h3 className='font-obraletraBold text-base max-lg:text-xs'>
 									{/* Format the event date */}
 									{new Date(data.event_card2_date).toLocaleDateString('fr-FR')}
 								</h3>
@@ -119,7 +119,7 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 
 					{/* Third Event Card */}
 					<motion.div
-						className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-lp-card3-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:w-full'
+						className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-lp-card3-bg bg-cover bg-center font-cardoRegular text-customWhite-100 max-lg:w-full'
 						initial={{ opacity: 0, y: 50 }} // Initial opacity is 0 and position Y is 50 (below the screen)
 						animate={{ opacity: 1, y: 0 }} // Animate opacity to 1 and Y to 0 (slide-up effect)
 						transition={{ duration: 0.6 }} // Duration of the animation is 0.6 seconds
@@ -133,7 +133,7 @@ export const AnimatedEvents = ({ data }: { data: LandingPageData }) => {
 								<h2 className='font-obraletraBold text-2xl'>
 									{data.event_card3_title} {/* Title of the third event card */}
 								</h2>
-								<h3 className='text-base max-lg:text-xs'>
+								<h3 className='font-obraletraBold text-base max-lg:text-xs'>
 									{/* Format the event date */}
 									{new Date(data.event_card3_date).toLocaleDateString('fr-FR')}
 								</h3>

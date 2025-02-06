@@ -19,7 +19,7 @@ export default async function TravelersPleasureElement() {
 					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
 						{leftText.title}
 					</h2>
-					<p className='font-obraletra text-base text-customBrown-100 sm:text-lg'>
+					<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
 						{leftText.description}
 					</p>
 				</div>
@@ -38,7 +38,7 @@ export default async function TravelersPleasureElement() {
 					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
 						{rightText.title}
 					</h2>
-					<p className='font-obraletra text-base text-customBrown-100 sm:text-lg'>
+					<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
 						{rightText.description}
 					</p>
 				</div>

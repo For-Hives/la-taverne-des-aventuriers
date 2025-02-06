@@ -26,6 +26,7 @@ export default async function GameComponent({
 					<div className='z-10 flex flex-col justify-start gap-9 p-12'>
 						<h2 className='font-obraletraBold text-2xl'>{data.card1_title}</h2>
 						<div
+							className='font-cardoRegular'
 							dangerouslySetInnerHTML={{
 								__html: data.card1_description,
 							}}
@@ -54,6 +55,7 @@ export default async function GameComponent({
 							<h2 className='font-obraletraBold text-2xl'> {data.card2_title}</h2>
 
 							<div
+								className='font-cardoRegular'
 								dangerouslySetInnerHTML={{
 									__html: data.card2_description,
 								}}
@@ -78,6 +80,7 @@ export default async function GameComponent({
 								{data.card3_title}
 							</h2>
 							<div
+								className='font-cardoRegular'
 								dangerouslySetInnerHTML={{
 									__html: data.card3_description,
 								}}
