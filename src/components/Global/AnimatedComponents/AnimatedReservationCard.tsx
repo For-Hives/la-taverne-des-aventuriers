@@ -30,6 +30,7 @@ export const AnimatedReservationCard = ({ data }: { data: ReservationCardData })
 
 				{/* Description rendered as HTML content */}
 				<div
+					className='font-cardoRegular'
 					dangerouslySetInnerHTML={{
 						__html: data.description, // Render HTML directly from data
 					}}

@@ -28,7 +28,7 @@ export default function MenuNavbarOnScroll() {
 	// Effect to handle scroll and toggle the visibility of the button
 	useEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY > 500) {
+			if (window.scrollY > 300) {
 				setIsVisible(true)
 			} else {
 				setIsVisible(false)

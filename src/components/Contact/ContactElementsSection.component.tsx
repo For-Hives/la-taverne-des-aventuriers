@@ -17,9 +17,9 @@ export default async function ContactElements({
 					<h1 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
 						{data.schedules_title}
 					</h1>
-					<p className='text-customBrown-100 [&>span]:block'>
+					<p className='text-customBrown-100 [&>span]:block font-cardoRegular'>
 						{/* Exceptional Schedule */}
-						<span className='font-obraletraBold'>
+						<span>
 							{data.schedules_exceptional}
 						</span>
 						{/* Days of the week */}
@@ -75,7 +75,7 @@ export default async function ContactElements({
 							<h2 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
 								{data.contact_email_title}
 							</h2>
-							<p className='text-customBrown-100'>{data.email}</p>
+							<p className='text-customBrown-100 font-cardoRegular'>{data.email}</p>
 						</div>
 						{/* Decorative Image */}
 						<div className='relative'>

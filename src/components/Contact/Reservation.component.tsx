@@ -43,10 +43,10 @@ export default async function ReservationComponent() {
 
 						<Image
 							src='/assets/images/elements/bourse.png'
-							alt='House illustration'
-							width={50}
-							height={50}
-							className='absolute top-0 right-0 -translate-x-50 -translate-y-50 rounded w-1/12 max-md:hidden'
+							alt='bag illustration'
+							width={200}
+							height={150}
+							className='absolute top-0 right-0 -translate-x-50 -translate-y-50 rounded w-1/6 max-md:hidden'
 						/>
 					</div>
 				</div>

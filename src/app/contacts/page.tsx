@@ -33,8 +33,10 @@ export default async function Contact() {
 					<MapSection data={dataContact} />
 				</div>
 
-				{/* Footer */}
-				<FooterComponent />
+				<div>
+					{/* Footer */}
+					<FooterComponent />
+				</div>
 			</div>
 		)
 	)

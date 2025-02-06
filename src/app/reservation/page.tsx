@@ -27,8 +27,10 @@ export default async function reservation() {
 					<ContactElements data={dataContact} />
 				</div>
 
-				{/* Footer section */}
-				<FooterComponent />
+				<div>
+					{/* Footer */}
+					<FooterComponent />
+				</div>
 			</div>
 		)
 	)
