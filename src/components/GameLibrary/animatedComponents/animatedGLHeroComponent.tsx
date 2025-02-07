@@ -22,8 +22,7 @@ export const AnimatedGLHeroComponent = ({ data }: { data: GamesPageData }) => {
                     {/* Hero description with HTML content */}
                     <motion.div
                         initial={{opacity: 0, y: 100}} // Start the animation off-screen (invisible and 100px down)
-                        whileInView={{opacity: 1, y: 0}} // Make it fade in and slide up when the element enters the viewport
-                        viewport={{once: true}} // Animation triggers once when the element comes into view
+                        animate={{opacity: 1, y: 0}} // Make it fade in and slide up when the element enters the viewport
                         transition={{duration: 0.8}} // Duration for this animation
 
                         className='text-center font-obraletra text-xl text-customBrown-100 max-sm:text-sm'
