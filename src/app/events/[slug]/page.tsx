@@ -1,37 +1,38 @@
-import { getEventData } from '@/app/actions/services/getEventData';
-import SpecialEventComponent from '@/components/Events/SpecialEvent.component';
-import Navbar from '@/components/Global/Navbar.component';
-import MobileNavbar from '@/components/Global/NavbarMobile.component';
-import { generateSlug } from '@/utils/slugUtils';
+// Import necessary functions and components for the page
+import { getEventData } from '@/app/actions/services/getEventData';  // Modified function to take a slug for event lookup
+import SpecialEventComponent from '@/components/Events/SpecialEvent.component';  // Component for rendering the event details
+import Navbar from '@/components/Global/Navbar.component';  // Global Navbar component
+import MobileNavbar from '@/components/Global/NavbarMobile.component';  // Mobile Navbar component
 
+// Define the structure for the Page props
 type PageProps = Readonly<{
 	params: {
-		slug: string; // Slug format: "id-title-formatted"
+		slug: string;  // Slug is now used to look up the event by its title
 	};
 }>;
 
+// Main component for rendering the event page based on the slug
 export default async function Page({ params }: PageProps) {
-	const { slug } = params;
+	const { slug } = params;  // Extract slug from params
 
-	// Split the slug to extract the ID and the title part
-	const [id, ...titleParts] = slug.split('-'); // "id-title" => id = "s443kz6ee7e6laf", titleParts = ["mon", "evenement", "special"]
-	const titleFromSlug = titleParts.join('-'); // Recombine the title parts
+	// Fetch the event data using the slug
+	const eventdata = await getEventData(slug);  // Fetch data for the event that matches the slug
 
-	// Fetch the event data by ID
-	const eventdata = await getEventData(id);
-
-	// If no event is found or the title doesn't match, show an error
-	if (!eventdata || generateSlug(eventdata.event_title) !== titleFromSlug) {
-		return <div>No event found for this link.</div>;
+	// If no event is found, display an error message
+	if (!eventdata) {
+		return <div>No event found for this title.</div>;  // Show an error message if event is not found
 	}
 
-	// Render the event page
+	// If the event is found, render the event page
 	return (
 		<div className="flex flex-col gap-64">
+			{/* Render Navbar components */}
 			<Navbar />
 			<MobileNavbar />
+
+			{/* Main content area for the event */}
 			<div className="relative mt-36 flex flex-col items-center gap-24">
-				<SpecialEventComponent data={eventdata} />
+				<SpecialEventComponent data={eventdata} />  {/* Render the event details */}
 			</div>
 		</div>
 	);

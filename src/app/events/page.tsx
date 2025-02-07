@@ -20,12 +20,14 @@ export default async function Page() {
 					<EventHeroComponent data={eventPageData} />
 
 					<ImportantEventComponent data={eventsData} />
+
+					{/* Adding a separation */}
+					<div className="w-3/4 h-[0.05rem] bg-customBrown-100"></div> {/* This div adds vertical space between components */}
+
 					<div className='flex flex-col items-start w-full'>
 						{/* Rendering the list of events with the fetched data */}
 						<EventListComponent data={eventsData} />
 					</div>
-
-
 				</div>
 				<div>
 					{/* Footer */}

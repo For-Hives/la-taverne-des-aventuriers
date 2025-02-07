@@ -1,49 +1,54 @@
-import { authWithPocketBase } from "@/app/actions/AuthService";  // Importing the function to authenticate and connect with PocketBase
+// Importing the necessary functions for PocketBase authentication and slug generation
+import { authWithPocketBase } from "@/app/actions/AuthService";
+import { generateSlug } from "@/utils/slugUtils";  // Function to generate slugs for event titles
 
-// Define the structure for the event data
+// Define the structure of the event data
 export interface EventData {
-    collectionId: string;  // ID of the collection
+    collectionId: string;  // ID of the collection where the event is stored
     collectionName: string;  // Name of the collection
     id: string;  // Unique identifier of the event
     event_title: string;  // Title of the event
     event_date: string;  // Date of the event
     event_description: string;  // Description of the event
-    summary: string; // Summary of the event
+    summary: string;  // A brief summary of the event
     event_image?: string;  // Optional image associated with the event
-    button_label: string;  // Label for the event button
-    button_url: string;  // URL for the event button
-    Important_One: boolean; // The Most important event
-    created: string;  // Creation date of the event
-    updated: string;  // Last update date of the event
+    button_label: string;  // Label for the button linked to the event
+    button_url: string;  // URL linked to the event button
+    Important_One: boolean;  // Indicates if the event is the most important one
+    created: string;  // The date when the event was created
+    updated: string;  // The date when the event was last updated
 }
 
-// Function to fetch event data based on a slug
+// Function to fetch event data based on a slug (which is derived from the event title)
 export async function getEventData(slug: string): Promise<EventData | null> {
-    const pb = await authWithPocketBase();  // Authenticate and get the PocketBase instance
+    // Authenticate and get the PocketBase instance
+    const pb = await authWithPocketBase();
 
+    // Check if PocketBase connection is successful
     if (!pb) {
-        console.error('PocketBase connection failed');  // Log error if connection fails
-        throw new Error('Failed to connect to PocketBase');  // Throw error if no connection
+        console.error('PocketBase connection failed');  // Log an error if the connection fails
+        throw new Error('Failed to connect to PocketBase');  // Throw an error if connection fails
     }
 
     try {
-        // Fetch a list of events (1 page, up to 100 items)
+        // Fetch the list of events (up to 100 events, from the first page)
         const result = await pb.collection('Events').getList(1, 100);
 
-        // Process each event item to generate the URL for the event image
+        // Process each event item to generate the URL for the event image, if it exists
         result.items.forEach((item) => {
-            if (item.event_image) {  // If event has an image
-                item.event_image = pb.files.getURL(item, item.event_image);  // Generate the URL for the image
+            if (item.event_image) {  // Check if the event has an image
+                item.event_image = pb.files.getURL(item, item.event_image);  // Generate the full URL for the event image
             }
         });
 
-        // Find the event with the given slug (matching event id)
-        const event = result.items.find((item: { id: string }) => item.id === slug);
+        // Generate slugs for each event using the event title and compare with the slug passed in
+        const event = result.items.find((item) => generateSlug(item.event_title) === slug);
 
-        // Return the event data or null if not found
+        // Return the event data if found, or null if no event matches the slug
         return event ? (event as EventData) : null;
     } catch (error) {
-        console.error('Error fetching event data from PocketBase:', error);  // Log any error during the fetch operation
-        throw error;  // Rethrow the error
+        // Log any errors encountered during the fetch process
+        console.error('Error fetching event data from PocketBase:', error);
+        throw error;  // Rethrow the error for further handling
     }
 }

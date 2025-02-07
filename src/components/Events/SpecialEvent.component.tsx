@@ -12,8 +12,8 @@ export default function SpecialEventComponent({
 
     return (
 		<div className='p-6 flex flex-col justify-center items-start gap-24'>
-			<div className='flex items-center justify-center w-full'>
-				<div className='flex items-center justify-center flex-col w-1/2'>
+			<div className='flex max-md:flex-col items-center justify-center w-full'>
+				<div className='flex items-center justify-center flex-col w-1/2 max-md:w-full'>
 					{/* Conditionally render the event image if it exists */}
 					{data.event_image && (
 						<Image
@@ -21,11 +21,11 @@ export default function SpecialEventComponent({
 							alt={data.event_title} // Alt text for the image (event title)
 							width={300} // Set the image width
 							height={300} // Set the image height
-							className='h-auto max-w-full' // Responsive image styling
+							className='h-auto w-1/2 max-md:w-3/4' // Responsive image styling
 						/>
 					)}
 				</div>
-				<div className='flex items-start justify-center flex-col w-1/2 gap-9 text-customBrown-100 font-cardoRegular'>
+				<div className='flex items-start justify-center flex-col w-1/2 gap-9 text-customBrown-100 font-cardoRegular max-md:w-full'>
 					<div className='flex items-start justify-center flex-col w-full'>
 						<h1 className='mb-4 text-4xl first-letter:text-customRed-100'>{data.event_title}</h1>{' '}
 						{/* Display the event title */}
