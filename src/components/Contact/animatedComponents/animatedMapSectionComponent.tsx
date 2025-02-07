@@ -48,7 +48,7 @@ export const AnimatedMapSectionComponent = ({ data }: { data: ContactPageData })
                     <Link
                         target='_blank'
                         href={data.button_url}
-                        className='flex items-center justify-center rounded bg-customBrown-100 py-3 gap-8 font-cardoRegular px-8 text-lg text-customWhite-100 transition hover:bg-customWhite-100 lg:text-xl'
+                        className='flex items-center border-3 border-customBrown-100 justify-center rounded bg-customBrown-100 py-3 gap-8 font-cardoRegular px-8 text-lg text-customWhite-100 transition hover:border-3 hover:border-customBrown-100 hover:text-customBrown-100 hover:bg-customWhite-100 lg:text-xl'
                     >
                         {data.button_label}
                         {/* Chevron icon for the button */}
