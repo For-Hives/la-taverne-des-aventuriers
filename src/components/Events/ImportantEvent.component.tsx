@@ -1,7 +1,7 @@
 import { EventListData } from "@/app/actions/services/getEventListData"; // Import the interface for event list data
+import {generateSlug} from "@/utils/slugUtils"; // Import the Link component from Next.js for navigation
 import Image from 'next/image'; // Import the Image component from Next.js for optimized image rendering
 import Link from 'next/link';
-import {generateSlug} from "@/utils/slugUtils"; // Import the Link component from Next.js for navigation
 
 // Define the EventListComponent function component which takes in 'data' as a prop
 export default function ImportantEventComponent({
