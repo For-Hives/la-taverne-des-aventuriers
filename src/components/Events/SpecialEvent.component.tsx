@@ -25,11 +25,11 @@ export default function SpecialEventComponent({
 						/>
 					)}
 				</div>
-				<div className='flex items-start justify-center flex-col w-1/2 gap-9'>
+				<div className='flex items-start justify-center flex-col w-1/2 gap-9 text-customBrown-100 font-cardoRegular'>
 					<div className='flex items-start justify-center flex-col w-full'>
-						<h1 className='mb-4 text-4xl'>{data.event_title}</h1>{' '}
+						<h1 className='mb-4 text-4xl first-letter:text-customRed-100'>{data.event_title}</h1>{' '}
 						{/* Display the event title */}
-						<h2>{data.event_date}</h2> {/* Display the event date */}
+						<h2 className='text-customGray-100'>{new Date(data.event_date).toLocaleDateString('fr-FR')}</h2> {/* Display the event date */}
 					</div>
 
 					<p>

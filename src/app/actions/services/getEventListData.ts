@@ -15,6 +15,7 @@ export interface EventListData {
     event_image: string;  // Image URL for the event
     button_label: string;  // Label for the event button
     button_url: string;  // URL associated with the event button
+    Important_One: boolean; // The Most important event
     created: string;  // Event creation date
     updated: string;  // Event update date
 }
