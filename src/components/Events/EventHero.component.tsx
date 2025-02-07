@@ -12,7 +12,7 @@ export default function EventHeroComponent({
 			{/* Container for the hero section */}
 			<h1 className='mb-4 font-cardinal  text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-5xl'>{data.page_title}</h1>
 			{/* Display the event page title */}
-			<p className='font-obraletra text-customBrown-100'>
+			<p className='font-obraletra text-customBrown-100 w-3/5 text-center'>
 				{/* Paragraph for event description */}
 				<span
 					dangerouslySetInnerHTML={{

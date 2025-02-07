@@ -56,11 +56,17 @@ export default {
 			colors: {
 				background: 'var(--background)',
 
+				customBlue:{
+					100: '#0077FF',
+				},
 				customBrown: {
 					100: '#582615',
 				},
 				customBrownTransparent: {
 					100: 'rgba(88,38,21,0.32)',
+				},
+				customGray: {
+					100: '#6A6A6A',
 				},
 				customRed: {
 					100: '#8D2026',
