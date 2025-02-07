@@ -10,24 +10,24 @@ export default function EventListComponent({
 	data: EventListData[] // Define the type of 'data' prop as an array of EventListData
 }>) {
 	return (
-		<div className='w-1/2 p-6'>
+		<div className='w-1/2 max-md:w-full max-lg:w-2/3 p-6'>
 			{/* Container for the event list */}
-			<ul className='space-y-4'>
+			<ul className='space-y-4 max-sm:space-y-36'>
 
 				{/* List container with space between each list item */}
 				{data.map(
 					(
 						event // Iterate over the 'data' array to display each event
 					) => (
-						<li key={event.id} className='flex gap-6 rounded-lg p-4'>
+						<li key={event.id} className='flex gap-6 rounded-lg p-4 max-sm:flex-col max-sm:gap-9'>
 
 							{/* Each event item */}
 							{event.event_image && ( // If an event image exists, render it
-								<div className='w-1/3 flex items-center justify-center'>
+								<div className='w-1/3 max-sm:w-full flex items-center justify-center'>
 									<Image
 										src={event.event_image} // Image source (URL)
 										alt={event.event_title} // Alt text for the image
-										className='h-auto w-full' // Set the image to be responsive
+										className='h-auto w-full max-sm:w-1/2' // Set the image to be responsive
 										width={1920} // Set the image width
 										height={1080} // Set the image height
 									/>
@@ -51,10 +51,11 @@ export default function EventListComponent({
 								</p>
 								<Link
 									className="mt-4 inline-block font-cardoRegular text-customBlue-100 hover:underline"
-									href={`/events/${event.id}-${generateSlug(event.event_title)}`} // Combine ID and slug
+									href={`/events/${generateSlug(event.event_title)}`} // Now only using the title slug
 								>
 									Lire La suite
 								</Link>
+
 
 							</div>
 						</li>
