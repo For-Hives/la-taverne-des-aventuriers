@@ -108,10 +108,8 @@ export default async function FooterComponent() {
 						<Link className={'underline'} href={'https://andy-cinquin.fr/'}>
 							Andy Cinquin
 						</Link>
-						&nbsp;from&nbsp;
-						<Link href={'https://forhives.fr'} className={'underline'}>
-							ForHives
-						</Link>
+						{/*	lien temporaire le temps que je modifie le site de ForHives pour améliorer les CTA etc,
+						et mettre en avant que c'est plus une agence */}
 					</p>
 				</div>
 			</div>
