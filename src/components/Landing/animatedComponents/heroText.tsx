@@ -20,17 +20,20 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 		>
 			{/* Hero Title with fade-in animation */}
 			<motion.h1
-				className='text-with-outline flex w-full flex-col gap-2 font-cardinal text-4xl font-bold text-customBrown-100 first-letter:text-customRed-100 sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl' // Styling for title
+				className='text-with-outline relative flex h-[200px] w-full min-w-[40vw] flex-col gap-2 font-cardinal text-4xl font-bold text-customBrown-100 first-letter:text-customRed-100 sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl' // Styling for title
 				initial={{ opacity: 0 }} // Initial state: invisible
 				animate={{ opacity: 1 }} // Final state: fully visible
 				transition={{ delay: 0.3, duration: 0.8 }} // Delay and duration for the fade-in animation
 			>
 				{/* Title text with color applied */}
 				<span
-					dangerouslySetInnerHTML={{
-						__html: textToSpanColored(data.hero_title), // Using the function to color the title text
-					}}
-				/>
+					className={'title-custom'}
+					// dangerouslySetInnerHTML={{
+					// 	__html: textToSpanColored(data.hero_title), // Using the function to color the title text
+					// }}
+				>
+					La Taverne des Aventuriers
+				</span>
 			</motion.h1>
 
 			{/* Description with fade-in animation */}
