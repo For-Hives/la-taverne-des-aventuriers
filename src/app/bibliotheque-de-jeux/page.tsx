@@ -1,4 +1,5 @@
 import { getGameLibraryPageData } from '@/app/actions/services/getGamePageData.service'
+import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import GameComponent from '@/components/GameLibrary/Games.component'
 import GLHeroComponent from '@/components/GameLibrary/GLHero.component'
 import MyLudoComponent from '@/components/GameLibrary/MyLudo.component'
@@ -8,13 +9,13 @@ import MobileNavbar from '@/components/Global/NavbarMobile.component'
 
 export default async function Page() {
 	const dataGameLibrary = await getGameLibraryPageData()
+	const navItems = await getNavBarData()
+
 	return (
 		dataGameLibrary && (
 			<div className='flex min-h-screen flex-col'>
-				{/* Navbar for desktop */}
-				<Navbar />
-				{/* Navbar for mobile */}
-				<MobileNavbar />
+				<Navbar navItems={navItems} />
+				<MobileNavbar navItems={navItems} />
 
 				<GLHeroComponent data={dataGameLibrary} />
 

@@ -1,3 +1,4 @@
+import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import BackToTop from '@/components/Global/BackToTop.component'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
@@ -9,7 +10,9 @@ import MenuNavbarOnScroll from '@/components/Menu/MenuNavbarOnScroll.component'
 import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
 import TravelersPleasureElement from '@/components/Menu/TravelersPleasureElement.component'
 
-export default function Page() {
+export default async function Page() {
+	const navItems = await getNavBarData()
+
 	// List of drink categories
 	const listDrinkCollection = [
 		'Cocktails',
@@ -21,17 +24,14 @@ export default function Page() {
 
 	return (
 		<div className='flex h-screen w-screen flex-col items-center'>
-			{/* Navbar for desktop */}
-			<Navbar />
-			{/* Navbar for mobile */}
-			<MobileNavbar />
+			<Navbar navItems={navItems} />
+			<MobileNavbar navItems={navItems} />
 
 			{/* Menu Hero section */}
-			<div
-				className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
+			<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
 			{/* Menu Section */}
-			<div className='flex w-full flex-col justify-center py-16 mt-[30vh]'>
+			<div className='mt-[30vh] flex w-full flex-col justify-center py-16'>
 				{/* This margin-top pushes the content below the Menu Hero section */}
 				<MenuNavbar />
 				<MenuNavbarOnScroll />
@@ -70,6 +70,5 @@ export default function Page() {
 				<FooterComponent />
 			</div>
 		</div>
-
 	)
 }

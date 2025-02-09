@@ -1,8 +1,9 @@
 // Import necessary functions and components for the page
 import { getEventData } from '@/app/actions/services/getEventData' // Modified function to take a slug for event lookup
+import { getNavBarData } from '@/app/actions/services/getNavData.service' // Mobile Navbar component
 import SpecialEventComponent from '@/components/Events/SpecialEvent.component' // Component for rendering the event details
 import Navbar from '@/components/Global/Navbar.component' // Global Navbar component
-import MobileNavbar from '@/components/Global/NavbarMobile.component' // Mobile Navbar component
+import MobileNavbar from '@/components/Global/NavbarMobile.component'
 
 // Define the structure for the Page props
 type PageProps = Promise<{
@@ -15,6 +16,7 @@ export default async function Page({
 }: Readonly<{ params: PageProps }>) {
 	const { slug } = await params // Extract slug from params
 
+	const navItems = await getNavBarData()
 	// Fetch the event data using the slug
 	const eventdata = await getEventData(slug) // Fetch data for the event that matches the slug
 
@@ -27,8 +29,8 @@ export default async function Page({
 	return (
 		<div className='flex flex-col gap-64'>
 			{/* Render Navbar components */}
-			<Navbar />
-			<MobileNavbar />
+			<Navbar navItems={navItems} />
+			<MobileNavbar navItems={navItems} />
 
 			{/* Main content area for the event */}
 			<div className='relative mt-36 flex flex-col items-center gap-24'>

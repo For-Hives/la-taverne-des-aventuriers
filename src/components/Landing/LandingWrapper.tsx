@@ -1,5 +1,6 @@
 import { EventListData } from '@/app/actions/services/getEventListData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
+import { NavItem } from '@/app/actions/services/getNavData.service'
 import FooterComponent from '@/components/Global/Footer.component'
 import LoadingLogo from '@/components/Global/LogoLoader'
 import Navbar from '@/components/Global/Navbar.component'
@@ -13,17 +14,19 @@ import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
 export default function LandingWrapper({
 	data,
 	dataEvents,
+	navItems,
 }: Readonly<{
 	data: LandingPageData
 	dataEvents: EventListData[]
+	navItems: NavItem[]
 }>) {
 	return (
 		data && (
 			<>
 				<LoadingLogo />
 				{/* Navigation */}
-				<Navbar />
-				<MobileNavbar />
+				<Navbar navItems={navItems} />
+				<MobileNavbar navItems={navItems} />
 
 				{/*block to avoid displaying something in this part*/}
 				<div className={'-z-10 h-screen w-screen'}></div>
