@@ -71,7 +71,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 					>
 						<Link
 							href={data.hero_right_button_url} // URL for the right button
-							className='text-with-outline-light flex h-12 items-center rounded border-3 border-solid border-customBrown-100 bg-customWhite-100 px-4 font-obraletra text-lg text-customBrown-100 hover:underline sm:text-xl'
+							className='flex h-12 items-center rounded border-3 border-solid border-customBrown-100 bg-customWhite-100 px-4 font-obraletra text-lg text-customBrown-100 hover:underline sm:text-xl'
 						>
 							{data.hero_right_button_label} {/* Button label */}
 						</Link>
