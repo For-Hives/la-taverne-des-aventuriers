@@ -1,5 +1,5 @@
 import { EventListData } from '@/app/actions/services/getEventListData' // Import the interface for event list data
-import {generateSlug} from "@/utils/slugUtils"; // Import the Link component from Next.js for navigation
+import { generateSlug } from '@/utils/slugUtils' // Import the Link component from Next.js for navigation
 import Image from 'next/image' // Import the Image component from Next.js for optimized image rendering*
 import Link from 'next/link'
 
@@ -10,20 +10,21 @@ export default function EventListComponent({
 	data: EventListData[] // Define the type of 'data' prop as an array of EventListData
 }>) {
 	return (
-		<div className='w-1/2 max-md:w-full max-lg:w-2/3 p-6'>
+		<div className='w-1/2 p-6 max-lg:w-2/3 max-md:w-full'>
 			{/* Container for the event list */}
 			<ul className='space-y-4 max-sm:space-y-36'>
-
 				{/* List container with space between each list item */}
 				{data.map(
 					(
 						event // Iterate over the 'data' array to display each event
 					) => (
-						<li key={event.id} className='flex gap-6 rounded-lg p-4 max-sm:flex-col max-sm:gap-9'>
-
+						<li
+							key={event.id}
+							className='flex gap-6 rounded-lg p-4 max-sm:flex-col max-sm:gap-9'
+						>
 							{/* Each event item */}
 							{event.event_image && ( // If an event image exists, render it
-								<div className='w-1/3 max-sm:w-full flex items-center justify-center'>
+								<div className='flex w-1/3 items-center justify-center max-sm:w-full'>
 									<Image
 										src={event.event_image} // Image source (URL)
 										alt={event.event_title} // Alt text for the image
@@ -33,8 +34,10 @@ export default function EventListComponent({
 									/>
 								</div>
 							)}
-							<div className='flex flex-col items-start justify-center w-2/3'>
-								<h2 className='font-cardoRegular text-customBrown-100 first-letter:text-customRed-100 text-2xl'>{event.event_title}</h2>
+							<div className='flex w-2/3 flex-col items-start justify-center'>
+								<h2 className='font-cardoRegular text-2xl text-customBrown-100 first-letter:text-customRed-100'>
+									{event.event_title}
+								</h2>
 								{/* Display the event title */}
 								<p className='font-obraletra text-customGray-100'>
 									{/* Format the event date */}
@@ -50,13 +53,11 @@ export default function EventListComponent({
 									/>
 								</p>
 								<Link
-									className="mt-4 inline-block font-cardoRegular text-customBlue-100 hover:underline"
-									href={`/events/${generateSlug(event.event_title)}`} // Now only using the title slug
+									className='mt-4 inline-block font-cardoRegular text-customBlue-100 hover:underline'
+									href={`/evenements/${generateSlug(event.event_title)}`} // Now only using the title slug
 								>
 									Lire La suite
 								</Link>
-
-
 							</div>
 						</li>
 					)
