@@ -8,9 +8,8 @@ export default async function FooterComponent() {
 	// Fetch footer data asynchronously
 	const data = await getFooterData()
 
-	// todo: Récupérer l'année en cours (pour que ca puisse s'auto update) - ajouter developped by ForHives !
-	const date = new Date()
-	const label =  "developped by ForHives ! https://forhives.fr/"
+	// Get the actual data formatted only on the actual year
+	const date = new Date().getFullYear()
 
 	return (
 		<div
@@ -64,6 +63,9 @@ export default async function FooterComponent() {
 							<Link className='hover:underline' href={data.reservation_url}>
 								{data.reservation_link_label}
 							</Link>
+							<Link href='/legal' className='hover:underline'>
+								Legal Notice
+							</Link>
 						</div>
 					</div>
 
@@ -100,9 +102,16 @@ export default async function FooterComponent() {
 				</div>
 
 				{/* Copyright section */}
-				<div className='flex w-full max-w-xs flex-col items-center justify-center'>
+				<div className='flex w-full max-w-5xl flex-col items-center justify-center'>
 					<p className='mt-4 text-sm max-md:text-sm'>
-						{date.toDateString()} {label}
+						{`© ${date} La taverne des Aventuriers - Tous droits réservés - Developed & Designed with ❤️ 🐝 by `}
+						<Link className={'underline'} href={'https://andy-cinquin.fr/'}>
+							Andy Cinquin
+						</Link>
+						&nbsp;from&nbsp;
+						<Link href={'https://forhives.fr'} className={'underline'}>
+							ForHives
+						</Link>
 					</p>
 				</div>
 			</div>
