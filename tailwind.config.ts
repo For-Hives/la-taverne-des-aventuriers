@@ -5,7 +5,8 @@ export default {
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
-	plugins: [],
+	// eslint-disable-next-line @typescript-eslint/no-require-imports
+	plugins: [require('@tailwindcss/typography')],
 	safelist: [
 		'mask-custom',
 		'absolute',
@@ -56,7 +57,7 @@ export default {
 			colors: {
 				background: 'var(--background)',
 
-				customBlue:{
+				customBlue: {
 					100: '#0077FF',
 				},
 				customBrown: {
