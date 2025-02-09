@@ -1,4 +1,4 @@
-import { EventListData } from '@/app/actions/services/getEventListData'
+import { EventData } from '@/app/actions/services/getEventData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
 import { AnimatedEvents } from '@/components/Landing/animatedComponents/AnimatedEvents'
 
@@ -7,7 +7,7 @@ export default async function EventsComponent({
 	dataEvents,
 }: Readonly<{
 	data: LandingPageData
-	dataEvents: EventListData[]
+	dataEvents: EventData[]
 }>) {
 	return <AnimatedEvents data={data} dataEvents={dataEvents} />
 }
