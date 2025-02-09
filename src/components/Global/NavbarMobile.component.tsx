@@ -1,54 +1,64 @@
 'use client'
+
+/**
+ * Mobile Navigation Component
+ */
+import { NavBarData } from '@/app/actions/services/getNavData.service'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-export default function MobileNavbar() {
-	// State to manage the mobile menu visibility
+interface MobileNavbarProps {
+	navItems: NavBarData
+}
+
+export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 	return (
 		<nav className='fixed top-0 z-50 w-full lg:hidden'>
-			{/* Navbar container */}
+			{/* Header Bar */}
 			<div className='relative z-50 mx-auto flex items-center justify-between bg-customWhite-100 px-4 py-3'>
 				{/* Logo */}
-				<div>
-					<Link href='/'>
-						<Image
-							src='/assets/images/LTDALogo.png'
-							alt='LTDA Logo'
-							width={50}
-							height={50}
-						/>
-					</Link>
-				</div>
+				<Link href='/' aria-label='Home'>
+					<Image
+						src='/assets/images/LTDALogo.png'
+						alt='Website Logo'
+						width={50}
+						height={50}
+						priority
+					/>
+				</Link>
 
-				{/* Hamburger icon */}
+				{/* Menu Toggle Button */}
 				<button
-					onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggles the menu visibility
-					aria-label='Toggle Menu'
+					onClick={() => setIsMenuOpen(!isMenuOpen)}
+					className='focus:outline-none focus:ring-2 focus:ring-customBrown-100'
+					aria-expanded={isMenuOpen}
+					aria-label='Toggle navigation menu'
 				>
 					<FontAwesomeIcon
-						icon={isMenuOpen ? faTimes : faBars} // Switch between 'X' and 'Hamburger' icon based on menu state
+						icon={isMenuOpen ? faTimes : faBars}
 						className='h-6 w-6 text-customBrown-100'
 					/>
 				</button>
 			</div>
 
-			{/* Fullscreen mobile menu */}
+			{/* Mobile Menu Panel */}
 			<div
 				className={`fixed inset-0 bg-customWhite-100 transition-transform duration-300 ease-in-out ${
 					isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-				} z-40`} // Menu moves from the right when open
+				} z-40`}
+				aria-hidden={!isMenuOpen}
 			>
 				<div className='flex h-full flex-col items-center justify-center'>
-					{/* Close button */}
+					{/* Close Button */}
 					<button
-						className='absolute right-4 top-4'
-						onClick={() => setIsMenuOpen(false)} // Closes the menu when clicked
-						aria-label='Close Menu'
+						className='absolute right-4 top-4 focus:outline-none focus:ring-2 focus:ring-customBrown-100'
+						onClick={() => setIsMenuOpen(false)}
+						aria-label='Close navigation menu'
 					>
 						<FontAwesomeIcon
 							icon={faTimes}
@@ -56,52 +66,31 @@ export default function MobileNavbar() {
 						/>
 					</button>
 
-					{/* Menu links */}
+					{/* Navigation Links */}
 					<ul className='flex flex-col items-center space-y-6 font-obraletra text-lg text-customBrown-100'>
-						<li>
-							<Link href='/WhoAreWe' onClick={() => setIsMenuOpen(false)}>
-								{' '}
-								{/* Close menu when link is clicked */}
-								Who Are We
-							</Link>
-						</li>
-						<li>
-							<Link href='/menu' onClick={() => setIsMenuOpen(false)}>
-								Menu
-							</Link>
-						</li>
-						<li>
-							<Link href='/gamelibrary' onClick={() => setIsMenuOpen(false)}>
-								Game Library
-							</Link>
-						</li>
-						<li>
-							<Link href='/events' onClick={() => setIsMenuOpen(false)}>
-								Events
-							</Link>
-						</li>
-						<li>
-							<Link href='/reservation' onClick={() => setIsMenuOpen(false)}>
-								Reservation
-							</Link>
-						</li>
-						<li>
-							<Link href='/contacts' onClick={() => setIsMenuOpen(false)}>
-								Contact
-							</Link>
-						</li>
+						{navItems.map(item => (
+							<li key={item.id}>
+								<Link
+									href={item.url}
+									onClick={() => setIsMenuOpen(false)}
+									className='block px-4 py-2 hover:underline focus:outline-none focus:ring-2 focus:ring-customBrown-100'
+								>
+									{item.label}
+								</Link>
+							</li>
+						))}
 					</ul>
 				</div>
 			</div>
 
-			{/* Overlay to block interaction with the background content */}
+			{/* Background Overlay */}
 			{isMenuOpen && (
 				<button
 					className='fixed inset-0 z-30 bg-black opacity-50'
-					onClick={() => setIsMenuOpen(false)} // Close the menu when overlay is clicked
-					aria-label='Close Menu'
-					tabIndex={0} // Allows keyboard navigation
-				></button>
+					onClick={() => setIsMenuOpen(false)}
+					aria-label='Close menu overlay'
+					tabIndex={-1}
+				/>
 			)}
 		</nav>
 	)
