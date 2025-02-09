@@ -166,11 +166,16 @@ html {
 
 .text-with-outline-light {
  text-shadow:
-   /* Lighter inner glow for secondary text */
-   0 0 12px rgba(255, 252, 238, 0.7),
-   0 0 8px rgba(255, 252, 238, 0.5),
-   /* Subtle stroke */
-   0 0 1px rgba(255, 252, 238, 0.8);
+   /* Clean beige outline - lighter */
+   -0.5px -0.5px 0 rgb(226, 196, 148),
+   0.5px -0.5px 0 rgb(226, 196, 148),
+   -0.5px 0.5px 0 rgb(226, 196, 148),
+   0.5px 0.5px 0 rgb(226, 196, 148),
+   /* Softer glow */
+   0 0 15px rgba(226, 196, 148, 0.7),
+   0 0 8px rgba(226, 196, 148, 0.5),
+   /* Lighter natural shadow */
+   1px 1px 8px rgba(88, 38, 21, 0.3);
 }
 
 body::-webkit-scrollbar {
