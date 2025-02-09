@@ -1,5 +1,6 @@
 'use client'
 
+import { EventListData } from '@/app/actions/services/getEventListData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -115,7 +116,7 @@ const EventCard: React.FC<EventCardProps> = ({
 
 interface AnimatedEventsProps {
 	data: LandingPageData
-	dataEvents: Event[]
+	dataEvents: EventListData[]
 }
 
 /**
