@@ -1,6 +1,5 @@
 import { EventPageData } from '@/app/actions/services/getEventPageData'
 
-
 // Define the EventHeroComponent function component which takes in 'data' as a prop
 export default function EventHeroComponent({
 	data, // Destructure the 'data' prop which should follow the EventPageData interface
@@ -10,9 +9,11 @@ export default function EventHeroComponent({
 	return (
 		<div className='flex w-full flex-col items-center justify-center p-6'>
 			{/* Container for the hero section */}
-			<h1 className='mb-4 font-cardinal  text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-5xl'>{data.page_title}</h1>
+			<h1 className='mb-4 font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-5xl'>
+				{data.page_title}
+			</h1>
 			{/* Display the event page title */}
-			<p className='font-obraletra text-customBrown-100 w-3/5 text-center max-lg:w-full'>
+			<p className='w-3/5 text-center font-obraletra text-customBrown-100 max-lg:w-full'>
 				{/* Paragraph for event description */}
 				<span
 					dangerouslySetInnerHTML={{
@@ -21,7 +22,6 @@ export default function EventHeroComponent({
 					}}
 				/>
 			</p>
-
 		</div>
 	)
 }

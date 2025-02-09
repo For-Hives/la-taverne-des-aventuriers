@@ -1,13 +1,13 @@
 'use client'
 
 // Importing necessary components and utilities
-import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'; // Importing the type for landing page data
-import { textToSpanColored } from '@/utils/textToSpanColored'; // Importing a function to color text
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Importing the chevron icon from FontAwesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importing the FontAwesomeIcon component
-import { motion } from 'framer-motion'; // Importing motion for animations
-import Image from 'next/image'; // Importing the Image component from Next.js
-import Link from 'next/link'; // Importing the Link component from Next.js
+import { LandingPageData } from '@/app/actions/services/getLandingPageData.service' // Importing the type for landing page data
+import { textToSpanColored } from '@/utils/textToSpanColored' // Importing a function to color text
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons' // Importing the chevron icon from FontAwesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // Importing the FontAwesomeIcon component
+import { motion } from 'framer-motion' // Importing motion for animations
+import Image from 'next/image' // Importing the Image component from Next.js
+import Link from 'next/link' // Importing the Link component from Next.js
 
 // AnimatedWAWSection component that takes data as a prop
 export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
@@ -16,7 +16,7 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 		<div className='grid w-3/4 grid-cols-1 gap-8 md:grid-cols-3'>
 			{/* Image with animation */}
 			<motion.div
-				className='col-span-1 flex items-center justify-center ' // On md and above, image appears last
+				className='col-span-1 flex items-center justify-center' // On md and above, image appears last
 				initial={{ opacity: 0, x: -100 }} // Animation: starts from the left
 				animate={{ opacity: 1, x: 0 }} // Animation: moves to the center
 				transition={{ duration: 0.6 }} // Duration of 0.6 seconds
@@ -47,7 +47,7 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 
 				{/* Description */}
 				<div
-					className='text-base lg:text-left font-cardoRegular' // Description aligned to the left on large screens
+					className='font-cardoRegular text-base lg:text-left' // Description aligned to the left on large screens
 					dangerouslySetInnerHTML={{
 						__html: textToSpanColored(data.description_text), // Function to colorize the description
 					}}
@@ -73,5 +73,5 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 				</motion.div>
 			</motion.div>
 		</div>
-	);
-};
+	)
+}

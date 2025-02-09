@@ -45,12 +45,12 @@ export default function MenuNavbarOnScroll() {
 
 	return (
 		isVisible && (
-			<nav className='fixed max-lg:top-20 left-4 top-2 z-50 rounded-full bg-customWhite-400 p-2 text-customBrown-100 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:opacity-100 sm:left-6'>
+			<nav className='fixed left-4 top-2 z-50 rounded-full bg-customWhite-400 p-2 text-customBrown-100 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:opacity-100 max-lg:top-20 sm:left-6'>
 				{/* Hamburger icon */}
 				<button
 					onClick={toggleMenu}
 					aria-label='Toggle Menu'
-					className='hover:bg-customBrown-300 flex h-10 w-10 items-center justify-center rounded-full text-customBrown-100 hover:text-customWhite-300 transition-all duration-300 ease-in-out focus:outline-none'
+					className='hover:bg-customBrown-300 flex h-10 w-10 items-center justify-center rounded-full text-customBrown-100 transition-all duration-300 ease-in-out hover:text-customWhite-300 focus:outline-none'
 				>
 					<FontAwesomeIcon
 						icon={isMenuOpen ? faTimes : faBars}
@@ -63,13 +63,13 @@ export default function MenuNavbarOnScroll() {
 					className={`absolute left-0 top-16 min-w-max transform rounded-md bg-customWhite-100 shadow-lg transition-all duration-500 ease-in-out ${isMenuOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'}`}
 				>
 					<ul className='flex flex-col items-center space-y-4 font-obraletra text-lg text-customBrown-100'>
-						{tabs.map((tab) => (
+						{tabs.map(tab => (
 							<li key={tab.anchor} className='w-full'>
 								{/* Make Link fill the entire space of the li */}
 								<Link
 									href={`#${tab.anchor}`}
 									onClick={() => setIsMenuOpen(false)}
-									className='block w-full py-2 px-4 hover:text-customBrown-300 transition-colors duration-200 ease-in-out'
+									className='hover:text-customBrown-300 block w-full px-4 py-2 transition-colors duration-200 ease-in-out'
 								>
 									{tab.name}
 								</Link>
