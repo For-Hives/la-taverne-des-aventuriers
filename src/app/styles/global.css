@@ -156,7 +156,12 @@ html {
    -1px -1px 0 rgb(226, 196, 148),
    1px -1px 0 rgb(226, 196, 148),
    -1px 1px 0 rgb(226, 196, 148),
-   1px 1px 0 rgb(226, 196, 148);
+   1px 1px 0 rgb(226, 196, 148),
+   /* Strong glow */
+   0 0 20px rgba(226, 196, 148, 0.9),
+   0 0 10px rgba(226, 196, 148, 0.7),
+   /* Natural shadow */
+   2px 2px 12px rgba(88, 38, 21, 0.4);
 }
 
 .text-with-outline-light {
