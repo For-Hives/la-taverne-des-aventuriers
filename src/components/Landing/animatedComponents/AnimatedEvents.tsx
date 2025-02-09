@@ -1,22 +1,12 @@
 'use client'
 
-import { EventListData } from '@/app/actions/services/getEventListData'
+import { EventData } from '@/app/actions/services/getEventData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-
-// Interfaces for type safety
-interface Event {
-	event_title: string
-	event_date: string
-	summary: string
-	button_url?: string
-	button_label?: string
-	event_image: string
-}
 
 interface AnimationProps {
 	initial: {
@@ -35,7 +25,7 @@ interface AnimationProps {
 }
 
 interface EventCardProps {
-	event: Event
+	event: EventData
 	animationProps: AnimationProps
 	className?: string
 }
@@ -100,7 +90,7 @@ const EventCard: React.FC<EventCardProps> = ({
 				/>
 
 				<Link
-					href={event.button_url || '#'}
+					href={`evenements/${event.event_slug}` || '#'}
 					className='flex items-center gap-3 text-base underline max-lg:text-xs'
 				>
 					<span>{event.button_label || 'Learn more'}</span>
@@ -116,7 +106,7 @@ const EventCard: React.FC<EventCardProps> = ({
 
 interface AnimatedEventsProps {
 	data: LandingPageData
-	dataEvents: EventListData[]
+	dataEvents: EventData[]
 }
 
 /**

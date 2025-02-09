@@ -1,4 +1,4 @@
-import { EventListData } from '@/app/actions/services/getEventListData'
+import { EventData } from '@/app/actions/services/getEventData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
 import { NavItem } from '@/app/actions/services/getNavData.service'
 import FooterComponent from '@/components/Global/Footer.component'
@@ -17,7 +17,7 @@ export default function LandingWrapper({
 	navItems,
 }: Readonly<{
 	data: LandingPageData
-	dataEvents: EventListData[]
+	dataEvents: EventData[]
 	navItems: NavItem[]
 }>) {
 	return (

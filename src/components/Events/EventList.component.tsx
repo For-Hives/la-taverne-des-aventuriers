@@ -1,5 +1,4 @@
-import { EventListData } from '@/app/actions/services/getEventListData' // Import the interface for event list data
-import { generateSlug } from '@/utils/slugUtils' // Import the Link component from Next.js for navigation
+import { EventData } from '@/app/actions/services/getEventData'
 import Image from 'next/image' // Import the Image component from Next.js for optimized image rendering*
 import Link from 'next/link'
 
@@ -7,7 +6,7 @@ import Link from 'next/link'
 export default function EventListComponent({
 	data, // Destructure the 'data' prop which is an array of EventListData
 }: Readonly<{
-	data: EventListData[] // Define the type of 'data' prop as an array of EventListData
+	data: EventData[] // Define the type of 'data' prop as an array of EventListData
 }>) {
 	return (
 		<div className='w-1/2 p-6 max-lg:w-2/3 max-md:w-full'>
@@ -54,7 +53,7 @@ export default function EventListComponent({
 								</p>
 								<Link
 									className='mt-4 inline-block font-cardoRegular text-customBlue-100 hover:underline'
-									href={`/evenements/${generateSlug(event.event_title)}`} // Now only using the title slug
+									href={`/evenements/${event.event_slug}`} // Now only using the title slug
 								>
 									Lire La suite
 								</Link>
