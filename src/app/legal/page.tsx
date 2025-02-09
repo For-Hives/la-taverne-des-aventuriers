@@ -2,7 +2,6 @@
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import { motion } from 'framer-motion'
 
 export default async function LegalPage() {
 	const navItems = await getNavBarData()
@@ -49,12 +48,12 @@ export default async function LegalPage() {
 					</h2>
 					<div className='rounded-lg bg-white p-6 shadow-md'>
 						<p className='mb-4'>
-							This entire website is protected by copyright according to
-							Articles L335-2 and following of the Intellectual Property Code.
-							Any reproduction or representation of its content, images, texts,
-							sounds, by any process used, without prior authorization from the
-							company 'Cinquin Andy' is strictly prohibited. Any violation will
-							constitute a sanction and will be prosecuted.
+							{`This entire website is protected by copyright according to
+								Articles L335-2 and following of the Intellectual Property Code.
+								Any reproduction or representation of its content, images, texts,
+								sounds, by any process used, without prior authorization from the
+								company 'Cinquin Andy' is strictly prohibited. Any violation will
+								constitute a sanction and will be prosecuted.`}
 						</p>
 					</div>
 				</section>
