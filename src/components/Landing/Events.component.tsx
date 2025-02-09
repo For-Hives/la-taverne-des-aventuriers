@@ -7,7 +7,7 @@ export default async function EventsComponent({
 	dataEvents,
 }: Readonly<{
 	data: LandingPageData
-	dataEvents: EventListData
+	dataEvents: EventListData[]
 }>) {
 	return <AnimatedEvents data={data} dataEvents={dataEvents} />
 }

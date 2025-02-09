@@ -15,7 +15,7 @@ export default function LandingWrapper({
 	dataEvents,
 }: Readonly<{
 	data: LandingPageData
-	dataEvents: EventListData
+	dataEvents: EventListData[]
 }>) {
 	return (
 		data && (
