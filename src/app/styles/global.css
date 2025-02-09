@@ -28,14 +28,23 @@
     text-decoration: none;
 }
 
+/*body {*/
+/*    color: var(--foreground);*/
+/*    background: var(--background);*/
+/*    --sb-track-color: #f2edd3;*/
+/*    --sb-thumb-color: #582615;*/
+/*    --sb-size: 7px;*/
+/*}*/
+
 body {
     color: var(--foreground);
-    background: var(--background);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/assets/images/bg_texture.webp');
+    background-repeat: repeat;
+    background-size: auto;
     --sb-track-color: #f2edd3;
     --sb-thumb-color: #582615;
     --sb-size: 7px;
 }
-
 
 body, html {
     box-sizing: border-box;
