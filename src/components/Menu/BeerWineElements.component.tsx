@@ -95,9 +95,7 @@ export default function BeerWineElement() {
 
 	return (
 		<div className='flex w-full flex-col items-center justify-center gap-20 px-4 sm:px-8'>
-
-			<h2
-				className='w-full text-center font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl lg:text-8xl'>
+			<h2 className='w-full text-center font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl lg:text-8xl'>
 				Bières et Vins
 			</h2>
 
@@ -113,35 +111,35 @@ export default function BeerWineElement() {
 						<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
 							Pression:
 						</h4>
-						<table className='w-full border-collapse text-left text-base font-cardoRegular text-customBrown-100'>
+						<table className='w-full border-collapse text-left font-cardoRegular text-base text-customBrown-100'>
 							<thead>
-							<tr>
-								<th className='px-4 py-2'>Bière</th>
-								<th className='px-4 py-2'>25cl</th>
-								<th className='px-4 py-2'>50cl</th>
-							</tr>
+								<tr>
+									<th className='px-4 py-2'>Bière</th>
+									<th className='px-4 py-2'>25cl</th>
+									<th className='px-4 py-2'>50cl</th>
+								</tr>
 							</thead>
 							<tbody>
-							{draftBeers.length === 0 ? (
-								<tr>
-									<td colSpan={3} className='px-4 py-2 text-center'>
-										Aucune Bière pression disponible
-									</td>
-								</tr>
-							) : (
-								// Display draft beers
-								draftBeers.map((beer, index) => (
-									<tr key={`${beer.id}-${index}`}>
-										<td className='px-4 py-2'>{beer.title}</td>
-										<td className='px-4 py-2'>
-											{beer.prices['25'] || 'N/A'} €
-										</td>
-										<td className='px-4 py-2'>
-											{beer.prices['50'] || 'N/A'} €
+								{draftBeers.length === 0 ? (
+									<tr>
+										<td colSpan={3} className='px-4 py-2 text-center'>
+											Aucune Bière pression disponible
 										</td>
 									</tr>
-								))
-							)}
+								) : (
+									// Display draft beers
+									draftBeers.map((beer, index) => (
+										<tr key={`${beer.id}-${index}`}>
+											<td className='px-4 py-2'>{beer.title}</td>
+											<td className='px-4 py-2'>
+												{beer.prices['25'] || 'N/A'} €
+											</td>
+											<td className='px-4 py-2'>
+												{beer.prices['50'] || 'N/A'} €
+											</td>
+										</tr>
+									))
+								)}
 							</tbody>
 						</table>
 					</div>
@@ -190,32 +188,32 @@ export default function BeerWineElement() {
 					</h4>
 					<table className='w-full table-fixed border-collapse text-left font-cardoRegular text-customBrown-100'>
 						<thead>
-						<tr>
-							<th className='w-4/6 px-4 py-2'>Vin</th>
-							<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
-							<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
-						</tr>
+							<tr>
+								<th className='w-4/6 px-4 py-2'>Vin</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
+							</tr>
 						</thead>
 						<tbody>
-						{redWines.length === 0 ? (
-							<tr>
-								<td colSpan={3} className='px-4 py-2 text-center'>
-									Aucun Vin rouge disponible.
-								</td>
-							</tr>
-						) : (
-							redWines.map((wine, index) => (
-								<tr key={`${wine.id}-${index}`}>
-									<td className='px-4 py-2'>{wine.title}</td>
-									<td className='px-4 py-2 text-center'>
-										{wine.price_glass} €
-									</td>
-									<td className='px-4 py-2 text-center'>
-										{wine.price_bottle} €
+							{redWines.length === 0 ? (
+								<tr>
+									<td colSpan={3} className='px-4 py-2 text-center'>
+										Aucun Vin rouge disponible.
 									</td>
 								</tr>
-							))
-						)}
+							) : (
+								redWines.map((wine, index) => (
+									<tr key={`${wine.id}-${index}`}>
+										<td className='px-4 py-2'>{wine.title}</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_glass} €
+										</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_bottle} €
+										</td>
+									</tr>
+								))
+							)}
 						</tbody>
 					</table>
 				</div>
@@ -227,32 +225,32 @@ export default function BeerWineElement() {
 					</h4>
 					<table className='w-full table-fixed border-collapse text-left font-cardoRegular text-customBrown-100'>
 						<thead>
-						<tr>
-							<th className='w-4/6 px-4 py-2'>Vins</th>
-							<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
-							<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
-						</tr>
+							<tr>
+								<th className='w-4/6 px-4 py-2'>Vins</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
+							</tr>
 						</thead>
 						<tbody>
-						{whiteWines.length === 0 ? (
-							<tr>
-								<td colSpan={3} className='px-4 py-2 text-center'>
-									Aucun Vin blanc disponible.
-								</td>
-							</tr>
-						) : (
-							whiteWines.map((wine, index) => (
-								<tr key={`${wine.id}-${index}`}>
-									<td className='px-4 py-2'>{wine.title}</td>
-									<td className='px-4 py-2 text-center'>
-										{wine.price_glass} €
-									</td>
-									<td className='px-4 py-2 text-center'>
-										{wine.price_bottle} €
+							{whiteWines.length === 0 ? (
+								<tr>
+									<td colSpan={3} className='px-4 py-2 text-center'>
+										Aucun Vin blanc disponible.
 									</td>
 								</tr>
-							))
-						)}
+							) : (
+								whiteWines.map((wine, index) => (
+									<tr key={`${wine.id}-${index}`}>
+										<td className='px-4 py-2'>{wine.title}</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_glass} €
+										</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_bottle} €
+										</td>
+									</tr>
+								))
+							)}
 						</tbody>
 					</table>
 				</div>
@@ -264,32 +262,32 @@ export default function BeerWineElement() {
 					</h4>
 					<table className='w-full table-fixed border-collapse text-left font-cardoRegular text-customBrown-100'>
 						<thead>
-						<tr>
-							<th className='w-4/6 px-4 py-2'>Vin</th>
-							<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
-							<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
-						</tr>
+							<tr>
+								<th className='w-4/6 px-4 py-2'>Vin</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
+								<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
+							</tr>
 						</thead>
 						<tbody>
-						{roseWines.length === 0 ? (
-							<tr>
-								<td colSpan={3} className='px-4 py-2 text-center'>
-									Pas de Vin Rosé disponible.
-								</td>
-							</tr>
-						) : (
-							roseWines.map((wine, index) => (
-								<tr key={`${wine.id}-${index}`}>
-									<td className='px-4 py-2'>{wine.title}</td>
-									<td className='px-4 py-2 text-center'>
-										{wine.price_glass} €
-									</td>
-									<td className='px-4 py-2 text-center'>
-										{wine.price_bottle} €
+							{roseWines.length === 0 ? (
+								<tr>
+									<td colSpan={3} className='px-4 py-2 text-center'>
+										Pas de Vin Rosé disponible.
 									</td>
 								</tr>
-							))
-						)}
+							) : (
+								roseWines.map((wine, index) => (
+									<tr key={`${wine.id}-${index}`}>
+										<td className='px-4 py-2'>{wine.title}</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_glass} €
+										</td>
+										<td className='px-4 py-2 text-center'>
+											{wine.price_bottle} €
+										</td>
+									</tr>
+								))
+							)}
 						</tbody>
 					</table>
 				</div>

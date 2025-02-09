@@ -56,7 +56,7 @@ export default function BackToTop() {
 		isVisible && (
 			<button
 				onClick={scrollToTop} // Handle click to scroll to top
-				className={`fixed right-4 ${getPosition()} items-center justify-center bg-customWhite-400 text-customBrown-100 hover:bg-customBrown-100 hover:text-customWhite-400 z-50 rounded-full p-2 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:opacity-100 sm:right-6`}
+				className={`fixed right-4 ${getPosition()} z-50 items-center justify-center rounded-full bg-customWhite-400 p-2 text-customBrown-100 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:text-customWhite-400 hover:opacity-100 sm:right-6`}
 				aria-label='Retour en haut' // Accessibility label for the button
 			>
 				<FontAwesomeIcon

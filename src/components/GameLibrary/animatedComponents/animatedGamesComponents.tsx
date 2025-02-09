@@ -13,9 +13,9 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 			{/* Title Section */}
 			<motion.h2
 				className='font-obraletraBold text-xl text-customBrown-100'
-				initial={{opacity: 0}} // Initial opacity is 0 (hidden)
-				animate={{opacity: 1}} // Animate opacity to 1 (fully visible)
-				transition={{duration: 0.6}} // Transition duration is 0.6 seconds
+				initial={{ opacity: 0 }} // Initial opacity is 0 (hidden)
+				animate={{ opacity: 1 }} // Animate opacity to 1 (fully visible)
+				transition={{ duration: 0.6 }} // Transition duration is 0.6 seconds
 			>
 				{data.Card_Title} {/* Displaying the card title from data */}
 			</motion.h2>
@@ -25,10 +25,10 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 				{/* First Card */}
 				<motion.div
 					className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-gl-card1-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:w-4/5'
-					initial={{opacity: 0, x: -100}} // Initially hidden with opacity 0 and positioned to the left
-					whileInView={{opacity: 1, x: 0}} // When in view, animate to opacity 1 and position 0 (in place)
-					viewport={{once: true}} // Trigger the animation only once when visible
-					transition={{duration: 0.8}} // Transition duration of 0.8 seconds
+					initial={{ opacity: 0, x: -100 }} // Initially hidden with opacity 0 and positioned to the left
+					whileInView={{ opacity: 1, x: 0 }} // When in view, animate to opacity 1 and position 0 (in place)
+					viewport={{ once: true }} // Trigger the animation only once when visible
+					transition={{ duration: 0.8 }} // Transition duration of 0.8 seconds
 				>
 					{/* Overlay Gradient */}
 					<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
@@ -61,10 +61,10 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 					{/* Second Card */}
 					<motion.div
 						className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-gl-card2-bg bg-cover bg-center max-lg:w-4/5'
-						initial={{opacity: 0, x: 100}} // Initially hidden with opacity 0 and positioned to the right
-						whileInView={{opacity: 1, x: 0}} // Animate to opacity 1 and position 0 (in place) when in view
-						viewport={{once: true}} // Trigger the animation only once when visible
-						transition={{duration: 0.8}} // Transition duration of 0.8 seconds
+						initial={{ opacity: 0, x: 100 }} // Initially hidden with opacity 0 and positioned to the right
+						whileInView={{ opacity: 1, x: 0 }} // Animate to opacity 1 and position 0 (in place) when in view
+						viewport={{ once: true }} // Trigger the animation only once when visible
+						transition={{ duration: 0.8 }} // Transition duration of 0.8 seconds
 					>
 						{/* Overlay Gradient */}
 						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
@@ -85,7 +85,7 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 								className='flex items-center gap-3 underline'
 							>
 								<span>{data.card2_button_label}</span>
-								<FontAwesomeIcon icon={faChevronRight} className='h-4 w-4'/>
+								<FontAwesomeIcon icon={faChevronRight} className='h-4 w-4' />
 							</Link>
 						</div>
 					</motion.div>
@@ -93,10 +93,10 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 					{/* Third Card */}
 					<motion.div
 						className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-gl-card3-bg bg-cover bg-center max-lg:w-4/5'
-						initial={{opacity: 0, y: 100}} // Initially hidden with opacity 0 and positioned downwards
-						whileInView={{opacity: 1, y: 0}} // Animate to opacity 1 and position 0 (in place) when in view
-						viewport={{once: true}} // Trigger the animation only once when visible
-						transition={{duration: 0.8}} // Transition duration of 0.8 seconds
+						initial={{ opacity: 0, y: 100 }} // Initially hidden with opacity 0 and positioned downwards
+						whileInView={{ opacity: 1, y: 0 }} // Animate to opacity 1 and position 0 (in place) when in view
+						viewport={{ once: true }} // Trigger the animation only once when visible
+						transition={{ duration: 0.8 }} // Transition duration of 0.8 seconds
 					>
 						{/* Overlay Gradient */}
 						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
@@ -117,7 +117,7 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 								className='flex items-center gap-3 underline'
 							>
 								<span>{data.card3_button_label}</span>
-								<FontAwesomeIcon icon={faChevronRight} className='h-4 w-4'/>
+								<FontAwesomeIcon icon={faChevronRight} className='h-4 w-4' />
 							</Link>
 						</div>
 					</motion.div>

@@ -70,7 +70,7 @@ export default function MenuNavbar() {
 			)}
 		>
 			{/* Mobile view */}
-			<div className='grid grid-cols-1 md:hidden p-16'>
+			<div className='grid grid-cols-1 p-16 md:hidden'>
 				<select
 					aria-label='Select a tab' // Accessibility label
 					className='col-start-1 row-start-1 w-full appearance-none rounded-md bg-customWhite-200 py-2 pl-3 pr-8 text-base text-customBrown-100 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600'
@@ -92,10 +92,10 @@ export default function MenuNavbar() {
 			</div>
 
 			{/* Desktop view */}
-			<div className='hidden md:block p-16'>
+			<div className='hidden p-16 md:block'>
 				<nav
 					aria-label='Tabs' // Accessibility label
-					className='divide-customBrownTransparent-100 isolate flex divide-x rounded-lg shadow'
+					className='isolate flex divide-x divide-customBrownTransparent-100 rounded-lg shadow'
 				>
 					{/* Render each tab as a button */}
 					{tabs.map((tab, tabIdx) => (

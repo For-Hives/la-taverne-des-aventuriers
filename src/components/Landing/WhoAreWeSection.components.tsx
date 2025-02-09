@@ -6,5 +6,5 @@ export default async function WhoAreWeSection({
 }: Readonly<{
 	data: LandingPageData
 }>) {
-	return < AnimatedWAWSection data={data} />;
+	return <AnimatedWAWSection data={data} />
 }
