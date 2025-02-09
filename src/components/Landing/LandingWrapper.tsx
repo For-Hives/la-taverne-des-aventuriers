@@ -1,4 +1,7 @@
+import { EventListData } from '@/app/actions/services/getEventListData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
+import FooterComponent from '@/components/Global/Footer.component'
+import LoadingLogo from '@/components/Global/LogoLoader'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import ReservationCardComponent from '@/components/Global/ReservationCard.component'
@@ -7,13 +10,12 @@ import HeroTextComponent from '@/components/Landing/HeroText.component'
 import BackgroundVideoLP from '@/components/Landing/LpBackgroundVideo.component'
 import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
 
-import FooterComponent from '../Global/Footer.component'
-import LoadingLogo from '../Global/LogoLoader'
-
 export default function LandingWrapper({
 	data,
+	dataEvents,
 }: Readonly<{
 	data: LandingPageData
+	dataEvents: EventListData
 }>) {
 	return (
 		data && (
@@ -39,7 +41,7 @@ export default function LandingWrapper({
 				{/* Main Content */}
 				<div className='relative pt-32'>
 					<div className='flex w-full flex-col items-center gap-96'>
-						<EventsComponent data={data} />
+						<EventsComponent data={data} dataEvents={dataEvents} />
 						<WhoAreWeSection data={data} />
 						<ReservationCardComponent />
 						<FooterComponent />

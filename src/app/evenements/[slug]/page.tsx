@@ -10,7 +10,9 @@ type PageProps = Promise<{
 }>
 
 // Main component for rendering the event page based on the slug
-export default async function Page({ params }: { params: PageProps }) {
+export default async function Page({
+	params,
+}: Readonly<{ params: PageProps }>) {
 	const { slug } = await params // Extract slug from params
 
 	// Fetch the event data using the slug
