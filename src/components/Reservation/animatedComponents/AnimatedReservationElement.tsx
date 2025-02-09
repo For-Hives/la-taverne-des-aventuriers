@@ -80,7 +80,7 @@ export const AnimatedReservationElement = ({
 					animate={{ opacity: 1, x: 0 }} // Animate to full opacity and original horizontal position
 					transition={{ delay: 0.6, duration: 0.8 }} // Delay and duration for the animation
 				>
-					<div className='flex flex-col p-8'>
+					<div className='flex flex-col gap-4 p-8'>
 						<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
 							{data.our_history_title} {/* Dynamic title for history */}
 						</h2>
