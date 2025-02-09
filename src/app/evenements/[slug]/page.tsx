@@ -6,13 +6,11 @@ import MobileNavbar from '@/components/Global/NavbarMobile.component' // Mobile 
 
 // Define the structure for the Page props
 type PageProps = Promise<{
-	params: {
-		slug: string // Slug is now used to look up the event by its title
-	}
+	slug: string // Slug is now used to look up the event by its title
 }>
 
 // Main component for rendering the event page based on the slug
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: { params: PageProps }) {
 	const { slug } = await params // Extract slug from params
 
 	// Fetch the event data using the slug
