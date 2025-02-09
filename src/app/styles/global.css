@@ -115,14 +115,48 @@ html {
     }
 }
 
+/*.text-with-outline {*/
+/* text-shadow:*/
+/*   !* Stronger inner glow *!*/
+/*   0 0 25px rgba(226, 196, 148, 0.9),*/
+/*   0 0 20px rgba(226, 196, 148, 0.8),*/
+/*   0 0 15px rgba(226, 196, 148, 0.7),*/
+/*   !* Outer shadow for depth *!*/
+/*   2px 2px 4px rgba(88, 38, 21, 0.3),*/
+/*   !* Crisp stroke *!*/
+/*   0 0 2px rgba(226, 196, 148, 1);*/
+/*}*/
+
+/*!* Version 1 - Plus doré et brillant *!*/
+/*.text-with-outline {*/
+/*  text-shadow:*/
+/*    !* Bright inner glow *!*/
+/*    0 0 25px rgba(255, 215, 148, 0.9),*/
+/*    0 0 20px rgba(226, 196, 148, 0.8),*/
+/*    0 0 15px rgba(226, 196, 148, 0.7),*/
+/*    !* Subtle dark shadow for depth *!*/
+/*    2px 2px 4px rgba(58, 28, 11, 0.4);*/
+/*}*/
+
+/*!* Version 5 - Plus subtil et élégant *!*/
+/*.text-with-outline {*/
+/*  text-shadow:*/
+/*    !* Elegant soft glow *!*/
+/*    0 0 20px rgba(226, 196, 148, 0.7),*/
+/*    0 0 15px rgba(205, 175, 125, 0.6),*/
+/*    !* Very subtle stroke *!*/
+/*    0 0 2px rgba(226, 196, 148, 0.8),*/
+/*    !* Light depth *!*/
+/*    1px 1px 3px rgba(88, 38, 21, 0.2);*/
+/*}*/
+
 .text-with-outline {
  text-shadow:
-   /* Inner glow effect */
-   0 0 15px rgba(255, 252, 238, 0.8),
-   0 0 10px rgba(255, 252, 238, 0.6),
-   0 0 5px rgba(255, 252, 238, 0.4),
-   /* Subtle stroke */
-   0 0 1px rgba(255, 252, 238, 0.9);
+   /* Clean beige outline */
+   -1px -1px 0 rgb(226, 196, 148),
+   1px -1px 0 rgb(226, 196, 148),
+   -1px 1px 0 rgb(226, 196, 148),
+   1px 1px 0 rgb(226, 196, 148);
 }
 
 .text-with-outline-light {
