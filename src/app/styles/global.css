@@ -28,9 +28,19 @@
     text-decoration: none;
 }
 
+/*body {*/
+/*    color: var(--foreground);*/
+/*    background: var(--background);*/
+/*    --sb-track-color: #f2edd3;*/
+/*    --sb-thumb-color: #582615;*/
+/*    --sb-size: 7px;*/
+/*}*/
+
 body {
     color: var(--foreground);
-    background: var(--background);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('/assets/images/bg_texture.webp');
+    background-repeat: repeat;
+    background-size: auto;
     --sb-track-color: #f2edd3;
     --sb-thumb-color: #582615;
     --sb-size: 7px;
@@ -116,19 +126,17 @@ html {
 }
 
 .text-with-outline {
-  text-shadow:
-    -1px -1px 0 rgba(255,255,255,0.3),
-     1px -1px 0 rgba(255,255,255,0.3),
-    -1px  1px 0 rgba(255,255,255,0.3),
-     1px  1px 0 rgba(255,255,255,0.3);
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.3),
+    1px -1px 0 rgba(255, 255, 255, 0.3),
+    -1px 1px 0 rgba(255, 255, 255, 0.3),
+    1px 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .text-with-outline-light {
-  text-shadow:
-    -0.5px -0.5px 0 rgba(255,255,255,0.3),
-     0.5px -0.5px 0 rgba(255,255,255,0.3),
-    -0.5px  0.5px 0 rgba(255,255,255,0.3),
-     0.5px  0.5px 0 rgba(255,255,255,0.3);
+    text-shadow: -0.5px -0.5px 0 rgba(255, 255, 255, 0.3),
+    0.5px -0.5px 0 rgba(255, 255, 255, 0.3),
+    -0.5px 0.5px 0 rgba(255, 255, 255, 0.3),
+    0.5px 0.5px 0 rgba(255, 255, 255, 0.3);
 }
 
 body::-webkit-scrollbar {
@@ -150,3 +158,68 @@ body::-webkit-scrollbar-thumb {
         scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
     }
 }
+
+.title-custom {
+    content: "La Taverne des Aventuriers";
+    position: absolute;
+    background-image: repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 2px,
+            white 2px,
+            white 4px
+    );
+    -webkit-background-clip: text;
+    color: #8D2026;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 1s;
+    width: 100%;
+}
+
+.title-custom::before {
+    content: "La Taverne des Aventuriers";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 2px,
+            white 2px,
+            white 4px
+    );
+    -webkit-background-clip: text;
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+    transition: 1s;
+}
+
+.title-custom::after {
+    content: "La Taverne des Aventuriers";
+    position: absolute;
+    color: transparent;
+    background-image: repeating-linear-gradient(
+            135deg,
+            transparent 0,
+            transparent 2px,
+            white 2px,
+            white 4px
+    );
+    -webkit-background-clip: text;
+    top: -5px;
+    left: -5px;
+    transition: 1s;
+}
+
+.title-custom:hover:before {
+    top: 10px;
+    left: 10px;
+}
+
+.title-custom:hover:after {
+    top: -10px;
+    left: -10px;
+}
+
