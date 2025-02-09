@@ -12,7 +12,7 @@ export const AnimatedReservationElement = ({
 	return (
 		<div className='flex h-full w-11/12 items-center justify-center font-cardoRegular text-customBrown-100'>
 			{/* Grid layout for the content */}
-			<div className='grid h-full w-full grid-cols-1 grid-rows-10 gap-4 sm:grid-cols-2 xl:grid-cols-10'>
+			<div className='grid h-full w-full grid-cols-1 grid-rows-8 gap-4 sm:grid-cols-2 xl:grid-cols-10'>
 				{/* Card 1 - Top Left */}
 				<motion.div
 					className='col-span-1 row-span-1 flex items-center justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-2 sm:row-span-2 xl:col-span-8 xl:row-span-3'
@@ -29,39 +29,43 @@ export const AnimatedReservationElement = ({
 						}}
 					>
 						{/* Gradient overlay for the background */}
-						<div
-							className='absolute inset-0 z-0 bg-gradient-to-r from-customWhite-300/100 via-customWhite-300/100 to-customWhite-300/20' />
+						<div className='absolute inset-0 z-0 bg-gradient-to-r from-customWhite-300/100 via-customWhite-300/100 to-customWhite-300/20' />
 
 						{/* Content */}
-						<div className='relative z-10 flex flex-col  gap-4 '>
+						<div className='relative z-10 flex flex-col gap-4 lg:w-1/2'>
 							<h1 className='font-cardinal text-2xl tracking-wider first-letter:text-customRed-100 sm:text-3xl'>
 								{data.who_are_we_title} {/* Dynamic title */}
 							</h1>
 							<div
+								className={
+									'prose prose-stone prose-headings:text-customBrown-100'
+								} // Styling for the description
 								dangerouslySetInnerHTML={{ __html: data.description_card_1 }} // Injecting HTML content for description
 							/>
 						</div>
 					</div>
 				</motion.div>
 
-
-				{/* Card 2 - Middle Left */}
+				{/* Card 2 - Middle Right */}
 				<motion.div
 					className='relative col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-1 sm:row-span-4 xl:col-span-2'
 					initial={{ opacity: 0, x: -50 }} // Initial opacity and horizontal position for animation
 					animate={{ opacity: 1, x: 0 }} // Animate to full opacity and original horizontal position
 					transition={{ delay: 0.4, duration: 0.8 }} // Delay and duration for the animation
 				>
-					<div className='p-8 flex flex-col gap-4'>
-						<h2 className=' font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
+					<div className='flex flex-col p-8'>
+						<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
 							{data.team_title} {/* Dynamic title for the team */}
 						</h2>
 						<div
+							className={
+								'prose prose-stone prose-headings:text-customBrown-100'
+							}
 							dangerouslySetInnerHTML={{ __html: data.description_card_4 }} // Injecting HTML content for description
 						/>
 					</div>
 					<Image
-						className='w-3/6 absolute right-0 bottom-0 translate-x-20 translate-y-20 z-40 max-xl:hidden'
+						className='absolute bottom-0 right-0 z-40 w-3/6 translate-x-20 translate-y-20 max-xl:hidden'
 						src='/assets/images/elements/WhoAreWeElement/dice.png' // Dice image source
 						alt='Dice' // Alt text for accessibility
 						width={520}
@@ -69,18 +73,21 @@ export const AnimatedReservationElement = ({
 					/>
 				</motion.div>
 
-				{/* Card 3 - Middle Right */}
+				{/* Card 3 - Middle Left */}
 				<motion.div
-					className='col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-1 sm:row-span-4 xl:row-span-8 xl:col-span-2'
+					className='col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-1 sm:row-span-4 xl:col-span-2 xl:row-span-8'
 					initial={{ opacity: 0, x: 50 }} // Initial opacity and horizontal position for animation
 					animate={{ opacity: 1, x: 0 }} // Animate to full opacity and original horizontal position
 					transition={{ delay: 0.6, duration: 0.8 }} // Delay and duration for the animation
 				>
-					<div className='p-8 flex flex-col gap-4'>
+					<div className='flex flex-col p-8'>
 						<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
 							{data.our_history_title} {/* Dynamic title for history */}
 						</h2>
 						<div
+							className={
+								'prose prose-stone prose-headings:text-customBrown-100'
+							}
 							dangerouslySetInnerHTML={{ __html: data.description_card_2 }} // Injecting HTML content for description
 						/>
 					</div>
@@ -101,13 +108,12 @@ export const AnimatedReservationElement = ({
 					/>
 
 					<Image
-						className='w-1/6 absolute right-0 bottom-0 translate-x-10 translate-y-24'
+						className='absolute bottom-0 right-0 w-1/6 translate-x-10 translate-y-24'
 						src='/assets/images/elements/WhoAreWeElement/dice.png' // Dice image source
 						alt='Dice' // Alt text for accessibility
 						width={520}
 						height={520}
 					/>
-
 				</motion.div>
 
 				{/* Card 4 - Bottom Left */}
@@ -126,15 +132,17 @@ export const AnimatedReservationElement = ({
 						}}
 					>
 						{/* Gradient overlay for the background */}
-						<div
-							className='absolute inset-0 z-0 bg-gradient-to-b from-customWhite-300/100 via-customWhite-300/100 to-customWhite-300/20 max-xl:bg-gradient-to-r' />
+						<div className='absolute inset-0 z-0 bg-gradient-to-b from-customWhite-300/100 via-customWhite-300/100 to-customWhite-300/20 max-xl:bg-gradient-to-r' />
 
 						{/* Content */}
-						<div className='relative z-10 p-8 flex flex-col gap-4'>
+						<div className='relative z-10 flex flex-col gap-4 p-8'>
 							<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
 								{data.information_title} {/* Dynamic title for information */}
 							</h2>
 							<div
+								className={
+									'prose prose-stone prose-headings:text-customBrown-100'
+								}
 								dangerouslySetInnerHTML={{ __html: data.description_card_5 }} // Injecting HTML content for description
 							/>
 						</div>
@@ -148,11 +156,14 @@ export const AnimatedReservationElement = ({
 					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original vertical position
 					transition={{ delay: 1.2, duration: 0.8 }} // Delay and duration for the animation
 				>
-					<div className='flex flex-col p-8 gap-4'>
+					<div className='flex flex-col p-8'>
 						<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
 							{data.our_services_title} {/* Dynamic title for services */}
 						</h2>
 						<div
+							className={
+								'prose prose-stone prose-headings:text-customBrown-100'
+							}
 							dangerouslySetInnerHTML={{ __html: data.description_card_3 }} // Injecting HTML content for description
 						/>
 					</div>
