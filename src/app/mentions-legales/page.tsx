@@ -44,7 +44,7 @@ export default async function LegalPage() {
 
 				<section className='mb-8'>
 					<h2 className='mb-4 font-obraletraBold text-2xl text-customBrown-100'>
-						Droits d'auteur
+						{`Droits d'auteur`}
 					</h2>
 					<div className='rounded-lg bg-white p-6 shadow-md'>
 						<p className='mb-4'>
@@ -86,8 +86,8 @@ export default async function LegalPage() {
 							</a>
 						</p>
 						<p className='mb-4'>
-							Services : Création de thème personnalisé, d'image de marque,
-							référencement, et hébergement - prestation 'clé en main'.
+							{`Services : Création de thème personnalisé, d'image de marque,
+								référencement, et hébergement - prestation 'clé en main'.`}
 						</p>
 					</div>
 				</section>
