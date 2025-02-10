@@ -107,10 +107,10 @@ export const AnimatedContactElementSection = ({
 								{data.contact_email_title}
 							</h2>
 							<Link
-								href={`mailto:${data.email}`}
+								href={`mailto:${data.contact_email}`}
 								className='font-cardoRegular text-customBrown-100 underline'
 							>
-								{data.email}
+								{data.contact_email}
 							</Link>
 						</div>
 						<div className='relative'>

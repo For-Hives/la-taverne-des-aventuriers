@@ -26,10 +26,7 @@ export interface FooterData {
 	socials_title: string
 	facebook_url: string
 	instagram_url: string
-	twitter_url: string
-	copyright: string
-	image1: string
-	image2: string
+	myludo_url: string
 	created: string
 	updated: string
 }

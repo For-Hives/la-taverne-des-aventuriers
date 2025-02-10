@@ -15,11 +15,11 @@ export interface ContactPageData {
 	schedule_title: string
 	schedule_content: string
 	contact_email_title: string
-	email: string
+	contact_email: string
 	contact_socials_title: string
 	instagram_url: string
-	facebook_url: string
 	myludo_url: string
+	facebook_url: string
 	address_title: string
 	address: string
 	button_label: string

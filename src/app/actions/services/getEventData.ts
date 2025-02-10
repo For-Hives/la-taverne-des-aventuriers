@@ -6,14 +6,14 @@ export interface EventData {
 	collectionId: string // ID of the collection where the event is stored
 	collectionName: string // Name of the collection
 	id: string // Unique identifier of the event
-	event_slug: string // Slug generated from the event title
 	event_title: string // Title of the event
+	event_slug: string // Slug generated from the event title
 	event_date: string // Date of the event
 	event_description: string // Description of the event
-	summary: string // A brief summary of the event
 	event_image?: string // Optional image associated with the event
 	button_label: string // Label for the button linked to the event
 	button_url: string // URL linked to the event button
+	summary: string // A brief summary of the event
 	Important_One: boolean // Indicates if the event is the most important one
 	created: string // The date when the event was created
 	updated: string // The date when the event was last updated
