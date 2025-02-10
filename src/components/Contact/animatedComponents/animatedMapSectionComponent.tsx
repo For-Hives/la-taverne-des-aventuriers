@@ -30,7 +30,7 @@ export const AnimatedMapSectionComponent = ({
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
 				>
-					{data.adress_title} {/* Display the address title */}
+					{data.address_title} {/* Display the address title */}
 				</motion.h1>
 				{/* Address */}
 				<motion.p

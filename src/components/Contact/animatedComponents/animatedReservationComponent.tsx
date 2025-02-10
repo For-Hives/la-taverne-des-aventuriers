@@ -49,16 +49,9 @@ export const AnimatedReservationComponent = ({
 							{data.how_to_title}
 						</motion.h2>
 
-						{/* Description content */}
-						<motion.div
-							className='w-full font-cardoRegular text-base md:text-lg'
-							initial={{ opacity: 0, y: 30 }} // Start from below
-							animate={{ opacity: 1, y: 0 }} // Fade in and move up when in view
-							viewport={{ once: true }} // Trigger only once
-							transition={{ delay: 0.4, duration: 0.8 }} // Delay for smooth sequence
-							dangerouslySetInnerHTML={{
-								__html: data.description,
-							}}
+						<div
+							className={'prose prose-customBrown'} // Styling for the description
+							dangerouslySetInnerHTML={{ __html: data.description }} // Injecting HTML content for description
 						/>
 
 						{/* Animated bag image */}

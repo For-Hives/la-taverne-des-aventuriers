@@ -5,6 +5,7 @@ import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion' // Importing motion for animations from Framer Motions
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const AnimatedContactElementSection = ({
 	data,
@@ -24,18 +25,12 @@ export const AnimatedContactElementSection = ({
 					className='flex flex-col items-start gap-6 rounded-2xl border-3 border-customBrown-100 bg-customWhite-300 p-6 font-obraletra shadow'
 				>
 					<h1 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
-						{data.schedules_title}
+						{data.schedule_title}
 					</h1>
-					<p className='font-cardoRegular text-customBrown-100 [&>span]:block'>
-						<span>{data.schedules_exceptional}</span>
-						<span>{data.schedules_monday}</span>
-						<span>{data.schedules_tuesday}</span>
-						<span>{data.schedules_wednesday}</span>
-						<span>{data.schedules_thursday}</span>
-						<span>{data.schedules_friday}</span>
-						<span>{data.schedules_saturday}</span>
-						<span>{data.schedules_sunday}</span>
-					</p>
+					<div
+						className={'prose prose-customBrown'} // Styling for the description
+						dangerouslySetInnerHTML={{ __html: data.schedule_content }} // Injecting HTML content for description
+					/>
 				</motion.div>
 
 				{/* Bloc Contact et Email (Contact and Email) */}
@@ -58,27 +53,44 @@ export const AnimatedContactElementSection = ({
 							{data.contact_socials_title}
 						</h2>
 						<div className='flex items-center justify-evenly gap-10'>
-							<div className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'>
+							<Link
+								href={data.facebook_url}
+								target={'_blank'}
+								rel={'noreferrer noopener'}
+								className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'
+							>
 								<FontAwesomeIcon
 									icon={faFacebook}
 									className='h-8 w-8 text-customBrown-100'
 								/>
-							</div>
-							<div className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'>
+							</Link>
+							<Link
+								href={data.myludo_url}
+								target={'_blank'}
+								rel={'noreferrer noopener'}
+								className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'
+							>
 								<Image
-									src='/assets/images/elements/ContactElements/myludo_icon.png'
+									src={
+										'/assets/images/elements/ContactElements/myludo_icon.png'
+									}
 									alt='MyLudo Icon'
 									className='h-8 w-8'
 									width={200}
 									height={200}
 								/>
-							</div>
-							<div className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'>
+							</Link>
+							<Link
+								href={data.instagram_url}
+								target={'_blank'}
+								rel={'noreferrer noopener'}
+								className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'
+							>
 								<FontAwesomeIcon
 									icon={faInstagram}
 									className='h-8 w-8 text-customBrown-100'
 								/>
-							</div>
+							</Link>
 						</div>
 					</motion.div>
 
@@ -94,9 +106,12 @@ export const AnimatedContactElementSection = ({
 							<h2 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
 								{data.contact_email_title}
 							</h2>
-							<p className='font-cardoRegular text-customBrown-100'>
+							<Link
+								href={`mailto:${data.email}`}
+								className='font-cardoRegular text-customBrown-100 underline'
+							>
 								{data.email}
-							</p>
+							</Link>
 						</div>
 						<div className='relative'>
 							<Image

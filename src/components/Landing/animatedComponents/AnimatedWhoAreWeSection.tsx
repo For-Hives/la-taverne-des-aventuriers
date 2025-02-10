@@ -13,10 +13,10 @@ import Link from 'next/link' // Importing the Link component from Next.js
 export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 	return (
 		// Main wrapper div
-		<div className='grid w-3/4 grid-cols-1 gap-8 md:grid-cols-3'>
+		<div className='mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-8 md:grid-cols-5 md:p-0'>
 			{/* Image with animation */}
 			<motion.div
-				className='col-span-1 flex items-center justify-center' // On md and above, image appears last
+				className='col-span-2 flex items-center justify-center' // On md and above, image appears last
 				initial={{ opacity: 0, x: -100 }} // Animation: starts from the left
 				animate={{ opacity: 1, x: 0 }} // Animation: moves to the center
 				transition={{ duration: 0.6 }} // Duration of 0.6 seconds
@@ -24,22 +24,36 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 				<Image
 					src={data?.description_image} // Image source
 					alt='Vinbieres' // Alt text
-					width={300} // Width
-					height={300} // Height
-					className='h-auto max-w-full' // Additional styles
+					width={350} // Width
+					height={350} // Height
+					className='hidden h-auto max-w-full xl:block' // Additional styles
+				/>
+				<Image
+					src={data?.description_image} // Image source
+					alt='Vinbieres' // Alt text
+					width={250} // Width
+					height={250} // Height
+					className='hidden h-auto max-w-full lg:block xl:hidden' // Additional styles
+				/>
+				<Image
+					src={data?.description_image} // Image source
+					alt='Vinbieres' // Alt text
+					width={200} // Width
+					height={200} // Height
+					className='block h-auto max-w-full lg:hidden' // Additional styles
 				/>
 			</motion.div>
 
 			{/* Text content with animation */}
 			<motion.div
-				className='col-span-1 flex flex-col justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 md:col-span-2 lg:items-start' // The text takes 2 cells on md and above
+				className='col-span-1 flex flex-col justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 md:col-span-3 lg:items-start' // The text takes 2 cells on md and above
 				initial={{ opacity: 0, y: 50 }} // Animation: starts from the bottom
 				animate={{ opacity: 1, y: 0 }} // Animation: moves up to the original position
 				transition={{ delay: 0.2, duration: 0.6 }} // Delay and duration of 0.6 seconds
 			>
 				{/* Title */}
 				<h2
-					className='text-xl lg:text-left' // Title aligned to the left on large screens
+					className='text-2xl lg:text-left' // Title aligned to the left on large screens
 					dangerouslySetInnerHTML={{
 						__html: textToSpanColored(data.description_title), // Function to colorize the title
 					}}

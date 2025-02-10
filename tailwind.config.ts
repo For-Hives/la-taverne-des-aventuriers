@@ -87,6 +87,46 @@ export default {
 				obraletra: ['var(--kc-obra-letra)'],
 				obraletraBold: ['var(--kc-obra-letra-bold)'],
 			},
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-expect-error
+			typography: ({ theme }) => ({
+				customBrown: {
+					css: {
+						'--tw-prose-body': '#582615', // Base brown
+						'--tw-prose-bold': '#3d1a0e', // Darker brown
+						'--tw-prose-bullets': '#d4a795', // Light brown
+						'--tw-prose-captions': '#6b2e19', // Medium brown
+						'--tw-prose-code': '#3d1a0e', // Darker brown
+						'--tw-prose-counters': '#8b3d21', // Medium-dark brown
+						'--tw-prose-headings': '#3d1a0e', // Darker brown
+						'--tw-prose-hr': '#e8c5b8', // Very light brown
+						'--tw-prose-invert-body': '#d4a795', // Light brown
+						'--tw-prose-invert-bold': '#ffffff', // White
+						'--tw-prose-invert-bullets': '#8b3d21', // Medium-dark brown
+						'--tw-prose-invert-captions': '#d4a795', // Light brown
+						'--tw-prose-invert-code': '#ffffff', // White
+						'--tw-prose-invert-counters': '#d4a795', // Light brown
+						'--tw-prose-invert-headings': '#ffffff', // White
+						'--tw-prose-invert-hr': '#6b2e19', // Medium brown
+						'--tw-prose-invert-lead': '#e8c5b8', // Very light brown
+						'--tw-prose-invert-links': '#ffffff', // White
+						'--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)', // Semi-transparent black
+						'--tw-prose-invert-pre-code': '#e8c5b8', // Very light brown
+						'--tw-prose-invert-quote-borders': '#6b2e19', // Medium brown
+						'--tw-prose-invert-quotes': '#f4e6e1', // Lightest brown
+						'--tw-prose-invert-td-borders': '#6b2e19', // Medium brown
+						'--tw-prose-invert-th-borders': '#8b3d21', // Medium-dark brown
+						'--tw-prose-lead': '#6b2e19', // Medium brown
+						'--tw-prose-links': '#3d1a0e', // Darker brown
+						'--tw-prose-pre-bg': '#3d1a0e', // Darker brown
+						'--tw-prose-pre-code': '#f4e6e1', // Lightest brown
+						'--tw-prose-quote-borders': '#e8c5b8', // Very light brown
+						'--tw-prose-quotes': '#3d1a0e', // Darker brown
+						'--tw-prose-td-borders': '#f4e6e1', // Lightest brown
+						'--tw-prose-th-borders': '#e8c5b8', // Very light brown
+					},
+				},
+			}),
 		},
 	},
 } satisfies Config

@@ -10,7 +10,7 @@ export const AnimatedHowToContactComponent = ({
 	data: ContactPageData
 }) => {
 	return (
-		<div className='relative flex h-full w-full items-center justify-center overflow-hidden'>
+		<div className='relative flex h-full w-full max-w-7xl items-center justify-center overflow-hidden'>
 			<div className='grid h-full w-full grid-cols-3 grid-rows-2'>
 				{/* Animated House Image */}
 				<motion.div
@@ -21,11 +21,13 @@ export const AnimatedHowToContactComponent = ({
 					transition={{ duration: 0.8 }} // Transition duration
 				>
 					<Image
-						src='/assets/images/elements/HowtoContact.png'
-						alt='House illustration'
-						width={720}
+						src={
+							data.howtosection_image ||
+							'/assets/images/elements/HowtoContact.png'
+						}
+						alt='illustration'
+						width={480}
 						height={480}
-						className='w-3/4 rounded max-md:w-1/2'
 					/>
 				</motion.div>
 
@@ -49,16 +51,11 @@ export const AnimatedHowToContactComponent = ({
 							{data.howtosection_title}
 						</motion.h2>
 
-						{/* Description content */}
-						<motion.div
-							className='w-full font-cardoRegular text-base md:text-lg'
-							initial={{ opacity: 0, y: 30 }} // Start from below
-							animate={{ opacity: 1, y: 0 }} // Fade in and move up when in view
-							viewport={{ once: true }} // Trigger only once
-							transition={{ delay: 0.4, duration: 0.8 }} // Delay for smooth sequence
+						<div
+							className={'prose prose-customBrown w-full font-cardoRegular'} // Styling for the description
 							dangerouslySetInnerHTML={{
 								__html: data.howtosection_description,
-							}}
+							}} // Injecting HTML content for description
 						/>
 					</div>
 				</motion.div>
