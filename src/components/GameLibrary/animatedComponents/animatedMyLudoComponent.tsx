@@ -24,8 +24,10 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 				>
 					{/* Link to the game library, wrapped around the image */}
 					<Link
+						target='_blank'
 						className='relative block'
 						href={data.myludo_component_url} // URL for the link
+						aria-label={data.myludo_component_aria}
 					>
 						{/* Container for the image with hover scale effect */}
 						<div className='relative h-auto w-full transform transition-transform duration-300 hover:scale-105'>

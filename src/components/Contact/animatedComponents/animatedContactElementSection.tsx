@@ -55,6 +55,7 @@ export const AnimatedContactElementSection = ({
 						<div className='flex items-center justify-evenly gap-10'>
 							<Link
 								href={data.facebook_url}
+								aria-label={data.facebook_aria}
 								target={'_blank'}
 								rel={'noreferrer noopener'}
 								className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'
@@ -66,6 +67,7 @@ export const AnimatedContactElementSection = ({
 							</Link>
 							<Link
 								href={data.myludo_url}
+								aria-label={data.myludo_aria}
 								target={'_blank'}
 								rel={'noreferrer noopener'}
 								className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'
@@ -82,6 +84,7 @@ export const AnimatedContactElementSection = ({
 							</Link>
 							<Link
 								href={data.instagram_url}
+								aria-label={data.instagram_aria}
 								target={'_blank'}
 								rel={'noreferrer noopener'}
 								className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'
@@ -108,6 +111,7 @@ export const AnimatedContactElementSection = ({
 							</h2>
 							<Link
 								href={`mailto:${data.contact_email}`}
+								aria-label={data.email_aria}
 								className='font-cardoRegular text-customBrown-100 underline'
 							>
 								{data.contact_email}

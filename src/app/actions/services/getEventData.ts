@@ -13,6 +13,7 @@ export interface EventData {
 	event_image?: string // Optional image associated with the event
 	button_label: string // Label for the button linked to the event
 	button_url: string // URL linked to the event button
+	button_aria: string // Aria for accessibility
 	summary: string // A brief summary of the event
 	Important_One: boolean // Indicates if the event is the most important one
 	created: string // The date when the event was created
