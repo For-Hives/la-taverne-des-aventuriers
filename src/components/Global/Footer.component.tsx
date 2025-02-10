@@ -116,7 +116,7 @@ export default async function FooterComponent() {
 							</Link>
 							<Link
 								className='transition-transform duration-300 ease-in-out hover:scale-110'
-								href={data.facebook_url}
+								href={data.myludo_url}
 							>
 								<Image
 									src='/assets/images/elements/ContactElements/myludo_icon.png'

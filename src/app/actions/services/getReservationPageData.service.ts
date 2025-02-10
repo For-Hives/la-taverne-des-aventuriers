@@ -11,10 +11,6 @@ export interface ReservationPageData {
 	id: string
 	how_to_title: string
 	description: string
-	contacts_button_title: string
-	contact_button_url: string
-	instagram_url: string
-	facebook_url: string
 	created: string
 	updated: string
 }

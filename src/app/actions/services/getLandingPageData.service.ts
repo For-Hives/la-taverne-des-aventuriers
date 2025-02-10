@@ -11,31 +11,16 @@ export interface LandingPageData {
 	created: string
 	description_button_label: string
 	description_button_url: string
+	description_button_aria: string
 	description_image: string
 	description_text: string
 	description_title: string
-	event_card1_button_label: string
-	event_card1_button_url: string
-	event_card1_date: string
-	event_card1_description: string
-	event_card1_image: string
-	event_card1_title: string
-	event_card2_button_label: string
-	event_card2_button_url: string
-	event_card2_date: string
-	event_card2_description: string
-	event_card2_image: string
-	event_card2_title: string
-	event_card3_button_label: string
-	event_card3_button_url: string
-	event_card3_date: string
-	event_card3_description: string
-	event_card3_image: string
-	event_card3_title: string
 	events_title: string
 	hero_description: string
+	hero_left_button_aria: string
 	hero_left_button_label: string
 	hero_left_button_url: string
+	hero_right_button_aria: string
 	hero_right_button_label: string
 	hero_right_button_url: string
 	hero_title: string

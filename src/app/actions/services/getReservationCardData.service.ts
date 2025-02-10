@@ -13,8 +13,10 @@ export interface ReservationCardData {
 	image: string
 	description: string
 	games_url: string
+	button_aria: string
 	button_label: string
 	button_url: string
+	button_myludo_aria: string
 	button_myludo_label: string
 	button_myludo_url: string
 	created: string
