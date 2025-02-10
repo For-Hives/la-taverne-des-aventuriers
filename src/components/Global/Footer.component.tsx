@@ -83,9 +83,9 @@ export default async function FooterComponent() {
 							</Link>
 							<Link
 								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
-								href='/legal'
+								href='/mentions-legales'
 							>
-								Legal Notice
+								Mentions légales
 							</Link>
 						</div>
 					</div>
