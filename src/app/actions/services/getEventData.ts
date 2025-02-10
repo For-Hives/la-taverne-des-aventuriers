@@ -32,6 +32,7 @@ export async function getEventData(slug: string): Promise<EventData | null> {
 
 	try {
 		// Fetch the list of events (up to 100 events, from the first page)
+		// todo: sanitize parameters
 		const result = await pb
 			.collection('Events')
 			.getFirstListItem(`event_slug="${slug}"`)
