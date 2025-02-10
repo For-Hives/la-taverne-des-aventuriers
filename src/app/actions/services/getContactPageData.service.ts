@@ -12,22 +12,15 @@ export interface ContactPageData {
 	howtosection_title: string
 	howtosection_description: string
 	howtosection_image: string
-	schedules_title: string
-	schedules_monday: string
-	schedules_tuesday: string
-	schedules_wednesday: string
-	schedules_thursday: string
-	schedules_friday: string
-	schedules_saturday: string
-	schedules_sunday: string
-	schedules_exceptional: string
+	schedule_title: string
+	schedule_content: string
 	contact_email_title: string
 	email: string
 	contact_socials_title: string
 	instagram_url: string
 	facebook_url: string
-	twitter_url: string
-	adress_title: string
+	myludo_url: string
+	address_title: string
 	address: string
 	button_label: string
 	button_url: string
@@ -55,6 +48,14 @@ export async function getContactData(): Promise<ContactPageData> {
 	try {
 		// Fetch the first 60 items from the 'contact_page' collection
 		const result = await pb.collection('contact_page').getList(1, 60)
+
+		if (result.items[0].howtosection_image) {
+			result.items[0].howtosection_image = pb.files.getURL(
+				result.items[0],
+				result.items[0].howtosection_image
+			) // Generate the full URL for the event image
+		}
+
 		return result.items[0] as ContactPageData
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch

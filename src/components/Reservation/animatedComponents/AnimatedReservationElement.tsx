@@ -37,9 +37,7 @@ export const AnimatedReservationElement = ({
 								{data.who_are_we_title} {/* Dynamic title */}
 							</h1>
 							<div
-								className={
-									'prose prose-stone prose-headings:text-customBrown-100'
-								} // Styling for the description
+								className={'prose prose-customBrown'} // Styling for the description
 								dangerouslySetInnerHTML={{ __html: data.description_card_1 }} // Injecting HTML content for description
 							/>
 						</div>
@@ -58,9 +56,7 @@ export const AnimatedReservationElement = ({
 							{data.team_title} {/* Dynamic title for the team */}
 						</h2>
 						<div
-							className={
-								'prose prose-stone prose-headings:text-customBrown-100'
-							}
+							className={'prose prose-customBrown'}
 							dangerouslySetInnerHTML={{ __html: data.description_card_4 }} // Injecting HTML content for description
 						/>
 					</div>
@@ -85,9 +81,7 @@ export const AnimatedReservationElement = ({
 							{data.our_history_title} {/* Dynamic title for history */}
 						</h2>
 						<div
-							className={
-								'prose prose-stone prose-headings:text-customBrown-100'
-							}
+							className={'prose prose-customBrown'}
 							dangerouslySetInnerHTML={{ __html: data.description_card_2 }} // Injecting HTML content for description
 						/>
 					</div>
@@ -140,9 +134,7 @@ export const AnimatedReservationElement = ({
 								{data.information_title} {/* Dynamic title for information */}
 							</h2>
 							<div
-								className={
-									'prose prose-stone prose-headings:text-customBrown-100'
-								}
+								className={'prose prose-customBrown'}
 								dangerouslySetInnerHTML={{ __html: data.description_card_5 }} // Injecting HTML content for description
 							/>
 						</div>
@@ -161,9 +153,7 @@ export const AnimatedReservationElement = ({
 							{data.our_services_title} {/* Dynamic title for services */}
 						</h2>
 						<div
-							className={
-								'prose prose-stone prose-headings:text-customBrown-100'
-							}
+							className={'prose prose-customBrown'}
 							dangerouslySetInnerHTML={{ __html: data.description_card_3 }} // Injecting HTML content for description
 						/>
 					</div>
