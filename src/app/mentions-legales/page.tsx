@@ -12,16 +12,16 @@ export default async function LegalPage() {
 			<MobileNavbar navItems={navItems} />
 			<div className='container mx-auto px-4 py-8'>
 				<h1 className='mb-8 font-obraletraBold text-4xl text-customBrown-100'>
-					Legal Notice
+					Mentions Légales
 				</h1>
 
 				<section className='mb-8'>
 					<h2 className='mb-4 font-obraletraBold text-2xl text-customBrown-100'>
-						About Us
+						Qui sommes-nous ?
 					</h2>
 					<div className='rounded-lg bg-white p-6 shadow-md'>
 						<h3 className='mb-4 font-obraletraBold text-xl text-customBrown-100'>
-							Business Details
+							Informations légales
 						</h3>
 						<p className='mb-4'>
 							LA TAVERNE DES AVENTURIERS
@@ -33,51 +33,51 @@ export default async function LegalPage() {
 							France
 						</p>
 						<p className='mb-4'>
-							SIRET: 93106146900017
+							SIRET : 93106146900017
 							<br />
-							Activity: Débits de boissons (56.30Z)
+							Activité : Débits de boissons (56.30Z)
 							<br />
-							VAT Number: FR64931061469
+							Numéro de TVA : FR64931061469
 						</p>
 					</div>
 				</section>
 
 				<section className='mb-8'>
 					<h2 className='mb-4 font-obraletraBold text-2xl text-customBrown-100'>
-						Copyright
+						Droits d'auteur
 					</h2>
 					<div className='rounded-lg bg-white p-6 shadow-md'>
 						<p className='mb-4'>
-							{`This entire website is protected by copyright according to
-								Articles L335-2 and following of the Intellectual Property Code.
-								Any reproduction or representation of its content, images, texts,
-								sounds, by any process used, without prior authorization from the
-								company 'Cinquin Andy' is strictly prohibited. Any violation will
-								constitute a sanction and will be prosecuted.`}
+							{`L'ensemble de ce site est soumis à une protection de droits d'auteur
+                            selon les Articles L335-2 et suivants du Code de la propriété intellectuelle.
+                            Toute reproduction ou représentation totale ou partielle de son contenu,
+                            images, textes, sons, par quelque procédé utilisé, sans l'autorisation
+                            préalable de la société 'Cinquin Andy' est strictement interdite.
+                            Toute violation constituera une sanction et fera l'objet de poursuite.`}
 						</p>
 					</div>
 				</section>
 
 				<section className='mb-8'>
 					<h2 className='mb-4 font-obraletraBold text-2xl text-customBrown-100'>
-						Website Development
+						Développement du site
 					</h2>
 					<div className='rounded-lg bg-white p-6 shadow-md'>
 						<h3 className='mb-4 font-obraletraBold text-xl text-customBrown-100'>
-							Development & Design
+							Création et Design
 						</h3>
 						<p className='mb-4'>
 							Cinquin Andy
 							<br />
-							SIRET: 880 505 276 00019
+							SIRET : 880 505 276 00019
 							<br />
 							4 Impasse de la Marchaisière
 							<br />
 							44115 Haute-Goulaine
 							<br />
-							Phone: 06 21 58 26 84
+							Téléphone : 06 21 58 26 84
 							<br />
-							Website:{' '}
+							Site web :{' '}
 							<a
 								href='https://andy-cinquin.fr'
 								className='text-customBrown-100 hover:underline'
@@ -86,15 +86,15 @@ export default async function LegalPage() {
 							</a>
 						</p>
 						<p className='mb-4'>
-							Services: Custom theme creation, branding, SEO, and hosting - Full
-							turnkey service.
+							Services : Création de thème personnalisé, d'image de marque,
+							référencement, et hébergement - prestation 'clé en main'.
 						</p>
 					</div>
 				</section>
 
 				<section className='mb-8'>
 					<h2 className='mb-4 font-obraletraBold text-2xl text-customBrown-100'>
-						Hosting
+						Hébergement
 					</h2>
 					<div className='rounded-lg bg-white p-6 shadow-md'>
 						<p className='mb-4'>
@@ -104,7 +104,7 @@ export default async function LegalPage() {
 							<br />
 							76185 Karlsruhe
 							<br />
-							Germany
+							Allemagne
 						</p>
 					</div>
 				</section>

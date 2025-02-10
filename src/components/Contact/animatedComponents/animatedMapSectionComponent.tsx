@@ -34,7 +34,7 @@ export const AnimatedMapSectionComponent = ({
 				</motion.h1>
 				{/* Address */}
 				<motion.p
-					className='text-xl lg:text-3xl'
+					className='text-lg lg:text-3xl'
 					initial={{ opacity: 0, y: 30 }} // Start from below
 					whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
 					viewport={{ once: true }}
@@ -51,12 +51,16 @@ export const AnimatedMapSectionComponent = ({
 				>
 					<Link
 						target='_blank'
+						rel='noreferrer noopener'
 						href={data.button_url}
-						className='flex items-center justify-center gap-8 rounded border-3 border-customBrown-100 bg-customBrown-100 px-8 py-3 font-cardoRegular text-lg text-customWhite-100 transition hover:border-3 hover:border-customBrown-100 hover:bg-customWhite-100 hover:text-customBrown-100 lg:text-xl'
+						className='flex items-center justify-center gap-4 rounded border-3 border-customBrown-100 bg-customBrown-100 px-8 py-3 font-cardoRegular text-base text-customWhite-100 transition hover:border-3 hover:border-customBrown-100 hover:bg-customWhite-100 hover:text-customBrown-100'
 					>
 						{data.button_label}
 						{/* Chevron icon for the button */}
-						<FontAwesomeIcon icon={faChevronRight} className='h-4 lg:h-5' />
+						<FontAwesomeIcon
+							icon={faChevronRight}
+							className='h-4 w-4 opacity-95'
+						/>
 					</Link>
 				</motion.div>
 			</motion.div>

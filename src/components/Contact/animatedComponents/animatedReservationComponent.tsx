@@ -50,7 +50,7 @@ export const AnimatedReservationComponent = ({
 						</motion.h2>
 
 						<div
-							className={'prose prose-customBrown'} // Styling for the description
+							className={'prose prose-customBrown font-cardoRegular'} // Styling for the description
 							dangerouslySetInnerHTML={{ __html: data.description }} // Injecting HTML content for description
 						/>
 
