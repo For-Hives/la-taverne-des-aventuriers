@@ -76,6 +76,7 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 				>
 					<Link
 						href={data.description_button_url} // Button link
+						aria-label={data.description_button_aria}
 						className='flex items-center justify-center gap-3 text-base underline lg:justify-start' // Button styles
 					>
 						<span>{data.description_button_label}</span> {/* Button label */}

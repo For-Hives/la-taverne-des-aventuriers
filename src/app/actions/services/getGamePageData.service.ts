@@ -16,17 +16,21 @@ export interface GamesPageData {
 	card1_description: string
 	card1_button_label: string
 	card1_button_url: string
+	card1_button_aria: string
 	card2_title: string
 	card2_description: string
 	card2_button_label: string
 	card2_button_url: string
+	card2_button_aria: string
 	card3_title: string
 	card3_description: string
 	card3_button_label: string
 	card3_button_url: string
+	card3_button_aria: string
 	myludo_component_title: string
 	myludo_component_label: string
 	myludo_component_url: string
+	myludo_component_aria: string
 	created: string
 	updated: string
 }

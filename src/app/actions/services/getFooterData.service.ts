@@ -13,20 +13,29 @@ export interface FooterData {
 	support_title: string
 	menu_link_title: string
 	menu_url: string
+	menu_aria: string
 	description_title: string
 	description_url: string
+	description_aria: string
 	events_title: string
 	events_url: string
+	event_aria: string
 	contact_title: string
 	contact_url: string
+	contact_aria: string
 	reservation_link_label: string
 	reservation_url: string
+	reservation_aria:string
 	game_library_title: string
 	game_library_url: string
+	game_library_aria:string
 	socials_title: string
 	facebook_url: string
+	facebook_aria:string
 	instagram_url: string
+	instagram_aria:string
 	myludo_url: string
+	myludo_aria:string
 	created: string
 	updated: string
 }

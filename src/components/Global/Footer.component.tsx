@@ -39,24 +39,28 @@ export default async function FooterComponent() {
 							<Link
 								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
 								href={data.menu_url}
+								aria-label={data.menu_aria}
 							>
 								{data.menu_link_title}
 							</Link>
 							<Link
 								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
 								href={data.description_url}
+								aria-label={data.description_aria}
 							>
 								{data.description_title}
 							</Link>
 							<Link
 								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
 								href={data.events_url}
+								aria-label={data.event_aria}
 							>
 								{data.events_title}
 							</Link>
 							<Link
 								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
 								href={data.game_library_url}
+								aria-label={data.game_library_aria}
 							>
 								{data.game_library_title}
 							</Link>
@@ -72,12 +76,14 @@ export default async function FooterComponent() {
 							<Link
 								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
 								href={data.contact_url}
+								aria-label={data.contact_aria}
 							>
 								{data.contact_title}
 							</Link>
 							<Link
 								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
 								href={data.reservation_url}
+								aria-label={data.reservation_aria}
 							>
 								{data.reservation_link_label}
 							</Link>
@@ -98,7 +104,9 @@ export default async function FooterComponent() {
 						<div className='flex w-full items-center justify-start space-x-4 max-md:text-sm md:gap-8'>
 							<Link
 								className='transition-transform duration-300 ease-in-out hover:scale-110'
+								target='_blank'
 								href={data.instagram_url}
+								aria-label={data.instagram_aria}
 							>
 								<FontAwesomeIcon
 									icon={faInstagram}
@@ -107,7 +115,9 @@ export default async function FooterComponent() {
 							</Link>
 							<Link
 								className='transition-transform duration-300 ease-in-out hover:scale-110'
+								target='_blank'
 								href={data.facebook_url}
+								aria-label={data.facebook_aria}
 							>
 								<FontAwesomeIcon
 									icon={faFacebook}
@@ -116,7 +126,9 @@ export default async function FooterComponent() {
 							</Link>
 							<Link
 								className='transition-transform duration-300 ease-in-out hover:scale-110'
+								target='_blank'
 								href={data.myludo_url}
+								aria-label={data.myludo_aria}
 							>
 								<Image
 									src='/assets/images/elements/ContactElements/myludo_icon.png'
@@ -135,7 +147,7 @@ export default async function FooterComponent() {
 					{/*	todo: lien temporaire le temps que je modifie le site de ForHives pour améliorer les CTA etc, et mettre en avant que c'est plus une agence */}
 					<p className='mt-4 text-sm max-md:text-sm'>
 						{`© ${date} La taverne des Aventuriers - Tous droits réservés - Developed & Designed with ❤️ by `}
-						<Link className={'underline'} href={'https://andy-cinquin.fr/'}>
+						<Link className={'underline'} href={'https://andy-cinquin.fr/'} aria-label={'découvrez notre équipe de développeurs'}>
 							Andy Cinquin
 						</Link>
 					</p>

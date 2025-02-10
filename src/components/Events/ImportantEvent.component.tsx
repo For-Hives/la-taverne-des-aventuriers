@@ -61,6 +61,7 @@ export default function ImportantEventComponent({
 								<Link
 									className='mt-4 inline-block font-cardoRegular text-customBlue-100 hover:underline'
 									href={`/evenements/${event.event_slug}`} // Now only using the title slug
+									aria-label="Lire la suite de l'évènement"
 								>
 									Lire La suite
 								</Link>

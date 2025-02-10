@@ -45,6 +45,7 @@ export default function SpecialEventComponent({
 
 					<p>
 						<span
+							className='prose'
 							dangerouslySetInnerHTML={{
 								// Render the event description as HTML (with a preview)
 								__html: data.event_description,

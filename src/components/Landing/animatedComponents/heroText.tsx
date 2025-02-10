@@ -54,6 +54,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 					{/* Button 1 with hover effect */}
 					<Link
 						href={data.hero_left_button_url} // URL for the left button
+						aria-label={data.hero_left_button_aria}
 						className='text flex h-12 items-center gap-2 rounded border-3 border-customBrown-100 bg-customBrown-100 px-4 font-obraletra text-customWhite-100 hover:underline sm:text-xl'
 					>
 						{data.hero_left_button_label} {/* Button label */}
@@ -71,6 +72,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 					>
 						<Link
 							href={data.hero_right_button_url} // URL for the right button
+							aria-label={data.hero_right_button_aria}
 							className='text flex h-12 items-center rounded border-3 border-solid border-customBrown-100 bg-customWhite-100 px-4 font-obraletra text-customBrown-100 hover:underline sm:text-xl'
 						>
 							{data.hero_right_button_label} {/* Button label */}

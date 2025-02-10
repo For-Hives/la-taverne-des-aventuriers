@@ -53,6 +53,7 @@ export const AnimatedMapSectionComponent = ({
 						target='_blank'
 						rel='noreferrer noopener'
 						href={data.button_url}
+						aria-label={data.button_aria}
 						className='flex items-center justify-center gap-4 rounded border-3 border-customBrown-100 bg-customBrown-100 px-8 py-3 font-cardoRegular text-base text-customWhite-100 transition hover:border-3 hover:border-customBrown-100 hover:bg-customWhite-100 hover:text-customBrown-100'
 					>
 						{data.button_label}

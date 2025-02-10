@@ -91,6 +91,7 @@ const EventCard: React.FC<EventCardProps> = ({
 
 				<Link
 					href={`evenements/${event.event_slug}` || '#'}
+					aria-label={event.button_aria}
 					className='flex items-center gap-3 text-base underline max-lg:text-xs'
 				>
 					<span>{event.button_label || 'Learn more'}</span>

@@ -50,6 +50,8 @@ export const AnimatedReservationCard = ({
 					>
 						<Link
 							href={data.button_url} // Link to the button URL
+							target='_blank'
+							aria-label={data.button_aria}
 							className='flex h-12 items-center gap-2 rounded border-3 border-customBrown-100 bg-customBrown-100 px-4 font-obraletra text-xs text-customWhite-100 hover:underline sm:text-sm'
 						>
 							{/* Button label */}
@@ -71,6 +73,7 @@ export const AnimatedReservationCard = ({
 						<Link
 							href={data.games_url} // Link to the secondary button URL
 							target='_blank' // Opens in a new tab
+							aria-label={data.button_myludo_aria}
 							className='flex h-12 items-center rounded border-3 border-solid border-customBrown-100 px-4 font-obraletra text-xs text-customBrown-100 hover:underline sm:text-sm'
 						>
 							{/* Secondary button label */}

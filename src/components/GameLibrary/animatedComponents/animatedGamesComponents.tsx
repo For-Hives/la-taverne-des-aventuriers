@@ -44,7 +44,9 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 						></div>
 						{/* Button with link and icon */}
 						<Link
+							target='_blank'
 							href={data.card1_button_url}
+							aria-label={data.card1_button_aria}
 							className='flex items-center gap-3 underline'
 						>
 							<span>{data.card1_button_label}</span>
@@ -81,7 +83,9 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 							></div>
 							{/* Button with link and icon */}
 							<Link
+								target='_blank'
 								href={data.card2_button_url}
+								aria-label={data.card2_button_aria}
 								className='flex items-center gap-3 underline'
 							>
 								<span>{data.card2_button_label}</span>
@@ -113,7 +117,9 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 							></div>
 							{/* Button with link and icon */}
 							<Link
+								target='_blank'
 								href={data.card3_button_url}
+								aria-label={data.card3_button_aria}
 								className='flex items-center gap-3 underline'
 							>
 								<span>{data.card3_button_label}</span>
