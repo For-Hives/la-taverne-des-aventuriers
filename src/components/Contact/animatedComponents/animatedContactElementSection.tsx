@@ -20,7 +20,7 @@ export const AnimatedContactElementSection = ({
 	const [hovered, setHovered] = useState(false);
 
 	return (
-		<div className='flex w-3/4 items-center justify-center gap-8 p-8 max-xl:flex-col'>
+		<div className='flex w-3/4 items-center justify-center max-lg:w-full gap-8 p-8 max-xl:flex-col'>
 			{/* Grid Layout for Contact Sections */}
 			<div className='grid w-1/2 max-w-6xl grid-cols-1 gap-8 max-xl:w-full xl:grid-cols-2'>
 				{/* Bloc Horaires (Business Hours) */}
