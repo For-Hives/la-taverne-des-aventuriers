@@ -118,7 +118,7 @@ export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
 	dataEvents,
 }) => {
 	return (
-		<div className='rounded-lg-lg flex h-screen min-h-fit w-3/4 max-lg:w-full max-lg:px-4 flex-col items-start gap-9'>
+		<div className='rounded-lg-lg flex h-screen w-3/4 max-lg:w-full max-lg:px-4 flex-col items-start gap-9'>
 			{/* Title */}
 			<motion.h1
 				className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-xl'
