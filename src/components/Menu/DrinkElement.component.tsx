@@ -53,7 +53,7 @@ export default async function DrinkElement({
 	const drinks = data.items.map(mapRecordToDrink)
 
 	return (
-		<div className='flex w-3/4 flex-col items-center justify-center gap-20'>
+		<div className='flex w-3/4 flex-col items-center justify-center gap-20 max-lg:w-full max-lg:px-4'>
 			{/* Title of the page, formatted based on the collection name */}
 			<h2 className='font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-5xl'>
 				{formatDrinkName(collection_name)}
