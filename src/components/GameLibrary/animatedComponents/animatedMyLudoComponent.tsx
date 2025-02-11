@@ -1,51 +1,58 @@
-'use client'
+'use client' // Declares this as a client-side component
+
 import { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing the type for game page data
 import { motion } from 'framer-motion' // Importing motion from Framer Motion for animations
 import Image from 'next/image' // Importing Next.js Image component for optimized image rendering
 import Link from 'next/link' // Importing Next.js Link component for client-side navigation
 
-// The component takes 'data' of type 'GamesPageData' as a prop
+// Component declaration, accepting a prop 'data' of type 'GamesPageData'
 export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 	return (
 		<div className='w-3/4 py-8 sm:w-3/4 sm:py-16'>
+			{/* Main container for title and content */}
 			<div className='flex w-full flex-col items-start justify-center gap-8 sm:gap-12'>
-				{/* Title for the component */}
+				{/* Title of the component */}
 				<h2 className='font-obraletraBold text-xl text-customBrown-100 sm:text-2xl'>
-					{data.myludo_component_title} {/* Displays the title */}
+					{data.myludo_component_title} {/* Displays the title from the data */}
 				</h2>
 
 				{/* Motion container for the image and link */}
 				<motion.div
 					className='relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg'
-					initial={{ opacity: 0, y: 100 }} // Start the animation with opacity 0 and position 100px down
-					whileInView={{ opacity: 1, y: 0 }} // Fade in and move up to normal position when in view
-					transition={{ duration: 0.8 }} // Duration for the transition
-					viewport={{ once: true }} // Trigger the animation only once when the element comes into view
+					initial={{ opacity: 0, y: 100 }} // Initial animation: invisible and offset downwards
+					whileInView={{ opacity: 1, y: 0 }} // Animation when in view: fade in and move to normal position
+					transition={{ duration: 0.8 }} // Transition duration of the animation
+					viewport={{ once: true }} // Ensures animation triggers only once per page load
 				>
-					{/* Link to the game library, wrapped around the image */}
+					{/* Wrapping the image and text with a clickable link */}
 					<Link
-						target='_blank'
-						className='relative block'
-						href={data.myludo_component_url} // URL for the link
-						aria-label={data.myludo_component_aria}
+						target='_blank' // Opens the link in a new tab
+						className='relative block w-full'
+						href={data.myludo_component_url} // URL fetched from the data prop
+						aria-label={data.myludo_component_aria} // Accessible label for the link
 					>
-						{/* Container for the image with hover scale effect */}
-						<div className='relative h-auto w-full transform transition-transform duration-300 hover:scale-105'>
-							{/* Image component displaying the game library */}
-							<Image
-								src='/assets/images/elements/GameLibraryElements/MyLudoImage.png'
-								alt='MyLudo Logo' // Alt text for accessibility
-								className='h-auto w-full' // Make sure the image fits the width of its container
-								width={1920} // Width of the image
-								height={1080} // Height of the image
-							/>
-							{/* Overlay gradient on top of the image */}
-							<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
+						{/* Aspect-ratio container for maintaining image proportions */}
+						<div
+							className='relative w-full overflow-hidden rounded-lg'
+							style={{ aspectRatio: '16/9' }} // Maintains a 16:9 aspect ratio
+						>
+							{/* Inner container for the zoom effect on hover */}
+							<div className='relative h-full w-full transform transition-transform duration-300 hover:scale-105'>
+								{/* Image with responsive properties */}
+								<Image
+									src='/assets/images/elements/GameLibraryElements/MyLudoImage.png' // Path to the image
+									alt='MyLudo Logo' // Alt text for accessibility
+									className='absolute inset-0 h-full w-full object-cover' // Ensures image covers the entire container
+									fill // Fills the container
+									sizes='100vw' // Responsive sizing for optimization
+								/>
+								{/* Gradient overlay over the image */}
+								<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
+							</div>
 						</div>
-
-						{/* Link text, displayed on top of the image */}
+						{/* Text displayed over the image */}
 						<span className='absolute bottom-5 left-10 text-center font-obraletra text-xl text-customWhite-100 hover:underline sm:text-2xl'>
-							{data.myludo_component_label} {/* Displayed text for the link */}
+							{data.myludo_component_label} {/* Displays text fetched from the data prop */}
 						</span>
 					</Link>
 				</motion.div>
