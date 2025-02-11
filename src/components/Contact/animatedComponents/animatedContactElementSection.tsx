@@ -1,17 +1,24 @@
 'use client'
 
-import { ContactPageData } from '@/app/actions/services/getContactPageData.service'
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { motion } from 'framer-motion' // Importing motion for animations from Framer Motions
-import Image from 'next/image'
-import Link from 'next/link'
+import { ContactPageData } from '@/app/actions/services/getContactPageData.service' // Importing the data type for the contact page
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons' // Importing Facebook and Instagram icons from Font Awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // Font Awesome React component for icons
+import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
+import Image from 'next/image' // Next.js Image component
+import Link from 'next/link' // Next.js Link component for navigation
+import { useState } from "react"; // Importing useState for managing state in the component
+
+// The AnimatedContactElementSection component is receiving `data` as props
 
 export const AnimatedContactElementSection = ({
 	data,
 }: {
 	data: ContactPageData
 }) => {
+
+	// State hook to manage hover state
+	const [hovered, setHovered] = useState(false);
+
 	return (
 		<div className='flex w-3/4 items-center justify-center gap-8 p-8 max-xl:flex-col'>
 			{/* Grid Layout for Contact Sections */}
@@ -56,13 +63,13 @@ export const AnimatedContactElementSection = ({
 							<Link
 								href={data.facebook_url}
 								aria-label={data.facebook_aria}
-								target={'_blank'}
-								rel={'noreferrer noopener'}
-								className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'
+								target='_blank'
+								rel='noreferrer noopener'
+								className='group flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400 hover:bg-customBrown-100'
 							>
 								<FontAwesomeIcon
 									icon={faFacebook}
-									className='h-8 w-8 text-customBrown-100'
+									className='h-8 w-8 text-customBrown-100 group-hover:text-customWhite-100'
 								/>
 							</Link>
 							<Link
@@ -70,14 +77,19 @@ export const AnimatedContactElementSection = ({
 								aria-label={data.myludo_aria}
 								target={'_blank'}
 								rel={'noreferrer noopener'}
-								className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'
+								className='group flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400 hover:bg-customBrown-100'
 							>
 								<Image
-									src={
-										'/assets/images/elements/ContactElements/myludo_icon.png'
-									}
+									src='/assets/images/elements/ContactElements/myludo_icon.png'
 									alt='MyLudo Icon'
-									className='h-8 w-8'
+									className='h-8 w-8 group-hover:hidden'
+									width={200}
+									height={200}
+								/>
+								<Image
+									src='/assets/images/elements/ContactElements/myludo_icon2.png'
+									alt='MyLudo Icon'
+									className='hidden h-8 w-8 group-hover:block'
 									width={200}
 									height={200}
 								/>
@@ -87,11 +99,11 @@ export const AnimatedContactElementSection = ({
 								aria-label={data.instagram_aria}
 								target={'_blank'}
 								rel={'noreferrer noopener'}
-								className='flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400'
+								className='group flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400 hover:bg-customBrown-100'
 							>
 								<FontAwesomeIcon
 									icon={faInstagram}
-									className='h-8 w-8 text-customBrown-100'
+									className='h-8 w-8 text-customBrown-100 group-hover:text-customWhite-100'
 								/>
 							</Link>
 						</div>
@@ -105,9 +117,13 @@ export const AnimatedContactElementSection = ({
 						transition={{ duration: 0.8 }}
 						className='relative flex flex-col gap-6 font-obraletra'
 					>
-						<div className='flex flex-col items-start gap-4 rounded-2xl border-3 border-customBrown-100 bg-customWhite-300 p-6 shadow'>
+						<button
+							onMouseEnter={() => setHovered(true)} // Trigger hover state on mouse enter
+							onMouseLeave={() => setHovered(false)} // Reset hover state on mouse leave
+							className='flex flex-col items-start gap-4 rounded-2xl border-3 border-customBrown-100 bg-customWhite-300 p-6 shadow'
+						>
 							<h2 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
-								{data.contact_email_title}
+								{data.contact_email_title} {/* Display the email title */}
 							</h2>
 							<Link
 								href={`mailto:${data.contact_email}`}
@@ -116,14 +132,16 @@ export const AnimatedContactElementSection = ({
 							>
 								{data.contact_email}
 							</Link>
-						</div>
-						<div className='relative'>
-							<Image
-								src='/assets/images/elements/ContactElements/petite_bestiole.png'
-								alt='Petite Bestiole'
-								className='absolute bottom-[-2rem] right-0 -z-20 h-20 w-20 object-contain'
-								width={80}
-								height={80}
+						</button>
+						{/* Conditional rendering of image when not hovered */}
+						<div className="relative max-md:hidden">
+							<motion.img
+								src="/assets/images/elements/ContactElements/petite_bestiole.png"
+								alt="Petite Bestiole"
+								initial={{ y: 0 }}
+								animate={{ y: hovered ? 0 : -70 }} // Animate the image based on hover state
+								transition={{ damping: 20, stiffness: 200, type: 'spring'  }}
+								className="absolute bottom-[-2rem] right-0 -z-20 h-20 w-20 object-contain"
 							/>
 						</div>
 					</motion.div>

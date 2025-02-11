@@ -17,18 +17,25 @@ export default async function Page() {
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
-				<GLHeroComponent data={dataGameLibrary} />
+				{/* Background image with custom mask */}
+				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
+
+				{/* Main content with spacing between sections */}
+				<div className='mt-64 flex w-full flex-col items-center justify-center gap-24'>
+					<GLHeroComponent data={dataGameLibrary} />
+					<div className='mt-64 flex w-full flex-col items-center justify-center gap-64'>
+						<GameComponent data={dataGameLibrary} />
+						<MyLudoComponent data={dataGameLibrary} />
+					</div>
+				</div>
 
 				{/* Main Content */}
 				<main className='flex w-full flex-grow flex-col items-center py-8 sm:py-16'>
-					{/* Hero section for Game Library */}
-
 					{/* Other components such as game list and My Ludo */}
 					<div className='flex w-full flex-col items-center gap-40'>
+						{/* Hero section for Game Library */}
+						<div className='flex w-full flex-col'></div>
 						{/* Display the list of games */}
-						<GameComponent data={dataGameLibrary} />
-						{/* Display the My Ludo game */}
-						<MyLudoComponent data={dataGameLibrary} />
 					</div>
 				</main>
 

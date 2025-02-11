@@ -8,12 +8,17 @@ export default function EventListComponent({
 }: Readonly<{
 	data: EventData[] // Define the type of 'data' prop as an array of EventListData
 }>) {
+	// Trier les données par date (du plus récent au plus ancien)
+	const sortedData = [...data].sort(
+		(a, b) => new Date(b.event_date).getTime() - new Date(a.event_date).getTime()
+	)
+
 	return (
 		<div className='w-1/2 p-6 max-lg:w-2/3 max-md:w-full'>
 			{/* Container for the event list */}
 			<ul className='space-y-4 max-sm:space-y-36'>
 				{/* List container with space between each list item */}
-				{data.map(
+				{sortedData.map(
 					(
 						event // Iterate over the 'data' array to display each event
 					) => (
