@@ -12,7 +12,7 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 		<div className='flex h-screen w-3/4 flex-col items-start gap-9 max-lg:w-full'>
 			{/* Title Section */}
 			<motion.h2
-				className='font-obraletraBold text-xl text-customBrown-100'
+				className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-base'
 				initial={{ opacity: 0 }} // Initial opacity is 0 (hidden)
 				animate={{ opacity: 1 }} // Animate opacity to 1 (fully visible)
 				transition={{ duration: 0.6 }} // Transition duration is 0.6 seconds
