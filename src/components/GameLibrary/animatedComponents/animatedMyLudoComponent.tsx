@@ -8,11 +8,11 @@ import Link from 'next/link' // Importing Next.js Link component for client-side
 // Component declaration, accepting a prop 'data' of type 'GamesPageData'
 export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 	return (
-		<div className='w-full py-8 lg:w-3/4 max-lg:px-4'>
+		<div className='w-full px-4 py-8 lg:w-3/4 sm:py-16'>
 			{/* Main container for title and content */}
 			<div className='flex w-full flex-col items-start justify-center gap-8 sm:gap-12'>
 				{/* Title of the component */}
-				<h2 className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-xl'>
+				<h2 className='font-obraletraBold text-xl text-customBrown-100 max-lg:text-3xl'>
 					{data.myludo_component_title} {/* Displays the title from the data */}
 				</h2>
 
