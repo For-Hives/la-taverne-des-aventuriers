@@ -68,25 +68,25 @@ export const AnimatedMapSectionComponent = ({
 
 			{/* Image Section */}
 			<motion.div
-				className='maskMap relative w-full lg:w-2/3'
+				className='relative w-full lg:w-2/3'
 				initial={{ opacity: 0 }} // Start with opacity 0
 				whileInView={{ opacity: 1 }} // Fade in when in view
 				viewport={{ once: true }} // Trigger animation only once
 				transition={{ duration: 0.8 }} // Transition duration
 			>
 				{/* Image for small screens */}
-				<div className='block lg:hidden'>
+				<div className='block lg:hidden maskMapMobile'>
 					<Image
 						src='/assets/images/map2.png' // Image source for small screens
 						alt='Map for small screens'
-						width={1920}
-						height={1080}
+						width={1024}
+						height={1366}
 						className='h-auto w-full rounded-lg object-cover shadow-md' /* Image that fills the container */
 					/>
 				</div>
 
 				{/* Image for large screens */}
-				<div className='hidden lg:block'>
+				<div className='hidden lg:block maskMap'>
 					<Image
 						src='/assets/images/map.png' // Image source for large screens
 						alt='Map for large screens'
@@ -96,6 +96,7 @@ export const AnimatedMapSectionComponent = ({
 					/>
 				</div>
 			</motion.div>
+
 		</div>
 	)
 }

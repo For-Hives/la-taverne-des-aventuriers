@@ -20,7 +20,7 @@ export const AnimatedContactElementSection = ({
 	const [hovered, setHovered] = useState(false);
 
 	return (
-		<div className='flex w-3/4 items-center justify-center max-lg:w-full gap-8 p-8 max-xl:flex-col'>
+		<div className='flex w-full items-center justify-center max-lg:w-full gap-8 p-8 max-xl:flex-col'>
 			{/* Grid Layout for Contact Sections */}
 			<div className='grid w-1/2 max-w-6xl grid-cols-1 gap-8 max-xl:w-full xl:grid-cols-2'>
 				{/* Bloc Horaires (Business Hours) */}
@@ -159,14 +159,14 @@ export const AnimatedContactElementSection = ({
 				<Image
 					src='/assets/images/elements/ContactElements/runes.png'
 					alt='Runes'
-					className='absolute left-20 top-[-4rem] h-1/4 w-1/4 object-contain'
+					className='absolute left-20 top-[-4rem] h-1/4 w-1/4 object-contain max-lg:hidden'
 					width={150}
 					height={150}
 				/>
 				<Image
 					src='/assets/images/elements/ContactElements/dragon.png'
 					alt='Dragon'
-					className='h-1/2 w-1/2 max-xl:h-fit max-xl:w-1/3 max-lg:w-1/2'
+					className='h-1/2 w-1/2 max-xl:h-fit max-xl:w-1/3 max-lg:w-3/4'
 					width={400}
 					height={400}
 				/>

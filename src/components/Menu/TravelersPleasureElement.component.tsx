@@ -10,10 +10,10 @@ export default async function TravelersPleasureElement() {
 
 	return (
 		<div className='flex w-4/5 flex-col items-center justify-center gap-20 px-4'>
-			<h2 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl lg:text-8xl'>
+			<h2 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl md:text-8xl'>
 				Les Plaisirs Du Voyageur
 			</h2>
-			<div className='flex w-full flex-col items-center justify-center gap-10 sm:gap-20 lg:flex-row'>
+			<div className='flex w-full flex-col items-center justify-center gap-10 sm:gap-20 md:flex-row'>
 				{/* Left Column (Text 1) */}
 				<div className='flex w-full flex-col justify-center gap-14 sm:w-1/3'>
 					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>

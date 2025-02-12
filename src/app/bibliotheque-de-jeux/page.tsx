@@ -96,7 +96,7 @@ export default async function Page() {
 
 				<div className='mt-64 flex w-full flex-col items-center justify-center gap-24'>
 					<GLHeroComponent data={dataGameLibrary} />
-					<div className='mt-64 flex w-full flex-col items-center justify-center gap-64 max-lg:gap-36'>
+					<div className='flex w-full flex-col items-center justify-center gap-64 max-lg:gap-24'>
 						<GameComponent data={dataGameLibrary} />
 						<MyLudoComponent data={dataGameLibrary} />
 					</div>
