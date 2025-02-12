@@ -75,13 +75,13 @@ export const AnimatedMapSectionComponent = ({
 				transition={{ duration: 0.8 }} // Transition duration
 			>
 				{/* Image for small screens */}
-				<div className='block lg:hidden maskMapMobile'>
+				<div className='block w-full min-w-screen min-h-screen h-full lg:hidden maskMapMobile'>
 					<Image
 						src='/assets/images/map2.png' // Image source for small screens
 						alt='Map for small screens'
-						width={1024}
-						height={1366}
-						className='h-auto w-full rounded-lg object-cover shadow-md' /* Image that fills the container */
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
+						fill
+						className='min-h-[80vh] min-w-[50vw] h-full w-full rounded-lg object-cover shadow-md' /* Image that fills the container */
 					/>
 				</div>
 

@@ -59,7 +59,7 @@ const EventCard: React.FC<EventCardProps> = ({
 }) => {
 	return (
 		<motion.div
-			className={`relative flex flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-cover bg-center font-cardoRegular text-customWhite-100 ${className}`}
+			className={`relative flex flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-cover bg-center font-cardoRegular px-4 min-h-[50vh] text-customWhite-100 ${className}`}
 			{...animationProps}
 		>
 			{/* Background Image */}
@@ -73,10 +73,10 @@ const EventCard: React.FC<EventCardProps> = ({
 			/>
 
 			{/* Gradient Overlay */}
-			<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black' />
+			<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black' />
 
 			{/* Content */}
-			<div className='z-10 flex flex-col justify-start gap-9 p-12 max-lg:bg-black/50 rounded'>
+			<div className='z-10 flex flex-col w-full justify-start gap-9 p-12 max-md:bg-black/50 rounded'>
 				<div className='items-left flex flex-col justify-start'>
 					<h2 className='font-obraletraBold text-2xl'>{event.event_title}</h2>
 					<h3 className='font-obraletra text-base max-lg:text-sm'>

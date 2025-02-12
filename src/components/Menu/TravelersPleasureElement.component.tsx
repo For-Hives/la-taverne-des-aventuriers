@@ -13,34 +13,36 @@ export default async function TravelersPleasureElement() {
 			<h2 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl md:text-8xl'>
 				Les Plaisirs Du Voyageur
 			</h2>
-			<div className='flex w-full flex-col items-center justify-center gap-10 sm:gap-20 md:flex-row'>
-				{/* Left Column (Text 1) */}
-				<div className='flex w-full flex-col justify-center gap-14 sm:w-1/3'>
-					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
-						{leftText.title}
-					</h2>
-					<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
-						{leftText.description}
-					</p>
-				</div>
 
-				{/* Image in the center */}
-				<Image
-					src={imageSrc}
-					alt='Cocktail Image'
-					className='w-full rounded-lg sm:w-1/3'
-					width={400}
-					height={400}
-				/>
+			<div className='flex h-full w-full items-center justify-center'>
+				<div className='grid h-full w-full grid-cols-10 grid-rows-10 gap-1 rounded-lg p-2'>
+					<div className='col-span-3 row-span-10 flex flex-col items-start justify-center rounded-lg gap-6 max-lg:row-span-3 max-lg:col-span-10'>
+						<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
+							{leftText.title}
+						</h2>
+						<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
+							{leftText.description}
+						</p>
+					</div>
 
-				{/* Right Column (Text 2) */}
-				<div className='flex w-full flex-col justify-center gap-14 sm:w-1/3'>
-					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
-						{rightText.title}
-					</h2>
-					<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
-						{rightText.description}
-					</p>
+					<div className='col-span-4 row-span-10 flex items-center justify-center rounded-lg max-lg:row-span-4 max-lg:col-span-10'>
+						<Image
+							src={imageSrc}
+							alt='Cocktail Image'
+							className='w-full rounded-lg sm:w-2/3'
+							width={400}
+							height={400}
+						/>
+					</div>
+
+					<div className='col-span-3 row-span-10 flex flex-col items-start justify-center rounded-lg gap-6 max-lg:row-span-3 max-lg:col-span-10'>
+						<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
+							{rightText.title}
+						</h2>
+						<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
+							{rightText.description}
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

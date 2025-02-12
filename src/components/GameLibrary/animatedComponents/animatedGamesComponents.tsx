@@ -31,7 +31,7 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 					transition={{ duration: 0.8 }} // Transition duration of 0.8 seconds
 				>
 					{/* Overlay Gradient */}
-					<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
+					<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black'></div>
 					{/* Card Content */}
 					<div className='z-10 flex flex-col justify-start gap-9 p-12 w-full max-lg:bg-black/50 rounded'>
 						<h2 className='font-obraletraBold text-2xl'>{data.card1_title}</h2>
@@ -69,7 +69,7 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 						transition={{duration: 0.8}} // Transition duration of 0.8 seconds
 					>
 						{/* Overlay Gradient */}
-						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
+						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black'></div>
 						<div className='z-10 flex flex-col justify-start gap-6 p-12 max-lg:bg-black/50 rounded'>
 							<h2 className='font-obraletraBold text-2xl'>
 								{data.card2_title}
@@ -103,7 +103,7 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 						transition={{duration: 0.8}}
 					>
 						{/* Overlay Gradient */}
-						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
+						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black'></div>
 						<div className='z-10 flex flex-col justify-start gap-6 p-12 max-lg:bg-black/50 rounded'>
 							<h2 className='font-obraletraBold text-2xl'>
 								{data.card3_title}
