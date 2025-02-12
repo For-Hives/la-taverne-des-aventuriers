@@ -15,14 +15,14 @@ export const AnimatedReservationCard = ({
 	return (
 		<div className='w-full max-lg:px-4'>
 			<motion.div
-				className='mx-auto flex w-3/4 flex-col items-center gap-8 rounded border-3 border-customBrown-100 bg-customWhite-300 p-4 sm:flex-row sm:gap-20 sm:p-10 max-lg:w-full'
+				className='mx-auto flex w-3/4 flex-col items-center gap-8 rounded border-3 border-customBrown-100 bg-customWhite-300 p-4 md:flex-row md:gap-20 md:p-10 max-lg:w-full'
 				initial={{ opacity: 0 }} // Initial opacity for fade-in
 				animate={{ opacity: 1 }} // Final opacity for fade-in
 				transition={{ duration: 0.8 }} // Animation duration
 			>
 				{/* Text Section */}
 				<motion.div
-					className='flex w-full flex-col gap-6 p-4 font-cardoRegular text-sm text-customBrown-100 sm:w-2/3 sm:gap-9 sm:p-8 md:text-base'
+					className='flex w-full flex-col gap-6 p-4 font-cardoRegular text-sm text-customBrown-100 md:w-2/3 md:gap-9 md:p-8 md:text-base'
 					initial={{ opacity: 0, x: -100 }} // Initial position and opacity for slide-in effect
 					animate={{ opacity: 1, x: 0 }} // Final position and opacity for the text
 					transition={{ duration: 0.8 }} // Animation duration

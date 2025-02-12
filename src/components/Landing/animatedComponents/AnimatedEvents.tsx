@@ -76,7 +76,7 @@ const EventCard: React.FC<EventCardProps> = ({
 			<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black' />
 
 			{/* Content */}
-			<div className='z-10 flex flex-col w-full justify-start gap-9 p-12 max-md:bg-black/50 rounded'>
+			<div className='z-10 flex flex-col justify-start gap-9 p-12 max-lg:bg-black/50 rounded'>
 				<div className='items-left flex flex-col justify-start'>
 					<h2 className='font-obraletraBold text-2xl'>{event.event_title}</h2>
 					<h3 className='font-obraletra text-base max-lg:text-sm'>
@@ -118,7 +118,7 @@ export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
 	dataEvents,
 }) => {
 	return (
-		<div className='rounded-lg-lg flex h-screen w-3/4 max-lg:w-full max-lg:px-4 flex-col items-start gap-9'>
+		<div className='rounded-lg-lg flex h-screen min-h-fit w-3/4 max-lg:w-full max-lg:px-4 flex-col items-start gap-9'>
 			{/* Title */}
 			<motion.h1
 				className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-xl'
