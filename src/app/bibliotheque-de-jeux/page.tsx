@@ -95,9 +95,9 @@ export default async function Page() {
 				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
 				{/* Main content with spacing between sections */}
-				<div className='mt-64 flex w-full flex-col items-center justify-center gap-24 max-lg:gap-16'>
+				<div className='mt-64 flex w-full flex-col items-center justify-center gap-64 max-lg:gap-24'>
 					<GLHeroComponent data={dataGameLibrary} />
-					<div className='mt-64 flex w-full flex-col items-center justify-center gap-64 max-lg:gap-36'>
+					<div className='flex w-full flex-col items-center justify-center gap-64 max-lg:gap-24'>
 						<GameComponent data={dataGameLibrary} />
 						<MyLudoComponent data={dataGameLibrary} />
 					</div>
