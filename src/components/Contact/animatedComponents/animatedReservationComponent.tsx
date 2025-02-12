@@ -25,7 +25,7 @@ export const AnimatedReservationComponent = ({
 						alt='House illustration'
 						width={720}
 						height={480}
-						className='w-3/4 rounded max-md:w-1/2'
+						className='w-3/4 rounded max-md:w-full'
 					/>
 				</motion.div>
 

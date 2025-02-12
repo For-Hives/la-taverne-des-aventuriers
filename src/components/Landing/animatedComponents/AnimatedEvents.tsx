@@ -76,23 +76,23 @@ const EventCard: React.FC<EventCardProps> = ({
 			<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black' />
 
 			{/* Content */}
-			<div className='z-10 flex flex-col justify-start gap-9 p-12'>
+			<div className='z-10 flex flex-col justify-start gap-9 p-12 max-lg:bg-black/50 rounded'>
 				<div className='items-left flex flex-col justify-start'>
 					<h2 className='font-obraletraBold text-2xl'>{event.event_title}</h2>
-					<h3 className='font-obraletra text-base max-lg:text-xs'>
+					<h3 className='font-obraletra text-base max-lg:text-sm'>
 						{new Date(event.event_date).toLocaleDateString('fr-FR')}
 					</h3>
 				</div>
 
 				<div
-					className='text-base max-sm:text-xs'
+					className='text-base max-sm:text-base'
 					dangerouslySetInnerHTML={{ __html: event.summary }}
 				/>
 
 				<Link
 					href={`evenements/${event.event_slug}` || '#'}
 					aria-label={event.button_aria}
-					className='flex items-center gap-3 text-base underline max-lg:text-xs'
+					className='flex items-center gap-3 text-base underline max-lg:text-base'
 				>
 					<span>{event.button_label || 'Learn more'}</span>
 					<FontAwesomeIcon
@@ -118,10 +118,10 @@ export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
 	dataEvents,
 }) => {
 	return (
-		<div className='rounded-lg-lg flex h-screen w-3/4 max-lg:w-full max-lg:px-4 flex-col items-start gap-9'>
+		<div className='rounded-lg-lg flex h-screen min-h-fit w-3/4 max-lg:w-full max-lg:px-4 flex-col items-start gap-9'>
 			{/* Title */}
 			<motion.h1
-				className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-base'
+				className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-xl'
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.5 }}
@@ -132,7 +132,7 @@ export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
 			{/* Cards Layout */}
 			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
 				{/* First Card (Full Height) */}
-				<div className='h-full w-1/2 max-lg:w-full'>
+				<div className='h-full w-1/2 max-lg:w-full max-lg:min-h-[70vh]'>
 					{dataEvents[0] && (
 						<EventCard
 							event={dataEvents[0]}
@@ -148,7 +148,7 @@ export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
 						<EventCard
 							event={dataEvents[1]}
 							animationProps={cardAnimations.secondCard}
-							className='h-1/2 w-full'
+							className='h-1/2 w-full max-lg:min-h-[70vh]'
 						/>
 					)}
 
@@ -156,7 +156,7 @@ export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
 						<EventCard
 							event={dataEvents[2]}
 							animationProps={cardAnimations.thirdCard}
-							className='h-1/2 w-full'
+							className='h-1/2 w-full max-lg:min-h-[70vh]'
 						/>
 					)}
 				</div>

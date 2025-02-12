@@ -43,7 +43,7 @@ export default function LandingWrapper({
 
 				{/* Main Content */}
 				<div className='relative pt-32'>
-					<div className='flex w-full flex-col items-center gap-96'>
+					<div className='flex w-full flex-col items-center gap-64'>
 						<EventsComponent data={data} dataEvents={dataEvents} />
 						<WhoAreWeSection data={data} />
 						<ReservationCardComponent />
