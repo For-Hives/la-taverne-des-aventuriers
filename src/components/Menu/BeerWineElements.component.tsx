@@ -100,80 +100,65 @@ export default function BeerWineElement() {
 			</h2>
 
 			{/* Beer Section */}
-			<div className='flex flex-col justify-center gap-6 sm:w-3/4'>
+			<div className='flex flex-col justify-center gap-6 w-3/4 mx-md:w-full'>
 				<h3 className='font-cardinal text-2xl text-customRed-100 sm:text-4xl'>
 					Bières:
 				</h3>
 
-				<div className='grid grid-cols-1 gap-10 sm:grid-cols-2'>
-					{/* Draft Beers */}
-					<div className='flex flex-col gap-4'>
-						<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
-							Pression:
-						</h4>
-						<table className='w-full border-collapse text-left font-cardoRegular text-base text-customBrown-100'>
-							<thead>
-								<tr>
-									<th className='px-4 py-2'>Bière</th>
-									<th className='px-4 py-2'>25cl</th>
-									<th className='px-4 py-2'>50cl</th>
-								</tr>
-							</thead>
-							<tbody>
-								{draftBeers.length === 0 ? (
-									<tr>
-										<td colSpan={3} className='px-4 py-2 text-center'>
-											Aucune Bière pression disponible
-										</td>
-									</tr>
-								) : (
-									// Display draft beers
-									draftBeers.map((beer, index) => (
-										<tr key={`${beer.id}-${index}`}>
-											<td className='px-4 py-2'>{beer.title}</td>
-											<td className='px-4 py-2'>
-												{beer.prices['25'] || 'N/A'} €
-											</td>
-											<td className='px-4 py-2'>
-												{beer.prices['50'] || 'N/A'} €
-											</td>
-										</tr>
-									))
-								)}
-							</tbody>
-						</table>
-					</div>
-
-					{/* Bottle Beers */}
-					<div className='flex flex-col gap-4'>
-						<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
-							Bouteilles:
-						</h4>
-						<div className='flex flex-col gap-2'>
-							{bottleBeers.length === 0 ? (
-								<p className='text-center'>
-									Pas de Bière bouteille disponible.
-								</p>
-							) : (
-								// Display bottle beers
-								bottleBeers.map((beer, index) => (
-									<div
-										key={`${beer.id}-${index}`}
-										className='flex items-center justify-between font-cardoRegular'
-									>
-										<h4 className='font-cardoRegular text-base text-customBrown-100'>
-											{beer.title} ({beer.volume})
-										</h4>
-										<p className='text-right font-cardoRegular text-base text-customBrown-100'>
-											{beer.price} €
-										</p>
-									</div>
-								))
-							)}
+				{/* Draft Beers */}
+				<div className='flex flex-col gap-4'>
+					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
+						Pression:
+					</h4>
+					<div className='w-full text-customBrown-100'>
+						<div className='flex'>
+							<div className='w-1/2 px-4 py-2 text-left font-cardoRegular'>Bière</div>
+							<div className='w-1/4 px-4 py-2 text-right font-cardoRegular'>25cl</div>
+							<div className='w-1/4 px-4 py-2 text-right font-cardoRegular'>50cl</div>
 						</div>
+						{draftBeers.length === 0 ? (
+							<div className='px-4 py-2 text-center'>
+								Aucune Bière pression disponible
+							</div>
+						) : (
+							draftBeers.map((beer, index) => (
+								<div key={`${beer.id}-${index}`} className='flex '>
+									<div className='w-1/2 px-4 py-2 text-left'>{beer.title}</div>
+									<div className='w-1/4 px-4 py-2 text-right'>{beer.prices['25'] || 'N/A'} €</div>
+									<div className='w-1/4 px-4 py-2 text-right'>{beer.prices['50'] || 'N/A'} €</div>
+								</div>
+							))
+						)}
+					</div>
+				</div>
+
+				{/* Bottle Beers */}
+				<div className='flex flex-col gap-4'>
+					<h4 className='font-cardinal text-xl text-customBrown-100 sm:text-2xl'>
+						Bouteilles:
+					</h4>
+					<div className='flex flex-col gap-2'>
+						{bottleBeers.length === 0 ? (
+							<p className='text-center'>Pas de Bière bouteille disponible.</p>
+						) : (
+							bottleBeers.map((beer, index) => (
+								<div
+									key={`${beer.id}-${index}`}
+									className='flex items-center justify-between py-2'
+								>
+									<h4 className='font-cardoRegular text-base text-customBrown-100 flex-1'>
+										{beer.title} ({beer.volume})
+									</h4>
+									<p className='font-cardoRegular text-base text-customBrown-100 w-1/4 text-right px-4'>
+										{beer.price} €
+									</p>
+								</div>
+							))
+						)}
 					</div>
 				</div>
 			</div>
+
 
 			{/* Wine Section */}
 			<div className='flex flex-col justify-center gap-6 sm:w-3/4'>
@@ -190,8 +175,8 @@ export default function BeerWineElement() {
 						<thead>
 							<tr>
 								<th className='w-4/6 px-4 py-2'>Vin</th>
-								<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
-								<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
+								<th className='w-1/6 px-4 py-2 text-right'>Verre</th>
+								<th className='w-1/6 px-4 py-2 text-right'>Bouteille</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -205,10 +190,10 @@ export default function BeerWineElement() {
 								redWines.map((wine, index) => (
 									<tr key={`${wine.id}-${index}`}>
 										<td className='px-4 py-2'>{wine.title}</td>
-										<td className='px-4 py-2 text-center'>
+										<td className='px-4 py-2 text-right'>
 											{wine.price_glass} €
 										</td>
-										<td className='px-4 py-2 text-center'>
+										<td className='px-4 py-2 text-right'>
 											{wine.price_bottle} €
 										</td>
 									</tr>
@@ -227,14 +212,14 @@ export default function BeerWineElement() {
 						<thead>
 							<tr>
 								<th className='w-4/6 px-4 py-2'>Vins</th>
-								<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
-								<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
+								<th className='w-1/6 px-4 py-2 text-right'>Verre</th>
+								<th className='w-1/6 px-4 py-2 text-right'>Bouteille</th>
 							</tr>
 						</thead>
 						<tbody>
 							{whiteWines.length === 0 ? (
 								<tr>
-									<td colSpan={3} className='px-4 py-2 text-center'>
+									<td colSpan={3} className='px-4 py-2 text-right'>
 										Aucun Vin blanc disponible.
 									</td>
 								</tr>
@@ -242,10 +227,10 @@ export default function BeerWineElement() {
 								whiteWines.map((wine, index) => (
 									<tr key={`${wine.id}-${index}`}>
 										<td className='px-4 py-2'>{wine.title}</td>
-										<td className='px-4 py-2 text-center'>
+										<td className='px-4 py-2 text-right'>
 											{wine.price_glass} €
 										</td>
-										<td className='px-4 py-2 text-center'>
+										<td className='px-4 py-2 text-right'>
 											{wine.price_bottle} €
 										</td>
 									</tr>
@@ -264,8 +249,8 @@ export default function BeerWineElement() {
 						<thead>
 							<tr>
 								<th className='w-4/6 px-4 py-2'>Vin</th>
-								<th className='w-1/6 px-4 py-2 text-center'>Verre</th>
-								<th className='w-1/6 px-4 py-2 text-center'>Bouteille</th>
+								<th className='w-1/6 px-4 py-2 text-right'>Verre</th>
+								<th className='w-1/6 px-4 py-2 text-right'>Bouteille</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -279,10 +264,10 @@ export default function BeerWineElement() {
 								roseWines.map((wine, index) => (
 									<tr key={`${wine.id}-${index}`}>
 										<td className='px-4 py-2'>{wine.title}</td>
-										<td className='px-4 py-2 text-center'>
+										<td className='px-4 py-2 text-right'>
 											{wine.price_glass} €
 										</td>
-										<td className='px-4 py-2 text-center'>
+										<td className='px-4 py-2 text-right'>
 											{wine.price_bottle} €
 										</td>
 									</tr>
