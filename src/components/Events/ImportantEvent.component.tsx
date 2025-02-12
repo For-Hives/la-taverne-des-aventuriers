@@ -24,9 +24,8 @@ export default function ImportantEventComponent({
 					) => (
 						<li
 							key={event.id}
-							className='flex items-start justify-center gap-6 rounded-lg border border-customBrown-100 p-4 max-sm:flex-col'
+							className='flex items-center justify-center gap-6 rounded-lg border border-customBrown-100 p-4 max-sm:flex-col'
 						>
-							{' '}
 							{/* Each event item */}
 							{event.event_image && ( // If an event image exists, render it
 								<div className='flex w-1/3 items-center justify-center max-sm:w-full'>
@@ -42,14 +41,13 @@ export default function ImportantEventComponent({
 							<div className='flex w-2/3 flex-col items-start justify-center max-sm:w-full'>
 								<h2 className='font-cardoRegular text-2xl text-customBrown-100 first-letter:text-customRed-100'>
 									{event.event_title}
-								</h2>{' '}
+								</h2>
 								{/* Display the event title */}
 								<p className='font-obraletra text-customGray-100'>
 									{/* Format the event date */}
 									{new Date(event.event_date).toLocaleDateString('fr-FR')}
 								</p>
 								<p className='mt-2 font-cardoRegular text-customBrown-100'>
-									{' '}
 									{/* Paragraph for the event description */}
 									<span
 										dangerouslySetInnerHTML={{

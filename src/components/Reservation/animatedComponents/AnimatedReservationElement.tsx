@@ -12,22 +12,25 @@ export const AnimatedReservationElement = ({
 	return (
 		<div className='flex h-full w-11/12 items-center justify-center font-cardoRegular text-customBrown-100'>
 			{/* Grid layout for the content */}
-			<div className='grid h-full w-full grid-cols-1 grid-rows-8 gap-4 sm:grid-cols-2 xl:grid-cols-10'>
+			<div className='grid h-full w-full grid-cols-1 grid-rows-8 gap-4 sm:grid-cols-2 xl:grid-cols-10 max-md:grid-rows-5 max-xl:grid-rows-4'>
 				{/* Card 1 - Top Left */}
 				<motion.div
-					className='col-span-1 row-span-1 flex items-center justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-2 sm:row-span-2 xl:col-span-8 xl:row-span-3'
+					className='col-span-1 row-span-1 flex items-center justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 sm:row-span-1 xl:col-span-8 xl:row-span-3'
 					initial={{ opacity: 0, y: 50 }} // Initial opacity and vertical position for animation
 					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original vertical position
 					transition={{ delay: 0.2, duration: 0.8 }} // Delay and duration for the animation
 				>
-					<div
-						className='relative flex h-full w-full items-start justify-start overflow-hidden rounded-xl p-5 sm:p-8'
-						style={{
-							backgroundImage: `url(${data.image_card1})`, // Dynamic background image from data
-							backgroundPosition: 'center right', // Align image to the right
-							backgroundSize: 'contain', // Make the image fit without being zoomed
-						}}
-					>
+					<div className='relative flex h-full w-full items-start justify-start overflow-hidden rounded-xl p-5 sm:p-8'>
+						{/* Image with Next.js Image component */}
+						<Image
+							src={data.image_card1}
+							alt="Image description"
+							layout="fill"
+							objectFit="cover"
+							objectPosition="center"
+							className="absolute inset-0 z-0"
+							quality={100}
+						/>
 						{/* Gradient overlay for the background */}
 						<div className='absolute inset-0 z-0 bg-gradient-to-r from-customWhite-300/100 via-customWhite-300/100 to-customWhite-300/20' />
 
@@ -36,17 +39,15 @@ export const AnimatedReservationElement = ({
 							<h1 className='font-cardinal text-2xl tracking-wider first-letter:text-customRed-100 sm:text-3xl'>
 								{data.who_are_we_title} {/* Dynamic title */}
 							</h1>
-							<div
-								className={'prose prose-customBrown'} // Styling for the description
-								dangerouslySetInnerHTML={{ __html: data.description_card_1 }} // Injecting HTML content for description
-							/>
+							<div className={'prose prose-customBrown'} dangerouslySetInnerHTML={{ __html: data.description_card_1 }} />
 						</div>
 					</div>
 				</motion.div>
 
+
 				{/* Card 2 - Middle Right */}
 				<motion.div
-					className='relative col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-1 sm:row-span-4 xl:col-span-2'
+					className='relative col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-1 md:row-span-4 xl:col-span-2'
 					initial={{ opacity: 0, x: -50 }} // Initial opacity and horizontal position for animation
 					animate={{ opacity: 1, x: 0 }} // Animate to full opacity and original horizontal position
 					transition={{ delay: 0.4, duration: 0.8 }} // Delay and duration for the animation
@@ -71,7 +72,7 @@ export const AnimatedReservationElement = ({
 
 				{/* Card 3 - Middle Left */}
 				<motion.div
-					className='col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-1 sm:row-span-4 xl:col-span-2 xl:row-span-8'
+					className='col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-1 md:row-span-4 xl:col-span-2 xl:row-span-8'
 					initial={{ opacity: 0, x: 50 }} // Initial opacity and horizontal position for animation
 					animate={{ opacity: 1, x: 0 }} // Animate to full opacity and original horizontal position
 					transition={{ delay: 0.6, duration: 0.8 }} // Delay and duration for the animation
@@ -89,7 +90,7 @@ export const AnimatedReservationElement = ({
 
 				{/* Central Logo */}
 				<motion.div
-					className='bg-tan-200 relative col-span-1 row-span-3 flex items-center justify-center rounded-xl border border-customBrown-100 bg-customWhite-300 max-xl:hidden sm:col-span-2 sm:row-span-10 xl:col-span-6'
+					className='bg-tan-200 relative col-span-1 row-span-3 flex items-center justify-center rounded-xl border border-customBrown-100 bg-customWhite-300 max-xl:hidden md:col-span-2 md:row-span-10 xl:col-span-6'
 					initial={{ opacity: 0 }} // Initial opacity for animation
 					animate={{ opacity: 1 }} // Animate to full opacity
 					transition={{ delay: 0.8, duration: 0.8 }} // Delay and duration for the animation
@@ -112,7 +113,7 @@ export const AnimatedReservationElement = ({
 
 				{/* Card 4 - Bottom Left */}
 				<motion.div
-					className='col-span-1 row-span-2 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-2 sm:row-span-9 xl:col-span-2'
+					className='col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 md:row-span-9 xl:col-span-2'
 					initial={{ opacity: 0, y: 50 }} // Initial opacity and vertical position for animation
 					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original vertical position
 					transition={{ delay: 1, duration: 0.8 }} // Delay and duration for the animation
@@ -143,7 +144,7 @@ export const AnimatedReservationElement = ({
 
 				{/* Card 5 - Bottom Right */}
 				<motion.div
-					className='col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:col-span-2 sm:row-span-2'
+					className='col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 md:row-span-2 '
 					initial={{ opacity: 0, y: -50 }} // Initial opacity and vertical position for animation
 					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original vertical position
 					transition={{ delay: 1.2, duration: 0.8 }} // Delay and duration for the animation
