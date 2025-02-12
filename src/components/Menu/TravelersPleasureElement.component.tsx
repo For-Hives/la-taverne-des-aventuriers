@@ -13,16 +13,6 @@ export default async function TravelersPleasureElement() {
 			<h2 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl md:text-8xl'>
 				Les Plaisirs Du Voyageur
 			</h2>
-			<div className='flex w-full flex-col items-center justify-center gap-10 sm:gap-20 md:flex-row'>
-				{/* Left Column (Text 1) */}
-				<div className='flex w-full flex-col justify-center gap-14 sm:w-1/3'>
-					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
-						{leftText.title}
-					</h2>
-					<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
-						{leftText.description}
-					</p>
-				</div>
 
 			<div className='flex h-full w-full items-center justify-center'>
 				<div className='grid h-full w-full grid-cols-10 grid-rows-10 gap-1 rounded-lg p-2'>
