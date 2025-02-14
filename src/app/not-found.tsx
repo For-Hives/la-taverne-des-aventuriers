@@ -1,15 +1,15 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { getNavBarData } from '@/app/actions/services/getNavData.service'
+import RiveAnimation from '@/components/animation/RiveAnimation'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import RiveAnimation from '@/components/animation/RiveAnimation'
-import { getNavBarData } from '@/app/actions/services/getNavData.service'
+import { useState, useEffect } from 'react'
+
 
 export default function Home() {
 	const [dataNavbar, setDataNavbar] = useState(null)
 
-	// Récupérer les données de la navbar au chargement du composant
 	useEffect(() => {
 		const fetchNavData = async () => {
 			const data = await getNavBarData()
@@ -25,11 +25,12 @@ export default function Home() {
 
 	return (
 		<div
-			className='relative flex h-screen w-full flex-col items-center justify-center bg-cover bg-center'
-			style={{ backgroundImage: "url('/assets/images/bg_notfound.png')" }} // Remplace par le chemin correct
+			className='relative flex h-screen w-full flex-col items-center justify-center bg-cover bg-center overflow-hidden'
+			style={{ backgroundImage: "url('/assets/images/bg_notfound.png')" }}
 		>
 			<Navbar navItems={dataNavbar} />
 			<MobileNavbar navItems={dataNavbar} />
+
 			{/* Animation Rive */}
 			<RiveAnimation />
 		</div>
