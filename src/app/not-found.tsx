@@ -24,7 +24,10 @@ export default function Home() {
 	}
 
 	return (
-		<div className='flex h-screen w-full flex-col items-center justify-center'>
+		<div
+			className='relative flex h-screen w-full flex-col items-center justify-center bg-cover bg-center'
+			style={{ backgroundImage: "url('/assets/images/bg_notfound.png')" }} // Remplace par le chemin correct
+		>
 			<Navbar navItems={dataNavbar} />
 			<MobileNavbar navItems={dataNavbar} />
 			{/* Animation Rive */}
