@@ -55,28 +55,6 @@ export default async function Page() {
 			'@type': 'BarOrPub',
 			description: 'Bar à jeux médiéval-fantastique à Nantes',
 			foundingDate: '2024',
-			hasOfferCatalog: {
-				'@type': 'OfferCatalog',
-				itemListElement: [
-					{
-						'@type': 'Offer',
-						itemOffered: {
-							'@type': 'Service',
-							description: 'Plus de 90 jeux de société',
-							name: 'Collection de jeux',
-						},
-					},
-					{
-						'@type': 'Offer',
-						itemOffered: {
-							'@type': 'Service',
-							description: 'Cocktails et planches à partager',
-							name: 'Bar et restauration',
-						},
-					},
-				],
-				name: 'Services',
-			},
 			name: 'La Taverne des Aventuriers',
 			numberOfEmployees: {
 				'@type': 'QuantitativeValue',

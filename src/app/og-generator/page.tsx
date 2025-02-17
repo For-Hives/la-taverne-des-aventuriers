@@ -1,4 +1,22 @@
 import { textToSpanColored } from '@/utils/textToSpanColored'
+import { Metadata } from 'next'
+
+/**
+ * Generates metadata for legal notice page
+ */
+export async function generateMetadata(): Promise<Metadata> {
+	return {
+		robots: {
+			follow: false,
+			googleBot: {
+				follow: false,
+				index: false,
+			},
+			index: false,
+			nocache: true,
+		},
+	}
+}
 
 export default function OgGenerator() {
 	return (
