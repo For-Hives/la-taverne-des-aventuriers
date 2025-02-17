@@ -1,42 +1,121 @@
-// Import necessary functions and components for the page
-import { getEventData } from '@/app/actions/services/getEventData' // Modified function to take a slug for event lookup
-import { getNavBarData } from '@/app/actions/services/getNavData.service' // Mobile Navbar component
-import SpecialEventComponent from '@/components/Events/SpecialEvent.component' // Component for rendering the event details
-import Navbar from '@/components/Global/Navbar.component' // Global Navbar component
+import { getEventData } from '@/app/actions/services/getEventData'
+import { getNavBarData } from '@/app/actions/services/getNavData.service'
+import SpecialEventComponent from '@/components/Events/SpecialEvent.component'
+import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
+import { Metadata } from 'next'
 
-// Define the structure for the Page props
 type PageProps = Promise<{
-	slug: string // Slug is now used to look up the event by its title
+	slug: string
 }>
 
-// Main component for rendering the event page based on the slug
+/**
+ * Generates metadata for individual event pages
+ */
+export async function generateMetadata({
+	params,
+}: {
+	params: PageProps
+}): Promise<Metadata> {
+	const { slug } = await params
+	const eventData = await getEventData(slug)
+
+	if (!eventData) {
+		return {
+			description: "La page demandée n'existe pas.",
+			title: 'Événement non trouvé | La Taverne des Aventuriers',
+		}
+	}
+
+	return {
+		alternates: {
+			canonical: `https://latavernedesaventuriers.fr/evenements/${eventData.event_slug}`,
+		},
+		description: eventData.summary,
+		keywords: [
+			'événement nantes',
+			'soirée jeux nantes',
+			'animation bar nantes',
+			'taverne des aventuriers',
+			eventData.event_title.toLowerCase(),
+			'bar à jeux',
+			'animation ludique',
+			'sortie nantes',
+		],
+		robots: {
+			follow: true,
+			index: true,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+			'max-video-preview': -1,
+		},
+		title: `${eventData.event_title} | La Taverne des Aventuriers`,
+	}
+}
+
 export default async function Page({
 	params,
 }: Readonly<{ params: PageProps }>) {
-	const { slug } = await params // Extract slug from params
-
+	const { slug } = await params
+	const eventData = await getEventData(slug)
 	const navItems = await getNavBarData()
-	// Fetch the event data using the slug
-	const eventdata = await getEventData(slug) // Fetch data for the event that matches the slug
 
-	// If no event is found, display an error message
-	if (!eventdata) {
-		return <div>No event found for this title.</div> // Show an error message if event is not found
+	if (!eventData) {
+		return (
+			<div className='flex min-h-screen flex-col items-center justify-center'>
+				<h1 className='text-2xl text-customBrown-100'>Événement non trouvé</h1>
+			</div>
+		)
 	}
 
-	// If the event is found, render the event page
-	return (
-		<div className='flex flex-col gap-64'>
-			{/* Render Navbar components */}
-			<Navbar navItems={navItems} />
-			<MobileNavbar navItems={navItems} />
+	// Structured data focused on event specifics
+	const structuredData = {
+		'@context': 'https://schema.org',
+		'@type': 'SocialEvent',
+		description: eventData.summary,
+		eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+		eventStatus: 'https://schema.org/EventScheduled',
+		image: eventData.event_image
+			? `https://latavernedesaventuriers.fr/assets/images/events/${eventData.event_image}`
+			: undefined,
+		isAccessibleForFree: false,
+		location: {
+			'@type': 'BarOrPub',
+			address: {
+				'@type': 'PostalAddress',
+				addressCountry: 'FR',
+				addressLocality: 'Nantes',
+				postalCode: '44000',
+				streetAddress: '13 Rue Kervégan',
+			},
+			name: 'La Taverne des Aventuriers',
+		},
+		name: eventData.event_title,
+		organizer: {
+			'@type': 'BarOrPub',
+			name: 'La Taverne des Aventuriers',
+			url: 'https://latavernedesaventuriers.fr',
+		},
+		startDate: eventData.event_date,
+		typicalAgeRange: '18+',
+	}
 
-			{/* Main content area for the event */}
-			<div className='relative mt-36 flex flex-col items-center gap-24'>
-				<SpecialEventComponent data={eventdata} />{' '}
-				{/* Render the event details */}
+	return (
+		<>
+			<script
+				type='application/ld+json'
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(structuredData),
+				}}
+			/>
+			<div className='flex flex-col gap-64'>
+				<Navbar navItems={navItems} />
+				<MobileNavbar navItems={navItems} />
+
+				<div className='relative mt-36 flex flex-col items-center gap-24'>
+					<SpecialEventComponent data={eventData} />
+				</div>
 			</div>
-		</div>
+		</>
 	)
 }
