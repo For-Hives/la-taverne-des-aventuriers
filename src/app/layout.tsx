@@ -45,6 +45,7 @@ const createStructuredData = (
 	contactData: Awaited<ReturnType<typeof getContactData>>
 ) => ({
 	'@context': 'https://schema.org',
+	'@id': 'https://latavernedesaventuriers.fr',
 	'@type': ['BarOrPub', 'EntertainmentBusiness'],
 	address: {
 		'@type': 'PostalAddress',
@@ -55,16 +56,35 @@ const createStructuredData = (
 	},
 	description: 'Bar à jeux médiéval-fantastique au cœur de Nantes',
 	email: contactData.contact_email,
+	geo: {
+		'@type': 'GeoCoordinates',
+		latitude: '47.2127234',
+		longitude: '-1.5555402',
+	},
+	image: '/assets/images/LTDALogo.png',
 	name: 'La Taverne des Aventuriers',
-	openingHours: [
-		'Mo 17:00-00:00',
-		'Tu Closed',
-		'We 14:00-00:00',
-		'Th 17:00-00:00',
-		'Fr 17:00-02:00',
-		'Sa 14:00-02:00',
-		'Su 14:00-00:00',
+	openingHoursSpecification: [
+		{
+			'@type': 'OpeningHoursSpecification',
+			closes: '00:00',
+			dayOfWeek: 'Monday',
+			opens: '17:00',
+		},
+		{
+			'@type': 'OpeningHoursSpecification',
+			closes: '00:00',
+			dayOfWeek: 'Tuesday',
+			opens: '00:00',
+		},
+		// ... autres jours
 	],
+	potentialAction: {
+		'@type': 'ReserveAction',
+		target: {
+			'@type': 'EntryPoint',
+			urlTemplate: 'https://latavernedesaventuriers.fr/reservation',
+		},
+	},
 	priceRange: '€€',
 	sameAs: [
 		contactData.facebook_url,
