@@ -30,6 +30,7 @@
 		"@vimeo/player": "2.25.0",
 		"aos": "2.3.4",
 		"autoprefixer": "10.4.20",
+		"bun": "^1.2.2",
 		"clsx": "2.1.1",
 		"dompurify": "3.2.4",
 		"gsap": "3.12.7",
