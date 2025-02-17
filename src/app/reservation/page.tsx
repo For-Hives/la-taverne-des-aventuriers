@@ -64,7 +64,6 @@ export default async function Reservation() {
 		description: 'Bar à jeux médiéval-fantastique',
 		hasMap: 'https://maps.app.goo.gl/2dFvnKAXgHZYDFu58',
 		image: '/assets/images/LTDALogo.png',
-		maximumAttendeeCapacity: 50,
 		name: 'La Taverne des Aventuriers',
 		openingHours: [
 			'Mo 17:00-00:00',
@@ -75,23 +74,10 @@ export default async function Reservation() {
 			'Sa 14:00-02:00',
 			'Su 14:00-00:00',
 		],
-		potentialAction: {
-			'@type': 'ReserveAction',
-			target: {
-				'@type': 'EntryPoint',
-				actionPlatform: [
-					'http://schema.org/DesktopWebPlatform',
-					'http://schema.org/MobileWebPlatform',
-				],
-				inLanguage: 'fr-FR',
-				urlTemplate: 'https://latavernedesaventuriers.fr/reservation',
-			},
-		},
-		priceRange: '€€',
+		priceRange: '€',
 		publicAccess: true,
 		servesCuisine: 'Bar à jeux',
 		smokingAllowed: false,
-		telephone: '09 79 25 50 73',
 		url: 'https://latavernedesaventuriers.fr',
 	}
 
