@@ -3,6 +3,7 @@ import '@/app/styles/global.css'
 import type { Metadata } from 'next'
 
 import { getContactData } from '@/app/actions/services/getContactPageData.service'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Geist, Geist_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 import Script from 'next/script'
@@ -236,9 +237,6 @@ export async function generateMetadata(): Promise<Metadata> {
 			images: ['/assets/images/og-image.jpg'],
 			title: 'La Taverne des Aventuriers',
 		},
-		verification: {
-			google: 'G-237Y7E1JZW',
-		},
 	}
 }
 
@@ -264,6 +262,8 @@ export default async function RootLayout({
 				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${CardoRegular.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				{children}
+				{/* Google Analytics */}
+				<GoogleAnalytics gaId='G-237Y7E1JZW' />
 				<Script
 					src='https://umami.wadefade.fr/script.js'
 					data-website-id='d1af4b0d-f3e6-4760-89d5-c40f2eaa646b'
