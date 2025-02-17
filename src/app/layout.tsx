@@ -6,6 +6,7 @@ import { getContactData } from '@/app/actions/services/getContactPageData.servic
 import { Geist, Geist_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 import Script from 'next/script'
+import React from 'react'
 
 // Font configurations
 const ObraLetra = localFont({
@@ -236,7 +237,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			title: 'La Taverne des Aventuriers',
 		},
 		verification: {
-			google: 'verificationstring', // todo: À remplacer par le vrai code
+			google: 'G-237Y7E1JZW',
 		},
 	}
 }
