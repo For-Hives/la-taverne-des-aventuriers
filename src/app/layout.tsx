@@ -54,29 +54,56 @@ const createStructuredData = (
 		postalCode: '44000',
 		streetAddress: contactData.address,
 	},
-	description: 'Bar à jeux médiéval-fantastique au cœur de Nantes',
+	description:
+		'Bar à jeux médiéval-fantastique au cœur de Nantes avec une collection de plus de 90 jeux de société. Ambiance unique, cocktails créatifs et soirées thématiques.',
 	email: contactData.contact_email,
 	geo: {
 		'@type': 'GeoCoordinates',
 		latitude: '47.2127234',
 		longitude: '-1.5555402',
 	},
-	image: '/assets/images/LTDALogo.png',
+	image: [
+		'https://latavernedesaventuriers.fr/assets/images/LTDALogo.png',
+		'https://latavernedesaventuriers.fr/assets/images/taverne-interieur.jpg',
+	],
 	name: 'La Taverne des Aventuriers',
 	openingHoursSpecification: [
 		{
 			'@type': 'OpeningHoursSpecification',
 			closes: '00:00',
 			dayOfWeek: 'Monday',
-			opens: '17:00',
+			opens: '18:00',
 		},
 		{
 			'@type': 'OpeningHoursSpecification',
 			closes: '00:00',
-			dayOfWeek: 'Tuesday',
-			opens: '00:00',
+			dayOfWeek: 'Wednesday',
+			opens: '15:00',
 		},
-		// ... autres jours
+		{
+			'@type': 'OpeningHoursSpecification',
+			closes: '00:00',
+			dayOfWeek: 'Thursday',
+			opens: '18:00',
+		},
+		{
+			'@type': 'OpeningHoursSpecification',
+			closes: '01:00',
+			dayOfWeek: 'Friday',
+			opens: '18:00',
+		},
+		{
+			'@type': 'OpeningHoursSpecification',
+			closes: '01:00',
+			dayOfWeek: 'Saturday',
+			opens: '15:00',
+		},
+		{
+			'@type': 'OpeningHoursSpecification',
+			closes: '00:00',
+			dayOfWeek: 'Sunday',
+			opens: '15:00',
+		},
 	],
 	potentialAction: {
 		'@type': 'ReserveAction',
@@ -85,7 +112,7 @@ const createStructuredData = (
 			urlTemplate: 'https://latavernedesaventuriers.fr/reservation',
 		},
 	},
-	priceRange: '€€',
+	priceRange: '€',
 	sameAs: [
 		contactData.facebook_url,
 		contactData.instagram_url,
@@ -94,14 +121,12 @@ const createStructuredData = (
 	url: 'https://latavernedesaventuriers.fr',
 })
 
-/**
- * Generates metadata for the application using dynamic data
- */
 export async function generateMetadata(): Promise<Metadata> {
 	return {
 		alternates: {
 			canonical: 'https://latavernedesaventuriers.fr',
 		},
+		applicationName: 'La Taverne des Aventuriers',
 		authors: [{ name: 'La Taverne des Aventuriers' }],
 		category: 'business.food_and_drinks',
 		creator: 'La Taverne des Aventuriers',
@@ -111,6 +136,43 @@ export async function generateMetadata(): Promise<Metadata> {
 			address: false,
 			email: false,
 			telephone: false,
+		},
+		icons: {
+			apple: [
+				{ sizes: '57x57', url: '/assets/icons/favicon-57x57.png' },
+				{ sizes: '60x60', url: '/assets/icons/favicon-60x60.png' },
+				{ sizes: '72x72', url: '/assets/icons/favicon-72x72.png' },
+				{ sizes: '76x76', url: '/assets/icons/favicon-76x76.png' },
+				{ sizes: '114x114', url: '/assets/icons/favicon-114x114.png' },
+				{ sizes: '120x120', url: '/assets/icons/favicon-120x120.png' },
+				{ sizes: '144x144', url: '/assets/icons/favicon-144x144.png' },
+				{ sizes: '152x152', url: '/assets/icons/favicon-152x152.png' },
+				{ sizes: '180x180', url: '/assets/icons/favicon-180x180.png' },
+			],
+			icon: [
+				{ type: 'image/svg+xml', url: '/assets/icons/favicon.svg' },
+				{
+					sizes: '16x16',
+					type: 'image/png',
+					url: '/assets/icons/favicon-16x16.png',
+				},
+				{
+					sizes: '32x32',
+					type: 'image/png',
+					url: '/assets/icons/favicon-32x32.png',
+				},
+				{
+					sizes: '96x96',
+					type: 'image/png',
+					url: '/assets/icons/favicon-96x96.png',
+				},
+				{
+					sizes: '192x192',
+					type: 'image/png',
+					url: '/assets/icons/favicon-192x192.png',
+				},
+			],
+			shortcut: { url: '/favicon.ico' },
 		},
 		keywords: [
 			'bar à jeux',
@@ -124,6 +186,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			'ludothèque Nantes',
 			'bar centre-ville Nantes',
 		],
+		manifest: '/assets/icons/manifest.json',
 		metadataBase: new URL('https://latavernedesaventuriers.fr'),
 		openGraph: {
 			description:
@@ -142,6 +205,13 @@ export async function generateMetadata(): Promise<Metadata> {
 			type: 'website',
 			url: 'https://latavernedesaventuriers.fr',
 		},
+		// Paramètres Microsoft
+		other: {
+			'msapplication-config': '/assets/icons/browserconfig.xml',
+			'msapplication-TileColor': '#ffffff',
+			'msapplication-TileImage': '/assets/icons/favicon-144x144.png',
+			'theme-color': '#ffffff',
+		},
 		publisher: 'La Taverne des Aventuriers',
 		robots: {
 			follow: true,
@@ -158,12 +228,19 @@ export async function generateMetadata(): Promise<Metadata> {
 			default: 'La Taverne des Aventuriers - Bar à Jeux Médiéval à Nantes',
 			template: '%s | La Taverne des Aventuriers',
 		},
+		twitter: {
+			card: 'summary_large_image',
+			creator: '@TaverneNantes',
+			description: 'Bar à jeux médiéval-fantastique au cœur de Nantes',
+			images: ['/assets/images/og-image.jpg'],
+			title: 'La Taverne des Aventuriers',
+		},
+		verification: {
+			google: 'verificationstring', // todo: À remplacer par le vrai code
+		},
 	}
 }
 
-/**
- * Root layout component
- */
 export default async function RootLayout({
 	children,
 }: Readonly<{
