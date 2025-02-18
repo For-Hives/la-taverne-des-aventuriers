@@ -5,8 +5,9 @@ export default {
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
+	darkMode: ['class'],
 	// eslint-disable-next-line @typescript-eslint/no-require-imports
-	plugins: [require('@tailwindcss/typography')],
+	plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 	safelist: [
 		'mask-custom',
 		'absolute',
@@ -35,54 +36,96 @@ export default {
 		extend: {
 			backgroundImage: {
 				'background-image':
-					"url('/assets/images/elements/ContactElements/t3.png')", //fix
-				FooterImage: "url('/assets/images/MaskFooter.png')", //ok
+					"url('/assets/images/elements/ContactElements/t3.png')",
+				FooterImage: "url('/assets/images/MaskFooter.png')",
 				'gl-card1-bg':
-					"url('/assets/images/elements/GameLibraryElements/BG1.png')", //ok
+					"url('/assets/images/elements/GameLibraryElements/BG1.png')",
 				'gl-card2-bg':
-					"url('/assets/images/elements/GameLibraryElements/BG2.png')", //ok
+					"url('/assets/images/elements/GameLibraryElements/BG2.png')",
 				'gl-card3-bg':
-					"url('/assets/images/elements/GameLibraryElements/BG3.png')", //ok
-				'lp-blured-image': "url('/assets/images/elements/background2.png')", //fix
-				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')", //ok
-				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')", //ok
-				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')", //ok
+					"url('/assets/images/elements/GameLibraryElements/BG3.png')",
+				'lp-blured-image': "url('/assets/images/elements/background2.png')",
+				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
+				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
+				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
 				'menu-background-image':
-					"url('/assets/images/elements/MenuElements/BGImage.png')", //fix
+					"url('/assets/images/elements/MenuElements/BGImage.png')",
 				'waw-card1-bg':
-					"url('/assets/images/elements/WhoAreWeElement/planche1.png')", //ok
+					"url('/assets/images/elements/WhoAreWeElement/planche1.png')",
 				'waw-card2-bg':
-					"url('/assets/images/elements/WhoAreWeElement/Barman.png')", //ok
+					"url('/assets/images/elements/WhoAreWeElement/Barman.png')",
+			},
+			borderRadius: {
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)',
 			},
 			colors: {
-				background: 'var(--background)',
-
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					foreground: 'hsl(var(--accent-foreground))',
+				},
+				background: 'hsl(var(--background))',
+				border: 'hsl(var(--border))',
+				card: {
+					DEFAULT: 'hsl(var(--card))',
+					foreground: 'hsl(var(--card-foreground))',
+				},
+				chart: {
+					'1': 'hsl(var(--chart-1))',
+					'2': 'hsl(var(--chart-2))',
+					'3': 'hsl(var(--chart-3))',
+					'4': 'hsl(var(--chart-4))',
+					'5': 'hsl(var(--chart-5))',
+				},
 				customBlue: {
-					100: '#0077FF',
+					'100': '#0077FF',
 				},
 				customBrown: {
-					100: '#582615',
+					'100': '#582615',
 				},
 				customBrownTransparent: {
-					100: 'rgba(88,38,21,0.32)',
+					'100': 'rgba(88,38,21,0.32)',
 				},
 				customGray: {
-					100: '#6A6A6A',
+					'100': '#6A6A6A',
 				},
 				customRed: {
-					100: '#8D2026',
+					'100': '#8D2026',
 				},
 				customWhite: {
-					100: '#FFFCEE',
-					200: '#f2edd3',
-					300: '#fdfbf6',
-					400: '#ead4bf',
-					500: '#F2EFE2',
+					'100': '#FFFCEE',
+					'200': '#f2edd3',
+					'300': '#fdfbf6',
+					'400': '#ead4bf',
+					'500': '#F2EFE2',
 				},
-				foreground: 'var(--foreground)',
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive))',
+					foreground: 'hsl(var(--destructive-foreground))',
+				},
+				foreground: 'hsl(var(--foreground))',
+				input: 'hsl(var(--input))',
+				muted: {
+					DEFAULT: 'hsl(var(--muted))',
+					foreground: 'hsl(var(--muted-foreground))',
+				},
+				popover: {
+					DEFAULT: 'hsl(var(--popover))',
+					foreground: 'hsl(var(--popover-foreground))',
+				},
+				primary: {
+					DEFAULT: 'hsl(var(--primary))',
+					foreground: 'hsl(var(--primary-foreground))',
+				},
+				ring: 'hsl(var(--ring))',
+				secondary: {
+					DEFAULT: 'hsl(var(--secondary))',
+					foreground: 'hsl(var(--secondary-foreground))',
+				},
 			},
 			fontFamily: {
-				cardinal: ['"Cardinal"', 'sans-serif'],
+				cardinal: ['Cardinal"', 'sans-serif'],
 				cardoRegular: ['var(--cardo-regular)'],
 				obraletra: ['var(--kc-obra-letra)'],
 				obraletraBold: ['var(--kc-obra-letra-bold)'],
