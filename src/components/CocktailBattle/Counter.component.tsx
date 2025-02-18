@@ -109,7 +109,6 @@ function CountGroup({ groupCount }: CountGroupProps) {
 	)
 }
 
-
 interface ScoreCounterProps {
 	data: number
 }
