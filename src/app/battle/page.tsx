@@ -1,6 +1,7 @@
 import { getCocktailBattleData } from '@/app/actions/services/getCocktailBattlePageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import CocktailVersusComponent from '@/components/CocktailBattle/CocktailVersus.component'
+import FooterComponent from "@/components/Global/Footer.component";
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import FooterComponent from "@/components/Global/Footer.component";
