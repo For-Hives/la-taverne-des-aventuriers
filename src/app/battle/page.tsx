@@ -1,7 +1,6 @@
 import { getCocktailBattleData } from '@/app/actions/services/getCocktailBattlePageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import CocktailVersusComponent from '@/components/CocktailBattle/CocktailVersus.component'
-import ScoreCounterComponent from '@/components/CocktailBattle/Counter.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import { Metadata } from 'next'
@@ -45,8 +44,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
 	const navItems = await getNavBarData()
 	const BattleData = await getCocktailBattleData()
-	const Cocktail1score = BattleData.cocktail1_score
-	const Cocktail2score = BattleData.cocktail2_score
 
 	// Structured data pour la compétition
 	const structuredData = {

@@ -1,6 +1,6 @@
 import { CocktailBattleData } from '@/app/actions/services/getCocktailBattlePageData.service'
-import Image from 'next/image'
 import ScoreCounterComponent from "@/components/CocktailBattle/Counter.component";
+import Image from 'next/image'
 
 export default function CocktailVersusComponent({
 	data,
