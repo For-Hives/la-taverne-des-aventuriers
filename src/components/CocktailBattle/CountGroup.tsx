@@ -1,11 +1,6 @@
-'use client'
-import { useState } from 'react'
+import { CountGroupProps } from '@/components/CocktailBattle/CocktailBattle.component'
 
-type CountGroupProps = Readonly<{
-	groupCount: number
-}>
-
-function CountGroup({ groupCount }: CountGroupProps) {
+export function CountGroup({ groupCount }: CountGroupProps) {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
@@ -106,36 +101,5 @@ function CountGroup({ groupCount }: CountGroupProps) {
 				></image>
 			</defs>
 		</svg>
-	)
-}
-
-interface ScoreCounterProps {
-	data: number
-}
-
-export default function ScoreCounterComponent({
-	data,
-}: Readonly<ScoreCounterProps>) {
-	const initialScore = data || 0
-	const [count] = useState(initialScore)
-
-	// Stack of 5 items
-	const fullGroups = Math.floor(count / 5)
-	const remainder = count % 5
-
-	// Array with group of 5 scores
-	const groups = Array.from({ length: fullGroups }, () => 5)
-	if (remainder > 0) {
-		groups.push(remainder)
-	}
-
-	return (
-		<div className='flex h-fit w-full flex-col items-center justify-center gap-20'>
-			<div className='flex flex-wrap items-center justify-center gap-1'>
-				{groups.map(groupCount => (
-					<CountGroup key={`group-${groupCount}`} groupCount={groupCount} />
-				))}
-			</div>
-		</div>
 	)
 }
