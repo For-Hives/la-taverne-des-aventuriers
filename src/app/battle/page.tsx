@@ -108,15 +108,6 @@ export default async function Page() {
 					<div className='mt-64 flex w-full flex-col'>
 						<CocktailVersusComponent data={BattleData} />
 
-						<div className='flex w-full gap-4 px-20'>
-							<div className='flex w-1/2 items-center justify-between'>
-								<ScoreCounterComponent data={Cocktail1score} />
-							</div>
-							<div className='flex w-1/2 items-center justify-between'>
-								<ScoreCounterComponent data={Cocktail2score} />
-							</div>
-						</div>
-					</div>
 				</div>
 			)}
 		</>

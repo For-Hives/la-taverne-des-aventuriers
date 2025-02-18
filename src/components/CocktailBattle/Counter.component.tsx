@@ -109,23 +109,22 @@ function CountGroup({ groupCount }: CountGroupProps) {
 	)
 }
 
-// Définition du type des props avec Readonly
+
 interface ScoreCounterProps {
-	data: number // 'data' est défini comme un nombre
+	data: number
 }
 
 export default function ScoreCounterComponent({
 	data,
 }: Readonly<ScoreCounterProps>) {
-	// Ici, data est directement le score (nombre)
 	const initialScore = data || 0
 	const [count] = useState(initialScore)
 
-	// Découpage du compteur en paquets de 5
+	// Stack of 5 items
 	const fullGroups = Math.floor(count / 5)
 	const remainder = count % 5
 
-	// Création d'un tableau représentant la valeur de chaque paquet
+	// Array with group of 5 scores
 	const groups = Array.from({ length: fullGroups }, () => 5)
 	if (remainder > 0) {
 		groups.push(remainder)
