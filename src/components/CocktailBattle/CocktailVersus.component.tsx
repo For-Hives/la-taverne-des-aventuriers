@@ -57,7 +57,7 @@ export default function CocktailVersusComponent({
 					</div>
 				</div>
 
-				{/* Column 1 */}
+				{/* Column 2 */}
 				<div className='relative flex h-fit min-h-screen w-1/2 flex-col items-center justify-center gap-9 max-xl:w-full max-xl:gap-20'>
 					<div className='items_center relative flex h-full min-h-screen w-full flex-col justify-end'>
 						{/* Image */}
