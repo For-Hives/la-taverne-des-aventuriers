@@ -3,6 +3,7 @@ import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import CocktailVersusComponent from '@/components/CocktailBattle/CocktailVersus.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
+import FooterComponent from "@/components/Global/Footer.component";
 import { Metadata } from 'next'
 
 /**
@@ -106,7 +107,10 @@ export default async function Page() {
 						<CocktailVersusComponent data={BattleData} />
 
 				</div>
-			)}
-		</>
+
+				<FooterComponent />
+
+			</div>
+		)
 	)
 }
