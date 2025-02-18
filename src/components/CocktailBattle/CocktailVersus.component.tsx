@@ -12,7 +12,7 @@ export default function CocktailVersusComponent({
 
 	return (
 		<div className='flex h-fit w-full flex-col items-center justify-center gap-12 px-20 font-cardoRegular text-lg text-customBrown-100 max-md:px-2'>
-			<h1 className='font-cardinal text-9xl first-letter:text-customRed-100 max-md:text-4xl'>
+			<h1 className='font-cardinal text-9xl first-letter:text-customRed-100 max-md:text-5xl'>
 				Battle De Cocktails !
 			</h1>
 
