@@ -1,13 +1,16 @@
 'use client'
 
-import { getNavBarData } from '@/app/actions/services/getNavData.service'
+import {
+	getNavBarData,
+	NavBarData,
+} from '@/app/actions/services/getNavData.service'
 import RiveAnimation from '@/components/animation/RiveAnimation'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import { useState, useEffect } from 'react'
 
 export default function Home() {
-	const [dataNavbar, setDataNavbar] = useState(null)
+	const [dataNavbar, setDataNavbar] = useState<NavBarData | null>(null)
 
 	useEffect(() => {
 		const fetchNavData = async () => {
