@@ -131,8 +131,8 @@ export default function ScoreCounterComponent({
 	}
 
 	return (
-		<div className='flex h-[60vh] w-full flex-col items-center justify-center gap-20'>
-			<div className='flex flex-wrap justify-center gap-1'>
+		<div className='flex h-fit w-full flex-col items-center justify-center gap-20'>
+			<div className='flex flex-wrap items-center justify-center gap-1'>
 				{groups.map(groupCount => (
 					<CountGroup key={`group-${groupCount}`} groupCount={groupCount} />
 				))}
