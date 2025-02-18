@@ -10,7 +10,8 @@ export default function EventListComponent({
 }>) {
 	// Trier les données par date (du plus récent au plus ancien)
 	const sortedData = [...data].sort(
-		(a, b) => new Date(b.event_date).getTime() - new Date(a.event_date).getTime()
+		(a, b) =>
+			new Date(b.event_date).getTime() - new Date(a.event_date).getTime()
 	)
 
 	return (

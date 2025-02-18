@@ -25,17 +25,17 @@ export interface FooterData {
 	contact_aria: string
 	reservation_link_label: string
 	reservation_url: string
-	reservation_aria:string
+	reservation_aria: string
 	game_library_title: string
 	game_library_url: string
-	game_library_aria:string
+	game_library_aria: string
 	socials_title: string
 	facebook_url: string
-	facebook_aria:string
+	facebook_aria: string
 	instagram_url: string
-	instagram_aria:string
+	instagram_aria: string
 	myludo_url: string
-	myludo_aria:string
+	myludo_aria: string
 	created: string
 	updated: string
 }

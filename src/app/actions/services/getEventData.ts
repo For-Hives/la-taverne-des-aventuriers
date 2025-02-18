@@ -23,7 +23,7 @@ export interface EventData {
 // Function to sanitize the slug and prevent injection attacks
 function sanitizeSlug(slug: string): string {
 	// Escape special characters to prevent injections
-	return slug.replace(/[^a-zA-Z0-9-_]/g, ''); // Allow only alphanumeric characters, hyphens, and underscores
+	return slug.replace(/[^a-zA-Z0-9-_]/g, '') // Allow only alphanumeric characters, hyphens, and underscores
 }
 
 // Function to fetch event data based on a slug (which is derived from the event title)
@@ -31,7 +31,7 @@ export async function getEventData(slug: string): Promise<EventData | null> {
 	// Authenticate and get the PocketBase instance
 	const pb = await authWithPocketBase()
 
-	const sanitizedSlug = sanitizeSlug(slug);
+	const sanitizedSlug = sanitizeSlug(slug)
 
 	// Check if PocketBase connection is successful
 	if (!pb) {
@@ -43,7 +43,7 @@ export async function getEventData(slug: string): Promise<EventData | null> {
 		// Fetch the list of events (up to 100 events, from the first page)
 		const result = await pb
 			.collection('Events')
-			.getFirstListItem(`event_slug="${sanitizedSlug}"`);
+			.getFirstListItem(`event_slug="${sanitizedSlug}"`)
 
 		if (result.event_image) {
 			result.event_image = pb.files.getURL(result, result.event_image) // Generate the full URL for the event image

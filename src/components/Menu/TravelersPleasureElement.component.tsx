@@ -16,7 +16,7 @@ export default async function TravelersPleasureElement() {
 
 			<div className='flex h-full w-full items-center justify-center'>
 				<div className='grid h-full w-full grid-cols-10 grid-rows-10 gap-1 rounded-lg p-2'>
-					<div className='col-span-3 row-span-10 flex flex-col items-start justify-center rounded-lg gap-6 max-lg:row-span-3 max-lg:col-span-10'>
+					<div className='col-span-3 row-span-10 flex flex-col items-start justify-center gap-6 rounded-lg max-lg:col-span-10 max-lg:row-span-3'>
 						<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
 							{leftText.title}
 						</h2>
@@ -25,7 +25,7 @@ export default async function TravelersPleasureElement() {
 						</p>
 					</div>
 
-					<div className='col-span-4 row-span-10 flex items-center justify-center rounded-lg max-lg:row-span-4 max-lg:col-span-10'>
+					<div className='col-span-4 row-span-10 flex items-center justify-center rounded-lg max-lg:col-span-10 max-lg:row-span-4'>
 						<Image
 							src={imageSrc}
 							alt='Cocktail Image'
@@ -35,7 +35,7 @@ export default async function TravelersPleasureElement() {
 						/>
 					</div>
 
-					<div className='col-span-3 row-span-10 flex flex-col items-start justify-center rounded-lg gap-6 max-lg:row-span-3 max-lg:col-span-10'>
+					<div className='col-span-3 row-span-10 flex flex-col items-start justify-center gap-6 rounded-lg max-lg:col-span-10 max-lg:row-span-3'>
 						<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
 							{rightText.title}
 						</h2>

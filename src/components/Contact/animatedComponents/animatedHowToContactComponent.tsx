@@ -39,7 +39,7 @@ export const AnimatedHowToContactComponent = ({
 					viewport={{ once: true }} // Trigger only once
 					transition={{ delay: 0.2, duration: 1 }} // Delay for sequential animation
 				>
-					<div className='flex w-full flex-col items-start justify-center gap-9 text-customBrown-100 max-lg:w-full lg:items-center lg:w-2/3'>
+					<div className='flex w-full flex-col items-start justify-center gap-9 text-customBrown-100 max-lg:w-full lg:w-2/3 lg:items-center'>
 						{/* How to Title */}
 						<motion.h2
 							className='font-cardinal text-3xl first-letter:text-customRed-100 lg:text-4xl'

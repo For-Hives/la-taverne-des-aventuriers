@@ -19,7 +19,7 @@ export default async function Page() {
 
 				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
-				<div className='flex w-full flex-col mt-64'>
+				<div className='mt-64 flex w-full flex-col'>
 					<CocktailVersusComponent data={BattleData} />
 
 					<div className='flex w-full gap-4 px-20'>
