@@ -1,6 +1,4 @@
-import { CountGroupProps } from '@/components/CocktailBattle/CocktailBattle.component'
-
-export function CountGroup({ groupCount }: CountGroupProps) {
+export function CountGroup({ groupCount }: Readonly<{ groupCount: number }>) {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'

@@ -1,11 +1,12 @@
 'use client'
 
-import { ScoreCounterProps } from '@/components/CocktailBattle/CocktailBattle.component'
 import { CountGroup } from '@/components/CocktailBattle/CountGroup'
-// Score counter component
 import { useState } from 'react'
 
-export function ScoreCounter({ data }: Readonly<ScoreCounterProps>) {
+export function ScoreCounter({
+	data,
+	title,
+}: Readonly<{ data: number; title: string }>) {
 	const initialScore = data || 0
 	const [count] = useState(initialScore)
 
@@ -21,8 +22,9 @@ export function ScoreCounter({ data }: Readonly<ScoreCounterProps>) {
 
 	return (
 		<div className='flex h-fit w-full flex-col items-center justify-center gap-8'>
-			<h2 className={`font-cardinal text-4xl font-bold text-customBrown-100`}>
-				{count}
+			<h2 className={`font-cardinal text-4xl text-customBrown-100`}>
+				<span>{title}:</span>{' '}
+				<span className={'font-cardoRegular font-bold'}>{count}</span>
 			</h2>
 			<div className='flex flex-wrap items-center justify-center gap-1'>
 				{groups.map((groupCount, index) => (
