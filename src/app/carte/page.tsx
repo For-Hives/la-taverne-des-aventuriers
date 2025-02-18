@@ -4,6 +4,7 @@ import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import BeerWineElement from '@/components/Menu/BeerWineElements.component'
+import ButtonBattleCocktailsComponent from "@/components/Menu/ButtonBattleCocktails.component";
 import DrinkElement from '@/components/Menu/DrinkElement.component'
 import MenuNavbar from '@/components/Menu/MenuNavbar.component'
 import MenuNavbarOnScroll from '@/components/Menu/MenuNavbarOnScroll.component'
@@ -117,8 +118,12 @@ export default async function Page() {
 				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
 				<div className='mt-[30vh] flex w-full flex-col justify-center py-16'>
+
+					<ButtonBattleCocktailsComponent/>
+
 					<MenuNavbar />
 					<MenuNavbarOnScroll />
+
 					<div className='flex flex-col items-center justify-center gap-40'>
 						{listDrinkCollection.map(drink => (
 							<div
