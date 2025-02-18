@@ -28,6 +28,12 @@ const CardoRegular = localFont({
 	variable: '--cardo-regular',
 })
 
+const Cardinal = localFont({
+	display: 'swap',
+	src: './fonts/cardinal/Cardinal.ttf',
+	variable: '--cardinal',
+})
+
 const geistSans = Geist({
 	subsets: ['latin'],
 	variable: '--font-geist-sans',
@@ -259,7 +265,7 @@ export default async function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${CardoRegular.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${CardoRegular.variable} ${geistSans.variable} ${geistMono.variable} ${Cardinal.variable} antialiased`}
 			>
 				{children}
 				{/* Google Analytics */}
