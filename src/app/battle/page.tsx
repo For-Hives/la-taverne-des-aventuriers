@@ -1,9 +1,9 @@
-import ScoreCounterComponent from '@/components/CocktailBattle/Counter.component'
 import { getCocktailBattleData } from '@/app/actions/services/getCocktailBattlePageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
+import CocktailVersusComponent from '@/components/CocktailBattle/CocktailVersus.component'
+import ScoreCounterComponent from '@/components/CocktailBattle/Counter.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import CocktailVersusComponent from '@/components/CocktailBattle/CocktailVersus.component'
 
 export default async function Page() {
 	const navItems = await getNavBarData()
