@@ -94,7 +94,7 @@ const LoadingLogo = () => {
 
 	return (
 		!isLocalhost && (
-			<div className='loader-wrapper pointer-events-none fixed inset-0 z-[60] flex h-screen w-screen select-none items-center justify-center bg-white'>
+			<div className='bg loader-wrapper pointer-events-none fixed inset-0 z-[60] flex h-screen w-screen select-none items-center justify-center bg-white'>
 				<div className='relative aspect-square w-36 sm:w-44 md:w-52 lg:w-64'>
 					{' '}
 					{/* Responsive sizing */}
