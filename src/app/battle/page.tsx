@@ -102,11 +102,8 @@ export default async function Page() {
 					<Navbar navItems={navItems} />
 					<MobileNavbar navItems={navItems} />
 
-					<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
-
-					<div className='mt-64 flex w-full flex-col'>
-						<CocktailVersusComponent data={BattleData} />
-
+				<div className='mt-36 flex w-full flex-col'>
+					<CocktailVersusComponent data={BattleData} />
 				</div>
 
 				<FooterComponent />
