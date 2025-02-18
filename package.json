@@ -50,8 +50,8 @@
 		"@types/react": "19.0.10",
 		"@types/react-dom": "19.0.4",
 		"@types/vimeo__player": "2.18.3",
-		"@typescript-eslint/eslint-plugin": "8.20.0",
-		"@typescript-eslint/parser": "8.20.0",
+		"@typescript-eslint/eslint-plugin": "8.24.1",
+		"@typescript-eslint/parser": "8.24.1",
 		"eslint": "9.18.0",
 		"eslint-config-next": "15.1.7",
 		"eslint-config-prettier": "10.0.1",
@@ -65,6 +65,6 @@
 		"prettier-plugin-tailwindcss": "0.6.11",
 		"tailwindcss": "3.4.17",
 		"typescript": "5.7.3",
-		"typescript-eslint": "8.20.0"
+		"typescript-eslint": "8.24.1"
 	}
 }
