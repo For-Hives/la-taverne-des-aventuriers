@@ -59,7 +59,7 @@ const EventCard: React.FC<EventCardProps> = ({
 }) => {
 	return (
 		<motion.div
-			className={`relative flex flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-cover bg-center font-cardoRegular px-4 min-h-[50vh] text-customWhite-100 ${className}`}
+			className={`relative flex min-h-[50vh] flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-cover bg-center px-4 font-cardoRegular text-customWhite-100 ${className}`}
 			{...animationProps}
 		>
 			{/* Background Image */}
@@ -76,7 +76,7 @@ const EventCard: React.FC<EventCardProps> = ({
 			<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black' />
 
 			{/* Content */}
-			<div className='z-10 flex flex-col w-full justify-start gap-9 p-12 max-md:bg-black/50 rounded'>
+			<div className='z-10 flex w-full flex-col justify-start gap-9 rounded p-12 max-md:bg-black/50'>
 				<div className='items-left flex flex-col justify-start'>
 					<h2 className='font-obraletraBold text-2xl'>{event.event_title}</h2>
 					<h3 className='font-obraletra text-base max-lg:text-sm'>
@@ -118,7 +118,7 @@ export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
 	dataEvents,
 }) => {
 	return (
-		<div className='rounded-lg-lg flex h-screen min-h-fit w-3/4 max-lg:w-full max-lg:px-4 flex-col items-start gap-9'>
+		<div className='rounded-lg-lg flex h-screen min-h-fit w-3/4 flex-col items-start gap-9 max-lg:w-full max-lg:px-4'>
 			{/* Title */}
 			<motion.h1
 				className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-xl'
@@ -132,7 +132,7 @@ export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
 			{/* Cards Layout */}
 			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
 				{/* First Card (Full Height) */}
-				<div className='h-full w-1/2 max-lg:w-full max-lg:min-h-[70vh]'>
+				<div className='h-full w-1/2 max-lg:min-h-[70vh] max-lg:w-full'>
 					{dataEvents[0] && (
 						<EventCard
 							event={dataEvents[0]}

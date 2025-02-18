@@ -12,10 +12,10 @@ export const AnimatedReservationElement = ({
 	return (
 		<div className='flex h-full w-11/12 items-center justify-center font-cardoRegular text-customBrown-100'>
 			{/* Grid layout for the content */}
-			<div className='grid h-full w-full grid-cols-1 grid-rows-8 gap-4 sm:grid-cols-2 xl:grid-cols-10 max-md:grid-rows-5 max-xl:grid-rows-4'>
+			<div className='grid h-full w-full grid-cols-1 grid-rows-8 gap-4 max-xl:grid-rows-4 max-md:grid-rows-5 sm:grid-cols-2 xl:grid-cols-10'>
 				{/* Card 1 - Top Left */}
 				<motion.div
-					className='col-span-1 row-span-1 flex items-center justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 sm:row-span-1 xl:col-span-8 xl:row-span-3'
+					className='col-span-1 row-span-1 flex items-center justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:row-span-1 md:col-span-2 xl:col-span-8 xl:row-span-3'
 					initial={{ opacity: 0, y: 50 }} // Initial opacity and vertical position for animation
 					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original vertical position
 					transition={{ delay: 0.2, duration: 0.8 }} // Delay and duration for the animation
@@ -24,11 +24,11 @@ export const AnimatedReservationElement = ({
 						{/* Image with Next.js Image component */}
 						<Image
 							src={data.image_card1}
-							alt="Image description"
-							layout="fill"
-							objectFit="cover"
-							objectPosition="center"
-							className="absolute inset-0 z-0"
+							alt='Image description'
+							layout='fill'
+							objectFit='cover'
+							objectPosition='center'
+							className='absolute inset-0 z-0'
 							quality={100}
 						/>
 						{/* Gradient overlay for the background */}
@@ -39,11 +39,13 @@ export const AnimatedReservationElement = ({
 							<h1 className='font-cardinal text-2xl tracking-wider first-letter:text-customRed-100 sm:text-3xl'>
 								{data.who_are_we_title} {/* Dynamic title */}
 							</h1>
-							<div className={'prose prose-customBrown'} dangerouslySetInnerHTML={{ __html: data.description_card_1 }} />
+							<div
+								className={'prose prose-customBrown'}
+								dangerouslySetInnerHTML={{ __html: data.description_card_1 }}
+							/>
 						</div>
 					</div>
 				</motion.div>
-
 
 				{/* Card 2 - Middle Right */}
 				<motion.div
@@ -144,7 +146,7 @@ export const AnimatedReservationElement = ({
 
 				{/* Card 5 - Bottom Right */}
 				<motion.div
-					className='col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 md:row-span-2 '
+					className='col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 md:row-span-2'
 					initial={{ opacity: 0, y: -50 }} // Initial opacity and vertical position for animation
 					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original vertical position
 					transition={{ delay: 1.2, duration: 0.8 }} // Delay and duration for the animation

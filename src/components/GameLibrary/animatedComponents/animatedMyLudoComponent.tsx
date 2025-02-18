@@ -8,7 +8,7 @@ import Link from 'next/link' // Importing Next.js Link component for client-side
 // Component declaration, accepting a prop 'data' of type 'GamesPageData'
 export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 	return (
-		<div className='w-full py-8 lg:w-3/4 max-lg:px-4'>
+		<div className='w-full py-8 max-lg:px-4 lg:w-3/4'>
 			{/* Main container for title and content */}
 			<div className='flex w-full flex-col items-start justify-center gap-8 sm:gap-12'>
 				{/* Title of the component */}
@@ -52,7 +52,8 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 						</div>
 						{/* Text displayed over the image */}
 						<span className='absolute bottom-5 left-10 text-center font-obraletra text-4xl text-customWhite-100 hover:underline max-sm:text-xl'>
-							{data.myludo_component_label} {/* Displays text fetched from the data prop */}
+							{data.myludo_component_label}{' '}
+							{/* Displays text fetched from the data prop */}
 						</span>
 					</Link>
 				</motion.div>

@@ -6,7 +6,6 @@ import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import { useState, useEffect } from 'react'
 
-
 export default function Home() {
 	const [dataNavbar, setDataNavbar] = useState(null)
 
@@ -25,7 +24,7 @@ export default function Home() {
 
 	return (
 		<div
-			className='relative flex h-screen w-full flex-col items-center justify-center bg-cover bg-center overflow-hidden'
+			className='relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-cover bg-center'
 			style={{ backgroundImage: "url('/assets/images/bg_notfound.png')" }}
 		>
 			<Navbar navItems={dataNavbar} />

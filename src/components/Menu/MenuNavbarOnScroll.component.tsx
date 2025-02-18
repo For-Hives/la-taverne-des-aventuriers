@@ -45,12 +45,12 @@ export default function MenuNavbarOnScroll() {
 
 	return (
 		isVisible && (
-			<nav className='fixed left-4 top-2 z-50 rounded-full bg-customWhite-400 p-2 text-customBrown-100 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:opacity-100 max-lg:top-20 sm:left-6 group'>
+			<nav className='group fixed left-4 top-2 z-50 rounded-full bg-customWhite-400 p-2 text-customBrown-100 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:opacity-100 max-lg:top-20 sm:left-6'>
 				{/* Hamburger icon */}
 				<button
 					onClick={toggleMenu}
 					aria-label='Toggle Menu'
-					className='group-hover:bg-customBrown-300 flex h-10 w-10 items-center justify-center rounded-full text-customBrown-100 transition-all duration-300 ease-in-out group-hover:text-customWhite-300 focus:outline-none'
+					className='group-hover:bg-customBrown-300 flex h-10 w-10 items-center justify-center rounded-full text-customBrown-100 transition-all duration-300 ease-in-out focus:outline-none group-hover:text-customWhite-300'
 				>
 					<FontAwesomeIcon
 						icon={isMenuOpen ? faTimes : faBars}

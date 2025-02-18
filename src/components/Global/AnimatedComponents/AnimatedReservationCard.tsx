@@ -15,7 +15,7 @@ export const AnimatedReservationCard = ({
 	return (
 		<div className='w-full max-lg:px-4'>
 			<motion.div
-				className='mx-auto flex w-3/4 flex-col items-center gap-8 rounded border-3 border-customBrown-100 bg-customWhite-300 p-4 md:flex-row md:gap-20 md:p-10 max-lg:w-full'
+				className='mx-auto flex w-3/4 flex-col items-center gap-8 rounded border-3 border-customBrown-100 bg-customWhite-300 p-4 max-lg:w-full md:flex-row md:gap-20 md:p-10'
 				initial={{ opacity: 0 }} // Initial opacity for fade-in
 				animate={{ opacity: 1 }} // Final opacity for fade-in
 				transition={{ duration: 0.8 }} // Animation duration
@@ -101,6 +101,5 @@ export const AnimatedReservationCard = ({
 				</motion.div>
 			</motion.div>
 		</div>
-
 	)
 }

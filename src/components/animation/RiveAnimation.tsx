@@ -20,8 +20,6 @@ export default function RiveAnimation() {
 		isTouchScrollEnabled: true,
 		src: '/assets/animation/chevalier.riv',
 		stateMachines: 'State Machine 1',
-
-
 	})
 
 	const { RiveComponent: RiveMobileComponent } = useRive({

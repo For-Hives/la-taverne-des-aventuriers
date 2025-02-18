@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // Font Awesome
 import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
 import Image from 'next/image' // Next.js Image component
 import Link from 'next/link' // Next.js Link component for navigation
-import { useState } from "react"; // Importing useState for managing state in the component
+import { useState } from 'react' // Importing useState for managing state in the component
 
 // The AnimatedContactElementSection component is receiving `data` as props
 
@@ -15,12 +15,11 @@ export const AnimatedContactElementSection = ({
 }: {
 	data: ContactPageData
 }) => {
-
 	// State hook to manage hover state
-	const [hovered, setHovered] = useState(false);
+	const [hovered, setHovered] = useState(false)
 
 	return (
-		<div className='flex w-full items-center justify-center max-lg:w-full gap-8 p-8 max-xl:flex-col'>
+		<div className='flex w-full items-center justify-center gap-8 p-8 max-xl:flex-col max-lg:w-full'>
 			{/* Grid Layout for Contact Sections */}
 			<div className='grid w-1/2 max-w-6xl grid-cols-1 gap-8 max-xl:w-full lg:grid-cols-2'>
 				{/* Bloc Horaires (Business Hours) */}
@@ -134,14 +133,14 @@ export const AnimatedContactElementSection = ({
 							</Link>
 						</button>
 						{/* Conditional rendering of image when not hovered */}
-						<div className="relative max-md:hidden">
+						<div className='relative max-md:hidden'>
 							<motion.img
-								src="/assets/images/elements/ContactElements/petite_bestiole.png"
-								alt="Petite Bestiole"
+								src='/assets/images/elements/ContactElements/petite_bestiole.png'
+								alt='Petite Bestiole'
 								initial={{ y: 0 }}
 								animate={{ y: hovered ? 0 : -70 }} // Animate the image based on hover state
-								transition={{ damping: 20, stiffness: 200, type: 'spring'  }}
-								className="absolute bottom-[-2rem] right-0 -z-20 h-20 w-20 object-contain"
+								transition={{ damping: 20, stiffness: 200, type: 'spring' }}
+								className='absolute bottom-[-2rem] right-0 -z-20 h-20 w-20 object-contain'
 							/>
 						</div>
 					</motion.div>

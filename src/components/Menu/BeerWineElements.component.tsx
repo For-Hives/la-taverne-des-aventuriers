@@ -100,7 +100,7 @@ export default function BeerWineElement() {
 			</h2>
 
 			{/* Beer Section */}
-			<div className='flex flex-col justify-center gap-6 w-3/4 mx-md:w-full'>
+			<div className='mx-md:w-full flex w-3/4 flex-col justify-center gap-6'>
 				<h3 className='font-cardinal text-2xl text-customRed-100 sm:text-4xl'>
 					Bières:
 				</h3>
@@ -112,9 +112,15 @@ export default function BeerWineElement() {
 					</h4>
 					<div className='w-full text-customBrown-100'>
 						<div className='flex'>
-							<div className='w-1/2 px-4 py-2 text-left font-cardoRegular'>Bière</div>
-							<div className='w-1/4 px-4 py-2 text-right font-cardoRegular'>25cl</div>
-							<div className='w-1/4 px-4 py-2 text-right font-cardoRegular'>50cl</div>
+							<div className='w-1/2 px-4 py-2 text-left font-cardoRegular'>
+								Bière
+							</div>
+							<div className='w-1/4 px-4 py-2 text-right font-cardoRegular'>
+								25cl
+							</div>
+							<div className='w-1/4 px-4 py-2 text-right font-cardoRegular'>
+								50cl
+							</div>
 						</div>
 						{draftBeers.length === 0 ? (
 							<div className='px-4 py-2 text-center'>
@@ -122,10 +128,14 @@ export default function BeerWineElement() {
 							</div>
 						) : (
 							draftBeers.map((beer, index) => (
-								<div key={`${beer.id}-${index}`} className='flex '>
+								<div key={`${beer.id}-${index}`} className='flex'>
 									<div className='w-1/2 px-4 py-2 text-left'>{beer.title}</div>
-									<div className='w-1/4 px-4 py-2 text-right'>{beer.prices['25'] || 'N/A'} €</div>
-									<div className='w-1/4 px-4 py-2 text-right'>{beer.prices['50'] || 'N/A'} €</div>
+									<div className='w-1/4 px-4 py-2 text-right'>
+										{beer.prices['25'] || 'N/A'} €
+									</div>
+									<div className='w-1/4 px-4 py-2 text-right'>
+										{beer.prices['50'] || 'N/A'} €
+									</div>
 								</div>
 							))
 						)}
@@ -146,10 +156,10 @@ export default function BeerWineElement() {
 									key={`${beer.id}-${index}`}
 									className='flex items-center justify-between py-2'
 								>
-									<h4 className='font-cardoRegular text-base text-customBrown-100 flex-1'>
+									<h4 className='flex-1 font-cardoRegular text-base text-customBrown-100'>
 										{beer.title} ({beer.volume})
 									</h4>
-									<p className='font-cardoRegular text-base text-customBrown-100 w-1/4 text-right px-4'>
+									<p className='w-1/4 px-4 text-right font-cardoRegular text-base text-customBrown-100'>
 										{beer.price} €
 									</p>
 								</div>
@@ -158,7 +168,6 @@ export default function BeerWineElement() {
 					</div>
 				</div>
 			</div>
-
 
 			{/* Wine Section */}
 			<div className='flex flex-col justify-center gap-6 sm:w-3/4'>
