@@ -36,24 +36,21 @@ export default {
 		extend: {
 			backgroundImage: {
 				'background-image':
-					"url('/assets/images/elements/ContactElements/t3.png')",
-				FooterImage: "url('/assets/images/MaskFooter.png')",
+					"url('/assets/images/elements/ContactElements/t3.webp')",
+				FooterImage: "url('/assets/images/MaskFooter.webp')",
 				'gl-card1-bg':
-					"url('/assets/images/elements/GameLibraryElements/BG1.png')",
+					"url('/assets/images/elements/GameLibraryElements/BG1.webp')",
 				'gl-card2-bg':
-					"url('/assets/images/elements/GameLibraryElements/BG2.png')",
+					"url('/assets/images/elements/GameLibraryElements/BG2.webp')",
 				'gl-card3-bg':
-					"url('/assets/images/elements/GameLibraryElements/BG3.png')",
-				'lp-blured-image': "url('/assets/images/elements/background2.png')",
-				'lp-card1-bg': "url('/assets/images/Cocktails/Cocktail1.jpg')",
-				'lp-card2-bg': "url('/assets/images/Cocktails/Cocktail2.jpg')",
-				'lp-card3-bg': "url('/assets/images/Cocktails/Cocktail3.jpg')",
+					"url('/assets/images/elements/GameLibraryElements/BG3.webp')",
+				'lp-blured-image': "url('/assets/images/elements/background2.webp')",
 				'menu-background-image':
-					"url('/assets/images/elements/MenuElements/BGImage.png')",
+					"url('/assets/images/elements/MenuElements/BGImage.webp')",
 				'waw-card1-bg':
-					"url('/assets/images/elements/WhoAreWeElement/planche1.png')",
+					"url('/assets/images/elements/WhoAreWeElement/planche1.webp')",
 				'waw-card2-bg':
-					"url('/assets/images/elements/WhoAreWeElement/Barman.png')",
+					"url('/assets/images/elements/WhoAreWeElement/Barman.webp')",
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

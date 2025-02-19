@@ -21,11 +21,11 @@ export const AnimatedReservationComponent = ({
 					transition={{ duration: 0.8 }} // Transition duration
 				>
 					<Image
-						src='/assets/images/elements/ContactElements/maison.png'
+						src='/assets/images/elements/ContactElements/maison.webp'
 						alt='House illustration'
-						width={720}
-						height={480}
-						className='w-3/4 rounded max-md:w-full'
+						width={458}
+						height={578}
+						className='w-full rounded'
 					/>
 				</motion.div>
 
@@ -63,7 +63,7 @@ export const AnimatedReservationComponent = ({
 							transition={{ delay: 0.6, duration: 0.6 }} // Delay for staggered effect
 						>
 							<Image
-								src='/assets/images/elements/bourse.png'
+								src='/assets/images/elements/bourse.webp'
 								alt='bag illustration'
 								width={200}
 								height={150}

@@ -61,8 +61,8 @@ html {
 
 @layer utilities {
 	.mask-custom {
-		mask-image: url('/assets/images/overlay_white_inverted_002.png');
-		-webkit-mask-image: url('/assets/images/overlay_white_inverted_002.png');
+		mask-image: url('/assets/images/overlay_white_inverted_002.webp');
+		-webkit-mask-image: url('/assets/images/overlay_white_inverted_002.webp');
 		mask-repeat: no-repeat;
 		mask-size: cover;
 		-webkit-mask-repeat: no-repeat;
@@ -70,8 +70,8 @@ html {
 	}
 
 	.maskFooter {
-		mask-image: url('/assets/images/MaskFooter.png');
-		-webkit-mask-image: url('/assets/images/MaskFooter.png');
+		mask-image: url('/assets/images/MaskFooter.webp');
+		-webkit-mask-image: url('/assets/images/MaskFooter.webp');
 		mask-repeat: no-repeat;
 		mask-size: cover;
 		-webkit-mask-repeat: no-repeat;
@@ -81,8 +81,8 @@ html {
 	.maskMap {
 		width: 100%;
 		height: 100%;
-		mask-image: url('/assets/images/masqueMap.png');
-		-webkit-mask-image: url('/assets/images/masqueMap.png');
+		mask-image: url('/assets/images/masqueMap.webp');
+		-webkit-mask-image: url('/assets/images/masqueMap.webp');
 		mask-repeat: no-repeat;
 		mask-size: 100% 100%;
 		-webkit-mask-repeat: no-repeat;
@@ -92,8 +92,8 @@ html {
 	.maskMapMobile {
 		width: 100%;
 		height: 100%;
-		mask-image: url('/assets/images/masqueMap2.png');
-		-webkit-mask-image: url('/assets/images/masqueMap2.png');
+		mask-image: url('/assets/images/masqueMap2.webp');
+		-webkit-mask-image: url('/assets/images/masqueMap2.webp');
 		mask-repeat: no-repeat;
 		mask-size: 100% 100%;
 		-webkit-mask-repeat: no-repeat;

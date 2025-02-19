@@ -77,7 +77,7 @@ export const AnimatedMapSectionComponent = ({
 				{/* Image for small screens */}
 				<div className='min-w-screen maskMapMobile block h-full min-h-screen w-full lg:hidden'>
 					<Image
-						src='/assets/images/map2.png' // Image source for small screens
+						src='/assets/images/map2.webp' // Image source for small screens
 						alt='Map for small screens'
 						sizes='(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw'
 						fill
@@ -88,7 +88,7 @@ export const AnimatedMapSectionComponent = ({
 				{/* Image for large screens */}
 				<div className='maskMap hidden lg:block'>
 					<Image
-						src='/assets/images/map.png' // Image source for large screens
+						src='/assets/images/map.webp' // Image source for large screens
 						alt='Map for large screens'
 						width={1920}
 						height={1080}

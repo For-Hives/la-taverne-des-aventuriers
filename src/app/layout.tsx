@@ -203,7 +203,7 @@ export async function generateMetadata(): Promise<Metadata> {
 				{
 					alt: 'La Taverne des Aventuriers - Ambiance médiévale et jeux',
 					height: 630,
-					url: '/assets/images/og-image.jpg',
+					url: '/assets/images/og-image.webp',
 					width: 1200,
 				},
 			],
@@ -240,7 +240,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			card: 'summary_large_image',
 			creator: '@TaverneNantes',
 			description: 'Bar à jeux médiéval-fantastique au cœur de Nantes',
-			images: ['/assets/images/og-image.jpg'],
+			images: ['/assets/images/og-image.webp'],
 			title: 'La Taverne des Aventuriers',
 		},
 	}
