@@ -4,6 +4,7 @@ import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import EventHeroComponent from '@/components/Events/EventHero.component'
 import EventListComponent from '@/components/Events/EventList.component'
 import ImportantEventComponent from '@/components/Events/ImportantEvent.component'
+import { Timeline } from '@/components/Events/Timeline'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
@@ -57,6 +58,16 @@ export default async function Page() {
 	const eventsData = await getEventListData()
 	const navItems = await getNavBarData()
 
+	const timelineEvents = eventsData.map(event => ({
+		date: event.event_date,
+		id: event.id,
+		image: event.event_image,
+		important: event.Important_One,
+		slug: event.event_slug,
+		summary: event.summary,
+		title: event.event_title,
+	}))
+
 	// Structured data for events
 	const structuredData = {
 		'@context': 'https://schema.org',
@@ -105,21 +116,27 @@ export default async function Page() {
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
-			<div className='relative flex w-full flex-col justify-center'>
+			<div className='relative min-h-screen bg-customWhite-200'>
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
-				<div className='relative mt-36 flex w-full flex-col items-center gap-24'>
-					<EventHeroComponent data={eventPageData} />
-					<ImportantEventComponent data={eventsData} />
-					<div className='h-[0.05rem] w-3/4 bg-customBrown-100'></div>
-					<div className='flex w-full flex-col items-start'>
-						<EventListComponent data={eventsData} />
+				<div className='relative mt-36 px-4 md:px-8'>
+					<div className='mx-auto mb-16 max-w-4xl text-center'>
+						<h1 className='mb-8 font-cardinal text-6xl text-customBrown-100 md:text-8xl'>
+							{eventPageData.page_title}
+						</h1>
+						<div
+							className='font-cardoRegular text-lg text-customBrown-100'
+							dangerouslySetInnerHTML={{
+								__html: eventPageData.event_description,
+							}}
+						/>
 					</div>
+
+					<Timeline events={timelineEvents} />
 				</div>
-				<div>
-					<FooterComponent />
-				</div>
+
+				<FooterComponent />
 			</div>
 		</>
 	)
