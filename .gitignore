@@ -45,3 +45,15 @@ yarn.lock
 pnpm-lock.yaml
 *.txt
 .unlighthouse/
+
+
+tsconfig.tsbuildinfo
+bun.lock
+next-env.d.ts
+src/app/fonts/kc-obra-letra/kc-obra-letra-regular.ttf
+src/app/fonts/kc-obra-letra/kc-obra-letra-bold.ttf
+src/app/fonts/cardo/cardo-regular.ttf
+src/app/fonts/cardo/cardo-italic.ttf
+src/app/fonts/cardo/cardo-bold.ttf
+src/app/fonts/cardinal/Cardinal.ttf
+src/app/fonts/cardinal/Cardinal-Alternate.ttf

@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Check Prettier formatting
+npm run format:check || (
+  echo '❌ Prettier check failed.';
+  false;
+)
+
+# Check ESLint rules
+npm run lint || (
+  echo '❌ ESLint check failed.';
+  false;
+)
