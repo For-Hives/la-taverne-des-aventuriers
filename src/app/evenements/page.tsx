@@ -120,7 +120,7 @@ export default async function Page() {
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
-				<div className='relative mt-36 px-4 md:px-8'>
+				<div className='relative mt-36 px-4 pb-48 md:px-8'>
 					<div className='mx-auto mb-16 max-w-4xl text-center'>
 						<h1 className='mb-8 font-cardinal text-6xl text-customBrown-100 md:text-8xl'>
 							{eventPageData.page_title}
