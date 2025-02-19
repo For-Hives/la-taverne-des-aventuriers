@@ -92,7 +92,7 @@ export const AnimatedReservationCard = ({
 				>
 					{/* Reservation Image */}
 					<Image
-						src='/assets/images/elements/ReservationCardIllustration.png'
+						src='/assets/images/elements/ReservationCardIllustration.webp'
 						alt='Reservation Card Illustration' // Alt text for the image
 						width={300} // Image width
 						height={200} // Image height

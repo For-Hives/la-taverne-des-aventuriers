@@ -65,7 +65,7 @@ export const AnimatedReservationElement = ({
 					</div>
 					<Image
 						className='absolute bottom-0 right-0 z-40 w-3/6 translate-x-20 translate-y-20 max-xl:hidden'
-						src='/assets/images/elements/WhoAreWeElement/dice.png' // Dice image source
+						src='/assets/images/elements/WhoAreWeElement/dice.webp' // Dice image source
 						alt='Dice' // Alt text for accessibility
 						width={520}
 						height={520}
@@ -98,7 +98,7 @@ export const AnimatedReservationElement = ({
 					transition={{ delay: 0.8, duration: 0.8 }} // Delay and duration for the animation
 				>
 					<Image
-						src='/assets/images/LTDALogo.png' // Logo image source
+						src='/assets/images/LTDALogo.webp' // Logo image source
 						alt='LTDA Logo' // Alt text for accessibility
 						width={520}
 						height={520}
@@ -106,7 +106,7 @@ export const AnimatedReservationElement = ({
 
 					<Image
 						className='absolute bottom-0 right-0 w-1/6 translate-x-10 translate-y-24'
-						src='/assets/images/elements/WhoAreWeElement/dice.png' // Dice image source
+						src='/assets/images/elements/WhoAreWeElement/dice.webp' // Dice image source
 						alt='Dice' // Alt text for accessibility
 						width={520}
 						height={520}

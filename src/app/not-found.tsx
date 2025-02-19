@@ -28,7 +28,7 @@ export default function Home() {
 	return (
 		<div
 			className='relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-cover bg-center'
-			style={{ backgroundImage: "url('/assets/images/bg_notfound.png')" }}
+			style={{ backgroundImage: "url('/assets/images/bg_notfound.webp')" }}
 		>
 			<Navbar navItems={dataNavbar} />
 			<MobileNavbar navItems={dataNavbar} />

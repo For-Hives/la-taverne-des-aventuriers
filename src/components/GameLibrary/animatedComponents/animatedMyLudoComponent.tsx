@@ -40,7 +40,7 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 							<div className='relative h-full w-full transform transition-transform duration-300 hover:scale-105'>
 								{/* Image with responsive properties */}
 								<Image
-									src='/assets/images/elements/GameLibraryElements/MyLudoImage.png' // Path to the image
+									src='/assets/images/elements/GameLibraryElements/MyLudoImage.webp' // Path to the image
 									alt='MyLudo Logo' // Alt text for accessibility
 									className='absolute inset-0 h-full w-full object-cover' // Ensures image covers the entire container
 									fill // Fills the container

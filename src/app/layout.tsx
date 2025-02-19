@@ -71,8 +71,8 @@ const createStructuredData = (
 		longitude: '-1.5555402',
 	},
 	image: [
-		'https://latavernedesaventuriers.fr/assets/images/LTDALogo.png',
-		'https://latavernedesaventuriers.fr/assets/images/taverne-interieur.jpg',
+		'https://latavernedesaventuriers.fr/assets/images/LTDALogo.webp',
+		'https://latavernedesaventuriers.fr/assets/images/taverne-interieur.webp',
 	],
 	name: 'La Taverne des Aventuriers',
 	openingHoursSpecification: [
