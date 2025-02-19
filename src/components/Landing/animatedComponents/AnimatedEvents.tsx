@@ -170,7 +170,7 @@ export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
 					transition={{ delay: 0.8, duration: 0.6 }}
 				>
 					<Image
-						src='/assets/images/elements/fairy.png'
+						src='/assets/images/elements/fairy.webp'
 						alt='Decorative fairy'
 						width={100}
 						height={100}

@@ -24,7 +24,7 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 				{/* Logo */}
 				<Link href='/' aria-label='Home'>
 					<Image
-						src='/assets/images/LTDALogo.png'
+						src='/assets/images/LTDALogo.webp'
 						alt='Website Logo'
 						width={50}
 						height={50}

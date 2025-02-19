@@ -63,7 +63,7 @@ export default async function Reservation() {
 		},
 		description: 'Bar à jeux médiéval-fantastique',
 		hasMap: 'https://maps.app.goo.gl/2dFvnKAXgHZYDFu58',
-		image: '/assets/images/LTDALogo.png',
+		image: '/assets/images/LTDALogo.webp',
 		name: 'La Taverne des Aventuriers',
 		openingHours: [
 			'Mo 17:00-00:00',
