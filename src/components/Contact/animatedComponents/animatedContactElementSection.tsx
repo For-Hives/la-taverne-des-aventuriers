@@ -79,14 +79,14 @@ export const AnimatedContactElementSection = ({
 								className='group flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400 hover:bg-customBrown-100'
 							>
 								<Image
-									src='/assets/images/elements/ContactElements/myludo_icon.png'
+									src='/assets/images/elements/ContactElements/myludo_icon.webp'
 									alt='MyLudo Icon'
 									className='h-8 w-8 group-hover:hidden'
 									width={200}
 									height={200}
 								/>
 								<Image
-									src='/assets/images/elements/ContactElements/myludo_icon2.png'
+									src='/assets/images/elements/ContactElements/myludo_icon2.webp'
 									alt='MyLudo Icon'
 									className='hidden h-8 w-8 group-hover:block'
 									width={200}
@@ -135,7 +135,7 @@ export const AnimatedContactElementSection = ({
 						{/* Conditional rendering of image when not hovered */}
 						<div className='relative max-md:hidden'>
 							<motion.img
-								src='/assets/images/elements/ContactElements/petite_bestiole.png'
+								src='/assets/images/elements/ContactElements/petite_bestiole.webp'
 								alt='Petite Bestiole'
 								initial={{ y: 0 }}
 								animate={{ y: hovered ? 0 : -70 }} // Animate the image based on hover state
@@ -156,14 +156,14 @@ export const AnimatedContactElementSection = ({
 				className='relative flex w-1/2 justify-end max-xl:w-full max-xl:justify-center'
 			>
 				<Image
-					src='/assets/images/elements/ContactElements/runes.png'
+					src='/assets/images/elements/ContactElements/runes.webp'
 					alt='Runes'
 					className='absolute left-20 top-[-4rem] h-1/4 w-1/4 object-contain max-lg:hidden'
 					width={150}
 					height={150}
 				/>
 				<Image
-					src='/assets/images/elements/ContactElements/dragon.png'
+					src='/assets/images/elements/ContactElements/dragon.webp'
 					alt='Dragon'
 					className='h-1/2 w-1/2 max-xl:h-fit max-xl:w-1/3 max-lg:w-3/4'
 					width={400}

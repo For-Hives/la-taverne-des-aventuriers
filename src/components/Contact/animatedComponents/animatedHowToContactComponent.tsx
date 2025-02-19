@@ -23,7 +23,7 @@ export const AnimatedHowToContactComponent = ({
 					<Image
 						src={
 							data.howtosection_image ||
-							'/assets/images/elements/HowtoContact.png'
+							'/assets/images/elements/ReservationCardIllustration.webp'
 						}
 						alt='illustration'
 						width={480}

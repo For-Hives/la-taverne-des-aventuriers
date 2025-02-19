@@ -24,7 +24,7 @@ export default async function FooterComponent() {
 				}
 			>
 				<Image
-					src='/assets/images/elements/cristals/rock1.png'
+					src='/assets/images/elements/cristals/rock1.webp'
 					alt='Decorative rock'
 					className='hidden transform lg:block lg:-translate-x-[15rem] lg:translate-y-[5rem] xl:w-3/4 xl:-translate-x-[10rem] 2xl:w-3/4'
 					width={400}
@@ -145,7 +145,7 @@ export default async function FooterComponent() {
 								aria-label={data.myludo_aria}
 							>
 								<Image
-									src='/assets/images/elements/ContactElements/myludo_icon.png'
+									src='/assets/images/elements/ContactElements/myludo_icon.webp'
 									alt='MyLudo Icon'
 									className='h-8 w-8 transition-transform duration-300'
 									width={200}
@@ -175,7 +175,7 @@ export default async function FooterComponent() {
 			{/* Right decorative image */}
 			<div className='absolute bottom-0 right-0 flex -rotate-6 items-center justify-center overflow-hidden mix-blend-color-burn max-lg:hidden max-lg:translate-x-[1rem] max-lg:translate-y-[1rem] lg:translate-y-[2.5rem] lg:scale-125 xl:translate-x-[7rem] xl:translate-y-[2rem] xl:scale-100'>
 				<Image
-					src='/assets/images/elements/cristals/rock2.png'
+					src='/assets/images/elements/cristals/rock2.webp'
 					alt='Decorative rock'
 					className='w-40 xl:w-2/3'
 					width={300}
