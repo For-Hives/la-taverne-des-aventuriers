@@ -1,26 +1,23 @@
+// components/Events/Timeline.tsx
 'use client'
 import { useScroll, useTransform, motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-interface TimelineEvent {
-	date: string
+interface TimelineEntry {
 	id: string
-	image?: string
-	important: boolean
-	slug: string
-	summary: string
+	date: string
 	title: string
+	summary: string
+	image?: string
+	slug: string
+	important: boolean
 }
 
-interface TimelineProps {
-	events: TimelineEvent[]
-}
-
-export const Timeline = ({ events }: TimelineProps) => {
-	const containerRef = useRef<HTMLDivElement>(null)
+export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 	const ref = useRef<HTMLDivElement>(null)
+	const containerRef = useRef<HTMLDivElement>(null)
 	const [height, setHeight] = useState(0)
 
 	useEffect(() => {
@@ -31,104 +28,87 @@ export const Timeline = ({ events }: TimelineProps) => {
 	}, [ref])
 
 	const { scrollYProgress } = useScroll({
-		offset: ['start 10%', 'end 50%'],
+		offset: ['start start', 'end end'],
 		target: containerRef,
 	})
 
 	const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height])
 	const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
 
-	if (!events || events.length === 0) {
-		return <div>No events to display</div>
-	}
-
-	// Sort events by date in descending order
-	const sortedEvents = [...events].sort(
-		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-	)
-
 	return (
-		<div className='w-full bg-customWhite-200 font-sans' ref={containerRef}>
-			<div ref={ref} className='relative mx-auto max-w-7xl pb-20'>
-				{sortedEvents.map((event, index) => (
-					<div
-						key={event.id}
-						className='flex justify-start pt-10 md:gap-10 md:pt-40'
-					>
-						<div className='sticky top-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm'>
-							{/* Timeline dot */}
-							<div className='absolute left-2 flex h-10 w-10 items-center justify-center md:left-3'>
-								<div className='h-3 w-3 rounded-full border border-customBrown-100 bg-customWhite-300 md:h-4 md:w-4' />
-							</div>
-
-							{/* Date */}
-							<h3 className='hidden pl-20 font-cardinal text-xl text-customBrown-100 md:block md:text-5xl'>
-								{new Date(event.date).toLocaleDateString('fr-FR', {
-									day: 'numeric',
-									month: 'long',
-									year: 'numeric',
-								})}
-							</h3>
-						</div>
-
-						<div className='relative w-full pl-12 pr-4 md:pl-4'>
-							{/* Mobile date */}
-							<h3 className='mb-4 block text-left font-cardinal text-base text-customBrown-100 md:hidden'>
-								{new Date(event.date).toLocaleDateString('fr-FR', {
-									day: 'numeric',
-									month: 'long',
-									year: 'numeric',
-								})}
-							</h3>
-
-							{/* Event content */}
-							<div className='rounded-lg border border-customBrown-100 bg-customWhite-300 p-6'>
-								<div className='flex flex-col gap-4'>
-									<h4 className='font-cardinal text-xl text-customBrown-100 first-letter:text-customRed-100'>
-										{event.title}
-									</h4>
-									{event.image && (
-										<div className='relative h-48 w-full overflow-hidden rounded-lg'>
-											<Image
-												src={event.image}
-												alt={event.title}
-												fill
-												className='object-cover'
-											/>
-										</div>
-									)}
-									<div
-										className='font-cardoRegular text-customBrown-100'
-										dangerouslySetInnerHTML={{ __html: event.summary }}
-									/>
-									<Link
-										href={`/evenements/${event.slug}`}
-										className='mt-2 text-customBlue-100 hover:underline'
-									>
-										Lire la suite
-									</Link>
-								</div>
-							</div>
-						</div>
-					</div>
-				))}
-
-				{/* Timeline line */}
+		<div className='relative w-full font-sans' ref={containerRef}>
+			<div className='mx-auto max-w-7xl pb-20'>
 				<div
-					style={{ height: height + 'px' }}
-					className='absolute left-4 top-0 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-customBrown-100 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8'
+					style={{
+						height: height + 'px',
+					}}
+					className='absolute left-4 top-0 w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-customBrown-100/20 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] lg:left-8'
 				>
 					<motion.div
 						style={{
 							height: heightTransform,
 							opacity: opacityTransform,
 						}}
-						className='absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-customRed-100 from-[0%] via-customBrown-100 via-[10%] to-transparent'
+						className='absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-customBrown-100 via-customRed-100 to-transparent'
 					/>
+				</div>
+
+				<div ref={ref}>
+					{events.map((event, index) => (
+						<div
+							key={index}
+							className='flex -translate-x-2 transform justify-start gap-10 pt-40 lg:-translate-x-10'
+						>
+							<div className='sticky top-40 z-40 flex flex-row items-center self-start'>
+								<div className='absolute left-3 flex h-8 w-8 items-center justify-center rounded-full bg-customWhite-100 shadow-lg'>
+									<div className='h-3 w-3 rounded-full bg-customBrown-100' />
+								</div>
+								<h3 className='hidden pl-20 font-cardinal text-4xl text-customBrown-100 md:block'>
+									{new Date(event.date).toLocaleDateString('fr-FR', {
+										month: 'long',
+										year: 'numeric',
+									})}
+								</h3>
+							</div>
+							<div className='relative w-full max-w-2xl pl-4'>
+								<motion.div
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ delay: index * 0.1, duration: 0.5 }}
+									viewport={{ once: true }}
+									className='rounded-lg border border-customBrown-100/20 bg-white p-6 shadow-lg transition-all hover:border-customBrown-100/40'
+								>
+									<h4 className='mb-4 font-cardoRegular text-xl text-customBrown-100'>
+										{event.title}
+									</h4>
+
+									{event.image && (
+										<div className='relative mb-4 h-48 w-full overflow-hidden rounded-lg'>
+											<Image
+												src={event.image}
+												alt={event.title}
+												fill
+												className='object-cover transition-transform duration-300 hover:scale-105'
+											/>
+										</div>
+									)}
+
+									<div
+										className='mb-4 font-cardoRegular text-customBrown-100'
+										dangerouslySetInnerHTML={{ __html: event.summary }}
+									/>
+									<Link
+										href={`/evenements/${event.slug}`}
+										className='inline-block rounded-md bg-customBrown-100 px-4 py-2 text-white transition-colors duration-300 hover:bg-customBrown-100/80'
+									>
+										En savoir plus
+									</Link>
+								</motion.div>
+							</div>
+						</div>
+					))}
 				</div>
 			</div>
 		</div>
 	)
 }
-
-export default Timeline

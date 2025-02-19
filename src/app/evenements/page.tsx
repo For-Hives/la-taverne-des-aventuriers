@@ -116,7 +116,7 @@ export default async function Page() {
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
-			<div className='relative min-h-screen bg-customWhite-200'>
+			<div className='relative min-h-screen'>
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
