@@ -1,6 +1,7 @@
 import { getEventListData } from '@/app/actions/services/getEventListData'
 import { getEventPageData } from '@/app/actions/services/getEventPageData'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
+import FeaturedEvent from '@/components/Events/FeaturedEvent.component'
 import { Timeline } from '@/components/Events/Timeline'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
@@ -129,6 +130,8 @@ export default async function Page() {
 							}}
 						/>
 					</div>
+
+					<FeaturedEvent events={eventsData} />
 
 					<Timeline events={timelineEvents} />
 				</div>

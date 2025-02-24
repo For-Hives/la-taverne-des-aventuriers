@@ -65,6 +65,7 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 								</div>
 								<h3 className='hidden pl-20 font-cardinal text-4xl text-customBrown-100 md:block'>
 									{new Date(event.date).toLocaleDateString('fr-FR', {
+										day: 'numeric',
 										month: 'long',
 										year: 'numeric',
 									})}
