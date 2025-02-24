@@ -9,6 +9,7 @@ export interface CocktailBattleData {
 	collectionId: string
 	collectionName: string
 	id: string
+	explanation: string
 	cocktail_1_image: string
 	cocktail1_title: string
 	cocktail1_description: string

@@ -39,7 +39,7 @@ const menuItems = [
 		icon: (
 			<FontAwesomeIcon
 				icon={faWhiskeyGlass}
-				className='h-3/4 w-full translate-y-2 transform text-inherit'
+				className='h-3/4 w-full transform text-inherit md:translate-y-2'
 			/>
 		),
 		title: 'Shooters',

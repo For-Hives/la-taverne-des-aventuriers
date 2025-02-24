@@ -14,6 +14,13 @@ export default function CocktailBattleComponent({
 				Bataille de Cocktails!
 			</h1>
 
+			<div
+				className={
+					'prose prose-customBrown mx-auto mb-24 max-w-6xl text-center'
+				}
+				dangerouslySetInnerHTML={{ __html: data.explanation }}
+			/>
+
 			<div className='relative flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-16'>
 				<div className='flex flex-col items-center gap-8'>
 					<CocktailCard
