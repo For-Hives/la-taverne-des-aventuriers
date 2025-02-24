@@ -56,12 +56,12 @@ export default function BackToTop() {
 		isVisible && (
 			<button
 				onClick={scrollToTop} // Handle click to scroll to top
-				className={`fixed right-4 ${getPosition()} z-50 items-center justify-center rounded-full bg-customWhite-400 p-2 text-customBrown-100 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:text-customWhite-400 hover:opacity-100 sm:right-6`}
+				className={`fixed right-4 hidden h-14 w-14 lg:block ${getPosition()} z-50 items-center justify-center rounded-full bg-white p-2 text-customBrown-100 opacity-100 shadow-xl transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:text-customWhite-400 hover:opacity-100 sm:right-6`}
 				aria-label='Retour en haut' // Accessibility label for the button
 			>
 				<FontAwesomeIcon
 					icon={faArrowUp} // Icon for the button
-					className='h-5 w-6 rounded-full px-1 py-1' // Size and style for the icon
+					className='h-5 w-5 rounded-full px-1 py-1' // Size and style for the icon
 				/>
 			</button>
 		)

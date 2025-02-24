@@ -6,7 +6,7 @@ export default async function TravelersPleasureElement() {
 	// Assume there are two objects in travelersPleasureData, one for each side
 	const leftText = data[0]
 	const rightText = data[1]
-	const imageSrc = '/assets/images/Cocktails/Cocktail1.webp'
+	const imageSrc = '/assets/images/Cocktail1.webp'
 
 	return (
 		<div className='flex w-4/5 flex-col items-center justify-center gap-20 px-4'>

@@ -6,8 +6,7 @@ import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import BeerWineElement from '@/components/Menu/BeerWineElements.component'
 import ButtonBattleCocktailsComponent from '@/components/Menu/ButtonBattleCocktails.component'
 import DrinkElement from '@/components/Menu/DrinkElement.component'
-import MenuNavbar from '@/components/Menu/MenuNavbar.component'
-import MenuNavbarOnScroll from '@/components/Menu/MenuNavbarOnScroll.component'
+import MenuDock from '@/components/Menu/MenuDock.component'
 import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
 import TravelersPleasureElement from '@/components/Menu/TravelersPleasureElement.component'
 import { Metadata } from 'next'
@@ -111,42 +110,58 @@ export default async function Page() {
 				}}
 			/>
 			<div className='flex h-screen w-screen flex-col items-center'>
-				{/* Existing UI code... */}
+				{/* Navigation */}
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
+				{/* Background */}
 				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
+				{/* Battle des Cocktails Banner */}
 				<div className='mt-[30vh] flex w-full flex-col justify-center py-16'>
-					<ButtonBattleCocktailsComponent />
+					<div className='mb-12'>
+						<ButtonBattleCocktailsComponent />
+					</div>
 
-					<MenuNavbar />
-					<MenuNavbarOnScroll />
-
+					{/* Menu Content */}
 					<div className='flex flex-col items-center justify-center gap-40'>
+						{/* Menu Sections */}
 						{listDrinkCollection.map(drink => (
 							<div
 								id={drink.toLowerCase().replaceAll('_', '-')}
 								key={drink}
-								className='flex w-full justify-center'
+								className='flex w-full scroll-mt-32 justify-center'
 							>
 								<DrinkElement collection_name={drink} />
 							</div>
 						))}
 
-						<div id='beer-wine' className='flex justify-center lg:w-3/4'>
+						{/* Other Sections */}
+						<div
+							id='beer-wine'
+							className='flex scroll-mt-32 justify-center lg:w-3/4'
+						>
 							<BeerWineElement />
 						</div>
-						<div id='travelers' className='flex justify-center'>
+						<div id='travelers' className='flex scroll-mt-32 justify-center'>
 							<TravelersPleasureElement />
 						</div>
-						<div id='softs-hot-drinks' className='flex justify-center'>
+						<div
+							id='softs-hot-drinks'
+							className='flex scroll-mt-32 justify-center'
+						>
 							<SoftsAndHotElement />
 						</div>
+
+						{/* Back to Top Button */}
 						<BackToTop />
 					</div>
 				</div>
 
+				{/* Floating Menu Dock */}
+				<MenuDock />
+
+				{/* Footer */}
 				<div className='w-full'>
 					<FooterComponent />
 				</div>
