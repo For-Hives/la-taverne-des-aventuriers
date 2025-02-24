@@ -61,6 +61,8 @@ html {
 
 @layer utilities {
 	.mask-custom {
+		height: 100vh;
+		width: 100vw;
 		mask-image: url('/assets/images/overlay_white_inverted_002.webp');
 		-webkit-mask-image: url('/assets/images/overlay_white_inverted_002.webp');
 		mask-repeat: no-repeat;
@@ -124,6 +126,11 @@ html {
 	animation: video-in 3s ease-in forwards;
 }
 
+.bg-background-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 @keyframes video-in {
 	0% {
 		opacity: 0;
@@ -132,41 +139,6 @@ html {
 		opacity: 1;
 	}
 }
-
-/*.text-with-outline {*/
-/* text-shadow:*/
-/*   !* Stronger inner glow *!*/
-/*   0 0 25px rgba(226, 196, 148, 0.9),*/
-/*   0 0 20px rgba(226, 196, 148, 0.8),*/
-/*   0 0 15px rgba(226, 196, 148, 0.7),*/
-/*   !* Outer shadow for depth *!*/
-/*   2px 2px 4px rgba(88, 38, 21, 0.3),*/
-/*   !* Crisp stroke *!*/
-/*   0 0 2px rgba(226, 196, 148, 1);*/
-/*}*/
-
-/*!* Version 1 - Plus doré et brillant *!*/
-/*.text-with-outline {*/
-/*  text-shadow:*/
-/*    !* Bright inner glow *!*/
-/*    0 0 25px rgba(255, 215, 148, 0.9),*/
-/*    0 0 20px rgba(226, 196, 148, 0.8),*/
-/*    0 0 15px rgba(226, 196, 148, 0.7),*/
-/*    !* Subtle dark shadow for depth *!*/
-/*    2px 2px 4px rgba(58, 28, 11, 0.4);*/
-/*}*/
-
-/*!* Version 5 - Plus subtil et élégant *!*/
-/*.text-with-outline {*/
-/*  text-shadow:*/
-/*    !* Elegant soft glow *!*/
-/*    0 0 20px rgba(226, 196, 148, 0.7),*/
-/*    0 0 15px rgba(205, 175, 125, 0.6),*/
-/*    !* Very subtle stroke *!*/
-/*    0 0 2px rgba(226, 196, 148, 0.8),*/
-/*    !* Light depth *!*/
-/*    1px 1px 3px rgba(88, 38, 21, 0.2);*/
-/*}*/
 
 .text-with-outline {
 	text-shadow: /* Clean beige outline */
@@ -319,6 +291,6 @@ body::-webkit-scrollbar-thumb {
 		@apply border-border;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply text-foreground;
 	}
 }
