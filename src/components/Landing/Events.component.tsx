@@ -1,6 +1,6 @@
 import { EventData } from '@/app/actions/services/getEventData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
-import { AnimatedEvents } from '@/components/Landing/animatedComponents/AnimatedEvents'
+import BentoEventsGrid from '@/components/Landing/animatedComponents/AnimatedEvents'
 
 export default async function EventsComponent({
 	data,
@@ -9,5 +9,5 @@ export default async function EventsComponent({
 	data: LandingPageData
 	dataEvents: EventData[]
 }>) {
-	return <AnimatedEvents data={data} dataEvents={dataEvents} />
+	return <BentoEventsGrid data={data} dataEvents={dataEvents} />
 }

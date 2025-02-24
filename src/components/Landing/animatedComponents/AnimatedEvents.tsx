@@ -2,102 +2,80 @@
 
 import { EventData } from '@/app/actions/services/getEventData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
+import { cn } from '@/lib/utils'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-
-interface AnimationProps {
-	initial: {
-		opacity: number
-		x?: number
-		y?: number
-	}
-	animate: {
-		opacity: number
-		x?: number
-		y?: number
-	}
-	transition: {
-		duration: number
-	}
-}
-
-interface EventCardProps {
-	event: EventData
-	animationProps: AnimationProps
-	className?: string
-}
-
-// Animation configurations
-const cardAnimations: Record<string, AnimationProps> = {
-	firstCard: {
-		animate: { opacity: 1, x: 0 },
-		initial: { opacity: 0, x: -100 },
-		transition: { duration: 0.6 },
-	},
-	secondCard: {
-		animate: { opacity: 1, x: 0 },
-		initial: { opacity: 0, x: 100 },
-		transition: { duration: 0.6 },
-	},
-	thirdCard: {
-		animate: { opacity: 1, y: 0 },
-		initial: { opacity: 0, y: 50 },
-		transition: { duration: 0.6 },
-	},
-}
+import { useRef } from 'react'
 
 /**
  * Individual Event Card Component
  */
-const EventCard: React.FC<EventCardProps> = ({
-	animationProps,
+export const EventCard = ({
 	className = '',
 	event,
+	index,
+}: {
+	event: EventData
+	index: number
+	className?: string
 }) => {
+	const ref = useRef<HTMLAnchorElement>(null)
 	return (
 		<motion.div
-			className={`relative flex min-h-[50vh] flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-cover bg-center px-4 font-cardoRegular text-customWhite-100 ${className}`}
-			{...animationProps}
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ delay: index * 0.2, duration: 0.6 }}
+			className={cn(
+				'group/card relative flex cursor-pointer flex-col justify-end overflow-hidden rounded-xl shadow-lg',
+				className
+			)}
+			onClick={() => ref.current !== null && ref.current.click()}
 		>
-			{/* Background Image */}
+			{/* Background Image with Overlay */}
 			<div
-				className='absolute inset-0 rounded-lg'
+				className='absolute inset-0 h-full w-full bg-cover bg-center transition-transform duration-500 group-hover/card:scale-105'
 				style={{
 					backgroundImage: `url(${event.event_image})`,
-					backgroundPosition: 'center',
-					backgroundSize: 'cover',
 				}}
 			/>
 
 			{/* Gradient Overlay */}
-			<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black' />
+			<div className='absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent transition-opacity duration-300 group-hover/card:opacity-80' />
 
 			{/* Content */}
-			<div className='z-10 flex w-full flex-col justify-start gap-9 rounded p-12 max-md:bg-black/50'>
-				<div className='items-left flex flex-col justify-start'>
-					<h2 className='font-obraletraBold text-2xl'>{event.event_title}</h2>
-					<h3 className='font-obraletra text-base max-lg:text-sm'>
-						{new Date(event.event_date).toLocaleDateString('fr-FR')}
-					</h3>
+			<div className='relative z-10 flex flex-col p-6'>
+				<div className='mb-2'>
+					<span className='inline-block rounded-full bg-customBrown-100/70 px-3 py-1 font-obraletra text-xs text-customWhite-100 backdrop-blur-sm'>
+						{new Date(event.event_date).toLocaleDateString('fr-FR', {
+							day: 'numeric',
+							month: 'long',
+							year: 'numeric',
+						})}
+					</span>
 				</div>
 
+				<h2 className='mb-3 font-obraletra text-xl text-customWhite-100 group-hover/card:text-customWhite-200 md:text-2xl'>
+					{event.event_title}
+				</h2>
+
 				<div
-					className='text-base max-sm:text-base'
+					className='mb-4 line-clamp-3 font-cardoRegular text-sm text-customWhite-100/90'
 					dangerouslySetInnerHTML={{ __html: event.summary }}
 				/>
 
 				<Link
-					href={`evenements/${event.event_slug}` || '#'}
-					aria-label={event.button_aria}
-					className='flex items-center gap-3 text-base underline max-lg:text-base'
+					ref={ref}
+					href={`evenements/${event.event_slug}`}
+					aria-label={event.button_aria || "En savoir plus sur l'événement"}
+					className='group/link inline-flex items-center font-cardoRegular text-sm text-customWhite-100 underline'
 				>
-					<span>{event.button_label || 'Learn more'}</span>
+					<span>{event.button_label || 'En savoir plus'}</span>
 					<FontAwesomeIcon
 						icon={faChevronRight}
-						className='h-3 w-3 text-base text-customWhite-100 max-lg:text-xs max-sm:h-3 max-sm:w-3'
+						className='ml-2 h-2.5 w-2.5 transition-transform duration-300 group-hover/link:translate-x-1'
 					/>
 				</Link>
 			</div>
@@ -105,79 +83,82 @@ const EventCard: React.FC<EventCardProps> = ({
 	)
 }
 
-interface AnimatedEventsProps {
+interface BentoEventsGridProps {
 	data: LandingPageData
 	dataEvents: EventData[]
 }
 
 /**
- * Main Animated Events Component
+ * Main Bento Events Grid Component
  */
-export const AnimatedEvents: React.FC<AnimatedEventsProps> = ({
-	data,
-	dataEvents,
-}) => {
+export const BentoEventsGrid = ({ data, dataEvents }: BentoEventsGridProps) => {
+	if (!dataEvents || dataEvents.length < 3) {
+		// Fallback if there aren't enough events
+		return (
+			<div className='mx-auto w-full max-w-7xl px-4 py-8'>
+				<h2 className='mb-6 font-cardinal text-3xl text-customBrown-100'>
+					{data?.events_title || 'Nos événements'}
+				</h2>
+				<p>Nos prochains événements seront bientôt disponibles.</p>
+			</div>
+		)
+	}
+
+	// Sort events if needed
+	const sortedEvents = [...dataEvents].slice(0, 3)
+
 	return (
-		<div className='rounded-lg-lg flex h-screen min-h-fit w-3/4 flex-col items-start gap-9 max-lg:w-full max-lg:px-4'>
-			{/* Title */}
-			<motion.h1
-				className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-xl'
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
+		<div className='mx-auto w-full max-w-7xl px-4 py-8'>
+			<motion.h2
+				initial={{ opacity: 0, y: -20 }}
+				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
+				className='mb-6 font-cardinal text-3xl text-customBrown-100 lg:text-4xl'
 			>
 				{data.events_title}
-			</motion.h1>
+			</motion.h2>
 
-			{/* Cards Layout */}
-			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
-				{/* First Card (Full Height) */}
-				<div className='h-full w-1/2 max-lg:min-h-[70vh] max-lg:w-full'>
-					{dataEvents[0] && (
-						<EventCard
-							event={dataEvents[0]}
-							animationProps={cardAnimations.firstCard}
-							className='h-full w-full'
-						/>
-					)}
-				</div>
+			{/* Bento Grid Layout with explicitly sized grid */}
+			<div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-none md:gap-0 lg:min-h-[45rem]'>
+				{/* Left Column - Featured Event (full height) */}
+				<EventCard
+					event={sortedEvents[0]}
+					index={0}
+					className='mr-2 min-h-[25rem] md:row-span-2 lg:min-h-[45rem]'
+				/>
 
-				{/* Column with Two Cards */}
-				<div className='flex h-full w-1/2 flex-col gap-2 text-customWhite-100 max-lg:w-full'>
-					{dataEvents[1] && (
-						<EventCard
-							event={dataEvents[1]}
-							animationProps={cardAnimations.secondCard}
-							className='h-1/2 w-full max-lg:min-h-[70vh]'
-						/>
-					)}
-
-					{dataEvents[2] && (
-						<EventCard
-							event={dataEvents[2]}
-							animationProps={cardAnimations.thirdCard}
-							className='h-1/2 w-full max-lg:min-h-[70vh]'
-						/>
-					)}
-				</div>
-			</div>
-
-			{/* Decorative Image */}
-			<div className='flex w-full items-end justify-end gap-2'>
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ delay: 0.8, duration: 0.6 }}
-				>
-					<Image
-						src='/assets/images/elements/fairy.webp'
-						alt='Decorative fairy'
-						width={100}
-						height={100}
-						className='h-auto max-w-full max-sm:w-1/2'
+				{/* Right Column - Two Smaller Events in a grid */}
+				<div className='grid h-full grid-cols-1 gap-2 md:min-h-[45rem]'>
+					<EventCard
+						event={sortedEvents[1]}
+						index={1}
+						className='min-h-[25rem] md:h-full'
 					/>
-				</motion.div>
+					<EventCard
+						event={sortedEvents[2]}
+						index={2}
+						className='min-h-[25rem] md:h-full'
+					/>
+				</div>
 			</div>
+
+			{/* Decorative Element */}
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 0.8, duration: 0.6 }}
+				className='absolute right-0 mr-4 flex w-full justify-end md:mr-24 lg:mr-[20vw]'
+			>
+				<Image
+					src='/assets/images/elements/fairy.webp'
+					alt='Decorative fairy'
+					width={100}
+					height={100}
+					className='h-auto max-w-full max-sm:w-1/3'
+				/>
+			</motion.div>
 		</div>
 	)
 }
+
+export default BentoEventsGrid
