@@ -1,134 +1,146 @@
 'use client'
 
-import { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing data type for game page data
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons' // Importing FontAwesome chevron icon for button arrow
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // FontAwesomeIcon component for rendering icons
-import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
-import Link from 'next/link' // Importing Next.js Link component for navigation
+import { GamesPageData } from '@/app/actions/services/getGamePageData.service'
+import { cn } from '@/lib/utils'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
-// The AnimatedGameComponent takes a prop 'data' of type GamesPageData
+/**
+ * Individual Game Card Component
+ */
+const GameCard = ({
+	backgroundClass,
+	buttonAria,
+	buttonLabel,
+	buttonUrl,
+	className = '',
+	description,
+	index,
+	title,
+}: {
+	title: string
+	description: string
+	buttonLabel: string
+	buttonUrl: string
+	buttonAria: string
+	backgroundClass: string
+	index: number
+	className?: string
+}) => {
+	const handleCardClick = (e: React.MouseEvent) => {
+		// If the click is on the link or inside the link, do nothing
+		// as the link will handle the click itself
+		if ((e.target as HTMLElement).closest('a')) {
+			return
+		}
+
+		// Otherwise, navigate to the URL without opening a new tab
+		window.location.href = buttonUrl
+	}
+
+	return (
+		<motion.div
+			initial={{ opacity: 0, y: 20 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true }}
+			transition={{ delay: index * 0.2, duration: 0.6 }}
+			className={cn(
+				'group/card relative flex cursor-pointer flex-col justify-end overflow-hidden rounded-xl shadow-lg',
+				backgroundClass,
+				'bg-cover bg-center',
+				className
+			)}
+			onClick={handleCardClick}
+		>
+			{/* Gradient Overlay */}
+			<div className='absolute inset-0 rounded-xl bg-gradient-to-t from-black/90 via-black/60 to-transparent transition-opacity duration-300 group-hover/card:opacity-80' />
+
+			{/* Content */}
+			<div className='relative z-10 flex flex-col p-6 lg:p-10'>
+				<h2 className='mb-3 font-obraletra text-xl text-customWhite-100 group-hover/card:text-customWhite-200 md:text-2xl'>
+					{title}
+				</h2>
+
+				<div
+					className='mb-4 font-cardoRegular text-sm text-customWhite-100/90'
+					dangerouslySetInnerHTML={{ __html: description }}
+				/>
+
+				<Link
+					href={buttonUrl}
+					aria-label={buttonAria}
+					className='group/link inline-flex items-center font-cardoRegular text-sm text-customWhite-100 underline'
+					target='_blank'
+					onClick={e => e.stopPropagation()} // Prevents the link click from triggering the card click
+				>
+					<span>{buttonLabel}</span>
+					<FontAwesomeIcon
+						icon={faChevronRight}
+						className='ml-2 h-2.5 w-2.5 transition-transform duration-300 group-hover/link:translate-x-1'
+					/>
+				</Link>
+			</div>
+		</motion.div>
+	)
+}
+
+/**
+ * Main Animated Game Component
+ */
 export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 	return (
-		<div className='flex h-screen min-h-fit w-3/4 flex-col items-start gap-9 max-lg:w-full max-lg:px-4'>
-			{/* Title Section */}
+		<div className='mx-auto w-full max-w-7xl px-4 py-8'>
 			<motion.h2
-				className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-xl'
-				initial={{ opacity: 0 }} // Initial opacity is 0 (hidden)
-				animate={{ opacity: 1 }} // Animate opacity to 1 (fully visible)
-				transition={{ duration: 0.6 }} // Transition duration is 0.6 seconds
+				initial={{ opacity: 0, y: -20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.5 }}
+				className='mb-6 font-cardinal text-3xl text-customBrown-100 lg:text-4xl'
 			>
-				{data.Card_Title} {/* Displaying the ca rd title from data */}
+				{data.Card_Title}
 			</motion.h2>
 
-			{/* Layout for Event Cards */}
-			<div className='flex h-full w-full items-center gap-2 max-lg:flex-col'>
-				{/* First Card */}
-				<motion.div
-					className='relative flex h-full w-1/2 flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-gl-card1-bg bg-cover bg-center font-obraletra text-customWhite-100 max-lg:min-h-[70vh] max-lg:w-full max-lg:px-4'
-					initial={{ opacity: 0, x: -100 }} // Initially hidden with opacity 0 and positioned to the left
-					whileInView={{ opacity: 1, x: 0 }} // When in view, animate to opacity 1 and position 0 (in place)
-					viewport={{ once: true }} // Trigger the animation only once when visible
-					transition={{ duration: 0.8 }} // Transition duration of 0.8 seconds
-				>
-					{/* Overlay Gradient */}
-					<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black'></div>
-					{/* Card Content */}
-					<div className='z-10 flex w-full flex-col justify-start gap-9 rounded p-12 max-lg:bg-black/50'>
-						<h2 className='font-obraletraBold text-2xl'>{data.card1_title}</h2>
-						{/* Rendering card1 description with dangerouslySetInnerHTML to inject HTML content */}
-						<div
-							className='font-cardoRegular'
-							dangerouslySetInnerHTML={{
-								__html: data.card1_description,
-							}}
-						></div>
-						{/* Button with link and icon */}
-						<Link
-							target='_blank'
-							href={data.card1_button_url}
-							aria-label={data.card1_button_aria}
-							className='flex items-center gap-3 underline'
-						>
-							<span>{data.card1_button_label}</span>
-							<FontAwesomeIcon
-								icon={faChevronRight} // Displaying chevron icon
-								className='h-4 w-4 text-customWhite-100'
-							/>
-						</Link>
-					</div>
-				</motion.div>
+			{/* Bento Grid Layout */}
+			<div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-none md:gap-0 lg:min-h-[45rem]'>
+				{/* Left Column - Large Card */}
+				<GameCard
+					title={data.card1_title}
+					description={data.card1_description}
+					buttonLabel={data.card1_button_label}
+					buttonUrl={data.card1_button_url}
+					buttonAria={data.card1_button_aria}
+					backgroundClass='bg-gl-card1-bg'
+					index={0}
+					className='mr-2 min-h-[25rem] md:row-span-2 lg:min-h-[45rem]'
+				/>
 
-				{/* Second Column */}
-				<div className='flex h-full w-1/2 flex-col items-center gap-2 text-customWhite-100 max-lg:w-full'>
-					{/* Second Card */}
-					<motion.div
-						className='relative flex h-1/2 w-full flex-col flex-wrap items-start justify-end gap-2 rounded-lg bg-gl-card2-bg bg-cover bg-center max-lg:min-h-[70vh] max-lg:w-full max-lg:px-4'
-						initial={{ opacity: 0, x: 100 }} // Initially hidden with opacity 0 and positioned to the right
-						whileInView={{ opacity: 1, x: 0 }} // Animate to opacity 1 and position 0 (in place) when in view
-						viewport={{ once: true }} // Trigger the animation only once when visible
-						transition={{ duration: 0.8 }} // Transition duration of 0.8 seconds
-					>
-						{/* Overlay Gradient */}
-						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black'></div>
-						<div className='z-10 flex flex-col justify-start gap-6 rounded p-12 max-lg:bg-black/50'>
-							<h2 className='font-obraletraBold text-2xl'>
-								{data.card2_title}
-							</h2>
-							{/* Rendering card2 description with dangerouslySetInnerHTML */}
-							<div
-								className='font-cardoRegular'
-								dangerouslySetInnerHTML={{
-									__html: data.card2_description,
-								}}
-							></div>
-							{/* Button with link and icon */}
-							<Link
-								target='_blank'
-								href={data.card2_button_url}
-								aria-label={data.card2_button_aria}
-								className='flex items-center gap-3 underline'
-							>
-								<span>{data.card2_button_label}</span>
-								<FontAwesomeIcon icon={faChevronRight} className='h-4 w-4' />
-							</Link>
-						</div>
-					</motion.div>
-
-					{/* Third Card */}
-					<motion.div
-						className='relative flex h-1/2 w-auto flex-col flex-wrap items-start justify-end gap-2 overflow-hidden rounded-lg bg-gl-card3-bg bg-cover bg-center max-lg:min-h-[70vh] max-lg:w-full max-lg:px-4'
-						initial={{ opacity: 0, y: 100 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.8 }}
-					>
-						{/* Overlay Gradient */}
-						<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-black/10 via-black/65 to-black'></div>
-						<div className='z-10 flex flex-col justify-start gap-6 rounded p-12 max-lg:bg-black/50'>
-							<h2 className='font-obraletraBold text-2xl'>
-								{data.card3_title}
-							</h2>
-							{/* Rendering card3 description with dangerouslySetInnerHTML */}
-							<div
-								className='font-cardoRegular'
-								dangerouslySetInnerHTML={{
-									__html: data.card3_description,
-								}}
-							></div>
-							{/* Button with link and icon */}
-							<Link
-								target='_blank'
-								href={data.card3_button_url}
-								aria-label={data.card3_button_aria}
-								className='flex items-center gap-3 underline'
-							>
-								<span>{data.card3_button_label}</span>
-								<FontAwesomeIcon icon={faChevronRight} className='h-4 w-4' />
-							</Link>
-						</div>
-					</motion.div>
+				{/* Right Column - Two Smaller Cards */}
+				<div className='grid h-full grid-cols-1 gap-4 md:min-h-[45rem] md:gap-2'>
+					<GameCard
+						title={data.card2_title}
+						description={data.card2_description}
+						buttonLabel={data.card2_button_label}
+						buttonUrl={data.card2_button_url}
+						buttonAria={data.card2_button_aria}
+						backgroundClass='bg-gl-card2-bg'
+						index={1}
+						className='min-h-[25rem] md:h-full'
+					/>
+					<GameCard
+						title={data.card3_title}
+						description={data.card3_description}
+						buttonLabel={data.card3_button_label}
+						buttonUrl={data.card3_button_url}
+						buttonAria={data.card3_button_aria}
+						backgroundClass='bg-gl-card3-bg'
+						index={2}
+						className='min-h-[25rem] md:h-full'
+					/>
 				</div>
 			</div>
 		</div>
 	)
 }
+
+export default AnimatedGameComponent

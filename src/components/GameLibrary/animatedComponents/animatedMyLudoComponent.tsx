@@ -51,7 +51,7 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 							</div>
 						</div>
 						{/* Text displayed over the image */}
-						<span className='absolute bottom-5 left-10 text-center font-obraletra text-4xl text-customWhite-100 hover:underline max-sm:text-xl'>
+						<span className='absolute bottom-5 left-10 text-center font-obraletra text-lg text-customWhite-100 underline'>
 							{data.myludo_component_label}{' '}
 							{/* Displays text fetched from the data prop */}
 						</span>
