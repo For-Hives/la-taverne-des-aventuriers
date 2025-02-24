@@ -13,7 +13,7 @@ import Link from 'next/link' // Importing the Link component from Next.js
 export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 	return (
 		// Main wrapper div
-		<div className='mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-8 max-lg:w-full max-lg:px-4 md:grid-cols-5 md:p-0'>
+		<div className='relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-8 max-lg:w-full max-lg:px-4 md:grid-cols-5 md:p-0'>
 			{/* Image with animation */}
 			<motion.div
 				className='col-span-2 flex items-center justify-center' // On md and above, image appears last
@@ -86,6 +86,21 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 						/>
 					</Link>
 				</motion.div>
+			</motion.div>
+			{/* Decorative Element */}
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ delay: 0.8, duration: 0.6 }}
+				className='absolute -bottom-48 left-0 mt-4 hidden w-full justify-start md:flex'
+			>
+				<Image
+					src='/assets/images/elements/fairy.webp'
+					alt='Decorative fairy'
+					width={100}
+					height={100}
+					className='h-auto max-w-full max-sm:w-1/3'
+				/>
 			</motion.div>
 		</div>
 	)
