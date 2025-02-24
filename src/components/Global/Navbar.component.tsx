@@ -13,9 +13,9 @@ interface NavbarProps {
  */
 export default function Navbar({ navItems }: NavbarProps) {
 	return (
-		<nav className='fixed top-2 z-50 flex w-full max-lg:hidden'>
-			<div className='mx-auto flex w-full max-w-7xl items-center justify-evenly rounded bg-customWhite-100 px-4 py-3'>
-				<ul className='flex items-center gap-16 space-x-6 font-obraletra text-sm text-customBrown-100'>
+		<nav className='fixed top-2 z-50 flex w-full max-xl:hidden'>
+			<div className='relative mx-auto flex items-center justify-evenly rounded bg-customWhite-100 py-3 lg:px-16'>
+				<ul className='flex items-center gap-16 space-x-2 font-obraletra text-sm text-customBrown-100 md:space-x-6'>
 					{/* Home Logo Link - Always First */}
 					<li>
 						<Link href='/' aria-label='Home'>

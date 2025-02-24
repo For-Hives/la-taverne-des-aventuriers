@@ -18,7 +18,7 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 	return (
-		<nav className='fixed top-0 z-50 w-full lg:hidden'>
+		<nav className='fixed top-0 z-50 w-full xl:hidden'>
 			{/* Header Bar */}
 			<div className='relative z-50 mx-auto flex items-center justify-between bg-customWhite-100 px-4 py-3'>
 				{/* Logo */}
