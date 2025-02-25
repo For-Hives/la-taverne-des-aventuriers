@@ -3,6 +3,7 @@
 import { EventData } from '@/app/actions/services/getEventData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
 import { cn } from '@/lib/utils'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
@@ -97,7 +98,11 @@ export const BentoEventsGrid = ({ data, dataEvents }: BentoEventsGridProps) => {
 		return (
 			<div className='mx-auto w-full max-w-7xl px-4 py-8'>
 				<h2 className='mb-6 font-cardinal text-3xl text-customBrown-100'>
-					{data?.events_title || 'Nos événements'}
+					<span
+						dangerouslySetInnerHTML={{
+							__html: textToSpanColored(data.events_title),
+						}}
+					/>
 				</h2>
 				<p>Nos prochains événements seront bientôt disponibles.</p>
 			</div>
@@ -115,7 +120,11 @@ export const BentoEventsGrid = ({ data, dataEvents }: BentoEventsGridProps) => {
 				transition={{ duration: 0.5 }}
 				className='mb-6 font-cardinal text-3xl text-customBrown-100 lg:text-4xl'
 			>
-				{data.events_title}
+				<span
+					dangerouslySetInnerHTML={{
+						__html: textToSpanColored(data.events_title),
+					}}
+				/>
 			</motion.h2>
 
 			{/* Bento Grid Layout with explicitly sized grid */}
