@@ -136,6 +136,10 @@ export default async function Page() {
 							</div>
 						))}
 
+						<div id='travelers' className='flex scroll-mt-32 justify-center'>
+							<TravelersPleasureElement />
+						</div>
+
 						{/* Other Sections */}
 						<div
 							id='beer-wine'
@@ -143,9 +147,7 @@ export default async function Page() {
 						>
 							<BeerWineElement />
 						</div>
-						<div id='travelers' className='flex scroll-mt-32 justify-center'>
-							<TravelersPleasureElement />
-						</div>
+
 						<div
 							id='softs-hot-drinks'
 							className='flex scroll-mt-32 justify-center'

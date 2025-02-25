@@ -62,18 +62,18 @@ const menuItems = [
 		title: 'Planches',
 	},
 	{
-		href: '#beer-wine',
-		icon: (
-			<FontAwesomeIcon icon={faBeer} className='h-full w-full text-inherit' />
-		),
-		title: 'Bières et Vins',
-	},
-	{
 		href: '#travelers',
 		icon: (
 			<FontAwesomeIcon icon={faBacon} className='h-full w-full text-inherit' />
 		),
 		title: 'Plaisirs Voyageur',
+	},
+	{
+		href: '#beer-wine',
+		icon: (
+			<FontAwesomeIcon icon={faBeer} className='h-full w-full text-inherit' />
+		),
+		title: 'Bières et Vins',
 	},
 	{
 		href: '#softs-hot-drinks',
