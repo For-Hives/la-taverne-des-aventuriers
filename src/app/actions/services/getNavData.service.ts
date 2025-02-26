@@ -42,6 +42,7 @@ export async function getNavBarData(): Promise<NavBarData> {
 	try {
 		// Fetch all items from the 'NavBar' collection
 		const result = await pb.collection('NavBar').getList(1, 60, {
+			cache: 'no-store', // Disable caching
 			sort: 'order', // Sort by the order field
 		})
 

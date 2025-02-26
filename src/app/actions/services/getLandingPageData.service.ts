@@ -49,7 +49,9 @@ export async function getLandingData(): Promise<LandingPageData> {
 
 	try {
 		// Fetch the first 20 items from the 'landing_page' collection
-		const result = await pb.collection('landing_page').getList(1, 20)
+		const result = await pb.collection('landing_page').getList(1, 20, {
+			cache: 'no-store',
+		})
 		result.items.forEach(item => {
 			if (item.description_image) {
 				item.description_image = pb.files.getURL(item, item.description_image)

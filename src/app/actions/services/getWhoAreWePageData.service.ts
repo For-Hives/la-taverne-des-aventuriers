@@ -42,7 +42,9 @@ export async function getWhoAreWePageData(): Promise<WhoAreWePageData> {
 
 	try {
 		// Fetch the first item from the 'who_are_we_page' collection
-		const result = await pb.collection('who_are_we_page').getList(1, 60) // Retrieve first 60 items (if any)
+		const result = await pb.collection('who_are_we_page').getList(1, 60, {
+			cache: 'no-store',
+		}) // Retrieve first 60 items (if any)
 		result.items.forEach(item => {
 			if (item.image_card1) {
 				item.image_card1 = pb.files.getURL(item, item.image_card1)

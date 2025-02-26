@@ -52,7 +52,9 @@ export async function getContactData(): Promise<ContactPageData> {
 
 	try {
 		// Fetch the first 60 items from the 'contact_page' collection
-		const result = await pb.collection('contact_page').getList(1, 60)
+		const result = await pb.collection('contact_page').getList(1, 60, {
+			cache: 'no-store',
+		})
 
 		if (result.items[0].howtosection_image) {
 			result.items[0].howtosection_image = pb.files.getURL(

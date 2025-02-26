@@ -46,7 +46,9 @@ export async function getReservationCardData(): Promise<ReservationCardData> {
 
 	try {
 		// Fetch the first 20 items from the 'reservation_card' collection
-		const result = await pb.collection('reservation_card').getList(1, 20)
+		const result = await pb.collection('reservation_card').getList(1, 20, {
+			cache: 'no-store',
+		})
 		result.items.forEach(item => {
 			if (item.image) {
 				item.image = pb.files.getURL(item, item.image)

@@ -33,7 +33,9 @@ export async function getHotDrinkData(): Promise<HotDrinkData[]> {
 
 	try {
 		// Fetch up to 60 hot drinks from PocketBase collection
-		const result = await pb.collection('Hot_drinks').getList(1, 60) // Retrieve up to 60 hot drinks
+		const result = await pb.collection('Hot_drinks').getList(1, 60, {
+			cache: 'no-store',
+		}) // Retrieve up to 60 hot drinks
 		return result.items as HotDrinkData[] // Return the list of hot drinks as an array
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch
