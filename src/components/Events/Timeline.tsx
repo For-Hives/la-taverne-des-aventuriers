@@ -83,6 +83,17 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 										{event.title}
 									</h4>
 
+									{/* Mobile date display - only visible on mobile */}
+									<div className='mb-3 flex items-center lg:hidden'>
+										<span className='inline-block rounded-full bg-customBrown-100/10 px-3 py-1 text-sm font-medium text-customBrown-100'>
+											{new Date(event.date).toLocaleDateString('fr-FR', {
+												day: 'numeric',
+												month: 'long',
+												year: 'numeric',
+											})}
+										</span>
+									</div>
+
 									{/* Desktop */}
 									<div className={'flex gap-8'}>
 										{event.image && (
