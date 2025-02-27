@@ -13,10 +13,10 @@ export const AnimatedMapSectionComponent = ({
 	data: ContactPageData
 }) => {
 	return (
-		<div className='flex w-full flex-col items-center gap-8 p-8 font-obraletra text-customBrown-100 lg:flex-row lg:p-16'>
+		<div className='flex w-full flex-col items-center gap-8 pt-12 font-obraletra text-customBrown-100 md:flex-row md:p-16'>
 			{/* Text Section */}
 			<motion.div
-				className='flex w-full flex-col items-start gap-8 lg:w-1/3'
+				className='flex w-full flex-col items-start gap-8 p-4 md:w-1/3'
 				initial={{ opacity: 0, y: 50 }} // Initial state: hidden and slightly offset
 				whileInView={{ opacity: 1, y: 0 }} // Animate when in view: fade in and slide up
 				viewport={{ once: true }} // Trigger animation only once
@@ -24,7 +24,7 @@ export const AnimatedMapSectionComponent = ({
 			>
 				{/* Title of the address */}
 				<motion.h1
-					className='font-cardinal text-4xl first-letter:text-customRed-100 lg:text-6xl'
+					className='font-cardinal text-4xl first-letter:text-customRed-100 md:text-6xl'
 					initial={{ opacity: 0, x: -50 }} // Start from left with opacity 0
 					whileInView={{ opacity: 1, x: 0 }} // Fade in and slide to normal position
 					viewport={{ once: true }}
@@ -34,7 +34,7 @@ export const AnimatedMapSectionComponent = ({
 				</motion.h1>
 				{/* Address */}
 				<motion.p
-					className='text-lg lg:text-3xl'
+					className='text-lg md:text-3xl'
 					initial={{ opacity: 0, y: 30 }} // Start from below
 					whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
 					viewport={{ once: true }}
@@ -68,14 +68,14 @@ export const AnimatedMapSectionComponent = ({
 
 			{/* Image Section */}
 			<motion.div
-				className='relative w-full lg:w-2/3'
+				className='relative w-full'
 				initial={{ opacity: 0 }} // Start with opacity 0
 				whileInView={{ opacity: 1 }} // Fade in when in view
 				viewport={{ once: true }} // Trigger animation only once
 				transition={{ duration: 0.8 }} // Transition duration
 			>
 				{/* Image for small screens */}
-				<div className='min-w-screen maskMapMobile block h-full min-h-screen w-full lg:hidden'>
+				<div className='min-w-screen maskMapMobile block h-full min-h-screen w-full md:hidden'>
 					<Image
 						src='/assets/images/map2.webp' // Image source for small screens
 						alt='Map for small screens'
@@ -86,13 +86,13 @@ export const AnimatedMapSectionComponent = ({
 				</div>
 
 				{/* Image for large screens */}
-				<div className='maskMap hidden lg:block'>
+				<div className='maskMap hidden md:block'>
 					<Image
 						src='/assets/images/map.webp' // Image source for large screens
 						alt='Map for large screens'
 						width={1920}
 						height={1080}
-						className='h-auto w-full rounded-lg object-cover shadow-md' /* Image that fills the container */
+						className='h-[50vh] w-full rounded-lg object-cover shadow-md md:min-w-[75vw] xl:min-w-[50vw]' /* Image that fills the container */
 					/>
 				</div>
 			</motion.div>

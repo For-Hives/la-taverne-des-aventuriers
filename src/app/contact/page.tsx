@@ -110,7 +110,7 @@ export default async function Contact() {
 
 				{/* Main content */}
 				<div className='container relative mx-auto mt-48 max-w-7xl px-4 sm:px-6 lg:px-8 2xl:mt-72'>
-					<div className='flex flex-col items-center justify-center gap-24 lg:gap-32'>
+					<div className='flex flex-col items-center justify-center gap-4 lg:gap-32'>
 						{/* How to Contact section */}
 						<div className='w-full'>
 							<HowToContact data={dataContact} />

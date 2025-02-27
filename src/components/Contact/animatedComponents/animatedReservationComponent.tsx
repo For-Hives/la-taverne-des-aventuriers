@@ -11,7 +11,7 @@ export const AnimatedReservationComponent = ({
 }) => {
 	return (
 		<section className='relative w-full overflow-hidden rounded-lg'>
-			<div className='mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8'>
+			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
 				<div className='grid grid-cols-1 items-center gap-8 lg:grid-cols-2'>
 					{/* Text Section */}
 					<motion.div
@@ -21,10 +21,10 @@ export const AnimatedReservationComponent = ({
 						viewport={{ once: true }} // Trigger only once
 						transition={{ delay: 0.2, duration: 1 }} // Delay for sequential animation
 					>
-						<div className='prose prose-customBrown max-w-none'>
+						<div className='max-w-none'>
 							{/* Title */}
 							<motion.h2
-								className='font-cardinal text-3xl first-letter:text-customRed-100 sm:text-4xl lg:text-5xl'
+								className='w-full text-left font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 lg:text-4xl'
 								initial={{ opacity: 0, x: -50 }} // Initial left slide with opacity 0
 								animate={{ opacity: 1, x: 0 }} // Fade in and move to normal position when in view
 								viewport={{ once: true }} // Trigger only once
@@ -35,7 +35,7 @@ export const AnimatedReservationComponent = ({
 
 							{/* Description */}
 							<div
-								className='mt-6 font-cardoRegular text-lg' // Styling for the description
+								className='prose prose-customBrown mt-6 font-cardoRegular text-lg' // Styling for the description
 								dangerouslySetInnerHTML={{ __html: data.description }} // Injecting HTML content for description
 							/>
 						</div>
@@ -54,7 +54,7 @@ export const AnimatedReservationComponent = ({
 							alt='House illustration'
 							width={458}
 							height={578}
-							className='max-w-full rounded-lg object-contain lg:max-w-md'
+							className='hidden max-w-full rounded-lg object-contain lg:block lg:max-w-md'
 						/>
 					</motion.div>
 				</div>
