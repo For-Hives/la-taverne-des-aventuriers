@@ -35,9 +35,7 @@ export async function getBeerData(): Promise<BeerData[]> {
 
 	try {
 		// Fetch up to 60 beers from the 'Beers' collection in PocketBase
-		const result = await pb.collection('Beers').getList(1, 60, {
-			cache: 'no-store',
-		}) // Retrieve up to 60 items
+		const result = await pb.collection('Beers').getList(1, 60) // Retrieve up to 60 items
 
 		// Return the fetched data, mapping it to the BeerData interface
 		return result.items.map(beer => ({

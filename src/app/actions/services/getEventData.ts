@@ -43,9 +43,7 @@ export async function getEventData(slug: string): Promise<EventData | null> {
 		// Fetch the list of events (up to 100 events, from the first page)
 		const result = await pb
 			.collection('Events')
-			.getFirstListItem(`event_slug="${sanitizedSlug}"`, {
-				cache: 'no-store',
-			})
+			.getFirstListItem(`event_slug="${sanitizedSlug}"`)
 
 		if (result.event_image) {
 			result.event_image = pb.files.getURL(result, result.event_image) // Generate the full URL for the event image

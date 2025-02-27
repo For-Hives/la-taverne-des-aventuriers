@@ -41,9 +41,7 @@ export async function getCocktailBattleData(): Promise<CocktailBattleData> {
 
 	try {
 		// Fetch the first 60 items from the 'CocktailBattleData' collection
-		const result = await pb.collection('Battle_Cocktails').getList(1, 60, {
-			cache: 'no-store',
-		})
+		const result = await pb.collection('Battle_Cocktails').getList(1, 60)
 
 		if (result.items[0].cocktail_1_image) {
 			result.items[0].cocktail_1_image = pb.files.getURL(

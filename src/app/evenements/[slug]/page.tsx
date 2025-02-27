@@ -13,8 +13,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// Force dynamic rendering to avoid any static optimization
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
 type PageProps = Promise<{
 	slug: string

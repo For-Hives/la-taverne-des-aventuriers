@@ -4,8 +4,7 @@ import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import LandingWrapper from '@/components/Landing/LandingWrapper'
 import { Metadata } from 'next'
 
-// Force dynamic rendering to avoid any static optimization
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
 export const metadata: Metadata = {
 	alternates: {

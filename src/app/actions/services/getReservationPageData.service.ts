@@ -36,9 +36,7 @@ export async function getReservationData(): Promise<ReservationPageData> {
 
 	try {
 		// Fetch the first item from the 'reservation_page' collection
-		const result = await pb.collection('reservation_page').getList(1, 60, {
-			cache: 'no-store',
-		}) // Retrieve first 60 items (if any)
+		const result = await pb.collection('reservation_page').getList(1, 60) // Retrieve first 60 items (if any)
 
 		// Return the first item as ReservationPageData
 		return result.items[0] as ReservationPageData

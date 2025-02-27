@@ -36,9 +36,7 @@ export async function getWineData(): Promise<WineData[]> {
 
 	try {
 		// Fetch up to 60 wines from the PocketBase collection
-		const result = await pb.collection('Wines').getList(1, 60, {
-			cache: 'no-store',
-		}) // Retrieve up to 60 items
+		const result = await pb.collection('Wines').getList(1, 60) // Retrieve up to 60 items
 		return result.items as WineData[] // Return the list of wines as an array
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch

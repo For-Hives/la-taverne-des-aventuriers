@@ -34,9 +34,7 @@ export async function getSoftDrinkData(): Promise<SoftDrinkData[]> {
 
 	try {
 		// Fetch up to 60 soft drinks from PocketBase collection
-		const result = await pb.collection('Softs_drinks').getList(1, 60, {
-			cache: 'no-store',
-		}) // Retrieve up to 60 soft drinks
+		const result = await pb.collection('Softs_drinks').getList(1, 60) // Retrieve up to 60 soft drinks
 		return result.items as SoftDrinkData[] // Return the list of soft drinks as an array
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch

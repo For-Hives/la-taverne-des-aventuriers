@@ -23,7 +23,7 @@ export async function getEventListData(): Promise<EventData[]> {
 		// Fetch a list of events (1 page, up to 100 items)
 		const result = await pb
 			.collection('Events')
-			.getList(1, 100, { cache: 'no-store', sort: '-event_date' }) // Retrieve up to 100 items, sorted by event_date
+			.getList(1, 100, { sort: '-event_date' }) // Retrieve up to 100 items, sorted by event_date
 
 		// Ensure 'items' is an array before mapping over it
 		if (Array.isArray(result.items)) {

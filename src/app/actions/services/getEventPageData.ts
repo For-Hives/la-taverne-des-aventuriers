@@ -37,9 +37,7 @@ export async function getEventPageData(): Promise<EventPageData> {
 
 	try {
 		// Fetch the first 100 items from the 'Event_Page' collection
-		const result = await pb.collection('Event_Page').getList(1, 100, {
-			cache: 'no-store',
-		})
+		const result = await pb.collection('Event_Page').getList(1, 100)
 
 		// Return the first item from the result as EventPageData
 		return result.items[0] as EventPageData // Assuming there is always at least one item
