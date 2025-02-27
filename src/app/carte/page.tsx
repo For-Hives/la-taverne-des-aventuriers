@@ -11,6 +11,9 @@ import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
 import TravelersPleasureElement from '@/components/Menu/TravelersPleasureElement.component'
 import { Metadata } from 'next'
 
+// Force dynamic rendering to avoid any static optimization
+export const dynamic = 'force-dynamic'
+
 /**
  * Generates metadata for menu page
  */
