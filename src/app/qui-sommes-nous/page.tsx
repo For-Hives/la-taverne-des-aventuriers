@@ -6,7 +6,7 @@ import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import { ReservationElementComponent as WhoAreWeElementComponent } from '@/components/Reservation/ReservationElementsSection'
 import { Metadata } from 'next'
 
-export const revalidate = 3600
+export const revalidate = 10
 
 /**
  * Generates metadata for about page

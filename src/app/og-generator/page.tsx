@@ -1,7 +1,7 @@
 import { textToSpanColored } from '@/utils/textToSpanColored'
 import { Metadata } from 'next'
 
-export const revalidate = 3600
+export const revalidate = 10
 
 /**
  * Generates metadata for legal notice page

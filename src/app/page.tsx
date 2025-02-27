@@ -4,7 +4,7 @@ import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import LandingWrapper from '@/components/Landing/LandingWrapper'
 import { Metadata } from 'next'
 
-export const revalidate = 3600
+export const revalidate = 10
 
 export const metadata: Metadata = {
 	alternates: {

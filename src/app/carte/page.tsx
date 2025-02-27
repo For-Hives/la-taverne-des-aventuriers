@@ -11,7 +11,7 @@ import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
 import TravelersPleasureElement from '@/components/Menu/TravelersPleasureElement.component'
 import { Metadata } from 'next'
 
-export const revalidate = 3600
+export const revalidate = 10
 
 /**
  * Generates metadata for menu page
