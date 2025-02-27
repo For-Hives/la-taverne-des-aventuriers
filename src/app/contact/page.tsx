@@ -100,23 +100,41 @@ export default async function Contact() {
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
-			<div className='relative flex h-screen w-screen flex-col items-center gap-96'>
-				{/* Existing UI code... */}
+			<div className='flex min-h-screen w-full flex-col items-center'>
+				{/* Navigation */}
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
+				{/* Background */}
 				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
-				<div className='relative mt-64 flex flex-col items-center gap-64'>
-					<HowToContact data={dataContact} />
-					<ContactElements data={dataContact} />
-					<ReservationComponent />
-					<MapSection data={dataContact} />
+				{/* Main content */}
+				<div className='container relative mx-auto mt-48 max-w-7xl px-4 sm:px-6 lg:px-8 2xl:mt-72'>
+					<div className='flex flex-col items-center justify-center gap-24 lg:gap-32'>
+						{/* How to Contact section */}
+						<div className='w-full'>
+							<HowToContact data={dataContact} />
+						</div>
+
+						{/* Contact Elements section */}
+						<div className='w-full'>
+							<ContactElements data={dataContact} />
+						</div>
+
+						{/* Reservation section */}
+						<div className='w-full'>
+							<ReservationComponent />
+						</div>
+
+						{/* Map section */}
+						<div className='w-full pb-16'>
+							<MapSection data={dataContact} />
+						</div>
+					</div>
 				</div>
 
-				<div>
-					<FooterComponent />
-				</div>
+				{/* Footer */}
+				<FooterComponent />
 			</div>
 		</>
 	)

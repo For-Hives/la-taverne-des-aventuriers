@@ -91,20 +91,25 @@ export default async function Reservation() {
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
-			<div className='relative flex h-screen w-screen flex-col items-center gap-96'>
+			<div className='flex min-h-screen w-full flex-col items-center'>
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
 				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
-				<div className='relative mt-64 flex flex-col items-center gap-36'>
-					<ReservationComponent />
-					<ContactElements data={dataContact} />
+				<div className='container relative mx-auto max-w-7xl px-4 sm:px-6 lg:mt-72 lg:px-8'>
+					<div className='flex flex-col items-center justify-center gap-24 lg:gap-32'>
+						<div className='w-full'>
+							<ReservationComponent />
+						</div>
+
+						<div className='w-full pb-16'>
+							<ContactElements data={dataContact} />
+						</div>
+					</div>
 				</div>
 
-				<div>
-					<FooterComponent />
-				</div>
+				<FooterComponent />
 			</div>
 		</>
 	)
