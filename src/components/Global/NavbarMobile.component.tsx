@@ -32,6 +32,10 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 					/>
 				</Link>
 
+				<h2 className='flex font-cardinal text-customBrown-100 first-letter:text-customRed-100 md:text-lg'>
+					La Taverne des Aventuriers
+				</h2>
+
 				{/* Menu Toggle Button */}
 				<button
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
