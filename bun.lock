@@ -12,7 +12,7 @@
         "@fortawesome/react-fontawesome": "0.2.2",
         "@heroicons/react": "2.2.0",
         "@next/third-parties": "15.1.7",
-        "@rive-app/canvas": "2.26.3",
+        "@rive-app/canvas": "2.26.4",
         "@rive-app/react-canvas": "4.18.2",
         "@swc/cli": "0.6.0",
         "@tailwindcss/typography": "0.5.16",
@@ -222,7 +222,7 @@
 
     "@pkgr/core": ["@pkgr/core@0.1.1", "", {}, "sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA=="],
 
-    "@rive-app/canvas": ["@rive-app/canvas@2.26.3", "", {}, "sha512-u91nWyqDyTr1Ct3k5P1H+s0vHWP5HmcCFniWJhKeWP0gl/hX5hEQ2dMGrtt4s0WPucMbkZJBuxwMJrRkK6KaEQ=="],
+    "@rive-app/canvas": ["@rive-app/canvas@2.26.4", "", {}, "sha512-a9bSM2Hwe2K5hcRMC0dDfR4ygDgrJhVrEtv2L+QYS8bmjI2V2IgZsocKvtc/gW7Gt+R7NIBNgcy/vW1hl6KzFg=="],
 
     "@rive-app/react-canvas": ["@rive-app/react-canvas@4.18.2", "", { "dependencies": { "@rive-app/canvas": "2.26.3" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0" } }, "sha512-VxYje6ubHvZRSAS+Rd4G/fb8ub/AP84d53pDbROtle78/hZW09k0EypmZjBbUxywRLkJU7igtjnwv+isK2ph2Q=="],
 
@@ -1153,6 +1153,8 @@
     "@eslint/eslintrc/globals": ["globals@14.0.0", "", {}, "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ=="],
 
     "@humanfs/node/@humanwhocodes/retry": ["@humanwhocodes/retry@0.3.1", "", {}, "sha512-JBxkERygn7Bv/GbN5Rv8Ul6LVknS+5Bp6RgDC/O8gEBU/yeH5Ui5C/OlWrTb6qct7LjjfT6Re2NxB0ln0yYybA=="],
+
+    "@rive-app/react-canvas/@rive-app/canvas": ["@rive-app/canvas@2.26.3", "", {}, "sha512-u91nWyqDyTr1Ct3k5P1H+s0vHWP5HmcCFniWJhKeWP0gl/hX5hEQ2dMGrtt4s0WPucMbkZJBuxwMJrRkK6KaEQ=="],
 
     "@swc/cli/fast-glob": ["fast-glob@3.3.3", "", { "dependencies": { "@nodelib/fs.stat": "^2.0.2", "@nodelib/fs.walk": "^1.2.3", "glob-parent": "^5.1.2", "merge2": "^1.3.0", "micromatch": "^4.0.8" } }, "sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg=="],
 
