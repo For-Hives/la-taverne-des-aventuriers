@@ -22,12 +22,12 @@
         "class-variance-authority": "0.7.1",
         "clsx": "2.1.1",
         "dompurify": "3.2.4",
-        "framer-motion": "^12.4.7",
+        "framer-motion": "12.4.7",
         "gsap": "3.12.7",
         "lucide-react": "0.476.0",
         "motion": "12.4.7",
         "next": "15.2.0",
-        "pocketbase": "0.25.1",
+        "pocketbase": "0.25.2",
         "react": "19.0.0",
         "react-dom": "19.0.0",
         "server-only": "0.0.1",
@@ -903,7 +903,7 @@
 
     "piscina": ["piscina@4.8.0", "", { "optionalDependencies": { "@napi-rs/nice": "^1.0.1" } }, "sha512-EZJb+ZxDrQf3dihsUL7p42pjNyrNIFJCrRHPMgxu/svsj+P3xS3fuEWp7k2+rfsavfl1N0G29b1HGs7J0m8rZA=="],
 
-    "pocketbase": ["pocketbase@0.25.1", "", {}, "sha512-2IH0KLI/qMNR/E17C7BGWX2FxW7Tead+igLHOWZ45P56v/NyVT18Jnmddeft+3qWWGL1Hog2F8bc4orWV/+Fcg=="],
+    "pocketbase": ["pocketbase@0.25.2", "", {}, "sha512-ONZl1+qHJMnhR2uacBlBJ90lm7njtL/zy0606+1ROfK9hSL4LRBRc8r89rMcNRzPzRqCNyoFTh2Qg/lYXdEC1w=="],
 
     "possible-typed-array-names": ["possible-typed-array-names@1.1.0", "", {}, "sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg=="],
 
