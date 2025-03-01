@@ -31,6 +31,7 @@ export interface ContactPageData {
 	button_aria: string
 	created: string
 	updated: string
+	temporary_field: string
 }
 
 /**

@@ -32,8 +32,24 @@ export const AnimatedMapSectionComponent = ({
 				>
 					{data.address_title} {/* Display the address title */}
 				</motion.h1>
+
+				{/* Temporary Field - Prose Section */}
+				<motion.div
+					className='prose max-w-xl text-base text-customBrown-100 prose-headings:font-cardinal prose-headings:text-customBrown-100 prose-headings:first-letter:text-customRed-100 prose-strong:text-customBrown-100'
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ delay: 0.1, duration: 0.7 }}
+				>
+					<div
+						dangerouslySetInnerHTML={{
+							__html: data.temporary_field || '',
+						}}
+					/>
+				</motion.div>
+
 				{/* Address */}
-				<motion.p
+				{/* <motion.p
 					className='text-lg md:text-3xl'
 					initial={{ opacity: 0, y: 30 }} // Start from below
 					whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
@@ -41,7 +57,7 @@ export const AnimatedMapSectionComponent = ({
 					transition={{ delay: 0.2, duration: 0.8 }}
 				>
 					{data.address} {/* Display the address */}
-				</motion.p>
+				{/* </motion.p> */}
 				{/* Button linking to the URL */}
 				<motion.div
 					initial={{ opacity: 0, y: 30 }} // Start from below
@@ -54,9 +70,11 @@ export const AnimatedMapSectionComponent = ({
 						rel='noreferrer noopener'
 						href={data.button_url}
 						aria-label={data.button_aria}
-						className='flex items-center justify-center gap-4 rounded border-3 border-customBrown-100 bg-customBrown-100 px-8 py-3 font-cardoRegular text-base text-customWhite-100 transition hover:border-3 hover:border-customBrown-100 hover:bg-customWhite-100 hover:text-customBrown-100'
+						className='flex items-center justify-center gap-4 rounded border-3 border-customBrown-100 bg-customBrown-100 px-8 py-3 font-cardoRegular text-base text-customWhite-100 transition hover:border-3 hover:border-customBrown-100 hover:bg-customWhite-100 hover:text-customBrown-100 md:min-w-52 lg:min-w-60'
 					>
-						{data.button_label}
+						<span className='font-cardoRegular text-base'>
+							{data.button_label}
+						</span>
 						{/* Chevron icon for the button */}
 						<FontAwesomeIcon
 							icon={faChevronRight}

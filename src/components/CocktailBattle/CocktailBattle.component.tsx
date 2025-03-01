@@ -32,7 +32,7 @@ export default function CocktailBattleComponent({
 				</div>
 			)}
 
-			<div className='relative flex w-full flex-col items-center justify-center gap-8 lg:flex-row lg:gap-16'>
+			<div className='relative flex w-full flex-col items-start gap-8 lg:flex-row lg:gap-16'>
 				<div className='flex w-full flex-col items-center gap-8 lg:w-6/12'>
 					<div className='relative flex w-full items-center justify-center'>
 						<CocktailCard
