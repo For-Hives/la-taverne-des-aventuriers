@@ -25,14 +25,16 @@ export default async function TravelersPleasureElement({
 				</h2>
 
 				{priceDisplay === 'global' && globalPrice > 0 && (
-					<div className='bg-customGold-100 mt-2 flex items-center justify-center gap-1 rounded-full px-3 py-1'>
-						<span className='font-cardoRegular text-white'>{globalPrice}€</span>
+					<div className='mt-4 flex items-center justify-center gap-2 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-6 py-3 shadow-lg'>
+						<span className='font-cardoRegular text-xl font-semibold text-customBrown-100'>
+							{globalPrice}
+						</span>
 						<Image
 							src='/assets/images/elements/piece.webp'
-							alt={`Pièce d'or`}
-							width={20}
-							height={20}
-							className='h-5 w-5'
+							alt="Pièce d'or"
+							width={24}
+							height={24}
+							className='h-6 w-6'
 						/>
 					</div>
 				)}
@@ -48,16 +50,16 @@ export default async function TravelersPleasureElement({
 							{leftText.description}
 						</p>
 						{priceDisplay === 'individual' && leftText.price > 0 && (
-							<div className='flex items-center gap-1'>
-								<span className='font-cardoRegular text-customBrown-100'>
+							<div className='bg-customGold-100 flex items-center justify-center gap-1 rounded-full px-4 py-1.5 shadow-md'>
+								<span className='font-cardoRegular text-lg font-medium text-white'>
 									{leftText.price}€
 								</span>
 								<Image
 									src='/assets/images/elements/piece.webp'
 									alt="Pièce d'or"
-									width={16}
-									height={16}
-									className='h-4 w-4'
+									width={20}
+									height={20}
+									className='h-5 w-5'
 								/>
 							</div>
 						)}
@@ -81,16 +83,16 @@ export default async function TravelersPleasureElement({
 							{rightText.description}
 						</p>
 						{priceDisplay === 'individual' && rightText.price > 0 && (
-							<div className='flex items-center gap-1'>
-								<span className='font-cardoRegular text-customBrown-100'>
+							<div className='bg-customGold-100 flex items-center justify-center gap-1 rounded-full px-4 py-1.5 shadow-md'>
+								<span className='font-cardoRegular text-lg font-medium text-white'>
 									{rightText.price}€
 								</span>
 								<Image
 									src='/assets/images/elements/piece.webp'
 									alt="Pièce d'or"
-									width={16}
-									height={16}
-									className='h-4 w-4'
+									width={20}
+									height={20}
+									className='h-5 w-5'
 								/>
 							</div>
 						)}
