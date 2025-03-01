@@ -1,18 +1,42 @@
 import { getTravelersPleasureData } from '@/app/actions/services/DrinksData/getTravelersPleasureData.service'
 import Image from 'next/image'
 
-export default async function TravelersPleasureElement() {
+interface TravelersPleasureElementProps {
+	readonly priceDisplay?: 'global' | 'individual'
+}
+
+export default async function TravelersPleasureElement({
+	priceDisplay = 'individual',
+}: TravelersPleasureElementProps) {
 	const data = await getTravelersPleasureData()
 	// Assume there are two objects in travelersPleasureData, one for each side
 	const leftText = data[0]
 	const rightText = data[1]
 	const imageSrc = '/assets/images/tartines.webp'
 
+	// Use first item's price for global display
+	const globalPrice = data[0]?.price || 0
+
 	return (
 		<div className='flex w-4/5 flex-col items-center justify-center gap-20 px-4'>
-			<h2 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl md:text-8xl'>
-				Les Plaisirs Du Voyageur
-			</h2>
+			<div className='flex flex-col items-center'>
+				<h2 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl md:text-8xl'>
+					Les Plaisirs Du Voyageur
+				</h2>
+
+				{priceDisplay === 'global' && globalPrice > 0 && (
+					<div className='bg-customGold-100 mt-2 flex items-center justify-center gap-1 rounded-full px-3 py-1'>
+						<span className='font-cardoRegular text-white'>{globalPrice}€</span>
+						<Image
+							src='/assets/images/elements/piece.webp'
+							alt={`Pièce d'or`}
+							width={20}
+							height={20}
+							className='h-5 w-5'
+						/>
+					</div>
+				)}
+			</div>
 
 			<div className='flex h-full w-full items-center justify-center'>
 				<div className='grid h-full w-full grid-cols-10 grid-rows-10 gap-1 rounded-lg p-2'>
@@ -23,6 +47,20 @@ export default async function TravelersPleasureElement() {
 						<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
 							{leftText.description}
 						</p>
+						{priceDisplay === 'individual' && leftText.price > 0 && (
+							<div className='flex items-center gap-1'>
+								<span className='font-cardoRegular text-customBrown-100'>
+									{leftText.price}€
+								</span>
+								<Image
+									src='/assets/images/elements/piece.webp'
+									alt="Pièce d'or"
+									width={16}
+									height={16}
+									className='h-4 w-4'
+								/>
+							</div>
+						)}
 					</div>
 
 					<div className='col-span-4 row-span-10 flex items-center justify-center rounded-lg max-lg:col-span-10 max-lg:row-span-4'>
@@ -42,6 +80,20 @@ export default async function TravelersPleasureElement() {
 						<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
 							{rightText.description}
 						</p>
+						{priceDisplay === 'individual' && rightText.price > 0 && (
+							<div className='flex items-center gap-1'>
+								<span className='font-cardoRegular text-customBrown-100'>
+									{rightText.price}€
+								</span>
+								<Image
+									src='/assets/images/elements/piece.webp'
+									alt="Pièce d'or"
+									width={16}
+									height={16}
+									className='h-4 w-4'
+								/>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>

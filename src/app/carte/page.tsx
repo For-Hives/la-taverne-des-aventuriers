@@ -60,6 +60,15 @@ export default async function Page() {
 		'Planches',
 	]
 
+	// Whether to show prices globally (at top of section) or individually
+	const pricingConfig = {
+		Cocktails: 'global', // Show single price at top
+		Mocktails: 'global', // Show single price at top
+		Planches: 'individual', // Show individual prices for each item
+		Shooters: 'global', // Show single price at top
+		Short_long_drinks: 'global', // Show single price at top
+	}
+
 	// Structured data for menu
 	const structuredData = {
 		'@context': 'https://schema.org',
@@ -132,12 +141,15 @@ export default async function Page() {
 								key={drink}
 								className='flex w-full scroll-mt-32 justify-center'
 							>
-								<DrinkElement collection_name={drink} />
+								<DrinkElement
+									collection_name={drink}
+									priceDisplay={pricingConfig[drink]}
+								/>
 							</div>
 						))}
 
 						<div id='travelers' className='flex scroll-mt-32 justify-center'>
-							<TravelersPleasureElement />
+							<TravelersPleasureElement priceDisplay='global' />
 						</div>
 
 						{/* Other Sections */}

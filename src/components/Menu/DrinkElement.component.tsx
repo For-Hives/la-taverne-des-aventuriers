@@ -33,12 +33,17 @@ const mapRecordToDrink = (record: RecordModel): Drink => {
 	}
 }
 
+// Update the props interface
+interface DrinkElementProps {
+	readonly collection_name: string
+	readonly priceDisplay?: 'global' | 'individual'
+}
+
 // The main DrinkElement component
 export default async function DrinkElement({
 	collection_name, // The name of the drink collection passed as a prop
-}: {
-	readonly collection_name: string // The collection name must be a string
-}) {
+	priceDisplay = 'individual',
+}: DrinkElementProps) {
 	// Fetching the drink list based on the collection name
 	const data = (await getDrinkList(
 		collection_name
