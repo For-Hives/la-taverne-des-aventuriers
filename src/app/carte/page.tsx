@@ -143,7 +143,7 @@ export default async function Page() {
 							>
 								<DrinkElement
 									collection_name={drink}
-									priceDisplay={pricingConfig[drink]}
+									priceDisplay={pricingConfig[drink] as 'global' | 'individual'}
 								/>
 							</div>
 						))}
