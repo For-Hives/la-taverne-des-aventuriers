@@ -1,10 +1,10 @@
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
+import BattleBanner from '@/components/CocktailBattle/BattleBanner.component'
 import BackToTop from '@/components/Global/BackToTop.component'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import BeerWineElement from '@/components/Menu/BeerWineElements.component'
-import ButtonBattleCocktailsComponent from '@/components/Menu/ButtonBattleCocktails.component'
 import DrinkElement from '@/components/Menu/DrinkElement.component'
 import MenuDock from '@/components/Menu/MenuDock.component'
 import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
@@ -120,10 +120,8 @@ export default async function Page() {
 				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
 
 				{/* Battle des Cocktails Banner */}
-				<div className='mt-[30vh] flex w-full flex-col justify-center py-16'>
-					<div className='mb-12'>
-						<ButtonBattleCocktailsComponent />
-					</div>
+				<div className='mt-[20vh] flex w-full flex-col justify-center py-16'>
+					<BattleBanner />
 
 					{/* Menu Content */}
 					<div className='flex flex-col items-center justify-center gap-40'>

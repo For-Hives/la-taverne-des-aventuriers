@@ -18,8 +18,12 @@ export interface CocktailBattleData {
 	cocktail2_title: string
 	cocktail2_description: string
 	cocktail2_score: number
+	cocktail1_stars: number
+	cocktail2_stars: number
 	created: string
 	updated: string
+	chain_win_label: string
+	chain_win_score: number
 }
 
 /**

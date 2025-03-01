@@ -2,15 +2,19 @@ import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
 import Image from 'next/image'
 
-export function CocktailCard({
-	description,
-	image,
-	title,
-}: {
+interface CocktailCardProps {
 	title: string
 	description: string
 	image: string
-}) {
+	stars?: number
+}
+
+export function CocktailCard({
+	description,
+	image,
+	stars = 0,
+	title,
+}: Readonly<CocktailCardProps>) {
 	// Parse ingredients from HTML description
 	const getIngredientsFromDescription = (desc: string) => {
 		// Remove HTML tags and decode HTML entities
@@ -33,8 +37,8 @@ export function CocktailCard({
 	const ingredients = getIngredientsFromDescription(description)
 
 	return (
-		<Card className='group relative h-[600px] w-[400px] cursor-pointer overflow-hidden border-2 border-customBrown-100/20 p-0 transition-all hover:border-customBrown-100/40 max-lg:h-[500px] max-lg:w-full'>
-			<div className='absolute inset-0'>
+		<Card className='group relative h-[600px] w-[400px] overflow-hidden border-2 border-customBrown-100/20 p-0 transition-all hover:border-customBrown-100/40 max-lg:h-[500px] max-lg:w-full'>
+			<div className='absolute inset-0 flex w-full items-center justify-center'>
 				<Image
 					src={image}
 					alt={title}
@@ -59,6 +63,32 @@ export function CocktailCard({
 					))}
 				</div>
 			</div>
+
+			{/* Étoile et compteur - seulement visible si stars > 0 */}
+			{stars > 0 && (
+				<div
+					className='absolute right-3 top-3 flex items-center rounded-full border border-white/10 bg-black/40 px-3 py-1.5 backdrop-blur-md transition-opacity duration-300 ease-in-out'
+					style={{
+						backdropFilter: 'blur(8px)',
+						boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+						WebkitBackdropFilter: 'blur(8px)',
+					}}
+				>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						viewBox='0 0 24 24'
+						fill='currentColor'
+						className='h-5 w-5 text-yellow-300 drop-shadow-sm'
+					>
+						<path
+							fillRule='evenodd'
+							d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z'
+							clipRule='evenodd'
+						/>
+					</svg>
+					<span className='ml-1 text-lg font-bold text-white'>{stars}</span>
+				</div>
+			)}
 		</Card>
 	)
 }

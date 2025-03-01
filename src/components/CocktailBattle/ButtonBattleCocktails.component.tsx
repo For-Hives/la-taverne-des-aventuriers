@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default async function ButtonBattleCocktailsComponent() {
 	return (
-		<div className='flex w-full flex-col items-center justify-center py-16'>
+		<div className='flex w-full flex-col items-center justify-center pb-16'>
 			<Link
 				href='/battle'
 				aria-label='Battle de cocktails'
