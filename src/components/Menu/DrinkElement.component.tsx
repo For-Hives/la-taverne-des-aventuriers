@@ -9,6 +9,7 @@ interface Drink {
 	title: string // Title of the drink
 	description: string // Description of the drink
 	image: string
+	price: number
 }
 
 // Defining the RecordModel interface, which represents the structure of a record
