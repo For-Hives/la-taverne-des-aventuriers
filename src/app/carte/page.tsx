@@ -62,12 +62,12 @@ export default async function Page() {
 
 	// Whether to show prices globally (at top of section) or individually
 	const pricingConfig = {
-		Cocktails: 'global', // Show single price at top
-		Mocktails: 'global', // Show single price at top
-		Planches: 'individual', // Show individual prices for each item
-		Shooters: 'global', // Show single price at top
-		Short_long_drinks: 'global', // Show single price at top
-	}
+		Cocktails: 'global',
+		Mocktails: 'global',
+		Planches: 'individual',
+		Shooters: 'global',
+		Short_long_drinks: 'global',
+	} as const
 
 	// Structured data for menu
 	const structuredData = {
@@ -143,7 +143,9 @@ export default async function Page() {
 							>
 								<DrinkElement
 									collection_name={drink}
-									priceDisplay={pricingConfig[drink] as 'global' | 'individual'}
+									priceDisplay={
+										pricingConfig[drink as keyof typeof pricingConfig]
+									}
 								/>
 							</div>
 						))}
