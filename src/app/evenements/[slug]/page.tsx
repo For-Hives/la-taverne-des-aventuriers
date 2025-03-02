@@ -3,6 +3,7 @@ import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 import {
 	faArrowLeft,
 	faCalendarAlt,
@@ -153,9 +154,12 @@ export default async function Page({
 										<p className='text-sm font-bold uppercase tracking-wide text-customRed-100'>
 											Événement
 										</p>
-										<h1 className='mt-6 font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-5xl'>
-											{eventData.event_title}
-										</h1>
+										<h1
+											className='mt-6 font-cardinal text-4xl text-customBrown-100 sm:text-5xl'
+											dangerouslySetInnerHTML={{
+												__html: textToSpanColored(eventData.event_title),
+											}}
+										/>
 
 										{/* Event details */}
 										<div className='mt-6 flex flex-col gap-3 text-customBrown-100'>

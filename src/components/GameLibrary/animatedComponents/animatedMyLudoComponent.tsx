@@ -4,6 +4,7 @@ import { GamesPageData } from '@/app/actions/services/getGamePageData.service' /
 import { motion } from 'framer-motion' // Importing motion from Framer Motion for animations
 import Image from 'next/image' // Importing Next.js Image component for optimized image rendering
 import Link from 'next/link' // Importing Next.js Link component for client-side navigation
+import { textToSpanColored } from '@/utils/textToSpanColored' // Importing the textToSpanColored function
 
 // Component declaration, accepting a prop 'data' of type 'GamesPageData'
 export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
@@ -12,9 +13,18 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 			{/* Main container for title and content */}
 			<div className='flex w-full flex-col items-start justify-center gap-8 sm:gap-12'>
 				{/* Title of the component */}
-				<h2 className='font-obraletraBold text-4xl text-customBrown-100 max-sm:text-xl'>
-					{data.myludo_component_title} {/* Displays the title from the data */}
-				</h2>
+				<motion.h2
+					className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-xl'
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5 }}
+				>
+					<span
+						dangerouslySetInnerHTML={{
+							__html: textToSpanColored(data.myludo_component_title),
+						}}
+					/>
+				</motion.h2>
 
 				{/* Motion container for the image and link */}
 				<motion.div
@@ -52,8 +62,11 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 						</div>
 						{/* Text displayed over the image */}
 						<span className='absolute bottom-5 left-10 text-center font-obraletra text-lg text-customWhite-100 underline'>
-							{data.myludo_component_label}{' '}
-							{/* Displays text fetched from the data prop */}
+							<span
+								dangerouslySetInnerHTML={{
+									__html: textToSpanColored(data.myludo_component_label),
+								}}
+							/>
 						</span>
 					</Link>
 				</motion.div>

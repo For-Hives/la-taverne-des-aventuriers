@@ -6,6 +6,7 @@ import { Timeline } from '@/components/Events/Timeline'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 import { Metadata } from 'next'
 
 export const revalidate = 10
@@ -122,9 +123,13 @@ export default async function Page() {
 
 				<div className='relative mt-36 px-4 pb-48 md:px-8'>
 					<div className='mx-auto mb-16 max-w-4xl text-center'>
-						<h1 className='mb-8 font-cardinal text-6xl text-customBrown-100 md:text-8xl'>
-							{eventPageData.page_title}
-						</h1>
+						<h1
+							className='mb-8 font-cardinal text-6xl text-customBrown-100 md:text-8xl'
+							dangerouslySetInnerHTML={{
+								__html: textToSpanColored(eventPageData.page_title),
+							}}
+						/>
+
 						<div
 							className='font-cardoRegular text-lg text-customBrown-100'
 							dangerouslySetInnerHTML={{

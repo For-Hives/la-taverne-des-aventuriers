@@ -9,7 +9,7 @@ export interface ReservationCardData {
 	collectionId: string
 	collectionName: string
 	id: string
-	Title: string
+	title: string
 	image: string
 	description: string
 	games_url: string

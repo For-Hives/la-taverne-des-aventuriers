@@ -1,4 +1,3 @@
-import { getGameLibraryPageData } from '@/app/actions/services/getGamePageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import GameComponent from '@/components/GameLibrary/Games.component'
 import GLHeroComponent from '@/components/GameLibrary/GLHero.component'
@@ -7,6 +6,7 @@ import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import { Metadata } from 'next'
+import { getGamePageData } from '../actions/services/getGamePageData.service'
 
 export const revalidate = 10
 
@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-	const dataGameLibrary = await getGameLibraryPageData()
+	const dataGameLibrary = await getGamePageData()
 	const navItems = await getNavBarData()
 
 	// Structured data for better SEO

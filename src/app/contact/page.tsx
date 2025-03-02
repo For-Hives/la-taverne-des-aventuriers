@@ -121,10 +121,10 @@ export default async function Contact() {
 							<ContactElements data={dataContact} />
 						</div>
 
-						{/* Reservation section */}
+						{/* Reservation section
 						<div className='w-full'>
 							<ReservationComponent />
-						</div>
+						</div> */}
 
 						{/* Map section */}
 						<div className='w-full pb-16'>

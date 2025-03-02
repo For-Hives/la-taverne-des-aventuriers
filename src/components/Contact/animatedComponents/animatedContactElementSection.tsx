@@ -55,7 +55,7 @@ export const AnimatedContactElementSection = ({
 									<h3 className='w-full font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
 										{data.contact_socials_title}
 									</h3>
-									<div className='flex items-center justify-start gap-6'>
+									<div className='flex items-center justify-start gap-10'>
 										<Link
 											href={data.facebook_url}
 											aria-label={data.facebook_aria}

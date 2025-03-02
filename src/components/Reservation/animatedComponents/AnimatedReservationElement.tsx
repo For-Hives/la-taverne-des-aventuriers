@@ -12,10 +12,11 @@ export const AnimatedReservationElement = ({
 	return (
 		<div className='flex h-full w-11/12 items-center justify-center font-cardoRegular text-customBrown-100'>
 			{/* Grid layout for the content */}
-			<div className='grid h-full w-full grid-cols-1 grid-rows-8 gap-4 max-lg:grid-rows-1 max-md:grid-rows-1 sm:grid-cols-2 lg:grid-cols-10'>
-				{/* Card 1 - Top Left */}
+			<div className='grid h-full w-full grid-cols-1 grid-rows-1 gap-4 max-md:grid-rows-1 sm:grid-cols-2 lg:grid-cols-10'>
+				{/* Card 1 - Top Left (Qui-sommes-nous) */}
+				{/* row-span-1 */}
 				<motion.div
-					className='col-span-1 row-span-1 flex items-center justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:row-span-1 md:col-span-2 lg:col-span-8 lg:row-span-3'
+					className='col-span-1 row-span-1 flex items-center justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 sm:row-span-1 md:col-span-2 lg:col-span-8 lg:row-span-1'
 					initial={{ opacity: 0, y: 50 }} // Initial opacity and vertical position for animation
 					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original vertical position
 					transition={{ delay: 0.2, duration: 0.8 }} // Delay and duration for the animation
@@ -56,7 +57,7 @@ export const AnimatedReservationElement = ({
 					</div>
 				</motion.div>
 
-				{/* Card 2 - Middle Right */}
+				{/* Card 2 - Middle Right (L'équipe) */}
 				<motion.div
 					className='relative col-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-1 md:row-span-4 lg:col-span-2'
 					initial={{ opacity: 0, x: -50 }} // Initial opacity and horizontal position for animation
@@ -65,7 +66,7 @@ export const AnimatedReservationElement = ({
 				>
 					<div className='flex flex-col p-8'>
 						<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
-							{data.team_title} {/* Dynamic title for the team */}
+							{data.team_title}
 						</h2>
 						<div
 							className={'prose prose-customBrown'}
@@ -83,7 +84,7 @@ export const AnimatedReservationElement = ({
 
 				{/* Card 3 - Middle Left */}
 				<motion.div
-					className='col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-1 md:row-span-4 lg:col-span-2 lg:row-span-8'
+					className='col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-1 md:row-span-4 lg:col-span-2 lg:row-span-2'
 					initial={{ opacity: 0, x: 50 }} // Initial opacity and horizontal position for animation
 					animate={{ opacity: 1, x: 0 }} // Animate to full opacity and original horizontal position
 					transition={{ delay: 0.6, duration: 0.8 }} // Delay and duration for the animation
@@ -101,7 +102,7 @@ export const AnimatedReservationElement = ({
 
 				{/* Central Logo */}
 				<motion.div
-					className='bg-tan-200 relative col-span-1 row-span-3 flex items-center justify-center rounded-xl border border-customBrown-100 bg-customWhite-300 max-lg:hidden md:col-span-2 md:row-span-10 lg:col-span-6'
+					className='bg-tan-200 relative col-span-1 row-span-2 flex items-center justify-center rounded-xl border border-customBrown-100 bg-customWhite-300 max-lg:hidden md:col-span-2 md:row-span-4 lg:col-span-6'
 					initial={{ opacity: 0 }} // Initial opacity for animation
 					animate={{ opacity: 1 }} // Animate to full opacity
 					transition={{ delay: 0.8, duration: 0.8 }} // Delay and duration for the animation
@@ -122,9 +123,9 @@ export const AnimatedReservationElement = ({
 					/>
 				</motion.div>
 
-				{/* Card 4 - Bottom Left */}
+				{/* Card 4 - Bottom Left (Infos) */}
 				<motion.div
-					className='col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 md:row-span-9 lg:col-span-2'
+					className='col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 md:row-span-2 lg:col-span-2'
 					initial={{ opacity: 0, y: 50 }} // Initial opacity and vertical position for animation
 					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original vertical position
 					transition={{ delay: 1, duration: 0.8 }} // Delay and duration for the animation
@@ -138,7 +139,7 @@ export const AnimatedReservationElement = ({
 						}}
 					>
 						{/* Gradient overlay for the background */}
-						<div className='absolute inset-0 z-0 bg-gradient-to-b from-customWhite-300/100 via-customWhite-300/100 to-customWhite-300/20 max-lg:bg-gradient-to-r' />
+						<div className='absolute inset-0 z-0 bg-gradient-to-b from-customWhite-300/100 via-customWhite-300/100 via-70% to-customWhite-300/25 max-lg:bg-gradient-to-r' />
 
 						{/* Content */}
 						<div className='relative z-10 flex flex-col gap-4 p-8'>
@@ -153,9 +154,9 @@ export const AnimatedReservationElement = ({
 					</div>
 				</motion.div>
 
-				{/* Card 5 - Bottom Right */}
+				{/* Card 5 - Bottom Right (Nos services) */}
 				<motion.div
-					className='col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 md:row-span-2'
+					className='col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 md:col-span-2 md:row-span-1'
 					initial={{ opacity: 0, y: -50 }} // Initial opacity and vertical position for animation
 					animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original vertical position
 					transition={{ delay: 1.2, duration: 0.8 }} // Delay and duration for the animation
