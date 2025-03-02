@@ -263,6 +263,15 @@ export default async function RootLayout({
 						__html: JSON.stringify(structuredData),
 					}}
 				/>
+				{/* Preconnect for third-party domains */}
+				<link rel='preconnect' href='https://www.googletagmanager.com' />
+				<link rel='preconnect' href='https://www.google-analytics.com' />
+				<link rel='preconnect' href='https://umami.wadefade.fr' />
+
+				{/* DNS Prefetch for better performance */}
+				<link rel='dns-prefetch' href='https://www.googletagmanager.com' />
+				<link rel='dns-prefetch' href='https://www.google-analytics.com' />
+				<link rel='dns-prefetch' href='https://umami.wadefade.fr' />
 			</head>
 			<body
 				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${CardoRegular.variable} ${geistSans.variable} ${geistMono.variable} ${Cardinal.variable} antialiased`}
