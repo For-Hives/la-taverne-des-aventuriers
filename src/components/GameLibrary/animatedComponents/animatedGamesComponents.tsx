@@ -127,7 +127,7 @@ const GameCard = ({
  */
 export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 	return (
-		<div className='mx-auto w-full max-w-7xl px-4 py-8'>
+		<div className='mx-auto w-full max-w-7xl px-4'>
 			<motion.h2
 				initial={{ opacity: 0, y: -20 }}
 				animate={{ opacity: 1, y: 0 }}
@@ -153,12 +153,12 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 					backgroundClass='bg-gl-card1-bg'
 					backgroundImage={data.card1_image}
 					index={0}
-					className='mr-2 min-h-[25rem] md:row-span-2 lg:min-h-[45rem]'
+					className='mr-0 min-h-[25rem] md:row-span-2 md:mr-4 lg:min-h-[45rem]'
 					maxDescriptionLength={600}
 				/>
 
 				{/* Right Column - Two Smaller Cards */}
-				<div className='grid h-full grid-cols-1 gap-4 md:min-h-[45rem] md:gap-2'>
+				<div className='grid h-full grid-cols-1 gap-4 md:min-h-[45rem] md:gap-4'>
 					<GameCard
 						title={data.card2_title}
 						description={data.card2_description}
