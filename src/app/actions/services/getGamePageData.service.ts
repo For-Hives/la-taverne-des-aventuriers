@@ -39,6 +39,7 @@ export interface GamesPageData {
 	myludo_component_button_label: string
 	myludo_component_button_url: string
 	myludo_component_button_aria: string
+	myludo_component_image: string
 	created: string
 	updated: string
 }
@@ -73,6 +74,12 @@ export async function getGamePageData(): Promise<GamesPageData> {
 			}
 			if (item.card3_image) {
 				item.card3_image = pb.files.getURL(item, item.card3_image)
+			}
+			if (item.myludo_component_image) {
+				item.myludo_component_image = pb.files.getURL(
+					item,
+					item.myludo_component_image
+				)
 			}
 		})
 

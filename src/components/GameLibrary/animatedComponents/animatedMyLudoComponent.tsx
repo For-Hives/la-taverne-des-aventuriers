@@ -38,8 +38,8 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 					<Link
 						target='_blank' // Opens the link in a new tab
 						className='relative block w-full'
-						href={data.myludo_component_url} // URL fetched from the data prop
-						aria-label={data.myludo_component_aria} // Accessible label for the link
+						href={data.myludo_component_image} // URL fetched from the data prop
+						aria-label={data.myludo_component_title} // Accessible label for the link
 					>
 						{/* Aspect-ratio container for maintaining image proportions */}
 						<div
@@ -64,7 +64,7 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 						<span className='absolute bottom-5 left-10 text-center font-obraletra text-lg text-customWhite-100 underline'>
 							<span
 								dangerouslySetInnerHTML={{
-									__html: textToSpanColored(data.myludo_component_label),
+									__html: textToSpanColored(data.myludo_component_title),
 								}}
 							/>
 						</span>
