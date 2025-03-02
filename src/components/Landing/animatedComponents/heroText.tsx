@@ -16,15 +16,15 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 			className='bottom-0 left-0 z-40 flex flex-col items-start gap-6 p-6 sm:p-12 md:p-16 lg:p-52'
 			initial={{ opacity: 0, y: 50 }}
 			animate={{ opacity: 1, y: 0 }}
-			// Added 3 second delay to the main container animation
-			transition={{ delay: 3, duration: 0.8 }}
+			// Reduced animation delay from 3s to 1s
+			transition={{ delay: 1, duration: 0.8 }}
 		>
 			{/* Hero Title with fade-in animation */}
 			<motion.h1
 				className='text-with-outline flex w-full flex-col gap-2 font-cardinal text-4xl font-bold text-customBrown-100 first-letter:text-customRed-100 sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl'
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				// Adjusted delay to be relative to parent (3s + 0.3s)
+				// Adjusted delay to be relative to parent (1s + 0.3s)
 				transition={{ delay: 0.3, duration: 0.8 }}
 			>
 				{/* Title text with color applied */}
@@ -40,7 +40,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 				className='flex flex-col items-start gap-6 sm:gap-8 md:gap-10'
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				// Adjusted delay to be relative to parent (3s + 0.5s)
+				// Adjusted delay to be relative to parent (1s + 0.5s)
 				transition={{ delay: 0.5, duration: 0.8 }}
 			>
 				{/* Description text with color applied */}
@@ -71,7 +71,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 					<motion.div
 						initial={{ opacity: 0, x: 50 }}
 						animate={{ opacity: 1, x: 0 }}
-						// Adjusted delay to be relative to parent (3s + 0.7s)
+						// Adjusted delay to be relative to parent (1s + 0.7s)
 						transition={{ delay: 0.7, duration: 0.8 }}
 					>
 						<Link

@@ -10,6 +10,7 @@ import EventsComponent from '@/components/Landing/Events.component'
 import HeroTextComponent from '@/components/Landing/HeroText.component'
 import BackgroundVideoLP from '@/components/Landing/LpBackgroundVideo.component'
 import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
+import Head from 'next/head'
 
 export default function LandingWrapper({
 	data,
@@ -23,6 +24,15 @@ export default function LandingWrapper({
 	return (
 		data && (
 			<>
+				{/* Add preconnect resource hints */}
+				<Head>
+					<link rel='preconnect' href='https://player.vimeo.com' />
+					<link rel='preconnect' href='https://vimeocdn.com' />
+					<link rel='preconnect' href='https://i.vimeocdn.com' />
+					<link rel='preconnect' href='https://f.vimeocdn.com' />
+					<link rel='dns-prefetch' href='https://player.vimeo.com' />
+				</Head>
+
 				<LoadingLogo />
 				{/* Navigation */}
 				<Navbar navItems={navItems} />

@@ -24,14 +24,15 @@ export default function BackgroundVideoLP() {
 
 		// Create a new iframe element to embed the Vimeo player
 		const iframe = document.createElement('iframe')
-		// Disable autoplay to manually control when playback starts
+		// Enable autoplay directly in the URL instead of manually triggering it later
 		iframe.src =
-			'https://player.vimeo.com/video/1047422333?h=3ee0913fe6&background=1&autoplay=0&loop=0'
+			'https://player.vimeo.com/video/1047422333?h=3ee0913fe6&background=1&autoplay=1&loop=1&autopause=0'
 		iframe.title = 'Animation_Carte_1'
 		iframe.className =
 			'mask-custom animate-video absolute left-0 top-0 -z-10 block h-full w-full bg-customWhite-100 object-cover object-center opacity-75 mix-blend-normal'
-		iframe.allow = 'autoplay'
+		iframe.allow = 'autoplay; fullscreen'
 		iframe.setAttribute('data-ready', 'true')
+		iframe.loading = 'lazy' // Add lazy loading
 		iframe.allowFullscreen = true
 
 		// Append the created iframe to the container reference
@@ -39,34 +40,6 @@ export default function BackgroundVideoLP() {
 
 		// Initialize the Vimeo player with the iframe
 		const player = new Player(iframe)
-		let videoDuration = 0
-		const loopStart = 4 // Set the time (in seconds) to loop from
-		const startDelay = 1000 // 1 second delay in milliseconds
-
-		// When the player has loaded, get the video's total duration
-		player.on('loaded', () => {
-			// Wait 1 second before starting playback
-			setTimeout(() => {
-				player
-					.play()
-					.then(() => {
-						// Get duration after playback has started
-						player.getDuration().then(duration => {
-							videoDuration = duration
-						})
-					})
-					.catch(error => {
-						console.error('Error starting video playback:', error)
-					})
-			}, startDelay)
-		})
-
-		// When the video ends, jump to the loop start time and play again
-		player.on('ended', () => {
-			player.setCurrentTime(videoDuration - loopStart).then(() => {
-				player.play()
-			})
-		})
 
 		// Cleanup the player when the component is unmounted or the pathname changes
 		return () => {
