@@ -6,6 +6,7 @@ import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import { Metadata } from 'next'
+
 import { getGamePageData } from '../actions/services/getGamePageData.service'
 
 export const revalidate = 10

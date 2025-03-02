@@ -20,8 +20,8 @@ const GameCard = ({
 	className = '',
 	description,
 	index,
-	title,
 	maxDescriptionLength = 600,
+	title,
 }: {
 	title: string
 	description: string

@@ -1,10 +1,10 @@
 'use client' // Declares this as a client-side component
 
 import { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing the type for game page data
+import { textToSpanColored } from '@/utils/textToSpanColored' // Importing the textToSpanColored function
 import { motion } from 'framer-motion' // Importing motion from Framer Motion for animations
 import Image from 'next/image' // Importing Next.js Image component for optimized image rendering
 import Link from 'next/link' // Importing Next.js Link component for client-side navigation
-import { textToSpanColored } from '@/utils/textToSpanColored' // Importing the textToSpanColored function
 
 // Component declaration, accepting a prop 'data' of type 'GamesPageData'
 export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
