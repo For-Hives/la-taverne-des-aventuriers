@@ -37,16 +37,23 @@ export async function generateMetadata({
 			title: 'Événement non trouvé | La Taverne des Aventuriers',
 		}
 	}
-
-	// Truncate description to max 155 characters
+	// Truncate description to max 155 characters and remove HTML tags
 	const truncateDescription = (
 		text: string,
 		maxLength: number = 155
 	): string => {
-		if (text.length <= maxLength) return text
+		// Remove HTML tags and special characters
+		const cleanText = text
+			.replace(/<[^>]*>/g, '') // Remove HTML tags
+			.replace(/&nbsp;/g, ' ') // Replace &nbsp; with space
+			.replace(/&[^;]+;/g, '') // Remove other HTML entities
+			.replace(/\s+/g, ' ') // Normalize whitespace
+			.trim()
+
+		if (cleanText.length <= maxLength) return cleanText
 		// Find the last space before the limit to avoid cutting words
-		const lastSpace = text.substring(0, maxLength).lastIndexOf(' ')
-		return text.substring(0, lastSpace > 0 ? lastSpace : maxLength) + '...'
+		const lastSpace = cleanText.substring(0, maxLength).lastIndexOf(' ')
+		return cleanText.substring(0, lastSpace > 0 ? lastSpace : maxLength) + '...'
 	}
 
 	// Truncate title if needed (keeping under 60 characters ideally)
