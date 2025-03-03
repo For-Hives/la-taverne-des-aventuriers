@@ -38,11 +38,34 @@ export async function generateMetadata({
 		}
 	}
 
+	// Truncate description to max 155 characters
+	const truncateDescription = (
+		text: string,
+		maxLength: number = 155
+	): string => {
+		if (text.length <= maxLength) return text
+		// Find the last space before the limit to avoid cutting words
+		const lastSpace = text.substring(0, maxLength).lastIndexOf(' ')
+		return text.substring(0, lastSpace > 0 ? lastSpace : maxLength) + '...'
+	}
+
+	// Truncate title if needed (keeping under 60 characters ideally)
+	const truncateTitle = (text: string, maxLength: number = 60): string => {
+		// Remove "| La Taverne des Aventuriers" if it would be added later and cause overflow
+		const baseText = text.replace(' | La Taverne des Aventuriers', '')
+		if (baseText.length <= maxLength - 28) return baseText // 28 is length of " | La Taverne des Aventuriers"
+		return truncateDescription(baseText, maxLength - 28)
+	}
+
+	// Format optimized metadata
+	const optimizedTitle = `${truncateTitle(eventData.event_title)} | La Taverne des Aventuriers`
+	const optimizedDescription = truncateDescription(eventData.summary)
+
 	return {
 		alternates: {
 			canonical: `https://latavernedesaventuriers.fr/evenements/${eventData.event_slug}`,
 		},
-		description: eventData.summary,
+		description: optimizedDescription,
 		keywords: [
 			'événement nantes',
 			'soirée jeux nantes',
@@ -60,7 +83,7 @@ export async function generateMetadata({
 			'max-snippet': -1,
 			'max-video-preview': -1,
 		},
-		title: `${eventData.event_title}`,
+		title: optimizedTitle,
 	}
 }
 

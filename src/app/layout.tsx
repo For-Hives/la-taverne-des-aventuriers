@@ -139,7 +139,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		category: 'business.food_and_drinks',
 		creator: 'La Taverne des Aventuriers',
 		description:
-			'Découvrez La Taverne des Aventuriers, votre bar à jeux médiéval-fantastique à Nantes. Plus de 90 jeux de société, cocktails créatifs et ambiance unique.',
+			'La Taverne des Aventuriers, bar à jeux médiéval-fantastique à Nantes. 90+ jeux de société, cocktails et ambiance unique au centre-ville.',
 		formatDetection: {
 			address: false,
 			email: false,
@@ -198,7 +198,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		metadataBase: new URL('https://latavernedesaventuriers.fr'),
 		openGraph: {
 			description:
-				'Bar à jeux médiéval-fantastique au cœur de Nantes. Découvrez plus de 90 jeux et nos cocktails créatifs dans une ambiance unique.',
+				'Bar à jeux médiéval au cœur de Nantes. Découvrez nos jeux et cocktails dans une ambiance fantastique unique.',
 			images: [
 				{
 					alt: 'La Taverne des Aventuriers - Ambiance médiévale et jeux',
@@ -209,7 +209,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			],
 			locale: 'fr_FR',
 			siteName: 'La Taverne des Aventuriers',
-			title: 'La Taverne des Aventuriers - Bar à Jeux Médiéval',
+			title: 'Bar à Jeux Médiéval à Nantes | La Taverne des Aventuriers',
 			type: 'website',
 			url: 'https://latavernedesaventuriers.fr',
 		},
@@ -233,13 +233,13 @@ export async function generateMetadata(): Promise<Metadata> {
 			index: true,
 		},
 		title: {
-			default: 'La Taverne des Aventuriers - Bar à Jeux Médiéval à Nantes',
-			template: '%s',
+			default: 'Bar à Jeux Médiéval à Nantes | La Taverne des Aventuriers',
+			template: '%s | La Taverne des Aventuriers',
 		},
 		twitter: {
 			card: 'summary_large_image',
 			creator: '@TaverneNantes',
-			description: 'Bar à jeux médiéval-fantastique au cœur de Nantes',
+			description: 'Bar à jeux médiéval au cœur de Nantes',
 			images: ['/assets/images/og-image.webp'],
 			title: 'La Taverne des Aventuriers',
 		},

@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			canonical: 'https://latavernedesaventuriers.fr/battle',
 		},
 		description:
-			'Battle mensuelle des cocktails à La Taverne des Aventuriers. Votez pour votre cocktail préféré et décidez lequel restera sur notre carte. Une compétition unique tous les mois entre deux créations originales.',
+			'Battle des cocktails à La Taverne des Aventuriers. Votez pour votre création préférée et décidez quel cocktail restera sur notre carte.',
 		keywords: [
 			'battle cocktails nantes',
 			'compétition cocktails',

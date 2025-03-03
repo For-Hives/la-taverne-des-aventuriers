@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			canonical: 'https://latavernedesaventuriers.fr/qui-sommes-nous',
 		},
 		description:
-			"Découvrez l'histoire de La Taverne des Aventuriers, votre bar à jeux médiéval-fantastique à Nantes. Notre concept unique, notre équipe passionnée et notre collection de plus de 90 jeux.",
+			"Découvrez l'histoire de La Taverne des Aventuriers, bar à jeux médiéval à Nantes. Notre concept unique et notre collection de jeux vous attendent.",
 		keywords: [
 			'bar à jeux nantes',
 			'taverne des aventuriers',
@@ -30,15 +30,10 @@ export async function generateMetadata(): Promise<Metadata> {
 		],
 		robots: {
 			follow: true,
-			googleBot: {
-				follow: true,
-				index: true,
-				'max-image-preview': 'large',
-				'max-snippet': -1,
-				'max-video-preview': -1,
-			},
 			index: true,
-			nocache: true,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+			'max-video-preview': -1,
 		},
 		title: 'Qui Sommes-Nous | La Taverne des Aventuriers',
 	}

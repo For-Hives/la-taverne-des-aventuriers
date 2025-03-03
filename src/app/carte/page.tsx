@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			canonical: 'https://latavernedesaventuriers.fr/carte',
 		},
 		description:
-			'Découvrez notre carte de cocktails, mocktails, bières artisanales et planches à partager. Menu thématique médiéval-fantastique dans votre bar à jeux à Nantes.',
+			'Découvrez nos cocktails, bières artisanales et planches à partager. Menu thématique médiéval dans votre bar à jeux à Nantes.',
 		keywords: [
 			'cocktails nantes',
 			'mocktails',
@@ -35,17 +35,12 @@ export async function generateMetadata(): Promise<Metadata> {
 		],
 		robots: {
 			follow: true,
-			googleBot: {
-				follow: true,
-				index: true,
-				'max-image-preview': 'large',
-				'max-snippet': -1,
-				'max-video-preview': -1,
-			},
 			index: true,
-			nocache: true,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+			'max-video-preview': -1,
 		},
-		title: 'Carte | La Taverne des Aventuriers',
+		title: 'Carte & Boissons | La Taverne des Aventuriers',
 	}
 }
 

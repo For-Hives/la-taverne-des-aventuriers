@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 		canonical: 'https://latavernedesaventuriers.fr',
 	},
 	description:
-		'Bienvenue à La Taverne des Aventuriers, votre bar à jeux médiéval-fantastique à Nantes. Découvrez notre collection unique de jeux de société, nos cocktails créatifs et notre ambiance chaleureuse.',
+		'Bar à jeux médiéval-fantastique à Nantes. Venez découvrir plus de 90 jeux de société, cocktails créatifs et une ambiance unique.',
 	openGraph: {
 		description:
-			'Bar à jeux médiéval-fantastique à Nantes. Plus de 90 jeux de société, cocktails créatifs et soirées thématiques dans une ambiance unique.',
+			'Bar à jeux médiéval à Nantes. Jeux de société, cocktails et ambiance chaleureuse dans un univers fantastique.',
 		locale: 'fr_FR',
 		siteName: 'La Taverne des Aventuriers',
-		title: 'Accueil | La Taverne des Aventuriers',
+		title: 'Bar à Jeux Médiéval | La Taverne des Aventuriers',
 		type: 'website',
 		url: 'https://latavernedesaventuriers.fr',
 	},

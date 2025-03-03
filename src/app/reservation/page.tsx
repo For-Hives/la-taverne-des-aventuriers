@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			canonical: 'https://latavernedesaventuriers.fr/reservation',
 		},
 		description:
-			'Réservez votre soirée à La Taverne des Aventuriers. Réservation obligatoire pour les groupes de plus de 12 personnes. Bar à jeux idéal pour vos événements au centre de Nantes.',
+			'Réservez votre table à La Taverne des Aventuriers. Bar à jeux médiéval idéal pour vos événements et soirées de groupe au centre de Nantes.',
 		keywords: [
 			'réservation bar nantes',
 			'réserver groupe nantes',
@@ -33,15 +33,10 @@ export async function generateMetadata(): Promise<Metadata> {
 		],
 		robots: {
 			follow: true,
-			googleBot: {
-				follow: true,
-				index: true,
-				'max-image-preview': 'large',
-				'max-snippet': -1,
-				'max-video-preview': -1,
-			},
 			index: true,
-			nocache: true,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+			'max-video-preview': -1,
 		},
 		title: 'Réservation | La Taverne des Aventuriers',
 	}
