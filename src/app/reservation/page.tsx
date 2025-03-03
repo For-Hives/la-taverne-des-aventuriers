@@ -86,6 +86,11 @@ export default async function Reservation() {
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
+			{/* SEO H1 heading - visually hidden but present for search engines */}
+			<h1 className='sr-only'>
+				Réservation - Bar à Jeux La Taverne des Aventuriers à Nantes
+			</h1>
+
 			<div className='flex min-h-screen w-full flex-col items-center'>
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />

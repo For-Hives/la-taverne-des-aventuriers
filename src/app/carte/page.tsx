@@ -115,6 +115,12 @@ export default async function Page() {
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
+			{/* SEO H1 heading - visually hidden but present for search engines */}
+			<h1 className='sr-only'>
+				Carte & Boissons - Cocktails et Menu de La Taverne des Aventuriers
+				Nantes
+			</h1>
+
 			<div className='flex h-screen w-screen flex-col items-center'>
 				{/* Navigation */}
 				<Navbar navItems={navItems} />
