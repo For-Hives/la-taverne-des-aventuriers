@@ -21,8 +21,16 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 		>
 			<h1 className='sr-only'>
 				{/* SEO H1 heading - visually hidden but present for search engines */}
-				{/* replace all the special characters with a space */}
-				{data.hero_title.replace(/[^a-zA-Z0-9\s]/g, ' ')}
+				{
+					data.hero_title
+						.replace(/&nbsp/g, ' ') // Replace &nbsp with space
+						.replace(/\*/g, '') // Remove asterisks
+						.split(' ') // Split into words
+						.map(
+							word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+						) // Capitalize first letter of each word
+						.join(' ') // Join words back together
+				}
 			</h1>
 			{/* Hero Title with fade-in animation */}
 			<motion.div
