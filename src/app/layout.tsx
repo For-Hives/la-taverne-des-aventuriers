@@ -234,7 +234,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		},
 		title: {
 			default: 'Bar à Jeux Médiéval à Nantes | La Taverne des Aventuriers',
-			template: '%s | La Taverne des Aventuriers',
+			template: '%s',
 		},
 		twitter: {
 			card: 'summary_large_image',
