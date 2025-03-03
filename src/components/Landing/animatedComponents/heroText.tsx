@@ -19,8 +19,13 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 			// Reduced animation delay from 3s to 1s
 			transition={{ delay: 1, duration: 0.8 }}
 		>
+			<h1 className='sr-only'>
+				{/* SEO H1 heading - visually hidden but present for search engines */}
+				{/* replace all the special characters with a space */}
+				{data.hero_title.replace(/[^a-zA-Z0-9\s]/g, ' ')}
+			</h1>
 			{/* Hero Title with fade-in animation */}
-			<motion.h1
+			<motion.div
 				className='text-with-outline flex w-full flex-col gap-2 font-cardinal text-4xl font-bold text-customBrown-100 first-letter:text-customRed-100 sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl'
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
@@ -33,7 +38,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 						__html: textToSpanColored(data.hero_title),
 					}}
 				/>
-			</motion.h1>
+			</motion.div>
 
 			{/* Description with fade-in animation */}
 			<motion.div
