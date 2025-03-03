@@ -60,7 +60,7 @@ export async function generateMetadata({
 			'max-snippet': -1,
 			'max-video-preview': -1,
 		},
-		title: `${eventData.event_title} | La Taverne des Aventuriers`,
+		title: `${eventData.event_title}`,
 	}
 }
 
