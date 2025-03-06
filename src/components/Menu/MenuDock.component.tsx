@@ -7,11 +7,11 @@ import {
 	faGlassWater,
 	faMartiniGlassCitrus,
 	faMugHot,
-	faBacon,
-	faCheese,
 	faMartiniGlass,
+	faUtensils,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Ham } from 'lucide-react'
 
 const menuItems = [
 	{
@@ -56,15 +56,16 @@ const menuItems = [
 	},
 	{
 		href: '#planches',
-		icon: (
-			<FontAwesomeIcon icon={faCheese} className='h-full w-full text-inherit' />
-		),
+		icon: <Ham className='h-full w-full text-inherit' />,
 		title: 'Planches',
 	},
 	{
 		href: '#travelers',
 		icon: (
-			<FontAwesomeIcon icon={faBacon} className='h-full w-full text-inherit' />
+			<FontAwesomeIcon
+				icon={faUtensils}
+				className='h-full w-full text-inherit'
+			/>
 		),
 		title: 'Plaisirs Voyageur',
 	},
