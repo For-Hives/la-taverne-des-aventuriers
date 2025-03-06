@@ -40,6 +40,7 @@ export default function CocktailBattleComponent({
 							description={data.cocktail1_description}
 							image={data.cocktail_1_image}
 							stars={data.cocktail1_stars}
+							inverted={true}
 						/>
 					</div>
 

@@ -24,7 +24,7 @@ export default function BattleBanner() {
 					alt='Battle des cocktails'
 					width={520}
 					height={520}
-					className='relative opacity-75 mix-blend-luminosity drop-shadow-lg transition-transform duration-300 hover:scale-105'
+					className='relative opacity-75 drop-shadow-lg transition-transform duration-300 hover:scale-105'
 				/>
 			</button>
 			<div className='flex w-full -translate-y-12 flex-col items-center justify-center md:-translate-y-24'>

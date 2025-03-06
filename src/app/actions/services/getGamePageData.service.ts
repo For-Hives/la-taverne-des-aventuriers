@@ -34,6 +34,7 @@ export interface GamesPageData {
 	card3_button_aria: string
 	card3_image: string // Image URL for card3
 
+	myludo_component_url: string
 	myludo_component_title: string
 	myludo_component_description: string
 	myludo_component_button_label: string

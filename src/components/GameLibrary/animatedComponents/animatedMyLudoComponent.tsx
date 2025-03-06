@@ -38,7 +38,7 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 					<Link
 						target='_blank' // Opens the link in a new tab
 						className='relative block w-full'
-						href={data.myludo_component_image} // URL fetched from the data prop
+						href={data.myludo_component_url} // URL fetched from the data prop
 						aria-label={data.myludo_component_title} // Accessible label for the link
 					>
 						{/* Aspect-ratio container for maintaining image proportions */}
@@ -50,7 +50,7 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 							<div className='relative h-full w-full transform transition-transform duration-300 hover:scale-105'>
 								{/* Image with responsive properties */}
 								<Image
-									src='/assets/images/elements/GameLibraryElements/MyLudoImage.webp' // Path to the image
+									src={data.myludo_component_image} // Path to the image
 									alt='MyLudo Logo' // Alt text for accessibility
 									className='absolute inset-0 h-full w-full object-cover' // Ensures image covers the entire container
 									fill // Fills the container

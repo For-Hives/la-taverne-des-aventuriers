@@ -7,11 +7,13 @@ interface CocktailCardProps {
 	description: string
 	image: string
 	stars?: number
+	inverted?: boolean
 }
 
 export function CocktailCard({
 	description,
 	image,
+	inverted = false,
 	stars = 0,
 	title,
 }: Readonly<CocktailCardProps>) {
@@ -37,7 +39,7 @@ export function CocktailCard({
 	const ingredients = getIngredientsFromDescription(description)
 
 	return (
-		<Card className='group relative h-[600px] w-[400px] overflow-hidden border-2 border-customBrown-100/20 p-0 transition-all hover:border-customBrown-100/40 max-lg:h-[500px] max-lg:w-full'>
+		<Card className='group relative h-[500px] w-[500px] overflow-hidden border-2 border-customBrown-100/20 p-0 transition-all hover:border-customBrown-100/40 max-lg:h-[500px] max-lg:w-full'>
 			<div className='absolute inset-0 flex w-full items-center justify-center'>
 				<Image
 					src={image}
@@ -50,8 +52,14 @@ export function CocktailCard({
 			<div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent' />
 
 			<div className='absolute inset-x-0 bottom-0 p-6 text-white'>
-				<h2 className='mb-4 font-cardinal text-3xl'>{title}</h2>
-				<div className='mb-4 flex flex-wrap gap-2'>
+				<h2
+					className={`mb-4 ${inverted ? 'text-left' : 'text-right'} font-cardinal text-3xl`}
+				>
+					{title}
+				</h2>
+				<div
+					className={`mb-4 flex flex-wrap ${inverted ? 'justify-start' : 'justify-end'} gap-2`}
+				>
 					{ingredients.map((ingredient, index) => (
 						<Badge
 							key={index}
@@ -67,7 +75,7 @@ export function CocktailCard({
 			{/* Étoile et compteur - seulement visible si stars > 0 */}
 			{stars > 0 && (
 				<div
-					className='absolute right-3 top-3 flex items-center rounded-full border border-white/10 bg-black/40 px-3 py-1.5 backdrop-blur-md transition-opacity duration-300 ease-in-out'
+					className={`absolute ${inverted ? 'left-3' : 'right-3'} top-3 flex items-center rounded-full border border-white/10 bg-black/40 px-3 py-1.5 backdrop-blur-md transition-opacity duration-300 ease-in-out`}
 					style={{
 						backdropFilter: 'blur(8px)',
 						boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
