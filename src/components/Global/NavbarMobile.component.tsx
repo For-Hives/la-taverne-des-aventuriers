@@ -20,7 +20,7 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 	return (
 		<nav className='fixed top-0 z-50 w-full xl:hidden'>
 			{/* Header Bar */}
-			<div className='relative z-50 mx-auto flex items-center justify-between bg-customWhite-100 px-4 py-3'>
+			<div className='relative z-50 mx-auto flex items-center justify-between border-b border-customBrown-100 bg-customWhite-100 px-4 py-3'>
 				{/* Logo */}
 				<Link href='/' aria-label='Home'>
 					<Image
