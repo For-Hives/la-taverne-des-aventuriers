@@ -85,17 +85,17 @@ export const AnimatedReservationElement = ({
 						{/* Image with Next.js Image component */}
 						<div
 							className={
-								'absolute right-0 top-0 hidden h-full lg:flex lg:w-4/6'
+								'absolute -right-12 bottom-12 hidden h-full lg:flex lg:w-3/6'
 							}
 						>
 							<div className='relative h-full w-full'>
 								<Image
-									src={data.image_card1}
-									alt='Image description'
+									src={'/assets/images/qui-sommes-nous.webp'}
+									alt='Bar à jeu médiéval fantastique à Nantes avec une ambiance chaleureuse'
 									fill={true}
 									objectFit={'cover'}
-									objectPosition={'center'}
-									className='absolute inset-0 z-0'
+									objectPosition={'right'}
+									className='absolute inset-4 z-0 scale-125'
 									quality={80}
 								/>
 							</div>
