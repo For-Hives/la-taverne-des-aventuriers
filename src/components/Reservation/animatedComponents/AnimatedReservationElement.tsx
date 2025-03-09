@@ -85,7 +85,7 @@ export const AnimatedReservationElement = ({
 						{/* Image with Next.js Image component */}
 						<div
 							className={
-								'absolute -right-12 bottom-12 hidden h-full lg:flex lg:w-3/6'
+								'absolute -bottom-32 -right-0 hidden h-full w-full lg:flex xl:-right-12 xl:bottom-12 xl:w-3/6'
 							}
 						>
 							<div className='relative h-full w-full'>
@@ -102,10 +102,9 @@ export const AnimatedReservationElement = ({
 						</div>
 
 						{/* Gradient overlay for the background */}
-						<div className='absolute inset-0 z-0 bg-gradient-to-r from-customWhite-300/100 via-customWhite-300/100 to-customWhite-300/20' />
-
+						<div className='absolute inset-0 z-0 bg-gradient-to-b from-customWhite-300/100 via-customWhite-300/100 via-45% to-customWhite-300/0 to-70% xl:bg-gradient-to-r xl:from-customWhite-300/100 xl:via-customWhite-300/100 xl:via-50% xl:to-customWhite-300/20 xl:to-60%' />
 						{/* Content */}
-						<div className='relative z-10 flex flex-col gap-4 lg:w-1/2'>
+						<div className='relative z-10 flex w-full flex-col gap-4 xl:w-1/2'>
 							<h1 className='font-cardinal text-2xl tracking-wider first-letter:text-customRed-100 sm:text-3xl'>
 								{data.who_are_we_title}
 							</h1>
