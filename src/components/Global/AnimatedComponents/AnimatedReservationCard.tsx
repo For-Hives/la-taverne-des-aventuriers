@@ -96,8 +96,8 @@ export const AnimatedReservationCard = ({
 					<Image
 						src='/assets/images/elements/ReservationCardIllustration.webp'
 						alt='Reservation Card Illustration'
-						width={300}
-						height={200}
+						width={500}
+						height={300}
 						className='h-auto max-w-full'
 					/>
 				</motion.div>
