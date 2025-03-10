@@ -10,6 +10,7 @@ interface Drink {
 	description: string // Description of the drink
 	image: string
 	price: number
+	collection: string
 }
 
 // Defining the RecordModel interface, which represents the structure of a record
@@ -19,6 +20,7 @@ interface RecordModel {
 	description: string // Description of the record
 	image: string
 	price: number
+	collection: string
 }
 
 // Defining the response structure from the drink API
@@ -27,13 +29,17 @@ interface DrinkListResponse {
 }
 
 // Function to map RecordModel to the Drink interface
-const mapRecordToDrink = (record: RecordModel): Drink => {
+const mapRecordToDrink = (
+	record: RecordModel,
+	collection_name: string
+): Drink => {
 	return {
 		description: record.description || 'Default Description', // Provide default description if missing
 		id: record.id, // The id remains the same
 		image: record.image,
 		price: record.price,
 		title: record.title || 'Default Title', // Provide default title if missing
+		collection: collection_name,
 	}
 }
 
@@ -59,7 +65,9 @@ export default async function DrinkElement({
 	}
 
 	// Map the records to the Drink interface
-	const drinks = data.items.map(mapRecordToDrink)
+	const drinks = data.items.map(record =>
+		mapRecordToDrink(record, collection_name)
+	)
 
 	// Use first item's price for global display
 	const globalPrice = drinks[0]?.price || 0

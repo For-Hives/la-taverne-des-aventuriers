@@ -8,6 +8,7 @@ interface Drink {
 	description: string // Description of the drink
 	image: string // URL or path to the image of the drink
 	price?: number // Price of the drink (optional)
+	collection: string // Collection of the drink
 }
 
 // Define the DrinkDivComponent functional component
@@ -45,7 +46,7 @@ export default function DrinkDivComponent({
 						<Image
 							src={drink.image} // Source path for the image
 							alt={drink.title} // Alt text for accessibility
-							className='w-1/2 rounded lg:w-2/3 2xl:w-1/2' // Styling for the image
+							className='w-2/3 rounded md:w-1/3 lg:w-2/3 2xl:w-1/2' // Styling for the image
 							width={400} // Set the width of the image
 							height={400} // Set the height of the image
 						/>
@@ -62,7 +63,9 @@ export default function DrinkDivComponent({
 				>
 					<div className='relative flex flex-col gap-4'>
 						{/* Drink title */}
-						<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 lg:text-4xl'>
+						<h2
+							className={`${drink.collection.toLowerCase() === 'planches' ? 'max-w-[60vw]' : ''} font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 lg:text-4xl`}
+						>
 							{drink.title} {/* Display the title of the drink */}
 						</h2>
 

@@ -14,7 +14,7 @@ export default function BattleBanner() {
 	return (
 		<div className='mb-36 flex flex-col items-center gap-8'>
 			<button
-				className='h-128 w-128 relative cursor-pointer'
+				className='relative flex h-[90vw] max-h-96 w-[90vw] max-w-96 cursor-pointer items-center justify-center xl:h-auto xl:max-h-max xl:w-auto xl:max-w-max'
 				onClick={handleImageClick}
 				aria-label='Accéder à la battle des cocktails'
 			>
@@ -24,7 +24,7 @@ export default function BattleBanner() {
 					alt='Battle des cocktails'
 					width={520}
 					height={520}
-					className='relative opacity-75 drop-shadow-lg transition-transform duration-300 hover:scale-105'
+					className='relative mb-2 opacity-75 drop-shadow-lg transition-transform duration-300 hover:scale-105'
 				/>
 			</button>
 			<div className='flex w-full -translate-y-12 flex-col items-center justify-center md:-translate-y-24'>
