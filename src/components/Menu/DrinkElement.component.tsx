@@ -34,12 +34,12 @@ const mapRecordToDrink = (
 	collection_name: string
 ): Drink => {
 	return {
+		collection: collection_name,
 		description: record.description || 'Default Description', // Provide default description if missing
 		id: record.id, // The id remains the same
 		image: record.image,
 		price: record.price,
 		title: record.title || 'Default Title', // Provide default title if missing
-		collection: collection_name,
 	}
 }
 
