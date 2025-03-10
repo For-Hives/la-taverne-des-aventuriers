@@ -1,5 +1,4 @@
 import { getDrinkList } from '@/app/actions/services/DrinksData/getDrinkList.service' // Importing the function to get the list of drinks
-import DrinkDivComponent from '@/components/Menu/DrinkDiv.component'
 import { formatDrinkName } from '@/utils/FormatDrinksName' // Importing the DrinkDivComponent
 import Image from 'next/image'
 
@@ -51,8 +50,8 @@ interface DrinkElementProps {
 
 // The main DrinkElement component
 export default async function DrinkElement({
-	collection_name, // The name of the drink collection passed as a prop
-	priceDisplay = 'global', // Default to global for cocktails, mocktails, etc.
+	collection_name,
+	priceDisplay = 'global',
 }: DrinkElementProps) {
 	// Fetching the drink list based on the collection name
 	const data = (await getDrinkList(
@@ -73,10 +72,10 @@ export default async function DrinkElement({
 	const globalPrice = drinks[0]?.price || 0
 
 	return (
-		<div className='flex w-3/4 flex-col items-center justify-center gap-20 max-lg:w-full max-lg:px-4'>
-			{/* Title of the page, formatted based on the collection name */}
-			<div className='flex flex-col items-center'>
-				<h2 className='font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-5xl'>
+		<div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
+			{/* Title and global price section */}
+			<div className='mb-16 flex flex-col items-center justify-center'>
+				<h2 className='text-center font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-6xl'>
 					{formatDrinkName(collection_name)}
 				</h2>
 
@@ -97,15 +96,63 @@ export default async function DrinkElement({
 				)}
 			</div>
 
-			<div className='flex flex-col justify-center gap-28'>
-				{/* Render each drink component */}
+			{/* Drinks grid */}
+			<div className='space-y-24'>
+				{/* Render each drink */}
 				{drinks.map((drink, index) => (
-					<DrinkDivComponent
-						key={drink.id || drink.title} // Use the drink id or title as the key
-						drink={drink} // Pass the drink object as a prop
-						isInverted={index % 2 !== 0} // Invert layout for odd-indexed drinks
-						priceDisplay={priceDisplay} // Pass the price display mode
-					/>
+					<div key={drink.id || drink.title} className='w-full'>
+						<div
+							className={`grid grid-cols-1 items-center gap-8 lg:grid-cols-2 ${
+								index % 2 !== 0 ? 'lg:grid-flow-dense' : ''
+							}`}
+						>
+							{/* Image section */}
+							<div
+								className={`flex justify-center ${
+									index % 2 !== 0 ? 'lg:col-start-2' : ''
+								}`}
+							>
+								{drink.image && (
+									<Image
+										src={drink.image}
+										alt={drink.title}
+										width={250}
+										height={250}
+										className='max-w-[250px] rounded-lg object-cover'
+									/>
+								)}
+							</div>
+
+							{/* Content section */}
+							<div className='flex flex-col space-y-4'>
+								<div className='flex flex-wrap items-start justify-between gap-4'>
+									<h3 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+										{drink.title}
+									</h3>
+
+									{/* Individual price display */}
+									{priceDisplay === 'individual' && drink.price > 0 && (
+										<div className='flex items-center justify-center gap-1 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-4 py-1.5 shadow-md'>
+											<span className='font-cardoRegular text-lg font-medium text-customBrown-100'>
+												{drink.price}€
+											</span>
+											<Image
+												src='/assets/images/elements/piece.webp'
+												alt="Pièce d'or"
+												width={20}
+												height={20}
+												className='h-5 w-5'
+											/>
+										</div>
+									)}
+								</div>
+
+								<p className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+									{drink.description}
+								</p>
+							</div>
+						</div>
+					</div>
 				))}
 			</div>
 		</div>

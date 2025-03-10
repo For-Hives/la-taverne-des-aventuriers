@@ -7,41 +7,69 @@ export default async function SoftsAndHotElement() {
 	const Hotdata = await getHotDrinkData()
 
 	return (
-		<div className='flex w-full flex-col gap-36 px-4 max-sm:gap-16'>
-			<h2 className='w-full font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl lg:text-8xl'>
-				Soft Drink & Boissons Chaudes
-			</h2>
-			<div className='flex w-full flex-col items-start justify-center gap-y-16 sm:flex-row sm:gap-36'>
-				{/* hot drinks */}
-				<div className='flex w-full flex-col gap-4 sm:w-1/2'>
-					<h2 className='w-full font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
-						Boissons Chaudes
-					</h2>
-					<div className='flex w-full gap-6 font-cardoRegular text-base text-customBrown-100 sm:text-xl'>
-						<p className='flex w-full flex-col gap-2'>
-							{Hotdata.map(drink => (
-								<span key={drink.id} className='flex w-full'>
-									{drink.title} - {drink.price}€
-								</span>
-							))}
-						</p>
-					</div>
-				</div>
+		<div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
+			<div className='mb-16 flex flex-col items-center justify-center'>
+				<h2 className='text-center font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-5xl'>
+					Soft Drinks & Boissons Chaudes
+				</h2>
+			</div>
 
-				{/* Soft Drinks */}
-				<div className='flex w-full flex-col gap-4 sm:w-1/2'>
-					<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
-						Soft Drinks
-					</h2>
-					<div className='flex w-full gap-6 font-cardoRegular text-base text-customBrown-100 sm:text-xl'>
-						<p className='flex w-full flex-col gap-2'>
-							{Softdata.map(drink => (
-								<span key={drink.id}>
-									{drink.title} {drink.volume ? `(${drink.volume}cl)` : ''} -{' '}
-									{drink.price}€
-								</span>
-							))}
-						</p>
+			<div className='space-y-24'>
+				<div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
+					{/* Hot drinks */}
+					<div className='flex flex-col gap-6'>
+						<h3 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+							Boissons Chaudes
+						</h3>
+						<div className='flex flex-col gap-4'>
+							{Hotdata.length === 0 ? (
+								<p className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+									Aucune boisson chaude disponible.
+								</p>
+							) : (
+								Hotdata.map(drink => (
+									<div
+										key={drink.id}
+										className='flex justify-between border-b border-customBrown-100/10 py-3 last:border-0'
+									>
+										<span className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+											{drink.title}
+										</span>
+										<span className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+											{drink.price}€
+										</span>
+									</div>
+								))
+							)}
+						</div>
+					</div>
+
+					{/* Soft Drinks */}
+					<div className='flex flex-col gap-6'>
+						<h3 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+							Soft Drinks
+						</h3>
+						<div className='flex flex-col gap-4'>
+							{Softdata.length === 0 ? (
+								<p className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+									Aucun soft drink disponible.
+								</p>
+							) : (
+								Softdata.map(drink => (
+									<div
+										key={drink.id}
+										className='flex justify-between border-b border-customBrown-100/10 py-3 last:border-0'
+									>
+										<span className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+											{drink.title} {drink.volume ? `(${drink.volume}cl)` : ''}
+										</span>
+										<span className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+											{drink.price}€
+										</span>
+									</div>
+								))
+							)}
+						</div>
 					</div>
 				</div>
 			</div>

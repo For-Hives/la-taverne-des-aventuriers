@@ -18,16 +18,16 @@ export default async function TravelersPleasureElement({
 	const globalPrice = data[0]?.price || 0
 
 	return (
-		<div className='flex w-4/5 flex-col items-center justify-center gap-20 px-4'>
-			<div className='flex flex-col items-center'>
-				<h2 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 sm:text-6xl md:text-8xl'>
+		<div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
+			<div className='mb-16 flex flex-col items-center justify-center'>
+				<h2 className='text-center font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-6xl'>
 					Les Plaisirs Du Voyageur
 				</h2>
 
 				{priceDisplay === 'global' && globalPrice > 0 && (
 					<div className='mt-4 flex items-center justify-center gap-2 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-6 py-3 shadow-lg'>
 						<span className='font-cardoRegular text-xl font-semibold text-customBrown-100'>
-							{globalPrice}
+							{globalPrice}€
 						</span>
 						<Image
 							src='/assets/images/elements/piece.webp'
@@ -40,62 +40,73 @@ export default async function TravelersPleasureElement({
 				)}
 			</div>
 
-			<div className='flex h-full w-full items-center justify-center'>
-				<div className='grid h-full w-full grid-cols-10 grid-rows-10 gap-1 rounded-lg p-2'>
-					<div className='col-span-3 row-span-10 flex flex-col items-start justify-center gap-6 rounded-lg max-lg:col-span-10 max-lg:row-span-3'>
-						<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
-							{leftText.title}
-						</h2>
-						<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
+			<div className='space-y-24'>
+				<div className='grid grid-cols-1 items-center gap-8 lg:grid-cols-3'>
+					{/* Left Side Content */}
+					<div className='flex flex-col items-start justify-center gap-6'>
+						<div className='flex w-full flex-wrap items-start justify-between gap-4'>
+							<h3 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+								{leftText.title}
+							</h3>
+
+							{priceDisplay === 'individual' && leftText.price > 0 && (
+								<div className='flex items-center justify-center gap-1 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-4 py-1.5 shadow-md'>
+									<span className='font-cardoRegular text-lg font-medium text-customBrown-100'>
+										{leftText.price}€
+									</span>
+									<Image
+										src='/assets/images/elements/piece.webp'
+										alt="Pièce d'or"
+										width={20}
+										height={20}
+										className='h-5 w-5'
+									/>
+								</div>
+							)}
+						</div>
+
+						<p className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
 							{leftText.description}
 						</p>
-						{priceDisplay === 'individual' && leftText.price > 0 && (
-							<div className='bg-customGold-100 flex items-center justify-center gap-1 rounded-full px-4 py-1.5 shadow-md'>
-								<span className='font-cardoRegular text-lg font-medium text-white'>
-									{leftText.price}€
-								</span>
-								<Image
-									src='/assets/images/elements/piece.webp'
-									alt="Pièce d'or"
-									width={20}
-									height={20}
-									className='h-5 w-5'
-								/>
-							</div>
-						)}
 					</div>
 
-					<div className='col-span-4 row-span-10 flex items-center justify-center rounded-lg max-lg:col-span-10 max-lg:row-span-4'>
+					{/* Center Image */}
+					<div className='flex justify-center'>
 						<Image
 							src={imageSrc}
-							alt='Cocktail Image'
-							className='w-full rounded-lg sm:w-2/3'
-							width={400}
-							height={400}
+							alt='Tartines Image'
+							width={300}
+							height={300}
+							className='max-w-[300px] rounded-lg object-cover'
 						/>
 					</div>
 
-					<div className='col-span-3 row-span-10 flex flex-col items-start justify-center gap-6 rounded-lg max-lg:col-span-10 max-lg:row-span-3'>
-						<h2 className='font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 sm:text-4xl'>
-							{rightText.title}
-						</h2>
-						<p className='font-cardoRegular text-base text-customBrown-100 sm:text-lg'>
+					{/* Right Side Content */}
+					<div className='flex flex-col items-start justify-center gap-6'>
+						<div className='flex w-full flex-wrap items-start justify-between gap-4'>
+							<h3 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+								{rightText.title}
+							</h3>
+
+							{priceDisplay === 'individual' && rightText.price > 0 && (
+								<div className='flex items-center justify-center gap-1 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-4 py-1.5 shadow-md'>
+									<span className='font-cardoRegular text-lg font-medium text-customBrown-100'>
+										{rightText.price}€
+									</span>
+									<Image
+										src='/assets/images/elements/piece.webp'
+										alt="Pièce d'or"
+										width={20}
+										height={20}
+										className='h-5 w-5'
+									/>
+								</div>
+							)}
+						</div>
+
+						<p className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
 							{rightText.description}
 						</p>
-						{priceDisplay === 'individual' && rightText.price > 0 && (
-							<div className='bg-customGold-100 flex items-center justify-center gap-1 rounded-full px-4 py-1.5 shadow-md'>
-								<span className='font-cardoRegular text-lg font-medium text-white'>
-									{rightText.price}€
-								</span>
-								<Image
-									src='/assets/images/elements/piece.webp'
-									alt="Pièce d'or"
-									width={20}
-									height={20}
-									className='h-5 w-5'
-								/>
-							</div>
-						)}
 					</div>
 				</div>
 			</div>

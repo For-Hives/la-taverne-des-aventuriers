@@ -155,10 +155,7 @@ export default async function Page() {
 						</div>
 
 						{/* Other Sections */}
-						<div
-							id='beer-wine'
-							className='flex scroll-mt-32 justify-center lg:w-3/4'
-						>
+						<div id='beer-wine' className='flex scroll-mt-32 justify-center'>
 							<BeerWineElement />
 						</div>
 
