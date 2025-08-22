@@ -37,7 +37,7 @@
 		"gsap": "3.12.7",
 		"lucide-react": "0.479.0",
 		"motion": "12.4.10",
-		"next": "15.2.1",
+		"next": "15.2.3",
 		"pocketbase": "0.25.2",
 		"react": "19.1.1",
 		"react-dom": "19.1.1",
