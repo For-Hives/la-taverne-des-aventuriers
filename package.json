@@ -29,7 +29,7 @@
 		"@tailwindcss/typography": "0.5.16",
 		"@vimeo/player": "2.26.0",
 		"aos": "2.3.4",
-		"autoprefixer": "10.4.20",
+		"autoprefixer": "10.4.21",
 		"class-variance-authority": "0.7.1",
 		"clsx": "2.1.1",
 		"dompurify": "3.2.4",
