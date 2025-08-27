@@ -16,7 +16,7 @@
         "@rive-app/react-canvas": "4.23.1",
         "@swc/cli": "0.6.0",
         "@tailwindcss/typography": "0.5.16",
-        "@vimeo/player": "2.26.0",
+        "@vimeo/player": "2.29.3",
         "aos": "2.3.4",
         "autoprefixer": "10.4.21",
         "class-variance-authority": "0.7.1",
@@ -315,7 +315,7 @@
 
     "@typescript-eslint/visitor-keys": ["@typescript-eslint/visitor-keys@8.41.0", "", { "dependencies": { "@typescript-eslint/types": "8.41.0", "eslint-visitor-keys": "^4.2.1" } }, "sha512-+GeGMebMCy0elMNg67LRNoVnUFPIm37iu5CmHESVx56/9Jsfdpsvbv605DQ81Pi/x11IdKUsS5nzgTYbCQU9fg=="],
 
-    "@vimeo/player": ["@vimeo/player@2.26.0", "", { "dependencies": { "native-promise-only": "0.8.1", "weakmap-polyfill": "2.0.4" } }, "sha512-bkf8Lm9+SJrJdWODijKFZUwZNPaRXzsgDjo1CAtV4Xy6K71T8hrCEijrgKydNkzgeriodlwXu0F9cY/FTf8U9A=="],
+    "@vimeo/player": ["@vimeo/player@2.29.3", "", { "dependencies": { "native-promise-only": "0.8.1", "weakmap-polyfill": "2.0.4" } }, "sha512-pS2LsZbcbuQmV9BatpxdjcsFsjuas1jslCzY48o1qsXJ/sQuPiWIuk5B/dSaLbY3AcnS4M1IPphPgA7PRSMdxA=="],
 
     "@xhmikosr/archive-type": ["@xhmikosr/archive-type@7.0.0", "", { "dependencies": { "file-type": "^19.0.0" } }, "sha512-sIm84ZneCOJuiy3PpWR5bxkx3HaNt1pqaN+vncUBZIlPZCq8ASZH+hBVdu5H8znR7qYC6sKwx+ie2Q7qztJTxA=="],
 
