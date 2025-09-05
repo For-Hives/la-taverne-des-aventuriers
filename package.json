@@ -24,7 +24,7 @@
 		"@heroicons/react": "2.2.0",
 		"@next/third-parties": "15.5.2",
 		"@rive-app/canvas": "2.31.5",
-		"@rive-app/react-canvas": "4.23.1",
+		"@rive-app/react-canvas": "4.23.3",
 		"@swc/cli": "0.6.0",
 		"@tailwindcss/typography": "0.5.16",
 		"@vimeo/player": "2.29.3",
