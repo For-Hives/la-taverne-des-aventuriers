@@ -38,7 +38,7 @@
 		"lucide-react": "0.479.0",
 		"motion": "12.23.22",
 		"next": "15.5.4",
-		"pocketbase": "0.25.2",
+		"pocketbase": "0.26.2",
 		"react": "19.2.0",
 		"react-dom": "19.2.0",
 		"server-only": "0.0.1",
