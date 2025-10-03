@@ -15,12 +15,12 @@
 		"test": "echo \"No tests specified\""
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-common-types": "6.7.2",
-		"@fortawesome/fontawesome-svg-core": "6.7.2",
-		"@fortawesome/free-brands-svg-icons": "6.7.2",
-		"@fortawesome/free-regular-svg-icons": "6.7.2",
-		"@fortawesome/free-solid-svg-icons": "6.7.2",
-		"@fortawesome/react-fontawesome": "0.2.2",
+		"@fortawesome/fontawesome-common-types": "7.1.0",
+		"@fortawesome/fontawesome-svg-core": "7.1.0",
+		"@fortawesome/free-brands-svg-icons": "7.1.0",
+		"@fortawesome/free-regular-svg-icons": "7.1.0",
+		"@fortawesome/free-solid-svg-icons": "7.1.0",
+		"@fortawesome/react-fontawesome": "3.1.0",
 		"@heroicons/react": "2.2.0",
 		"@next/third-parties": "15.5.4",
 		"@rive-app/canvas": "2.31.6",
