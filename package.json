@@ -35,7 +35,7 @@
 		"dompurify": "3.2.7",
 		"framer-motion": "12.23.24",
 		"gsap": "3.13.0",
-		"lucide-react": "0.479.0",
+		"lucide-react": "0.545.0",
 		"motion": "12.23.24",
 		"next": "15.5.4",
 		"pocketbase": "0.25.2",
