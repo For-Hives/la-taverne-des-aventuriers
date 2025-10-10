@@ -14,7 +14,6 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"tsc": "npx tsc --noEmit --watch",
-		"prepare": "husky install",
 		"test": "echo \"No tests specified\""
 	},
 	"dependencies": {
@@ -64,7 +63,6 @@
 		"eslint-plugin-prettier": "5.2.3",
 		"eslint-plugin-react": "7.37.4",
 		"globals": "16.0.0",
-		"husky": "9.1.7",
 		"postcss": "8.5.3",
 		"prettier": "3.5.3",
 		"prettier-plugin-tailwindcss": "^0.6.14",
