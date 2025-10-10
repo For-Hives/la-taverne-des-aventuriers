@@ -5,11 +5,10 @@ import { authWithPocketBase } from '@/app/actions/AuthService'
  * Fetches specific drink data from PocketBase based on the provided collection.
  *
  * @param {string} collection - The name of the collection to fetch drink data from.
- * @returns {Promise<any>} Promise resolving to the drink data from the specified collection.
+ * @returns {Promise<unknown>} Promise resolving to the drink data from the specified collection.
  * @throws {Error} If PocketBase connection fails or data fetch fails.
  */
-// eslint-disable-next-line
-export async function getDrinkList(collection: string): Promise<any> {
+export async function getDrinkList(collection: string): Promise<unknown> {
 	// Initialize PocketBase connection
 	const pb = await authWithPocketBase()
 

@@ -105,6 +105,7 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
 								{/* Email Block */}
 								<div className="font-obraletra relative flex flex-col gap-6">
 									<button
+										type="button"
 										onMouseEnter={() => setHovered(true)} // Trigger hover state on mouse enter
 										onMouseLeave={() => setHovered(false)} // Reset hover state on mouse leave
 										className="border-custom-brown-100 bg-custom-white-300 flex flex-col items-start gap-4 rounded-2xl border-3 p-6 shadow-sm"
@@ -121,20 +122,24 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
 										</Link>
 									</button>
 									{/* Conditional rendering of image when not hovered */}
-									<div className="relative">
-										<motion.img
+									<motion.div
+										className="relative max-lg:hidden"
+										initial={{ y: 0 }}
+										animate={{ y: hovered ? 0 : -70 }} // Animate the image based on hover state
+										transition={{
+											damping: 20,
+											stiffness: 200,
+											type: 'spring',
+										}}
+									>
+										<Image
 											src="/assets/images/elements/ContactElements/petite_bestiole.webp"
 											alt="Petite Bestiole"
-											initial={{ y: 0 }}
-											animate={{ y: hovered ? 0 : -70 }} // Animate the image based on hover state
-											transition={{
-												damping: 20,
-												stiffness: 200,
-												type: 'spring',
-											}}
-											className="absolute right-0 -bottom-8 -z-20 h-20 w-20 object-contain max-lg:hidden"
+											width={80}
+											height={80}
+											className="absolute right-0 -bottom-8 -z-20 h-20 w-20 object-contain"
 										/>
-									</div>
+									</motion.div>
 								</div>
 							</motion.div>
 						</div>

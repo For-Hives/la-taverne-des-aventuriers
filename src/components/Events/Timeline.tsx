@@ -40,7 +40,7 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 			<div className="relative mx-auto max-w-7xl pb-20">
 				<div
 					style={{
-						height: height + 'px',
+						height: `${height}px`,
 					}}
 					className="via-custom-brown-100/20 absolute top-0 left-[18px] w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-0% to-transparent to-99% mask-[linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] lg:left-[-12px]"
 				>
@@ -54,8 +54,8 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 				</div>
 
 				<div ref={ref}>
-					{events.map((event, index) => (
-						<div key={index} className="flex -translate-x-2 transform justify-start gap-10 pt-40 lg:-translate-x-10">
+					{events.map(event => (
+						<div key={event.id} className="flex -translate-x-2 transform justify-start gap-10 pt-40 lg:-translate-x-10">
 							<div className="sticky top-40 z-40 flex flex-row items-center self-start">
 								<div className="bg-custom-white-100 absolute left-3 flex h-8 w-8 items-center justify-center rounded-full shadow-lg">
 									<div className="bg-custom-brown-100 h-3 w-3 rounded-full" />
@@ -72,7 +72,7 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 								<motion.div
 									initial={{ opacity: 0, y: 20 }}
 									whileInView={{ opacity: 1, y: 0 }}
-									transition={{ delay: index * 0.1, duration: 0.5 }}
+									transition={{ duration: 0.5 }}
 									viewport={{ once: true }}
 									className="border-custom-brown-100/20 hover:border-custom-brown-100/40 rounded-lg border bg-white p-6 shadow-lg transition-all"
 								>

@@ -55,6 +55,7 @@ export default function BackToTop() {
 	return (
 		isVisible && (
 			<button
+				type="button"
 				onClick={scrollToTop} // Handle click to scroll to top
 				className={`fixed right-4 hidden h-14 w-14 lg:block ${getPosition()} text-custom-brown-100 hover:bg-custom-brown-100 hover:text-custom-white-400 z-50 items-center justify-center rounded-full bg-white p-2 opacity-100 shadow-xl transition-all duration-300 ease-in-out hover:opacity-100 sm:right-6`}
 				aria-label="Retour en haut" // Accessibility label for the button

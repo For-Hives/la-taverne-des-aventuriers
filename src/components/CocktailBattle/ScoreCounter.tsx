@@ -86,12 +86,12 @@ export function ScoreCounter({
 
 			{/* Main score counter display */}
 			<div className="relative mt-4 w-full md:mx-auto md:max-w-[600px] lg:max-w-[1200px]">
-				{rows.map((row, rowIndex) => (
-					<div key={`row-${rowIndex}`} className="mb-4 flex items-center justify-between">
+				{rows.map(row => (
+					<div key={`row-${row.rowStart}-${row.rowEnd}`} className="mb-4 flex items-center justify-between">
 						{/* Left side: count groups */}
 						<div className="flex gap-0">
 							{row.rowGroups.map((groupCount, groupIndex) => (
-								<CountGroup key={`group-${rowIndex}-${groupIndex}`} groupCount={groupCount} />
+								<CountGroup key={`group-${row.rowStart}-${groupIndex}-${groupCount}`} groupCount={groupCount} />
 							))}
 						</div>
 

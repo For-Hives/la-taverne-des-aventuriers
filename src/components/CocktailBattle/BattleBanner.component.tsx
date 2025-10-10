@@ -14,6 +14,7 @@ export default function BattleBanner() {
 	return (
 		<div className="mb-36 flex flex-col items-center gap-8">
 			<button
+				type="button"
 				className="relative flex h-[90vw] max-h-96 w-[90vw] max-w-96 cursor-pointer items-center justify-center xl:h-auto xl:max-h-max xl:w-auto xl:max-w-max"
 				onClick={handleImageClick}
 				aria-label="Accéder à la battle des cocktails"

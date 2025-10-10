@@ -8,6 +8,8 @@ export function CountGroup({ groupCount }: Readonly<{ groupCount: number }>) {
 			fill="none"
 			data-count={groupCount}
 			className="animation-count"
+			aria-label={`Score counter showing ${groupCount}`}
+			role="img"
 		>
 			<path fill="url(#pattern0_1054_159)" d="M27 11h17v74H27z"></path>
 			<path

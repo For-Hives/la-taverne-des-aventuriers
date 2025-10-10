@@ -62,7 +62,7 @@ const GameCard = ({
 			result += char
 
 			if (charCount >= maxLength && !inTag) {
-				return result + '...'
+				return `${result}...`
 			}
 		}
 

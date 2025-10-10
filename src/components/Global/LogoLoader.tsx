@@ -98,7 +98,14 @@ const LoadingLogo = () => {
 				<div className="relative aspect-square w-[250px] sm:w-[350px] lg:w-[400px]">
 					{' '}
 					{/* Responsive sizing */}
-					<svg className="h-full w-full" id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610.62 470.32">
+					<svg
+						className="h-full w-full"
+						id="Calque_1"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 610.62 470.32"
+						aria-label="La Taverne des Aventuriers logo"
+						role="img"
+					>
 						<defs>
 							<style>
 								{

@@ -49,9 +49,9 @@ export function CocktailCard({ description, image, inverted = false, stars = 0, 
 			<div className="absolute inset-x-0 bottom-0 p-6 text-white">
 				<h2 className={`mb-4 ${inverted ? 'text-left' : 'text-right'} font-cardinal text-3xl`}>{title}</h2>
 				<div className={`mb-4 flex flex-wrap ${inverted ? 'justify-start' : 'justify-end'} gap-2`}>
-					{ingredients.map((ingredient, index) => (
+					{ingredients.map(ingredient => (
 						<Badge
-							key={index}
+							key={`${title}-${ingredient}`}
 							className="border-white/30 bg-black/30 text-base text-white backdrop-blur-xs"
 							variant="outline"
 						>
@@ -76,6 +76,8 @@ export function CocktailCard({ description, image, inverted = false, stars = 0, 
 						viewBox="0 0 24 24"
 						fill="currentColor"
 						className="h-5 w-5 text-yellow-300 drop-shadow-xs"
+						aria-label="Star rating"
+						role="img"
 					>
 						<path
 							fillRule="evenodd"

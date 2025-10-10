@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: PageProps }): Promi
 		if (cleanText.length <= maxLength) return cleanText
 		// Find the last space before the limit to avoid cutting words
 		const lastSpace = cleanText.substring(0, maxLength).lastIndexOf(' ')
-		return cleanText.substring(0, lastSpace > 0 ? lastSpace : maxLength) + '...'
+		return `${cleanText.substring(0, lastSpace > 0 ? lastSpace : maxLength)}...`
 	}
 
 	// Truncate title if needed (keeping under 60 characters ideally)

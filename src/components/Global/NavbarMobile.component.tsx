@@ -33,6 +33,7 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 
 				{/* Menu Toggle Button */}
 				<button
+					type="button"
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
 					className="focus:ring-custom-brown-100 focus:ring-2 focus:outline-hidden"
 					aria-expanded={isMenuOpen}
@@ -52,6 +53,7 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 				<div className="flex h-full flex-col items-center justify-center">
 					{/* Close Button */}
 					<button
+						type="button"
 						className="focus:ring-custom-brown-100 absolute top-4 right-4 focus:ring-2 focus:outline-hidden"
 						onClick={() => setIsMenuOpen(false)}
 						aria-label="Close navigation menu"
@@ -79,6 +81,7 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 			{/* Background Overlay */}
 			{isMenuOpen && (
 				<button
+					type="button"
 					className="fixed inset-0 z-30 bg-black opacity-50"
 					onClick={() => setIsMenuOpen(false)}
 					aria-label="Close menu overlay"

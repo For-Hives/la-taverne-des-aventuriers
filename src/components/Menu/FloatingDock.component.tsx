@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import React, { type ReactNode, useEffect, useState } from 'react'
+import { type ReactNode, useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -111,9 +111,9 @@ export function FloatingDock({ className = '', items, mobileClassName = '' }: Fl
 				mobileClassName
 			)}
 		>
-			{items.map((item, index) => (
+			{items.map(item => (
 				<FloatingDockItem
-					key={index}
+					key={item.href}
 					title={item.title}
 					icon={item.icon}
 					href={item.href}

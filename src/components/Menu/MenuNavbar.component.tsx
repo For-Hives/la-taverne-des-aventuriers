@@ -100,6 +100,7 @@ export default function MenuNavbar() {
 					{/* Render each tab as a button */}
 					{tabs.map((tab, tabIdx) => (
 						<button
+							type="button"
 							key={tab.name}
 							aria-current={currentTab === tab.anchor ? 'page' : undefined} // Highlight the current tab for accessibility
 							className={classNames(

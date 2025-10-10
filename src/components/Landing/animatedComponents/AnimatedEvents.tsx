@@ -34,7 +34,7 @@ export const EventCard = ({
 				'group/card relative flex cursor-pointer flex-col justify-end overflow-hidden rounded-xl shadow-lg',
 				className
 			)}
-			onClick={() => ref.current !== null && ref.current.click()}
+			onClick={() => ref.current?.click()}
 		>
 			{/* Background Image with Overlay */}
 			<div

@@ -56,7 +56,7 @@ export default function BeerWineElement() {
 				} else {
 					// Add new beer object to the array
 					acc.push({
-						id: isNaN(Number(beer.id)) ? 0 : Number(beer.id), // Ensure id is a number
+						id: Number.isNaN(Number(beer.id)) ? 0 : Number(beer.id), // Ensure id is a number
 						prices: { [beer.volume]: beer.price }, // Add the price for the given volume
 						title: beer.title,
 					})

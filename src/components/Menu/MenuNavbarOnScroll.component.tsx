@@ -48,6 +48,7 @@ export default function MenuNavbarOnScroll() {
 			<nav className="group bg-custom-white-400 text-custom-brown-100 hover:bg-custom-brown-100 fixed top-2 left-4 z-50 rounded-full p-2 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:opacity-100 max-lg:top-20 sm:left-6">
 				{/* Hamburger icon */}
 				<button
+					type="button"
 					onClick={toggleMenu}
 					aria-label="Toggle Menu"
 					className="group-hover:bg-customBrown-300 text-custom-brown-100 group-hover:text-custom-white-300 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 ease-in-out focus:outline-hidden"
