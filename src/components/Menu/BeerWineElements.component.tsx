@@ -96,7 +96,7 @@ export default function BeerWineElement() {
 	return (
 		<div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
 			<div className='mb-16 flex flex-col items-center justify-center'>
-				<h2 className='text-center font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-5xl'>
+				<h2 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-center text-8xl max-sm:text-5xl'>
 					Bières et Vins
 				</h2>
 			</div>
@@ -104,45 +104,45 @@ export default function BeerWineElement() {
 			<div className='space-y-24'>
 				{/* Beer Section */}
 				<div className='w-full'>
-					<h3 className='mb-8 font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+					<h3 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 mb-8 text-4xl'>
 						Bières
 					</h3>
 
 					<div className='space-y-12'>
 						{/* Draft Beers */}
 						<div className='flex flex-col gap-4'>
-							<h4 className='font-cardinal text-2xl text-customBrown-100'>
+							<h4 className='font-cardinal text-custom-brown-100 text-2xl'>
 								Pression:
 							</h4>
-							<div className='w-full text-customBrown-100'>
-								<div className='flex border-b border-customBrown-100/20 pb-2'>
-									<div className='w-1/2 px-4 py-2 text-left font-cardoRegular font-semibold'>
+							<div className='text-custom-brown-100 w-full'>
+								<div className='border-custom-brown-100/20 flex border-b pb-2'>
+									<div className='font-cardo-regular w-1/2 px-4 py-2 text-left font-semibold'>
 										Bière
 									</div>
-									<div className='w-1/4 px-4 py-2 text-right font-cardoRegular font-semibold'>
+									<div className='font-cardo-regular w-1/4 px-4 py-2 text-right font-semibold'>
 										25cl
 									</div>
-									<div className='w-1/4 px-4 py-2 text-right font-cardoRegular font-semibold'>
+									<div className='font-cardo-regular w-1/4 px-4 py-2 text-right font-semibold'>
 										50cl
 									</div>
 								</div>
 								{draftBeers.length === 0 ? (
-									<div className='px-4 py-4 text-center font-cardoRegular'>
+									<div className='font-cardo-regular px-4 py-4 text-center'>
 										Aucune Bière pression disponible
 									</div>
 								) : (
 									draftBeers.map((beer, index) => (
 										<div
 											key={`${beer.id}-${index}`}
-											className='flex border-b border-customBrown-100/10 last:border-0'
+											className='border-custom-brown-100/10 flex border-b last:border-0'
 										>
-											<div className='w-1/2 px-4 py-3 text-left font-cardoRegular'>
+											<div className='font-cardo-regular w-1/2 px-4 py-3 text-left'>
 												{beer.title}
 											</div>
-											<div className='w-1/4 px-4 py-3 text-right font-cardoRegular'>
+											<div className='font-cardo-regular w-1/4 px-4 py-3 text-right'>
 												{beer.prices['25'] || 'N/A'} €
 											</div>
-											<div className='w-1/4 px-4 py-3 text-right font-cardoRegular'>
+											<div className='font-cardo-regular w-1/4 px-4 py-3 text-right'>
 												{beer.prices['50'] || 'N/A'} €
 											</div>
 										</div>
@@ -153,24 +153,24 @@ export default function BeerWineElement() {
 
 						{/* Bottle Beers */}
 						<div className='flex flex-col gap-4'>
-							<h4 className='font-cardinal text-2xl text-customBrown-100'>
+							<h4 className='font-cardinal text-custom-brown-100 text-2xl'>
 								Bouteilles:
 							</h4>
 							<div className='flex flex-col gap-2'>
 								{bottleBeers.length === 0 ? (
-									<p className='py-4 text-center font-cardoRegular'>
+									<p className='font-cardo-regular py-4 text-center'>
 										Pas de Bière bouteille disponible.
 									</p>
 								) : (
 									bottleBeers.map((beer, index) => (
 										<div
 											key={`${beer.id}-${index}`}
-											className='flex items-center justify-between border-b border-customBrown-100/10 py-3 last:border-0'
+											className='border-custom-brown-100/10 flex items-center justify-between border-b py-3 last:border-0'
 										>
-											<h5 className='flex-1 px-4 font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+											<h5 className='font-cardo-regular text-custom-brown-100 flex-1 px-4 text-base lg:text-lg'>
 												{beer.title} ({beer.volume}cl)
 											</h5>
-											<p className='w-1/4 px-4 text-right font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+											<p className='font-cardo-regular text-custom-brown-100 w-1/4 px-4 text-right text-base lg:text-lg'>
 												{beer.price} €
 											</p>
 										</div>
@@ -183,19 +183,19 @@ export default function BeerWineElement() {
 
 				{/* Wine Section */}
 				<div className='w-full'>
-					<h3 className='mb-8 font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+					<h3 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 mb-8 text-4xl'>
 						Vins
 					</h3>
 
 					<div className='space-y-12'>
 						{/* Red Wines */}
 						<div className='flex flex-col gap-4'>
-							<h4 className='font-cardinal text-2xl text-customBrown-100'>
+							<h4 className='font-cardinal text-custom-brown-100 text-2xl'>
 								Vins Rouges:
 							</h4>
-							<table className='w-full table-fixed border-collapse text-left font-cardoRegular text-customBrown-100'>
+							<table className='font-cardo-regular text-custom-brown-100 w-full table-fixed border-collapse text-left'>
 								<thead>
-									<tr className='border-b border-customBrown-100/20'>
+									<tr className='border-custom-brown-100/20 border-b'>
 										<th className='w-4/6 px-4 py-2 font-semibold'>Vin</th>
 										<th className='w-1/6 px-4 py-2 text-right font-semibold'>
 											Verre
@@ -216,7 +216,7 @@ export default function BeerWineElement() {
 										redWines.map((wine, index) => (
 											<tr
 												key={`${wine.id}-${index}`}
-												className='border-b border-customBrown-100/10 last:border-0'
+												className='border-custom-brown-100/10 border-b last:border-0'
 											>
 												<td className='px-4 py-3 text-base lg:text-lg'>
 													{wine.title}
@@ -236,12 +236,12 @@ export default function BeerWineElement() {
 
 						{/* White Wines */}
 						<div className='flex flex-col gap-4'>
-							<h4 className='font-cardinal text-2xl text-customBrown-100'>
+							<h4 className='font-cardinal text-custom-brown-100 text-2xl'>
 								Vins Blancs:
 							</h4>
-							<table className='w-full table-fixed border-collapse text-left font-cardoRegular text-customBrown-100'>
+							<table className='font-cardo-regular text-custom-brown-100 w-full table-fixed border-collapse text-left'>
 								<thead>
-									<tr className='border-b border-customBrown-100/20'>
+									<tr className='border-custom-brown-100/20 border-b'>
 										<th className='w-4/6 px-4 py-2 font-semibold'>Vin</th>
 										<th className='w-1/6 px-4 py-2 text-right font-semibold'>
 											Verre
@@ -262,7 +262,7 @@ export default function BeerWineElement() {
 										whiteWines.map((wine, index) => (
 											<tr
 												key={`${wine.id}-${index}`}
-												className='border-b border-customBrown-100/10 last:border-0'
+												className='border-custom-brown-100/10 border-b last:border-0'
 											>
 												<td className='px-4 py-3 text-base lg:text-lg'>
 													{wine.title}
@@ -282,12 +282,12 @@ export default function BeerWineElement() {
 
 						{/* Rose Wines */}
 						<div className='flex flex-col gap-4'>
-							<h4 className='font-cardinal text-2xl text-customBrown-100'>
+							<h4 className='font-cardinal text-custom-brown-100 text-2xl'>
 								Vins Rosés:
 							</h4>
-							<table className='w-full table-fixed border-collapse text-left font-cardoRegular text-customBrown-100'>
+							<table className='font-cardo-regular text-custom-brown-100 w-full table-fixed border-collapse text-left'>
 								<thead>
-									<tr className='border-b border-customBrown-100/20'>
+									<tr className='border-custom-brown-100/20 border-b'>
 										<th className='w-4/6 px-4 py-2 font-semibold'>Vin</th>
 										<th className='w-1/6 px-4 py-2 text-right font-semibold'>
 											Verre
@@ -308,7 +308,7 @@ export default function BeerWineElement() {
 										roseWines.map((wine, index) => (
 											<tr
 												key={`${wine.id}-${index}`}
-												className='border-b border-customBrown-100/10 last:border-0'
+												className='border-custom-brown-100/10 border-b last:border-0'
 											>
 												<td className='px-4 py-3 text-base lg:text-lg'>
 													{wine.title}

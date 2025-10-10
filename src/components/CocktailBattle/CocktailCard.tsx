@@ -39,7 +39,7 @@ export function CocktailCard({
 	const ingredients = getIngredientsFromDescription(description)
 
 	return (
-		<Card className='group relative h-[500px] w-[500px] overflow-hidden border-2 border-customBrown-100/20 p-0 transition-all hover:border-customBrown-100/40 max-lg:h-[500px] max-lg:w-full'>
+		<Card className='group border-custom-brown-100/20 hover:border-custom-brown-100/40 relative h-[500px] w-[500px] overflow-hidden border-2 p-0 transition-all max-lg:h-[500px] max-lg:w-full'>
 			<div className='absolute inset-0 flex w-full items-center justify-center'>
 				<Image
 					src={image}
@@ -49,7 +49,7 @@ export function CocktailCard({
 				/>
 			</div>
 
-			<div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent' />
+			<div className='absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent' />
 
 			<div className='absolute inset-x-0 bottom-0 p-6 text-white'>
 				<h2
@@ -63,7 +63,7 @@ export function CocktailCard({
 					{ingredients.map((ingredient, index) => (
 						<Badge
 							key={index}
-							className='border-white/30 bg-black/30 text-base text-white backdrop-blur-sm'
+							className='border-white/30 bg-black/30 text-base text-white backdrop-blur-xs'
 							variant='outline'
 						>
 							{ingredient}
@@ -86,7 +86,7 @@ export function CocktailCard({
 						xmlns='http://www.w3.org/2000/svg'
 						viewBox='0 0 24 24'
 						fill='currentColor'
-						className='h-5 w-5 text-yellow-300 drop-shadow-sm'
+						className='h-5 w-5 text-yellow-300 drop-shadow-xs'
 					>
 						<path
 							fillRule='evenodd'

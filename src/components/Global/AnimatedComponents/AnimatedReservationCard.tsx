@@ -16,20 +16,20 @@ export const AnimatedReservationCard = ({
 	return (
 		<div className='w-full max-lg:px-4'>
 			<motion.div
-				className='mx-auto flex w-3/4 flex-col items-center rounded border-3 border-customBrown-100 bg-customWhite-300 p-4 max-lg:w-full lg:flex-row lg:gap-20 lg:gap-8 lg:p-10'
+				className='border-custom-brown-100 bg-custom-white-300 mx-auto flex w-3/4 flex-col items-center rounded border-3 p-4 max-lg:w-full lg:flex-row lg:gap-8 lg:gap-20 lg:p-10'
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.8 }}
 			>
 				{/* Text Section */}
 				<motion.div
-					className='order-2 flex w-full flex-col gap-6 p-4 font-cardoRegular text-sm text-customBrown-100 lg:order-none lg:w-2/3 lg:gap-9 lg:p-8 lg:text-base'
+					className='font-cardo-regular text-custom-brown-100 order-2 flex w-full flex-col gap-6 p-4 text-sm lg:order-0 lg:w-2/3 lg:gap-9 lg:p-8 lg:text-base'
 					initial={{ opacity: 0, x: -100 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.8 }}
 				>
 					{/* Title with textToSpanColored */}
-					<h2 className='text-left font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
+					<h2 className='font-cardinal first-letter:text-custom-red-100 text-left text-2xl sm:text-3xl'>
 						<span
 							dangerouslySetInnerHTML={{
 								__html: textToSpanColored(data.title),
@@ -39,7 +39,7 @@ export const AnimatedReservationCard = ({
 
 					{/* Description rendered as HTML content */}
 					<div
-						className='prose prose-customBrown font-cardoRegular'
+						className='prose prose-customBrown font-cardo-regular'
 						dangerouslySetInnerHTML={{
 							__html: data.description,
 						}}
@@ -57,12 +57,12 @@ export const AnimatedReservationCard = ({
 								href={data.button_url}
 								target='_blank'
 								aria-label={data.button_aria}
-								className='flex h-12 items-center gap-2 rounded border-3 border-customBrown-100 bg-customBrown-100 px-4 font-obraletra text-xs text-customWhite-100 hover:underline sm:text-sm'
+								className='border-custom-brown-100 bg-custom-brown-100 font-obraletra text-custom-white-100 flex h-12 items-center gap-2 rounded border-3 px-4 text-xs hover:underline sm:text-sm'
 							>
 								{data.button_label}
 								<FontAwesomeIcon
 									icon={faChevronRight}
-									className='h-4 w-4 text-customWhite-100'
+									className='text-custom-white-100 h-4 w-4'
 								/>
 							</Link>
 						</motion.div>
@@ -77,7 +77,7 @@ export const AnimatedReservationCard = ({
 								href={data.games_url}
 								target='_blank'
 								aria-label={data.button_myludo_aria}
-								className='flex h-12 items-center rounded border-3 border-solid border-customBrown-100 px-4 font-obraletra text-xs text-customBrown-100 hover:underline sm:text-sm'
+								className='border-custom-brown-100 font-obraletra text-custom-brown-100 flex h-12 items-center rounded border-3 border-solid px-4 text-xs hover:underline sm:text-sm'
 							>
 								{data.button_myludo_label}
 							</Link>

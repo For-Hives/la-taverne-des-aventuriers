@@ -14,7 +14,7 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 			<div className='flex w-full flex-col items-start justify-center gap-4'>
 				{/* Title of the component */}
 				<motion.h2
-					className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-xl'
+					className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-4xl max-sm:text-xl'
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
@@ -57,11 +57,11 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 									sizes='100vw' // Responsive sizing for optimization
 								/>
 								{/* Gradient overlay over the image */}
-								<div className='absolute inset-0 rounded-lg bg-gradient-to-b from-transparent to-black'></div>
+								<div className='absolute inset-0 rounded-lg bg-linear-to-b from-transparent to-black'></div>
 							</div>
 						</div>
 						{/* Text displayed over the image */}
-						<span className='absolute bottom-5 left-10 text-center font-obraletra text-lg text-customWhite-100 underline'>
+						<span className='font-obraletra text-custom-white-100 absolute bottom-5 left-10 text-center text-lg underline'>
 							<span
 								dangerouslySetInnerHTML={{
 									__html: textToSpanColored(data.myludo_component_title),

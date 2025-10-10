@@ -75,14 +75,14 @@ export default async function DrinkElement({
 		<div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
 			{/* Title and global price section */}
 			<div className='mb-16 flex flex-col items-center justify-center'>
-				<h2 className='text-center font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-6xl'>
+				<h2 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-center text-8xl max-sm:text-6xl'>
 					{formatDrinkName(collection_name)}
 				</h2>
 
 				{/* Global price display (for cocktails, mocktails, etc.) */}
 				{priceDisplay === 'global' && globalPrice > 0 && (
-					<div className='mt-4 flex items-center justify-center gap-2 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-6 py-3 shadow-lg'>
-						<span className='font-cardoRegular text-xl font-semibold text-customBrown-100'>
+					<div className='border-custom-brown-100 mt-4 flex items-center justify-center gap-2 rounded-full border-2 bg-yellow-100/20 px-6 py-3 shadow-lg'>
+						<span className='font-cardo-regular text-custom-brown-100 text-xl font-semibold'>
 							{globalPrice}€
 						</span>
 						<Image
@@ -126,14 +126,14 @@ export default async function DrinkElement({
 							{/* Content section */}
 							<div className='flex flex-col space-y-4'>
 								<div className='flex flex-wrap items-start justify-between gap-4'>
-									<h3 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+									<h3 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-4xl'>
 										{drink.title}
 									</h3>
 
 									{/* Individual price display */}
 									{priceDisplay === 'individual' && drink.price > 0 && (
-										<div className='flex items-center justify-center gap-1 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-4 py-1.5 shadow-md'>
-											<span className='font-cardoRegular text-lg font-medium text-customBrown-100'>
+										<div className='border-custom-brown-100 flex items-center justify-center gap-1 rounded-full border-2 bg-yellow-100/20 px-4 py-1.5 shadow-md'>
+											<span className='font-cardo-regular text-custom-brown-100 text-lg font-medium'>
 												{drink.price}€
 											</span>
 											<Image
@@ -147,7 +147,7 @@ export default async function DrinkElement({
 									)}
 								</div>
 
-								<p className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+								<p className='font-cardo-regular text-custom-brown-100 text-base lg:text-lg'>
 									{drink.description}
 								</p>
 							</div>

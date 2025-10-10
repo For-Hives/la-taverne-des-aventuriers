@@ -105,10 +105,10 @@ export default async function Contact() {
 				<MobileNavbar navItems={navItems} />
 
 				{/* Background */}
-				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
+				<div className='mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75'></div>
 
 				{/* Main content */}
-				<div className='container relative mx-auto mt-48 max-w-7xl px-4 sm:px-6 lg:px-8 2xl:mt-72'>
+				<div className='relative container mx-auto mt-48 max-w-7xl px-4 sm:px-6 lg:px-8 2xl:mt-72'>
 					<div className='flex flex-col items-center justify-center gap-4 lg:gap-32'>
 						{/* How to Contact section */}
 						<div className='w-full'>

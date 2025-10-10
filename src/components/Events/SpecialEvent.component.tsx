@@ -31,13 +31,13 @@ export default function SpecialEventComponent({
 						/>
 					)}
 				</div>
-				<div className='flex w-1/2 flex-col items-start justify-center gap-9 font-cardoRegular text-customBrown-100 max-md:w-full'>
+				<div className='font-cardo-regular text-custom-brown-100 flex w-1/2 flex-col items-start justify-center gap-9 max-md:w-full'>
 					<div className='flex w-full flex-col items-start justify-center'>
-						<h1 className='mb-4 text-4xl first-letter:text-customRed-100'>
+						<h1 className='first-letter:text-custom-red-100 mb-4 text-4xl'>
 							{data.event_title}
 						</h1>{' '}
 						{/* Display the event title */}
-						<h2 className='text-customGray-100'>
+						<h2 className='text-custom-gray-100'>
 							{new Date(data.event_date).toLocaleDateString('fr-FR')}
 						</h2>{' '}
 						{/* Display the event date */}
@@ -54,7 +54,7 @@ export default function SpecialEventComponent({
 					</p>
 
 					<Link
-						className='mt-4 inline-block rounded border-3 border-customBrown-100 bg-customBrown-100 px-4 py-2 font-cardoRegular text-white hover:bg-customWhite-100 hover:text-customBrown-100' // Button-like Link
+						className='border-custom-brown-100 bg-custom-brown-100 font-cardo-regular hover:bg-custom-white-100 hover:text-custom-brown-100 mt-4 inline-block rounded border-3 px-4 py-2 text-white' // Button-like Link
 						href={data.button_url} // Link to the event's detailed page
 					>
 						{data.button_label} {/* Button text */}
@@ -63,7 +63,7 @@ export default function SpecialEventComponent({
 			</div>
 
 			<Link
-				className='mt-4 inline-block rounded border-3 border-customBrown-100 bg-customBrown-100 px-4 py-2 font-cardoRegular text-white hover:bg-customWhite-100 hover:text-customBrown-100' // Button-like Link
+				className='border-custom-brown-100 bg-custom-brown-100 font-cardo-regular hover:bg-custom-white-100 hover:text-custom-brown-100 mt-4 inline-block rounded border-3 px-4 py-2 text-white' // Button-like Link
 				href='/evenements' // Link to the event's detailed page
 			>
 				Revenir aux évènements {/* Button text */}

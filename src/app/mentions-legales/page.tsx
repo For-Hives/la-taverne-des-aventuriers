@@ -65,16 +65,16 @@ export default async function LegalPage() {
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 				<div className='container mx-auto px-4 py-8'>
-					<h1 className='mb-8 font-obraletraBold text-4xl text-customBrown-100'>
+					<h1 className='font-obraletra-bold text-custom-brown-100 mb-8 text-4xl'>
 						Mentions Légales
 					</h1>
 
 					<section className='mb-8'>
-						<h2 className='mb-4 font-obraletraBold text-2xl text-customBrown-100'>
+						<h2 className='font-obraletra-bold text-custom-brown-100 mb-4 text-2xl'>
 							Qui sommes-nous ?
 						</h2>
 						<div className='rounded-lg bg-white p-6 shadow-md'>
-							<h3 className='mb-4 font-obraletraBold text-xl text-customBrown-100'>
+							<h3 className='font-obraletra-bold text-custom-brown-100 mb-4 text-xl'>
 								Informations légales
 							</h3>
 							<p className='mb-4'>
@@ -97,7 +97,7 @@ export default async function LegalPage() {
 					</section>
 
 					<section className='mb-8'>
-						<h2 className='mb-4 font-obraletraBold text-2xl text-customBrown-100'>
+						<h2 className='font-obraletra-bold text-custom-brown-100 mb-4 text-2xl'>
 							{`Droits d'auteur`}
 						</h2>
 						<div className='rounded-lg bg-white p-6 shadow-md'>
@@ -113,11 +113,11 @@ export default async function LegalPage() {
 					</section>
 
 					<section className='mb-8'>
-						<h2 className='mb-4 font-obraletraBold text-2xl text-customBrown-100'>
+						<h2 className='font-obraletra-bold text-custom-brown-100 mb-4 text-2xl'>
 							Développement du site
 						</h2>
 						<div className='rounded-lg bg-white p-6 shadow-md'>
-							<h3 className='mb-4 font-obraletraBold text-xl text-customBrown-100'>
+							<h3 className='font-obraletra-bold text-custom-brown-100 mb-4 text-xl'>
 								Création et Design
 							</h3>
 							<p className='mb-4'>
@@ -134,7 +134,7 @@ export default async function LegalPage() {
 								Site web :{' '}
 								<a
 									href='https://andy-cinquin.fr'
-									className='text-customBrown-100 hover:underline'
+									className='text-custom-brown-100 hover:underline'
 								>
 									https://andy-cinquin.fr
 								</a>
@@ -147,7 +147,7 @@ export default async function LegalPage() {
 					</section>
 
 					<section className='mb-8'>
-						<h2 className='mb-4 font-obraletraBold text-2xl text-customBrown-100'>
+						<h2 className='font-obraletra-bold text-custom-brown-100 mb-4 text-2xl'>
 							Hébergement
 						</h2>
 						<div className='rounded-lg bg-white p-6 shadow-md'>

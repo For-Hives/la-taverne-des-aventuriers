@@ -24,7 +24,7 @@ export const AnimatedReservationComponent = ({
 						<div className='max-w-none'>
 							{/* Title */}
 							<motion.h2
-								className='w-full text-left font-cardinal text-3xl text-customBrown-100 first-letter:text-customRed-100 lg:text-4xl'
+								className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 w-full text-left text-3xl lg:text-4xl'
 								initial={{ opacity: 0, x: -50 }} // Initial left slide with opacity 0
 								animate={{ opacity: 1, x: 0 }} // Fade in and move to normal position when in view
 								viewport={{ once: true }} // Trigger only once
@@ -35,7 +35,7 @@ export const AnimatedReservationComponent = ({
 
 							{/* Description */}
 							<div
-								className='prose prose-customBrown mt-6 font-cardoRegular text-lg' // Styling for the description
+								className='prose prose-customBrown font-cardo-regular mt-6 text-lg' // Styling for the description
 								dangerouslySetInnerHTML={{ __html: data.description }} // Injecting HTML content for description
 							/>
 						</div>

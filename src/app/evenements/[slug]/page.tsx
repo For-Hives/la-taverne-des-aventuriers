@@ -104,7 +104,7 @@ export default async function Page({
 	if (!eventData) {
 		return (
 			<div className='flex min-h-screen flex-col items-center justify-center'>
-				<h1 className='text-2xl text-customBrown-100'>Événement non trouvé</h1>
+				<h1 className='text-custom-brown-100 text-2xl'>Événement non trouvé</h1>
 			</div>
 		)
 	}
@@ -166,7 +166,7 @@ export default async function Page({
 					{/* Back to events link */}
 					<Link
 						href='/evenements'
-						className='group my-4 flex items-center font-cardoRegular text-customBrown-100 hover:text-customRed-100'
+						className='group font-cardo-regular text-custom-brown-100 hover:text-custom-red-100 my-4 flex items-center'
 					>
 						<FontAwesomeIcon
 							icon={faArrowLeft}
@@ -181,33 +181,33 @@ export default async function Page({
 							<div className='lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:grid lg:w-full lg:grid-cols-2 lg:gap-x-8 lg:pr-8'>
 								<div className='lg:pr-4'>
 									<div className='lg:max-w-lg'>
-										<p className='text-sm font-bold uppercase tracking-wide text-customRed-100'>
+										<p className='text-custom-red-100 text-sm font-bold tracking-wide uppercase'>
 											Événement
 										</p>
 										<h1
-											className='mt-6 font-cardinal text-4xl text-customBrown-100 sm:text-5xl'
+											className='font-cardinal text-custom-brown-100 mt-6 text-4xl sm:text-5xl'
 											dangerouslySetInnerHTML={{
 												__html: textToSpanColored(eventData.event_title),
 											}}
 										/>
 
 										{/* Event details */}
-										<div className='mt-6 flex flex-col gap-3 text-customBrown-100'>
+										<div className='text-custom-brown-100 mt-6 flex flex-col gap-3'>
 											<div className='flex items-center'>
 												<FontAwesomeIcon
 													icon={faCalendarAlt}
-													className='mr-2 h-5 w-5 text-customRed-100'
+													className='text-custom-red-100 mr-2 h-5 w-5'
 												/>
-												<span className='font-cardoRegular'>
+												<span className='font-cardo-regular'>
 													{formattedDate}
 												</span>
 											</div>
 											<div className='flex items-center'>
 												<FontAwesomeIcon
 													icon={faMapMarkerAlt}
-													className='mr-2 h-5 w-5 text-customRed-100'
+													className='text-custom-red-100 mr-2 h-5 w-5'
 												/>
-												<span className='font-cardoRegular'>
+												<span className='font-cardo-regular'>
 													La Taverne des Aventuriers, 13 Rue Kervégan, Nantes
 												</span>
 											</div>
@@ -217,14 +217,14 @@ export default async function Page({
 							</div>
 
 							{/* Event image */}
-							<div className='lg:sticky lg:top-12 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:-ml-12 lg:-mt-12 lg:p-6'>
+							<div className='lg:sticky lg:top-12 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:-mt-12 lg:-ml-12 lg:p-6'>
 								{eventData.event_image && (
 									<div className='relative'>
 										<Image
 											src={eventData.event_image}
 											alt={eventData.event_title}
 											className={
-												'lg:min-h-auto min-h-[40vh] rounded-xl object-cover shadow-xl lg:min-h-0'
+												'min-h-[40vh] rounded-xl object-cover shadow-xl lg:min-h-0 lg:min-h-auto'
 											}
 											width={1000}
 											height={1000}
@@ -236,7 +236,7 @@ export default async function Page({
 							{/* Event description */}
 							<div className='lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:grid lg:w-full lg:grid-cols-2 lg:gap-x-8 lg:pr-8'>
 								<div className='lg:pr-4'>
-									<div className='prose max-w-xl text-base text-customBrown-100 prose-headings:font-cardinal prose-headings:text-customBrown-100 prose-headings:first-letter:text-customRed-100 prose-strong:text-customBrown-100 lg:max-w-lg'>
+									<div className='prose text-custom-brown-100 prose-headings:font-cardinal prose-headings:text-custom-brown-100 prose-headings:first-letter:text-custom-red-100 prose-strong:text-custom-brown-100 max-w-xl text-base lg:max-w-lg'>
 										<div
 											dangerouslySetInnerHTML={{
 												__html: eventData.event_description,
@@ -249,7 +249,7 @@ export default async function Page({
 										<div className='mt-10'>
 											<Link
 												href={eventData.button_url}
-												className='inline-flex items-center rounded bg-customBrown-100 px-6 py-3 font-cardoRegular text-white shadow-sm hover:bg-customBrown-100/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-customBrown-100'
+												className='bg-custom-brown-100 font-cardo-regular hover:bg-custom-brown-100/90 focus-visible:outline-custom-brown-100 inline-flex items-center rounded px-6 py-3 text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-solid'
 											>
 												{eventData.button_label || "S'inscrire à cet événement"}
 											</Link>

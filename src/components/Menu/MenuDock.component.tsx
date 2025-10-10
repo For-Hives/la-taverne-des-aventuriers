@@ -86,5 +86,5 @@ const menuItems = [
 ]
 
 export default function MenuDock() {
-	return <FloatingDock items={menuItems} className='z-[9999]' />
+	return <FloatingDock items={menuItems} className='z-9999' />
 }

@@ -14,7 +14,7 @@ export default function ChainWinCounter({
 	return (
 		<div className='flex flex-col items-center justify-center'>
 			<div
-				className={`text-${color} mb-1 text-sm font-medium uppercase tracking-wider`}
+				className={`text-${color} mb-1 text-sm font-medium tracking-wider uppercase`}
 			>
 				{label}
 			</div>
@@ -25,7 +25,7 @@ export default function ChainWinCounter({
 					duration={0.4}
 					className={`text-2xl font-bold text-${color} mr-2`}
 				/>
-				<span className={`ml-1 font-cardinal text-3xl text-${color}`}>
+				<span className={`font-cardinal ml-1 text-3xl text-${color}`}>
 					{score === 1 ? 'victoire' : 'victoires'} consécutive
 					{score > 1 ? 's' : ''}
 				</span>

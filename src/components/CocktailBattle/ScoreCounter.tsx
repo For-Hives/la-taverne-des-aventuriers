@@ -78,10 +78,10 @@ export function ScoreCounter({
 
 	return (
 		<div className='relative flex h-fit w-full flex-col items-start justify-center gap-2 rounded-lg p-0 sm:items-center'>
-			<h2 className={`w-full font-cardinal text-5xl text-${color}`}>
+			<h2 className={`font-cardinal w-full text-5xl text-${color}`}>
 				<span className='mb-2 block text-center'>{title}</span>
 				<span
-					className={'block text-center font-cardoRegular text-6xl font-bold'}
+					className={'font-cardo-regular block text-center text-6xl font-bold'}
 				>
 					{count}
 				</span>

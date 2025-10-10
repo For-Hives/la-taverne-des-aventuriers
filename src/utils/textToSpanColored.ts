@@ -4,6 +4,6 @@ export const textToSpanColored = (text: string) => {
 	// Replaces these occurrences with a <span> element that has the 'text-title-100' class for styling
 	return text.replace(
 		/\*(.*?)\*/g, // Matches words composed only of uppercase/lowercase letters enclosed by asterisks
-		'<span class="text-customRed-100">$1</span>' // Replaces the matched text with a <span> containing it and a specific class
+		'<span class="text-custom-red-100">$1</span>' // Replaces the matched text with a <span> containing it and a specific class
 	)
 }

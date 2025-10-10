@@ -13,7 +13,7 @@ export const AnimatedMapSectionComponent = ({
 	data: ContactPageData
 }) => {
 	return (
-		<div className='flex w-full flex-col items-center gap-8 pt-12 font-obraletra text-customBrown-100 md:flex-row md:p-16'>
+		<div className='font-obraletra text-custom-brown-100 flex w-full flex-col items-center gap-8 pt-12 md:flex-row md:p-16'>
 			{/* Text Section */}
 			<motion.div
 				className='flex w-full flex-col items-start gap-8 p-4 md:w-1/3'
@@ -24,7 +24,7 @@ export const AnimatedMapSectionComponent = ({
 			>
 				{/* Title of the address */}
 				<motion.h1
-					className='font-cardinal text-4xl first-letter:text-customRed-100 md:text-6xl'
+					className='font-cardinal first-letter:text-custom-red-100 text-4xl md:text-6xl'
 					initial={{ opacity: 0, x: -50 }} // Start from left with opacity 0
 					whileInView={{ opacity: 1, x: 0 }} // Fade in and slide to normal position
 					viewport={{ once: true }}
@@ -35,7 +35,7 @@ export const AnimatedMapSectionComponent = ({
 
 				{/* Temporary Field - Prose Section */}
 				<motion.div
-					className='prose max-w-xl text-base text-customBrown-100 prose-headings:font-cardinal prose-headings:text-customBrown-100 prose-headings:first-letter:text-customRed-100 prose-strong:text-customBrown-100'
+					className='prose text-custom-brown-100 prose-headings:font-cardinal prose-headings:text-custom-brown-100 prose-headings:first-letter:text-custom-red-100 prose-strong:text-custom-brown-100 max-w-xl text-base'
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
@@ -70,9 +70,9 @@ export const AnimatedMapSectionComponent = ({
 						rel='noreferrer noopener'
 						href={data.button_url}
 						aria-label={data.button_aria}
-						className='flex items-center justify-center gap-4 rounded border-3 border-customBrown-100 bg-customBrown-100 px-8 py-3 font-cardoRegular text-base text-customWhite-100 transition hover:border-3 hover:border-customBrown-100 hover:bg-customWhite-100 hover:text-customBrown-100 md:min-w-52 lg:min-w-60'
+						className='border-custom-brown-100 bg-custom-brown-100 font-cardo-regular text-custom-white-100 hover:border-custom-brown-100 hover:bg-custom-white-100 hover:text-custom-brown-100 flex items-center justify-center gap-4 rounded border-3 px-8 py-3 text-base transition hover:border-3 md:min-w-52 lg:min-w-60'
 					>
-						<span className='font-cardoRegular text-base'>
+						<span className='font-cardo-regular text-base'>
 							{data.button_label}
 						</span>
 						{/* Chevron icon for the button */}
@@ -93,7 +93,7 @@ export const AnimatedMapSectionComponent = ({
 				transition={{ duration: 0.8 }} // Transition duration
 			>
 				{/* Image for small screens */}
-				<div className='min-w-screen maskMapMobile block h-full min-h-screen w-full md:hidden'>
+				<div className='maskMapMobile block h-full min-h-screen w-full min-w-screen md:hidden'>
 					<Image
 						src='/assets/images/map2.webp' // Image source for small screens
 						alt='Map for small screens'

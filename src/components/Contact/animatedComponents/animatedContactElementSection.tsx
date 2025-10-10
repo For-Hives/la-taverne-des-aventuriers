@@ -31,9 +31,9 @@ export const AnimatedContactElementSection = ({
 								whileInView={{ opacity: 1, y: 0 }} // Make it fade in and slide up when it enters the viewport
 								viewport={{ once: true }} // Animation triggers once
 								transition={{ duration: 0.8 }} // Duration for the animation
-								className='flex flex-col items-start gap-6 rounded-2xl border-3 border-customBrown-100 bg-customWhite-300 p-6 font-obraletra shadow'
+								className='border-custom-brown-100 bg-custom-white-300 font-obraletra flex flex-col items-start gap-6 rounded-2xl border-3 p-6 shadow-sm'
 							>
-								<h3 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
+								<h3 className='font-obraletra text-custom-brown-100 first-letter:font-obraletra-bold text-2xl'>
 									{data.schedule_title}
 								</h3>
 								<div
@@ -48,11 +48,11 @@ export const AnimatedContactElementSection = ({
 								whileInView={{ opacity: 1, y: 0 }} // Fade in and slide up
 								viewport={{ once: true }} // Triggers once when it enters the viewport
 								transition={{ delay: 0.2, duration: 0.8 }}
-								className='flex flex-col gap-6 font-obraletra'
+								className='font-obraletra flex flex-col gap-6'
 							>
 								{/* Social Media */}
-								<div className='flex flex-col items-start gap-4 rounded-2xl border-3 border-customBrown-100 bg-customWhite-300 p-6 shadow'>
-									<h3 className='w-full font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
+								<div className='border-custom-brown-100 bg-custom-white-300 flex flex-col items-start gap-4 rounded-2xl border-3 p-6 shadow-sm'>
+									<h3 className='font-obraletra text-custom-brown-100 first-letter:font-obraletra-bold w-full text-2xl'>
 										{data.contact_socials_title}
 									</h3>
 									<div className='flex items-center justify-start gap-10'>
@@ -61,11 +61,11 @@ export const AnimatedContactElementSection = ({
 											aria-label={data.facebook_aria}
 											target='_blank'
 											rel='noreferrer noopener'
-											className='group flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400 hover:bg-customBrown-100'
+											className='group bg-custom-white-400 hover:bg-custom-brown-100 flex h-12 w-12 items-center justify-center rounded-full'
 										>
 											<FontAwesomeIcon
 												icon={faFacebook}
-												className='h-8 w-8 text-customBrown-100 group-hover:text-customWhite-100'
+												className='text-custom-brown-100 group-hover:text-custom-white-100 h-8 w-8'
 											/>
 										</Link>
 										<Link
@@ -73,7 +73,7 @@ export const AnimatedContactElementSection = ({
 											aria-label={data.myludo_aria}
 											target={'_blank'}
 											rel={'noreferrer noopener'}
-											className='group flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400 hover:bg-customBrown-100'
+											className='group bg-custom-white-400 hover:bg-custom-brown-100 flex h-12 w-12 items-center justify-center rounded-full'
 										>
 											<Image
 												src='/assets/images/elements/ContactElements/myludo_icon.webp'
@@ -95,30 +95,30 @@ export const AnimatedContactElementSection = ({
 											aria-label={data.instagram_aria}
 											target={'_blank'}
 											rel={'noreferrer noopener'}
-											className='group flex h-12 w-12 items-center justify-center rounded-full bg-customWhite-400 hover:bg-customBrown-100'
+											className='group bg-custom-white-400 hover:bg-custom-brown-100 flex h-12 w-12 items-center justify-center rounded-full'
 										>
 											<FontAwesomeIcon
 												icon={faInstagram}
-												className='h-8 w-8 text-customBrown-100 group-hover:text-customWhite-100'
+												className='text-custom-brown-100 group-hover:text-custom-white-100 h-8 w-8'
 											/>
 										</Link>
 									</div>
 								</div>
 
 								{/* Email Block */}
-								<div className='relative flex flex-col gap-6 font-obraletra'>
+								<div className='font-obraletra relative flex flex-col gap-6'>
 									<button
 										onMouseEnter={() => setHovered(true)} // Trigger hover state on mouse enter
 										onMouseLeave={() => setHovered(false)} // Reset hover state on mouse leave
-										className='flex flex-col items-start gap-4 rounded-2xl border-3 border-customBrown-100 bg-customWhite-300 p-6 shadow'
+										className='border-custom-brown-100 bg-custom-white-300 flex flex-col items-start gap-4 rounded-2xl border-3 p-6 shadow-sm'
 									>
-										<h3 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
+										<h3 className='font-obraletra text-custom-brown-100 first-letter:font-obraletra-bold text-2xl'>
 											{data.contact_email_title} {/* Display the email title */}
 										</h3>
 										<Link
 											href={`mailto:${data.contact_email}`}
 											aria-label={data.email_aria}
-											className='font-cardoRegular text-customBrown-100 underline'
+											className='font-cardo-regular text-custom-brown-100 underline'
 										>
 											{data.contact_email}
 										</Link>
@@ -135,7 +135,7 @@ export const AnimatedContactElementSection = ({
 												stiffness: 200,
 												type: 'spring',
 											}}
-											className='absolute bottom-[-2rem] right-0 -z-20 h-20 w-20 object-contain max-lg:hidden'
+											className='absolute right-0 -bottom-8 -z-20 h-20 w-20 object-contain max-lg:hidden'
 										/>
 									</div>
 								</div>
@@ -155,7 +155,7 @@ export const AnimatedContactElementSection = ({
 							<Image
 								src='/assets/images/elements/ContactElements/runes.webp'
 								alt='Runes'
-								className='absolute -left-24 -top-32 h-32 w-auto opacity-60 max-lg:hidden'
+								className='absolute -top-32 -left-24 h-32 w-auto opacity-60 max-lg:hidden'
 								width={150}
 								height={150}
 							/>

@@ -16,9 +16,9 @@ const FloatingDockItem = ({ href, icon, isActive, title }: DockItemProps) => {
 		<Link
 			href={href}
 			className={cn(
-				'group relative flex h-10 w-10 flex-col items-center justify-center rounded-full bg-customWhite-300 ' +
-					'text-customBrown-100 transition-all duration-300 hover:bg-customBrown-100 hover:text-customWhite-100 md:h-14 md:w-14',
-				isActive && 'bg-customBrown-100 text-customWhite-100'
+				'group bg-custom-white-300 relative flex h-10 w-10 flex-col items-center justify-center rounded-full ' +
+					'text-custom-brown-100 hover:bg-custom-brown-100 hover:text-custom-white-100 transition-all duration-300 md:h-14 md:w-14',
+				isActive && 'bg-custom-brown-100 text-custom-white-100'
 			)}
 			onClick={e => {
 				// Prevent default behavior for hash links to ensure smooth scrolling
@@ -35,7 +35,7 @@ const FloatingDockItem = ({ href, icon, isActive, title }: DockItemProps) => {
 			<span className='h-5 w-5 transition-transform duration-300 group-hover:scale-110 md:h-7 md:w-7'>
 				{icon}
 			</span>
-			<div className='pointer-events-none absolute -top-10 right-4 w-auto min-w-max origin-bottom scale-0 rounded-md bg-customBrown-100 p-2 text-xs text-white shadow-md transition-all duration-200 group-hover:scale-100 md:left-1/2 md:right-auto md:-translate-x-1/2 md:transform'>
+			<div className='bg-custom-brown-100 pointer-events-none absolute -top-10 right-4 w-auto min-w-max origin-bottom scale-0 rounded-md p-2 text-xs text-white shadow-md transition-all duration-200 group-hover:scale-100 md:right-auto md:left-1/2 md:-translate-x-1/2 md:transform'>
 				{title}
 			</div>
 		</Link>
@@ -117,7 +117,7 @@ export function FloatingDock({
 	return (
 		<div
 			className={cn(
-				'fixed bottom-2 right-2 z-50 flex transform flex-col items-center justify-center gap-2 rounded-full border border-customBrown-100/20 bg-customWhite-300/80 px-2 py-3 shadow-lg backdrop-blur-md transition-all duration-500 md:bottom-6 md:left-1/2 md:right-auto md:-translate-x-1/2 md:flex-row md:px-4 md:py-2',
+				'border-custom-brown-100/20 bg-custom-white-300/80 fixed right-2 bottom-2 z-50 flex transform flex-col items-center justify-center gap-2 rounded-full border px-2 py-3 shadow-lg backdrop-blur-md transition-all duration-500 md:right-auto md:bottom-6 md:left-1/2 md:-translate-x-1/2 md:flex-row md:px-4 md:py-2',
 				!visible && 'translate-y-24 opacity-0',
 				className,
 				mobileClassName

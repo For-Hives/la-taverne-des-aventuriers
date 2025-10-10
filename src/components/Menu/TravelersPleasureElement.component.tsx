@@ -20,13 +20,13 @@ export default async function TravelersPleasureElement({
 	return (
 		<div className='mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8'>
 			<div className='mb-16 flex flex-col items-center justify-center'>
-				<h2 className='text-center font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-sm:text-6xl'>
+				<h2 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-center text-8xl max-sm:text-6xl'>
 					Les Plaisirs Du Voyageur
 				</h2>
 
 				{priceDisplay === 'global' && globalPrice > 0 && (
-					<div className='mt-4 flex items-center justify-center gap-2 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-6 py-3 shadow-lg'>
-						<span className='font-cardoRegular text-xl font-semibold text-customBrown-100'>
+					<div className='border-custom-brown-100 mt-4 flex items-center justify-center gap-2 rounded-full border-2 bg-yellow-100/20 px-6 py-3 shadow-lg'>
+						<span className='font-cardo-regular text-custom-brown-100 text-xl font-semibold'>
 							{globalPrice}€
 						</span>
 						<Image
@@ -45,13 +45,13 @@ export default async function TravelersPleasureElement({
 					{/* Left Side Content */}
 					<div className='flex flex-col items-start justify-center gap-6'>
 						<div className='flex w-full flex-wrap items-start justify-between gap-4'>
-							<h3 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+							<h3 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-4xl'>
 								{leftText.title}
 							</h3>
 
 							{priceDisplay === 'individual' && leftText.price > 0 && (
-								<div className='flex items-center justify-center gap-1 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-4 py-1.5 shadow-md'>
-									<span className='font-cardoRegular text-lg font-medium text-customBrown-100'>
+								<div className='border-custom-brown-100 flex items-center justify-center gap-1 rounded-full border-2 bg-yellow-100/20 px-4 py-1.5 shadow-md'>
+									<span className='font-cardo-regular text-custom-brown-100 text-lg font-medium'>
 										{leftText.price}€
 									</span>
 									<Image
@@ -65,7 +65,7 @@ export default async function TravelersPleasureElement({
 							)}
 						</div>
 
-						<p className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+						<p className='font-cardo-regular text-custom-brown-100 text-base lg:text-lg'>
 							{leftText.description}
 						</p>
 					</div>
@@ -84,13 +84,13 @@ export default async function TravelersPleasureElement({
 					{/* Right Side Content */}
 					<div className='flex flex-col items-start justify-center gap-6'>
 						<div className='flex w-full flex-wrap items-start justify-between gap-4'>
-							<h3 className='font-cardinal text-4xl text-customBrown-100 first-letter:text-customRed-100'>
+							<h3 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-4xl'>
 								{rightText.title}
 							</h3>
 
 							{priceDisplay === 'individual' && rightText.price > 0 && (
-								<div className='flex items-center justify-center gap-1 rounded-full border-2 border-customBrown-100 bg-yellow-100/20 px-4 py-1.5 shadow-md'>
-									<span className='font-cardoRegular text-lg font-medium text-customBrown-100'>
+								<div className='border-custom-brown-100 flex items-center justify-center gap-1 rounded-full border-2 bg-yellow-100/20 px-4 py-1.5 shadow-md'>
+									<span className='font-cardo-regular text-custom-brown-100 text-lg font-medium'>
 										{rightText.price}€
 									</span>
 									<Image
@@ -104,7 +104,7 @@ export default async function TravelersPleasureElement({
 							)}
 						</div>
 
-						<p className='font-cardoRegular text-base text-customBrown-100 lg:text-lg'>
+						<p className='font-cardo-regular text-custom-brown-100 text-base lg:text-lg'>
 							{rightText.description}
 						</p>
 					</div>

@@ -1,233 +1,372 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-	--video-width: 100vw;
-	--video-height: 100vh;
+/*
+  Theme configuration - migrated from tailwind.config.ts
+*/
+@theme {
+	/* Custom colors */
+	--color-custom-blue-100: #0077ff;
+	--color-custom-brown-100: #582615;
+	--color-custom-brown-transparent-100: rgba(88, 38, 21, 0.32);
+	--color-custom-gray-100: #6a6a6a;
+	--color-custom-red-100: #8d2026;
+	--color-custom-white-100: #fffcee;
+	--color-custom-white-200: #f2edd3;
+	--color-custom-white-300: #fdfbf6;
+	--color-custom-white-400: #ead4bf;
+	--color-custom-white-500: #f2efe2;
+
+	/* Custom fonts - must match class names exactly */
+	--font-family-cardinal: var(--cardinal), sans-serif;
+	--font-family-cardoRegular: var(--cardo-regular);
+	--font-family-obraletra: var(--kc-obra-letra);
+	--font-family-obraletraBold: var(--kc-obra-letra-bold);
+
+	/* Background images - must match class names exactly */
+	--background-image-background-image: url('/assets/images/elements/ContactElements/t3.webp');
+	--background-image-FooterImage: url('/assets/images/MaskFooter.webp');
+	--background-image-gl-card1-bg: url('/assets/images/elements/GameLibraryElements/BG1.webp');
+	--background-image-gl-card2-bg: url('/assets/images/elements/GameLibraryElements/BG2.webp');
+	--background-image-gl-card3-bg: url('/assets/images/elements/GameLibraryElements/BG3.webp');
+	--background-image-lp-blured-image: url('/assets/images/elements/background2.webp');
+	--background-image-menu-background-image: url('/assets/images/elements/MenuElements/BGImage.webp');
+	--background-image-waw-card1-bg: url('/assets/images/elements/WhoAreWeElement/planche1.webp');
+	--background-image-waw-card2-bg: url('/assets/images/elements/WhoAreWeElement/Barman.webp');
+
+	/* Border widths */
+	--border-width-0: 0;
+	--border-width-2: 2px;
+	--border-width-3: 3px;
+	--border-width-4: 4px;
+	--border-width-6: 6px;
+	--border-width-8: 8px;
+	--border-width: 1px;
 }
 
-@media (min-aspect-ratio: 16/9) {
-	:root {
-		--video-height: 56.25vw;
+/*
+  Custom prose theme for typography plugin
+*/
+@theme {
+	--typography-customBrown-body: #582615;
+	--typography-customBrown-bold: #3d1a0e;
+	--typography-customBrown-bullets: #d4a795;
+	--typography-customBrown-captions: #6b2e19;
+	--typography-customBrown-code: #3d1a0e;
+	--typography-customBrown-counters: #8b3d21;
+	--typography-customBrown-headings: #3d1a0e;
+	--typography-customBrown-hr: #e8c5b8;
+	--typography-customBrown-lead: #6b2e19;
+	--typography-customBrown-links: #3d1a0e;
+	--typography-customBrown-pre-bg: #3d1a0e;
+	--typography-customBrown-pre-code: #f4e6e1;
+	--typography-customBrown-quote-borders: #e8c5b8;
+	--typography-customBrown-quotes: #3d1a0e;
+	--typography-customBrown-td-borders: #f4e6e1;
+	--typography-customBrown-th-borders: #e8c5b8;
+	--typography-customBrown-invert-body: #d4a795;
+	--typography-customBrown-invert-bold: #ffffff;
+	--typography-customBrown-invert-bullets: #8b3d21;
+	--typography-customBrown-invert-captions: #d4a795;
+	--typography-customBrown-invert-code: #ffffff;
+	--typography-customBrown-invert-counters: #d4a795;
+	--typography-customBrown-invert-headings: #ffffff;
+	--typography-customBrown-invert-hr: #6b2e19;
+	--typography-customBrown-invert-lead: #e8c5b8;
+	--typography-customBrown-invert-links: #ffffff;
+	--typography-customBrown-invert-pre-bg: rgb(0 0 0 / 50%);
+	--typography-customBrown-invert-pre-code: #e8c5b8;
+	--typography-customBrown-invert-quote-borders: #6b2e19;
+	--typography-customBrown-invert-quotes: #f4e6e1;
+	--typography-customBrown-invert-td-borders: #6b2e19;
+	--typography-customBrown-invert-th-borders: #8b3d21;
+}
+
+/*
+  Apply prose-customBrown styles
+*/
+.prose-customBrown {
+	--tw-prose-body: var(--typography-customBrown-body);
+	--tw-prose-bold: var(--typography-customBrown-bold);
+	--tw-prose-bullets: var(--typography-customBrown-bullets);
+	--tw-prose-captions: var(--typography-customBrown-captions);
+	--tw-prose-code: var(--typography-customBrown-code);
+	--tw-prose-counters: var(--typography-customBrown-counters);
+	--tw-prose-headings: var(--typography-customBrown-headings);
+	--tw-prose-hr: var(--typography-customBrown-hr);
+	--tw-prose-lead: var(--typography-customBrown-lead);
+	--tw-prose-links: var(--typography-customBrown-links);
+	--tw-prose-pre-bg: var(--typography-customBrown-pre-bg);
+	--tw-prose-pre-code: var(--typography-customBrown-pre-code);
+	--tw-prose-quote-borders: var(--typography-customBrown-quote-borders);
+	--tw-prose-quotes: var(--typography-customBrown-quotes);
+	--tw-prose-td-borders: var(--typography-customBrown-td-borders);
+	--tw-prose-th-borders: var(--typography-customBrown-th-borders);
+	--tw-prose-invert-body: var(--typography-customBrown-invert-body);
+	--tw-prose-invert-bold: var(--typography-customBrown-invert-bold);
+	--tw-prose-invert-bullets: var(--typography-customBrown-invert-bullets);
+	--tw-prose-invert-captions: var(--typography-customBrown-invert-captions);
+	--tw-prose-invert-code: var(--typography-customBrown-invert-code);
+	--tw-prose-invert-counters: var(--typography-customBrown-invert-counters);
+	--tw-prose-invert-headings: var(--typography-customBrown-invert-headings);
+	--tw-prose-invert-hr: var(--typography-customBrown-invert-hr);
+	--tw-prose-invert-lead: var(--typography-customBrown-invert-lead);
+	--tw-prose-invert-links: var(--typography-customBrown-invert-links);
+	--tw-prose-invert-pre-bg: var(--typography-customBrown-invert-pre-bg);
+	--tw-prose-invert-pre-code: var(--typography-customBrown-invert-pre-code);
+	--tw-prose-invert-quote-borders: var(
+		--typography-customBrown-invert-quote-borders
+	);
+	--tw-prose-invert-quotes: var(--typography-customBrown-invert-quotes);
+	--tw-prose-invert-td-borders: var(--typography-customBrown-invert-td-borders);
+	--tw-prose-invert-th-borders: var(--typography-customBrown-invert-th-borders);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
 	}
 }
 
-@media (max-aspect-ratio: 16/9) {
-	:root {
-		--video-width: 177.78vh;
-	}
-}
-
-* {
-	box-sizing: border-box;
-	list-style: none;
-	text-decoration: none;
-}
-
-body {
-	background-image:
-		linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-		url('/assets/images/bg_texture.webp');
-	background-repeat: repeat;
-	background-size: auto;
-	--sb-track-color: #f2edd3;
-	--sb-thumb-color: #582615;
-	--sb-size: 7px;
-}
-
-.bg {
-	background-image:
-		linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-		url('/assets/images/bg_texture.webp');
-	background-repeat: repeat;
-	background-size: auto;
-}
-
-body,
-html {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	max-width: 100vw;
-	clear: both;
+@utility mask-custom {
+	height: 100vh;
 	width: 100vw;
+	mask-image: url('/assets/images/overlay_white_inverted_002.webp');
+	-webkit-mask-image: url('/assets/images/overlay_white_inverted_002.webp');
+	mask-repeat: no-repeat;
+	mask-size: cover;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: cover;
 }
 
-html {
-	overflow-x: hidden;
-	scroll-behavior: smooth;
+@utility maskFooter {
+	mask-image: url('/assets/images/MaskFooter.webp');
+	-webkit-mask-image: url('/assets/images/MaskFooter.webp');
+	mask-repeat: no-repeat;
+	mask-size: cover;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: cover;
+}
+
+@utility maskMap {
+	width: 100%;
+	height: 100%;
+	mask-image: url('/assets/images/masqueMap.webp');
+	-webkit-mask-image: url('/assets/images/masqueMap.webp');
+	mask-repeat: no-repeat;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: 100% 100%;
+}
+
+@utility maskMapMobile {
+	width: 100%;
+	height: 100%;
+	mask-image: url('/assets/images/masqueMap2.webp');
+	-webkit-mask-image: url('/assets/images/masqueMap2.webp');
+	mask-repeat: no-repeat;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: 100% 100%;
 }
 
 @layer utilities {
-	.mask-custom {
-		height: 100vh;
+	:root {
+		--video-width: 100vw;
+		--video-height: 100vh;
+	}
+
+	@media (min-aspect-ratio: 16/9) {
+		:root {
+			--video-height: 56.25vw;
+		}
+	}
+
+	@media (max-aspect-ratio: 16/9) {
+		:root {
+			--video-width: 177.78vh;
+		}
+	}
+
+	* {
+		box-sizing: border-box;
+		list-style: none;
+		text-decoration: none;
+	}
+
+	body {
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+			url('/assets/images/bg_texture.webp');
+		background-repeat: repeat;
+		background-size: auto;
+		--sb-track-color: #f2edd3;
+		--sb-thumb-color: #582615;
+		--sb-size: 7px;
+	}
+
+	.bg {
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+			url('/assets/images/bg_texture.webp');
+		background-repeat: repeat;
+		background-size: auto;
+	}
+
+	body,
+	html {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		max-width: 100vw;
+		clear: both;
 		width: 100vw;
-		mask-image: url('/assets/images/overlay_white_inverted_002.webp');
-		-webkit-mask-image: url('/assets/images/overlay_white_inverted_002.webp');
-		mask-repeat: no-repeat;
-		mask-size: cover;
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-size: cover;
 	}
 
-	.maskFooter {
-		mask-image: url('/assets/images/MaskFooter.webp');
-		-webkit-mask-image: url('/assets/images/MaskFooter.webp');
-		mask-repeat: no-repeat;
-		mask-size: cover;
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-size: cover;
-	}
-
-	.maskMap {
-		width: 100%;
-		height: 100%;
-		mask-image: url('/assets/images/masqueMap.webp');
-		-webkit-mask-image: url('/assets/images/masqueMap.webp');
-		mask-repeat: no-repeat;
-		mask-size: 100% 100%;
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-size: 100% 100%;
-	}
-
-	.maskMapMobile {
-		width: 100%;
-		height: 100%;
-		mask-image: url('/assets/images/masqueMap2.webp');
-		-webkit-mask-image: url('/assets/images/masqueMap2.webp');
-		mask-repeat: no-repeat;
-		mask-size: 100% 100%;
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-size: 100% 100%;
+	html {
+		overflow-x: hidden;
+		scroll-behavior: smooth;
 	}
 }
 
-.video-background {
-	position: relative;
-	overflow: hidden;
-	width: 100vw;
-	height: 100vh;
-	clear: both;
-	margin: 0;
-	padding: 0;
-}
+@layer utilities {
+	.video-background {
+		position: relative;
+		overflow: hidden;
+		width: 100vw;
+		height: 100vh;
+		clear: both;
+		margin: 0;
+		padding: 0;
+	}
 
-.video-background iframe {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: var(--video-width);
-	height: var(--video-height);
-	transform: translate(-50%, -50%);
-}
+	.video-background iframe {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: var(--video-width);
+		height: var(--video-height);
+		transform: translate(-50%, -50%);
+	}
 
-.animate-video {
-	animation: video-in 3s ease-in forwards;
-}
+	.animate-video {
+		animation: video-in 3s ease-in forwards;
+	}
 
-.bg-background-image {
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+	.bg-background-image {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 
-@keyframes video-in {
-	0% {
+	@keyframes video-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	.text-with-outline {
+		text-shadow: /* Clean beige outline */
+			-1px -1px 0 rgb(226, 196, 148),
+			1px -1px 0 rgb(226, 196, 148),
+			-1px 1px 0 rgb(226, 196, 148),
+			1px 1px 0 rgb(226, 196, 148),
+			/* Strong glow */ 0 0 20px rgba(226, 196, 148, 0.9),
+			0 0 10px rgba(226, 196, 148, 0.7),
+			/* Natural shadow */ 2px 2px 12px rgba(88, 38, 21, 0.4);
+	}
+
+	.text-with-outline-light {
+		text-shadow: /* Clean beige outline - lighter */
+			-0.5px -0.5px 0 rgb(226, 196, 148),
+			0.5px -0.5px 0 rgb(226, 196, 148),
+			-0.5px 0.5px 0 rgb(226, 196, 148),
+			0.5px 0.5px 0 rgb(226, 196, 148),
+			/* Softer glow */ 0 0 15px rgba(226, 196, 148, 0.7),
+			0 0 8px rgba(226, 196, 148, 0.5),
+			/* Lighter natural shadow */ 1px 1px 8px rgba(88, 38, 21, 0.3);
+	}
+
+	body::-webkit-scrollbar {
+		width: var(--sb-size);
+	}
+
+	body::-webkit-scrollbar-track {
+		background: var(--sb-track-color);
+		border-radius: 20px;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background: var(--sb-thumb-color);
+		border-radius: 20px;
+	}
+
+	@supports not selector(::-webkit-scrollbar) {
+		body {
+			scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+		}
+	}
+
+	/* Animation count */
+	.animation-count path {
+		opacity: 0;
+		transition:
+			opacity 0.3s ease-out,
+			transform 0.3s ease-out;
+	}
+
+	.animation-count[data-count='0']
+		path:is(
+			:nth-child(1),
+			:nth-child(2),
+			:nth-child(3),
+			:nth-child(4),
+			:nth-child(5)
+		) {
 		opacity: 0;
 	}
-	100% {
+
+	.animation-count[data-count='1'] path:is(:nth-child(1)) {
 		opacity: 1;
 	}
-}
 
-.text-with-outline {
-	text-shadow: /* Clean beige outline */
-		-1px -1px 0 rgb(226, 196, 148),
-		1px -1px 0 rgb(226, 196, 148),
-		-1px 1px 0 rgb(226, 196, 148),
-		1px 1px 0 rgb(226, 196, 148),
-		/* Strong glow */ 0 0 20px rgba(226, 196, 148, 0.9),
-		0 0 10px rgba(226, 196, 148, 0.7),
-		/* Natural shadow */ 2px 2px 12px rgba(88, 38, 21, 0.4);
-}
-
-.text-with-outline-light {
-	text-shadow: /* Clean beige outline - lighter */
-		-0.5px -0.5px 0 rgb(226, 196, 148),
-		0.5px -0.5px 0 rgb(226, 196, 148),
-		-0.5px 0.5px 0 rgb(226, 196, 148),
-		0.5px 0.5px 0 rgb(226, 196, 148),
-		/* Softer glow */ 0 0 15px rgba(226, 196, 148, 0.7),
-		0 0 8px rgba(226, 196, 148, 0.5),
-		/* Lighter natural shadow */ 1px 1px 8px rgba(88, 38, 21, 0.3);
-}
-
-body::-webkit-scrollbar {
-	width: var(--sb-size);
-}
-
-body::-webkit-scrollbar-track {
-	background: var(--sb-track-color);
-	border-radius: 20px;
-}
-
-body::-webkit-scrollbar-thumb {
-	background: var(--sb-thumb-color);
-	border-radius: 20px;
-}
-
-@supports not selector(::-webkit-scrollbar) {
-	body {
-		scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+	.animation-count[data-count='2'] path:is(:nth-child(1), :nth-child(2)) {
+		opacity: 1;
 	}
-}
 
-/* Animation count */
-.animation-count path {
-	opacity: 0;
-	transition:
-		opacity 0.3s ease-out,
-		transform 0.3s ease-out;
-}
+	.animation-count[data-count='3']
+		path:is(:nth-child(1), :nth-child(2), :nth-child(3)) {
+		opacity: 1;
+	}
 
-.animation-count[data-count='0']
-	path:is(
-		:nth-child(1),
-		:nth-child(2),
-		:nth-child(3),
-		:nth-child(4),
-		:nth-child(5)
-	) {
-	opacity: 0;
-}
+	.animation-count[data-count='4']
+		path:is(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4)) {
+		opacity: 1;
+	}
 
-.animation-count[data-count='1'] path:is(:nth-child(1)) {
-	opacity: 1;
-}
-
-.animation-count[data-count='2'] path:is(:nth-child(1), :nth-child(2)) {
-	opacity: 1;
-}
-
-.animation-count[data-count='3']
-	path:is(:nth-child(1), :nth-child(2), :nth-child(3)) {
-	opacity: 1;
-}
-
-.animation-count[data-count='4']
-	path:is(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4)) {
-	opacity: 1;
-}
-
-.animation-count[data-count='5']
-	path:is(
-		:nth-child(1),
-		:nth-child(2),
-		:nth-child(3),
-		:nth-child(4),
-		:nth-child(5)
-	) {
-	opacity: 1;
+	.animation-count[data-count='5']
+		path:is(
+			:nth-child(1),
+			:nth-child(2),
+			:nth-child(3),
+			:nth-child(4),
+			:nth-child(5)
+		) {
+		opacity: 1;
+	}
 }
 
 @layer base {
@@ -288,9 +427,9 @@ body::-webkit-scrollbar-thumb {
 
 @layer base {
 	* {
-		@apply border-border;
+		border-color: hsl(var(--border));
 	}
 	body {
-		@apply text-foreground;
+		color: hsl(var(--foreground));
 	}
 }

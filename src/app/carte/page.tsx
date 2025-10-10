@@ -126,7 +126,7 @@ export default async function Page() {
 				<MobileNavbar navItems={navItems} />
 
 				{/* Background */}
-				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
+				<div className='mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75'></div>
 
 				{/* Battle des Cocktails Banner */}
 				<div className='mt-[20vh] flex w-full flex-col justify-center py-16'>

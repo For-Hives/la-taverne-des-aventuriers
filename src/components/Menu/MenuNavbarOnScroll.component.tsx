@@ -45,12 +45,12 @@ export default function MenuNavbarOnScroll() {
 
 	return (
 		isVisible && (
-			<nav className='group fixed left-4 top-2 z-50 rounded-full bg-customWhite-400 p-2 text-customBrown-100 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:bg-customBrown-100 hover:opacity-100 max-lg:top-20 sm:left-6'>
+			<nav className='group bg-custom-white-400 text-custom-brown-100 hover:bg-custom-brown-100 fixed top-2 left-4 z-50 rounded-full p-2 opacity-90 shadow-lg transition-all duration-300 ease-in-out hover:opacity-100 max-lg:top-20 sm:left-6'>
 				{/* Hamburger icon */}
 				<button
 					onClick={toggleMenu}
 					aria-label='Toggle Menu'
-					className='group-hover:bg-customBrown-300 flex h-10 w-10 items-center justify-center rounded-full text-customBrown-100 transition-all duration-300 ease-in-out focus:outline-none group-hover:text-customWhite-300'
+					className='group-hover:bg-customBrown-300 text-custom-brown-100 group-hover:text-custom-white-300 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 ease-in-out focus:outline-hidden'
 				>
 					<FontAwesomeIcon
 						icon={isMenuOpen ? faTimes : faBars}
@@ -60,9 +60,9 @@ export default function MenuNavbarOnScroll() {
 
 				{/* Dropdown menu */}
 				<div
-					className={`absolute left-0 top-16 min-w-max transform rounded-md bg-customWhite-100 shadow-lg transition-all duration-500 ease-in-out ${isMenuOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'}`}
+					className={`bg-custom-white-100 absolute top-16 left-0 min-w-max transform rounded-md shadow-lg transition-all duration-500 ease-in-out ${isMenuOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'}`}
 				>
-					<ul className='flex flex-col items-center space-y-4 font-obraletra text-lg text-customBrown-100'>
+					<ul className='font-obraletra text-custom-brown-100 flex flex-col items-center space-y-4 text-lg'>
 						{tabs.map(tab => (
 							<li key={tab.anchor} className='w-full'>
 								{/* Make Link fill the entire space of the li */}

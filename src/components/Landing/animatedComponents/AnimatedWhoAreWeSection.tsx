@@ -46,7 +46,7 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 
 			{/* Text content with animation */}
 			<motion.div
-				className='col-span-1 flex flex-col justify-center gap-6 p-4 font-obraletra text-base text-customBrown-100 md:col-span-3 lg:items-start' // The text takes 2 cells on md and above
+				className='font-obraletra text-custom-brown-100 col-span-1 flex flex-col justify-center gap-6 p-4 text-base md:col-span-3 lg:items-start' // The text takes 2 cells on md and above
 				initial={{ opacity: 0, y: 50 }} // Animation: starts from the bottom
 				animate={{ opacity: 1, y: 0 }} // Animation: moves up to the original position
 				transition={{ delay: 0.2, duration: 0.6 }} // Delay and duration of 0.6 seconds
@@ -61,7 +61,7 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 
 				{/* Description */}
 				<div
-					className='font-cardoRegular text-base lg:text-left' // Description aligned to the left on large screens
+					className='font-cardo-regular text-base lg:text-left' // Description aligned to the left on large screens
 					dangerouslySetInnerHTML={{
 						__html: textToSpanColored(data.description_text), // Function to colorize the description
 					}}
@@ -82,7 +82,7 @@ export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {
 						<span>{data.description_button_label}</span> {/* Button label */}
 						<FontAwesomeIcon
 							icon={faChevronRight} // Chevron icon
-							className='h-3 w-3 text-customBrown-100' // Icon styles
+							className='text-custom-brown-100 h-3 w-3' // Icon styles
 						/>
 					</Link>
 				</motion.div>

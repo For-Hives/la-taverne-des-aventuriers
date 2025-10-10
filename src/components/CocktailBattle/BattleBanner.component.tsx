@@ -32,7 +32,7 @@ export default function BattleBanner() {
 					href='/battle'
 					aria-label='Battle de cocktails'
 					rel='noreferrer noopener'
-					className='group flex items-center justify-center rounded-full border-2 border-customBrown-100 px-8 py-3 font-cardoRegular text-xl hover:bg-customBrown-100 hover:text-customWhite-100'
+					className='group border-custom-brown-100 font-cardo-regular hover:bg-custom-brown-100 hover:text-custom-white-100 flex items-center justify-center rounded-full border-2 px-8 py-3 text-xl'
 				>
 					Battle des Cocktails
 				</Link>

@@ -11,7 +11,7 @@ export default function CocktailBattleComponent({
 }>) {
 	return (
 		<div className='container mx-auto max-w-6xl px-4 pb-12 lg:pb-36'>
-			<h1 className='mb-16 text-center font-cardinal text-8xl text-customBrown-100 first-letter:text-customRed-100 max-md:text-5xl'>
+			<h1 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 mb-16 text-center text-8xl max-md:text-5xl'>
 				Bataille de Cocktails
 			</h1>
 
@@ -56,7 +56,7 @@ export default function CocktailBattleComponent({
 				<div className='z-20 my-4 flex w-full justify-center lg:hidden'>
 					<div className='relative'>
 						<div className='absolute -inset-8 rounded-full' />
-						<span className='relative font-cardinal text-7xl font-bold text-customBrown-100 drop-shadow-lg'>
+						<span className='font-cardinal text-custom-brown-100 relative text-7xl font-bold drop-shadow-lg'>
 							VS
 						</span>
 					</div>

@@ -39,10 +39,10 @@ export const AnimatedHowToContactComponent = ({
 					viewport={{ once: true }} // Trigger only once
 					transition={{ delay: 0.2, duration: 1 }} // Delay for sequential animation
 				>
-					<div className='flex w-full flex-col items-start justify-center gap-0 text-customBrown-100 max-lg:w-full lg:w-2/3 lg:items-center'>
+					<div className='text-custom-brown-100 flex w-full flex-col items-start justify-center gap-0 max-lg:w-full lg:w-2/3 lg:items-center'>
 						{/* How to Title */}
 						<motion.h2
-							className='w-full text-left font-cardinal text-3xl first-letter:text-customRed-100 lg:text-4xl'
+							className='font-cardinal first-letter:text-custom-red-100 w-full text-left text-3xl lg:text-4xl'
 							initial={{ opacity: 0, x: -50 }} // Initial left slide with opacity 0
 							animate={{ opacity: 1, x: 0 }} // Fade in and move to normal position when in view
 							viewport={{ once: true }} // Trigger only once
@@ -54,7 +54,7 @@ export const AnimatedHowToContactComponent = ({
 						</motion.h2>
 
 						<div
-							className={'prose prose-customBrown w-full font-cardoRegular'} // Styling for the description
+							className={'prose prose-customBrown font-cardo-regular w-full'} // Styling for the description
 							dangerouslySetInnerHTML={{
 								__html: data.howtosection_description,
 							}} // Injecting HTML content for description

@@ -73,7 +73,7 @@ export default function MenuNavbar() {
 			<div className='grid grid-cols-1 p-16 lg:hidden'>
 				<select
 					aria-label='Select a tab' // Accessibility label
-					className='col-start-1 row-start-1 w-full appearance-none rounded-md bg-customWhite-200 py-2 pl-3 pr-8 text-base text-customBrown-100 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600'
+					className='bg-custom-white-200 text-custom-brown-100 col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-8 pl-3 text-base outline-1 -outline-offset-1 outline-gray-300 outline-solid focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 focus:outline-solid'
 					onChange={e => handleTabClick(e.target.value)}
 					value={currentTab} // Sync current tab with select value
 				>
@@ -87,7 +87,7 @@ export default function MenuNavbar() {
 				{/* Icon for dropdown */}
 				<ChevronDownIcon
 					aria-hidden='true'
-					className='pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end fill-customBrown-100'
+					className='fill-custom-brown-100 pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end'
 				/>
 			</div>
 
@@ -95,7 +95,7 @@ export default function MenuNavbar() {
 			<div className='hidden p-16 lg:block'>
 				<nav
 					aria-label='Tabs' // Accessibility label
-					className='isolate flex divide-x divide-customBrownTransparent-100 rounded-lg shadow'
+					className='divide-custom-brown-transparent-100 isolate flex divide-x rounded-lg shadow-sm'
 				>
 					{/* Render each tab as a button */}
 					{tabs.map((tab, tabIdx) => (
@@ -105,8 +105,8 @@ export default function MenuNavbar() {
 							className={classNames(
 								tabIdx === 0 ? 'rounded-l-lg' : '', // Round left edges for the first tab
 								tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '', // Round right edges for the last tab
-								'group relative min-w-0 flex-1 overflow-hidden bg-customWhite-200 px-4 py-4 text-center text-sm font-medium text-customBrown-100 hover:bg-customWhite-100 focus:z-10',
-								currentTab === tab.anchor ? 'bg-customWhite-100' : '' // Highlight the current tab
+								'group bg-custom-white-200 text-custom-brown-100 hover:bg-custom-white-100 relative min-w-0 flex-1 overflow-hidden px-4 py-4 text-center text-sm font-medium focus:z-10',
+								currentTab === tab.anchor ? 'bg-custom-white-100' : '' // Highlight the current tab
 							)}
 							onClick={() => handleTabClick(tab.anchor)}
 						>
@@ -116,7 +116,7 @@ export default function MenuNavbar() {
 								aria-hidden='true'
 								className={classNames(
 									currentTab === tab.anchor
-										? 'bg-customBrown-100' // Active indicator color
+										? 'bg-custom-brown-100' // Active indicator color
 										: 'bg-transparent', // Inactive indicator
 									'absolute inset-x-0 bottom-0 h-0.5'
 								)}

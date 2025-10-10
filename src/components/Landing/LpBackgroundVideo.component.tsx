@@ -29,7 +29,7 @@ export default function BackgroundVideoLP() {
 			'https://player.vimeo.com/video/1047422333?h=3ee0913fe6&background=1&autoplay=1&loop=1&autopause=0'
 		iframe.title = 'Animation_Carte_1'
 		iframe.className =
-			'mask-custom animate-video absolute left-0 top-0 -z-10 block h-full w-full bg-customWhite-100 object-cover object-center opacity-75 mix-blend-normal'
+			'mask-custom animate-video absolute left-0 top-0 -z-10 block h-full w-full bg-custom-white-100 object-cover object-center opacity-75 mix-blend-normal'
 		iframe.allow = 'autoplay; fullscreen'
 		iframe.setAttribute('data-ready', 'true')
 		iframe.loading = 'lazy' // Add lazy loading
@@ -48,7 +48,7 @@ export default function BackgroundVideoLP() {
 	}, [pathname]) // This effect runs every time the pathname (URL path) changes
 
 	return (
-		<div className='video-background mask relative clear-both m-0 min-h-[110vh] w-[100vw] max-w-[100vw] overflow-x-hidden p-0'>
+		<div className='video-background mask relative clear-both m-0 min-h-[110vh] w-screen max-w-screen overflow-x-hidden p-0'>
 			<div ref={videoContainerRef} className='h-full w-full' />
 		</div>
 	)

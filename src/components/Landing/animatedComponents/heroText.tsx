@@ -34,7 +34,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 			</h1>
 			{/* Hero Title with fade-in animation */}
 			<motion.div
-				className='text-with-outline flex w-full flex-col gap-2 font-cardinal text-4xl font-bold text-customBrown-100 first-letter:text-customRed-100 sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl'
+				className='text-with-outline font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 flex w-full flex-col gap-2 text-4xl font-bold sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl'
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				// Adjusted delay to be relative to parent (1s + 0.3s)
@@ -57,7 +57,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 				transition={{ delay: 0.5, duration: 0.8 }}
 			>
 				{/* Description text with color applied */}
-				<p className='text-with-outline-light flex items-center gap-2 font-obraletra text-lg font-bold text-customBrown-100 sm:gap-3 sm:text-xl md:text-2xl'>
+				<p className='text-with-outline-light font-obraletra text-custom-brown-100 flex items-center gap-2 text-lg font-bold sm:gap-3 sm:text-xl md:text-2xl'>
 					<span
 						dangerouslySetInnerHTML={{
 							__html: textToSpanColored(data.hero_description),
@@ -71,12 +71,12 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 					<Link
 						href={data.hero_left_button_url}
 						aria-label={data.hero_left_button_aria}
-						className='text flex h-12 items-center gap-2 rounded border-3 border-customBrown-100 bg-customBrown-100 px-4 font-obraletra text-customWhite-100 hover:underline sm:text-xl'
+						className='text border-custom-brown-100 bg-custom-brown-100 font-obraletra text-custom-white-100 flex h-12 items-center gap-2 rounded border-3 px-4 hover:underline sm:text-xl'
 					>
 						{data.hero_left_button_label}
 						<FontAwesomeIcon
 							icon={faChevronRight}
-							className='h-4 w-4 text-customWhite-100'
+							className='text-custom-white-100 h-4 w-4'
 						/>
 					</Link>
 
@@ -90,7 +90,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 						<Link
 							href={data.hero_right_button_url}
 							aria-label={data.hero_right_button_aria}
-							className='text flex h-12 items-center rounded border-3 border-solid border-customBrown-100 bg-customWhite-100 px-4 font-obraletra text-customBrown-100 hover:underline sm:text-xl'
+							className='text border-custom-brown-100 bg-custom-white-100 font-obraletra text-custom-brown-100 flex h-12 items-center rounded border-3 border-solid px-4 hover:underline sm:text-xl'
 						>
 							{data.hero_right_button_label}
 						</Link>

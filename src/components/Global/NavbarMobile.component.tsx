@@ -20,7 +20,7 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 	return (
 		<nav className='fixed top-0 z-50 w-full xl:hidden'>
 			{/* Header Bar */}
-			<div className='relative z-50 mx-auto flex items-center justify-between border-b border-customBrown-100 bg-customWhite-100 px-4 py-3'>
+			<div className='border-custom-brown-100 bg-custom-white-100 relative z-50 mx-auto flex items-center justify-between border-b px-4 py-3'>
 				{/* Logo */}
 				<Link href='/' aria-label='Home'>
 					<Image
@@ -32,27 +32,27 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 					/>
 				</Link>
 
-				<h2 className='flex font-cardinal text-customBrown-100 first-letter:text-customRed-100 md:text-lg'>
+				<h2 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 flex md:text-lg'>
 					La Taverne des Aventuriers
 				</h2>
 
 				{/* Menu Toggle Button */}
 				<button
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
-					className='focus:outline-none focus:ring-2 focus:ring-customBrown-100'
+					className='focus:ring-custom-brown-100 focus:ring-2 focus:outline-hidden'
 					aria-expanded={isMenuOpen}
 					aria-label='Toggle navigation menu'
 				>
 					<FontAwesomeIcon
 						icon={isMenuOpen ? faTimes : faBars}
-						className='h-6 w-6 text-customBrown-100'
+						className='text-custom-brown-100 h-6 w-6'
 					/>
 				</button>
 			</div>
 
 			{/* Mobile Menu Panel */}
 			<div
-				className={`fixed inset-0 bg-customWhite-100 transition-transform duration-300 ease-in-out ${
+				className={`bg-custom-white-100 fixed inset-0 transition-transform duration-300 ease-in-out ${
 					isMenuOpen ? 'translate-x-0' : 'translate-x-full'
 				} z-40`}
 				aria-hidden={!isMenuOpen}
@@ -60,24 +60,24 @@ export default function MobileNavbar({ navItems }: MobileNavbarProps) {
 				<div className='flex h-full flex-col items-center justify-center'>
 					{/* Close Button */}
 					<button
-						className='absolute right-4 top-4 focus:outline-none focus:ring-2 focus:ring-customBrown-100'
+						className='focus:ring-custom-brown-100 absolute top-4 right-4 focus:ring-2 focus:outline-hidden'
 						onClick={() => setIsMenuOpen(false)}
 						aria-label='Close navigation menu'
 					>
 						<FontAwesomeIcon
 							icon={faTimes}
-							className='h-6 w-6 text-customBrown-100'
+							className='text-custom-brown-100 h-6 w-6'
 						/>
 					</button>
 
 					{/* Navigation Links */}
-					<ul className='flex flex-col items-center space-y-6 font-obraletra text-lg text-customBrown-100'>
+					<ul className='font-obraletra text-custom-brown-100 flex flex-col items-center space-y-6 text-lg'>
 						{navItems.map(item => (
 							<li key={item.id}>
 								<Link
 									href={item.url}
 									onClick={() => setIsMenuOpen(false)}
-									className='block px-4 py-2 hover:underline focus:outline-none focus:ring-2 focus:ring-customBrown-100'
+									className='focus:ring-custom-brown-100 block px-4 py-2 hover:underline focus:ring-2 focus:outline-hidden'
 								>
 									{item.label}
 								</Link>

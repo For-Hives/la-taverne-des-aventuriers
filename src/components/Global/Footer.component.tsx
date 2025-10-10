@@ -13,11 +13,11 @@ export default async function FooterComponent() {
 
 	return (
 		<div
-			className='relative flex w-screen items-end justify-center bg-FooterImage bg-cover bg-center text-white sm:min-h-[550px] md:overflow-hidden'
+			className='bg-FooterImage relative flex w-screen items-end justify-center bg-cover bg-center text-white sm:min-h-[550px] md:overflow-hidden'
 			style={{ aspectRatio: '2653 / 1000' }}
 		>
 			{/* Left decorative image */}
-			{/*<div className='absolute bottom-0 left-0 hidden !-translate-x-[15rem] items-center justify-center overflow-hidden mix-blend-color-burn lg:flex xl:-translate-x-[9rem] xl:translate-y-[3rem]'>*/}
+			{/*<div className='absolute bottom-0 left-0 hidden -translate-x-60! items-center justify-center overflow-hidden mix-blend-color-burn lg:flex xl:-translate-x-36 xl:translate-y-12'>*/}
 			<div
 				className={
 					'absolute bottom-0 left-0 overflow-hidden mix-blend-color-burn'
@@ -26,47 +26,47 @@ export default async function FooterComponent() {
 				<Image
 					src='/assets/images/elements/cristals/rock1.webp'
 					alt='Decorative rock'
-					className='hidden transform lg:block lg:-translate-x-[15rem] lg:translate-y-[5rem] xl:w-3/4 xl:-translate-x-[10rem] 2xl:w-3/4'
+					className='hidden transform lg:block lg:-translate-x-60 lg:translate-y-20 xl:w-3/4 xl:-translate-x-40 2xl:w-3/4'
 					width={400}
 					height={400}
 				/>
 			</div>
 
 			{/* Main content container */}
-			<div className='relative z-10 mt-36 flex w-full max-w-7xl flex-col items-center justify-center gap-12 p-10 text-left font-obraletra text-base text-customBrown-100 max-sm:gap-6 sm:mt-10 xl:gap-36'>
+			<div className='font-obraletra text-custom-brown-100 relative z-10 mt-36 flex w-full max-w-7xl flex-col items-center justify-center gap-12 p-10 text-left text-base max-sm:gap-6 sm:mt-10 xl:gap-36'>
 				<div className='flex w-full max-w-4xl flex-wrap items-start justify-evenly max-sm:flex-col max-sm:items-start max-sm:gap-9'>
 					{/* Navigation column */}
-					<div className='flex w-1/3 max-w-xs flex-col items-start justify-center gap-3 font-obraletra text-base text-customBrown-100 max-lg:text-sm max-sm:w-full'>
+					<div className='font-obraletra text-custom-brown-100 flex w-1/3 max-w-xs flex-col items-start justify-center gap-3 text-base max-lg:text-sm max-sm:w-full'>
 						<h2
-							className='font-cardinal text-2xl text-customBrown-100 first-letter:text-customRed-100 sm:text-3xl'
+							className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-2xl sm:text-3xl'
 							dangerouslySetInnerHTML={{
 								__html: data.bar_title.replaceAll(' ', '&nbsp;'),
 							}}
 						/>
 						<div className='flex flex-col gap-2 *:w-full'>
 							<Link
-								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
+								className='hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline'
 								href={data.menu_url}
 								aria-label={data.menu_aria}
 							>
 								{data.menu_link_title}
 							</Link>
 							<Link
-								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
+								className='hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline'
 								href={data.description_url}
 								aria-label={data.description_aria}
 							>
 								{data.description_title}
 							</Link>
 							<Link
-								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
+								className='hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline'
 								href={data.events_url}
 								aria-label={data.event_aria}
 							>
 								{data.events_title}
 							</Link>
 							<Link
-								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
+								className='hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline'
 								href={data.game_library_url}
 								aria-label={data.game_library_aria}
 							>
@@ -76,30 +76,30 @@ export default async function FooterComponent() {
 					</div>
 
 					{/* Support column */}
-					<div className='flex w-1/3 max-w-xs flex-col items-start justify-center gap-3 font-obraletra text-base text-customBrown-100 max-lg:text-sm max-sm:w-full'>
+					<div className='font-obraletra text-custom-brown-100 flex w-1/3 max-w-xs flex-col items-start justify-center gap-3 text-base max-lg:text-sm max-sm:w-full'>
 						<h2
-							className='font-cardinal text-2xl text-customBrown-100 first-letter:text-customRed-100 sm:text-3xl'
+							className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-2xl sm:text-3xl'
 							dangerouslySetInnerHTML={{
 								__html: data.support_title.replaceAll(' ', '&nbsp;'),
 							}}
 						/>
 						<div className='flex flex-col gap-2 *:w-full'>
 							<Link
-								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
+								className='hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline'
 								href={data.contact_url}
 								aria-label={data.contact_aria}
 							>
 								{data.contact_title}
 							</Link>
 							<Link
-								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
+								className='hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline'
 								href={data.reservation_url}
 								aria-label={data.reservation_aria}
 							>
 								{data.reservation_link_label}
 							</Link>
 							<Link
-								className='transition-all duration-300 ease-in-out hover:text-customRed-100 hover:underline'
+								className='hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline'
 								href='/mentions-legales'
 							>
 								Mentions légales
@@ -110,7 +110,7 @@ export default async function FooterComponent() {
 					{/* Social media column */}
 					<div className='flex w-1/3 max-w-xs flex-col items-start justify-center gap-3 max-sm:w-full'>
 						<h2
-							className='font-cardinal text-2xl text-customBrown-100 first-letter:text-customRed-100 sm:text-3xl'
+							className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-2xl sm:text-3xl'
 							dangerouslySetInnerHTML={{
 								__html: data.socials_title.replaceAll(' ', '&nbsp;'),
 							}}
@@ -124,7 +124,7 @@ export default async function FooterComponent() {
 							>
 								<FontAwesomeIcon
 									icon={faInstagram}
-									className='h-8 w-8 text-customBrown-100 transition-colors duration-300 ease-in-out hover:text-customRed-100'
+									className='text-custom-brown-100 hover:text-custom-red-100 h-8 w-8 transition-colors duration-300 ease-in-out'
 								/>
 							</Link>
 							<Link
@@ -135,7 +135,7 @@ export default async function FooterComponent() {
 							>
 								<FontAwesomeIcon
 									icon={faFacebook}
-									className='h-8 w-8 text-customBrown-100 transition-colors duration-300 ease-in-out hover:text-customRed-100'
+									className='text-custom-brown-100 hover:text-custom-red-100 h-8 w-8 transition-colors duration-300 ease-in-out'
 								/>
 							</Link>
 							<Link
@@ -173,7 +173,7 @@ export default async function FooterComponent() {
 			</div>
 
 			{/* Right decorative image */}
-			<div className='absolute bottom-0 right-0 flex -rotate-6 items-center justify-center overflow-hidden mix-blend-color-burn max-lg:hidden max-lg:translate-x-[1rem] max-lg:translate-y-[1rem] lg:translate-y-[2.5rem] lg:scale-125 xl:translate-x-[7rem] xl:translate-y-[2rem] xl:scale-100'>
+			<div className='absolute right-0 bottom-0 flex -rotate-6 items-center justify-center overflow-hidden mix-blend-color-burn max-lg:hidden max-lg:translate-x-4 max-lg:translate-y-4 lg:translate-y-10 lg:scale-125 xl:translate-x-28 xl:translate-y-8 xl:scale-100'>
 				<Image
 					src='/assets/images/elements/cristals/rock2.webp'
 					alt='Decorative rock'

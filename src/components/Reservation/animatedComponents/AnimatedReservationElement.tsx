@@ -13,7 +13,7 @@ const CARDS_CONFIG = {
 			transition: { delay: 0.2, duration: 0.8 },
 		},
 		className:
-			'col-span-1 row-span-1 flex items-center justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 lg:col-span-9 lg:row-span-1',
+			'col-span-1 row-span-1 flex items-center justify-start rounded-xl border border-custom-brown-100 bg-custom-white-300 lg:col-span-9 lg:row-span-1',
 	},
 	// Card 2 - Middle Right (The team)
 	card2: {
@@ -23,7 +23,7 @@ const CARDS_CONFIG = {
 			transition: { delay: 0.4, duration: 0.8 },
 		},
 		className:
-			'relative col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 lg:row-span-3 lg:col-span-3',
+			'relative col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-custom-brown-100 bg-custom-white-300 lg:row-span-3 lg:col-span-3',
 	},
 	// Card 3 - Middle Left (Our history)
 	card3: {
@@ -33,7 +33,7 @@ const CARDS_CONFIG = {
 			transition: { delay: 0.6, duration: 0.8 },
 		},
 		className:
-			'col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 lg:col-span-3 lg:row-span-2',
+			'col-span-1 row-span-1 flex flex-col items-start justify-start rounded-xl border border-custom-brown-100 bg-custom-white-300 lg:col-span-3 lg:row-span-2',
 	},
 	// Card 4 - Bottom Left (Information)
 	card4: {
@@ -43,7 +43,7 @@ const CARDS_CONFIG = {
 			transition: { delay: 1, duration: 0.8 },
 		},
 		className:
-			'col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300  lg:row-span-1 lg:col-span-3',
+			'col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-custom-brown-100 bg-custom-white-300  lg:row-span-1 lg:col-span-3',
 	},
 	// Card 5 - Bottom Right (Our services)
 	card5: {
@@ -53,7 +53,7 @@ const CARDS_CONFIG = {
 			transition: { delay: 1.2, duration: 0.8 },
 		},
 		className:
-			'col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-customBrown-100 bg-customWhite-300 lg:col-span-3 lg:row-span-1',
+			'col-span-1 row-span-1 flex items-start justify-start rounded-xl border border-custom-brown-100 bg-custom-white-300 lg:col-span-3 lg:row-span-1',
 	},
 	centralLogo: {
 		animation: {
@@ -62,7 +62,7 @@ const CARDS_CONFIG = {
 			transition: { delay: 0.8, duration: 0.8 },
 		},
 		className:
-			'relative lg:flex items-center justify-center rounded-xl border border-customBrown-100 bg-customWhite-300 hidden  lg:row-span-1 lg:col-span-6',
+			'relative lg:flex items-center justify-center rounded-xl border border-custom-brown-100 bg-custom-white-300 hidden  lg:row-span-1 lg:col-span-6',
 	},
 }
 
@@ -73,7 +73,7 @@ export const AnimatedReservationElement = ({
 	data: WhoAreWePageData
 }) => {
 	return (
-		<div className='flex h-full w-11/12 items-center justify-center font-cardoRegular text-customBrown-100'>
+		<div className='font-cardo-regular text-custom-brown-100 flex h-full w-11/12 items-center justify-center'>
 			{/* Grid layout for the content */}
 			<div className='grid h-full w-full grid-cols-1 grid-rows-1 gap-4 max-md:grid-rows-1 lg:grid-cols-12'>
 				{/* Card 1 - Top Left (Who we are) */}
@@ -85,7 +85,7 @@ export const AnimatedReservationElement = ({
 						{/* Image with Next.js Image component */}
 						<div
 							className={
-								'absolute -bottom-32 -right-0 hidden h-full w-full lg:flex xl:-right-12 xl:bottom-12 xl:w-3/6'
+								'absolute -right-0 -bottom-32 hidden h-full w-full lg:flex xl:-right-12 xl:bottom-12 xl:w-3/6'
 							}
 						>
 							<div className='relative h-full w-full'>
@@ -102,10 +102,10 @@ export const AnimatedReservationElement = ({
 						</div>
 
 						{/* Gradient overlay for the background */}
-						<div className='absolute inset-0 z-0 bg-gradient-to-b from-customWhite-300/100 via-customWhite-300/100 via-45% to-customWhite-300/0 to-70% xl:bg-gradient-to-r xl:from-customWhite-300/100 xl:via-customWhite-300/100 xl:via-50% xl:to-customWhite-300/20 xl:to-60%' />
+						<div className='from-custom-white-300 via-custom-white-300 to-custom-white-300/0 xl:from-custom-white-300 xl:via-custom-white-300 xl:to-custom-white-300/20 absolute inset-0 z-0 bg-linear-to-b via-45% to-70% xl:bg-linear-to-r xl:via-50% xl:to-60%' />
 						{/* Content */}
 						<div className='relative z-10 flex w-full flex-col gap-4 xl:w-1/2'>
-							<h1 className='font-cardinal text-2xl tracking-wider first-letter:text-customRed-100 sm:text-3xl'>
+							<h1 className='font-cardinal first-letter:text-custom-red-100 text-2xl tracking-wider sm:text-3xl'>
 								{data.who_are_we_title}
 							</h1>
 							<div
@@ -123,7 +123,7 @@ export const AnimatedReservationElement = ({
 				>
 					<div className='relative flex h-full w-full items-start justify-start overflow-hidden rounded-xl'>
 						<div className='relative z-10 flex flex-col p-8'>
-							<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
+							<h2 className='font-cardinal first-letter:text-custom-red-100 text-2xl sm:text-3xl'>
 								{data.team_title}
 							</h2>
 							<div
@@ -133,7 +133,7 @@ export const AnimatedReservationElement = ({
 						</div>
 
 						{/* Image en bas à gauche pour l'équipe - visible uniquement sur desktop (xl) */}
-						<div className='absolute -bottom-8 -right-4 z-20 hidden xl:block'>
+						<div className='absolute -right-4 -bottom-8 z-20 hidden xl:block'>
 							<Image
 								src='/assets/images/elfattention.webp'
 								alt='Illustration Équipe'
@@ -144,7 +144,7 @@ export const AnimatedReservationElement = ({
 						</div>
 					</div>
 					<Image
-						className='absolute bottom-0 right-[100%] z-40 w-[170px] translate-x-20 translate-y-20 opacity-50 max-xl:hidden'
+						className='absolute right-full bottom-0 z-40 w-[170px] translate-x-20 translate-y-20 opacity-50 max-xl:hidden'
 						src='/assets/images/elements/WhoAreWeElement/dice.webp'
 						alt='Dice'
 						width={250}
@@ -159,10 +159,10 @@ export const AnimatedReservationElement = ({
 				>
 					<div className='relative flex h-full w-full items-start justify-start overflow-hidden rounded-xl'>
 						{/* Gradient overlay for the background */}
-						<div className='absolute inset-0 z-0 bg-gradient-to-b from-customWhite-300/100 via-customWhite-300/100 via-70% to-customWhite-300/25 max-lg:bg-gradient-to-r' />
+						<div className='from-custom-white-300 via-custom-white-300 to-custom-white-300/25 absolute inset-0 z-0 bg-linear-to-b via-70% max-lg:bg-linear-to-r' />
 
 						<div className='relative z-10 flex flex-col gap-4 p-8'>
-							<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
+							<h2 className='font-cardinal first-letter:text-custom-red-100 text-2xl sm:text-3xl'>
 								{data.our_history_title}
 							</h2>
 							<div
@@ -179,7 +179,7 @@ export const AnimatedReservationElement = ({
 								alt='Illustration Histoire'
 								width={300}
 								height={300}
-								className='-rotate-12 scale-x-[-1] opacity-25'
+								className='scale-x-[-1] -rotate-12 opacity-25'
 							/>
 						</div>
 					</div>
@@ -198,7 +198,7 @@ export const AnimatedReservationElement = ({
 					/>
 
 					<Image
-						className='absolute bottom-0 right-0 w-[170px] translate-x-10 translate-y-24'
+						className='absolute right-0 bottom-0 w-[170px] translate-x-10 translate-y-24'
 						src='/assets/images/elements/WhoAreWeElement/dice.webp'
 						alt='Dice'
 						width={520}
@@ -212,7 +212,7 @@ export const AnimatedReservationElement = ({
 					{...CARDS_CONFIG.card5.animation}
 				>
 					<div className='flex flex-col p-8'>
-						<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
+						<h2 className='font-cardinal first-letter:text-custom-red-100 text-2xl sm:text-3xl'>
 							{data.our_services_title}
 						</h2>
 						<div
@@ -230,7 +230,7 @@ export const AnimatedReservationElement = ({
 					<div className='relative flex h-full w-full items-start justify-start overflow-hidden rounded-xl'>
 						{/* Content */}
 						<div className='relative z-10 flex flex-col gap-4 p-8'>
-							<h2 className='font-cardinal text-2xl first-letter:text-customRed-100 sm:text-3xl'>
+							<h2 className='font-cardinal first-letter:text-custom-red-100 text-2xl sm:text-3xl'>
 								{data.information_title}
 							</h2>
 							<div

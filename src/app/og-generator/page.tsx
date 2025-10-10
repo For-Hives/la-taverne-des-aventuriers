@@ -26,8 +26,8 @@ export default function OgGenerator() {
 			<div className='container mx-auto h-full px-4 py-8'>
 				<div className='flex h-full w-full flex-row items-center justify-between gap-8'>
 					{/* Left Section - Title and Description */}
-					<div className='flex w-[100%] flex-col items-start justify-center gap-6'>
-						<h1 className='flex w-full flex-col gap-2 font-cardinal text-4xl font-bold text-customBrown-100 first-letter:text-customRed-100 sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl'>
+					<div className='flex w-full flex-col items-start justify-center gap-6'>
+						<h1 className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 flex w-full flex-col gap-2 text-4xl font-bold sm:w-2/3 sm:text-5xl md:text-6xl lg:text-8xl'>
 							<span
 								dangerouslySetInnerHTML={{
 									__html: textToSpanColored('La *T*averne Des *A*venturiers'),
@@ -36,7 +36,7 @@ export default function OgGenerator() {
 						</h1>
 
 						<div className='flex flex-col items-start gap-6 sm:gap-8 md:gap-10'>
-							<p className='flex items-center gap-2 font-obraletra text-lg font-bold text-customBrown-100 sm:gap-3 sm:text-xl md:text-2xl'>
+							<p className='font-obraletra text-custom-brown-100 flex items-center gap-2 text-lg font-bold sm:gap-3 sm:text-xl md:text-2xl'>
 								<span
 									dangerouslySetInnerHTML={{
 										__html: textToSpanColored(
@@ -49,12 +49,12 @@ export default function OgGenerator() {
 					</div>
 
 					{/* Right Section - Hours Table */}
-					<div className='relative flex h-full w-[50%] -translate-y-8 transform flex-col items-start gap-6 rounded-2xl border-3 border-customBrown-100 bg-customWhite-300 p-6 font-obraletra shadow'>
-						<h2 className='font-obraletra text-2xl text-customBrown-100 first-letter:font-obraletraBold'>
+					<div className='border-custom-brown-100 bg-custom-white-300 font-obraletra relative flex h-full w-[50%] -translate-y-8 transform flex-col items-start gap-6 rounded-2xl border-3 p-6 shadow-sm'>
+						<h2 className='font-obraletra text-custom-brown-100 first-letter:font-obraletra-bold text-2xl'>
 							Nos Horaires
 						</h2>
 						<table className='w-full'>
-							<tbody className='divide-y divide-customBrown-100'>
+							<tbody className='divide-custom-brown-100 divide-y'>
 								<tr>
 									<td className='py-2 pr-8 font-bold'>Lundi</td>
 									<td className='py-2'>18h00 - 00h00</td>
@@ -85,7 +85,7 @@ export default function OgGenerator() {
 								</tr>
 							</tbody>
 						</table>
-						<p className='absolute bottom-0 mt-4 translate-y-24 transform text-2xl text-customBrown-100'>
+						<p className='text-custom-brown-100 absolute bottom-0 mt-4 translate-y-24 transform text-2xl'>
 							13 rue Kergévan, 44000 Nantes
 						</p>
 					</div>

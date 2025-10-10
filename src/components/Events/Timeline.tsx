@@ -42,14 +42,14 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 					style={{
 						height: height + 'px',
 					}}
-					className='absolute left-[18px] top-0 w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-customBrown-100/20 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] lg:left-[-12px]'
+					className='via-custom-brown-100/20 absolute top-0 left-[18px] w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-0% to-transparent to-99% mask-[linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] lg:left-[-12px]'
 				>
 					<motion.div
 						style={{
 							height: heightTransform,
 							opacity: opacityTransform,
 						}}
-						className='absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-customBrown-100 via-customRed-100 to-transparent'
+						className='from-custom-brown-100 via-custom-red-100 absolute inset-x-0 top-0 w-[2px] rounded-full bg-linear-to-t to-transparent'
 					/>
 				</div>
 
@@ -60,10 +60,10 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 							className='flex -translate-x-2 transform justify-start gap-10 pt-40 lg:-translate-x-10'
 						>
 							<div className='sticky top-40 z-40 flex flex-row items-center self-start'>
-								<div className='absolute left-3 flex h-8 w-8 items-center justify-center rounded-full bg-customWhite-100 shadow-lg'>
-									<div className='h-3 w-3 rounded-full bg-customBrown-100' />
+								<div className='bg-custom-white-100 absolute left-3 flex h-8 w-8 items-center justify-center rounded-full shadow-lg'>
+									<div className='bg-custom-brown-100 h-3 w-3 rounded-full' />
 								</div>
-								<h3 className='hidden pl-20 font-cardinal text-4xl text-customBrown-100 md:block'>
+								<h3 className='font-cardinal text-custom-brown-100 hidden pl-20 text-4xl md:block'>
 									{new Date(event.date).toLocaleDateString('fr-FR', {
 										day: 'numeric',
 										month: 'long',
@@ -77,15 +77,15 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 									whileInView={{ opacity: 1, y: 0 }}
 									transition={{ delay: index * 0.1, duration: 0.5 }}
 									viewport={{ once: true }}
-									className='rounded-lg border border-customBrown-100/20 bg-white p-6 shadow-lg transition-all hover:border-customBrown-100/40'
+									className='border-custom-brown-100/20 hover:border-custom-brown-100/40 rounded-lg border bg-white p-6 shadow-lg transition-all'
 								>
-									<h4 className='mb-4 font-cardoRegular text-xl font-bold text-customBrown-100 md:text-2xl lg:hidden'>
+									<h4 className='font-cardo-regular text-custom-brown-100 mb-4 text-xl font-bold md:text-2xl lg:hidden'>
 										{event.title}
 									</h4>
 
 									{/* Mobile date display - only visible on mobile */}
 									<div className='mb-3 flex items-center lg:hidden'>
-										<span className='inline-block rounded-full bg-customBrown-100/10 px-3 py-1 text-sm font-medium text-customBrown-100'>
+										<span className='bg-custom-brown-100/10 text-custom-brown-100 inline-block rounded-full px-3 py-1 text-sm font-medium'>
 											{new Date(event.date).toLocaleDateString('fr-FR', {
 												day: 'numeric',
 												month: 'long',
@@ -108,11 +108,11 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 										)}
 										<div className={'flex flex-col justify-between'}>
 											<div>
-												<h4 className='mb-4 hidden font-cardoRegular text-3xl font-bold text-customBrown-100 md:block'>
+												<h4 className='font-cardo-regular text-custom-brown-100 mb-4 hidden text-3xl font-bold md:block'>
 													{event.title}
 												</h4>
 												<div
-													className='prose mb-4 hidden font-cardoRegular text-customBrown-100 lg:block'
+													className='prose font-cardo-regular text-custom-brown-100 mb-4 hidden lg:block'
 													dangerouslySetInnerHTML={{ __html: event.summary }}
 												/>
 											</div>
@@ -120,7 +120,7 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 											<div>
 												<Link
 													href={`/evenements/${event.slug}`}
-													className='hidden rounded-md bg-customBrown-100 px-4 py-2 text-white transition-colors duration-300 hover:bg-customBrown-100/80 lg:inline-block'
+													className='bg-custom-brown-100 hover:bg-custom-brown-100/80 hidden rounded-md px-4 py-2 text-white transition-colors duration-300 lg:inline-block'
 												>
 													En savoir plus
 												</Link>
@@ -141,12 +141,12 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 									)}
 
 									<div
-										className='prose mb-4 font-cardoRegular text-customBrown-100 lg:hidden'
+										className='prose font-cardo-regular text-custom-brown-100 mb-4 lg:hidden'
 										dangerouslySetInnerHTML={{ __html: event.summary }}
 									/>
 									<Link
 										href={`/evenements/${event.slug}`}
-										className='inline-block rounded-md bg-customBrown-100 px-4 py-2 text-white transition-colors duration-300 hover:bg-customBrown-100/80 lg:hidden'
+										className='bg-custom-brown-100 hover:bg-custom-brown-100/80 inline-block rounded-md px-4 py-2 text-white transition-colors duration-300 lg:hidden'
 									>
 										En savoir plus
 									</Link>

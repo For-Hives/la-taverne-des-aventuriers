@@ -95,7 +95,7 @@ export default async function Page() {
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
-				<div className='mask-custom absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform bg-background-image opacity-75'></div>
+				<div className='mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75'></div>
 
 				{/* Main content with spacing between sections */}
 				<div className='mt-64 flex w-full flex-col items-center justify-center gap-44 max-lg:gap-24'>
@@ -106,7 +106,7 @@ export default async function Page() {
 					</div>
 				</div>
 
-				<main className='flex w-full flex-grow flex-col items-center py-8 sm:py-16'>
+				<main className='flex w-full grow flex-col items-center py-8 sm:py-16'>
 					<div className='flex w-full flex-col items-center gap-40'>
 						<div className='flex w-full flex-col'></div>
 					</div>
