@@ -1,7 +1,8 @@
 'use client'
 
-import { CountGroup } from '@/components/CocktailBattle/CountGroup'
 import { useState, useEffect, useCallback } from 'react'
+
+import { CountGroup } from '@/components/CocktailBattle/CountGroup'
 
 export function ScoreCounter({
 	color = 'customBrown-100',

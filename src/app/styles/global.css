@@ -16,11 +16,11 @@
 	--color-custom-white-400: #ead4bf;
 	--color-custom-white-500: #f2efe2;
 
-	/* Custom fonts - directly reference Next.js font variables */
-	--font-cardinal: var(--cardinal), sans-serif;
-	--font-cardo-regular: var(--cardo-regular), serif;
-	--font-obraletra: var(--kc-obra-letra), sans-serif;
-	--font-obraletra-bold: var(--kc-obra-letra-bold), sans-serif;
+	/* Custom fonts - Tailwind v4 syntax requires --font-family-* prefix */
+	--font-family-cardinal: var(--cardinal), sans-serif;
+	--font-family-cardo-regular: var(--cardo-regular), serif;
+	--font-family-obraletra: var(--kc-obra-letra), sans-serif;
+	--font-family-obraletra-bold: var(--kc-obra-letra-bold), sans-serif;
 
 	/* Background images - must match class names exactly */
 	--background-image-background-image: url('/assets/images/elements/ContactElements/t3.webp');

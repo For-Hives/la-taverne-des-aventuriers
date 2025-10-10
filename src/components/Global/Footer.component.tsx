@@ -1,8 +1,9 @@
-import { getFooterData } from '@/app/actions/services/getFooterData.service'
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { getFooterData } from '@/app/actions/services/getFooterData.service'
 
 export default async function FooterComponent() {
 	// Fetch footer data asynchronously

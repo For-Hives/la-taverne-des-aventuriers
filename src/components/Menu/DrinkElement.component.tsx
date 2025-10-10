@@ -1,6 +1,7 @@
+import Image from 'next/image'
+
 import { getDrinkList } from '@/app/actions/services/DrinksData/getDrinkList.service' // Importing the function to get the list of drinks
 import { formatDrinkName } from '@/utils/FormatDrinksName' // Importing the DrinkDivComponent
-import Image from 'next/image'
 
 // Defining the Drink interface
 interface Drink {

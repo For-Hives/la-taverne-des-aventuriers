@@ -1,10 +1,11 @@
+import { Metadata } from 'next'
+
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import { getWhoAreWePageData } from '@/app/actions/services/getWhoAreWePageData.service'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import { ReservationElementComponent as WhoAreWeElementComponent } from '@/components/Reservation/ReservationElementsSection'
-import { Metadata } from 'next'
 
 export const revalidate = 10
 

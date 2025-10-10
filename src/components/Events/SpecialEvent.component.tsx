@@ -1,6 +1,7 @@
-import { EventData } from '@/app/actions/services/getEventData'
 import Image from 'next/image' // Import the Image component from Next.js for optimized image rendering
 import Link from 'next/link' // Import the EventData interface
+
+import { EventData } from '@/app/actions/services/getEventData'
 
 // Define the SpecialEventComponent function component, which takes 'data' as a prop
 export default function SpecialEventComponent({

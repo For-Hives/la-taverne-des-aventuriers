@@ -1,8 +1,9 @@
 'use client'
 
-import { NavBarData } from '@/app/actions/services/getNavData.service'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { NavBarData } from '@/app/actions/services/getNavData.service'
 
 interface NavbarProps {
 	navItems: NavBarData

@@ -1,15 +1,16 @@
 'use client'
 
-import { EventData } from '@/app/actions/services/getEventData'
-import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
-import { cn } from '@/lib/utils'
-import { textToSpanColored } from '@/utils/textToSpanColored'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
+
+import { EventData } from '@/app/actions/services/getEventData'
+import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
+import { cn } from '@/lib/utils'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 
 /**
  * Individual Event Card Component

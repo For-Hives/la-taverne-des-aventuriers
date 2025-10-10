@@ -1,5 +1,7 @@
 // app/reservation/page.tsx
 
+import { Metadata } from 'next'
+
 import { getContactData } from '@/app/actions/services/getContactPageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import ContactElements from '@/components/Contact/ContactElementsSection.component'
@@ -7,7 +9,6 @@ import ReservationComponent from '@/components/Contact/Reservation.component'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import { Metadata } from 'next'
 
 export const revalidate = 10
 

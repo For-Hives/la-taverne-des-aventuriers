@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import BattleBanner from '@/components/CocktailBattle/BattleBanner.component'
 import BackToTop from '@/components/Global/BackToTop.component'
@@ -9,7 +11,6 @@ import DrinkElement from '@/components/Menu/DrinkElement.component'
 import MenuDock from '@/components/Menu/MenuDock.component'
 import SoftsAndHotElement from '@/components/Menu/SoftsAndHotElement.component'
 import TravelersPleasureElement from '@/components/Menu/TravelersPleasureElement.component'
-import { Metadata } from 'next'
 
 export const revalidate = 10
 

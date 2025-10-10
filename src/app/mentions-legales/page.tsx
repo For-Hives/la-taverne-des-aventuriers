@@ -1,7 +1,8 @@
+import { Metadata } from 'next'
+
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import { Metadata } from 'next'
 
 export const revalidate = 10
 

@@ -1,5 +1,7 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+
 import {
 	getNavBarData,
 	NavBarData,
@@ -7,7 +9,6 @@ import {
 import RiveAnimation from '@/components/animation/RiveAnimation'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import { useState, useEffect } from 'react'
 
 export default function Home() {
 	const [dataNavbar, setDataNavbar] = useState<NavBarData | null>(null)

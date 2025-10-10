@@ -1,10 +1,11 @@
+import { Metadata } from 'next'
+
 import { getCocktailBattleData } from '@/app/actions/services/getCocktailBattlePageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import CocktailBattleComponent from '@/components/CocktailBattle/CocktailBattle.component'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import { Metadata } from 'next'
 
 export const revalidate = 10
 

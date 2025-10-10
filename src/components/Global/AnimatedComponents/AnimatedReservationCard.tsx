@@ -1,11 +1,12 @@
 'use client'
-import { ReservationCardData } from '@/app/actions/services/getReservationCardData.service'
-import { textToSpanColored } from '@/utils/textToSpanColored'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { ReservationCardData } from '@/app/actions/services/getReservationCardData.service'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 
 // AnimatedReservationCard Component
 export const AnimatedReservationCard = ({

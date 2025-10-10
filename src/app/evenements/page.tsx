@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 import { getEventListData } from '@/app/actions/services/getEventListData'
 import { getEventPageData } from '@/app/actions/services/getEventPageData'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
@@ -7,7 +9,6 @@ import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import { textToSpanColored } from '@/utils/textToSpanColored'
-import { Metadata } from 'next'
 
 export const revalidate = 10
 

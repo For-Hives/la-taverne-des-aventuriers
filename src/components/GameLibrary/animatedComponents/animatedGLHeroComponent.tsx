@@ -1,6 +1,7 @@
 'use client'
-import { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing the type for game page data
 import { motion } from 'framer-motion' // Importing motion from Framer Motion for animations
+
+import { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing the type for game page data
 
 // The component takes 'data' of type 'GamesPageData' as a prop
 export const AnimatedGLHeroComponent = ({ data }: { data: GamesPageData }) => {

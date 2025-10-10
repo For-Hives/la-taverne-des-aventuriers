@@ -1,8 +1,9 @@
 'use client'
 
-import { ContactPageData } from '@/app/actions/services/getContactPageData.service'
 import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
 import Image from 'next/image'
+
+import { ContactPageData } from '@/app/actions/services/getContactPageData.service'
 
 export const AnimatedHowToContactComponent = ({
 	data,

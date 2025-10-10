@@ -1,12 +1,13 @@
 'use client'
 
-// Importing necessary components and utilities
-import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
-import { textToSpanColored } from '@/utils/textToSpanColored'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+
+// Importing necessary components and utilities
+import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 
 // HeroTextAnimated component that takes data as a prop
 export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {

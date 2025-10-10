@@ -1,4 +1,6 @@
 'use client'
+import { useEffect, useState } from 'react'
+
 import {
 	getBeerData,
 	BeerData,
@@ -7,7 +9,6 @@ import {
 	getWineData,
 	WineData,
 } from '@/app/actions/services/DrinksData/getWineData.service'
-import { useEffect, useState } from 'react'
 
 export default function BeerWineElement() {
 	// State to hold beer and wine data

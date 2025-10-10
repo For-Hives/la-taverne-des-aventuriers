@@ -1,8 +1,9 @@
 'use client'
 
-import { ReservationPageData } from '@/app/actions/services/getReservationPageData.service'
 import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
 import Image from 'next/image'
+
+import { ReservationPageData } from '@/app/actions/services/getReservationPageData.service'
 
 export const AnimatedReservationComponent = ({
 	data,

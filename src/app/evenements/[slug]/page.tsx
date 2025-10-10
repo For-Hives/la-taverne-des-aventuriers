@@ -1,9 +1,3 @@
-import { getEventData } from '@/app/actions/services/getEventData'
-import { getNavBarData } from '@/app/actions/services/getNavData.service'
-import FooterComponent from '@/components/Global/Footer.component'
-import Navbar from '@/components/Global/Navbar.component'
-import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import { textToSpanColored } from '@/utils/textToSpanColored'
 import {
 	faArrowLeft,
 	faCalendarAlt,
@@ -13,6 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { getEventData } from '@/app/actions/services/getEventData'
+import { getNavBarData } from '@/app/actions/services/getNavData.service'
+import FooterComponent from '@/components/Global/Footer.component'
+import Navbar from '@/components/Global/Navbar.component'
+import MobileNavbar from '@/components/Global/NavbarMobile.component'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 
 export const revalidate = 10
 

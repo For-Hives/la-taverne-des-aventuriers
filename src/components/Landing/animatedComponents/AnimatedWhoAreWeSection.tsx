@@ -1,13 +1,14 @@
 'use client'
 
-// Importing necessary components and utilities
-import { LandingPageData } from '@/app/actions/services/getLandingPageData.service' // Importing the type for landing page data
-import { textToSpanColored } from '@/utils/textToSpanColored' // Importing a function to color text
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons' // Importing the chevron icon from FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // Importing the FontAwesomeIcon component
 import { motion } from 'framer-motion' // Importing motion for animations
 import Image from 'next/image' // Importing the Image component from Next.js
 import Link from 'next/link' // Importing the Link component from Next.js
+
+// Importing necessary components and utilities
+import { LandingPageData } from '@/app/actions/services/getLandingPageData.service' // Importing the type for landing page data
+import { textToSpanColored } from '@/utils/textToSpanColored' // Importing a function to color text
 
 // AnimatedWAWSection component that takes data as a prop
 export const AnimatedWAWSection = ({ data }: { data: LandingPageData }) => {

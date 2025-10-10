@@ -1,14 +1,15 @@
 'use client'
 
-/**
- * Mobile Navigation Component
- */
-import { NavBarData } from '@/app/actions/services/getNavData.service'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+
+/**
+ * Mobile Navigation Component
+ */
+import { NavBarData } from '@/app/actions/services/getNavData.service'
 
 interface MobileNavbarProps {
 	navItems: NavBarData

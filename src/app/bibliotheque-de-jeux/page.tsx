@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import GameComponent from '@/components/GameLibrary/Games.component'
 import GLHeroComponent from '@/components/GameLibrary/GLHero.component'
@@ -5,7 +7,6 @@ import MyLudoComponent from '@/components/GameLibrary/MyLudo.component'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import { Metadata } from 'next'
 
 import { getGamePageData } from '../actions/services/getGamePageData.service'
 

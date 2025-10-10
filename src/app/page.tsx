@@ -1,8 +1,9 @@
+import { Metadata } from 'next'
+
 import { getEventListData } from '@/app/actions/services/getEventListData'
 import { getLandingData } from '@/app/actions/services/getLandingPageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import LandingWrapper from '@/components/Landing/LandingWrapper'
-import { Metadata } from 'next'
 
 export const revalidate = 10
 

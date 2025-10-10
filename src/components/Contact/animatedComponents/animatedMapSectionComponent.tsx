@@ -1,11 +1,12 @@
 'use client'
 
-import { ContactPageData } from '@/app/actions/services/getContactPageData.service'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { ContactPageData } from '@/app/actions/services/getContactPageData.service'
 
 export const AnimatedMapSectionComponent = ({
 	data,

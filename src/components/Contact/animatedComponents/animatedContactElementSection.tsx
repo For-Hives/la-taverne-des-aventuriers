@@ -1,12 +1,13 @@
 'use client'
 
-import { ContactPageData } from '@/app/actions/services/getContactPageData.service' // Importing the data type for the contact page
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons' // Importing Facebook and Instagram icons from Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // Font Awesome React component for icons
 import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
 import Image from 'next/image' // Next.js Image component
 import Link from 'next/link' // Next.js Link component for navigation
 import { useState } from 'react' // Importing useState for managing state in the component
+
+import { ContactPageData } from '@/app/actions/services/getContactPageData.service' // Importing the data type for the contact page
 
 // The AnimatedContactElementSection component is receiving `data` as props
 

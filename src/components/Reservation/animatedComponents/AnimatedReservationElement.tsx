@@ -1,7 +1,8 @@
 'use client'
-import { WhoAreWePageData } from '@/app/actions/services/getWhoAreWePageData.service' // Importing data type for the page
 import { motion } from 'framer-motion' // Importing framer-motion for animations
 import Image from 'next/image' // Importing Image component for handling images
+
+import { WhoAreWePageData } from '@/app/actions/services/getWhoAreWePageData.service' // Importing data type for the page
 
 // Layout configuration for each card
 const CARDS_CONFIG = {

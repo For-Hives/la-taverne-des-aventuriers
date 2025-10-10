@@ -1,12 +1,13 @@
 'use client'
 
-import { GamesPageData } from '@/app/actions/services/getGamePageData.service'
-import { cn } from '@/lib/utils'
-import { textToSpanColored } from '@/utils/textToSpanColored'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+
+import { GamesPageData } from '@/app/actions/services/getGamePageData.service'
+import { cn } from '@/lib/utils'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 
 /**
  * Individual Game Card Component

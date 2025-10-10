@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { EventData } from '@/app/actions/services/getEventData'
 import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
 import { NavItem } from '@/app/actions/services/getNavData.service'
@@ -10,7 +12,6 @@ import EventsComponent from '@/components/Landing/Events.component'
 import HeroTextComponent from '@/components/Landing/HeroText.component'
 import BackgroundVideoLP from '@/components/Landing/LpBackgroundVideo.component'
 import WhoAreWeSection from '@/components/Landing/WhoAreWeSection.components'
-import Head from 'next/head'
 
 export default function LandingWrapper({
 	data,

@@ -1,6 +1,5 @@
 'use client'
 
-import { FloatingDock } from '@/components/Menu/FloatingDock.component'
 import {
 	faBeer,
 	faWhiskeyGlass,
@@ -12,6 +11,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Ham } from 'lucide-react'
+
+import { FloatingDock } from '@/components/Menu/FloatingDock.component'
 
 const menuItems = [
 	{

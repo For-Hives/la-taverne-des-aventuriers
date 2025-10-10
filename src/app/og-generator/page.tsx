@@ -1,5 +1,6 @@
-import { textToSpanColored } from '@/utils/textToSpanColored'
 import { Metadata } from 'next'
+
+import { textToSpanColored } from '@/utils/textToSpanColored'
 
 export const revalidate = 10
 

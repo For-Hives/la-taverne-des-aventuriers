@@ -2,12 +2,13 @@ import '@/app/styles/global.css'
 
 import type { Metadata } from 'next'
 
-import { getContactData } from '@/app/actions/services/getContactPageData.service'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Geist, Geist_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 import Script from 'next/script'
 import React from 'react'
+
+import { getContactData } from '@/app/actions/services/getContactPageData.service'
 
 // Font configurations
 const ObraLetra = localFont({

@@ -1,5 +1,6 @@
-import { getTravelersPleasureData } from '@/app/actions/services/DrinksData/getTravelersPleasureData.service'
 import Image from 'next/image'
+
+import { getTravelersPleasureData } from '@/app/actions/services/DrinksData/getTravelersPleasureData.service'
 
 interface TravelersPleasureElementProps {
 	readonly priceDisplay?: 'global' | 'individual'
