@@ -1,4 +1,4 @@
-import { GamesPageData } from '@/app/actions/services/getGamePageData.service'
+import type { GamesPageData } from '@/app/actions/services/getGamePageData.service'
 import { AnimatedGLHeroComponent } from '@/components/GameLibrary/animatedComponents/animatedGLHeroComponent'
 
 export default function GLHeroComponent({

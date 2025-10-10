@@ -1,12 +1,11 @@
 import '@/app/styles/global.css'
 
-import type { Metadata } from 'next'
-
 import { GoogleAnalytics } from '@next/third-parties/google'
+import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import localFont from 'next/font/local'
 import Script from 'next/script'
-import React from 'react'
+import type React from 'react'
 
 import { getContactData } from '@/app/actions/services/getContactPageData.service'
 
@@ -50,9 +49,7 @@ const geistMono = Geist_Mono({
  * @param contactData Contact data from API
  * @returns Structured data object for JSON-LD
  */
-const createStructuredData = (
-	contactData: Awaited<ReturnType<typeof getContactData>>
-) => ({
+const createStructuredData = (contactData: Awaited<ReturnType<typeof getContactData>>) => ({
 	'@context': 'https://schema.org',
 	'@id': 'https://latavernedesaventuriers.fr',
 	'@type': ['BarOrPub', 'EntertainmentBusiness'],
@@ -122,11 +119,7 @@ const createStructuredData = (
 		},
 	},
 	priceRange: '€',
-	sameAs: [
-		contactData.facebook_url,
-		contactData.instagram_url,
-		contactData.myludo_url,
-	],
+	sameAs: [contactData.facebook_url, contactData.instagram_url, contactData.myludo_url],
 	url: 'https://latavernedesaventuriers.fr',
 })
 
@@ -256,34 +249,34 @@ export default async function RootLayout({
 	const structuredData = createStructuredData(contactData)
 
 	return (
-		<html lang='fr'>
+		<html lang="fr">
 			<head>
 				<script
-					type='application/ld+json'
+					type="application/ld+json"
 					dangerouslySetInnerHTML={{
 						__html: JSON.stringify(structuredData),
 					}}
 				/>
 				{/* Preconnect for third-party domains */}
-				<link rel='preconnect' href='https://www.googletagmanager.com' />
-				<link rel='preconnect' href='https://www.google-analytics.com' />
-				<link rel='preconnect' href='https://umami.wadefade.fr' />
+				<link rel="preconnect" href="https://www.googletagmanager.com" />
+				<link rel="preconnect" href="https://www.google-analytics.com" />
+				<link rel="preconnect" href="https://umami.wadefade.fr" />
 
 				{/* DNS Prefetch for better performance */}
-				<link rel='dns-prefetch' href='https://www.googletagmanager.com' />
-				<link rel='dns-prefetch' href='https://www.google-analytics.com' />
-				<link rel='dns-prefetch' href='https://umami.wadefade.fr' />
+				<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+				<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+				<link rel="dns-prefetch" href="https://umami.wadefade.fr" />
 			</head>
 			<body
 				className={`${ObraLetra.variable} ${ObraLetraBold.variable} ${CardoRegular.variable} ${geistSans.variable} ${geistMono.variable} ${Cardinal.variable} antialiased`}
 			>
 				{children}
 				{/* Google Analytics */}
-				<GoogleAnalytics gaId='G-237Y7E1JZW' />
+				<GoogleAnalytics gaId="G-237Y7E1JZW" />
 				<Script
-					src='https://umami.wadefade.fr/script.js'
-					data-website-id='d1af4b0d-f3e6-4760-89d5-c40f2eaa646b'
-					strategy='afterInteractive'
+					src="https://umami.wadefade.fr/script.js"
+					data-website-id="d1af4b0d-f3e6-4760-89d5-c40f2eaa646b"
+					strategy="afterInteractive"
 				/>
 			</body>
 		</html>

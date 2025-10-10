@@ -3,29 +3,25 @@
 import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
 import Image from 'next/image'
 
-import { ReservationPageData } from '@/app/actions/services/getReservationPageData.service'
+import type { ReservationPageData } from '@/app/actions/services/getReservationPageData.service'
 
-export const AnimatedReservationComponent = ({
-	data,
-}: {
-	data: ReservationPageData
-}) => {
+export const AnimatedReservationComponent = ({ data }: { data: ReservationPageData }) => {
 	return (
-		<section className='relative w-full overflow-hidden rounded-lg'>
-			<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-				<div className='grid grid-cols-1 items-center gap-8 lg:grid-cols-2'>
+		<section className="relative w-full overflow-hidden rounded-lg">
+			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				<div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
 					{/* Text Section */}
 					<motion.div
-						className='order-2 lg:order-1'
+						className="order-2 lg:order-1"
 						initial={{ opacity: 0, y: 50 }} // Start from below with opacity 0
 						animate={{ opacity: 1, y: 0 }} // Fade in and slide up when in view
 						viewport={{ once: true }} // Trigger only once
 						transition={{ delay: 0.2, duration: 1 }} // Delay for sequential animation
 					>
-						<div className='max-w-none'>
+						<div className="max-w-none">
 							{/* Title */}
 							<motion.h2
-								className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 w-full text-left text-3xl lg:text-4xl'
+								className="font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 w-full text-left text-3xl lg:text-4xl"
 								initial={{ opacity: 0, x: -50 }} // Initial left slide with opacity 0
 								animate={{ opacity: 1, x: 0 }} // Fade in and move to normal position when in view
 								viewport={{ once: true }} // Trigger only once
@@ -36,7 +32,7 @@ export const AnimatedReservationComponent = ({
 
 							{/* Description */}
 							<div
-								className='prose prose-customBrown font-cardo-regular mt-6 text-lg' // Styling for the description
+								className="prose prose-customBrown font-cardo-regular mt-6 text-lg" // Styling for the description
 								dangerouslySetInnerHTML={{ __html: data.description }} // Injecting HTML content for description
 							/>
 						</div>
@@ -44,18 +40,18 @@ export const AnimatedReservationComponent = ({
 
 					{/* Image Section */}
 					<motion.div
-						className='order-1 flex justify-center lg:order-2'
+						className="order-1 flex justify-center lg:order-2"
 						initial={{ opacity: 0, x: -100 }} // Start from left with opacity 0
 						animate={{ opacity: 1, x: 0 }} // Fade in and slide to position when in view
 						viewport={{ once: true }} // Trigger only once
 						transition={{ duration: 0.8 }} // Transition duration
 					>
 						<Image
-							src='/assets/images/elements/ContactElements/maison.webp'
-							alt='House illustration'
+							src="/assets/images/elements/ContactElements/maison.webp"
+							alt="House illustration"
 							width={458}
 							height={578}
-							className='hidden max-w-full rounded-lg object-contain lg:block lg:max-w-md'
+							className="hidden max-w-full rounded-lg object-contain lg:block lg:max-w-md"
 						/>
 					</motion.div>
 				</div>

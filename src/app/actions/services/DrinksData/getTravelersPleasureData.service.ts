@@ -22,18 +22,14 @@ export interface TravelersPleasureData {
  * @returns {Promise<TravelersPleasureData[]>} Promise resolving to an array of `TravelersPleasureData`
  * @throws {Error} If PocketBase connection fails or data fetch fails
  */
-export async function getTravelersPleasureData(): Promise<
-	TravelersPleasureData[]
-> {
+export async function getTravelersPleasureData(): Promise<TravelersPleasureData[]> {
 	// Initialize PocketBase connection
 	const pb = await authWithPocketBase()
 
 	// Validate PocketBase connection
 	if (!pb) {
 		console.error('PocketBase connection failed')
-		throw new Error(
-			'Failed to connect to PocketBase [TravelersPleasureData Service]'
-		)
+		throw new Error('Failed to connect to PocketBase [TravelersPleasureData Service]')
 	}
 
 	try {
@@ -42,10 +38,7 @@ export async function getTravelersPleasureData(): Promise<
 		return result.items as TravelersPleasureData[] // Return the list of travelers' pleasures as an array
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch
-		console.error(
-			'Error while fetching TravelersPleasureData from PocketBase:',
-			error
-		)
+		console.error('Error while fetching TravelersPleasureData from PocketBase:', error)
 		throw error
 	}
 }

@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { getCocktailBattleData } from '@/app/actions/services/getCocktailBattlePageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
@@ -54,11 +54,7 @@ export default async function Page() {
 		'@context': 'https://schema.org',
 		'@type': 'Event',
 		description: `Battle mensuelle entre ${BattleData.cocktail1_title} et ${BattleData.cocktail2_title}. Le cocktail gagnant restera sur notre carte !`,
-		endDate: new Date(
-			new Date().getFullYear(),
-			new Date().getMonth() + 1,
-			0
-		).toISOString(),
+		endDate: new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).toISOString(),
 		eventStatus: 'https://schema.org/EventScheduled',
 		image: [BattleData.cocktail_1_image, BattleData.cocktail_2_image],
 		location: {
@@ -84,17 +80,13 @@ export default async function Page() {
 			name: 'La Taverne des Aventuriers',
 			url: 'https://latavernedesaventuriers.fr',
 		},
-		startDate: new Date(
-			new Date().getFullYear(),
-			new Date().getMonth(),
-			1
-		).toISOString(),
+		startDate: new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString(),
 	}
 
 	return (
 		<>
 			<script
-				type='application/ld+json'
+				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(structuredData),
 				}}
@@ -104,7 +96,7 @@ export default async function Page() {
 					<Navbar navItems={navItems} />
 					<MobileNavbar navItems={navItems} />
 
-					<div className='mt-36 flex w-full flex-col'>
+					<div className="mt-36 flex w-full flex-col">
 						<CocktailBattleComponent data={BattleData} />
 					</div>
 

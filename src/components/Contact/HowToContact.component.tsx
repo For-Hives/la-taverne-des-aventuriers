@@ -1,4 +1,4 @@
-import { ContactPageData } from '@/app/actions/services/getContactPageData.service'
+import type { ContactPageData } from '@/app/actions/services/getContactPageData.service'
 import { AnimatedHowToContactComponent } from '@/components/Contact/animatedComponents/animatedHowToContactComponent'
 
 export default async function HowToContact({

@@ -77,19 +77,13 @@ export async function getGamePageData(): Promise<GamesPageData> {
 				item.card3_image = pb.files.getURL(item, item.card3_image)
 			}
 			if (item.myludo_component_image) {
-				item.myludo_component_image = pb.files.getURL(
-					item,
-					item.myludo_component_image
-				)
+				item.myludo_component_image = pb.files.getURL(item, item.myludo_component_image)
 			}
 		})
 
 		return result.items[0] as GamesPageData
 	} catch (error) {
-		console.error(
-			'Error while fetching game library data from PocketBase:',
-			error
-		)
+		console.error('Error while fetching game library data from PocketBase:', error)
 		throw error
 	}
 }

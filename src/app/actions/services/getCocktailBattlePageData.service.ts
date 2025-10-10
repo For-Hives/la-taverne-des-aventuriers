@@ -48,16 +48,10 @@ export async function getCocktailBattleData(): Promise<CocktailBattleData> {
 		const result = await pb.collection('Battle_Cocktails').getList(1, 60)
 
 		if (result.items[0].cocktail_1_image) {
-			result.items[0].cocktail_1_image = pb.files.getURL(
-				result.items[0],
-				result.items[0].cocktail_1_image
-			) // Generate the full URL for the event image
+			result.items[0].cocktail_1_image = pb.files.getURL(result.items[0], result.items[0].cocktail_1_image) // Generate the full URL for the event image
 		}
 		if (result.items[0].cocktail_2_image) {
-			result.items[0].cocktail_2_image = pb.files.getURL(
-				result.items[0],
-				result.items[0].cocktail_2_image
-			) // Generate the full URL for the event image
+			result.items[0].cocktail_2_image = pb.files.getURL(result.items[0], result.items[0].cocktail_2_image) // Generate the full URL for the event image
 		}
 
 		return result.items[0] as CocktailBattleData

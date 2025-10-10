@@ -68,10 +68,7 @@ export async function getLandingData(): Promise<LandingPageData> {
 		return result.items[0] as LandingPageData
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch
-		console.error(
-			'Error while fetching landing page data from PocketBase:',
-			error
-		)
+		console.error('Error while fetching landing page data from PocketBase:', error)
 		throw error
 	}
 }

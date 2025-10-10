@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import { CountGroup } from '@/components/CocktailBattle/CountGroup'
 
@@ -78,37 +78,25 @@ export function ScoreCounter({
 	const rows = createRows()
 
 	return (
-		<div className='relative flex h-fit w-full flex-col items-start justify-center gap-2 rounded-lg p-0 sm:items-center'>
+		<div className="relative flex h-fit w-full flex-col items-start justify-center gap-2 rounded-lg p-0 sm:items-center">
 			<h2 className={`font-cardinal w-full text-5xl text-${color}`}>
-				<span className='mb-2 block text-center'>{title}</span>
-				<span
-					className={'font-cardo-regular block text-center text-6xl font-bold'}
-				>
-					{count}
-				</span>
+				<span className="mb-2 block text-center">{title}</span>
+				<span className={'font-cardo-regular block text-center text-6xl font-bold'}>{count}</span>
 			</h2>
 
 			{/* Main score counter display */}
-			<div className='relative mt-4 w-full md:mx-auto md:max-w-[600px] lg:max-w-[1200px]'>
+			<div className="relative mt-4 w-full md:mx-auto md:max-w-[600px] lg:max-w-[1200px]">
 				{rows.map((row, rowIndex) => (
-					<div
-						key={`row-${rowIndex}`}
-						className='mb-4 flex items-center justify-between'
-					>
+					<div key={`row-${rowIndex}`} className="mb-4 flex items-center justify-between">
 						{/* Left side: count groups */}
-						<div className='flex gap-0'>
+						<div className="flex gap-0">
 							{row.rowGroups.map((groupCount, groupIndex) => (
-								<CountGroup
-									key={`group-${rowIndex}-${groupIndex}`}
-									groupCount={groupCount}
-								/>
+								<CountGroup key={`group-${rowIndex}-${groupIndex}`} groupCount={groupCount} />
 							))}
 						</div>
 
 						{/* Right side: numerical counters */}
-						<div className='absolute right-0 pr-2 text-right italic opacity-50 lg:-right-8'>
-							({row.rowEnd})
-						</div>
+						<div className="absolute right-0 pr-2 text-right italic opacity-50 lg:-right-8">({row.rowEnd})</div>
 					</div>
 				))}
 			</div>

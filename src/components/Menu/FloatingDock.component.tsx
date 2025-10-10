@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { type ReactNode, useEffect, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 
@@ -33,10 +33,8 @@ const FloatingDockItem = ({ href, icon, isActive, title }: DockItemProps) => {
 			}}
 			aria-label={title}
 		>
-			<span className='h-5 w-5 transition-transform duration-300 group-hover:scale-110 md:h-7 md:w-7'>
-				{icon}
-			</span>
-			<div className='bg-custom-brown-100 pointer-events-none absolute -top-10 right-4 w-auto min-w-max origin-bottom scale-0 rounded-md p-2 text-xs text-white shadow-md transition-all duration-200 group-hover:scale-100 md:right-auto md:left-1/2 md:-translate-x-1/2 md:transform'>
+			<span className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 md:h-7 md:w-7">{icon}</span>
+			<div className="bg-custom-brown-100 pointer-events-none absolute -top-10 right-4 w-auto min-w-max origin-bottom scale-0 rounded-md p-2 text-xs text-white shadow-md transition-all duration-200 group-hover:scale-100 md:right-auto md:left-1/2 md:-translate-x-1/2 md:transform">
 				{title}
 			</div>
 		</Link>
@@ -53,11 +51,7 @@ interface FloatingDockProps {
 	mobileClassName?: string
 }
 
-export function FloatingDock({
-	className = '',
-	items,
-	mobileClassName = '',
-}: FloatingDockProps) {
+export function FloatingDock({ className = '', items, mobileClassName = '' }: FloatingDockProps) {
 	const [visible, setVisible] = useState(true)
 	const [lastScrollY, setLastScrollY] = useState(0)
 
@@ -84,11 +78,7 @@ export function FloatingDock({
 	useEffect(() => {
 		const handleScroll = () => {
 			const sections = items
-				.map(item =>
-					item.href.startsWith('#')
-						? document.getElementById(item.href.substring(1))
-						: null
-				)
+				.map(item => (item.href.startsWith('#') ? document.getElementById(item.href.substring(1)) : null))
 				.filter(Boolean)
 
 			let current = ''
@@ -98,10 +88,7 @@ export function FloatingDock({
 				const sectionTop = section.offsetTop
 				const sectionHeight = section.offsetHeight
 
-				if (
-					window.scrollY >= sectionTop - 200 &&
-					window.scrollY < sectionTop + sectionHeight - 200
-				) {
+				if (window.scrollY >= sectionTop - 200 && window.scrollY < sectionTop + sectionHeight - 200) {
 					current = section.id
 				}
 			})
@@ -130,10 +117,7 @@ export function FloatingDock({
 					title={item.title}
 					icon={item.icon}
 					href={item.href}
-					isActive={
-						item.href.startsWith('#') &&
-						item.href.substring(1) === activeSection
-					}
+					isActive={item.href.startsWith('#') && item.href.substring(1) === activeSection}
 				/>
 			))}
 		</div>

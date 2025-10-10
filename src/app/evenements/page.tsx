@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { getEventListData } from '@/app/actions/services/getEventListData'
 import { getEventPageData } from '@/app/actions/services/getEventPageData'
@@ -19,9 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
 	const events = await getEventListData()
 
 	// Get the upcoming events for metadata
-	const upcomingEvents = events.filter(
-		event => new Date(event.event_date) > new Date()
-	)
+	const upcomingEvents = events.filter(event => new Date(event.event_date) > new Date())
 	const nextEvent = upcomingEvents[0]
 
 	return {
@@ -91,9 +89,7 @@ export default async function Page() {
 			'@type': 'Event',
 			description: event.event_description,
 			eventStatus: 'https://schema.org/EventScheduled',
-			image: event.event_image
-				? `https://latavernedesaventuriers.fr${event.event_image}`
-				: undefined,
+			image: event.event_image ? `https://latavernedesaventuriers.fr${event.event_image}` : undefined,
 			location: {
 				'@type': 'BarOrPub',
 				address: {
@@ -113,26 +109,26 @@ export default async function Page() {
 	return (
 		<>
 			<script
-				type='application/ld+json'
+				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
-			<div className='relative min-h-screen'>
+			<div className="relative min-h-screen">
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
-				<div className='relative mt-36 px-4 pb-48 md:px-8'>
-					<div className='mx-auto mb-16 max-w-4xl text-center'>
+				<div className="relative mt-36 px-4 pb-48 md:px-8">
+					<div className="mx-auto mb-16 max-w-4xl text-center">
 						<h1
-							className='font-cardinal text-custom-brown-100 mb-8 text-6xl md:text-8xl'
+							className="font-cardinal text-custom-brown-100 mb-8 text-6xl md:text-8xl"
 							dangerouslySetInnerHTML={{
 								__html: textToSpanColored(eventPageData.page_title),
 							}}
 						/>
 
 						<div
-							className='font-cardo-regular text-custom-brown-100 text-lg'
+							className="font-cardo-regular text-custom-brown-100 text-lg"
 							dangerouslySetInnerHTML={{
 								__html: eventPageData.event_description,
 							}}

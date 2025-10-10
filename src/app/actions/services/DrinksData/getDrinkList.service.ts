@@ -16,9 +16,7 @@ export async function getDrinkList(collection: string): Promise<any> {
 	// Validate PocketBase connection
 	if (!pb) {
 		console.error('PocketBase connection failed')
-		throw new Error(
-			`Failed to connect to PocketBase [Drink Service for ${collection}]`
-		)
+		throw new Error(`Failed to connect to PocketBase [Drink Service for ${collection}]`)
 	}
 
 	try {

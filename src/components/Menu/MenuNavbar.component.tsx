@@ -2,7 +2,7 @@
 
 // Importing necessary modules
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 // Utility function to combine class names conditionally
 function classNames(...classes: string[]) {
@@ -70,10 +70,10 @@ export default function MenuNavbar() {
 			)}
 		>
 			{/* Mobile view */}
-			<div className='grid grid-cols-1 p-16 lg:hidden'>
+			<div className="grid grid-cols-1 p-16 lg:hidden">
 				<select
-					aria-label='Select a tab' // Accessibility label
-					className='bg-custom-white-200 text-custom-brown-100 col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-8 pl-3 text-base outline-1 -outline-offset-1 outline-gray-300 outline-solid focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 focus:outline-solid'
+					aria-label="Select a tab" // Accessibility label
+					className="bg-custom-white-200 text-custom-brown-100 col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-8 pl-3 text-base outline-1 -outline-offset-1 outline-gray-300 outline-solid focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 focus:outline-solid"
 					onChange={e => handleTabClick(e.target.value)}
 					value={currentTab} // Sync current tab with select value
 				>
@@ -86,16 +86,16 @@ export default function MenuNavbar() {
 				</select>
 				{/* Icon for dropdown */}
 				<ChevronDownIcon
-					aria-hidden='true'
-					className='fill-custom-brown-100 pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end'
+					aria-hidden="true"
+					className="fill-custom-brown-100 pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end"
 				/>
 			</div>
 
 			{/* Desktop view */}
-			<div className='hidden p-16 lg:block'>
+			<div className="hidden p-16 lg:block">
 				<nav
-					aria-label='Tabs' // Accessibility label
-					className='divide-custom-brown-transparent-100 isolate flex divide-x rounded-lg shadow-sm'
+					aria-label="Tabs" // Accessibility label
+					className="divide-custom-brown-transparent-100 isolate flex divide-x rounded-lg shadow-sm"
 				>
 					{/* Render each tab as a button */}
 					{tabs.map((tab, tabIdx) => (
@@ -113,7 +113,7 @@ export default function MenuNavbar() {
 							<span>{tab.name}</span>
 							{/* Indicator line for active tab */}
 							<span
-								aria-hidden='true'
+								aria-hidden="true"
 								className={classNames(
 									currentTab === tab.anchor
 										? 'bg-custom-brown-100' // Active indicator color

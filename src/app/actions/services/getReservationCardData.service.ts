@@ -39,9 +39,7 @@ export async function getReservationCardData(): Promise<ReservationCardData> {
 	// Validate PocketBase connection
 	if (!pb) {
 		console.error('PocketBase connection failed')
-		throw new Error(
-			'Failed to connect to PocketBase [Reservation Card Service]'
-		)
+		throw new Error('Failed to connect to PocketBase [Reservation Card Service]')
 	}
 
 	try {
@@ -56,10 +54,7 @@ export async function getReservationCardData(): Promise<ReservationCardData> {
 		return result.items[0] as ReservationCardData
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch
-		console.error(
-			'Error while fetching reservation card data from PocketBase:',
-			error
-		)
+		console.error('Error while fetching reservation card data from PocketBase:', error)
 		throw error
 	}
 }

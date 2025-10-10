@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import { getWhoAreWePageData } from '@/app/actions/services/getWhoAreWePageData.service'
@@ -65,18 +65,18 @@ export default async function Page() {
 	return (
 		<>
 			<script
-				type='application/ld+json'
+				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
-			<div className='flex flex-col items-center'>
+			<div className="flex flex-col items-center">
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
-				<div className='mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75'></div>
+				<div className="mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75"></div>
 
-				<div className='relative mt-64 flex flex-col items-center gap-64'>
+				<div className="relative mt-64 flex flex-col items-center gap-64">
 					<WhoAreWeElementComponent />
 					<FooterComponent />
 				</div>

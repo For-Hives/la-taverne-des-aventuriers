@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { getEventListData } from '@/app/actions/services/getEventListData'
 import { getLandingData } from '@/app/actions/services/getLandingPageData.service'
@@ -29,11 +29,5 @@ export default async function Home() {
 	const dataEvents = await getEventListData()
 	const navItems = await getNavBarData()
 
-	return (
-		<LandingWrapper
-			data={dataLanding}
-			dataEvents={dataEvents}
-			navItems={navItems}
-		/>
-	)
+	return <LandingWrapper data={dataLanding} dataEvents={dataEvents} navItems={navItems} />
 }

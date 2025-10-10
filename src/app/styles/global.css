@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   Theme configuration - migrated from tailwind.config.ts
@@ -16,17 +16,16 @@
 	--color-custom-white-400: #ead4bf;
 	--color-custom-white-500: #f2efe2;
 
-
 	/* Background images - must match class names exactly */
-	--background-image-background-image: url('/assets/images/elements/ContactElements/t3.webp');
-	--background-image-FooterImage: url('/assets/images/MaskFooter.webp');
-	--background-image-gl-card1-bg: url('/assets/images/elements/GameLibraryElements/BG1.webp');
-	--background-image-gl-card2-bg: url('/assets/images/elements/GameLibraryElements/BG2.webp');
-	--background-image-gl-card3-bg: url('/assets/images/elements/GameLibraryElements/BG3.webp');
-	--background-image-lp-blured-image: url('/assets/images/elements/background2.webp');
-	--background-image-menu-background-image: url('/assets/images/elements/MenuElements/BGImage.webp');
-	--background-image-waw-card1-bg: url('/assets/images/elements/WhoAreWeElement/planche1.webp');
-	--background-image-waw-card2-bg: url('/assets/images/elements/WhoAreWeElement/Barman.webp');
+	--background-image-background-image: url("/assets/images/elements/ContactElements/t3.webp");
+	--background-image-FooterImage: url("/assets/images/MaskFooter.webp");
+	--background-image-gl-card1-bg: url("/assets/images/elements/GameLibraryElements/BG1.webp");
+	--background-image-gl-card2-bg: url("/assets/images/elements/GameLibraryElements/BG2.webp");
+	--background-image-gl-card3-bg: url("/assets/images/elements/GameLibraryElements/BG3.webp");
+	--background-image-lp-blured-image: url("/assets/images/elements/background2.webp");
+	--background-image-menu-background-image: url("/assets/images/elements/MenuElements/BGImage.webp");
+	--background-image-waw-card1-bg: url("/assets/images/elements/WhoAreWeElement/planche1.webp");
+	--background-image-waw-card2-bg: url("/assets/images/elements/WhoAreWeElement/Barman.webp");
 
 	/* Border widths */
 	--border-width-0: 0;
@@ -108,9 +107,7 @@
 	--tw-prose-invert-links: var(--typography-customBrown-invert-links);
 	--tw-prose-invert-pre-bg: var(--typography-customBrown-invert-pre-bg);
 	--tw-prose-invert-pre-code: var(--typography-customBrown-invert-pre-code);
-	--tw-prose-invert-quote-borders: var(
-		--typography-customBrown-invert-quote-borders
-	);
+	--tw-prose-invert-quote-borders: var(--typography-customBrown-invert-quote-borders);
 	--tw-prose-invert-quotes: var(--typography-customBrown-invert-quotes);
 	--tw-prose-invert-td-borders: var(--typography-customBrown-invert-td-borders);
 	--tw-prose-invert-th-borders: var(--typography-customBrown-invert-th-borders);
@@ -142,8 +139,8 @@
 @utility mask-custom {
 	height: 100vh;
 	width: 100vw;
-	mask-image: url('/assets/images/overlay_white_inverted_002.webp');
-	-webkit-mask-image: url('/assets/images/overlay_white_inverted_002.webp');
+	mask-image: url("/assets/images/overlay_white_inverted_002.webp");
+	-webkit-mask-image: url("/assets/images/overlay_white_inverted_002.webp");
 	mask-repeat: no-repeat;
 	mask-size: cover;
 	-webkit-mask-repeat: no-repeat;
@@ -151,8 +148,8 @@
 }
 
 @utility maskFooter {
-	mask-image: url('/assets/images/MaskFooter.webp');
-	-webkit-mask-image: url('/assets/images/MaskFooter.webp');
+	mask-image: url("/assets/images/MaskFooter.webp");
+	-webkit-mask-image: url("/assets/images/MaskFooter.webp");
 	mask-repeat: no-repeat;
 	mask-size: cover;
 	-webkit-mask-repeat: no-repeat;
@@ -162,8 +159,8 @@
 @utility maskMap {
 	width: 100%;
 	height: 100%;
-	mask-image: url('/assets/images/masqueMap.webp');
-	-webkit-mask-image: url('/assets/images/masqueMap.webp');
+	mask-image: url("/assets/images/masqueMap.webp");
+	-webkit-mask-image: url("/assets/images/masqueMap.webp");
 	mask-repeat: no-repeat;
 	mask-size: 100% 100%;
 	-webkit-mask-repeat: no-repeat;
@@ -173,8 +170,8 @@
 @utility maskMapMobile {
 	width: 100%;
 	height: 100%;
-	mask-image: url('/assets/images/masqueMap2.webp');
-	-webkit-mask-image: url('/assets/images/masqueMap2.webp');
+	mask-image: url("/assets/images/masqueMap2.webp");
+	-webkit-mask-image: url("/assets/images/masqueMap2.webp");
 	mask-repeat: no-repeat;
 	mask-size: 100% 100%;
 	-webkit-mask-repeat: no-repeat;
@@ -204,13 +201,13 @@
 		--video-height: 100vh;
 	}
 
-	@media (min-aspect-ratio: 16/9) {
+	@media (min-aspect-ratio: 16 / 9) {
 		:root {
 			--video-height: 56.25vw;
 		}
 	}
 
-	@media (max-aspect-ratio: 16/9) {
+	@media (max-aspect-ratio: 16 / 9) {
 		:root {
 			--video-width: 177.78vh;
 		}
@@ -224,8 +221,7 @@
 
 	body {
 		background-image:
-			linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-			url('/assets/images/bg_texture.webp');
+			linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/images/bg_texture.webp");
 		background-repeat: repeat;
 		background-size: auto;
 		--sb-track-color: #f2edd3;
@@ -235,8 +231,7 @@
 
 	.bg {
 		background-image:
-			linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-			url('/assets/images/bg_texture.webp');
+			linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/assets/images/bg_texture.webp");
 		background-repeat: repeat;
 		background-size: auto;
 	}
@@ -296,7 +291,8 @@
 	}
 
 	.text-with-outline {
-		text-shadow: /* Clean beige outline */
+		/* Clean beige outline */
+		text-shadow:
 			-1px -1px 0 rgb(226, 196, 148),
 			1px -1px 0 rgb(226, 196, 148),
 			-1px 1px 0 rgb(226, 196, 148),
@@ -307,7 +303,8 @@
 	}
 
 	.text-with-outline-light {
-		text-shadow: /* Clean beige outline - lighter */
+		/* Clean beige outline - lighter */
+		text-shadow:
 			-0.5px -0.5px 0 rgb(226, 196, 148),
 			0.5px -0.5px 0 rgb(226, 196, 148),
 			-0.5px 0.5px 0 rgb(226, 196, 148),
@@ -345,43 +342,27 @@
 			transform 0.3s ease-out;
 	}
 
-	.animation-count[data-count='0']
-		path:is(
-			:nth-child(1),
-			:nth-child(2),
-			:nth-child(3),
-			:nth-child(4),
-			:nth-child(5)
-		) {
+	.animation-count[data-count="0"] path:is(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5)) {
 		opacity: 0;
 	}
 
-	.animation-count[data-count='1'] path:is(:nth-child(1)) {
+	.animation-count[data-count="1"] path:is(:nth-child(1)) {
 		opacity: 1;
 	}
 
-	.animation-count[data-count='2'] path:is(:nth-child(1), :nth-child(2)) {
+	.animation-count[data-count="2"] path:is(:nth-child(1), :nth-child(2)) {
 		opacity: 1;
 	}
 
-	.animation-count[data-count='3']
-		path:is(:nth-child(1), :nth-child(2), :nth-child(3)) {
+	.animation-count[data-count="3"] path:is(:nth-child(1), :nth-child(2), :nth-child(3)) {
 		opacity: 1;
 	}
 
-	.animation-count[data-count='4']
-		path:is(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4)) {
+	.animation-count[data-count="4"] path:is(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4)) {
 		opacity: 1;
 	}
 
-	.animation-count[data-count='5']
-		path:is(
-			:nth-child(1),
-			:nth-child(2),
-			:nth-child(3),
-			:nth-child(4),
-			:nth-child(5)
-		) {
+	.animation-count[data-count="5"] path:is(:nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4), :nth-child(5)) {
 		opacity: 1;
 	}
 }

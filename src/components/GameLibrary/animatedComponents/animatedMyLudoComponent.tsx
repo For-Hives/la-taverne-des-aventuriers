@@ -4,18 +4,18 @@ import { motion } from 'framer-motion' // Importing motion from Framer Motion fo
 import Image from 'next/image' // Importing Next.js Image component for optimized image rendering
 import Link from 'next/link' // Importing Next.js Link component for client-side navigation
 
-import { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing the type for game page data
+import type { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing the type for game page data
 import { textToSpanColored } from '@/utils/textToSpanColored' // Importing the textToSpanColored function
 
 // Component declaration, accepting a prop 'data' of type 'GamesPageData'
 export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 	return (
-		<div className='mx-auto w-full max-w-7xl px-4'>
+		<div className="mx-auto w-full max-w-7xl px-4">
 			{/* Main container for title and content */}
-			<div className='flex w-full flex-col items-start justify-center gap-4'>
+			<div className="flex w-full flex-col items-start justify-center gap-4">
 				{/* Title of the component */}
 				<motion.h2
-					className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-4xl max-sm:text-xl'
+					className="font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-4xl max-sm:text-xl"
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
@@ -29,7 +29,7 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 
 				{/* Motion container for the image and link */}
 				<motion.div
-					className='relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg'
+					className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg"
 					initial={{ opacity: 0, y: 100 }} // Initial animation: invisible and offset downwards
 					whileInView={{ opacity: 1, y: 0 }} // Animation when in view: fade in and move to normal position
 					transition={{ duration: 0.8 }} // Transition duration of the animation
@@ -37,32 +37,32 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 				>
 					{/* Wrapping the image and text with a clickable link */}
 					<Link
-						target='_blank' // Opens the link in a new tab
-						className='relative block w-full'
+						target="_blank" // Opens the link in a new tab
+						className="relative block w-full"
 						href={data.myludo_component_url} // URL fetched from the data prop
 						aria-label={data.myludo_component_title} // Accessible label for the link
 					>
 						{/* Aspect-ratio container for maintaining image proportions */}
 						<div
-							className='relative w-full overflow-hidden rounded-lg'
+							className="relative w-full overflow-hidden rounded-lg"
 							style={{ aspectRatio: '16/9' }} // Maintains a 16:9 aspect ratio
 						>
 							{/* Inner container for the zoom effect on hover */}
-							<div className='relative h-full w-full transform transition-transform duration-300 hover:scale-105'>
+							<div className="relative h-full w-full transform transition-transform duration-300 hover:scale-105">
 								{/* Image with responsive properties */}
 								<Image
 									src={data.myludo_component_image} // Path to the image
-									alt='MyLudo Logo' // Alt text for accessibility
-									className='absolute inset-0 h-full w-full object-cover' // Ensures image covers the entire container
+									alt="MyLudo Logo" // Alt text for accessibility
+									className="absolute inset-0 h-full w-full object-cover" // Ensures image covers the entire container
 									fill // Fills the container
-									sizes='100vw' // Responsive sizing for optimization
+									sizes="100vw" // Responsive sizing for optimization
 								/>
 								{/* Gradient overlay over the image */}
-								<div className='absolute inset-0 rounded-lg bg-linear-to-b from-transparent to-black'></div>
+								<div className="absolute inset-0 rounded-lg bg-linear-to-b from-transparent to-black"></div>
 							</div>
 						</div>
 						{/* Text displayed over the image */}
-						<span className='font-obraletra text-custom-white-100 absolute bottom-5 left-10 text-center text-lg underline'>
+						<span className="font-obraletra text-custom-white-100 absolute bottom-5 left-10 text-center text-lg underline">
 							<span
 								dangerouslySetInnerHTML={{
 									__html: textToSpanColored(data.myludo_component_title),

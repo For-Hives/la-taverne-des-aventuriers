@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import Navbar from '@/components/Global/Navbar.component'
@@ -57,28 +57,22 @@ export default async function LegalPage() {
 	return (
 		<>
 			<script
-				type='application/ld+json'
+				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
-			<div className='min-h-screen pt-24'>
+			<div className="min-h-screen pt-24">
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
-				<div className='container mx-auto px-4 py-8'>
-					<h1 className='font-obraletra-bold text-custom-brown-100 mb-8 text-4xl'>
-						Mentions Légales
-					</h1>
+				<div className="container mx-auto px-4 py-8">
+					<h1 className="font-obraletra-bold text-custom-brown-100 mb-8 text-4xl">Mentions Légales</h1>
 
-					<section className='mb-8'>
-						<h2 className='font-obraletra-bold text-custom-brown-100 mb-4 text-2xl'>
-							Qui sommes-nous ?
-						</h2>
-						<div className='rounded-lg bg-white p-6 shadow-md'>
-							<h3 className='font-obraletra-bold text-custom-brown-100 mb-4 text-xl'>
-								Informations légales
-							</h3>
-							<p className='mb-4'>
+					<section className="mb-8">
+						<h2 className="font-obraletra-bold text-custom-brown-100 mb-4 text-2xl">Qui sommes-nous ?</h2>
+						<div className="rounded-lg bg-white p-6 shadow-md">
+							<h3 className="font-obraletra-bold text-custom-brown-100 mb-4 text-xl">Informations légales</h3>
+							<p className="mb-4">
 								LA TAVERNE DES AVENTURIERS
 								<br />
 								13 RUE KERVEGAN
@@ -87,7 +81,7 @@ export default async function LegalPage() {
 								<br />
 								France
 							</p>
-							<p className='mb-4'>
+							<p className="mb-4">
 								SIRET : 93106146900017
 								<br />
 								Activité : Débits de boissons (56.30Z)
@@ -97,12 +91,10 @@ export default async function LegalPage() {
 						</div>
 					</section>
 
-					<section className='mb-8'>
-						<h2 className='font-obraletra-bold text-custom-brown-100 mb-4 text-2xl'>
-							{`Droits d'auteur`}
-						</h2>
-						<div className='rounded-lg bg-white p-6 shadow-md'>
-							<p className='mb-4'>
+					<section className="mb-8">
+						<h2 className="font-obraletra-bold text-custom-brown-100 mb-4 text-2xl">{`Droits d'auteur`}</h2>
+						<div className="rounded-lg bg-white p-6 shadow-md">
+							<p className="mb-4">
 								{`L'ensemble de ce site est soumis à une protection de droits d'auteur
                             selon les Articles L335-2 et suivants du Code de la propriété intellectuelle.
                             Toute reproduction ou représentation totale ou partielle de son contenu,
@@ -113,46 +105,36 @@ export default async function LegalPage() {
 						</div>
 					</section>
 
-					<section className='mb-8'>
-						<h2 className='font-obraletra-bold text-custom-brown-100 mb-4 text-2xl'>
-							Développement du site
-						</h2>
-						<div className='rounded-lg bg-white p-6 shadow-md'>
-							<h3 className='font-obraletra-bold text-custom-brown-100 mb-4 text-xl'>
-								Création et Design
-							</h3>
-							<p className='mb-4'>
+					<section className="mb-8">
+						<h2 className="font-obraletra-bold text-custom-brown-100 mb-4 text-2xl">Développement du site</h2>
+						<div className="rounded-lg bg-white p-6 shadow-md">
+							<h3 className="font-obraletra-bold text-custom-brown-100 mb-4 text-xl">Création et Design</h3>
+							<p className="mb-4">
 								Cinquin Andy
 								<br />
 								SIRET : 880 505 276 00019
-								<br />
-								4 Impasse de la Marchaisière
+								<br />4 Impasse de la Marchaisière
 								<br />
 								44115 Haute-Goulaine
 								<br />
 								Téléphone : 06 21 58 26 84
 								<br />
 								Site web :{' '}
-								<a
-									href='https://andy-cinquin.fr'
-									className='text-custom-brown-100 hover:underline'
-								>
+								<a href="https://andy-cinquin.fr" className="text-custom-brown-100 hover:underline">
 									https://andy-cinquin.fr
 								</a>
 							</p>
-							<p className='mb-4'>
+							<p className="mb-4">
 								{`Services : Création de thème personnalisé, d'image de marque,
 								référencement, et hébergement - prestation 'clé en main'.`}
 							</p>
 						</div>
 					</section>
 
-					<section className='mb-8'>
-						<h2 className='font-obraletra-bold text-custom-brown-100 mb-4 text-2xl'>
-							Hébergement
-						</h2>
-						<div className='rounded-lg bg-white p-6 shadow-md'>
-							<p className='mb-4'>
+					<section className="mb-8">
+						<h2 className="font-obraletra-bold text-custom-brown-100 mb-4 text-2xl">Hébergement</h2>
+						<div className="rounded-lg bg-white p-6 shadow-md">
+							<p className="mb-4">
 								netcup GmbH
 								<br />
 								Daimlerstraße 25

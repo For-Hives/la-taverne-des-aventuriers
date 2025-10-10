@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
-import { EventData } from '@/app/actions/services/getEventData'
-import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
-import { NavItem } from '@/app/actions/services/getNavData.service'
+import type { EventData } from '@/app/actions/services/getEventData'
+import type { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
+import type { NavItem } from '@/app/actions/services/getNavData.service'
 import FooterComponent from '@/components/Global/Footer.component'
 import LoadingLogo from '@/components/Global/LogoLoader'
 import Navbar from '@/components/Global/Navbar.component'
@@ -27,11 +27,11 @@ export default function LandingWrapper({
 			<>
 				{/* Add preconnect resource hints */}
 				<Head>
-					<link rel='preconnect' href='https://player.vimeo.com' />
-					<link rel='preconnect' href='https://vimeocdn.com' />
-					<link rel='preconnect' href='https://i.vimeocdn.com' />
-					<link rel='preconnect' href='https://f.vimeocdn.com' />
-					<link rel='dns-prefetch' href='https://player.vimeo.com' />
+					<link rel="preconnect" href="https://player.vimeo.com" />
+					<link rel="preconnect" href="https://vimeocdn.com" />
+					<link rel="preconnect" href="https://i.vimeocdn.com" />
+					<link rel="preconnect" href="https://f.vimeocdn.com" />
+					<link rel="dns-prefetch" href="https://player.vimeo.com" />
 				</Head>
 
 				<LoadingLogo />
@@ -42,24 +42,22 @@ export default function LandingWrapper({
 				{/*block to avoid displaying something in this part*/}
 				<div className={'-z-10 h-screen w-screen'}></div>
 
-				<div className='mask absolute top-0 left-0 z-10 min-h-screen w-screen'>
-					<div className='mask absolute top-1/2 left-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center'>
+				<div className="mask absolute top-0 left-0 z-10 min-h-screen w-screen">
+					<div className="mask absolute top-1/2 left-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center">
 						<BackgroundVideoLP />
 					</div>
 					{/* Hero Section */}
-					<div className='z-10 flex h-screen w-screen flex-col items-start justify-center gap-16'>
+					<div className="z-10 flex h-screen w-screen flex-col items-start justify-center gap-16">
 						<HeroTextComponent data={data} />
 					</div>
 				</div>
 
 				{/* Main Content */}
-				<div className='relative pt-32'>
-					<div className='flex w-full flex-col items-center gap-32'>
+				<div className="relative pt-32">
+					<div className="flex w-full flex-col items-center gap-32">
 						<EventsComponent data={data} dataEvents={dataEvents} />
 						<WhoAreWeSection data={data} />
-						<div
-							className={'flex w-full flex-col items-center gap-16 md:mt-24'}
-						>
+						<div className={'flex w-full flex-col items-center gap-16 md:mt-24'}>
 							<ReservationCardComponent />
 						</div>
 						<FooterComponent />

@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
 import BattleBanner from '@/components/CocktailBattle/BattleBanner.component'
@@ -48,13 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page() {
 	const navItems = await getNavBarData()
 
-	const listDrinkCollection = [
-		'Cocktails',
-		'Mocktails',
-		'Shooters',
-		'Short_long_drinks',
-		'Planches',
-	]
+	const listDrinkCollection = ['Cocktails', 'Mocktails', 'Shooters', 'Short_long_drinks', 'Planches']
 
 	// Whether to show prices globally (at top of section) or individually
 	const pricingConfig = {
@@ -69,8 +63,7 @@ export default async function Page() {
 	const structuredData = {
 		'@context': 'https://schema.org',
 		'@type': 'Menu',
-		description:
-			'Cocktails, mocktails, bières artisanales et planches à partager',
+		description: 'Cocktails, mocktails, bières artisanales et planches à partager',
 		hasMenuSection: [
 			{
 				'@type': 'MenuSection',
@@ -111,59 +104,52 @@ export default async function Page() {
 	return (
 		<>
 			<script
-				type='application/ld+json'
+				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
 			{/* SEO H1 heading - visually hidden but present for search engines */}
-			<h1 className='sr-only'>
-				Carte & Boissons - Cocktails et Menu de La Taverne des Aventuriers
-			</h1>
+			<h1 className="sr-only">Carte & Boissons - Cocktails et Menu de La Taverne des Aventuriers</h1>
 
-			<div className='flex h-screen w-screen flex-col items-center'>
+			<div className="flex h-screen w-screen flex-col items-center">
 				{/* Navigation */}
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
 				{/* Background */}
-				<div className='mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75'></div>
+				<div className="mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75"></div>
 
 				{/* Battle des Cocktails Banner */}
-				<div className='mt-[20vh] flex w-full flex-col justify-center py-16'>
+				<div className="mt-[20vh] flex w-full flex-col justify-center py-16">
 					<BattleBanner />
 
 					{/* Menu Content */}
-					<div className='flex flex-col items-center justify-center gap-40'>
+					<div className="flex flex-col items-center justify-center gap-40">
 						{/* Menu Sections */}
 						{listDrinkCollection.map(drink => (
 							<div
 								id={drink.toLowerCase().replaceAll('_', '-')}
 								key={drink}
-								className='flex w-full scroll-mt-32 justify-center'
+								className="flex w-full scroll-mt-32 justify-center"
 							>
 								<DrinkElement
 									collection_name={drink}
-									priceDisplay={
-										pricingConfig[drink as keyof typeof pricingConfig]
-									}
+									priceDisplay={pricingConfig[drink as keyof typeof pricingConfig]}
 								/>
 							</div>
 						))}
 
-						<div id='travelers' className='flex scroll-mt-32 justify-center'>
-							<TravelersPleasureElement priceDisplay='global' />
+						<div id="travelers" className="flex scroll-mt-32 justify-center">
+							<TravelersPleasureElement priceDisplay="global" />
 						</div>
 
 						{/* Other Sections */}
-						<div id='beer-wine' className='flex scroll-mt-32 justify-center'>
+						<div id="beer-wine" className="flex scroll-mt-32 justify-center">
 							<BeerWineElement />
 						</div>
 
-						<div
-							id='softs-hot-drinks'
-							className='flex scroll-mt-32 justify-center'
-						>
+						<div id="softs-hot-drinks" className="flex scroll-mt-32 justify-center">
 							<SoftsAndHotElement />
 						</div>
 
@@ -176,7 +162,7 @@ export default async function Page() {
 				<MenuDock />
 
 				{/* Footer */}
-				<div className='w-full'>
+				<div className="w-full">
 					<FooterComponent />
 				</div>
 			</div>

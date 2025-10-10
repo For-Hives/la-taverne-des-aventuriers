@@ -56,10 +56,7 @@ export async function getContactData(): Promise<ContactPageData> {
 		const result = await pb.collection('contact_page').getList(1, 60)
 
 		if (result.items[0].howtosection_image) {
-			result.items[0].howtosection_image = pb.files.getURL(
-				result.items[0],
-				result.items[0].howtosection_image
-			) // Generate the full URL for the event image
+			result.items[0].howtosection_image = pb.files.getURL(result.items[0], result.items[0].howtosection_image) // Generate the full URL for the event image
 		}
 
 		return result.items[0] as ContactPageData

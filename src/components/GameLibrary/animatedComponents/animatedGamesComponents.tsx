@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-import { GamesPageData } from '@/app/actions/services/getGamePageData.service'
+import type { GamesPageData } from '@/app/actions/services/getGamePageData.service'
 import { cn } from '@/lib/utils'
 import { textToSpanColored } from '@/utils/textToSpanColored'
 
@@ -73,9 +73,7 @@ const GameCard = ({
 	const truncatedDescription = truncateHtml(description, maxDescriptionLength)
 
 	// Style dynamique pour l'image de fond
-	const cardStyle = backgroundImage
-		? { backgroundImage: `url(${backgroundImage})` }
-		: {}
+	const cardStyle = backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : {}
 
 	return (
 		<motion.div
@@ -92,30 +90,30 @@ const GameCard = ({
 			style={cardStyle}
 		>
 			{/* Gradient Overlay */}
-			<div className='absolute inset-0 rounded-xl bg-linear-to-t from-black/90 via-black/60 to-transparent transition-opacity duration-300 group-hover/card:opacity-80' />
+			<div className="absolute inset-0 rounded-xl bg-linear-to-t from-black/90 via-black/60 to-transparent transition-opacity duration-300 group-hover/card:opacity-80" />
 
 			{/* Content */}
-			<div className='relative z-10 flex flex-col p-6 lg:p-10'>
-				<h2 className='font-obraletra text-custom-white-100 group-hover/card:text-custom-white-200 mb-3 text-xl md:text-2xl'>
+			<div className="relative z-10 flex flex-col p-6 lg:p-10">
+				<h2 className="font-obraletra text-custom-white-100 group-hover/card:text-custom-white-200 mb-3 text-xl md:text-2xl">
 					{title}
 				</h2>
 
 				<div
-					className='font-cardo-regular text-custom-white-100/90 mb-4 text-sm'
+					className="font-cardo-regular text-custom-white-100/90 mb-4 text-sm"
 					dangerouslySetInnerHTML={{ __html: truncatedDescription }}
 				/>
 
 				<Link
 					href={buttonUrl}
 					aria-label={buttonAria}
-					className='group/link font-cardo-regular text-custom-white-100 inline-flex items-center text-sm underline'
-					target='_blank'
+					className="group/link font-cardo-regular text-custom-white-100 inline-flex items-center text-sm underline"
+					target="_blank"
 					onClick={e => e.stopPropagation()} // Prevents the link click from triggering the card click
 				>
 					<span>{buttonLabel}</span>
 					<FontAwesomeIcon
 						icon={faChevronRight}
-						className='ml-2 h-2.5 w-2.5 transition-transform duration-300 group-hover/link:translate-x-1'
+						className="ml-2 h-2.5 w-2.5 transition-transform duration-300 group-hover/link:translate-x-1"
 					/>
 				</Link>
 			</div>
@@ -128,12 +126,12 @@ const GameCard = ({
  */
 export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 	return (
-		<div className='mx-auto w-full max-w-7xl px-4'>
+		<div className="mx-auto w-full max-w-7xl px-4">
 			<motion.h2
 				initial={{ opacity: 0, y: -20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
-				className='font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 mb-6 text-3xl lg:text-4xl'
+				className="font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 mb-6 text-3xl lg:text-4xl"
 			>
 				<span
 					dangerouslySetInnerHTML={{
@@ -143,7 +141,7 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 			</motion.h2>
 
 			{/* Bento Grid Layout */}
-			<div className='mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-none md:gap-0 lg:min-h-180'>
+			<div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-none md:gap-0 lg:min-h-180">
 				{/* Left Column - Large Card */}
 				<GameCard
 					title={data.card1_title}
@@ -151,25 +149,25 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 					buttonLabel={data.card1_button_label}
 					buttonUrl={data.card1_button_url}
 					buttonAria={data.card1_button_aria}
-					backgroundClass='bg-gl-card1-bg'
+					backgroundClass="bg-gl-card1-bg"
 					backgroundImage={data.card1_image}
 					index={0}
-					className='mr-0 min-h-100 md:row-span-2 md:mr-4 lg:min-h-180'
+					className="mr-0 min-h-100 md:row-span-2 md:mr-4 lg:min-h-180"
 					maxDescriptionLength={600}
 				/>
 
 				{/* Right Column - Two Smaller Cards */}
-				<div className='grid h-full grid-cols-1 gap-4 md:min-h-180 md:gap-4'>
+				<div className="grid h-full grid-cols-1 gap-4 md:min-h-180 md:gap-4">
 					<GameCard
 						title={data.card2_title}
 						description={data.card2_description}
 						buttonLabel={data.card2_button_label}
 						buttonUrl={data.card2_button_url}
 						buttonAria={data.card2_button_aria}
-						backgroundClass='bg-gl-card2-bg'
+						backgroundClass="bg-gl-card2-bg"
 						backgroundImage={data.card2_image}
 						index={1}
-						className='min-h-100 md:h-full'
+						className="min-h-100 md:h-full"
 						maxDescriptionLength={400}
 					/>
 					<GameCard
@@ -178,10 +176,10 @@ export const AnimatedGameComponent = ({ data }: { data: GamesPageData }) => {
 						buttonLabel={data.card3_button_label}
 						buttonUrl={data.card3_button_url}
 						buttonAria={data.card3_button_aria}
-						backgroundClass='bg-gl-card3-bg'
+						backgroundClass="bg-gl-card3-bg"
 						backgroundImage={data.card3_image}
 						index={2}
-						className='min-h-100 md:h-full'
+						className="min-h-100 md:h-full"
 						maxDescriptionLength={400}
 					/>
 				</div>

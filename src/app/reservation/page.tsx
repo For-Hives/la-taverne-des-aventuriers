@@ -1,6 +1,6 @@
 // app/reservation/page.tsx
 
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { getContactData } from '@/app/actions/services/getContactPageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
@@ -82,29 +82,27 @@ export default async function Reservation() {
 	return (
 		<>
 			<script
-				type='application/ld+json'
+				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
 			{/* SEO H1 heading - visually hidden but present for search engines */}
-			<h1 className='sr-only'>
-				Réservation - Bar à Jeux La Taverne des Aventuriers à Nantes
-			</h1>
+			<h1 className="sr-only">Réservation - Bar à Jeux La Taverne des Aventuriers à Nantes</h1>
 
-			<div className='flex min-h-screen w-full flex-col items-center'>
+			<div className="flex min-h-screen w-full flex-col items-center">
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
-				<div className='mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75'></div>
+				<div className="mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75"></div>
 
-				<div className='relative container mx-auto mt-48 max-w-7xl px-4 sm:px-6 lg:px-8 2xl:mt-72'>
-					<div className='flex flex-col items-center justify-center gap-24 lg:gap-32'>
-						<div className='w-full'>
+				<div className="relative container mx-auto mt-48 max-w-7xl px-4 sm:px-6 lg:px-8 2xl:mt-72">
+					<div className="flex flex-col items-center justify-center gap-24 lg:gap-32">
+						<div className="w-full">
 							<ReservationComponent />
 						</div>
 
-						<div className='w-full pb-16'>
+						<div className="w-full pb-16">
 							<ContactElements data={dataContact} />
 						</div>
 					</div>

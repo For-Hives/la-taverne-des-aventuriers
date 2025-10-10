@@ -1,5 +1,5 @@
-import { EventData } from '@/app/actions/services/getEventData'
-import { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
+import type { EventData } from '@/app/actions/services/getEventData'
+import type { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
 import BentoEventsGrid from '@/components/Landing/animatedComponents/AnimatedEvents'
 
 export default async function EventsComponent({

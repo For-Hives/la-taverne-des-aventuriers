@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 import { getContactData } from '@/app/actions/services/getContactPageData.service'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
@@ -84,40 +84,36 @@ export default async function Contact() {
 			'Sa 14:00-02:00',
 			'Su 14:00-00:00',
 		],
-		sameAs: [
-			dataContact.facebook_url,
-			dataContact.instagram_url,
-			dataContact.myludo_url,
-		],
+		sameAs: [dataContact.facebook_url, dataContact.instagram_url, dataContact.myludo_url],
 		url: 'https://latavernedesaventuriers.fr',
 	}
 
 	return (
 		<>
 			<script
-				type='application/ld+json'
+				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(structuredData),
 				}}
 			/>
-			<div className='flex min-h-screen w-full flex-col items-center'>
+			<div className="flex min-h-screen w-full flex-col items-center">
 				{/* Navigation */}
 				<Navbar navItems={navItems} />
 				<MobileNavbar navItems={navItems} />
 
 				{/* Background */}
-				<div className='mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75'></div>
+				<div className="mask-custom bg-background-image absolute bottom-0 left-0 h-[125vh] w-full -translate-y-[70vh] transform opacity-75"></div>
 
 				{/* Main content */}
-				<div className='relative container mx-auto mt-48 max-w-7xl px-4 sm:px-6 lg:px-8 2xl:mt-72'>
-					<div className='flex flex-col items-center justify-center gap-4 lg:gap-32'>
+				<div className="relative container mx-auto mt-48 max-w-7xl px-4 sm:px-6 lg:px-8 2xl:mt-72">
+					<div className="flex flex-col items-center justify-center gap-4 lg:gap-32">
 						{/* How to Contact section */}
-						<div className='w-full'>
+						<div className="w-full">
 							<HowToContact data={dataContact} />
 						</div>
 
 						{/* Contact Elements section */}
-						<div className='w-full'>
+						<div className="w-full">
 							<ContactElements data={dataContact} />
 						</div>
 
@@ -127,7 +123,7 @@ export default async function Contact() {
 						</div> */}
 
 						{/* Map section */}
-						<div className='w-full pb-16'>
+						<div className="w-full pb-16">
 							<MapSection data={dataContact} />
 						</div>
 					</div>

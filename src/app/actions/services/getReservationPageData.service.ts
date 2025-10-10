@@ -42,10 +42,7 @@ export async function getReservationData(): Promise<ReservationPageData> {
 		return result.items[0] as ReservationPageData
 	} catch (error) {
 		// Log and throw any errors that occur during the fetch
-		console.error(
-			'Error while fetching reservation data from PocketBase:',
-			error
-		)
+		console.error('Error while fetching reservation data from PocketBase:', error)
 		throw error
 	}
 }

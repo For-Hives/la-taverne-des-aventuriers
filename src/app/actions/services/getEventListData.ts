@@ -1,6 +1,6 @@
 'use server'
 import { authWithPocketBase } from '@/app/actions/AuthService' // Importing the function to authenticate and connect with PocketBase
-import { EventData } from '@/app/actions/services/getEventData'
+import type { EventData } from '@/app/actions/services/getEventData'
 
 /**
  * Fetches event data from PocketBase.
@@ -21,9 +21,7 @@ export async function getEventListData(): Promise<EventData[]> {
 
 	try {
 		// Fetch a list of events (1 page, up to 100 items)
-		const result = await pb
-			.collection('Events')
-			.getList(1, 100, { sort: '-event_date' }) // Retrieve up to 100 items, sorted by event_date
+		const result = await pb.collection('Events').getList(1, 100, { sort: '-event_date' }) // Retrieve up to 100 items, sorted by event_date
 
 		// Ensure 'items' is an array before mapping over it
 		if (Array.isArray(result.items)) {

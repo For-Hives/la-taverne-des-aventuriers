@@ -6,18 +6,14 @@ import { motion } from 'framer-motion' // Importing motion for animations from F
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { ContactPageData } from '@/app/actions/services/getContactPageData.service'
+import type { ContactPageData } from '@/app/actions/services/getContactPageData.service'
 
-export const AnimatedMapSectionComponent = ({
-	data,
-}: {
-	data: ContactPageData
-}) => {
+export const AnimatedMapSectionComponent = ({ data }: { data: ContactPageData }) => {
 	return (
-		<div className='font-obraletra text-custom-brown-100 flex w-full flex-col items-center gap-8 pt-12 md:flex-row md:p-16'>
+		<div className="font-obraletra text-custom-brown-100 flex w-full flex-col items-center gap-8 pt-12 md:flex-row md:p-16">
 			{/* Text Section */}
 			<motion.div
-				className='flex w-full flex-col items-start gap-8 p-4 md:w-1/3'
+				className="flex w-full flex-col items-start gap-8 p-4 md:w-1/3"
 				initial={{ opacity: 0, y: 50 }} // Initial state: hidden and slightly offset
 				whileInView={{ opacity: 1, y: 0 }} // Animate when in view: fade in and slide up
 				viewport={{ once: true }} // Trigger animation only once
@@ -25,7 +21,7 @@ export const AnimatedMapSectionComponent = ({
 			>
 				{/* Title of the address */}
 				<motion.h1
-					className='font-cardinal first-letter:text-custom-red-100 text-4xl md:text-6xl'
+					className="font-cardinal first-letter:text-custom-red-100 text-4xl md:text-6xl"
 					initial={{ opacity: 0, x: -50 }} // Start from left with opacity 0
 					whileInView={{ opacity: 1, x: 0 }} // Fade in and slide to normal position
 					viewport={{ once: true }}
@@ -36,7 +32,7 @@ export const AnimatedMapSectionComponent = ({
 
 				{/* Temporary Field - Prose Section */}
 				<motion.div
-					className='prose text-custom-brown-100 prose-headings:font-cardinal prose-headings:text-custom-brown-100 prose-headings:first-letter:text-custom-red-100 prose-strong:text-custom-brown-100 max-w-xl text-base'
+					className="prose text-custom-brown-100 prose-headings:font-cardinal prose-headings:text-custom-brown-100 prose-headings:first-letter:text-custom-red-100 prose-strong:text-custom-brown-100 max-w-xl text-base"
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
@@ -67,51 +63,46 @@ export const AnimatedMapSectionComponent = ({
 					transition={{ delay: 0.4, duration: 0.8 }}
 				>
 					<Link
-						target='_blank'
-						rel='noreferrer noopener'
+						target="_blank"
+						rel="noreferrer noopener"
 						href={data.button_url}
 						aria-label={data.button_aria}
-						className='border-custom-brown-100 bg-custom-brown-100 font-cardo-regular text-custom-white-100 hover:border-custom-brown-100 hover:bg-custom-white-100 hover:text-custom-brown-100 flex items-center justify-center gap-4 rounded border-3 px-8 py-3 text-base transition hover:border-3 md:min-w-52 lg:min-w-60'
+						className="border-custom-brown-100 bg-custom-brown-100 font-cardo-regular text-custom-white-100 hover:border-custom-brown-100 hover:bg-custom-white-100 hover:text-custom-brown-100 flex items-center justify-center gap-4 rounded border-3 px-8 py-3 text-base transition hover:border-3 md:min-w-52 lg:min-w-60"
 					>
-						<span className='font-cardo-regular text-base'>
-							{data.button_label}
-						</span>
+						<span className="font-cardo-regular text-base">{data.button_label}</span>
 						{/* Chevron icon for the button */}
-						<FontAwesomeIcon
-							icon={faChevronRight}
-							className='h-4 w-4 opacity-95'
-						/>
+						<FontAwesomeIcon icon={faChevronRight} className="h-4 w-4 opacity-95" />
 					</Link>
 				</motion.div>
 			</motion.div>
 
 			{/* Image Section */}
 			<motion.div
-				className='relative w-full'
+				className="relative w-full"
 				initial={{ opacity: 0 }} // Start with opacity 0
 				whileInView={{ opacity: 1 }} // Fade in when in view
 				viewport={{ once: true }} // Trigger animation only once
 				transition={{ duration: 0.8 }} // Transition duration
 			>
 				{/* Image for small screens */}
-				<div className='maskMapMobile block h-full min-h-screen w-full min-w-screen md:hidden'>
+				<div className="maskMapMobile block h-full min-h-screen w-full min-w-screen md:hidden">
 					<Image
-						src='/assets/images/map2.webp' // Image source for small screens
-						alt='Map for small screens'
-						sizes='(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw'
+						src="/assets/images/map2.webp" // Image source for small screens
+						alt="Map for small screens"
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
 						fill
-						className='h-full min-h-[80vh] w-full min-w-[50vw] rounded-lg object-cover shadow-md' /* Image that fills the container */
+						className="h-full min-h-[80vh] w-full min-w-[50vw] rounded-lg object-cover shadow-md" /* Image that fills the container */
 					/>
 				</div>
 
 				{/* Image for large screens */}
-				<div className='maskMap hidden md:block'>
+				<div className="maskMap hidden md:block">
 					<Image
-						src='/assets/images/map.webp' // Image source for large screens
-						alt='Map for large screens'
+						src="/assets/images/map.webp" // Image source for large screens
+						alt="Map for large screens"
 						width={1920}
 						height={1080}
-						className='h-[50vh] w-full rounded-lg object-cover shadow-md md:min-w-[75vw] xl:min-w-[50vw]' /* Image that fills the container */
+						className="h-[50vh] w-full rounded-lg object-cover shadow-md md:min-w-[75vw] xl:min-w-[50vw]" /* Image that fills the container */
 					/>
 				</div>
 			</motion.div>
