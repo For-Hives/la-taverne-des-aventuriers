@@ -121,7 +121,7 @@ export default async function FooterComponent() {
 							>
 								<FontAwesomeIcon
 									icon={faInstagram}
-									className="text-custom-brown-100 hover:text-custom-red-100 h-8 w-8 transition-colors duration-300 ease-in-out"
+									className="text-custom-brown-100 text-3xl hover:text-custom-red-100 h-8 w-8 transition-colors duration-300 ease-in-out"
 								/>
 							</Link>
 
@@ -133,7 +133,7 @@ export default async function FooterComponent() {
 							>
 								<FontAwesomeIcon
 									icon={faFacebook}
-									className="text-custom-brown-100 hover:text-custom-red-100 h-8 w-8 transition-colors duration-300 ease-in-out"
+									className="text-custom-brown-100 text-3xl hover:text-custom-red-100 h-8 w-8 transition-colors duration-300 ease-in-out"
 								/>
 							</Link>
 							<Link

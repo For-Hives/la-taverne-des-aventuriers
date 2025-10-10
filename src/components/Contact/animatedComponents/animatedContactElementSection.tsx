@@ -62,7 +62,7 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
 										>
 											<FontAwesomeIcon
 												icon={faFacebook}
-												className="text-custom-brown-100 group-hover:text-custom-white-100 h-8 w-8"
+												className="text-custom-brown-100 text-3xl group-hover:text-custom-white-100 h-8 w-8"
 											/>
 										</Link>
 										<Link
@@ -75,14 +75,14 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
 											<Image
 												src="/assets/images/elements/ContactElements/myludo_icon.webp"
 												alt="MyLudo Icon"
-												className="h-8 w-8 group-hover:hidden"
+												className="text-3xl h-8 w-8 group-hover:hidden"
 												width={200}
 												height={200}
 											/>
 											<Image
 												src="/assets/images/elements/ContactElements/myludo_icon2.webp"
 												alt="MyLudo Icon"
-												className="hidden h-8 w-8 group-hover:block"
+												className="hidden text-3xl h-8 w-8 group-hover:block"
 												width={200}
 												height={200}
 											/>
@@ -96,7 +96,7 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
 										>
 											<FontAwesomeIcon
 												icon={faInstagram}
-												className="text-custom-brown-100 group-hover:text-custom-white-100 h-8 w-8"
+												className="text-custom-brown-100 text-3xl group-hover:text-custom-white-100 h-8 w-8"
 											/>
 										</Link>
 									</div>
@@ -123,7 +123,7 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
 									</button>
 									{/* Conditional rendering of image when not hovered */}
 									<motion.div
-										className="relative max-lg:hidden"
+										className="relative max-lg:hidden -z-20"
 										initial={{ y: 0 }}
 										animate={{ y: hovered ? 0 : -70 }} // Animate the image based on hover state
 										transition={{

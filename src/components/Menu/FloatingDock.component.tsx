@@ -17,7 +17,7 @@ const FloatingDockItem = ({ href, icon, isActive, title }: DockItemProps) => {
 		<Link
 			href={href}
 			className={cn(
-				'group bg-custom-white-300 relative flex h-10 w-10 flex-col items-center justify-center rounded-full ' +
+				'group bg-custom-white-300 relative flex h-10 w-10 flex-col text-center items-center justify-center rounded-full ' +
 					'text-custom-brown-100 hover:bg-custom-brown-100 hover:text-custom-white-100 transition-all duration-300 md:h-14 md:w-14',
 				isActive && 'bg-custom-brown-100 text-custom-white-100'
 			)}
@@ -105,7 +105,7 @@ export function FloatingDock({ className = '', items, mobileClassName = '' }: Fl
 	return (
 		<div
 			className={cn(
-				'border-custom-brown-100/20 bg-custom-white-300/80 fixed right-2 bottom-2 z-50 flex transform flex-col items-center justify-center gap-2 rounded-full border px-2 py-3 shadow-lg backdrop-blur-md transition-all duration-500 md:right-auto md:bottom-6 md:left-1/2 md:-translate-x-1/2 md:flex-row md:px-4 md:py-2',
+				'border-custom-brown-100/20 text-2xl bg-custom-white-300/80 fixed right-2 bottom-2 z-50 flex transform flex-col items-center justify-center gap-2 rounded-full border px-2 py-3 shadow-lg backdrop-blur-md transition-all duration-500 md:right-auto md:bottom-6 md:left-1/2 md:-translate-x-1/2 md:flex-row md:px-4 md:py-2',
 				!visible && 'translate-y-24 opacity-0',
 				className,
 				mobileClassName
