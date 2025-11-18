@@ -43,8 +43,8 @@ importers:
         specifier: 4.24.0
         version: 4.24.0(react@19.2.0)
       '@swc/cli':
-        specifier: 0.7.8
-        version: 0.7.8(@swc/core@1.13.5)
+        specifier: 0.7.9
+        version: 0.7.9(@swc/core@1.13.5)
       '@tailwindcss/typography':
         specifier: 0.5.19
         version: 0.5.19(tailwindcss@4.1.17)
@@ -542,8 +542,8 @@ packages:
     resolution: {integrity: sha512-TV7t8GKYaJWsn00tFDqBw8+Uqmr8A0fRU1tvTQhyZzGv0sJCGRQL3JGMI3ucuKo3XIZdUP+Lx7/gh2t3lewy7g==}
     engines: {node: '>=14.16'}
 
-  '@swc/cli@0.7.8':
-    resolution: {integrity: sha512-27Ov4rm0s2C6LLX+NDXfDVB69LGs8K94sXtFhgeUyQ4DBywZuCgTBu2loCNHRr8JhT9DeQvJM5j9FAu/THbo4w==}
+  '@swc/cli@0.7.9':
+    resolution: {integrity: sha512-AFQu3ZZ9IcdClTknxbug08S9ed/q8F3aYkO5NoZ+6IjQ5UEo1s2HN1GRKNvUslYx2EoVYxd+6xGcp6C7wwtxyQ==}
     engines: {node: '>= 16.14.0'}
     hasBin: true
     peerDependencies:
@@ -1730,7 +1730,7 @@ snapshots:
 
   '@sindresorhus/is@5.6.0': {}
 
-  '@swc/cli@0.7.8(@swc/core@1.13.5)':
+  '@swc/cli@0.7.9(@swc/core@1.13.5)':
     dependencies:
       '@swc/core': 1.13.5
       '@swc/counter': 0.1.3
