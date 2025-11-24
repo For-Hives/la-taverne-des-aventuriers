@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@types/react': 19.2.6
+  '@types/react': 19.2.7
   '@types/react-dom': 19.2.3
 
 importers:
@@ -92,7 +92,7 @@ importers:
         version: 3.4.0
       zustand:
         specifier: 5.0.8
-        version: 5.0.8(@types/react@19.2.6)(react@19.2.0)
+        version: 5.0.8(@types/react@19.2.7)(react@19.2.0)
     devDependencies:
       '@biomejs/biome':
         specifier: 2.3.7
@@ -104,11 +104,11 @@ importers:
         specifier: 24.9.1
         version: 24.9.1
       '@types/react':
-        specifier: 19.2.6
-        version: 19.2.6
+        specifier: 19.2.7
+        version: 19.2.7
       '@types/react-dom':
         specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.6)
+        version: 19.2.3(@types/react@19.2.7)
       '@types/vimeo__player':
         specifier: 2.18.3
         version: 2.18.3
@@ -744,10 +744,10 @@ packages:
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
     peerDependencies:
-      '@types/react': 19.2.6
+      '@types/react': 19.2.7
 
-  '@types/react@19.2.6':
-    resolution: {integrity: sha512-p/jUvulfgU7oKtj6Xpk8cA2Y1xKTtICGpJYeJXz2YVO2UcvjQgeRMLDGfDeqeRW2Ta+0QNFwcc8X3GH8SxZz6w==}
+  '@types/react@19.2.7':
+    resolution: {integrity: sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -1420,7 +1420,7 @@ packages:
     resolution: {integrity: sha512-gyPKpIaxY9XcO2vSMrLbiER7QMAMGOQZVRdJ6Zi782jkbzZygq5GI9nG8g+sMgitRtndwaBSl7uiqC49o1SSiw==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
-      '@types/react': 19.2.6
+      '@types/react': 19.2.7
       immer: '>=9.0.6'
       react: '>=18.0.0'
       use-sync-external-store: '>=1.2.0'
@@ -1897,11 +1897,11 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
-  '@types/react-dom@19.2.3(@types/react@19.2.6)':
+  '@types/react-dom@19.2.3(@types/react@19.2.7)':
     dependencies:
-      '@types/react': 19.2.6
+      '@types/react': 19.2.7
 
-  '@types/react@19.2.6':
+  '@types/react@19.2.7':
     dependencies:
       csstype: 3.2.3
 
@@ -2558,7 +2558,7 @@ snapshots:
       buffer-crc32: 0.2.13
       pend: 1.2.0
 
-  zustand@5.0.8(@types/react@19.2.6)(react@19.2.0):
+  zustand@5.0.8(@types/react@19.2.7)(react@19.2.0):
     optionalDependencies:
-      '@types/react': 19.2.6
+      '@types/react': 19.2.7
       react: 19.2.0
