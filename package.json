@@ -27,7 +27,7 @@
 		"@next/third-parties": "15.5.10",
 		"@rive-app/canvas": "2.34.2",
 		"@rive-app/react-canvas": "4.26.2",
-		"@swc/cli": "0.7.8",
+		"@swc/cli": "0.7.10",
 		"@tailwindcss/typography": "0.5.19",
 		"@vimeo/player": "2.30.1",
 		"aos": "2.3.4",
