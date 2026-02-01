@@ -91,8 +91,8 @@ importers:
         specifier: 3.4.0
         version: 3.4.0
       zustand:
-        specifier: 5.0.10
-        version: 5.0.10(@types/react@19.2.10)(react@19.2.4)
+        specifier: 5.0.11
+        version: 5.0.11(@types/react@19.2.10)(react@19.2.4)
     devDependencies:
       '@biomejs/biome':
         specifier: 2.3.13
@@ -1457,8 +1457,8 @@ packages:
     resolution: {integrity: sha512-Ow9nuGZE+qp1u4JIPvg+uCiUr7xGQWdff7JQSk5VGYTAZMDe2q8lxJ10ygv10qmSj031Ty/6FNJpLO4o1Sgc+w==}
     engines: {node: '>=12'}
 
-  zustand@5.0.10:
-    resolution: {integrity: sha512-U1AiltS1O9hSy3rul+Ub82ut2fqIAefiSuwECWt6jlMVUGejvf+5omLcRBSzqbRagSM3hQZbtzdeRc6QVScXTg==}
+  zustand@5.0.11:
+    resolution: {integrity: sha512-fdZY+dk7zn/vbWNCYmzZULHRrss0jx5pPFiOuMZ/5HJN6Yv3u+1Wswy/4MpZEkEGhtNH+pwxZB8OKgUBPzYAGg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': 19.2.10
@@ -2599,7 +2599,7 @@ snapshots:
       buffer-crc32: 0.2.13
       pend: 1.2.0
 
-  zustand@5.0.10(@types/react@19.2.10)(react@19.2.4):
+  zustand@5.0.11(@types/react@19.2.10)(react@19.2.4):
     optionalDependencies:
       '@types/react': 19.2.10
       react: 19.2.4
