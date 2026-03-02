@@ -65,7 +65,7 @@ importers:
         version: 3.3.1
       framer-motion:
         specifier: ^12.23.24
-        version: 12.34.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        version: 12.34.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       gsap:
         specifier: 3.14.2
         version: 3.14.2
@@ -1007,8 +1007,8 @@ packages:
     resolution: {integrity: sha512-yDYSgNMraqvnxiEXO4hi88+YZxaHC6QKzb5N84iRCTDeRO7ZALpir/lVmf/uXUhnwUr2O4HU8s/n6x+yNjQkHw==}
     engines: {node: '>= 14.17'}
 
-  framer-motion@12.34.3:
-    resolution: {integrity: sha512-v81ecyZKYO/DfpTwHivqkxSUBzvceOpoI+wLfgCgoUIKxlFKEXdg0oR9imxwXumT4SFy8vRk9xzJ5l3/Du/55Q==}
+  framer-motion@12.34.4:
+    resolution: {integrity: sha512-q1PwNhc1XJ3qYG7nc9+pEU5P3tnjB6Eh9vv5gGzy61nedDLB4+xk5peMCWhKM0Zn6sfhgunf/q9n0UgCoyKOBA==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -2205,7 +2205,7 @@ snapshots:
 
   form-data-encoder@2.1.4: {}
 
-  framer-motion@12.34.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  framer-motion@12.34.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       motion-dom: 12.34.3
       motion-utils: 12.29.2
