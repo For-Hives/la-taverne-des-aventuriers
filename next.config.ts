@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
 			},
 		],
 	},
-	allowedDevOrigins: ['http://localhost:3000', 'http://192.168.1.128'],
+	allowedDevOrigins: ['192.168.1.128', 'localhost'],
 }
 
-export default nextConfig
+module.exports = nextConfig
