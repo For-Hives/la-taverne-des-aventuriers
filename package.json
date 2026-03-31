@@ -1,66 +1,67 @@
 {
-	"name": "la-taverne-des-aventuriers",
-	"version": "1.0.0",
-	"private": true,
-	"engines": {
-		"node": "^18.20.2 || >=20.9.0",
-		"pnpm": "^9 || ^10"
-	},
-	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "next start",
-		"check": "biome check --write",
-		"lint": "biome lint --write",
-		"format": "biome format --write",
-		"tsc": "npx tsc --noEmit --watch",
-		"test": "echo \"No tests specified\""
-	},
-	"dependencies": {
-		"@fortawesome/fontawesome-common-types": "7.2.0",
-		"@fortawesome/fontawesome-svg-core": "7.2.0",
-		"@fortawesome/free-brands-svg-icons": "7.2.0",
-		"@fortawesome/free-regular-svg-icons": "7.2.0",
-		"@fortawesome/free-solid-svg-icons": "7.2.0",
-		"@fortawesome/react-fontawesome": "3.3.0",
-		"@heroicons/react": "2.2.0",
-		"@next/third-parties": "15.5.14",
-		"@rive-app/canvas": "2.36.0",
-		"@rive-app/react-canvas": "4.27.3",
-		"@swc/cli": "0.7.8",
-		"@tailwindcss/typography": "0.5.19",
-		"@vimeo/player": "2.30.3",
-		"aos": "2.3.4",
-		"class-variance-authority": "0.7.1",
-		"clsx": "2.1.1",
-		"dompurify": "3.3.3",
-		"framer-motion": "^12.23.24",
-		"gsap": "3.14.2",
-		"lucide-react": "0.545.0",
-		"next": "15.5.14",
-		"pocketbase": "0.26.2",
-		"react": "19.2.4",
-		"react-dom": "19.2.4",
-		"server-only": "0.0.1",
-		"tailwind-merge": "3.5.0",
-		"zustand": "5.0.12"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "2.4.10",
-		"@tailwindcss/postcss": "4.2.2",
-		"@types/node": "24.9.1",
-		"@types/react": "19.2.14",
-		"@types/react-dom": "19.2.3",
-		"@types/vimeo__player": "2.18.3",
-		"globals": "16.5.0",
-		"postcss": "8.5.8",
-		"tailwindcss": "4.2.2",
-		"typescript": "5.9.3"
-	},
-	"pnpm": {
-		"overrides": {
-			"@types/react": "19.2.14",
-			"@types/react-dom": "19.2.3"
-		}
-	}
+  "name": "la-taverne-des-aventuriers",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0",
+    "pnpm": "^9 || ^10"
+  },
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "check": "biome check --write",
+    "lint": "biome lint --write",
+    "format": "biome format --write",
+    "tsc": "npx tsc --noEmit --watch",
+    "test": "echo \"No tests specified\""
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-common-types": "7.2.0",
+    "@fortawesome/fontawesome-svg-core": "7.2.0",
+    "@fortawesome/free-brands-svg-icons": "7.2.0",
+    "@fortawesome/free-regular-svg-icons": "7.2.0",
+    "@fortawesome/free-solid-svg-icons": "7.2.0",
+    "@fortawesome/react-fontawesome": "3.3.0",
+    "@heroicons/react": "2.2.0",
+    "@next/third-parties": "16.2.1",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "@rive-app/canvas": "2.36.0",
+    "@rive-app/react-canvas": "4.27.3",
+    "@swc/cli": "0.8.0",
+    "@tailwindcss/typography": "0.5.19",
+    "@vimeo/player": "2.30.3",
+    "aos": "2.3.4",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "dompurify": "3.3.3",
+    "framer-motion": "12.38.0",
+    "gsap": "3.14.2",
+    "lucide-react": "1.7.0",
+    "next": "16.2.1",
+    "pocketbase": "0.26.8",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "server-only": "0.0.1",
+    "tailwind-merge": "3.5.0",
+    "zustand": "5.0.12"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.10",
+    "@tailwindcss/postcss": "4.2.2",
+    "@types/node": "25.5.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@types/vimeo__player": "2.18.3",
+    "globals": "17.4.0",
+    "postcss": "8.5.8",
+    "tailwindcss": "4.2.2",
+    "typescript": "6.0.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.14",
+      "@types/react-dom": "19.2.3"
+    }
+  }
 }

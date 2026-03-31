@@ -28,14 +28,22 @@ export default function BattleBanner() {
 					className="relative mb-2 opacity-75 drop-shadow-lg transition-transform duration-300 hover:scale-105"
 				/>
 			</button>
-			<div className="flex w-full -translate-y-12 flex-col items-center justify-center md:-translate-y-24">
+			<div className="flex w-full -translate-y-12 flex-row items-center justify-center md:-translate-y-24 gap-4">
 				<Link
-					href="/battle"
+					href="/battle/cocktails"
 					aria-label="Battle de cocktails"
 					rel="noreferrer noopener"
 					className="group border-custom-brown-100 font-cardo-regular hover:bg-custom-brown-100 hover:text-custom-white-100 flex items-center justify-center rounded-full border-2 px-8 py-3 text-xl"
 				>
 					Battle des Cocktails
+				</Link>
+				<Link
+					href="/battle/mocktails"
+					aria-label="Battle de mocktails"
+					rel="noreferrer noopener"
+					className="group border-custom-brown-100 font-cardo-regular hover:bg-custom-brown-100 hover:text-custom-white-100 flex items-center justify-center rounded-full border-2 px-8 py-3 text-xl"
+				>
+					Battle des Mocktails
 				</Link>
 			</div>
 		</div>

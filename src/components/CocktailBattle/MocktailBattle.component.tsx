@@ -1,21 +1,21 @@
-import type { CocktailBattleData } from '@/app/actions/services/getCocktailBattlePageData.service'
-import ButtonBattleMocktailsComponent from '@/components/CocktailBattle/ButtonBattleMocktails.component'
+import type { MocktailBattleData } from '@/app/actions/services/getMocktailBattlePageData.service'
+import ButtonBattleCocktailsComponent from '@/components/CocktailBattle/ButtonBattleCocktails.component'
 import ChainWinCounter from '@/components/CocktailBattle/ChainWinCounter'
 import { CocktailCard } from '@/components/CocktailBattle/CocktailCard'
 import { ScoreCounter } from '@/components/CocktailBattle/ScoreCounter'
 
-export default function CocktailBattleComponent({
+export default function MocktailBattleComponent({
 	data,
 }: Readonly<{
-	data: CocktailBattleData
+	data: MocktailBattleData
 }>) {
 	return (
 		<div className="container mx-auto max-w-6xl px-4 pb-12 lg:pb-36">
 			<h1 className="font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 mb-16 text-center text-8xl max-md:text-5xl">
-				Bataille de Cocktails
+				Bataille de Mocktails
 			</h1>
 
-			<ButtonBattleMocktailsComponent />
+			<ButtonBattleCocktailsComponent />
 
 			<div
 				className={'prose prose-customBrown mx-auto mb-24 max-w-6xl text-center'}
@@ -32,16 +32,16 @@ export default function CocktailBattleComponent({
 				<div className="flex w-full flex-col items-center gap-8 lg:w-6/12">
 					<div className="relative flex w-full items-center justify-center">
 						<CocktailCard
-							title={data.cocktail1_title}
-							description={data.cocktail1_description}
-							image={data.cocktail_1_image}
-							stars={data.cocktail1_stars}
+							title={data.mocktail1_title}
+							description={data.mocktail1_description}
+							image={data.mocktail_1_image}
+							stars={data.mocktail1_stars}
 							inverted={true}
 						/>
 					</div>
 
 					<div className="w-full">
-						<ScoreCounter data={data.cocktail1_score} title={data.cocktail1_title} color="customRed-100" />
+						<ScoreCounter data={data.mocktail1_score} title={data.mocktail1_title} color="customRed-100" />
 					</div>
 				</div>
 
@@ -55,15 +55,15 @@ export default function CocktailBattleComponent({
 				<div className="flex w-full flex-col items-center gap-8 lg:w-6/12">
 					<div className="relative flex w-full items-center justify-center">
 						<CocktailCard
-							title={data.cocktail2_title}
-							description={data.cocktail2_description}
-							image={data.cocktail_2_image}
-							stars={data.cocktail2_stars}
+							title={data.mocktail2_title}
+							description={data.mocktail2_description}
+							image={data.mocktail_2_image}
+							stars={data.mocktail2_stars}
 						/>
 					</div>
 
 					<div className="w-full">
-						<ScoreCounter data={data.cocktail2_score} title={data.cocktail2_title} color="customBrown-100" />
+						<ScoreCounter data={data.mocktail2_score} title={data.mocktail2_title} color="customBrown-100" />
 					</div>
 				</div>
 			</div>
