@@ -28,7 +28,7 @@ export default function BattleBanner() {
 					className="relative mb-2 opacity-75 drop-shadow-lg transition-transform duration-300 hover:scale-105"
 				/>
 			</button>
-			<div className="flex w-full -translate-y-12 flex-row items-center justify-center md:-translate-y-24 gap-4">
+			<div className="flex w-full -translate-y-12 flex-col items-center justify-center md:flex-row md:-translate-y-24 gap-4">
 				<Link
 					href="/battle/cocktails"
 					aria-label="Battle de cocktails"
