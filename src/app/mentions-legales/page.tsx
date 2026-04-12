@@ -112,10 +112,10 @@ export default async function LegalPage() {
 							<p className="mb-4">
 								Cinquin Andy
 								<br />
-								SIRET : 880 505 276 00019
-								<br />4 Impasse de la Marchaisière
+								SIRET : 880 505 276 00035
+								<br />1250 Chemin de la renouillère
 								<br />
-								44115 Haute-Goulaine
+								74140 Sciez
 								<br />
 								Téléphone : 06 21 58 26 84
 								<br />
