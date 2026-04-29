@@ -52,8 +52,8 @@ importers:
         specifier: 0.5.19
         version: 0.5.19(tailwindcss@4.2.4)
       '@vimeo/player':
-        specifier: 2.30.3
-        version: 2.30.3
+        specifier: 2.30.4
+        version: 2.30.4
       aos:
         specifier: 2.3.4
         version: 2.3.4
@@ -954,8 +954,8 @@ packages:
   '@types/vimeo__player@2.18.3':
     resolution: {integrity: sha512-IzSzb6doT4I4uAnBHa+mBCiNtK7iAllEJjtpkX0sKY6/s1Vi+aX1134IAiPgiyFlMvFab/oZQpSeccK4r0/T2A==}
 
-  '@vimeo/player@2.30.3':
-    resolution: {integrity: sha512-3skwNetfstLG/KvbfrwhUDms3Cd68LfqbN2DNYijcMV+oPGf5GzekVBxNCrxbeLXyVZMNZCXWV0DQQAwcQJ/iA==}
+  '@vimeo/player@2.30.4':
+    resolution: {integrity: sha512-M8m1UAhJSb+KCWuXDLWHViwj+3YY/0ogwFquRfMHs9e9LYjXT9iB7n+sOCKwUusbiXuU2HKmXx+FEGHtYZfUSg==}
 
   '@xhmikosr/archive-type@7.1.0':
     resolution: {integrity: sha512-xZEpnGplg1sNPyEgFh0zbHxqlw5dtYg6viplmWSxUj12+QjU9SKu3U/2G73a15pEjLaOqTefNSZ1fOPUOT4Xgg==}
@@ -2286,7 +2286,7 @@ snapshots:
 
   '@types/vimeo__player@2.18.3': {}
 
-  '@vimeo/player@2.30.3':
+  '@vimeo/player@2.30.4':
     dependencies:
       native-promise-only: 0.8.1
       weakmap-polyfill: 2.0.4
