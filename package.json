@@ -30,7 +30,7 @@
     "@rive-app/react-canvas": "4.28.3",
     "@swc/cli": "0.8.0",
     "@tailwindcss/typography": "0.5.19",
-    "@vimeo/player": "2.30.3",
+    "@vimeo/player": "2.30.4",
     "aos": "2.3.4",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
