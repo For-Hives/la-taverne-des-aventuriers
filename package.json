@@ -44,7 +44,7 @@
     "react-dom": "19.2.5",
     "server-only": "0.0.1",
     "tailwind-merge": "3.5.0",
-    "zustand": "5.0.12"
+    "zustand": "5.0.13"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.14",
