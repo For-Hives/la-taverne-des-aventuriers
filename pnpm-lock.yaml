@@ -43,8 +43,8 @@ importers:
         specifier: 2.37.6
         version: 2.37.6
       '@rive-app/react-canvas':
-        specifier: 4.28.3
-        version: 4.28.3(react@19.2.6)
+        specifier: 4.28.4
+        version: 4.28.4(react@19.2.6)
       '@swc/cli':
         specifier: 0.8.0
         version: 0.8.0(@swc/core@1.13.5)
@@ -721,14 +721,11 @@ packages:
       '@types/react':
         optional: true
 
-  '@rive-app/canvas@2.37.5':
-    resolution: {integrity: sha512-o0oCrdyxDLTahj60dXxUiB6I/xyi7hKaUJX+hce0jL0qcV1YtI+f+KGb/6EAMMBZMjT1if7OJFzT/6zA2YiNGA==}
-
   '@rive-app/canvas@2.37.6':
     resolution: {integrity: sha512-TxovQ8p1aJJ1PzClRX4Dxhp0As4P8slZWG+FJq40/kXXQDqit5ndj7thW5LlbsvKRyA7HYZQUqL97wAH+emIFA==}
 
-  '@rive-app/react-canvas@4.28.3':
-    resolution: {integrity: sha512-ndtoCNUHcsSAmbnc2t8jqAcG/tMocWB3mZo/2m8r8VFvShs8oBlCEmHC6bY4efmPQ2PbGitv0Dupg+nkIJ2KqA==}
+  '@rive-app/react-canvas@4.28.4':
+    resolution: {integrity: sha512-8iIkSkoItQzExCODh50+D6w1GaNkoPhZ9MxYkAyumorWSGy5OS54meE2EfFIZUP4cQZPwPzkOdPuW5oXIPN/1w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0
 
@@ -2099,13 +2096,11 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.14
 
-  '@rive-app/canvas@2.37.5': {}
-
   '@rive-app/canvas@2.37.6': {}
 
-  '@rive-app/react-canvas@4.28.3(react@19.2.6)':
+  '@rive-app/react-canvas@4.28.4(react@19.2.6)':
     dependencies:
-      '@rive-app/canvas': 2.37.5
+      '@rive-app/canvas': 2.37.6
       react: 19.2.6
 
   '@sindresorhus/is@5.6.0': {}
