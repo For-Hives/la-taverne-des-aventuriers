@@ -28,7 +28,7 @@
     "@radix-ui/react-tabs": "^1.1.13",
     "@rive-app/canvas": "2.37.7",
     "@rive-app/react-canvas": "4.28.5",
-    "@swc/cli": "0.8.0",
+    "@swc/cli": "0.8.1",
     "@tailwindcss/typography": "0.5.19",
     "@vimeo/player": "2.30.4",
     "aos": "2.3.4",
