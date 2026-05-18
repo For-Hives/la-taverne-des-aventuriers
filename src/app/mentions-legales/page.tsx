@@ -113,7 +113,8 @@ export default async function LegalPage() {
 								Cinquin Andy
 								<br />
 								SIRET : 880 505 276 00035
-								<br />1250 Chemin de la renouillère
+								<br />
+								1250 Chemin de la renouillère
 								<br />
 								74140 Sciez
 								<br />
