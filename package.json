@@ -26,7 +26,7 @@
     "@heroicons/react": "2.2.0",
     "@next/third-parties": "16.2.11",
     "@radix-ui/react-tabs": "^1.1.13",
-    "@rive-app/canvas": "2.38.5",
+    "@rive-app/canvas": "2.39.0",
     "@rive-app/react-canvas": "4.29.5",
     "@swc/cli": "0.8.1",
     "@tailwindcss/typography": "0.5.19",
