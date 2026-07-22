@@ -54,7 +54,7 @@
     "@types/react-dom": "19.2.3",
     "@types/vimeo__player": "2.18.3",
     "globals": "17.7.0",
-    "postcss": "8.5.21",
+    "postcss": "8.5.22",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3"
   },
