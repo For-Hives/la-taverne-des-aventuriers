@@ -40,8 +40,8 @@ importers:
         specifier: ^1.1.13
         version: 1.1.18(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@rive-app/canvas':
-        specifier: 2.38.5
-        version: 2.38.5
+        specifier: 2.39.0
+        version: 2.39.0
       '@rive-app/react-canvas':
         specifier: 4.29.5
         version: 4.29.5(react@19.2.8)
@@ -735,6 +735,9 @@ packages:
 
   '@rive-app/canvas@2.38.5':
     resolution: {integrity: sha512-S3W6w5D9m2JWD3IKmDYfOKppyVf197QSL4OyuIBiYOvwY552Gzu5ct+6vEevLCAXKhqiY2YuZIEMTXeUGOC5xg==}
+
+  '@rive-app/canvas@2.39.0':
+    resolution: {integrity: sha512-4TMefZnnblxDv+B7mV6CKsKJPe0Sg9yca7L7xa0Bx7ShwKuFm7LNiaewQpUtZulp2IpjWpMkBtp67sTxSghYSQ==}
 
   '@rive-app/react-canvas@4.29.5':
     resolution: {integrity: sha512-QZ9ee1NhPo7sX7FzxU0WCy0kz4WbuGEHYEPEwC1pH7vZ0WBA+YhtqGssFe0WYkBvH11fCLrUDYtRxGhuxOyRPA==}
@@ -2165,6 +2168,8 @@ snapshots:
       '@types/react': 19.2.17
 
   '@rive-app/canvas@2.38.5': {}
+
+  '@rive-app/canvas@2.39.0': {}
 
   '@rive-app/react-canvas@4.29.5(react@19.2.8)':
     dependencies:
