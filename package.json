@@ -27,7 +27,7 @@
     "@next/third-parties": "16.2.11",
     "@radix-ui/react-tabs": "^1.1.13",
     "@rive-app/canvas": "2.39.1",
-    "@rive-app/react-canvas": "4.29.5",
+    "@rive-app/react-canvas": "4.30.0",
     "@swc/cli": "0.8.1",
     "@tailwindcss/typography": "0.5.19",
     "@vimeo/player": "2.30.4",
