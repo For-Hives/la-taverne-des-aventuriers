@@ -89,7 +89,7 @@ export default async function Page() {
 			'@type': 'Event',
 			description: event.event_description,
 			eventStatus: 'https://schema.org/EventScheduled',
-			image: event.event_image ? `https://latavernedesaventuriers.fr${event.event_image}` : undefined,
+			image: event.event_image || undefined,
 			location: {
 				'@type': 'BarOrPub',
 				address: {

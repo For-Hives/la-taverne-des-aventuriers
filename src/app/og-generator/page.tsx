@@ -85,7 +85,7 @@ export default function OgGenerator() {
 							</tbody>
 						</table>
 						<p className="text-custom-brown-100 absolute bottom-0 mt-4 translate-y-24 transform text-2xl">
-							13 rue Kergévan, 44000 Nantes
+							13 rue Kervégan, 44000 Nantes
 						</p>
 					</div>
 				</div>
