@@ -104,9 +104,7 @@ export default async function Page({ params }: Readonly<{ params: PageProps }>) 
 		description: eventData.summary,
 		eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
 		eventStatus: 'https://schema.org/EventScheduled',
-		image: eventData.event_image
-			? `https://latavernedesaventuriers.fr/assets/images/events/${eventData.event_image}`
-			: undefined,
+		image: eventData.event_image || undefined,
 		isAccessibleForFree: false,
 		location: {
 			'@type': 'BarOrPub',
