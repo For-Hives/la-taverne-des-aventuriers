@@ -99,7 +99,7 @@ export default async function LegalPage() {
                             selon les Articles L335-2 et suivants du Code de la propriété intellectuelle.
                             Toute reproduction ou représentation totale ou partielle de son contenu,
                             images, textes, sons, par quelque procédé utilisé, sans l'autorisation
-                            préalable de la société 'Cinquin Andy' est strictement interdite.
+                            préalable de l'entreprise individuelle 'Cinquin Andy' est strictement interdite.
                             Toute violation constituera une sanction et fera l'objet de poursuite.`}
 							</p>
 						</div>
@@ -138,9 +138,9 @@ export default async function LegalPage() {
 							<p className="mb-4">
 								netcup GmbH
 								<br />
-								Daimlerstraße 25
+								Emmy-Noether-Straße 10
 								<br />
-								76185 Karlsruhe
+								76131 Karlsruhe
 								<br />
 								Allemagne
 							</p>
