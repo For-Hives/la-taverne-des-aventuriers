@@ -18,6 +18,7 @@ const PAGES = [
 	['/battle/cocktails', 200, 'Cocktail A'],
 	['/battle/mocktails', 200, 'Mocktail A'],
 	['/mentions-legales', 200, 'Mentions'],
+	['/plan-du-site', 200, 'Plan du site | La Taverne des Aventuriers'],
 	['/page-qui-n-existe-pas', 404, ''],
 ]
 
@@ -38,6 +39,53 @@ async function waitForServer() {
 	throw new Error('next start ne répond pas')
 }
 
+const SITE = 'https://latavernedesaventuriers.fr'
+const SITEMAP_URLS = [
+	SITE,
+	...[
+		'/carte',
+		'/evenements',
+		'/bibliotheque-de-jeux',
+		'/reservation',
+		'/contact',
+		'/qui-sommes-nous',
+		'/battle/cocktails',
+		'/battle/mocktails',
+		'/mentions-legales',
+		'/plan-du-site',
+	].map(path => SITE + path),
+	// Événements du faux PocketBase (scripts/fake-pocketbase.mjs), qui les renvoie sans les trier.
+	...['soiree-future', 'soiree-passee', 'soiree-jeux', 'soiree-quiz'].map(slug => `${SITE}/evenements/${slug}`),
+]
+
+/** Intégration : /sitemap.xml et /robots.txt tels que le build de production les sert. */
+async function checkSitemapAndRobots() {
+	const failures = []
+	const check = (ok, label) => {
+		console.log(`${ok ? 'ok ' : 'KO '} ${label}`)
+		if (!ok) failures.push(label)
+	}
+
+	const sitemap = await fetch(`${BASE}/sitemap.xml`)
+	const xml = await sitemap.text()
+	check(sitemap.status === 200, `${sitemap.status} /sitemap.xml`)
+	check(sitemap.headers.get('content-type')?.startsWith('application/xml'), `/sitemap.xml en ${sitemap.headers.get('content-type')}`)
+	check(xml.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'), '/sitemap.xml : balise urlset')
+	const locs = [...xml.matchAll(/<loc>([^<]*)<\/loc>/g)].map(match => match[1])
+	check(JSON.stringify(locs) === JSON.stringify(SITEMAP_URLS), `/sitemap.xml : ${locs.length} adresses attendues`)
+	check(!xml.includes('og-generator'), '/sitemap.xml sans /og-generator')
+	check(xml.includes('<lastmod>2026-01-01T00:00:00.000Z</lastmod>'), '/sitemap.xml : date des événements')
+
+	const robots = await fetch(`${BASE}/robots.txt`)
+	const txt = await robots.text()
+	check(robots.status === 200, `${robots.status} /robots.txt`)
+	check(robots.headers.get('content-type')?.startsWith('text/plain'), `/robots.txt en ${robots.headers.get('content-type')}`)
+	check(/^User-Agent: \*$/m.test(txt) && /^Allow: \/$/m.test(txt), '/robots.txt : tout le site autorisé')
+	check(/^Disallow: \/og-generator$/m.test(txt), '/robots.txt : /og-generator interdit')
+	check(txt.includes(`Sitemap: ${SITE}/sitemap.xml`), '/robots.txt : adresse du sitemap')
+	return failures
+}
+
 async function main() {
 	await waitForServer()
 	const failures = []
@@ -55,6 +103,7 @@ async function main() {
 	const imageOk = image.status === 200 && image.headers.get('content-type') === 'image/webp'
 	console.log(`${imageOk ? 'ok ' : 'KO '} ${image.status} ${image.headers.get('content-type')} /_next/image`)
 	if (!imageOk) failures.push('/_next/image')
+	failures.push(...(await checkSitemapAndRobots()))
 	if (failures.length > 0) throw new Error(`Pages en échec : ${failures.join(', ')}`)
 }
 

@@ -95,12 +95,21 @@ export default async function FooterComponent() {
 							>
 								{data.reservation_link_label}
 							</Link>
-							<Link
-								className="hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline"
-								href="/mentions-legales"
-							>
-								Mentions légales
-							</Link>
+							{/* Sur la même ligne que « Mentions légales » : le pied de page garde sa hauteur. */}
+							<div className="flex flex-wrap gap-x-3 gap-y-2">
+								<Link
+									className="hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline"
+									href="/mentions-legales"
+								>
+									Mentions légales
+								</Link>
+								<Link
+									className="hover:text-custom-red-100 transition-all duration-300 ease-in-out hover:underline"
+									href="/plan-du-site"
+								>
+									Plan du site
+								</Link>
+							</div>
 						</div>
 					</div>
 

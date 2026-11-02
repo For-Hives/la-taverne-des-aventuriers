@@ -15,7 +15,9 @@
     "lint": "biome lint --write",
     "format": "biome format --write",
     "tsc": "npx tsc --noEmit --watch",
-    "test": "node scripts/fake-pocketbase.mjs node scripts/smoke-test.mjs"
+    "test": "pnpm test:unit && node scripts/fake-pocketbase.mjs node scripts/smoke-test.mjs",
+    "test:unit": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test scripts/tests/sitemap.test.mjs",
+    "test:e2e": "node scripts/fake-pocketbase.mjs node scripts/tests/e2e-plan-du-site.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "7.3.1",
@@ -52,6 +54,7 @@
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "globals": "17.14.0",
+    "playwright": "1.64.1",
     "postcss": "8.5.32",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3"
