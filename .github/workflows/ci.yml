@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verifier:
+    name: verifier
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      # Même couple que la production : voir nixpacks.toml (pnpm 9) et .node-version.
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with:
+          version: 9
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - name: Installation figée
+        run: pnpm install --frozen-lockfile
+      - name: Types
+        run: pnpm exec tsc --noEmit
+      - name: Lint
+        run: pnpm exec biome ci
+      - name: Build contre le faux PocketBase
+        run: pnpm build:ci
+      - name: Test de fumée
+        run: pnpm test

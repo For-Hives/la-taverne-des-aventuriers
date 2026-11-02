@@ -9,12 +9,13 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:ci": "node scripts/fake-pocketbase.mjs pnpm build",
     "start": "next start",
     "check": "biome check --write",
     "lint": "biome lint --write",
     "format": "biome format --write",
     "tsc": "npx tsc --noEmit --watch",
-    "test": "echo \"No tests specified\""
+    "test": "node scripts/fake-pocketbase.mjs node scripts/smoke-test.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "7.3.1",
