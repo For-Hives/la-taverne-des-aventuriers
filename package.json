@@ -54,7 +54,7 @@
     "globals": "17.14.0",
     "postcss": "8.5.32",
     "tailwindcss": "4.3.3",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   },
   "pnpm": {
     "overrides": {
