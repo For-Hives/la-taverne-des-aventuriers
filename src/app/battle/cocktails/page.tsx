@@ -15,7 +15,7 @@ export const revalidate = 10
 export async function generateMetadata(): Promise<Metadata> {
 	return {
 		alternates: {
-			canonical: 'https://latavernedesaventuriers.fr/battle',
+			canonical: 'https://latavernedesaventuriers.fr/battle/cocktails',
 		},
 		description:
 			'Battle des cocktails à La Taverne des Aventuriers. Votez pour votre création préférée et décidez quel cocktail restera sur notre carte.',

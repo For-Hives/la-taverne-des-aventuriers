@@ -99,6 +99,9 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 													src={event.image}
 													alt={event.title}
 													fill
+													// Image peinte en object-cover dans une boîte haute de 384 px (min-h-96) : au plus 686 px de large mesurés pour
+													// des visuels 16:9. 768 px couvre jusqu'au 2:1, au lieu de 100vw qui faisait demander du 3840 px.
+													sizes="(min-width: 1024px) 768px, 100vw"
 													className="object-cover transition-transform duration-300 hover:scale-105"
 												/>
 											</div>

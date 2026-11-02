@@ -8,7 +8,7 @@ export default function BattleBanner() {
 	const router = useRouter()
 
 	const handleImageClick = () => {
-		router.push('/battle')
+		router.push('/battle/cocktails')
 	}
 
 	return (

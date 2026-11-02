@@ -12,11 +12,15 @@ const PAGES = [
 	['/carte', 200, 'Cocktail factice'],
 	['/evenements', 200, 'soiree-future'],
 	['/evenements/soiree-future', 200, 'soiree-future'],
+	// Images des événements : taille annoncée au navigateur, sinon il demande du 3840 px à l'optimiseur pour une boîte de 700 px.
+	['/evenements', 200, 'sizes="(min-width: 1024px) 768px, 100vw"'],
 	['/bibliotheque-de-jeux', 200, 'Jeux games_hero_title'],
 	['/contact', 200, 'Contact schedule_title'],
 	['/reservation', 200, 'Réservation how_to_title'],
 	['/qui-sommes-nous', 200, 'Qui who_are_we_title'],
 	['/battle/cocktails', 200, 'Cocktail A'],
+	// La canonical de la battle des cocktails pointait vers /battle, qui n'existe pas (404).
+	['/battle/cocktails', 200, 'href="https://latavernedesaventuriers.fr/battle/cocktails"', ['href="https://latavernedesaventuriers.fr/battle"']],
 	['/battle/mocktails', 200, 'Mocktail A'],
 	['/mentions-legales', 200, 'Mentions'],
 	['/plan-du-site', 200, 'Plan du site | La Taverne des Aventuriers'],
