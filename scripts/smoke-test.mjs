@@ -7,7 +7,7 @@ const BASE = `http://127.0.0.1:${PORT}`
 
 // [chemin, statut attendu, texte attendu dans le HTML : il prouve que la donnée du faux PocketBase arrive bien dans la page]
 const PAGES = [
-	['/', 200, 'Accueil hero_title'],
+	['/', 200, 'soiree-jeux'],
 	['/carte', 200, 'Cocktail factice'],
 	['/evenements', 200, 'soiree-future'],
 	['/evenements/soiree-future', 200, 'soiree-future'],

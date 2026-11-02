@@ -86,7 +86,9 @@ const COLLECTIONS = {
 		]),
 	],
 	Event_Page: [fill('Événements', ['page_title', 'event_description', 'bar_event_title'])],
-	Events: [event('soiree-future', '2099-06-15 19:00:00.000Z', true), event('soiree-passee', '2020-06-15 19:00:00.000Z', false)],
+	Events: [event('soiree-future', '2099-06-15 19:00:00.000Z', true), event('soiree-passee', '2020-06-15 19:00:00.000Z', false),
+		event('soiree-jeux', '2099-07-15 19:00:00.000Z', false),
+		event('soiree-quiz', '2099-08-15 19:00:00.000Z', false)],
 	footer: [
 		fill('Pied', [
 			'bar_title',
