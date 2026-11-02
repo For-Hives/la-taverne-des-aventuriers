@@ -42,8 +42,8 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@rive-app/canvas':
-        specifier: 2.49.0
-        version: 2.49.0
+        specifier: 2.49.1
+        version: 2.49.1
       '@rive-app/react-canvas':
         specifier: 4.38.0
         version: 4.38.0(react@19.3.1)
@@ -634,8 +634,8 @@ packages:
   '@rive-app/canvas@2.48.0':
     resolution: {integrity: sha512-PIZeN+AxIBnRbUkYIqgwyECT/n5svADgFZ8Q1gVLhNtUPdxvhSFmvoeR7y9DracoA0uReeOrQ4T00TRDNPtTIQ==}
 
-  '@rive-app/canvas@2.49.0':
-    resolution: {integrity: sha512-FiNfIbiwuc97RNNrc4U9DQxpFW72PZ44EFEWhTnetpGiRq6tvfgvsoTjYz9SSTQccyfOzRDnFoJJJ/r4NevCXQ==}
+  '@rive-app/canvas@2.49.1':
+    resolution: {integrity: sha512-yPBuFadYXJ3Sn1BOCWXP3B/cWsgV1aRMFoQwF0dI7EqOBWnuix7EK1YgJDJn8Vo6+0k5WtxcfiOguWsB4nwlfA==}
 
   '@rive-app/react-canvas@4.38.0':
     resolution: {integrity: sha512-HyZkDEE6RtvKBRBs4CdbWW0DFhZIbESP8KDYr/WoXCWIWGq5KTj0+rqzNCLddkzK0vn8q5PmPnfY3dGnnFDBYw==}
@@ -1075,12 +1075,12 @@ packages:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
   playwright-core@1.64.1:
-    resolution: {integrity: sha512-BC4s8y6SEVA6Q1rSxZTto8hI1KUI3xXlHGZgvGqP4IqPdI/a6FX9H29IDNz7vKo9l21b6LfYosScPL6M3xxyDQ==, tarball: https://registry.npmjs.org/playwright-core/-/playwright-core-1.64.1.tgz}
+    resolution: {integrity: sha512-BC4s8y6SEVA6Q1rSxZTto8hI1KUI3xXlHGZgvGqP4IqPdI/a6FX9H29IDNz7vKo9l21b6LfYosScPL6M3xxyDQ==}
     engines: {node: '>=20'}
     hasBin: true
 
   playwright@1.64.1:
-    resolution: {integrity: sha512-HCrVhHr5QQuwYoswEUGTb7gGp522yflbv/ST8nF4sFWGuLjQCt17Q/EubpGGSNKYn1tsTCPZxqHhHCfVURu7UA==, tarball: https://registry.npmjs.org/playwright/-/playwright-1.64.1.tgz}
+    resolution: {integrity: sha512-HCrVhHr5QQuwYoswEUGTb7gGp522yflbv/ST8nF4sFWGuLjQCt17Q/EubpGGSNKYn1tsTCPZxqHhHCfVURu7UA==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1568,7 +1568,7 @@ snapshots:
 
   '@rive-app/canvas@2.48.0': {}
 
-  '@rive-app/canvas@2.49.0': {}
+  '@rive-app/canvas@2.49.1': {}
 
   '@rive-app/react-canvas@4.38.0(react@19.3.1)':
     dependencies:
