@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 import { getEventData } from '@/app/actions/services/getEventData'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
@@ -24,11 +25,9 @@ export async function generateMetadata({ params }: { params: PageProps }): Promi
 	const { slug } = await params
 	const eventData = await getEventData(slug)
 
+	// Événement inconnu : la page appelle notFound(), la 404 du site garde ses propres métadonnées.
 	if (!eventData) {
-		return {
-			description: "La page demandée n'existe pas.",
-			title: 'Événement non trouvé | La Taverne des Aventuriers',
-		}
+		return {}
 	}
 	// Truncate description to max 155 characters and remove HTML tags
 	const truncateDescription = (text: string, maxLength: number = 155): string => {
@@ -90,11 +89,7 @@ export default async function Page({ params }: Readonly<{ params: PageProps }>) 
 	const navItems = await getNavBarData()
 
 	if (!eventData) {
-		return (
-			<div className="flex min-h-screen flex-col items-center justify-center">
-				<h1 className="text-custom-brown-100 text-2xl">Événement non trouvé</h1>
-			</div>
-		)
+		notFound()
 	}
 
 	// Structured data focused on event specifics

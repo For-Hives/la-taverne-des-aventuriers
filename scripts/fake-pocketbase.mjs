@@ -233,6 +233,11 @@ const server = createServer((req, res) => {
 	}
 	let items = COLLECTIONS[name].map((data, index) => record(name, data, index))
 	const slug = url.searchParams.get('filter')?.match(/event_slug="([^"]*)"/)?.[1]
+	if (slug === 'erreur-serveur-simulee') {
+		// Simule une panne de PocketBase (erreur 500) pour vérifier qu'elle n'est pas prise pour une page introuvable.
+		json(res, 500, { data: {}, message: 'Erreur simulée', status: 500 })
+		return
+	}
 	if (slug !== undefined) items = items.filter(item => item.event_slug === slug)
 	json(res, 200, { items, page: 1, perPage: items.length, totalItems: items.length, totalPages: 1 })
 })
