@@ -79,8 +79,8 @@ importers:
         specifier: 16.4.1
         version: 16.4.1(@types/node@25.9.9)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       pocketbase:
-        specifier: 0.26.9
-        version: 0.26.9
+        specifier: 0.28.2
+        version: 0.28.2
       react:
         specifier: 19.3.0
         version: 19.3.0
@@ -1513,8 +1513,8 @@ packages:
   piscina@4.9.4:
     resolution: {integrity: sha512-RyBDr2VheQ8ZfH3N8SzQZHztqVyOtadTwLnUYof6gdj5161/eu2wNhCbGl5GHnNKDpnkicJYpKtL2J+y/gk6XA==}
 
-  pocketbase@0.26.9:
-    resolution: {integrity: sha512-Tiv1/hNuUzRdvT0d8hF03dfzuefQ1WdSRp1A1q3wzFC/WYhQcbU/Qlaubl/3ZDo6xvFXBS8JAgBS/L+ms7nkVQ==}
+  pocketbase@0.28.2:
+    resolution: {integrity: sha512-5lS4g7iDZi90LxLai8kyUK4r5u1GkEAoZ3yuzTEFX97FyDQAoEmXWbTqf+pYA1hz5e/icBQu1MCUjM/9V8mitg==}
 
   postcss-selector-parser@6.0.10:
     resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
@@ -2897,7 +2897,7 @@ snapshots:
     optionalDependencies:
       '@napi-rs/nice': 1.1.1
 
-  pocketbase@0.26.9: {}
+  pocketbase@0.28.2: {}
 
   postcss-selector-parser@6.0.10:
     dependencies:
