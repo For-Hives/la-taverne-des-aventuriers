@@ -1,4 +1,6 @@
 // Importing the necessary functions for PocketBase authentication and slug generation
+import { ClientResponseError } from 'pocketbase'
+
 import { authWithPocketBase } from '@/app/actions/AuthService'
 
 // Define the structure of the event data
@@ -50,6 +52,11 @@ export async function getEventData(slug: string): Promise<EventData | null> {
 		// Return the event data if found, or null if no event matches the slug
 		return result as EventData
 	} catch (error) {
+		// Aucun événement pour ce slug : PocketBase répond 404, la page affichera la 404 du site.
+		// Toute autre erreur (PocketBase injoignable, statut 0, 5xx…) reste une erreur.
+		if (error instanceof ClientResponseError && error.status === 404) {
+			return null
+		}
 		// Log any errors encountered during the fetch process
 		console.error('Error fetching event data from PocketBase:', error)
 		throw error // Rethrow the error for further handling
