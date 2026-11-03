@@ -1,6 +1,6 @@
 'use client' // Declares this as a client-side component
 
-import { motion } from 'framer-motion' // Importing motion from Framer Motion for animations
+import { motion } from 'motion/react' // Importing motion from Motion for animations
 import Image from 'next/image' // Importing Next.js Image component for optimized image rendering
 import Link from 'next/link' // Importing Next.js Link component for client-side navigation
 

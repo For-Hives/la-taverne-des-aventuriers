@@ -2,7 +2,7 @@
 
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons' // Importing Facebook and Instagram icons from Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' // Font Awesome React component for icons
-import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
+import { motion } from 'motion/react' // Importing motion for animations from Motion
 import Image from 'next/image' // Next.js Image component
 import Link from 'next/link' // Next.js Link component for navigation
 import { useState } from 'react' // Importing useState for managing state in the component

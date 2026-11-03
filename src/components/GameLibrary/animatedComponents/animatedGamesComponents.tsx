@@ -2,7 +2,7 @@
 
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import Link from 'next/link'
 
 import type { GamesPageData } from '@/app/actions/services/getGamePageData.service'

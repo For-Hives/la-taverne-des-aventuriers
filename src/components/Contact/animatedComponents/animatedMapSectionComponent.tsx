@@ -2,7 +2,7 @@
 
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { motion } from 'framer-motion' // Importing motion for animations from Framer Motion
+import { motion } from 'motion/react' // Importing motion for animations from Motion
 import Image from 'next/image'
 import Link from 'next/link'
 
