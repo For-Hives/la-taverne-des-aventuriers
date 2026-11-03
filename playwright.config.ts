@@ -13,10 +13,13 @@ export default defineConfig({
 		toHaveScreenshot: {
 			animations: 'disabled',
 			caret: 'hide',
-			// Seuil zéro : un seul pixel différent, sur un seul canal, fait échouer le test.
+			// Aucun pixel différent n'est toléré (maxDiffPixels: 0). Un pixel compte comme différent dès que sa
+			// couleur s'écarte de plus d'environ 2 niveaux sur 255 (threshold 0.01, distance YIQ de pixelmatch) :
+			// le redimensionnement des images de fond par Chromium varie d'un niveau selon le processeur
+			// (machine locale contre runner GitHub, même image Docker), sans que rien ne bouge à l'écran.
 			maxDiffPixels: 0,
 			scale: 'css',
-			threshold: 0,
+			threshold: 0.01,
 		},
 	},
 	forbidOnly: Boolean(process.env.CI),
