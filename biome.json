@@ -8,7 +8,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["src/**/*", "*.ts", "*.tsx", "*.js", "*.jsx", "*.mjs"],
+		"includes": ["src/**/*", "scripts/**/*.mjs", "tests/e2e/**/*.ts", "*.ts", "*.tsx", "*.js", "*.jsx", "*.mjs"],
 		"maxSize": 1048576
 	},
 	"formatter": {

@@ -134,6 +134,20 @@ pnpm check
 pnpm tsc
 ```
 
+### Tests (filet anti-régression)
+
+| Commande | Ce qu'elle vérifie |
+| --- | --- |
+| `pnpm test:unit` | Unitaires (utilitaires, sitemap, extraction de l'instantané) et intégration des services PocketBase contre un faux PocketBase |
+| `pnpm build:ci && pnpm test` | Unitaires + test de fumée HTTP sur données factices |
+| `pnpm test:visuel:docker` | e2e (navigation, liens, SEO, robots, sitemap) et **non-régression visuelle au pixel près** de toutes les pages publiques, bureau et téléphone, dans l'image Docker officielle de Playwright (la même qu'en CI) |
+| `pnpm test:visuel:maj` | Régénère les captures de référence (`tests/e2e/captures/`) après un changement d'interface voulu |
+| `pnpm instantane:extraire` | Recapture l'instantané des données depuis la production (`tests/instantane/`), en lecture seule |
+
+Les tests visuels tournent sur des données figées : `tests/instantane/pocketbase.json` (+ images) est servi par
+`scripts/fake-pocketbase.mjs` (`PB_INSTANTANE`), et la date du serveur est figée (`scripts/instantane/figer-date.mjs`).
+Seules les captures produites dans Docker font référence : ne pas les régénérer hors de `pnpm test:visuel:maj`.
+
 ### Code Quality
 
 This project uses **Biome** for code quality, which provides:

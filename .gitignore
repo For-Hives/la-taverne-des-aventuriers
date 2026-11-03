@@ -49,3 +49,9 @@ next-env.d.ts
 yarn.lock
 bun.lock
 package-lock.json
+
+# tests e2e
+/test-results/
+/playwright-report/
+/blob-report/
+/.pnpm-store/

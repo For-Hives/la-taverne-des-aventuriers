@@ -108,7 +108,10 @@ describe('fetchEventEntries', () => {
 
 	test('parcourt toutes les pages de résultats, puis s’arrête', async () => {
 		const calls = []
-		const pb = fakePocketBase([[{ event_slug: 'page-un' }], [{ event_slug: 'page-deux' }], [{ event_slug: 'page-trois' }]], calls)
+		const pb = fakePocketBase(
+			[[{ event_slug: 'page-un' }], [{ event_slug: 'page-deux' }], [{ event_slug: 'page-trois' }]],
+			calls
+		)
 		const events = await fetchEventEntries(pb)
 		assert.deepEqual(
 			events.map(event => event.slug),

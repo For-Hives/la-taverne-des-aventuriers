@@ -10,14 +10,19 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "build:ci": "node scripts/fake-pocketbase.mjs pnpm build",
+    "build:instantane": "node scripts/instantane/avec-instantane.mjs next build",
     "start": "next start",
     "check": "biome check --write",
     "lint": "biome lint --write",
     "format": "biome format --write",
     "tsc": "npx tsc --noEmit --watch",
     "test": "pnpm test:unit && node scripts/fake-pocketbase.mjs node scripts/smoke-test.mjs",
-    "test:unit": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test scripts/tests/sitemap.test.mjs",
-    "test:e2e": "node scripts/fake-pocketbase.mjs node scripts/tests/e2e-plan-du-site.mjs"
+    "test:unit": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --import ./scripts/tests/alias.mjs --test \"scripts/tests/*.test.mjs\"",
+    "test:e2e": "node scripts/fake-pocketbase.mjs node scripts/tests/e2e-plan-du-site.mjs",
+    "test:navigateur": "playwright test",
+    "test:visuel:docker": "bash scripts/visuel-docker.sh",
+    "test:visuel:maj": "bash scripts/visuel-docker.sh --update-snapshots=all",
+    "instantane:extraire": "node scripts/instantane/extraire-prod.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "7.3.1",
@@ -49,6 +54,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.4",
+    "@playwright/test": "1.64.1",
     "@tailwindcss/postcss": "4.3.4",
     "@types/node": "25.9.9",
     "@types/react": "19.3.0",
