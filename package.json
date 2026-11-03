@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "^18.20.2 || >=20.9.0",
-    "pnpm": "^9 || ^10"
+    "node": ">=22",
+    "pnpm": "^12"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -56,7 +56,7 @@
     "@biomejs/biome": "2.6.4",
     "@playwright/test": "1.64.1",
     "@tailwindcss/postcss": "4.3.4",
-    "@types/node": "25.9.9",
+    "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "globals": "17.14.0",
@@ -64,13 +64,5 @@
     "postcss": "8.5.32",
     "tailwindcss": "4.3.4",
     "typescript": "7.0.2"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.3.0",
-      "@types/react-dom": "19.3.0",
-      "baseline-browser-mapping": "2.11.35",
-      "postcss-selector-parser": "7.1.7"
-    }
   }
 }

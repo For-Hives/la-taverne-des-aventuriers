@@ -2,3 +2,7 @@ node_modules
 .next
 .git
 dist
+.pnpm-store
+tests
+test-results
+playwright-report

@@ -9,7 +9,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 VERSION=$(node -p "require('./package.json').devDependencies['@playwright/test']")
 IMAGE="mcr.microsoft.com/playwright:v${VERSION}-noble"
-PNPM="npx -y pnpm@9.15.9"
+PNPM="npx -y pnpm@12"
 docker run --rm --init --ipc=host \
 	-e CI=1 -e HOTE="$(id -u):$(id -g)" \
 	-v "$PWD":/app -v taverne-e2e-node-modules:/app/node_modules -v taverne-e2e-next:/app/.next -v taverne-e2e-pnpm-store:/app/.pnpm-store \

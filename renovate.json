@@ -1,13 +1,76 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:recommended"],
+	"description": "Mises à jour automatiques : chaque PR Renovate fusionne seule (majeures comprises) quand les checks verifier et e2e-visuel sont verts. Le ruleset de main exige ces deux checks ; une mise à jour qui change l'écran fait échouer e2e-visuel (captures au pixel près) et la PR reste ouverte.",
+	"extends": ["config:recommended", ":dependencyDashboard", ":semanticCommits"],
+	"timezone": "Europe/Paris",
+	"schedule": ["* 0-6 * * *"],
+	"prHourlyLimit": 4,
+	"prConcurrentLimit": 10,
+	"rangeStrategy": "bump",
+	"minimumReleaseAge": "3 days",
+	"internalChecksFilter": "strict",
+	"automerge": true,
+	"automergeType": "pr",
+	"automergeStrategy": "squash",
+	"platformAutomerge": true,
+	"lockFileMaintenance": {
+		"enabled": true,
+		"automerge": true,
+		"schedule": ["* 0-6 * * 1"]
+	},
 	"packageRules": [
 		{
-			"matchUpdateTypes": ["minor", "patch"],
-			"matchCurrentVersion": "!/^0/",
-			"automerge": true,
-			"automergeType": "pr",
-			"automergeStrategy": "squash"
+			"description": "Actions GitHub de la CI, regroupées (hors image Docker de Playwright, voir plus bas).",
+			"matchManagers": ["github-actions"],
+			"matchDepTypes": ["action"],
+			"groupName": "actions GitHub"
+		},
+		{
+			"description": "Next.js et ses paquets compagnons montent ensemble.",
+			"matchPackageNames": ["next", "@next/*", "eslint-config-next"],
+			"groupName": "next"
+		},
+		{
+			"description": "React, React DOM et leurs types.",
+			"matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"],
+			"groupName": "react"
+		},
+		{
+			"description": "Tailwind CSS et ses paquets.",
+			"matchPackageNames": ["tailwindcss", "@tailwindcss/*"],
+			"groupName": "tailwindcss"
+		},
+		{
+			"description": "Font Awesome.",
+			"matchPackageNames": ["@fortawesome/*"],
+			"groupName": "fortawesome"
+		},
+		{
+			"description": "Rive.",
+			"matchPackageNames": ["@rive-app/*"],
+			"groupName": "rive"
+		},
+		{
+			"description": "Playwright : les deux paquets et l'image Docker de la CI (ci.yml, container.image) doivent garder la même version, sinon e2e-visuel échoue.",
+			"matchPackageNames": ["playwright", "@playwright/test", "mcr.microsoft.com/playwright"],
+			"groupName": "playwright"
+		},
+		{
+			"description": "Node, ses types et pnpm : 14 jours d'attente, car l'image de build de prod (Railpack, mise) refuse les versions de moins de 14 jours.",
+			"matchPackageNames": ["node", "@types/node", "pnpm"],
+			"minimumReleaseAge": "14 days"
+		},
+		{
+			"description": "Node et ses types montent ensemble, versions paires (LTS) seulement.",
+			"matchPackageNames": ["node", "@types/node"],
+			"groupName": "node",
+			"allowedVersions": "/^v?\\d*[02468]\\./"
+		},
+		{
+			"description": "Montée majeure de Node : pas de fusion automatique, il faut aussi changer RAILPACK_NODE_VERSION dans Coolify, sinon la prod reste sur l'ancienne version.",
+			"matchPackageNames": ["node", "@types/node"],
+			"matchUpdateTypes": ["major"],
+			"automerge": false
 		}
 	]
 }
