@@ -13,13 +13,13 @@ export default defineConfig({
 		toHaveScreenshot: {
 			animations: 'disabled',
 			caret: 'hide',
-			// Aucun pixel différent n'est toléré (maxDiffPixels: 0). Un pixel compte comme différent dès que sa
-			// couleur s'écarte de plus d'environ 2 niveaux sur 255 (threshold 0.01, distance YIQ de pixelmatch) :
-			// le redimensionnement des images de fond par Chromium varie d'un niveau selon le processeur
-			// (machine locale contre runner GitHub, même image Docker), sans que rien ne bouge à l'écran.
+			// Aucun pixel différent n'est toléré (maxDiffPixels: 0). Seul l'écart d'un niveau de couleur sur 255 est
+			// absorbé (threshold 0.005, distance YIQ de pixelmatch) : 2 niveaux de gris, ou 3 sur un seul canal,
+			// font échouer. Raison : Chromium redimensionne les images de fond (pied de page) à un niveau près selon
+			// le processeur (machine locale contre runner GitHub, pourtant même image Docker).
 			maxDiffPixels: 0,
 			scale: 'css',
-			threshold: 0.01,
+			threshold: 0.005,
 		},
 	},
 	forbidOnly: Boolean(process.env.CI),
