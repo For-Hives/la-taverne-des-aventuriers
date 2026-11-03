@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion' // Importing framer-motion for animations
+import { motion } from 'motion/react' // Importing Motion for animations
 import Image from 'next/image' // Importing Image component for handling images
 
 import type { WhoAreWePageData } from '@/app/actions/services/getWhoAreWePageData.service' // Importing data type for the page

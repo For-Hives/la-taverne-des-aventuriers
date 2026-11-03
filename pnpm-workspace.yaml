@@ -1,0 +1,27 @@
+# Réglages pnpm : depuis pnpm 10, le champ "pnpm" de package.json n'est plus lu.
+
+# Un paquet publié depuis moins d'un jour est refusé (protection contre les paquets compromis, défaut de pnpm 12,
+# écrit ici pour qu'il se voie). Renovate attend de son côté 3 jours avant de proposer une mise à jour.
+minimumReleaseAge: 1440
+# Versions déjà en production le 03/11/2026, publiées moins d'un jour avant le passage à pnpm 12.
+# Ces exclusions ne valent que pour ces versions exactes : elles peuvent être retirées à partir du 05/11/2026.
+minimumReleaseAgeExclude:
+  - '@next/env@16.4.5'
+  - '@next/swc-darwin-arm64@16.4.5'
+  - '@next/swc-darwin-x64@16.4.5'
+  - '@next/swc-linux-arm64-gnu@16.4.5'
+  - '@next/swc-linux-arm64-musl@16.4.5'
+  - '@next/swc-linux-x64-gnu@16.4.5'
+  - '@next/swc-linux-x64-musl@16.4.5'
+  - '@next/swc-win32-arm64-msvc@16.4.5'
+  - '@next/swc-win32-x64-msvc@16.4.5'
+  - '@next/third-parties@16.4.5'
+  - '@rive-app/canvas@2.49.2'
+  - '@tailwindcss/oxide-wasm32-wasi@4.3.4'
+  - baseline-browser-mapping@2.11.35
+  - lucide-react@1.67.0
+  - next@16.4.5
+
+overrides:
+  baseline-browser-mapping: 2.11.35
+  postcss-selector-parser: 7.1.7

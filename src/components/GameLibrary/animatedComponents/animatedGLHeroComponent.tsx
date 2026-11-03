@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion' // Importing motion from Framer Motion for animations
+import { motion } from 'motion/react' // Importing motion from Motion for animations
 
 import type { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing the type for game page data
 
