@@ -20,6 +20,11 @@
 	},
 	"packageRules": [
 		{
+			"description": "Champ engines de package.json : la plage ne change qu'à la majeure suivante (pas de PR pour >=22 → >=22.23.4).",
+			"matchDepTypes": ["engines"],
+			"rangeStrategy": "replace"
+		},
+		{
 			"description": "Actions GitHub de la CI, regroupées (hors image Docker de Playwright, voir plus bas).",
 			"matchManagers": ["github-actions"],
 			"matchDepTypes": ["action"],
