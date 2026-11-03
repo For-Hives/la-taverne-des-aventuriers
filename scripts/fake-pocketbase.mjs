@@ -1,8 +1,14 @@
-// Faux PocketBase pour la CI et les essais locaux : aucune donnée réelle, aucun jeton réel.
+// Faux PocketBase pour la CI et les essais locaux : aucun jeton réel, aucun appel au vrai PocketBase.
 // Usage : node scripts/fake-pocketbase.mjs <commande...> lance la commande avec PB_SERVER_URL et
 // PB_USER_TOKEN pointant vers ce serveur, puis l'arrête. Sans commande, le serveur reste à l'écoute.
+// Deux jeux de données :
+// - par défaut, des données factices (tests de fumée : chaque champ affiche son nom) ;
+// - avec PB_INSTANTANE=<fichier.json>, l'instantané des vraies données du site (tests visuels), images comprises,
+//   lues dans le dossier fichiers/ voisin. Voir scripts/instantane/extraire-prod.mjs.
 import { spawn } from 'node:child_process'
+import { existsSync, readFileSync } from 'node:fs'
 import { createServer } from 'node:http'
+import { dirname, join, normalize } from 'node:path'
 
 const PORT = Number(process.env.FAKE_PB_PORT ?? 18090)
 
@@ -86,9 +92,12 @@ const COLLECTIONS = {
 		]),
 	],
 	Event_Page: [fill('Événements', ['page_title', 'event_description', 'bar_event_title'])],
-	Events: [event('soiree-future', '2099-06-15 19:00:00.000Z', true), event('soiree-passee', '2020-06-15 19:00:00.000Z', false),
+	Events: [
+		event('soiree-future', '2099-06-15 19:00:00.000Z', true),
+		event('soiree-passee', '2020-06-15 19:00:00.000Z', false),
 		event('soiree-jeux', '2099-07-15 19:00:00.000Z', false),
-		event('soiree-quiz', '2099-08-15 19:00:00.000Z', false)],
+		event('soiree-quiz', '2099-08-15 19:00:00.000Z', false),
+	],
 	footer: [
 		fill('Pied', [
 			'bar_title',
@@ -178,7 +187,12 @@ const COLLECTIONS = {
 	Short_long_drinks: drinks('Long drink factice'),
 	Shooters: drinks('Shooter factice'),
 	Softs_drinks: [drink('Soft factice', { volume: 33 })],
-	Travelers_pleasures: [drink('Plaisir factice 1'), drink('Plaisir factice 2'), drink('Plaisir factice 3'), drink('Plaisir factice 4')],
+	Travelers_pleasures: [
+		drink('Plaisir factice 1'),
+		drink('Plaisir factice 2'),
+		drink('Plaisir factice 3'),
+		drink('Plaisir factice 4'),
+	],
 	who_are_we_page: [
 		fill('Qui', [
 			'who_are_we_title',
@@ -202,6 +216,26 @@ const PIXEL = Buffer.from(
 	'base64'
 )
 
+const INSTANTANE = process.env.PB_INSTANTANE
+const instantane = INSTANTANE ? JSON.parse(readFileSync(INSTANTANE, 'utf8')).collections : null
+const DOSSIER_FICHIERS = INSTANTANE ? join(dirname(INSTANTANE), 'fichiers') : null
+
+/** Fichier d'image de l'instantané, ou null (chemin confiné au dossier fichiers/). */
+function fichierInstantane(chemin) {
+	const relatif = normalize(decodeURIComponent(chemin.replace(/^\/api\/files\//, '')))
+	if (relatif.startsWith('..')) return null
+	const complet = join(DOSSIER_FICHIERS, relatif)
+	return existsSync(complet) ? readFileSync(complet) : null
+}
+
+/** Tri façon PocketBase pour un seul champ : « champ » ou « -champ ». */
+function trier(items, sort) {
+	if (!sort) return items
+	const descendant = sort.startsWith('-')
+	const champ = sort.replace(/^[-+]/, '')
+	return [...items].sort((a, b) => (a[champ] < b[champ] ? -1 : a[champ] > b[champ] ? 1 : 0) * (descendant ? -1 : 1))
+}
+
 function record(name, data, index) {
 	return {
 		collectionId: `fake_${name}`,
@@ -221,17 +255,30 @@ function json(res, status, body) {
 const server = createServer((req, res) => {
 	const url = new URL(req.url, `http://127.0.0.1:${PORT}`)
 	if (url.pathname.startsWith('/api/files/')) {
+		if (instantane) {
+			const contenu = fichierInstantane(url.pathname)
+			if (!contenu) {
+				json(res, 404, { data: {}, message: "Fichier absent de l'instantané", status: 404 })
+				return
+			}
+			res.writeHead(200, { 'content-type': 'image/webp' })
+			res.end(contenu)
+			return
+		}
 		res.writeHead(200, { 'content-type': 'image/png' })
 		res.end(PIXEL)
 		return
 	}
 	const name = url.pathname.match(/^\/api\/collections\/([^/]+)\/records$/)?.[1]
-	if (!name || !(name in COLLECTIONS)) {
+	const source = instantane ?? COLLECTIONS
+	if (!name || !(name in source)) {
 		// Une collection inconnue doit faire échouer le build : c'est le signal d'un faux serveur à compléter.
 		json(res, 404, { data: {}, message: `Collection factice inconnue : ${url.pathname}`, status: 404 })
 		return
 	}
-	let items = COLLECTIONS[name].map((data, index) => record(name, data, index))
+	let items = instantane
+		? trier(instantane[name], url.searchParams.get('sort'))
+		: COLLECTIONS[name].map((data, index) => record(name, data, index))
 	const slug = url.searchParams.get('filter')?.match(/event_slug="([^"]*)"/)?.[1]
 	if (slug === 'erreur-serveur-simulee') {
 		// Simule une panne de PocketBase (erreur 500) pour vérifier qu'elle n'est pas prise pour une page introuvable.

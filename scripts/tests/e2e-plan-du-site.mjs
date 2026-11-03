@@ -63,9 +63,9 @@ async function run(browser, name, options) {
 		'https://latavernedesaventuriers.fr/plan-du-site'
 	)
 
-	const hrefs = await page.locator('main a[href^="/"], .container a[href^="/"]').evaluateAll(links => [
-		...new Set(links.map(link => link.getAttribute('href'))),
-	])
+	const hrefs = await page
+		.locator('main a[href^="/"], .container a[href^="/"]')
+		.evaluateAll(links => [...new Set(links.map(link => link.getAttribute('href')))])
 	for (const expected of ['/', '/carte', '/evenements', '/mentions-legales', '/evenements/soiree-future']) {
 		assert.ok(hrefs.includes(expected), `${name} : le plan contient ${expected}`)
 	}

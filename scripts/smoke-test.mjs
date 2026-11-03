@@ -20,7 +20,12 @@ const PAGES = [
 	['/qui-sommes-nous', 200, 'Qui who_are_we_title'],
 	['/battle/cocktails', 200, 'Cocktail A'],
 	// La canonical de la battle des cocktails pointait vers /battle, qui n'existe pas (404).
-	['/battle/cocktails', 200, 'href="https://latavernedesaventuriers.fr/battle/cocktails"', ['href="https://latavernedesaventuriers.fr/battle"']],
+	[
+		'/battle/cocktails',
+		200,
+		'href="https://latavernedesaventuriers.fr/battle/cocktails"',
+		['href="https://latavernedesaventuriers.fr/battle"'],
+	],
 	['/battle/mocktails', 200, 'Mocktail A'],
 	['/mentions-legales', 200, 'Mentions'],
 	['/plan-du-site', 200, 'Plan du site | La Taverne des Aventuriers'],
@@ -93,7 +98,10 @@ async function checkSitemapAndRobots() {
 	const sitemap = await fetch(`${BASE}/sitemap.xml`)
 	const xml = await sitemap.text()
 	check(sitemap.status === 200, `${sitemap.status} /sitemap.xml`)
-	check(sitemap.headers.get('content-type')?.startsWith('application/xml'), `/sitemap.xml en ${sitemap.headers.get('content-type')}`)
+	check(
+		sitemap.headers.get('content-type')?.startsWith('application/xml'),
+		`/sitemap.xml en ${sitemap.headers.get('content-type')}`
+	)
 	check(xml.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'), '/sitemap.xml : balise urlset')
 	const locs = [...xml.matchAll(/<loc>([^<]*)<\/loc>/g)].map(match => match[1])
 	check(JSON.stringify(locs) === JSON.stringify(SITEMAP_URLS), `/sitemap.xml : ${locs.length} adresses attendues`)
@@ -103,7 +111,10 @@ async function checkSitemapAndRobots() {
 	const robots = await fetch(`${BASE}/robots.txt`)
 	const txt = await robots.text()
 	check(robots.status === 200, `${robots.status} /robots.txt`)
-	check(robots.headers.get('content-type')?.startsWith('text/plain'), `/robots.txt en ${robots.headers.get('content-type')}`)
+	check(
+		robots.headers.get('content-type')?.startsWith('text/plain'),
+		`/robots.txt en ${robots.headers.get('content-type')}`
+	)
 	check(/^User-Agent: \*$/m.test(txt) && /^Allow: \/$/m.test(txt), '/robots.txt : tout le site autorisé')
 	check(/^Disallow: \/og-generator$/m.test(txt), '/robots.txt : /og-generator interdit')
 	check(txt.includes(`Sitemap: ${SITE}/sitemap.xml`), '/robots.txt : adresse du sitemap')
@@ -150,7 +161,9 @@ async function main() {
 	const outage = await fetch(`${outageBase}/evenements/pocketbase-injoignable`)
 	await outage.text()
 	const outageOk = outage.status >= 500
-	console.log(`${outageOk ? 'ok ' : 'KO '} ${outage.status} /evenements/pocketbase-injoignable (PocketBase injoignable)`)
+	console.log(
+		`${outageOk ? 'ok ' : 'KO '} ${outage.status} /evenements/pocketbase-injoignable (PocketBase injoignable)`
+	)
 	if (!outageOk) failures.push('/evenements/pocketbase-injoignable (PocketBase injoignable)')
 	if (failures.length > 0) throw new Error(`Pages en échec : ${failures.join(', ')}`)
 }

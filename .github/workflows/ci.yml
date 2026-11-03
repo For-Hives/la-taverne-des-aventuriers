@@ -37,5 +37,38 @@ jobs:
         run: pnpm exec biome ci
       - name: Build contre le faux PocketBase
         run: pnpm build:ci
-      - name: Test de fumée
+      - name: Tests unitaires, d'intégration et de fumée
         run: pnpm test
+
+  # Tests e2e et non-régression visuelle au pixel près, dans l'image Docker officielle de Playwright :
+  # la même que scripts/visuel-docker.sh, qui produit les captures de référence (tests/e2e/captures).
+  # Garder la version de l'image égale à celle de @playwright/test dans package.json.
+  e2e-visuel:
+    name: e2e-visuel
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    container:
+      image: mcr.microsoft.com/playwright:v1.64.1-noble
+      options: --ipc=host --init
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 9
+      - name: Installation figée
+        run: pnpm install --frozen-lockfile
+      - name: Build sur l'instantané des données (date figée)
+        run: node scripts/instantane/avec-instantane.mjs node_modules/.bin/next build
+      - name: Tests e2e, SEO et visuels
+        run: node_modules/.bin/playwright test
+      - name: Rapport en cas d'échec
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: rapport-playwright
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14
