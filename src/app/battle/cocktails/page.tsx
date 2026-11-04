@@ -6,6 +6,7 @@ import CocktailBattleComponent from '@/components/CocktailBattle/CocktailBattle.
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
+import { stripColorMarks } from '@/utils/textToSpanColored'
 
 export const revalidate = 10
 
@@ -53,7 +54,7 @@ export default async function Page() {
 	const structuredData = {
 		'@context': 'https://schema.org',
 		'@type': 'Event',
-		description: `Battle mensuelle entre ${BattleData.cocktail1_title} et ${BattleData.cocktail2_title}. Le cocktail gagnant restera sur notre carte !`,
+		description: `Battle mensuelle entre ${stripColorMarks(BattleData.cocktail1_title)} et ${stripColorMarks(BattleData.cocktail2_title)}. Le cocktail gagnant restera sur notre carte !`,
 		endDate: new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).toISOString(),
 		eventStatus: 'https://schema.org/EventScheduled',
 		image: [BattleData.cocktail_1_image, BattleData.cocktail_2_image],

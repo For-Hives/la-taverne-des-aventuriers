@@ -7,6 +7,7 @@ import MyLudoComponent from '@/components/GameLibrary/MyLudo.component'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
+import { stripColorMarks } from '@/utils/textToSpanColored'
 
 import { getGamePageData } from '../actions/services/getGamePageData.service'
 
@@ -63,25 +64,25 @@ export default async function Page() {
 				{
 					'@type': 'Game',
 					description: dataGameLibrary.card1_description,
-					name: dataGameLibrary.card1_title,
+					name: stripColorMarks(dataGameLibrary.card1_title),
 					url: dataGameLibrary.card1_button_url,
 				},
 				{
 					'@type': 'Game',
 					description: dataGameLibrary.card2_description,
-					name: dataGameLibrary.card2_title,
+					name: stripColorMarks(dataGameLibrary.card2_title),
 					url: dataGameLibrary.card2_button_url,
 				},
 				{
 					'@type': 'Game',
 					description: dataGameLibrary.card3_description,
-					name: dataGameLibrary.card3_title,
+					name: stripColorMarks(dataGameLibrary.card3_title),
 					url: dataGameLibrary.card3_button_url,
 				},
 			],
 			numberOfItems: 90,
 		},
-		name: dataGameLibrary.games_hero_title,
+		name: stripColorMarks(dataGameLibrary.games_hero_title),
 	}
 
 	return (

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { getFooterData } from '@/app/actions/services/getFooterData.service'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 
 export default async function FooterComponent() {
 	// Fetch footer data asynchronously
@@ -37,7 +38,7 @@ export default async function FooterComponent() {
 						<h2
 							className="font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-2xl sm:text-3xl"
 							dangerouslySetInnerHTML={{
-								__html: data.bar_title.replaceAll(' ', '&nbsp;'),
+								__html: textToSpanColored(data.bar_title.replaceAll(' ', '&nbsp;')),
 							}}
 						/>
 						<div className="flex flex-col gap-2 *:w-full">
@@ -77,7 +78,7 @@ export default async function FooterComponent() {
 						<h2
 							className="font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-2xl sm:text-3xl"
 							dangerouslySetInnerHTML={{
-								__html: data.support_title.replaceAll(' ', '&nbsp;'),
+								__html: textToSpanColored(data.support_title.replaceAll(' ', '&nbsp;')),
 							}}
 						/>
 						<div className="flex flex-col gap-2 *:w-full">
@@ -118,7 +119,7 @@ export default async function FooterComponent() {
 						<h2
 							className="font-cardinal text-custom-brown-100 first-letter:text-custom-red-100 text-2xl sm:text-3xl"
 							dangerouslySetInnerHTML={{
-								__html: data.socials_title.replaceAll(' ', '&nbsp;'),
+								__html: textToSpanColored(data.socials_title.replaceAll(' ', '&nbsp;')),
 							}}
 						/>
 						<div className="flex w-full items-center justify-start space-x-4 max-md:text-sm md:gap-8">

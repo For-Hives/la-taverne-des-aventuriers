@@ -8,7 +8,7 @@ import { Timeline } from '@/components/Events/Timeline'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import { textToSpanColored } from '@/utils/textToSpanColored'
+import { stripColorMarks, textToSpanColored } from '@/utils/textToSpanColored'
 
 export const revalidate = 10
 
@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		alternates: {
 			canonical: 'https://latavernedesaventuriers.fr/evenements',
 		},
-		description: `Découvrez nos prochains événements : soirées jeux, tournois, quiz et animations à La Taverne des Aventuriers. ${nextEvent ? `Prochain événement : ${nextEvent.event_title}` : ''}`,
+		description: `Découvrez nos prochains événements : soirées jeux, tournois, quiz et animations à La Taverne des Aventuriers. ${nextEvent ? `Prochain événement : ${stripColorMarks(nextEvent.event_title)}` : ''}`,
 		keywords: [
 			'événements nantes',
 			'soirées jeux nantes',
@@ -101,7 +101,7 @@ export default async function Page() {
 				},
 				name: 'La Taverne des Aventuriers',
 			},
-			name: event.event_title,
+			name: stripColorMarks(event.event_title),
 			startDate: event.event_date,
 		})),
 	}

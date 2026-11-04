@@ -38,7 +38,7 @@ export const AnimatedReservationCard = ({ data }: { data: ReservationCardData })
 					<div
 						className="prose prose-customBrown font-cardo-regular"
 						dangerouslySetInnerHTML={{
-							__html: data.description,
+							__html: textToSpanColored(data.description),
 						}}
 					/>
 

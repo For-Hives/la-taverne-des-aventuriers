@@ -7,10 +7,11 @@ import { notFound } from 'next/navigation'
 
 import { getEventData } from '@/app/actions/services/getEventData'
 import { getNavBarData } from '@/app/actions/services/getNavData.service'
+import { ColoredText } from '@/components/Global/ColoredText'
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
-import { textToSpanColored } from '@/utils/textToSpanColored'
+import { stripColorMarks } from '@/utils/textToSpanColored'
 
 export const revalidate = 10
 
@@ -54,7 +55,9 @@ export async function generateMetadata({ params }: { params: PageProps }): Promi
 	}
 
 	// Format optimized metadata
-	const optimizedTitle = `${truncateTitle(eventData.event_title)} | La Taverne des Aventuriers`
+	// Le titre peut porter la coloration du CMS (*L*a) : en texte brut, on retire les astérisques.
+	const plainTitle = stripColorMarks(eventData.event_title)
+	const optimizedTitle = `${truncateTitle(plainTitle)} | La Taverne des Aventuriers`
 	const optimizedDescription = truncateDescription(eventData.summary)
 
 	return {
@@ -67,7 +70,7 @@ export async function generateMetadata({ params }: { params: PageProps }): Promi
 			'soirée jeux nantes',
 			'animation bar nantes',
 			'taverne des aventuriers',
-			eventData.event_title.toLowerCase(),
+			plainTitle.toLowerCase(),
 			'bar à jeux',
 			'animation ludique',
 			'sortie nantes',
@@ -112,7 +115,7 @@ export default async function Page({ params }: Readonly<{ params: PageProps }>) 
 			},
 			name: 'La Taverne des Aventuriers',
 		},
-		name: eventData.event_title,
+		name: stripColorMarks(eventData.event_title),
 		organizer: {
 			'@type': 'BarOrPub',
 			name: 'La Taverne des Aventuriers',
@@ -163,12 +166,9 @@ export default async function Page({ params }: Readonly<{ params: PageProps }>) 
 								<div className="lg:pr-4">
 									<div className="lg:max-w-lg">
 										<p className="text-custom-red-100 text-sm font-bold tracking-wide uppercase">Événement</p>
-										<h1
-											className="font-cardinal text-custom-brown-100 mt-6 text-4xl sm:text-5xl"
-											dangerouslySetInnerHTML={{
-												__html: textToSpanColored(eventData.event_title),
-											}}
-										/>
+										<h1 className="font-cardinal text-custom-brown-100 mt-6 text-4xl sm:text-5xl">
+											<ColoredText text={eventData.event_title} />
+										</h1>
 
 										{/* Event details */}
 										<div className="text-custom-brown-100 mt-6 flex flex-col gap-3">
@@ -191,7 +191,7 @@ export default async function Page({ params }: Readonly<{ params: PageProps }>) 
 									<div className="relative">
 										<Image
 											src={eventData.event_image}
-											alt={eventData.event_title}
+											alt={stripColorMarks(eventData.event_title)}
 											className={'min-h-[40vh] rounded-xl object-cover shadow-xl lg:min-h-0 lg:min-h-auto'}
 											width={1000}
 											height={1000}

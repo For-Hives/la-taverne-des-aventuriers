@@ -5,7 +5,7 @@ import Image from 'next/image' // Importing Next.js Image component for optimize
 import Link from 'next/link' // Importing Next.js Link component for client-side navigation
 
 import type { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing the type for game page data
-import { textToSpanColored } from '@/utils/textToSpanColored' // Importing the textToSpanColored function
+import { stripColorMarks, textToSpanColored } from '@/utils/textToSpanColored' // Importing the textToSpanColored function
 
 // Component declaration, accepting a prop 'data' of type 'GamesPageData'
 export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
@@ -40,7 +40,7 @@ export const AnimatedMyLudoComponent = ({ data }: { data: GamesPageData }) => {
 						target="_blank" // Opens the link in a new tab
 						className="relative block w-full"
 						href={data.myludo_component_url} // URL fetched from the data prop
-						aria-label={data.myludo_component_title} // Accessible label for the link
+						aria-label={stripColorMarks(data.myludo_component_title)} // Accessible label for the link
 					>
 						{/* Aspect-ratio container for maintaining image proportions */}
 						<div

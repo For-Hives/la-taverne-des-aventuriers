@@ -106,6 +106,19 @@ describe('fetchEventEntries', () => {
 		assert.equal(calls[0].options.sort, '-event_date')
 	})
 
+	test('titre pour le plan du site : astérisques de coloration retirées, renvois de note gardés', async () => {
+		const pb = fakePocketBase([
+			[
+				{ event_slug: 'loups', event_title: '*S*oirée *Loups-Garous*', updated: '' },
+				{ event_slug: 'jdr', event_title: 'Initiation au jeu de rôle*', updated: '' },
+			],
+		])
+		const events = await fetchEventEntries(pb)
+		assert.deepEqual(
+			events.map(event => event.title),
+			['Soirée Loups-Garous', 'Initiation au jeu de rôle*']
+		)
+	})
 	test('parcourt toutes les pages de résultats, puis s’arrête', async () => {
 		const calls = []
 		const pb = fakePocketBase(

@@ -6,6 +6,7 @@ import { motion } from 'motion/react'
 import Link from 'next/link'
 
 import type { GamesPageData } from '@/app/actions/services/getGamePageData.service'
+import { ColoredText } from '@/components/Global/ColoredText'
 import { cn } from '@/lib/utils'
 import { textToSpanColored } from '@/utils/textToSpanColored'
 
@@ -95,7 +96,7 @@ const GameCard = ({
 			{/* Content */}
 			<div className="relative z-10 flex flex-col p-6 lg:p-10">
 				<h2 className="font-obraletra text-custom-white-100 group-hover/card:text-custom-white-200 mb-3 text-xl md:text-2xl">
-					{title}
+					<ColoredText text={title} />
 				</h2>
 
 				<div

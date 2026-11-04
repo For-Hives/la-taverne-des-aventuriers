@@ -2,6 +2,7 @@
 import { motion } from 'motion/react' // Importing motion from Motion for animations
 
 import type { GamesPageData } from '@/app/actions/services/getGamePageData.service' // Importing the type for game page data
+import { ColoredText } from '@/components/Global/ColoredText'
 
 // The component takes 'data' of type 'GamesPageData' as a prop
 export const AnimatedGLHeroComponent = ({ data }: { data: GamesPageData }) => {
@@ -16,7 +17,7 @@ export const AnimatedGLHeroComponent = ({ data }: { data: GamesPageData }) => {
 					animate={{ opacity: 1 }} // Final opacity when fully visible
 					transition={{ duration: 0.6 }} // Duration of the fade-in animation
 				>
-					{data.games_hero_title} {/* Displays the hero title */}
+					<ColoredText text={data.games_hero_title} /> {/* Displays the hero title */}
 				</motion.h1>
 
 				{/* Hero description with HTML content */}

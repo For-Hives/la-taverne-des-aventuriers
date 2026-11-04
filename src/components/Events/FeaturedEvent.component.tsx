@@ -3,6 +3,8 @@ import { Star } from 'lucide-react'
 import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ColoredText } from '@/components/Global/ColoredText'
+import { stripColorMarks } from '@/utils/textToSpanColored'
 
 interface EventData {
 	id: string
@@ -34,7 +36,7 @@ export default function FeaturedEvent({ events }: { events: EventData[] }) {
 				>
 					<Star className={'absolute top-0 right-0 m-2 h-6 w-6 fill-amber-500 opacity-70'} />
 					<h4 className="font-cardo-regular text-custom-brown-100 mb-4 text-xl font-bold md:text-2xl lg:hidden">
-						{event.event_title}
+						<ColoredText text={event.event_title} />
 					</h4>
 
 					{/* Desktop Layout */}
@@ -43,7 +45,7 @@ export default function FeaturedEvent({ events }: { events: EventData[] }) {
 							<div className="relative hidden h-auto min-h-96 w-full overflow-hidden rounded-lg lg:block">
 								<Image
 									src={event.event_image}
-									alt={event.event_title}
+									alt={stripColorMarks(event.event_title)}
 									fill
 									// Image peinte en object-cover dans une boîte haute de 384 px (min-h-96) : au plus 686 px de large mesurés pour
 									// des visuels 16:9. 768 px couvre jusqu'au 2:1, au lieu de 100vw qui faisait demander du 3840 px.
@@ -61,7 +63,7 @@ export default function FeaturedEvent({ events }: { events: EventData[] }) {
 									})}
 								</p>
 								<h4 className="font-cardo-regular text-custom-brown-100 mb-4 hidden text-3xl font-bold md:block">
-									{event.event_title}
+									<ColoredText text={event.event_title} />
 								</h4>
 								<div
 									className="prose font-cardo-regular text-custom-brown-100 mb-4 hidden lg:block"
@@ -85,7 +87,7 @@ export default function FeaturedEvent({ events }: { events: EventData[] }) {
 						<div className="relative mb-4 h-72 w-full overflow-hidden rounded-lg md:h-96 lg:hidden">
 							<Image
 								src={event.event_image}
-								alt={event.event_title}
+								alt={stripColorMarks(event.event_title)}
 								fill
 								className="object-cover transition-transform duration-300 hover:scale-105"
 							/>

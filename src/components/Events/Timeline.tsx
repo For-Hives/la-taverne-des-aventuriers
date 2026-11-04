@@ -5,6 +5,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
+import { ColoredText } from '@/components/Global/ColoredText'
+import { stripColorMarks } from '@/utils/textToSpanColored'
+
 interface TimelineEntry {
 	id: string
 	date: string
@@ -77,7 +80,7 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 									className="border-custom-brown-100/20 hover:border-custom-brown-100/40 rounded-lg border bg-white p-6 shadow-lg transition-all"
 								>
 									<h4 className="font-cardo-regular text-custom-brown-100 mb-4 text-xl font-bold md:text-2xl lg:hidden">
-										{event.title}
+										<ColoredText text={event.title} />
 									</h4>
 
 									{/* Mobile date display - only visible on mobile */}
@@ -97,7 +100,7 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 											<div className="relative hidden h-auto min-h-96 w-full overflow-hidden rounded-lg lg:block">
 												<Image
 													src={event.image}
-													alt={event.title}
+													alt={stripColorMarks(event.title)}
 													fill
 													// Image peinte en object-cover dans une boîte haute de 384 px (min-h-96) : au plus 686 px de large mesurés pour
 													// des visuels 16:9. 768 px couvre jusqu'au 2:1, au lieu de 100vw qui faisait demander du 3840 px.
@@ -109,7 +112,7 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 										<div className={'flex flex-col justify-between'}>
 											<div>
 												<h4 className="font-cardo-regular text-custom-brown-100 mb-4 hidden text-3xl font-bold md:block">
-													{event.title}
+													<ColoredText text={event.title} />
 												</h4>
 												<div
 													className="prose font-cardo-regular text-custom-brown-100 mb-4 hidden lg:block"
@@ -133,7 +136,7 @@ export const Timeline = ({ events }: { events: TimelineEntry[] }) => {
 										<div className="relative mb-4 h-72 w-full overflow-hidden rounded-lg md:h-96 lg:hidden">
 											<Image
 												src={event.image}
-												alt={event.title}
+												alt={stripColorMarks(event.title)}
 												fill
 												className="object-cover transition-transform duration-300 hover:scale-105 lg:hidden"
 											/>
