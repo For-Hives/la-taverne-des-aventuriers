@@ -14,10 +14,10 @@ const PAGES = [
 	['/evenements/soiree-future', 200, 'soiree-future'],
 	// Images des événements : taille annoncée au navigateur, sinon il demande du 3840 px à l'optimiseur pour une boîte de 700 px.
 	['/evenements', 200, 'sizes="(min-width: 1024px) 768px, 100vw"'],
-	['/bibliotheque-de-jeux', 200, 'Jeux games_hero_title'],
-	['/contact', 200, 'Contact schedule_title'],
-	['/reservation', 200, 'Réservation how_to_title'],
-	['/qui-sommes-nous', 200, 'Qui who_are_we_title'],
+	['/bibliotheque-de-jeux', 200, 'eux games_hero_title'],
+	['/contact', 200, 'ontact schedule_title'],
+	['/reservation', 200, 'éservation how_to_title'],
+	['/qui-sommes-nous', 200, 'ui who_are_we_title'],
 	['/battle/cocktails', 200, 'Cocktail A'],
 	// La canonical de la battle des cocktails pointait vers /battle, qui n'existe pas (404).
 	[
@@ -35,6 +35,62 @@ const PAGES = [
 	// Une erreur de PocketBase autre que « introuvable » doit rester une erreur, jamais une 404.
 	['/evenements/erreur-serveur-simulee', 500, ''],
 ]
+
+// Coloration du CMS : *L*a → L en rouge. Le faux PocketBase met des astérisques dans des champs de chaque type de
+// rendu (scripts/fake-pocketbase.mjs). [chemin, fragments HTML attendus]
+const ROUGE = texte => `<span class="text-custom-red-100">${texte}</span>`
+const COLORED = [
+	[
+		'/',
+		[
+			`${ROUGE('É')}vénement soiree-jeux`,
+			`${ROUGE('La&nbsp;Taverne')}&nbsp;bar_title`,
+			`${ROUGE('R')}éservez reservation_card description`,
+		],
+	],
+	['/evenements', [`${ROUGE('É')}vénement soiree-future`, `${ROUGE('É')}vénement soiree-quiz`]],
+	['/evenements/soiree-future', [`${ROUGE('É')}vénement soiree-future</h1>`]],
+	['/contact', [`${ROUGE('C')}ontact schedule_title`, `${ROUGE('Nous trouver')} howtosection_title`]],
+	['/bibliotheque-de-jeux', [`${ROUGE('J')}eux games_hero_title`, `${ROUGE('C')}arte card1_title`]],
+	['/reservation', [`${ROUGE('R')}éservation how_to_title`]],
+	['/qui-sommes-nous', [`${ROUGE('Q')}ui who_are_we_title`]],
+	['/battle/cocktails', [`${ROUGE('C')}ocktail A`]],
+	['/battle/mocktails', [`${ROUGE('M')}ocktail A`]],
+	// Plan du site : le titre de l'événement en texte brut, sans astérisque.
+	['/plan-du-site', ['>Événement soiree-future<']],
+]
+
+/** Textes bruts d'une page : title, meta, alt, aria-label et JSON-LD ne doivent montrer aucune astérisque. */
+function plainTexts(html) {
+	const decode = text => text.replaceAll('&quot;', '"').replaceAll('&amp;', '&')
+	return [
+		...[...html.matchAll(/<title>([^<]*)<\/title>/g)].map(match => `title : ${match[1]}`),
+		...[...html.matchAll(/<meta [^>]*content="([^"]*)"/g)].map(match => `meta : ${decode(match[1])}`),
+		...[...html.matchAll(/ (alt|aria-label)="([^"]*)"/g)].map(match => `${match[1]} : ${decode(match[2])}`),
+		...[...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(
+			match => `JSON-LD : ${match[1]}`
+		),
+	]
+}
+
+async function checkColoredTitles() {
+	const failures = []
+	for (const [path, fragments] of COLORED) {
+		const html = await (await fetch(BASE + path)).text()
+		for (const fragment of fragments) {
+			const ok = html.includes(fragment)
+			console.log(`${ok ? 'ok ' : 'KO '} ${path} coloré : ${fragment}`)
+			if (!ok) failures.push(`${path} : ${fragment}`)
+		}
+		const withStars = plainTexts(html).filter(text => text.includes('*'))
+		console.log(`${withStars.length === 0 ? 'ok ' : 'KO '} ${path} sans astérisque en texte brut`)
+		for (const text of withStars) {
+			console.log(`    ${text.slice(0, 160)}`)
+			failures.push(`${path} : astérisque dans ${text.slice(0, 60)}`)
+		}
+	}
+	return failures
+}
 
 // Chevalier de la page 404 : fichiers Rive intacts (ils avaient été réencodés en UTF-8, ce qui les rendait illisibles).
 const RIVE = [
@@ -146,6 +202,7 @@ async function main() {
 	console.log(`${imageOk ? 'ok ' : 'KO '} ${image.status} ${image.headers.get('content-type')} /_next/image`)
 	if (!imageOk) failures.push('/_next/image')
 	failures.push(...(await checkSitemapAndRobots()))
+	failures.push(...(await checkColoredTitles()))
 	for (const [path, size] of RIVE) {
 		const res = await fetch(BASE + path)
 		const bytes = new Uint8Array(await res.arrayBuffer())

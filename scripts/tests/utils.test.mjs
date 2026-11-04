@@ -1,5 +1,6 @@
 // Tests unitaires des utilitaires d'affichage (titres colorés, noms des rubriques de la carte, classes CSS).
 import assert from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
 import { describe, test } from 'node:test'
 
 import { cn } from '../../src/lib/utils.ts'
@@ -46,9 +47,28 @@ describe('textToSpanColored', () => {
 		assert.equal(textToSpanColored(description), description)
 		assert.equal(textToSpanColored('Quiz WTF 2* et Loto* le même soir'), 'Quiz WTF 2* et Loto* le même soir')
 	})
-	test('ne colore pas un passage avec une espace, ni à cheval sur une balise', () => {
-		assert.equal(textToSpanColored('*bar à jeux*'), '*bar à jeux*')
+	test('un passage de plusieurs mots se colore comme avant le correctif', () => {
+		assert.equal(textToSpanColored('*bar à jeux*'), '<span class="text-custom-red-100">bar à jeux</span>')
+		assert.equal(
+			textToSpanColored('Le *Bar à Jeux* nantais'),
+			'Le <span class="text-custom-red-100">Bar à Jeux</span> nantais'
+		)
+	})
+	test('même règle avec espace ou &nbsp; (titres du pied de page)', () => {
+		assert.equal(textToSpanColored('*La Taverne*'), '<span class="text-custom-red-100">La Taverne</span>')
+		assert.equal(textToSpanColored('*La&nbsp;Taverne*'), '<span class="text-custom-red-100">La&nbsp;Taverne</span>')
+		assert.equal(textToSpanColored('* La*'), '* La*')
+	})
+	test('**gras** (réflexe Markdown) : coloré, sans astérisque visible', () => {
+		assert.equal(textToSpanColored('**gras**'), '<span class="text-custom-red-100">gras</span>')
+	})
+	test('renvois collés à un mot puis ponctuation : rien n’est coloré', () => {
+		assert.equal(textToSpanColored('Loto*, Quiz* ce soir'), 'Loto*, Quiz* ce soir')
+		assert.equal(textToSpanColored('Quiz*. Loto*'), 'Quiz*. Loto*')
+	})
+	test('ne colore pas à cheval sur une balise ni une ligne, ni un passage vide', () => {
 		assert.equal(textToSpanColored('*a<b>*c</b>'), '*a<b>*c</b>')
+		assert.equal(textToSpanColored('*Quiz\nLoto*'), '*Quiz\nLoto*')
 		assert.equal(textToSpanColored('**'), '**')
 	})
 	test('ne touche jamais un attribut HTML', () => {
@@ -60,6 +80,42 @@ describe('textToSpanColored', () => {
 	})
 	test('valeur absente : chaîne vide', () => {
 		assert.equal(textToSpanColored(undefined), '')
+	})
+})
+
+// Données réelles de la prod (tests/instantane) : chaque titre coloré doit donner le même rendu qu'avec l'ancienne
+// règle /\*(.*?)\*/ (celle d'avant la régression), et les descriptions à renvois de note ne doivent rien colorer.
+describe('textToSpanColored sur les données réelles de la prod', () => {
+	const { collections } = JSON.parse(readFileSync(new URL('../../tests/instantane/pocketbase.json', import.meta.url)))
+	const champs = Object.entries(collections).flatMap(([collection, items]) =>
+		items.flatMap(item =>
+			Object.entries(item)
+				.filter(([, valeur]) => typeof valeur === 'string' && valeur.includes('*'))
+				.map(([champ, valeur]) => ({ champ: `${collection}.${champ}`, valeur }))
+		)
+	)
+	const ancienneRegle = texte => texte.replace(/\*(.*?)\*/g, '<span class="text-custom-red-100">$1</span>')
+	test('l’instantané contient bien des titres colorés et des renvois de note', () => {
+		assert.ok(champs.some(({ champ }) => champ === 'landing_page.hero_title'))
+		assert.ok(champs.some(({ champ }) => champ === 'Events.event_description'))
+	})
+	test('titres : même rendu que l’ancienne règle', () => {
+		for (const { champ, valeur } of champs.filter(({ champ }) => champ !== 'Events.event_description')) {
+			assert.equal(textToSpanColored(valeur), ancienneRegle(valeur), champ)
+		}
+	})
+	test('descriptions d’événements à renvois de note : rien n’est coloré', () => {
+		const descriptions = champs.filter(({ champ }) => champ === 'Events.event_description')
+		for (const { champ, valeur } of descriptions) {
+			assert.equal(textToSpanColored(valeur), valeur, champ)
+			// Même HTML sur une seule ligne (l'éditeur ne garantit pas les sauts de ligne) : l'ancienne règle y colorait
+			// tout le passage entre deux renvois, la nouvelle ne colore toujours rien.
+			const surUneLigne = valeur.replace(/\r?\n/g, '')
+			assert.equal(textToSpanColored(surUneLigne), surUneLigne, `${champ} sur une ligne`)
+		}
+		assert.ok(
+			descriptions.some(({ valeur }) => ancienneRegle(valeur.replace(/\r?\n/g, '')) !== valeur.replace(/\r?\n/g, ''))
+		)
 	})
 })
 
@@ -99,8 +155,13 @@ describe('stripColorMarks et htmlToPlainText (balise title, meta, alt, aria-labe
 		assert.equal(htmlToPlainText('*É*vénements &amp; *A*nimations'), 'Événements & Animations')
 		assert.equal(htmlToPlainText('<p>*B*ienvenue&nbsp;!</p>'), 'Bienvenue !')
 	})
-	test('htmlToPlainText laisse &lt; encodé (le texte peut finir dans un script JSON-LD)', () => {
-		assert.equal(htmlToPlainText('&lt;/script&gt;'), '&lt;/script&gt;')
+	test('htmlToPlainText décode les entités de l’éditeur de PocketBase', () => {
+		assert.equal(htmlToPlainText('R&eacute;servez &agrave; l&rsquo;avance'), 'Réservez à l’avance')
+		assert.equal(htmlToPlainText('No&euml;l &ccedil;a &#233;t&#xE9; &oelig;uvre'), 'Noël ça été œuvre')
+		assert.equal(htmlToPlainText('&lt;b&gt; &inconnue;'), '<b> &inconnue;')
+	})
+	test('htmlToPlainText : la coloration ne déborde pas sur une balise', () => {
+		assert.equal(htmlToPlainText('<b>*L*</b>a'), 'L a')
 	})
 })
 
