@@ -6,9 +6,9 @@ import { motion } from 'motion/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
-
 import type { EventData } from '@/app/actions/services/getEventData'
 import type { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
+import { ColoredText } from '@/components/Global/ColoredText'
 import { cn } from '@/lib/utils'
 import { textToSpanColored } from '@/utils/textToSpanColored'
 
@@ -60,7 +60,7 @@ export const EventCard = ({
 				</div>
 
 				<h2 className="font-obraletra text-custom-white-100 group-hover/card:text-custom-white-200 mb-3 text-xl md:text-2xl">
-					{event.event_title}
+					<ColoredText text={event.event_title} />
 				</h2>
 
 				<div

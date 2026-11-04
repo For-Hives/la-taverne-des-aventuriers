@@ -6,6 +6,7 @@ import MocktailBattleComponent from '@/components/CocktailBattle/MocktailBattle.
 import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
+import { stripColorMarks } from '@/utils/textToSpanColored'
 
 export const revalidate = 10
 
@@ -53,7 +54,7 @@ export default async function Page() {
 	const structuredData = {
 		'@context': 'https://schema.org',
 		'@type': 'Event',
-		description: `Battle mensuelle entre ${BattleData.mocktail1_title} et ${BattleData.mocktail2_title}. Le mocktail gagnant restera sur notre carte !`,
+		description: `Battle mensuelle entre ${stripColorMarks(BattleData.mocktail1_title)} et ${stripColorMarks(BattleData.mocktail2_title)}. Le mocktail gagnant restera sur notre carte !`,
 		endDate: new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).toISOString(),
 		eventStatus: 'https://schema.org/EventScheduled',
 		image: [BattleData.mocktail_1_image, BattleData.mocktail_2_image],

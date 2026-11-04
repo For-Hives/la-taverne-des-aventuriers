@@ -3,6 +3,7 @@ import { motion } from 'motion/react' // Importing Motion for animations
 import Image from 'next/image' // Importing Image component for handling images
 
 import type { WhoAreWePageData } from '@/app/actions/services/getWhoAreWePageData.service' // Importing data type for the page
+import { ColoredText } from '@/components/Global/ColoredText'
 
 // Layout configuration for each card
 const CARDS_CONFIG = {
@@ -98,7 +99,7 @@ export const AnimatedReservationElement = ({ data }: { data: WhoAreWePageData })
 						{/* Content */}
 						<div className="relative z-10 flex w-full flex-col gap-4 xl:w-1/2">
 							<h1 className="font-cardinal first-letter:text-custom-red-100 text-2xl tracking-wider sm:text-3xl">
-								{data.who_are_we_title}
+								<ColoredText text={data.who_are_we_title} />
 							</h1>
 							<div
 								className={'prose prose-customBrown'}
@@ -112,7 +113,9 @@ export const AnimatedReservationElement = ({ data }: { data: WhoAreWePageData })
 				<motion.div className={CARDS_CONFIG.card2.className} {...CARDS_CONFIG.card2.animation}>
 					<div className="relative flex h-full w-full items-start justify-start overflow-hidden rounded-xl">
 						<div className="relative z-10 flex flex-col p-8">
-							<h2 className="font-cardinal first-letter:text-custom-red-100 text-2xl sm:text-3xl">{data.team_title}</h2>
+							<h2 className="font-cardinal first-letter:text-custom-red-100 text-2xl sm:text-3xl">
+								<ColoredText text={data.team_title} />
+							</h2>
 							<div
 								className={'prose prose-customBrown'}
 								dangerouslySetInnerHTML={{ __html: data.description_card_4 }}
@@ -147,7 +150,7 @@ export const AnimatedReservationElement = ({ data }: { data: WhoAreWePageData })
 
 						<div className="relative z-10 flex flex-col gap-4 p-8">
 							<h2 className="font-cardinal first-letter:text-custom-red-100 text-2xl sm:text-3xl">
-								{data.our_history_title}
+								<ColoredText text={data.our_history_title} />
 							</h2>
 							<div
 								className={'prose prose-customBrown'}
@@ -186,7 +189,7 @@ export const AnimatedReservationElement = ({ data }: { data: WhoAreWePageData })
 				<motion.div className={CARDS_CONFIG.card5.className} {...CARDS_CONFIG.card5.animation}>
 					<div className="flex flex-col p-8">
 						<h2 className="font-cardinal first-letter:text-custom-red-100 text-2xl sm:text-3xl">
-							{data.our_services_title}
+							<ColoredText text={data.our_services_title} />
 						</h2>
 						<div className={'prose prose-customBrown'} dangerouslySetInnerHTML={{ __html: data.description_card_3 }} />
 					</div>
@@ -198,7 +201,7 @@ export const AnimatedReservationElement = ({ data }: { data: WhoAreWePageData })
 						{/* Content */}
 						<div className="relative z-10 flex flex-col gap-4 p-8">
 							<h2 className="font-cardinal first-letter:text-custom-red-100 text-2xl sm:text-3xl">
-								{data.information_title}
+								<ColoredText text={data.information_title} />
 							</h2>
 							<div
 								className={'prose prose-customBrown'}

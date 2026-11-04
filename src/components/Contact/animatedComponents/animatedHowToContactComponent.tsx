@@ -4,6 +4,7 @@ import { motion } from 'motion/react' // Importing motion for animations from Mo
 import Image from 'next/image'
 
 import type { ContactPageData } from '@/app/actions/services/getContactPageData.service'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 
 export const AnimatedHowToContactComponent = ({ data }: { data: ContactPageData }) => {
 	return (
@@ -42,7 +43,7 @@ export const AnimatedHowToContactComponent = ({ data }: { data: ContactPageData 
 							viewport={{ once: true }} // Trigger only once
 							transition={{ duration: 0.6 }}
 						>
-							<span dangerouslySetInnerHTML={{ __html: data.howtosection_title }} />
+							<span dangerouslySetInnerHTML={{ __html: textToSpanColored(data.howtosection_title) }} />
 						</motion.h2>
 
 						<div

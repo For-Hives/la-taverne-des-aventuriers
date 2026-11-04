@@ -6,6 +6,7 @@ import FooterComponent from '@/components/Global/Footer.component'
 import Navbar from '@/components/Global/Navbar.component'
 import MobileNavbar from '@/components/Global/NavbarMobile.component'
 import { ReservationElementComponent as WhoAreWeElementComponent } from '@/components/Reservation/ReservationElementsSection'
+import { stripColorMarks } from '@/utils/textToSpanColored'
 
 export const revalidate = 10
 
@@ -48,7 +49,7 @@ export default async function Page() {
 		'@context': 'https://schema.org',
 		'@type': 'AboutPage',
 		description: whoAreWeData.description_card_1,
-		name: whoAreWeData.who_are_we_title,
+		name: stripColorMarks(whoAreWeData.who_are_we_title),
 		provider: {
 			'@type': 'BarOrPub',
 			description: 'Bar à jeux médiéval-fantastique à Nantes',

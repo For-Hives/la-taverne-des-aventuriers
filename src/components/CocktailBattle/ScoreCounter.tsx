@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import { CountGroup } from '@/components/CocktailBattle/CountGroup'
+import { ColoredText } from '@/components/Global/ColoredText'
 
 export function ScoreCounter({
 	color = 'customBrown-100',
@@ -80,7 +81,9 @@ export function ScoreCounter({
 	return (
 		<div className="relative flex h-fit w-full flex-col items-start justify-center gap-2 rounded-lg p-0 sm:items-center">
 			<h2 className={`font-cardinal w-full text-5xl text-${color}`}>
-				<span className="mb-2 block text-center">{title}</span>
+				<span className="mb-2 block text-center">
+					<ColoredText text={title} />
+				</span>
 				<span className={'font-cardo-regular block text-center text-6xl font-bold'}>{count}</span>
 			</h2>
 

@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 // Importing necessary components and utilities
 import type { LandingPageData } from '@/app/actions/services/getLandingPageData.service'
-import { textToSpanColored } from '@/utils/textToSpanColored'
+import { htmlToPlainText, textToSpanColored } from '@/utils/textToSpanColored'
 
 // HeroTextAnimated component that takes data as a prop
 export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
@@ -23,9 +23,7 @@ export const HeroTextAnimated = ({ data }: { data: LandingPageData }) => {
 			<h1 className="sr-only">
 				{/* SEO H1 heading - visually hidden but present for search engines */}
 				{
-					data.hero_title
-						.replace(/&nbsp/g, ' ') // Replace &nbsp with space
-						.replace(/\*/g, '') // Remove asterisks
+					htmlToPlainText(data.hero_title) // Texte sans &nbsp ni astérisques de coloration
 						.split(' ') // Split into words
 						.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize first letter of each word
 						.join(' ') // Join words back together

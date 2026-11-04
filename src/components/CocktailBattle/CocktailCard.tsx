@@ -1,7 +1,8 @@
 import Image from 'next/image'
-
+import { ColoredText } from '@/components/Global/ColoredText'
 import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
+import { stripColorMarks } from '@/utils/textToSpanColored'
 
 interface CocktailCardProps {
 	title: string
@@ -38,7 +39,7 @@ export function CocktailCard({ description, image, inverted = false, stars = 0, 
 			<div className="absolute inset-0 flex w-full items-center justify-center">
 				<Image
 					src={image}
-					alt={title}
+					alt={stripColorMarks(title)}
 					fill
 					className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 				/>
@@ -47,7 +48,9 @@ export function CocktailCard({ description, image, inverted = false, stars = 0, 
 			<div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
 
 			<div className="absolute inset-x-0 bottom-0 p-6 text-white">
-				<h2 className={`mb-4 ${inverted ? 'text-left' : 'text-right'} font-cardinal text-3xl`}>{title}</h2>
+				<h2 className={`mb-4 ${inverted ? 'text-left' : 'text-right'} font-cardinal text-3xl`}>
+					<ColoredText text={title} />
+				</h2>
 				<div className={`mb-4 flex flex-wrap ${inverted ? 'justify-start' : 'justify-end'} gap-2`}>
 					{ingredients.map(ingredient => (
 						<Badge

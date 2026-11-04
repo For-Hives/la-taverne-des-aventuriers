@@ -8,6 +8,7 @@ import Link from 'next/link' // Next.js Link component for navigation
 import { useState } from 'react' // Importing useState for managing state in the component
 
 import type { ContactPageData } from '@/app/actions/services/getContactPageData.service' // Importing the data type for the contact page
+import { ColoredText } from '@/components/Global/ColoredText'
 
 // The AnimatedContactElementSection component is receiving `data` as props
 
@@ -31,7 +32,7 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
 								className="border-custom-brown-100 bg-custom-white-300 font-obraletra flex flex-col items-start gap-6 rounded-2xl border-3 p-6 shadow-sm"
 							>
 								<h3 className="font-obraletra text-custom-brown-100 first-letter:font-obraletra-bold text-2xl">
-									{data.schedule_title}
+									<ColoredText text={data.schedule_title} />
 								</h3>
 								<div
 									className={'prose prose-customBrown'} // Styling for the description
@@ -50,7 +51,7 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
 								{/* Social Media */}
 								<div className="border-custom-brown-100 bg-custom-white-300 flex flex-col items-start gap-4 rounded-2xl border-3 p-6 shadow-sm">
 									<h3 className="font-obraletra text-custom-brown-100 first-letter:font-obraletra-bold w-full text-2xl">
-										{data.contact_socials_title}
+										<ColoredText text={data.contact_socials_title} />
 									</h3>
 									<div className="flex items-center justify-start gap-10">
 										<Link
@@ -111,7 +112,7 @@ export const AnimatedContactElementSection = ({ data }: { data: ContactPageData 
 										className="border-custom-brown-100 bg-custom-white-300 flex flex-col items-start gap-4 rounded-2xl border-3 p-6 shadow-sm"
 									>
 										<h3 className="font-obraletra text-custom-brown-100 first-letter:font-obraletra-bold text-2xl">
-											{data.contact_email_title} {/* Display the email title */}
+											<ColoredText text={data.contact_email_title} /> {/* Display the email title */}
 										</h3>
 										<Link
 											href={`mailto:${data.contact_email}`}

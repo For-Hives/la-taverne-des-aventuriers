@@ -2,6 +2,7 @@
 // Ce module ne dépend ni de Next ni de PocketBase à l'exécution (imports de types seulement) :
 // les tests unitaires l'importent directement avec Node (scripts/tests/sitemap.test.mjs).
 import type { MetadataRoute } from 'next'
+import { stripColorMarks } from '@/utils/textToSpanColored'
 
 export const SITE_URL = 'https://latavernedesaventuriers.fr'
 
@@ -78,7 +79,10 @@ async function readAllEvents(pb: EventsSource): Promise<EventEntry[]> {
 			entries.push({
 				lastModified: parsePocketBaseDate(item.updated),
 				slug,
-				title: typeof item.event_title === 'string' && item.event_title.trim() ? item.event_title.trim() : slug,
+				title:
+					typeof item.event_title === 'string' && item.event_title.trim()
+						? stripColorMarks(item.event_title.trim())
+						: slug,
 			})
 		}
 		if (!(page < result.totalPages)) break

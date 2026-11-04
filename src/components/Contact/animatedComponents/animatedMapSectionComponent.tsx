@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import type { ContactPageData } from '@/app/actions/services/getContactPageData.service'
+import { ColoredText } from '@/components/Global/ColoredText'
 
 export const AnimatedMapSectionComponent = ({ data }: { data: ContactPageData }) => {
 	return (
@@ -27,7 +28,7 @@ export const AnimatedMapSectionComponent = ({ data }: { data: ContactPageData })
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
 				>
-					{data.address_title} {/* Display the address title */}
+					<ColoredText text={data.address_title} /> {/* Display the address title */}
 				</motion.h1>
 
 				{/* Temporary Field - Prose Section */}

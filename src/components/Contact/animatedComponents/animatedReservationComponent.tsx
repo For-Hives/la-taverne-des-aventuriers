@@ -4,6 +4,7 @@ import { motion } from 'motion/react' // Importing motion for animations from Mo
 import Image from 'next/image'
 
 import type { ReservationPageData } from '@/app/actions/services/getReservationPageData.service'
+import { textToSpanColored } from '@/utils/textToSpanColored'
 
 export const AnimatedReservationComponent = ({ data }: { data: ReservationPageData }) => {
 	return (
@@ -27,7 +28,7 @@ export const AnimatedReservationComponent = ({ data }: { data: ReservationPageDa
 								viewport={{ once: true }} // Trigger only once
 								transition={{ duration: 0.6 }}
 							>
-								<span dangerouslySetInnerHTML={{ __html: data.how_to_title }} />
+								<span dangerouslySetInnerHTML={{ __html: textToSpanColored(data.how_to_title) }} />
 							</motion.h2>
 
 							{/* Description */}
