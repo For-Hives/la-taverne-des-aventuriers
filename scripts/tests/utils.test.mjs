@@ -54,6 +54,11 @@ describe('textToSpanColored', () => {
 			'Le <span class="text-custom-red-100">Bar à Jeux</span> nantais'
 		)
 	})
+	test('une lettre au milieu d’un mot se colore comme avant le correctif', () => {
+		assert.equal(textToSpanColored('Aventu*r*iers'), 'Aventu<span class="text-custom-red-100">r</span>iers')
+		assert.equal(textToSpanColored('Loups-*G*arous'), 'Loups-<span class="text-custom-red-100">G</span>arous')
+		assert.equal(stripColorMarks('Aventu*r*iers'), 'Aventuriers')
+	})
 	test('même règle avec espace ou &nbsp; (titres du pied de page)', () => {
 		assert.equal(textToSpanColored('*La Taverne*'), '<span class="text-custom-red-100">La Taverne</span>')
 		assert.equal(textToSpanColored('*La&nbsp;Taverne*'), '<span class="text-custom-red-100">La&nbsp;Taverne</span>')

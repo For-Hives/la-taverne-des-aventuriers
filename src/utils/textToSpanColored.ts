@@ -8,15 +8,15 @@
 //
 // Piège des renvois de note (descriptions d'événements : « Initiation au jeu de rôle* … *Certains événements se
 // déroulent à l'extérieur ») : l'ancienne expression /\*(.*?)\*/ colorait tout le passage entre deux renvois.
-// Ici, une astérisque collée à la fin d'un mot (« rôle* », « Loto*, Quiz* ») n'ouvre jamais un passage : avant
-// l'astérisque ouvrante il faut un début de texte, une espace, une ponctuation ou l'entité &nbsp. Et un passage
-// ne traverse jamais une balise ni un saut de ligne.
+// Ici, une astérisque qui termine un mot (« rôle* », « Loto*, Quiz* ») n'ouvre jamais un passage : avant
+// l'astérisque ouvrante il faut un début de texte, une espace, une ponctuation ou l'entité &nbsp, ou bien elle est
+// au milieu d'un mot (« Aventu*r*iers » colore le r, comme avant). Un passage ne traverse ni balise ni saut de ligne.
 //
 // Ce module reste sans JSX ni dépendance : les tests unitaires l'importent directement avec Node.
 
 export const COLORED_TEXT_CLASS = 'text-custom-red-100'
 
-const COLOR_MARK_SOURCE = String.raw`(?:(?<![\p{L}\p{N}])|(?<=&nbsp))(\*\*?)([^\s*<>](?:[^*<>\n]*?[^\s*<>])?)\1`
+const COLOR_MARK_SOURCE = String.raw`(?:(?<![\p{L}\p{N}])|(?<=&nbsp)|(?<=[\p{L}\p{N}])(?=\*\*?[\p{L}\p{N}]))(\*\*?)([^\s*<>](?:[^*<>\n]*?[^\s*<>])?)\1`
 const colorMarks = () => new RegExp(COLOR_MARK_SOURCE, 'gu')
 
 /**
