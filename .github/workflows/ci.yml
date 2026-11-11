@@ -25,7 +25,7 @@ jobs:
       # dans Coolify), pnpm 12 (engines.pnpm de package.json).
       - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6
         with:
-          version: 12.16.0
+          version: 12.16.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version-file: .node-version
@@ -57,7 +57,7 @@ jobs:
           persist-credentials: false
       - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6
         with:
-          version: 12.16.0
+          version: 12.16.1
       - name: Installation figée
         run: pnpm install --frozen-lockfile
       - name: Build sur l'instantané des données (date figée)
