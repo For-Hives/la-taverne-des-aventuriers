@@ -6,7 +6,7 @@ settings:
 
 overrides:
   baseline-browser-mapping: 2.11.35
-  postcss-selector-parser: 7.1.7
+  postcss-selector-parser: 7.2.0
 
 importers:
 
@@ -905,11 +905,6 @@ packages:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
-  cssesc@3.0.0:
-    resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
-    engines: {node: '>=4'}
-    hasBin: true
-
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
@@ -1106,8 +1101,8 @@ packages:
   pocketbase@0.28.2:
     resolution: {integrity: sha512-5lS4g7iDZi90LxLai8kyUK4r5u1GkEAoZ3yuzTEFX97FyDQAoEmXWbTqf+pYA1hz5e/icBQu1MCUjM/9V8mitg==}
 
-  postcss-selector-parser@7.1.7:
-    resolution: {integrity: sha512-wWBro/7hJ40ye6TPiXkUQoXKCw23xSsjriUvqd7Uls9Sso3oLiON1flc18cCdnjgCRXw4fBVqUJJeOdDTh3P3g==}
+  postcss-selector-parser@7.2.0:
+    resolution: {integrity: sha512-Khh/tERVBn0I1499dvBSHY0pWJloMJWUxDsOBM0CCDPAcVZ10Jl2L1qy1f19uEX22spa8Mv7DCdEQJc0cGwBhQ==}
     engines: {node: '>=4'}
 
   postcss@8.5.23:
@@ -1673,7 +1668,7 @@ snapshots:
 
   '@tailwindcss/typography@0.5.20(tailwindcss@4.3.5)':
     dependencies:
-      postcss-selector-parser: 7.1.7
+      postcss-selector-parser: 7.2.0
       tailwindcss: 4.3.5
 
   '@types/node@26.6.6':
@@ -1772,8 +1767,6 @@ snapshots:
   client-only@0.0.1: {}
 
   clsx@2.1.1: {}
-
-  cssesc@3.0.0: {}
 
   csstype@3.2.3: {}
 
@@ -1918,9 +1911,8 @@ snapshots:
 
   pocketbase@0.28.2: {}
 
-  postcss-selector-parser@7.1.7:
+  postcss-selector-parser@7.2.0:
     dependencies:
-      cssesc: 3.0.0
       util-deprecate: 1.0.2
 
   postcss@8.5.23:
