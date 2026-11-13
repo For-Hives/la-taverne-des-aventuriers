@@ -40,11 +40,11 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@rive-app/canvas':
-        specifier: 2.49.4
-        version: 2.49.4
+        specifier: 2.50.0
+        version: 2.50.0
       '@rive-app/react-canvas':
-        specifier: 4.38.1
-        version: 4.38.1(react@19.3.1)
+        specifier: 4.39.0
+        version: 4.39.0(react@19.3.1)
       '@tailwindcss/typography':
         specifier: 0.5.20
         version: 0.5.20(tailwindcss@4.3.5)
@@ -637,14 +637,11 @@ packages:
       '@types/react':
         optional: true
 
-  '@rive-app/canvas@2.49.2':
-    resolution: {integrity: sha512-ydm1cxcJ1gck1SXh3fCS3DyHEY/cy7L/6pT6jUb/j8doHNxZ45i6u0LIvfp9lrkkcQGiloqRUIBs9D204hlB7g==}
+  '@rive-app/canvas@2.50.0':
+    resolution: {integrity: sha512-9D92BeRK3yzIh2Fy/YxTfrjKQxDIdzEoasMuD5nupJ67aW1JFrSt8bW0Bg7EP9Hm7r5D+u3g/Q+kqRQ2rpH8+g==}
 
-  '@rive-app/canvas@2.49.4':
-    resolution: {integrity: sha512-OKLYG3ICmiJBRmdTMbfG2w4DBJR8GSj+Wbuwg6zIHeXOmZ1jhXSwIWCrXxhvnE5uV5M6el5LYduWKT4GSysYYw==}
-
-  '@rive-app/react-canvas@4.38.1':
-    resolution: {integrity: sha512-dXTcWeIMbi6LKelJjoZNO4Fh3dmGMxaBy169j4y3M8il5fRSIz9vfl+8+TilxJDJVoM54Pz67MAYyQUIrngShg==}
+  '@rive-app/react-canvas@4.39.0':
+    resolution: {integrity: sha512-xIzrlFgLNTIfBDKibLjtOblSXk7mJkl/Gw6ABU9WFENB8UDPf8FpNCVuElhdPBT01/TUell1wXfY22hHu5wbDQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0
 
@@ -1584,13 +1581,11 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.3.0
 
-  '@rive-app/canvas@2.49.2': {}
+  '@rive-app/canvas@2.50.0': {}
 
-  '@rive-app/canvas@2.49.4': {}
-
-  '@rive-app/react-canvas@4.38.1(react@19.3.1)':
+  '@rive-app/react-canvas@4.39.0(react@19.3.1)':
     dependencies:
-      '@rive-app/canvas': 2.49.2
+      '@rive-app/canvas': 2.50.0
       react: 19.3.1
 
   '@swc/helpers@0.5.23':
