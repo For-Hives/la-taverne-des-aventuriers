@@ -6,7 +6,7 @@ settings:
 
 overrides:
   baseline-browser-mapping: 2.11.36
-  postcss-selector-parser: 7.2.0
+  postcss-selector-parser: 7.2.1
 
 importers:
 
@@ -1098,8 +1098,8 @@ packages:
   pocketbase@0.29.0:
     resolution: {integrity: sha512-GIEcwI9zTeK++TMV97nIjMbcLvzTzvbQQF32af5WikWQpELHQosI5Rb6+y1ikVL2ezl0X+Itd9ds1USpYvGYug==}
 
-  postcss-selector-parser@7.2.0:
-    resolution: {integrity: sha512-Khh/tERVBn0I1499dvBSHY0pWJloMJWUxDsOBM0CCDPAcVZ10Jl2L1qy1f19uEX22spa8Mv7DCdEQJc0cGwBhQ==}
+  postcss-selector-parser@7.2.1:
+    resolution: {integrity: sha512-GwxlMgTTXwIom+ebC7an3k6RaJDwklRQQnfiXsLPGicu8FYV/k/+1/9YY2OU2+r938H2t4X0TDxoif+HP2rjzQ==}
     engines: {node: '>=4'}
 
   postcss@8.5.23:
@@ -1663,7 +1663,7 @@ snapshots:
 
   '@tailwindcss/typography@0.5.20(tailwindcss@4.3.5)':
     dependencies:
-      postcss-selector-parser: 7.2.0
+      postcss-selector-parser: 7.2.1
       tailwindcss: 4.3.5
 
   '@types/node@26.6.6':
@@ -1906,7 +1906,7 @@ snapshots:
 
   pocketbase@0.29.0: {}
 
-  postcss-selector-parser@7.2.0:
+  postcss-selector-parser@7.2.1:
     dependencies:
       util-deprecate: 1.0.2
 
