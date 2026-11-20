@@ -19,5 +19,5 @@ minimumReleaseAgeExclude:
   - next@16.4.5
 
 overrides:
-  baseline-browser-mapping: 2.11.37
+  baseline-browser-mapping: 2.11.38
   postcss-selector-parser: 7.2.1
